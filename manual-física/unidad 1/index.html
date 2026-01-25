@@ -1,0 +1,4721 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1: Mecánica de Fluidos y Sistemas Hidráulicos - Edición Albatros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&family=Open+Sans+Condensed:wght@300;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ============================================
+           CSS_MANUAL_PRINT_VERTICAL - UNIDAD 1 (AZUL)
+           Formato: Carta Vertical (Portrait)
+           ============================================ */
+
+        :root {
+            --primary-color: #0277BD;
+            --primary-light: #E1F5FE;
+            --primary-dark: #01579B;
+            --secondary-color: #00838F;
+            --accent-color: #FF6F00;
+            --success-color: #2E7D32;
+            --warning-color: #F57C00;
+            --text-dark: #37474F;
+            --text-light: #78909C;
+            --white: #FFFFFF;
+            --black: #212121;
+            --gray-light: #F5F5F5;
+            --gray-medium: #E0E0E0;
+            --radius-pill: 50px;
+            --radius-card: 12px;
+            --radius-small: 6px;
+            --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        @page {
+            size: letter portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            font-size: 10pt;
+            line-height: 14pt;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ============================================
+           PÁGINA BASE - VERTICAL
+           ============================================ */
+        .page {
+            width: 215.9mm;
+            height: 279.4mm;
+            padding: 20mm 18mm 18mm 22mm;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* ============================================
+           TIPOGRAFÍA
+           ============================================ */
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24pt;
+            color: var(--primary-color);
+            margin-bottom: 6mm;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16pt;
+            color: var(--secondary-color);
+            margin-bottom: 4mm;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 12pt;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 10pt;
+            color: var(--secondary-color);
+            margin-bottom: 2mm;
+        }
+
+        p {
+            margin-bottom: 3mm;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin-left: 5mm;
+            margin-bottom: 3mm;
+        }
+
+        li {
+            margin-bottom: 1.5mm;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        /* ============================================
+           SISTEMA DE CÁPSULAS DOBLES
+           ============================================ */
+        .capsula {
+            display: flex;
+            margin-bottom: 5mm;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            page-break-inside: avoid;
+        }
+
+        .capsula-etiqueta {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            min-width: 42mm;
+            border-radius: var(--radius-card) 0 0 var(--radius-card);
+        }
+
+        .capsula-etiqueta .icono {
+            width: 6mm;
+            height: 6mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12pt;
+        }
+
+        .capsula-etiqueta .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .capsula-contenido {
+            background: var(--primary-light);
+            padding: 3mm 4mm;
+            flex: 1;
+            border-radius: 0 var(--radius-card) var(--radius-card) 0;
+        }
+
+        .capsula-contenido p:last-child,
+        .capsula-contenido ul:last-child,
+        .capsula-contenido ol:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Variantes de cápsula */
+        .capsula.secundaria .capsula-etiqueta {
+            background: var(--secondary-color);
+        }
+
+        .capsula.acento .capsula-etiqueta {
+            background: var(--accent-color);
+        }
+
+        .capsula.exito .capsula-etiqueta {
+            background: var(--success-color);
+        }
+
+        /* ============================================
+           CÁPSULA DE ACTIVIDAD (ESPECIAL)
+           ============================================ */
+        .actividad {
+            border: 2px solid var(--accent-color);
+            border-radius: var(--radius-card);
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+
+        .actividad-header {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .actividad-header .numero {
+            background: var(--white);
+            color: var(--accent-color);
+            width: 8mm;
+            height: 8mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .actividad-header .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 11pt;
+        }
+
+        .actividad-body {
+            padding: 4mm;
+            background: #FFF8E1;
+        }
+
+        .actividad-instrucciones {
+            background: var(--white);
+            border-radius: var(--radius-small);
+            padding: 3mm;
+            margin-bottom: 3mm;
+        }
+
+        .espacio-respuesta {
+            border: 1px dashed var(--accent-color);
+            border-radius: var(--radius-small);
+            min-height: 25mm;
+            background: var(--white);
+            padding: 2mm;
+            margin-top: 2mm;
+        }
+
+        .espacio-respuesta.grande {
+            min-height: 40mm;
+        }
+
+        .espacio-respuesta.pequeño {
+            min-height: 15mm;
+        }
+
+        .linea-respuesta {
+            border-bottom: 1px solid var(--gray-medium);
+            height: 7mm;
+            margin-bottom: 1mm;
+        }
+
+        /* ============================================
+           CUADROS COMPARATIVOS
+           ============================================ */
+        .cuadro-comparativo {
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+        }
+
+        .cuadro-comparativo-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            text-align: center;
+        }
+
+        .cuadro-comparativo-header h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: 11pt;
+        }
+
+        .cuadro-comparativo-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .cuadro-col {
+            padding: 3mm;
+        }
+
+        .cuadro-col:first-child {
+            background: var(--primary-light);
+            border-right: 1px solid var(--primary-color);
+        }
+
+        .cuadro-col:last-child {
+            background: #E0F2F1;
+        }
+
+        .cuadro-col h4 {
+            text-align: center;
+            padding-bottom: 2mm;
+            border-bottom: 1px solid currentColor;
+            margin-bottom: 2mm;
+        }
+
+        /* ============================================
+           TABLAS
+           ============================================ */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 9pt;
+            line-height: 11pt;
+            margin-bottom: 4mm;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 3mm;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 2mm 3mm;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        tr:nth-child(even) {
+            background: var(--primary-light);
+        }
+
+        /* ============================================
+           FÓRMULAS
+           ============================================ */
+        .formula {
+            background: var(--gray-light);
+            padding: 3mm 4mm;
+            border-radius: var(--radius-small);
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            text-align: center;
+            margin: 3mm 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .formula-destacada {
+            background: linear-gradient(135deg, var(--primary-light), var(--white));
+            border: 2px solid var(--primary-color);
+            padding: 4mm;
+            border-radius: var(--radius-card);
+            text-align: center;
+            margin: 4mm 0;
+        }
+
+        .formula-destacada .nombre {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--secondary-color);
+            margin-bottom: 2mm;
+        }
+
+        .formula-destacada .ecuacion {
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            color: var(--primary-dark);
+        }
+
+        /* ============================================
+           ESQUEMAS Y DIAGRAMAS
+           ============================================ */
+        .esquema {
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+        }
+
+        .esquema-header {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 2mm 4mm;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 10pt;
+        }
+
+        .esquema-body {
+            padding: 4mm;
+            background: #E0F7FA;
+        }
+
+        /* ============================================
+           PLACEHOLDER DE IMÁGENES
+           ============================================ */
+        .imagen-placeholder {
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--gray-medium) 100%);
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--radius-card);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4mm;
+            text-align: center;
+            color: var(--primary-color);
+            min-height: 35mm;
+        }
+
+        .imagen-placeholder .nombre-archivo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 8pt;
+            margin-bottom: 1mm;
+        }
+
+        .imagen-placeholder .descripcion {
+            font-size: 7pt;
+            opacity: 0.8;
+        }
+
+        /* ============================================
+           CÓDIGO
+           ============================================ */
+        .codigo {
+            background: #263238;
+            color: #ECEFF1;
+            padding: 3mm;
+            border-radius: var(--radius-small);
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 7pt;
+            line-height: 10pt;
+            overflow-x: auto;
+            margin: 3mm 0;
+        }
+
+        .codigo .comentario {
+            color: #78909C;
+        }
+
+        .codigo .keyword {
+            color: #82B1FF;
+        }
+
+        .codigo .string {
+            color: #C3E88D;
+        }
+
+        .codigo .numero {
+            color: #F78C6C;
+        }
+
+        /* ============================================
+           NOTAS Y ALERTAS
+           ============================================ */
+        .nota-alerta {
+            background: #FFF3E0;
+            border-left: 4px solid var(--accent-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .nota-alerta strong {
+            color: var(--accent-color);
+        }
+
+        .nota-info {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .nota-exito {
+            background: #E8F5E9;
+            border-left: 4px solid var(--success-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        /* ============================================
+           PORTADA
+           ============================================ */
+        .portada {
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 30mm 20mm;
+        }
+
+        .portada h1 {
+            color: var(--white);
+            font-size: 28pt;
+            margin-bottom: 3mm;
+        }
+
+        .portada .subtitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            font-weight: 400;
+            margin-bottom: 10mm;
+            opacity: 0.9;
+        }
+
+        .portada .edicion {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3mm 6mm;
+            border-radius: var(--radius-pill);
+            margin-bottom: 15mm;
+        }
+
+        .portada .logo-placeholder {
+            width: 35mm;
+            height: 35mm;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10mm;
+        }
+
+        .portada .descripcion {
+            max-width: 140mm;
+            font-size: 10pt;
+            line-height: 14pt;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           ÍNDICE VISUAL (BENTO BOX)
+           ============================================ */
+        .indice-visual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3mm;
+        }
+
+        .indice-item {
+            background: var(--primary-light);
+            border-radius: var(--radius-card);
+            padding: 3mm;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .indice-item.destacado {
+            grid-column: span 2;
+            background: var(--primary-color);
+            color: var(--white);
+            border-left: none;
+            text-align: center;
+        }
+
+        .indice-item.destacado h3 {
+            color: var(--white);
+        }
+
+        .indice-item h3 {
+            font-size: 10pt;
+            margin-bottom: 1mm;
+        }
+
+        .indice-item p {
+            font-size: 8pt;
+            line-height: 10pt;
+            margin: 0;
+            text-align: left;
+        }
+
+        /* ============================================
+           DOS COLUMNAS
+           ============================================ */
+        .dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+
+        .columna {
+            overflow: hidden;
+        }
+
+        /* ============================================
+           PIE DE PÁGINA
+           ============================================ */
+        .pie-pagina {
+            position: absolute;
+            bottom: 8mm;
+            left: 22mm;
+            right: 18mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 7pt;
+            color: var(--text-light);
+            border-top: 1px solid var(--gray-medium);
+            padding-top: 2mm;
+        }
+
+        .pie-pagina .unidad-tag {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1mm 2mm;
+            border-radius: var(--radius-pill);
+            font-size: 6pt;
+            font-weight: 600;
+        }
+
+        .numero-pagina {
+            background: var(--gray-light);
+            padding: 1mm 3mm;
+            border-radius: var(--radius-small);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           SEPARADOR DE CAPÍTULO
+           ============================================ */
+        .separador-capitulo {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 40mm 20mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .separador-capitulo .numero-capitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48pt;
+            font-weight: 700;
+            opacity: 0.3;
+            margin-bottom: 5mm;
+        }
+
+        .separador-capitulo h1 {
+            color: var(--white);
+            font-size: 22pt;
+            margin-bottom: 5mm;
+        }
+
+        .separador-capitulo .descripcion {
+            font-size: 11pt;
+            max-width: 140mm;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           LISTA DE MATERIALES
+           ============================================ */
+        .lista-materiales {
+            background: var(--gray-light);
+            border-radius: var(--radius-card);
+            padding: 4mm;
+            margin-bottom: 4mm;
+        }
+
+        .lista-materiales h4 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 2mm;
+            margin-bottom: 3mm;
+        }
+
+        .material-item {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            padding: 1mm 0;
+            border-bottom: 1px dotted var(--gray-medium);
+        }
+
+        .material-item:last-child {
+            border-bottom: none;
+        }
+
+        .material-check {
+            width: 4mm;
+            height: 4mm;
+            border: 1px solid var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* ============================================
+           PASOS NUMERADOS
+           ============================================ */
+        .pasos-container {
+            counter-reset: paso;
+        }
+
+        .paso {
+            display: flex;
+            gap: 3mm;
+            margin-bottom: 4mm;
+            page-break-inside: avoid;
+        }
+
+        .paso-numero {
+            counter-increment: paso;
+            background: var(--primary-color);
+            color: var(--white);
+            width: 7mm;
+            height: 7mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 9pt;
+            flex-shrink: 0;
+        }
+
+        .paso-numero::before {
+            content: counter(paso);
+        }
+
+        .paso-contenido {
+            flex: 1;
+        }
+
+        .paso-contenido h4 {
+            margin-bottom: 1mm;
+        }
+
+        /* ============================================
+           UTILIDADES
+           ============================================ */
+        .mt-2 {
+            margin-top: 2mm;
+        }
+
+        .mt-3 {
+            margin-top: 3mm;
+        }
+
+        .mt-4 {
+            margin-top: 4mm;
+        }
+
+        .mt-6 {
+            margin-top: 6mm;
+        }
+
+        .mb-2 {
+            margin-bottom: 2mm;
+        }
+
+        .mb-3 {
+            margin-bottom: 3mm;
+        }
+
+        .mb-4 {
+            margin-bottom: 4mm;
+        }
+
+        .mb-6 {
+            margin-bottom: 6mm;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-small {
+            font-size: 8pt;
+        }
+
+        .text-tiny {
+            font-size: 7pt;
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================
+         PÁGINA 1: PORTADA
+         ============================================ -->
+    <div class="page portada">
+        <div class="logo-placeholder">
+            <img src="imagenes/24. logo-albatros.png" alt="Logo Albatros"
+                style="width: 180%; height: 180%; object-fit: contain; transform: scale(1.6);">
+        </div>
+        <h1>UNIDAD 1</h1>
+        <div class="subtitulo">Mecánica de Fluidos y Sistemas Hidráulicos</div>
+        <div class="edicion">EDICIÓN ALBATROS COMPETITIVA</div>
+        <p class="descripcion">
+            Enfoque Pedagógico-Competitivo para forjar ingenieros y científicos
+            capaces de competir en escenarios internacionales como F1 in Schools,
+            World Robot Olympiad y ferias de ciencias ISEF.
+        </p>
+        <div style="margin-top: 20mm; opacity: 0.7; font-size: 9pt;">
+            <p>Incluye:</p>
+            <p>ALBATROS TECH | ALBATROS PLUS</p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 2: ÍNDICE VISUAL
+         ============================================ -->
+    <div class="page">
+        <h2 style="margin-bottom: 5mm;">Mapa de Contenidos</h2>
+        <div class="indice-visual">
+            <div class="indice-item destacado">
+                <h3>Capítulo 1</h3>
+                <p>La Naturaleza del Fluido e Hidrostática</p>
+            </div>
+            <div class="indice-item">
+                <h3>Propiedades de Fluidos</h3>
+                <p>Cohesión, Adhesión, Tensión Superficial, Capilaridad</p>
+            </div>
+            <div class="indice-item">
+                <h3>Presión Hidrostática</h3>
+                <p>Paradoja Hidrostática, Pascal, Arquímedes</p>
+            </div>
+            <div class="indice-item destacado">
+                <h3>Capítulo 2</h3>
+                <p>Hidrodinámica y Aerodinámica Aplicada</p>
+            </div>
+            <div class="indice-item">
+                <h3>Ecuaciones Fundamentales</h3>
+                <p>Continuidad, Bernoulli, Reynolds</p>
+            </div>
+            <div class="indice-item">
+                <h3>Aerodinámica F1</h3>
+                <p>Downforce, Efecto Suelo, CFD</p>
+            </div>
+            <div class="indice-item destacado">
+                <h3>Capítulo 3</h3>
+                <p>Proyecto Maker e Hidráulica Avanzada</p>
+            </div>
+            <div class="indice-item">
+                <h3>Brazo Robótico HAZMAT</h3>
+                <p>Hidráulica con jeringas, sensores FSR</p>
+            </div>
+            <div class="indice-item">
+                <h3>Soft Robotics</h3>
+                <p>Gripper Bio-Inspirado, PneuNets</p>
+            </div>
+            <div class="indice-item destacado">
+                <h3>Ética y Profesionalismo</h3>
+                <p>Casos Austin Dam y Challenger</p>
+            </div>
+            <div class="indice-item">
+                <h3>12 Actividades</h3>
+                <p>Experimentos, cálculos y reflexiones</p>
+            </div>
+            <div class="indice-item">
+                <h3>Recursos Digitales</h3>
+                <p>SimScale, PhET, Arduino, Tinkercad</p>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Mecánica de Fluidos</span>
+            <span class="numero-pagina">2</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 3: INTRODUCCIÓN AL ENFOQUE ALBATROS
+         ============================================ -->
+    <div class="page">
+        <h1>Introducción al Enfoque Albatros</h1>
+
+        <p>Este documento presenta una reestructuración exhaustiva y una expansión académica de la "Unidad 1: Mecánica
+            de Fluidos y Sistemas Hidráulicos", diseñada específicamente para un entorno educativo de alto rendimiento.
+        </p>
+
+        <div class="capsula mt-4">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Enfoque Pedagógico</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>El enfoque <strong>Pedagógico-Competitivo</strong> adoptado aquí trasciende la enseñanza tradicional
+                    de la física; su objetivo es forjar ingenieros y científicos capaces de competir en escenarios
+                    internacionales.</p>
+            </div>
+        </div>
+
+        <div class="dos-columnas mt-4">
+            <div class="columna">
+                <div class="esquema">
+                    <div class="esquema-header">ALBATROS TECH</div>
+                    <div class="esquema-body">
+                        <p><strong>Actividades centradas en:</strong></p>
+                        <ul>
+                            <li>Construcción física</li>
+                            <li>Manufactura práctica</li>
+                            <li>Comprensión tangible</li>
+                            <li>Habilidades "Maker"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="columna">
+                <div class="esquema">
+                    <div class="esquema-header">ALBATROS PLUS</div>
+                    <div class="esquema-body">
+                        <p><strong>Actividades de análisis superior:</strong></p>
+                        <ul>
+                            <li>Simulación CFD</li>
+                            <li>Integración electrónica</li>
+                            <li>Ética ingenieril</li>
+                            <li>Física de materiales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Competencias Internacionales de Referencia</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Competencia</th>
+                    <th>Enfoque</th>
+                    <th>Relación con la Unidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>F1 in Schools</strong></td>
+                    <td>Aerodinámica y manufactura</td>
+                    <td>Capítulo 2: Bernoulli y CFD</td>
+                </tr>
+                <tr>
+                    <td><strong>World Robot Olympiad</strong></td>
+                    <td>Robótica y automatización</td>
+                    <td>Capítulo 3: Brazo hidráulico</td>
+                </tr>
+                <tr>
+                    <td><strong>ISEF</strong></td>
+                    <td>Investigación científica</td>
+                    <td>Metodología experimental</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Introducción</span>
+            <span class="numero-pagina">3</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 4: OBJETIVOS GENERALES
+         ============================================ -->
+    <div class="page">
+        <h1>Objetivos Generales de la Unidad</h1>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Objetivo General</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Dotar al estudiante de la capacidad analítica para deconstruir el comportamiento de los fluidos en
+                    reposo y en movimiento, aplicando estos conocimientos al diseño de sistemas tecnológicos modernos.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Objetivos Específicos</h3>
+
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Analizar</h4>
+                    <p>Las fuerzas intermoleculares que dictan la "personalidad" de un fluido: tensión superficial,
+                        viscosidad, cohesión y adhesión.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Aplicar</h4>
+                    <p>Los principios de la hidrostática para resolver problemas de ingeniería civil (presas) y robótica
+                        (actuadores hidráulicos).</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Comprender</h4>
+                    <p>Las ecuaciones de Continuidad y Bernoulli para el análisis de fluidos en movimiento.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Diseñar</h4>
+                    <p>Sistemas tecnológicos modernos, desde la microfluídica hasta perfiles aerodinámicos de alta
+                        eficiencia.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Construir</h4>
+                    <p>Un brazo robótico hidráulico funcional con capacidad de retroalimentación sensorial.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Reflexionar</h4>
+                    <p>Sobre las implicaciones éticas del diseño ingenieril a través del análisis de casos históricos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-info mt-4">
+            <strong>Nota:</strong> Cada objetivo se evalúa mediante actividades prácticas específicas que encontrarás a
+            lo largo del manual, identificadas con el símbolo de actividad.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Objetivos Generales</span>
+            <span class="numero-pagina">4</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 5: SEPARADOR CAPÍTULO 1
+         ============================================ -->
+    <div class="page separador-capitulo">
+        <div class="numero-capitulo">01</div>
+        <h1>La Naturaleza del Fluido e Hidrostática</h1>
+        <p class="descripcion">
+            Desde la interacción molecular hasta la macro-ingeniería de presas,
+            exploramos por qué los fluidos se comportan como lo hacen.
+        </p>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 6: OBJETIVO DEL CAPÍTULO 1
+         ============================================ -->
+    <div class="page">
+        <h2>Capítulo 1: La Naturaleza del Fluido e Hidrostática</h2>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-diana.png" alt="">
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Comprender las propiedades fundamentales de los fluidos a nivel molecular y aplicar los principios de
+                    la hidrostática en contextos de ingeniería real, considerando las condiciones ambientales locales.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Temas del Capítulo</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sección</th>
+                    <th>Tema</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.1</td>
+                    <td>Propiedades Fundamentales de Superficies</td>
+                    <td>Teoría</td>
+                </tr>
+                <tr>
+                    <td>1.2</td>
+                    <td>Cohesión y Adhesión</td>
+                    <td>Teoría + Actividad</td>
+                </tr>
+                <tr>
+                    <td>1.3</td>
+                    <td>Capilaridad y Microfluídica</td>
+                    <td>Teoría + Actividad</td>
+                </tr>
+                <tr>
+                    <td>1.4</td>
+                    <td>Densidad y Peso Específico</td>
+                    <td>Teoría</td>
+                </tr>
+                <tr>
+                    <td>1.5</td>
+                    <td>Presión Hidrostática</td>
+                    <td>Teoría + Actividad</td>
+                </tr>
+                <tr>
+                    <td>1.6</td>
+                    <td>Presión Atmosférica Local</td>
+                    <td>Procedimiento</td>
+                </tr>
+                <tr>
+                    <td>1.7</td>
+                    <td>NPSH y Cavitación</td>
+                    <td>Nota Técnica</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-alerta mt-4">
+            <strong>Prerrequisitos:</strong> Conocimientos básicos de física (fuerza, presión, energía) y matemáticas
+            (álgebra, proporciones).
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Objetivos</span>
+            <span class="numero-pagina">6</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 7: CONCEPTOS FUNDAMENTALES - INTRO
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-cerebro.png" alt="">
+                <div class="titulo">Conceptos Fundamentales</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>La física clásica suele comenzar con la idealización del <strong>cuerpo rígido</strong>, un objeto
+                    que no se deforma bajo la acción de fuerzas. Sin embargo, el universo observable es
+                    predominantemente fluido.</p>
+            </div>
+        </div>
+
+        <p class="mt-3">Desde el plasma de las estrellas hasta la circulación sanguínea, la materia fluye. En este
+            bloque, abandonamos la rigidez para adentrarnos en la <strong>Mecánica de Medios Continuos</strong>.</p>
+
+        <h3 class="mt-4">¿Qué es un Fluido?</h3>
+        <p>Un fluido es una sustancia que se deforma continuamente cuando se le aplica un esfuerzo cortante, sin
+            importar cuán pequeño sea. Esta definición incluye tanto líquidos como gases.</p>
+
+        <div class="cuadro-comparativo mt-4">
+            <div class="cuadro-comparativo-header">
+                <h3>Sólidos vs Fluidos</h3>
+            </div>
+            <div class="cuadro-comparativo-body">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">Sólidos</h4>
+                    <ul>
+                        <li>Forma definida</li>
+                        <li>Volumen definido</li>
+                        <li>Resisten esfuerzos cortantes</li>
+                        <li>Moléculas en posiciones fijas</li>
+                        <li>Alta cohesión molecular</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">Fluidos</h4>
+                    <ul>
+                        <li>Adoptan forma del contenedor</li>
+                        <li>Líquidos: volumen definido</li>
+                        <li>Se deforman continuamente</li>
+                        <li>Moléculas en movimiento</li>
+                        <li>Cohesión variable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/diagrama-estados-materia.png" alt="Diagrama Estados de la Materia"
+                style="width: 100%; max-height: 55mm; object-fit: contain;">
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Conceptos Fundamentales</span>
+            <span class="numero-pagina">7</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 8: COHESIÓN Y ADHESIÓN - TEORÍA
+         ============================================ -->
+    <div class="page">
+        <h2>1.1 Propiedades Fundamentales: La Física de Superficies</h2>
+
+        <p>Para comprender por qué un mosquito camina sobre el agua o cómo un árbol transporta savia a 100 metros de
+            altura, debemos descender al nivel molecular.</p>
+
+        <h3 class="mt-3">Cohesión y Adhesión: La Batalla Interfacial</h3>
+
+        <div class="dos-columnas mt-3">
+            <div class="columna">
+                <div class="esquema">
+                    <div class="esquema-header">COHESIÓN</div>
+                    <div class="esquema-body">
+                        <p>Fuerza de atracción entre moléculas de <strong>la misma sustancia</strong>.</p>
+                        <p class="mt-2">En el agua, esta fuerza es excepcionalmente alta debido a los <strong>puentes de
+                                hidrógeno</strong>.</p>
+                        <p class="mt-2">Cada molécula de agua actúa como un pequeño imán dipolar.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columna">
+                <div class="esquema">
+                    <div class="esquema-header">ADHESIÓN</div>
+                    <div class="esquema-body">
+                        <p>Fuerza de atracción entre moléculas de <strong>sustancias diferentes</strong>.</p>
+                        <p class="mt-2">Cuando un fluido entra en contacto con un sólido, se libra una batalla entre
+                            cohesión y adhesión.</p>
+                        <p class="mt-2">El resultado determina el comportamiento interfacial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Tensión Superficial</h3>
+        <p>La cohesión genera una "piel" elástica en la superficie del líquido, conocida como <strong>Tensión
+                Superficial</strong>. Las moléculas en la superficie experimentan una fuerza neta hacia el interior
+            porque no tienen vecinas arriba.</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Tensión Superficial (γ)</div>
+            <div class="ecuacion">γ = F / L</div>
+            <p class="text-small mt-2">Donde F es la fuerza y L es la longitud. Unidades: N/m o J/m²</p>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>Dato:</strong> La tensión superficial del agua a 20°C es aproximadamente 0.0728 N/m, una de las más
+            altas entre los líquidos comunes.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Cohesión y Adhesión</span>
+            <span class="numero-pagina">8</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 9: CUADRO COMPARATIVO COHESIÓN/ADHESIÓN
+         ============================================ -->
+    <div class="page">
+        <h3>Análisis de Caso: La Paradoja del Mercurio y el Oro</h3>
+
+        <p>Un ejemplo clásico escolar es que el agua "moja" el vidrio (Adhesión > Cohesión) mientras que el mercurio no
+            lo hace (Cohesión > Adhesión), formando un menisco convexo.</p>
+
+        <div class="cuadro-comparativo mt-4">
+            <div class="cuadro-comparativo-header">
+                <h3>Comportamiento en Diferentes Superficies</h3>
+            </div>
+            <div class="cuadro-comparativo-body">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">Agua en Vidrio</h4>
+                    <ul>
+                        <li>Adhesión > Cohesión</li>
+                        <li>Menisco <strong>cóncavo</strong></li>
+                        <li>El agua "sube" por las paredes</li>
+                        <li>Ángulo de contacto < 90°</li>
+                        <li>El líquido "moja" la superficie</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">Mercurio en Vidrio</h4>
+                    <ul>
+                        <li>Cohesión > Adhesión</li>
+                        <li>Menisco <strong>convexo</strong></li>
+                        <li>El mercurio se "aleja" de las paredes</li>
+                        <li>Ángulo de contacto > 90°</li>
+                        <li>El líquido "no moja" la superficie</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/diagrama-meniscos.jpg" alt="Diagrama Meniscos"
+                style="width: 100%; max-height: 50mm; object-fit: contain;">
+        </div>
+
+        <div class="nota-alerta mt-4">
+            <strong>Excepción Fascinante:</strong> Si sustituimos la superficie de vidrio por una de
+            <strong>oro</strong>, el comportamiento del mercurio cambia drásticamente. El mercurio "moja" el oro de
+            manera agresiva, formando una <strong>amalgama</strong>. Esto no es simple adhesión física, sino la
+            formación de enlaces metálicos fuertes.
+        </div>
+
+        <h4 class="mt-3">Física Cuántica en Acción</h4>
+        <p>El mercurio es líquido a temperatura ambiente debido a <strong>efectos relativistas</strong>. Los electrones
+            en sus orbitales s se mueven a velocidades cercanas a la de la luz, aumentando su masa y contrayendo el
+            orbital. Esto debilita los enlaces mercurio-mercurio, bajando su punto de fusión a -39°C.</p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Cuadro Comparativo</span>
+            <span class="numero-pagina">9</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 9B: MINI ACTIVIDADES - COMPRENSIÓN
+         ============================================ -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-lista.png" alt="">
+                <div class="titulo">Mini Actividades</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Verifica tu Comprensión: Cohesión y Adhesión</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">Antes de continuar, verifica que comprendes los conceptos fundamentales respondiendo las
+            siguientes preguntas:</p>
+
+        <div class="actividad-body"
+            style="border: 2px solid var(--secondary-color); border-radius: var(--radius-card); margin-top: 4mm;">
+            <h4>Pregunta 1: Conceptos Básicos</h4>
+            <p class="text-small">¿Cuál es la diferencia fundamental entre cohesión y adhesión? Escribe un ejemplo de
+                cada una.</p>
+            <div class="espacio-respuesta pequeño"></div>
+
+            <h4 class="mt-3">Pregunta 2: Aplicación</h4>
+            <p class="text-small">Un insecto camina sobre el agua sin hundirse. ¿Qué propiedad física lo hace posible?
+                Explica el mecanismo a nivel molecular.</p>
+            <div class="espacio-respuesta pequeño"></div>
+
+            <h4 class="mt-3">Pregunta 3: Análisis de Casos</h4>
+            <p class="text-small">Observa las siguientes situaciones y marca la fuerza dominante:</p>
+            <table style="font-size: 8pt;">
+                <thead>
+                    <tr>
+                        <th>Situación</th>
+                        <th>Cohesión > Adhesión</th>
+                        <th>Adhesión > Cohesión</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gota de agua en hoja de loto</td>
+                        <td>□</td>
+                        <td>□</td>
+                    </tr>
+                    <tr>
+                        <td>Agua subiendo por una servilleta</td>
+                        <td>□</td>
+                        <td>□</td>
+                    </tr>
+                    <tr>
+                        <td>Mercurio en un termómetro de vidrio</td>
+                        <td>□</td>
+                        <td>□</td>
+                    </tr>
+                    <tr>
+                        <td>Pintura adhiriéndose a una pared</td>
+                        <td>□</td>
+                        <td>□</td>
+                    </tr>
+                    <tr>
+                        <td>Gotas de lluvia en un parabrisas encerado</td>
+                        <td>□</td>
+                        <td>□</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="mt-3">Pregunta 4: Pensamiento Crítico</h4>
+            <p class="text-small">Si pudieras eliminar completamente la tensión superficial del agua, ¿qué fenómenos
+                cotidianos dejarían de funcionar? Menciona al menos tres.</p>
+            <div class="espacio-respuesta"></div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Mini Actividades: Cohesión y Adhesión</span>
+            <span class="numero-pagina">9B</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 10: ACTIVIDAD 1 - OBSERVACIÓN DE MENISCOS
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">1</div>
+                <div class="titulo">Observación de Meniscos</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Objetivo</h4>
+                    <p>Observar y documentar el comportamiento interfacial de diferentes líquidos en contacto con
+                        vidrio.</p>
+
+                    <h4 class="mt-3">Materiales</h4>
+                    <div class="dos-columnas">
+                        <div class="columna">
+                            <ul>
+                                <li>3 tubos de ensayo de vidrio</li>
+                                <li>Agua destilada</li>
+                                <li>Aceite vegetal</li>
+                            </ul>
+                        </div>
+                        <div class="columna">
+                            <ul>
+                                <li>Alcohol isopropílico</li>
+                                <li>Gotero</li>
+                                <li>Regla milimétrica</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4 class="mt-3">Procedimiento</h4>
+                    <ol>
+                        <li>Vierte 5 ml de cada líquido en un tubo de ensayo diferente</li>
+                        <li>Coloca los tubos en una gradilla bien iluminada</li>
+                        <li>Observa el menisco de cada líquido a nivel de tus ojos</li>
+                        <li>Dibuja lo que observas en el espacio indicado</li>
+                    </ol>
+                </div>
+
+                <h4>Dibuja los meniscos observados:</h4>
+                <div class="dos-columnas mt-2">
+                    <div class="columna">
+                        <p class="text-small text-center">Agua</p>
+                        <div class="espacio-respuesta" style="height: 30mm;"></div>
+                    </div>
+                    <div class="columna">
+                        <p class="text-small text-center">Aceite</p>
+                        <div class="espacio-respuesta" style="height: 30mm;"></div>
+                    </div>
+                </div>
+
+                <h4 class="mt-3">Preguntas de análisis:</h4>
+                <p class="text-small">1. ¿Cuál líquido presenta mayor adhesión al vidrio? ¿Cómo lo sabes?</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <p class="text-small mt-2">2. ¿Qué relación existe entre el ángulo de contacto y la tensión superficial?
+                </p>
+                <div class="espacio-respuesta pequeño"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 1: Meniscos</span>
+            <span class="numero-pagina">10</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 10B: EXPERIMENTO - TENSIÓN SUPERFICIAL
+         ============================================ -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-engranaje.png" alt="">
+                <div class="titulo">Experimento</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Medición de Tensión Superficial: Método del Gotero</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">Este experimento cuantitativo permite comparar la tensión superficial de diferentes líquidos
+            usando materiales simples.</p>
+
+        <h3 class="mt-3">Fundamento Teórico</h3>
+        <p class="text-small">Una gota se forma cuando la tensión superficial ya no puede sostener el peso del líquido
+            acumulado. El número de gotas que caben en un volumen fijo es inversamente proporcional al tamaño de cada
+            gota.</p>
+
+        <div class="formula">
+            A mayor tensión superficial → gotas más grandes → menos gotas por ml
+        </div>
+
+        <h3 class="mt-3">Materiales</h3>
+        <div class="dos-columnas">
+            <div class="columna">
+                <ul class="text-small">
+                    <li>Gotero de plástico calibrado</li>
+                    <li>Agua destilada</li>
+                    <li>Alcohol isopropílico</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <ul class="text-small">
+                    <li>Agua con jabón (1 gota/10ml)</li>
+                    <li>Aceite vegetal</li>
+                    <li>Recipiente pequeño</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Procedimiento</h3>
+        <ol class="text-small">
+            <li>Llena el gotero con 1 ml de agua destilada</li>
+            <li>Cuenta las gotas necesarias para vaciar completamente el gotero</li>
+            <li>Repite 3 veces y calcula el promedio</li>
+            <li>Repite con cada líquido</li>
+        </ol>
+
+        <h3 class="mt-3">Registro de Datos</h3>
+        <table style="font-size: 8pt;">
+            <thead>
+                <tr>
+                    <th>Líquido</th>
+                    <th>Ensayo 1</th>
+                    <th>Ensayo 2</th>
+                    <th>Ensayo 3</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Agua destilada</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Agua + jabón</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Alcohol isopropílico</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Aceite vegetal</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4 class="mt-3">Análisis</h4>
+        <p class="text-small">Ordena los líquidos de mayor a menor tensión superficial según tus resultados:</p>
+        <div class="linea-respuesta"></div>
+        <p class="text-small mt-2">¿Por qué el jabón reduce la tensión superficial del agua?</p>
+        <div class="espacio-respuesta pequeño"></div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Experimento: Tensión Superficial</span>
+            <span class="numero-pagina">10B</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 11: CAPILARIDAD Y MICROFLUÍDICA
+         ============================================ -->
+    <div class="page">
+        <h2>1.2 Capilaridad y Microfluídica</h2>
+
+        <p>La capilaridad es el resultado macroscópico de la adhesión superando a la cohesión en espacios confinados. En
+            la ingeniería moderna, esto ha dado lugar a la <strong>Microfluídica</strong>.</p>
+
+        <h3 class="mt-3">Ley de Jurin</h3>
+        <p>La altura que alcanza un líquido en un capilar se define como:</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Ley de Jurin</div>
+            <div class="ecuacion">h = (2γ cos θ) / (ρgr)</div>
+        </div>
+
+        <div class="dos-columnas mt-3">
+            <div class="columna">
+                <h4>Variables:</h4>
+                <ul>
+                    <li><strong>h</strong> = altura capilar (m)</li>
+                    <li><strong>γ</strong> = tensión superficial (N/m)</li>
+                    <li><strong>θ</strong> = ángulo de contacto (°)</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <ul>
+                    <li><strong>ρ</strong> = densidad del líquido (kg/m³)</li>
+                    <li><strong>g</strong> = aceleración gravitacional (m/s²)</li>
+                    <li><strong>r</strong> = radio del tubo (m)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>Observación clave:</strong> La altura es inversamente proporcional al radio. Tubos más delgados =
+            mayor ascenso capilar.
+        </div>
+
+        <h3 class="mt-4">Tecnología Lab-on-a-Chip</h3>
+        <p>En dispositivos médicos modernos, se diseñan canales microscópicos donde la capilaridad transporta sangre sin
+            necesidad de bombas externas.</p>
+
+        <div class="mt-3" style="text-align: center;">
+            <img src="imagenes/esquema-lab-on-chip.jpg" alt="Esquema Lab-on-a-Chip"
+                style="width: 100%; max-height: 50mm; object-fit: contain;">
+        </div>
+
+        <p class="mt-3">El diseño de <strong>"válvulas capilares" pasivas</strong> —cambios abruptos en la geometría del
+            canal que detienen el flujo hasta que se aplica una presión externa— es una competencia crítica en
+            bioingeniería.</p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Capilaridad</span>
+            <span class="numero-pagina">11</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 12: EJEMPLOS DE LEY DE JURIN
+         ============================================ -->
+    <div class="page">
+        <h3>Ejemplo Resuelto: Ley de Jurin</h3>
+
+        <div class="esquema">
+            <div class="esquema-header">PROBLEMA</div>
+            <div class="esquema-body">
+                <p>¿A qué altura ascenderá el agua en un tubo capilar de vidrio con radio interno de 0.5 mm?</p>
+                <p class="mt-2"><strong>Datos:</strong></p>
+                <ul>
+                    <li>γ (agua) = 0.0728 N/m</li>
+                    <li>θ (agua-vidrio) = 0° (cos 0° = 1)</li>
+                    <li>ρ (agua) = 1000 kg/m³</li>
+                    <li>g = 9.81 m/s²</li>
+                    <li>r = 0.0005 m</li>
+                </ul>
+            </div>
+        </div>
+
+        <h4 class="mt-3">Solución:</h4>
+        <div class="formula">
+            h = (2 × 0.0728 × 1) / (1000 × 9.81 × 0.0005)
+        </div>
+        <div class="formula">
+            h = 0.1456 / 4.905 = 0.0297 m = <strong>29.7 mm</strong>
+        </div>
+
+        <div class="nota-exito mt-3">
+            <strong>Resultado:</strong> El agua asciende aproximadamente 3 cm en un tubo de 1 mm de diámetro.
+        </div>
+
+        <h3 class="mt-4">Tabla de Ascenso Capilar del Agua</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Radio del tubo (mm)</th>
+                    <th>Altura de ascenso (mm)</th>
+                    <th>Aplicación típica</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0.1</td>
+                    <td>148.5</td>
+                    <td>Microfluídica</td>
+                </tr>
+                <tr>
+                    <td>0.5</td>
+                    <td>29.7</td>
+                    <td>Laboratorio</td>
+                </tr>
+                <tr>
+                    <td>1.0</td>
+                    <td>14.9</td>
+                    <td>Termómetros</td>
+                </tr>
+                <tr>
+                    <td>2.0</td>
+                    <td>7.4</td>
+                    <td>Tubos de ensayo</td>
+                </tr>
+                <tr>
+                    <td>5.0</td>
+                    <td>3.0</td>
+                    <td>Pipetas</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-alerta mt-3">
+            <strong>Aplicación biológica:</strong> Los árboles usan la capilaridad (junto con la transpiración) para
+            transportar savia hasta 100 metros de altura.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Ejemplos Ley de Jurin</span>
+            <span class="numero-pagina">12</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 13: ACTIVIDAD 2 - EXPERIMENTO CAPILARIDAD
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">2</div>
+                <div class="titulo">Experimento de Capilaridad</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Objetivo</h4>
+                    <p>Verificar experimentalmente la Ley de Jurin y analizar la relación entre el radio del tubo y la
+                        altura capilar.</p>
+
+                    <h4 class="mt-3">Materiales</h4>
+                    <ul>
+                        <li>3 tubos capilares de diferentes diámetros (si es posible: 1mm, 2mm, 3mm)</li>
+                        <li>Vaso de precipitados con agua coloreada</li>
+                        <li>Regla milimétrica</li>
+                        <li>Soporte universal con pinzas</li>
+                    </ul>
+
+                    <h4 class="mt-3">Procedimiento</h4>
+                    <ol>
+                        <li>Mide el diámetro interno de cada tubo (usa un calibrador si es posible)</li>
+                        <li>Sumerge verticalmente cada tubo en el agua coloreada</li>
+                        <li>Espera a que el nivel se estabilice</li>
+                        <li>Mide la altura desde la superficie del agua hasta el menisco</li>
+                        <li>Registra tus datos en la tabla</li>
+                    </ol>
+                </div>
+
+                <h4>Tabla de Datos:</h4>
+                <table style="font-size: 8pt;">
+                    <thead>
+                        <tr>
+                            <th>Tubo</th>
+                            <th>Diámetro (mm)</th>
+                            <th>Radio (mm)</th>
+                            <th>h medida (mm)</th>
+                            <th>h teórica (mm)</th>
+                            <th>% Error</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="mt-3">Análisis:</h4>
+                <p class="text-small">¿Se cumple la relación inversa entre radio y altura? Explica.</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <p class="text-small mt-2">¿Qué fuentes de error identificas en tu experimento?</p>
+                <div class="espacio-respuesta pequeño"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 2: Capilaridad</span>
+            <span class="numero-pagina">13</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 14: DENSIDAD Y PESO ESPECÍFICO
+         ============================================ -->
+    <div class="page">
+        <h2>1.3 Densidad y Peso Específico</h2>
+
+        <p>Es crucial en ingeniería distinguir entre la masa (inercia) y el peso (fuerza gravitacional) por unidad de
+            volumen.</p>
+
+        <div class="dos-columnas mt-4">
+            <div class="columna">
+                <div class="formula-destacada">
+                    <div class="nombre">Densidad (ρ)</div>
+                    <div class="ecuacion">ρ = m / V</div>
+                    <p class="text-small mt-2">Unidades: kg/m³</p>
+                    <p class="text-tiny">Propiedad escalar intrínseca</p>
+                </div>
+            </div>
+            <div class="columna">
+                <div class="formula-destacada">
+                    <div class="nombre">Peso Específico (Pe)</div>
+                    <div class="ecuacion">Pe = ρ · g</div>
+                    <p class="text-small mt-2">Unidades: N/m³</p>
+                    <p class="text-tiny">Depende del campo gravitatorio local</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Tabla de Densidades Comunes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sustancia</th>
+                    <th>Densidad (kg/m³)</th>
+                    <th>Peso Específico (N/m³)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aire (20°C, 1 atm)</td>
+                    <td>1.2</td>
+                    <td>11.8</td>
+                </tr>
+                <tr>
+                    <td>Agua dulce</td>
+                    <td>1,000</td>
+                    <td>9,810</td>
+                </tr>
+                <tr>
+                    <td>Agua de mar</td>
+                    <td>1,025</td>
+                    <td>10,055</td>
+                </tr>
+                <tr>
+                    <td>Aceite</td>
+                    <td>900</td>
+                    <td>8,829</td>
+                </tr>
+                <tr>
+                    <td>Mercurio</td>
+                    <td>13,600</td>
+                    <td>133,416</td>
+                </tr>
+                <tr>
+                    <td>Aluminio</td>
+                    <td>2,700</td>
+                    <td>26,487</td>
+                </tr>
+                <tr>
+                    <td>Acero</td>
+                    <td>7,850</td>
+                    <td>77,008</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-info mt-4">
+            <strong>Insight de Ingeniería de Materiales:</strong> Al diseñar estructuras aeroespaciales, no buscamos
+            simplemente la densidad más baja, sino la <strong>Resistencia Específica</strong> (Resistencia/Densidad). El
+            aluminio y el titanio son preferidos sobre el acero en aviación porque ofrecen mayor resistencia por cada
+            kilogramo de peso añadido.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Densidad</span>
+            <span class="numero-pagina">14</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 15: PRESIÓN HIDROSTÁTICA
+         ============================================ -->
+    <div class="page">
+        <h2>1.4 Presión Hidrostática</h2>
+
+        <p>La <strong>Paradoja Hidrostática</strong> establece que la presión en un fluido en reposo depende
+            exclusivamente de la profundidad (h) y no de la forma del recipiente.</p>
+
+        <div class="formula-destacada mt-4">
+            <div class="nombre">Presión Hidrostática</div>
+            <div class="ecuacion">P<sub>h</sub> = P<sub>atm</sub> + ρ · g · h</div>
+        </div>
+
+        <div class="dos-columnas mt-4">
+            <div class="columna">
+                <h4>Variables:</h4>
+                <ul>
+                    <li><strong>P<sub>h</sub></strong> = Presión a profundidad h</li>
+                    <li><strong>P<sub>atm</sub></strong> = Presión atmosférica</li>
+                    <li><strong>ρ</strong> = Densidad del fluido</li>
+                    <li><strong>g</strong> = Gravedad</li>
+                    <li><strong>h</strong> = Profundidad</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <img src="imagenes/diagrama-presion-hidrostatica.jpg" alt="Diagrama Presión Hidrostática"
+                    style="width: 100%; max-height: 50mm; object-fit: contain;">
+            </div>
+        </div>
+
+        <h3 class="mt-4">La Paradoja Explicada</h3>
+        <p>Tres recipientes con formas diferentes pero igual altura de líquido ejercen la misma presión en el fondo.
+            Esto parece contradictorio porque contienen diferentes cantidades de agua, pero la presión solo depende de
+            la altura de la columna de líquido.</p>
+
+        <div class="mt-3" style="text-align: center;">
+            <img src="imagenes/diagrama-paradoja-hidrostatica.png" alt="Diagrama Paradoja Hidrostática"
+                style="width: 100%; max-height: 45mm; object-fit: contain;">
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Presión Hidrostática</span>
+            <span class="numero-pagina">15</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 16: CUADRO COMPARATIVO PRESIÓN
+         ============================================ -->
+    <div class="page">
+        <div class="cuadro-comparativo">
+            <div class="cuadro-comparativo-header">
+                <h3>Presión a Diferentes Profundidades (Agua Dulce)</h3>
+            </div>
+            <div class="cuadro-comparativo-body" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="cuadro-col" style="border-right: 1px solid var(--primary-color);">
+                    <h4 style="color: var(--primary-color);">Profundidad</h4>
+                    <p>0 m (superficie)</p>
+                    <p>1 m</p>
+                    <p>10 m</p>
+                    <p>100 m</p>
+                    <p>1,000 m</p>
+                    <p>10,000 m</p>
+                </div>
+                <div class="cuadro-col" style="border-right: 1px solid var(--primary-color);">
+                    <h4 style="color: var(--secondary-color);">Presión (Pa)</h4>
+                    <p>101,325</p>
+                    <p>111,135</p>
+                    <p>199,425</p>
+                    <p>1,082,325</p>
+                    <p>9,911,325</p>
+                    <p>98,201,325</p>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--accent-color);">Equivalente (atm)</h4>
+                    <p>1.0</p>
+                    <p>1.1</p>
+                    <p>2.0</p>
+                    <p>10.7</p>
+                    <p>97.8</p>
+                    <p>969.2</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Aplicaciones de la Presión Hidrostática</h3>
+
+        <div class="dos-columnas">
+            <div class="columna">
+                <h4>Ingeniería Civil</h4>
+                <ul>
+                    <li>Diseño de presas</li>
+                    <li>Muros de contención</li>
+                    <li>Túneles submarinos</li>
+                    <li>Cimentaciones profundas</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <h4>Exploración</h4>
+                <ul>
+                    <li>Batiscafos</li>
+                    <li>Submarinos</li>
+                    <li>Buceo técnico</li>
+                    <li>Plataformas petroleras</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-4">
+            <strong>Dato extremo:</strong> En el punto más profundo del océano, la Fosa de las Marianas (≈11,000 m), la
+            presión es de aproximadamente 1,086 bar (1,072 atm). A esta presión, el agua se comprime aproximadamente un
+            5%.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Cuadro de Presiones</span>
+            <span class="numero-pagina">16</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 16B: RETO DIGITAL - PhET UNDER PRESSURE
+         ============================================ -->
+    <div class="page">
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-circuito.png" alt="">
+                <div class="titulo">Reto Digital</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Simulador PhET: "Under Pressure" (Bajo Presión)</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">Explora la presión en fluidos de manera interactiva utilizando las simulaciones de PhET
+            Colorado.</p>
+
+        <div class="esquema mt-4">
+            <div class="esquema-header">🔗 Acceso al Simulador</div>
+            <div class="esquema-body">
+                <p><strong>Link directo:</strong></p>
+                <p
+                    style="background: var(--gray-light); padding: 2mm 4mm; border-radius: var(--radius-small); font-family: monospace; font-size: 8pt; word-break: break-all;">
+                    https://phet.colorado.edu/es/simulations/under-pressure
+                </p>
+                <p class="mt-2 text-small"><em>Disponible en español. Funciona en navegador sin instalación.</em></p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Actividades Guiadas con el Simulador</h3>
+
+        <div class="actividad-body"
+            style="border: 2px solid var(--accent-color); border-radius: var(--radius-card); margin-top: 3mm;">
+            <h4>Exploración 1: Presión y Profundidad</h4>
+            <ol class="text-small">
+                <li>Abre el simulador y selecciona "Misterio"</li>
+                <li>Coloca sensores de presión a diferentes profundidades</li>
+                <li>Registra las lecturas en la tabla:</li>
+            </ol>
+            <table style="font-size: 8pt;">
+                <thead>
+                    <tr>
+                        <th>Profundidad (m)</th>
+                        <th>Presión (kPa)</th>
+                        <th>Diferencia vs. anterior</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0 (superficie)</td>
+                        <td></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-small mt-2">¿Es constante la diferencia de presión por metro de profundidad?</p>
+            <div class="linea-respuesta"></div>
+
+            <h4 class="mt-3">Exploración 2: Compara Fluidos</h4>
+            <ol class="text-small">
+                <li>Cambia el fluido de agua a miel, gasolina y otros</li>
+                <li>A la misma profundidad (2m), ¿cuál tiene mayor presión? ¿Por qué?</li>
+            </ol>
+            <div class="espacio-respuesta pequeño"></div>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>Simulador adicional recomendado:</strong> "Density" (Densidad) -
+            <em>phet.colorado.edu/es/simulations/density</em>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Reto Digital: PhET Under Pressure</span>
+            <span class="numero-pagina">16B</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 17: PROCEDIMIENTOS - PRESIÓN LOCAL
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-flujo.png" alt="">
+                <div class="titulo">Procedimientos</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Análisis de Presión Atmosférica Local: Caso Zumpango de Ocampo</h4>
+                <p>Para un ingeniero, asumir condiciones estándar (nivel del mar, 1 atm) puede ser un error fatal.</p>
+            </div>
+        </div>
+
+        <div class="pasos-container mt-4">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Recolección de Datos Meteorológicos</h4>
+                    <p>Utilizando estaciones meteorológicas locales (como la del Aeropuerto Internacional Felipe
+                        Ángeles):</p>
+                    <ul>
+                        <li><strong>Altitud:</strong> Zumpango ≈ 2,250 msnm</li>
+                        <li><strong>Presión típica:</strong> 583-586 mmHg (≈0.77 atm)</li>
+                    </ul>
+                    <div class="nota-info mt-2">
+                        <strong>Nota:</strong> Los reportes meteorológicos dan presión "ajustada al nivel del mar" (≈770
+                        mmHg). El ingeniero debe convertir a presión absoluta local.
+                    </div>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Cálculo del Punto de Ebullición</h4>
+                    <p>La reducción de presión afecta la termodinámica del agua:</p>
+                    <ul>
+                        <li>A 1 atm (760 mmHg): agua hierve a <strong>100°C</strong></li>
+                        <li>A 0.77 atm (585 mmHg): agua hierve a <strong>92-93°C</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Implicaciones Técnicas</h4>
+                    <ul>
+                        <li><strong>Cocción:</strong> Tiempos de cocción/esterilización deben extenderse</li>
+                        <li><strong>Motores:</strong> Pierden 20-25% de potencia nominal</li>
+                        <li><strong>Bombas:</strong> Mayor riesgo de cavitación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Presión Atmosférica Local</span>
+            <span class="numero-pagina">17</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 18: INFOGRAFÍA LA FÍSICA INVISIBLE
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-layout.png" alt="">
+                <div class="titulo">Infografía</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>La Física Invisible del Agua</h4>
+            </div>
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/14. infografia-fisica-invisible-agua.png" alt="Infografía: La Física Invisible del Agua"
+                style="width: 100%; max-height: 180mm; object-fit: contain;">
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Infografía</span>
+            <span class="numero-pagina">18</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 19: NOTA DESTACADA - NPSH
+         ============================================ -->
+    <div class="page">
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-nota.png" alt="">
+                <div class="titulo">Nota Destacada</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>¡Cuidado con la "Altura"! NPSH y Cavitación</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">En el diseño de sistemas de bombeo para la zona de Zumpango, ignorar la altitud es el error
+            número uno.</p>
+
+        <h3 class="mt-3">¿Qué es el NPSH?</h3>
+        <p><strong>Net Positive Suction Head</strong> (Cabeza de Succión Positiva Neta) es la diferencia entre la
+            presión absoluta en la entrada de la bomba y la presión de vapor del líquido.</p>
+
+        <div class="formula-destacada mt-3">
+            <div class="nombre">NPSH Disponible</div>
+            <div class="ecuacion">NPSH<sub>d</sub> = P<sub>atm</sub>/ρg + h<sub>s</sub> - h<sub>f</sub> -
+                P<sub>v</sub>/ρg</div>
+        </div>
+
+        <h3 class="mt-4">¿Qué es la Cavitación?</h3>
+        <p>La presión atmosférica es la fuerza que "empuja" el agua hacia la entrada de la bomba cuando esta crea un
+            vacío parcial. Con menos atmósfera disponible (585 mmHg vs 760 mmHg), la capacidad de succión se reduce
+            drásticamente.</p>
+
+        <p>Si el agua se acelera demasiado en la entrada, la presión local puede caer por debajo de la presión de vapor,
+            haciendo que el agua <strong>"hierva" en frío</strong>. Estas burbujas implosionan con la fuerza de
+            micro-balas, picando el metal de los impulsores.</p>
+
+        <div class="mt-3" style="text-align: center;">
+            <img src="imagenes/diagrama-cavitacion.jpg" alt="Diagrama Cavitación"
+                style="width: 100%; max-height: 50mm; object-fit: contain;">
+        </div>
+
+        <div class="nota-alerta mt-3">
+            <strong>Consecuencia:</strong> El ingeniero debe recalcular el NPSH disponible para evitar destruir los
+            álabes de la bomba. Una bomba diseñada para nivel del mar puede fallar prematuramente en altitudes elevadas.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: NPSH y Cavitación</span>
+            <span class="numero-pagina">19</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 20: MAPA MENTAL CAPÍTULO 1
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-red.png" alt="">
+                <div class="titulo">Mapa Mental</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Mecánica de Fluidos - Capítulo 1</h4>
+            </div>
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/15. mapa-mental-mecanica-fluidos.png" alt="Mapa Mental: Mecánica de Fluidos - Capítulo 1"
+                style="width: 100%; max-height: 160mm; object-fit: contain;">
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Mapa Mental</span>
+            <span class="numero-pagina">20</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 21: ACTIVIDAD 3 - CÁLCULOS DE PRESIÓN
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">3</div>
+                <div class="titulo">Cálculos de Presión Hidrostática</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Instrucciones</h4>
+                    <p>Resuelve los siguientes problemas aplicando la ecuación de presión hidrostática. Muestra todo el
+                        procedimiento.</p>
+                </div>
+
+                <h4>Problema 1</h4>
+                <p class="text-small">Un buzo desciende a 15 metros de profundidad en agua de mar (ρ = 1025 kg/m³). Si
+                    la presión atmosférica es 101,325 Pa, ¿cuál es la presión total que experimenta?</p>
+                <div class="espacio-respuesta"></div>
+
+                <h4 class="mt-3">Problema 2</h4>
+                <p class="text-small">Una presa tiene 40 metros de altura. Calcula la presión en la base y la fuerza
+                    total sobre una compuerta de 3m × 2m ubicada en el fondo.</p>
+                <div class="espacio-respuesta"></div>
+
+                <h4 class="mt-3">Problema 3 (Albatros Plus)</h4>
+                <p class="text-small">En Zumpango (P<sub>atm</sub> = 78,000 Pa), una bomba debe succionar agua desde un
+                    pozo. Si el NPSH requerido por la bomba es 3m y la presión de vapor del agua a 25°C es 3,169 Pa,
+                    ¿cuál es la altura máxima de succión teórica?</p>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 3: Cálculos</span>
+            <span class="numero-pagina">21</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 22: CONCLUSIÓN CAPÍTULO 1
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-diploma.png" alt="">
+                <div class="titulo">Conclusión</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>La unidad de Hidrostática nos enseña que los fluidos, aunque adaptables y aparentemente suaves,
+                    ejercen fuerzas colosales cuando se confinan o acumulan.</p>
+            </div>
+        </div>
+
+        <p class="mt-4">Desde la escala molecular que permite a la savia ascender por los árboles, hasta la escala civil
+            donde millones de litros de agua amenazan con volcar una presa, los principios son los mismos.</p>
+
+        <h3 class="mt-4">Lecciones Clave del Capítulo</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>La <strong>cohesión</strong> y <strong>adhesión</strong> determinan el comportamiento de los
+                        fluidos en contacto con superficies sólidas.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>La <strong>capilaridad</strong> es una herramienta poderosa en microfluídica y sistemas
+                        biológicos.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>La <strong>presión hidrostática</strong> depende solo de la profundidad, no de la forma del
+                        contenedor.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Las <strong>condiciones locales</strong> (altitud, temperatura) afectan significativamente los
+                        cálculos de ingeniería.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-exito mt-4">
+            <strong>Reflexión:</strong> El ingeniero exitoso no lucha contra las fuerzas de los fluidos, sino que las
+            redirige: usa la incompresibilidad para multiplicar fuerza en un gato hidráulico o la flotabilidad para
+            transportar carga. La comprensión profunda de la presión atmosférica local y las propiedades del material es
+            lo que separa un diseño seguro de una falla catastrófica.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Conclusión</span>
+            <span class="numero-pagina">22</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 23: PROFESIONALES CON VALOR - PRESA AUSTIN
+         ============================================ -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-graduado.png" alt="">
+                <div class="titulo">Profesionales con Valor</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Ética en Ingeniería Civil: El Caso de la Presa Austin</h4>
+            </div>
+        </div>
+
+        <p class="mt-3"><strong>30 de septiembre de 1911</strong> - La presa Austin en Pennsylvania colapsó, liberando
+            millones de litros de agua y acabando con la vida de más de 70 personas.</p>
+
+        <div class="dos-columnas mt-4">
+            <div class="columna">
+                <h4>El Fallo Técnico</h4>
+                <p>La presa de concreto se construyó sobre una base de <strong>roca sedimentaria permeable</strong>.</p>
+                <ul>
+                    <li>El agua se infiltró por debajo (subpresión)</li>
+                    <li>Lubricó las capas de roca</li>
+                    <li>La presa entera se deslizó</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <h4>El Fallo Ético</h4>
+                <p>Los ingenieros y propietarios <strong>ignoraron las señales de advertencia</strong>:</p>
+                <ul>
+                    <li>Grietas previas documentadas</li>
+                    <li>Fugas visibles</li>
+                    <li>Decisión de ahorrar costos</li>
+                    <li>Presión por mantener producción</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/diagrama-falla-presa-austin.jpg" alt="Diagrama Falla Presa Austin"
+                style="width: 100%; max-height: 50mm; object-fit: contain;">
+        </div>
+
+        <div class="nota-alerta mt-4">
+            <strong>Código de Ética de la Ingeniería:</strong> "La seguridad, salud y bienestar del público son
+            primordiales." Ningún ahorro presupuestal o plazo de entrega justifica poner vidas en riesgo.
+        </div>
+
+        <p class="mt-3">En <strong>Albatros Plus</strong>, analizamos estos casos no para juzgar el pasado, sino para
+            prevenir el futuro.</p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Profesionales con Valor: Presa Austin</span>
+            <span class="numero-pagina">23</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 24: ACTIVIDAD 4 - ANÁLISIS ÉTICO
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">4</div>
+                <div class="titulo">Análisis Ético de Casos de Ingeniería</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Contexto</h4>
+                    <p>Como futuro ingeniero, tu responsabilidad primera es la seguridad pública. En esta actividad
+                        reflexionarás sobre las implicaciones éticas de las decisiones de ingeniería.</p>
+                </div>
+
+                <h4>Caso de Estudio: La Presa Austin</h4>
+                <p class="text-small">Lee nuevamente el caso y responde las siguientes preguntas:</p>
+
+                <p class="text-small mt-3"><strong>1.</strong> ¿Cuáles fueron las señales de advertencia que los
+                    ingenieros ignoraron?</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <p class="text-small mt-2"><strong>2.</strong> ¿Qué presiones externas pudieron influir en la decisión
+                    de no actuar?</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <p class="text-small mt-2"><strong>3.</strong> Si tú hubieras sido el ingeniero a cargo y la gerencia te
+                    hubiera presionado para ignorar las fallas, ¿qué habrías hecho? Justifica tu respuesta.</p>
+                <div class="espacio-respuesta"></div>
+
+                <p class="text-small mt-2"><strong>4.</strong> ¿Qué medidas técnicas podrían haber prevenido la falla?
+                    Menciona al menos tres.</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <h4 class="mt-3">Reflexión Personal</h4>
+                <p class="text-small">¿Cómo aplicarías las lecciones de este caso en tu futura práctica profesional?</p>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 4: Ética</span>
+            <span class="numero-pagina">24</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 25: PRÁCTICA INTEGRADORA - HUEVO SUBMARINO
+         ============================================ -->
+    <div class="page">
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Prácticas Integradoras</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Actividad Albatros Tech: "El Huevo Submarino y la Densidad Variable"</h4>
+                <p><strong>Enfoque:</strong> Competitivo-Experimental</p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Reto</h3>
+        <p>Lograr que un huevo se mantenga en <strong>suspensión neutra</strong> (ni flote ni se hunda) en el centro de
+            un vaso de precipitados.</p>
+
+        <h3 class="mt-3">Fundamento Físico</h3>
+        <p>Cuando un objeto está sumergido en un fluido, experimenta una fuerza de empuje (Principio de Arquímedes):</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Condición de Equilibrio</div>
+            <div class="ecuacion">E = W → ρ<sub>fluido</sub> · V · g = ρ<sub>huevo</sub> · V · g</div>
+            <p class="text-small mt-2">Suspensión neutra cuando: ρ<sub>fluido</sub> ≈ ρ<sub>huevo</sub></p>
+        </div>
+
+        <h3 class="mt-4">Materiales</h3>
+        <div class="lista-materiales">
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>1 huevo crudo</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>1 vaso de precipitados o recipiente transparente alto</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Sal de mesa (suficiente para saturar)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Agua</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Cuchara para mezclar</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Cronómetro</span>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Práctica: Huevo Submarino</span>
+            <span class="numero-pagina">25</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 26: ACTIVIDAD 5 - GUÍA HUEVO SUBMARINO
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">5</div>
+                <div class="titulo">Guía del Experimento: Huevo Submarino</div>
+            </div>
+            <div class="actividad-body">
+                <h4>Procedimiento</h4>
+                <div class="pasos-container">
+                    <div class="paso">
+                        <div class="paso-numero"></div>
+                        <div class="paso-contenido">
+                            <p>Coloca el huevo en agua dulce. <strong>Observación:</strong> Se hunde (Peso > Empuje).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="paso">
+                        <div class="paso-numero"></div>
+                        <div class="paso-contenido">
+                            <p>En otro recipiente, prepara una solución saturada de sal (disuelve sal hasta que no se
+                                disuelva más).</p>
+                        </div>
+                    </div>
+                    <div class="paso">
+                        <div class="paso-numero"></div>
+                        <div class="paso-contenido">
+                            <p>Técnica del gradiente: Añade cuidadosamente la solución salina al vaso del huevo O añade
+                                agua dulce sobre una base salina.</p>
+                        </div>
+                    </div>
+                    <div class="paso">
+                        <div class="paso-numero"></div>
+                        <div class="paso-contenido">
+                            <p><strong>Meta:</strong> El equipo que logre mantener el huevo estable en el medio
+                                geométrico del vaso por 1 minuto gana.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-3">Registro de Datos</h4>
+                <table style="font-size: 8pt;">
+                    <thead>
+                        <tr>
+                            <th>Intento</th>
+                            <th>Técnica usada</th>
+                            <th>Posición del huevo</th>
+                            <th>Tiempo estable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="mt-3">Preguntas de Análisis</h4>
+                <p class="text-small">¿Por qué funciona crear un gradiente de densidad?</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <p class="text-small mt-2">¿Qué aplicaciones reales tienen los gradientes de densidad? (Pista:
+                    oceanografía, centrifugación)</p>
+                <div class="espacio-respuesta pequeño"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 5: Huevo Submarino</span>
+            <span class="numero-pagina">26</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 27: PRÁCTICA FORENSE DE PRESAS
+         ============================================ -->
+    <div class="page">
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Prácticas Integradoras</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Actividad Albatros Plus: "Investigación Forense de Estructuras (Dams)"</h4>
+                <p><strong>Enfoque:</strong> Analítico-Ético</p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Reto</h3>
+        <p>Utilizando un modelo físico de una presa en un tanque de agua, los estudiantes deben predecir y provocar tres
+            modos de falla.</p>
+
+        <div class="cuadro-comparativo mt-4">
+            <div class="cuadro-comparativo-header">
+                <h3>Modos de Falla en Presas</h3>
+            </div>
+            <div class="cuadro-comparativo-body" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="cuadro-col" style="border-right: 1px solid var(--primary-color);">
+                    <h4 style="color: var(--primary-color);">1. Volcamiento</h4>
+                    <p class="text-small">Aumentar el nivel del agua hasta que el momento de fuerza supere el momento
+                        estabilizador del peso de la presa.</p>
+                </div>
+                <div class="cuadro-col" style="border-right: 1px solid var(--primary-color);">
+                    <h4 style="color: var(--secondary-color);">2. Deslizamiento</h4>
+                    <p class="text-small">Lubricar la base del modelo para simular la subpresión (como en la Presa
+                        Austin).</p>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--accent-color);">3. Falla de Material</h4>
+                    <p class="text-small">Usar un material degradable para simular concreto de baja calidad.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Materiales Sugeridos para el Modelo</h3>
+        <div class="dos-columnas">
+            <div class="columna">
+                <ul>
+                    <li>Tanque transparente</li>
+                    <li>Bloques de madera o acrílico</li>
+                    <li>Plastilina o arcilla</li>
+                    <li>Aceite o jabón (lubricante)</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <ul>
+                    <li>Azúcar compactado (material degradable)</li>
+                    <li>Agua coloreada</li>
+                    <li>Regla y transportador</li>
+                    <li>Cámara para documentar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>Entregable:</strong> Un reporte técnico de una página (formato ejecutivo) recomendando medidas
+            correctivas (ej. inyección de lechada en la base, aumentar el ancho de la base, vertederos de emergencia).
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Práctica: Forense de Presas</span>
+            <span class="numero-pagina">27</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 28: RECURSOS DEL CAPÍTULO
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Recursos</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Herramientas y materiales de apoyo para el Capítulo 1.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Simuladores Interactivos</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Recurso</th>
+                    <th>Tema</th>
+                    <th>Enlace</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PhET "Bajo Presión"</td>
+                    <td>Presión hidrostática P = ρgh</td>
+                    <td>phet.colorado.edu</td>
+                </tr>
+                <tr>
+                    <td>PhET "Estados de la Materia"</td>
+                    <td>Cohesión molecular</td>
+                    <td>phet.colorado.edu</td>
+                </tr>
+                <tr>
+                    <td>PhET "Density"</td>
+                    <td>Flotabilidad y densidad</td>
+                    <td>phet.colorado.edu</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="mt-4">Lecturas Técnicas</h3>
+        <ul>
+            <li><strong>"Why Buildings Fall Down"</strong> de Matthys Levy - Capítulo sobre presas</li>
+            <li><strong>Manual de Bombas Grundfos</strong> - Sección de NPSH y Cavitación</li>
+            <li><strong>Mecánica de Fluidos</strong> de White - Capítulos 1-3</li>
+        </ul>
+
+        <h3 class="mt-4">Videos Recomendados</h3>
+        <ul>
+            <li>"Surface Tension and Water" - Veritasium</li>
+            <li>"How Dams Work" - Practical Engineering</li>
+            <li>"Cavitation - A Major Problem" - Real Engineering</li>
+        </ul>
+
+        <div class="nota-info mt-4">
+            <strong>Consejo:</strong> Antes de pasar al Capítulo 2, asegúrate de poder resolver problemas de presión
+            hidrostática y explicar la diferencia entre cohesión y adhesión.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Recursos</span>
+            <span class="numero-pagina">28</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 29: MINI ACTIVIDADES
+         ============================================ -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Mini Actividades</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Ejercicios rápidos para reforzar los conceptos del capítulo.</p>
+            </div>
+        </div>
+
+        <h4 class="mt-4">1. Cálculo Rápido</h4>
+        <p>Si la presión en el fondo de la Fosa de las Marianas (11,000 m) es aprox 1086 bar, y la densidad del agua de
+            mar aumenta ligeramente por compresión, ¿cuál es la fuerza total sobre la ventanilla de un batiscafo de 20
+            cm de diámetro?</p>
+        <div class="formula">F = P · A = P · πr²</div>
+        <div class="espacio-respuesta pequeño"></div>
+
+        <h4 class="mt-4">2. Debate Flash</h4>
+        <p>¿Por qué los insectos pequeños pueden ahogarse dentro de una gota de agua de la que no pueden escapar,
+            mientras que para nosotros el agua no es "pegajosa"?</p>
+        <p class="text-small"><em>Pista: Piensa en la relación Superficie/Volumen y la Tensión Superficial.</em></p>
+        <div class="espacio-respuesta pequeño"></div>
+
+        <h4 class="mt-4">3. Observación Local</h4>
+        <p>Usa una app de barómetro en tu celular para medir la presión en la planta baja y en el último piso de tu
+            escuela o edificio.</p>
+        <ul>
+            <li>Presión planta baja: _______ hPa</li>
+            <li>Presión último piso: _______ hPa</li>
+            <li>Diferencia de altura estimada: _______ m</li>
+        </ul>
+        <p class="text-small mt-2">¿Detecta el sensor la diferencia de ρgh? ¿Es significativa?</p>
+        <div class="espacio-respuesta pequeño"></div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Mini Actividades</span>
+            <span class="numero-pagina">29</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 30: TIP EXTRA Y RETO DIGITAL
+         ============================================ -->
+    <div class="page">
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Tip Extra</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>La Ventaja del Material en Sistemas Hidráulicos</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">En sistemas hidráulicos, no uses agua pura si puedes evitarlo. El agua corroe componentes
+            férricos y no lubrica.</p>
+
+        <h4 class="mt-3">Los sistemas profesionales usan aceite hidráulico porque:</h4>
+        <ol>
+            <li>Es <strong>incompresible</strong> (como el agua)</li>
+            <li><strong>Lubrica</strong> los pistones y sellos, alargando la vida útil</li>
+            <li><strong>Previene</strong> la oxidación de componentes metálicos</li>
+        </ol>
+
+        <div class="nota-exito mt-4">
+            <strong>Tip Albatros Maker:</strong> Para proyectos escolares con jeringas, agrega un poco de
+            <strong>glicerina</strong> al agua o usa agua con colorante vegetal y una gota de <strong>jabón
+                líquido</strong> para lubricar las gomas de los émbolos y evitar el fenómeno de "stick-slip"
+            (atascamiento).
+        </div>
+
+        <div class="capsula mt-6">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-circuito.png" alt="">
+                <div class="titulo">Reto Digital</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Simulación de Compuertas Lógicas Hidráulicas</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">Los fluidos también pueden computar. Antes de la electrónica, existían sistemas lógicos
+            fluídicos.</p>
+
+        <ul>
+            <li><strong>Plataforma:</strong> Simulador de fluidos 2D (FluidSIM - versión demo)</li>
+            <li><strong>Reto:</strong> Diseñar un circuito que funcione como una puerta lógica AND. El cilindro C solo
+                debe extenderse si las válvulas A Y B están activas simultáneamente.</li>
+            <li><strong>Bonus:</strong> Investigar sobre la "Fluidónica" usada en cohetes y entornos de alta radiación
+                donde los chips electrónicos fallan.</li>
+        </ul>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 1: Tip Extra y Reto Digital</span>
+            <span class="numero-pagina">30</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 31: SEPARADOR CAPÍTULO 2
+         ============================================ -->
+    <div class="page separador-capitulo">
+        <div class="numero-capitulo">02</div>
+        <h1>Hidrodinámica y Aerodinámica Aplicada</h1>
+        <p class="descripcion">
+            Del estudio de fuerzas estáticas al análisis de fluidos en movimiento.
+            Continuidad, Bernoulli y la física detrás de los autos de F1.
+        </p>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 32: OBJETIVO CAPÍTULO 2
+         ============================================ -->
+    <div class="page">
+        <h2>Capítulo 2: Hidrodinámica y Aerodinámica Aplicada</h2>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Transitar del estudio de fuerzas estáticas al análisis de fluidos en movimiento, aplicando las
+                    ecuaciones de <strong>Continuidad</strong> y <strong>Bernoulli</strong> para comprender fenómenos
+                    complejos como la sustentación aeronáutica y el efecto suelo en automovilismo de competición.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Lo que aprenderás en este capítulo</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Aplicar la <strong>Ecuación de Continuidad</strong> para analizar flujos en tuberías y canales.
+                    </p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Comprender el <strong>Principio de Bernoulli</strong> y su relación presión-velocidad.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Diferenciar entre las explicaciones correctas e incorrectas de la sustentación.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Analizar la aerodinámica de F1: alerones invertidos, efecto suelo y difusores.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Construir un <strong>Tubo Venturi demostrativo</strong> y ejecutar simulaciones CFD básicas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-4">
+            <strong>Prerrequisito:</strong> Asegúrate de dominar los conceptos del Capítulo 1 (presión, densidad) antes
+            de continuar.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 2: Objetivos</span>
+            <span class="numero-pagina">32</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 33: ECUACIÓN DE CONTINUIDAD
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Conceptos</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>2.1 Ecuación de Continuidad: La Conservación de la Masa</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">Si un fluido es <strong>incompresible</strong> (densidad constante, como el agua a bajas
+            presiones), la cantidad de masa que entra en un tubo debe ser igual a la que sale.</p>
+
+        <div class="formula-destacada mt-4">
+            <div class="nombre">Ecuación de Continuidad</div>
+            <div class="ecuacion">A₁ · v₁ = A₂ · v₂</div>
+            <p class="text-small mt-2">Donde A = área transversal y v = velocidad del fluido</p>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>Interpretación:</strong> Si reducimos el área (A) de una tubería, la velocidad (v) del fluido debe
+            <strong>aumentar</strong>. Es el principio detrás de la boquilla de una manguera de jardín y de los
+            inyectores de combustible.
+        </div>
+
+        <h3 class="mt-4">Ejemplo Visual</h3>
+        <div style="text-align: center;">
+            <img src="imagenes/diagrama-continuidad.png" alt="Diagrama Continuidad"
+                style="width: 100%; max-height: 55mm; object-fit: contain;">
+        </div>
+
+        <h4 class="mt-3">Caudal Volumétrico</h4>
+        <p>El caudal (Q) es el volumen de fluido que pasa por una sección en un tiempo dado:</p>
+        <div class="formula">
+            Q = A · v = constante [m³/s]
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 2: Continuidad</span>
+            <span class="numero-pagina">33</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 34: CUADRO COMPARATIVO ÁREA-VELOCIDAD
+         ============================================ -->
+    <div class="page">
+        <div class="cuadro-comparativo">
+            <div class="cuadro-comparativo-header">
+                <h3>Relación Área - Velocidad en Flujos Incompresibles</h3>
+            </div>
+            <div class="cuadro-comparativo-body">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">Sección Grande (A↑)</h4>
+                    <ul>
+                        <li>Velocidad <strong>baja</strong></li>
+                        <li>Presión <strong>alta</strong> (Bernoulli)</li>
+                        <li>Flujo más lento</li>
+                        <li>Ejemplo: tubería principal</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">Sección Pequeña (A↓)</h4>
+                    <ul>
+                        <li>Velocidad <strong>alta</strong></li>
+                        <li>Presión <strong>baja</strong> (Bernoulli)</li>
+                        <li>Flujo más rápido</li>
+                        <li>Ejemplo: boquilla, inyector</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Ejemplo Resuelto</h3>
+        <div class="esquema">
+            <div class="esquema-header">PROBLEMA</div>
+            <div class="esquema-body">
+                <p>Agua fluye por una tubería de 10 cm de diámetro a 2 m/s. Si la tubería se reduce a 5 cm de diámetro,
+                    ¿cuál es la nueva velocidad?</p>
+            </div>
+        </div>
+
+        <h4 class="mt-3">Solución:</h4>
+        <div class="formula">
+            A₁v₁ = A₂v₂
+        </div>
+        <div class="formula">
+            π(0.05)²(2) = π(0.025)²(v₂)
+        </div>
+        <div class="formula">
+            v₂ = (0.05² × 2) / 0.025² = (0.0025 × 2) / 0.000625 = <strong>8 m/s</strong>
+        </div>
+
+        <div class="nota-exito mt-3">
+            <strong>Resultado:</strong> Al reducir el diámetro a la mitad, el área se reduce a 1/4 y la velocidad se
+            cuadruplica.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 2: Área vs Velocidad</span>
+            <span class="numero-pagina">34</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 35: PRINCIPIO DE BERNOULLI
+         ============================================ -->
+    <div class="page">
+        <h2>2.2 Principio de Bernoulli: La Conservación de la Energía</h2>
+
+        <p>Bernoulli establece que para un flujo no viscoso e incompresible, la suma de la presión estática, la presión
+            dinámica (energía cinética) y la presión hidrostática (energía potencial) es constante a lo largo de una
+            línea de corriente.</p>
+
+        <div class="formula-destacada mt-4">
+            <div class="nombre">Ecuación de Bernoulli</div>
+            <div class="ecuacion">P + ½ρv² + ρgh = constante</div>
+        </div>
+
+        <div class="dos-columnas mt-4">
+            <div class="columna">
+                <h4>Componentes de la ecuación:</h4>
+                <ul>
+                    <li><strong>P</strong> = Presión estática</li>
+                    <li><strong>½ρv²</strong> = Presión dinámica</li>
+                    <li><strong>ρgh</strong> = Presión hidrostática</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <h4>Interpretación:</h4>
+                <p>Donde la velocidad del fluido <strong>aumenta</strong>, la presión interna <strong>disminuye</strong>
+                    (si la altura es constante).</p>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-4">
+            <strong>Interpretación Crítica:</strong> Este intercambio de energía es contraintuitivo pero fundamental. Es
+            la base de fenómenos como la sustentación de aviones, el funcionamiento de atomizadores y el efecto Venturi.
+        </div>
+
+        <h3 class="mt-4">Simplificación para Flujo Horizontal (h = cte)</h3>
+        <div class="formula">
+            P₁ + ½ρv₁² = P₂ + ½ρv₂²
+        </div>
+
+        <p class="mt-3">Si v₂ > v₁ entonces P₂ < P₁. <strong>Mayor velocidad = menor presión.</strong></p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 2: Bernoulli</span>
+            <span class="numero-pagina">35</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 36: ACTIVIDAD 6 - PROBLEMAS BERNOULLI
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">6</div>
+                <div class="titulo">Problemas de Bernoulli y Continuidad</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Instrucciones</h4>
+                    <p>Resuelve los siguientes problemas aplicando las ecuaciones de Continuidad y Bernoulli.</p>
+                </div>
+
+                <h4>Problema 1: Manguera de Jardín</h4>
+                <p class="text-small">Agua sale de una manguera de 2 cm de diámetro a 3 m/s. Si tapas parcialmente la
+                    salida reduciendo el diámetro efectivo a 0.5 cm, ¿a qué velocidad sale ahora el agua?</p>
+                <div class="espacio-respuesta"></div>
+
+                <h4 class="mt-3">Problema 2: Tubo Venturi</h4>
+                <p class="text-small">En un tubo Venturi, la sección ancha tiene diámetro de 8 cm y presión de 150 kPa.
+                    La sección angosta tiene diámetro de 4 cm. Si el agua fluye a 2 m/s en la sección ancha, calcula: a)
+                    La velocidad en la sección angosta b) La presión en la sección angosta</p>
+                <div class="espacio-respuesta"></div>
+
+                <h4 class="mt-3">Problema 3 (Albatros Plus)</h4>
+                <p class="text-small">Un avión vuela a nivel constante. El aire sobre el ala viaja a 250 m/s y debajo
+                    del ala a 200 m/s. Si la densidad del aire es 1.2 kg/m³, ¿cuál es la diferencia de presión entre la
+                    parte superior e inferior del ala?</p>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 6: Bernoulli</span>
+            <span class="numero-pagina">36</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 37: AERODINÁMICA AVANZADA
+         ============================================ -->
+    <div class="page">
+        <h2>2.3 Aerodinámica Avanzada: Más allá de Bernoulli</h2>
+
+        <div class="nota-alerta">
+            <strong>Corrección de mito común:</strong> En la enseñanza básica se suele explicar el vuelo solo con
+            Bernoulli ("el aire recorre más distancia por arriba del ala → va más rápido → menos presión →
+            sustentación"). Sin embargo, esto es <strong>incompleto y técnicamente incorrecto</strong> ("Teoría del
+            tiempo de tránsito igual").
+        </div>
+
+        <h3 class="mt-4">La Explicación Completa</h3>
+        <p>Para un enfoque Albatros Competitivo, debemos integrar la <strong>Tercera Ley de Newton</strong> y el
+            concepto de <strong>Circulación</strong>.</p>
+
+        <div class="dos-columnas mt-4">
+            <div class="columna">
+                <h4>Explicación por Bernoulli</h4>
+                <p>La forma del ala acelera el aire en la parte superior, creando una zona de baja presión.</p>
+                <p class="mt-2">La diferencia de presión entre arriba (baja) y abajo (alta) genera una fuerza neta hacia
+                    arriba.</p>
+            </div>
+            <div class="columna">
+                <h4>Explicación por Newton</h4>
+                <p>El ala desvía el flujo de aire hacia abajo (<strong>downwash</strong>).</p>
+                <p class="mt-2">Por la tercera ley de Newton (acción-reacción), el aire empuja el ala hacia arriba.</p>
+            </div>
+        </div>
+
+        <div class="nota-exito mt-4">
+            <strong>Conclusión:</strong> Ambos principios (Bernoulli y Newton) son descripciones matemáticas simultáneas
+            del mismo fenómeno físico. Ninguno es "más correcto" que el otro; son perspectivas complementarias.
+        </div>
+
+        <h3 class="mt-4">El Error del "Tiempo de Tránsito Igual"</h3>
+        <p>La idea de que las partículas de aire deben encontrarse en el borde posterior del ala es
+            <strong>falsa</strong>. En realidad, el aire que pasa por arriba llega <strong>antes</strong> que el de
+            abajo porque va genuinamente más rápido.
+        </p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 2: Aerodinámica Avanzada</span>
+            <span class="numero-pagina">37</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 38: AERODINÁMICA F1
+         ============================================ -->
+    <div class="page">
+        <h2>Aerodinámica de Fórmula 1: "Volar Invertido"</h2>
+
+        <p>En F1, buscamos lo opuesto al avión: <strong>Downforce</strong> (Fuerza descendente) para pegar el coche al
+            suelo en curvas a 300 km/h.</p>
+
+        <div class="dos-columnas mt-4">
+            <div class="columna">
+                <h4>Alerones Invertidos</h4>
+                <p>Tienen la cara curva hacia <strong>abajo</strong>.</p>
+                <ul>
+                    <li>El aire se acelera por debajo</li>
+                    <li>Crea baja presión (succión) hacia el asfalto</li>
+                    <li>Genera downforce a costa de arrastre</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <h4>Efecto Suelo y Difusores</h4>
+                <p>El fondo del coche actúa como un <strong>tubo Venturi</strong>.</p>
+                <ul>
+                    <li>Al acercarse al suelo, el área de flujo se reduce</li>
+                    <li>El aire se acelera brutalmente</li>
+                    <li>Crea zona de muy baja presión</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-4">
+            <strong>Dato F1:</strong> Un coche de Fórmula 1 moderno genera suficiente downforce a 180 km/h para conducir
+            teóricamente por el techo de un túnel. Es mucho más eficiente que los alerones porque genera downforce con
+            menos drag (resistencia).
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/diagrama-f1-downforce.png" alt="Diagrama F1 Downforce"
+                style="width: 100%; max-height: 60mm; object-fit: contain;">
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 2: Aerodinámica F1</span>
+            <span class="numero-pagina">38</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 39: ESQUEMA F1 VS AVIACIÓN
+         ============================================ -->
+    <div class="page">
+        <div class="esquema">
+            <div class="esquema-header">ESQUEMA COMPARATIVO: F1 vs Aviación</div>
+            <div class="esquema-body">
+                <div style="text-align: center;">
+                    <img src="imagenes/infografia-f1-vs-avion.png" alt="Infografía F1 vs Avión"
+                        style="width: 100%; max-height: 170mm; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 2: Esquema F1 vs Aviación</span>
+            <span class="numero-pagina">39</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 40: INFOGRAFÍA AERODINÁMICA
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-layout.png" alt="">
+                <div class="titulo">Infografía</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Aerodinámica: F1 vs Aviación</h4>
+            </div>
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/infografia-aerodinamica-completa.png" alt="Infografía Aerodinámica Completa"
+                style="width: 100%; max-height: 180mm; object-fit: contain;">
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 2: Infografía</span>
+            <span class="numero-pagina">40</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 41: TUTORIAL TUBO VENTURI
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-flujo.png" alt="">
+                <div class="titulo">Procedimientos</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Tutorial Albatros Tech: Construcción de un Tubo Venturi Demostrativo</h4>
+            </div>
+        </div>
+
+        <p class="mt-3"><strong>Objetivo:</strong> Visualizar la caída de presión de Bernoulli.</p>
+
+        <h3 class="mt-3">Materiales</h3>
+        <div class="lista-materiales">
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>2 botellas de plástico transparente (2L y 600ml)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Cinta adhesiva resistente</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>3 tubos transparentes delgados (popotes/pajillas)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Agua con colorante</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Secador de pelo o soplador de hojas</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Recipiente para el agua</span>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Procedimiento de Montaje</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Corta las botellas para crear un túnel que se estrecha al centro (botella grande → botella chica
+                        → botella grande).</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Perfora e inserta verticalmente los tubos delgados en tres puntos: antes del estrechamiento (A),
+                        en el estrechamiento (B) y después (C).</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Sumerge los extremos inferiores de estos tubos en un reservorio de agua teñida.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Tutorial: Tubo Venturi</span>
+            <span class="numero-pagina">41</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 42: ACTIVIDAD 7 - CONSTRUCCIÓN VENTURI
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">7</div>
+                <div class="titulo">Construcción y Prueba del Tubo Venturi</div>
+            </div>
+            <div class="actividad-body">
+                <h4>Prueba del Dispositivo</h4>
+                <ol>
+                    <li>Sopla aire fuertemente por el eje horizontal del túnel con el secador</li>
+                    <li>Observa el nivel de agua en los tres manómetros (A, B, C)</li>
+                    <li>Registra tus observaciones</li>
+                </ol>
+
+                <h4 class="mt-3">Esquema de tu dispositivo:</h4>
+                <div class="espacio-respuesta grande"></div>
+
+                <h4 class="mt-3">Observaciones:</h4>
+                <table style="font-size: 8pt;">
+                    <thead>
+                        <tr>
+                            <th>Punto</th>
+                            <th>Posición</th>
+                            <th>Nivel del agua</th>
+                            <th>Interpretación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>Antes del estrechamiento</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>En el estrechamiento</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>Después del estrechamiento</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="mt-3">Pregunta de análisis:</h4>
+                <p class="text-small">¿Por qué el agua sube más en el punto B (estrechamiento)? Explica usando el efecto
+                    Venturi.</p>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 7: Venturi</span>
+            <span class="numero-pagina">42</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 43: TUTORIAL CFD SIMSCALE
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-flujo.png" alt="">
+                <div class="titulo">Procedimientos</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Tutorial Albatros Plus: Simulación CFD Básica en SimScale</h4>
+            </div>
+        </div>
+
+        <p class="mt-3"><strong>Objetivo:</strong> Obtener el Coeficiente de Arrastre (C<sub>d</sub>) de un objeto
+            simple.</p>
+
+        <div class="pasos-container mt-4">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Registro</h4>
+                    <p>Crear cuenta académica gratuita en <strong>simscale.com</strong></p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Importar Geometría</h4>
+                    <p>Subir un archivo CAD (ej. una esfera o un coche simplificado tipo F1 in Schools).</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Configurar Dominio (Túnel de Viento Virtual)</h4>
+                    <p>Crear un volumen de aire ("Enclosure"). Dimensiones: mínimo 3x largo adelante y 6x hacia atrás.
+                    </p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Condiciones de Frontera</h4>
+                    <ul>
+                        <li><strong>Inlet (Entrada):</strong> Velocity Inlet (ej. 20 m/s)</li>
+                        <li><strong>Outlet (Salida):</strong> Pressure Outlet (0 Pa manométrica)</li>
+                        <li><strong>Paredes:</strong> Slip walls para túnel, No-slip para objeto</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Mallado (Meshing)</h4>
+                    <p>Usar "Hex-dominant automatic". Refinar cerca de la superficie (Boundary Layers).</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Simulación y Post-Proceso</h4>
+                    <p>Ejecutar solver "Incompressible". Visualizar Streamlines coloreadas por velocidad.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Tutorial: CFD SimScale</span>
+            <span class="numero-pagina">43</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 44: RETO DIGITAL CFD
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-circuito.png" alt="">
+                <div class="titulo">Reto Digital</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Optimización Aerodinámica Virtual</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">Utilizando los resultados del tutorial de SimScale:</p>
+
+        <div class="pasos-container mt-3">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Modificar el diseño CAD original (ej. agregar un carenado o "fairing" a la parte trasera de la
+                        esfera para hacerla una gota).</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Correr la simulación nuevamente con la geometría modificada.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p><strong>Meta:</strong> Reducir el coeficiente de arrastre (C<sub>d</sub>) en al menos un 20%.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Documentar cómo la eliminación de la turbulencia trasera (separación de flujo) reduce la
+                        resistencia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/captura-simscale-comparativa.jpg" alt="Captura SimScale Comparativa"
+                style="width: 100%; max-height: 65mm; object-fit: contain;">
+        </div>
+
+        <div class="nota-exito mt-4">
+            <strong>Competencia F1 in Schools:</strong> Los equipos ganadores optimizan sus coches en CFD antes de
+            fabricar, logrando Cd de 0.08-0.12 con alto downforce.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Reto Digital: CFD</span>
+            <span class="numero-pagina">44</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 45: SEPARADOR CAPÍTULO 3
+         ============================================ -->
+    <div class="page separador-capitulo">
+        <div class="numero-capitulo">03</div>
+        <h1>Proyecto Maker e Hidráulica Avanzada</h1>
+        <p class="descripcion">
+            Construye un brazo robótico hidráulico funcional y explora
+            la robótica blanda del futuro.
+        </p>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 46: OBJETIVO PROYECTO MAKER
+         ============================================ -->
+    <div class="page">
+        <h2>Capítulo 3: Proyecto Maker e Hidráulica Avanzada</h2>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Integrar los conocimientos de <strong>Pascal</strong> y transmisión de potencia para construir un
+                    <strong>manipulador robótico funcional</strong>. El proyecto evoluciona en dos niveles: uno
+                    puramente mecánico (<strong>Tech</strong>) y uno mecatrónico (<strong>Plus</strong>) que introduce
+                    sensores y control.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Fases del Proyecto</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fase</th>
+                    <th>Nivel</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Tech</td>
+                    <td>Diseño y construcción mecánica del brazo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tech</td>
+                    <td>Sistema hidráulico con jeringas</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Plus</td>
+                    <td>Integración de sensor de fuerza (FSR)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Plus</td>
+                    <td>Programación Arduino y calibración</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Competitivo</td>
+                    <td>Reto "Protocolo HAZMAT"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-info mt-4">
+            <strong>Escenario:</strong> Un equipo de respuesta a materiales peligrosos necesita un manipulador remoto
+            para mover contenedores de residuos tóxicos sin exponer a los operadores.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 3: Objetivos</span>
+            <span class="numero-pagina">46</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 47: INTRODUCCIÓN TÉCNICA
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Introducción Técnica</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Actuación Hidráulica vs Eléctrica</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">En robótica avanzada, como el robot <strong>Atlas de Boston Dynamics</strong> (versiones
+            anteriores), se prefería la hidráulica por su inigualable <strong>Densidad de Potencia</strong>.</p>
+
+        <div class="cuadro-comparativo mt-4">
+            <div class="cuadro-comparativo-header">
+                <h3>Comparativa: Hidráulica vs Eléctrica</h3>
+            </div>
+            <div class="cuadro-comparativo-body">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">Hidráulica</h4>
+                    <p><strong>Ventajas:</strong></p>
+                    <ul>
+                        <li>Alta densidad de potencia</li>
+                        <li>Soporta impactos (saltos)</li>
+                        <li>Bloqueo sin consumir energía</li>
+                        <li>Feedback háptico natural</li>
+                    </ul>
+                    <p class="mt-2"><strong>Desventajas:</strong></p>
+                    <ul>
+                        <li>"Sucia" (fugas de aceite)</li>
+                        <li>Ruidosa</li>
+                        <li>Difícil control de precisión</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">Eléctrica</h4>
+                    <p><strong>Ventajas:</strong></p>
+                    <ul>
+                        <li>Limpia y silenciosa</li>
+                        <li>Control de precisión milimétrica</li>
+                        <li>Eficiencia energética</li>
+                        <li>Fácil programación</li>
+                    </ul>
+                    <p class="mt-2"><strong>Desventajas:</strong></p>
+                    <ul>
+                        <li>Menor densidad de potencia</li>
+                        <li>Engranajes pueden dañarse</li>
+                        <li>Consume energía para mantener posición</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-info mt-4">
+            <strong>Tendencia actual:</strong> La industria se mueve hacia lo eléctrico (Nuevo Atlas 2024). Sin embargo,
+            en proyectos escolares, la hidráulica de jeringas permite "sentir" la fuerza y visualizar la física
+            directamente.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 3: Introducción</span>
+            <span class="numero-pagina">47</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 48: ACTIVIDAD 8 - LISTA MATERIALES
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">8</div>
+                <div class="titulo">Lista de Materiales y Diseño del Brazo HAZMAT</div>
+            </div>
+            <div class="actividad-body">
+                <h4>Lista de Materiales (marca lo que ya tienes)</h4>
+                <div class="lista-materiales">
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Cartón corrugado (doble pared) - 50x70 cm mínimo</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>8 jeringas de 10ml (4 pares maestro-esclavo)</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Manguera de vinilo transparente (2m aprox)</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Abatelenguas o palitos de madera (10 unidades)</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Clips metálicos grandes (para pivotes)</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Cinchos de plástico (bolsa de 50)</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Colorante vegetal (4 colores diferentes)</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Pistola de silicón y barras</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Cúter y tijeras</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-check"></div><span>Regla y escuadra</span>
+                    </div>
+                </div>
+
+                <h4 class="mt-3">Diseño de Eslabones</h4>
+                <p class="text-small">Dibuja tu diseño preliminar. El brazo debe tener: Base (giro), Hombro (elevación),
+                    Codo (alcance) y Pinza (agarre).</p>
+                <div class="espacio-respuesta grande"></div>
+
+                <h4 class="mt-2">Código de colores para circuitos:</h4>
+                <div class="dos-columnas">
+                    <div class="columna">
+                        <ul class="text-small">
+                            <li><strong style="color: blue;">Azul:</strong> Base (Giro)</li>
+                            <li><strong style="color: green;">Verde:</strong> Hombro (Elevación)</li>
+                        </ul>
+                    </div>
+                    <div class="columna">
+                        <ul class="text-small">
+                            <li><strong style="color: orange;">Amarillo:</strong> Codo (Alcance)</li>
+                            <li><strong style="color: red;">Rojo:</strong> Pinza (Agarre)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 8: Materiales</span>
+            <span class="numero-pagina">48</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 49: PROCEDIMIENTO FASE 1
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-flujo.png" alt="">
+                <div class="titulo">Procedimientos</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Fase 1: Ingeniería Mecánica (Albatros Tech)</h4>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Paso 1: Diseño de Eslabones</h3>
+        <p>Cortar en cartón la Base, Hombro, Codo y Pinza. Usar perfiles en "U" o cajón para dar rigidez estructural (el
+            cartón plano se dobla fácilmente bajo carga).</p>
+
+        <div class="mt-3" style="text-align: center;">
+            <img src="imagenes/plantilla-eslabones.jpg" alt="Plantilla Eslabones"
+                style="width: 100%; max-height: 45mm; object-fit: contain;">
+        </div>
+
+        <h3 class="mt-4">Paso 2: Sistema Hidráulico (Ley de Pascal)</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Conectar dos jeringas con una manguera (un par para cada articulación).</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Llenar el sistema <strong>sumergido en agua</strong> para evitar burbujas de aire.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>Añadir colorante para identificar cada circuito.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-4">
+            <strong>CRÍTICO:</strong> El aire es compresible. Si queda aire atrapado en el sistema, el brazo tendrá
+            "juego" y será impreciso. Purga todas las burbujas antes de sellar las conexiones.
+        </div>
+
+        <h3 class="mt-4">Paso 3: Montaje</h3>
+        <ul>
+            <li>Fijar las "Jeringas Esclavas" en el brazo usando cinchos (el pegamento suele despegarse con la fuerza)
+            </li>
+            <li>Conectar los émbolos a los eslabones móviles</li>
+            <li>Crear un "Panel de Control Maestro" donde se montan las jeringas que operará el usuario</li>
+        </ul>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 3: Fase 1</span>
+            <span class="numero-pagina">49</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 50: PROCEDIMIENTO FASE 2 - FSR
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-flujo.png" alt="">
+                <div class="titulo">Procedimientos</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Fase 2: Ingeniería Mecatrónica (Albatros Plus)</h4>
+            </div>
+        </div>
+
+        <p class="mt-3"><strong>Mejora:</strong> Dotar al brazo de "sentido del tacto" y control digital mediante un
+            sensor de fuerza.</p>
+
+        <h3 class="mt-4">Integración de Sensor de Fuerza (FSR)</h3>
+
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Hardware</h4>
+                    <p>Pegar un sensor FSR (Force Sensitive Resistor) en la cara interna de una de las pinzas.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Circuito</h4>
+                    <p>Conectar el FSR en un divisor de tensión con una resistencia de 10kΩ. Conectar el punto medio al
+                        pin A0 de un Arduino UNO.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/19. circuito-fsr-arduino.png" alt="Circuito FSR-Arduino"
+                style="width: 100%; max-height: 45mm; object-fit: contain;">
+        </div>
+
+        <div class="nota-info mt-4">
+            <strong>Nota Técnica:</strong> Los FSR no son lineales. Para mayor precisión, se debe calcular la
+            conductancia (1/R) que sí es lineal con la fuerza aplicada.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 3: Fase 2 - FSR</span>
+            <span class="numero-pagina">50</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 51: CÓDIGO ARDUINO
+         ============================================ -->
+    <div class="page">
+        <h3>Código de Control Arduino</h3>
+
+        <div class="codigo">
+            <span class="comentario">// Lectura de presión para evitar aplastar objetos frágiles</span>
+            <span class="keyword">int</span> fsrPin = A0;
+            <span class="keyword">int</span> fsrReading;
+            <span class="keyword">int</span> umbralAlerta = <span class="numero">500</span>; <span class="comentario">//
+                Calibrar según el sensor</span>
+
+            <span class="keyword">void</span> setup() {
+            Serial.begin(<span class="numero">9600</span>);
+            pinMode(LED_BUILTIN, OUTPUT);
+            Serial.println(<span class="string">"Sistema HAZMAT iniciado"</span>);
+            }
+
+            <span class="keyword">void</span> loop() {
+            fsrReading = analogRead(fsrPin);
+
+            <span class="comentario">// Mostrar lectura en monitor serial</span>
+            Serial.print(<span class="string">"Fuerza: "</span>);
+            Serial.println(fsrReading);
+
+            <span class="comentario">// Si la presión supera un umbral seguro</span>
+            <span class="keyword">if</span> (fsrReading > umbralAlerta) {
+            digitalWrite(LED_BUILTIN, HIGH); <span class="comentario">// Alerta visual</span>
+            Serial.println(<span class="string">"¡ALERTA: PRESIÓN CRÍTICA!"</span>);
+            } <span class="keyword">else</span> {
+            digitalWrite(LED_BUILTIN, LOW);
+            }
+
+            delay(<span class="numero">100</span>); <span class="comentario">// Lectura cada 100ms</span>
+            }
+        </div>
+
+        <h4 class="mt-4">Explicación del código:</h4>
+        <ul>
+            <li><strong>analogRead(fsrPin)</strong>: Lee el voltaje del divisor (0-1023)</li>
+            <li><strong>umbralAlerta</strong>: Valor a calibrar experimentalmente</li>
+            <li><strong>LED_BUILTIN</strong>: LED integrado como alerta visual</li>
+            <li><strong>Serial.println</strong>: Envía datos al monitor para depuración</li>
+        </ul>
+
+        <div class="nota-exito mt-4">
+            <strong>Aplicación real:</strong> Este sistema simula la protección háptica de robots quirúrgicos como el Da
+            Vinci, que evitan aplicar fuerza excesiva en tejidos delicados.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 3: Código Arduino</span>
+            <span class="numero-pagina">51</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 52: ACTIVIDAD 9 - MONTAJE CIRCUITO
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">9</div>
+                <div class="titulo">Montaje del Circuito FSR y Calibración</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Objetivo</h4>
+                    <p>Montar el circuito del sensor de fuerza y calibrar el umbral de alerta.</p>
+                </div>
+
+                <h4>Materiales adicionales:</h4>
+                <ul class="text-small">
+                    <li>Arduino UNO o compatible</li>
+                    <li>Sensor FSR (Force Sensitive Resistor)</li>
+                    <li>Resistencia de 10kΩ</li>
+                    <li>Protoboard y cables</li>
+                    <li>Cable USB para programación</li>
+                </ul>
+
+                <h4 class="mt-3">Diagrama de conexión:</h4>
+                <div class="espacio-respuesta" style="height: 35mm;"></div>
+
+                <h4 class="mt-3">Tabla de Calibración:</h4>
+                <p class="text-small">Coloca diferentes objetos sobre el sensor y registra la lectura.</p>
+                <table style="font-size: 8pt;">
+                    <thead>
+                        <tr>
+                            <th>Objeto</th>
+                            <th>Peso aprox (g)</th>
+                            <th>Lectura Arduino</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sin presión</td>
+                            <td>0</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Moneda</td>
+                            <td>~5</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Huevo</td>
+                            <td>~60</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vaso con agua</td>
+                            <td>~200</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Presión fuerte (mano)</td>
+                            <td>-</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="mt-3">Umbral de alerta seleccionado:</h4>
+                <p class="text-small">Basándote en la tabla, ¿qué valor de umbral usarías para evitar aplastar un huevo?
+                </p>
+                <div class="linea-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 9: Circuito FSR</span>
+            <span class="numero-pagina">52</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 53: PRÁCTICA PROTOCOLO HAZMAT
+         ============================================ -->
+    <div class="page">
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Prácticas Integradoras</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Reto Competitivo: "Protocolo HAZMAT"</h4>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Configuración de la Pista</h3>
+        <ul>
+            <li>Una mesa con obstáculos distribuidos</li>
+            <li>Zona de inicio del brazo robótico</li>
+            <li>Vaso "tóxico" (lleno de agua) en posición central</li>
+            <li>Contenedor seguro (destino) en el extremo opuesto</li>
+        </ul>
+
+        <h3 class="mt-4">Reglas de la Misión</h3>
+        <ol>
+            <li>El operador tiene los ojos vendados (o está detrás de una barrera)</li>
+            <li>Solo se guía por las instrucciones de un compañero que ve una cámara (simulando operación remota)</li>
+            <li>La alerta del LED del Arduino indica si ya agarró el objeto (y si está aplicando demasiada fuerza)</li>
+            <li><strong>Tarea:</strong> Recoger el vaso "tóxico" sin aplastarlo y verterlo en el contenedor seguro</li>
+        </ol>
+
+        <h3 class="mt-4">Sistema de Puntuación</h3>
+        <div class="formula">
+            Puntos = Tiempo + (Litros derramados × 50) + (Alertas de presión × 10)
+        </div>
+        <p class="text-small mt-2"><em>Gana el equipo con menor puntuación.</em></p>
+
+        <div class="mt-4" style="text-align: center;">
+            <img src="imagenes/21. diagrama-pista-hazmat.png" alt="Diagrama Pista HAZMAT"
+                style="width: 100%; max-height: 40mm; object-fit: contain;">
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Práctica: Protocolo HAZMAT</span>
+            <span class="numero-pagina">53</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 54: SOFT ROBOTICS
+         ============================================ -->
+    <div class="page">
+        <h2>Enfoque Futurista: Robótica Blanda (Soft Robotics)</h2>
+
+        <p>La hidráulica rígida es poderosa, pero peligrosa para humanos. La <strong>Robótica Blanda</strong> usa
+            fluidos para inflar elastómeros flexibles, imitando músculos biológicos.</p>
+
+        <div class="dos-columnas mt-4">
+            <div class="columna">
+                <h4>Siliconas de Platino (Ecoflex)</h4>
+                <ul>
+                    <li>Estándar profesional</li>
+                    <li>Curan rápido</li>
+                    <li>Elásticas y biocompatibles</li>
+                    <li>Caras y sensibles a contaminantes</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <h4>Hack Maker: Silicona + Maicena</h4>
+                <ul>
+                    <li>Silicona de calafateo acética</li>
+                    <li>+ Maicena (almidón de maíz)</li>
+                    <li>Cura en 15 minutos (vs 24 horas)</li>
+                    <li>Económico y accesible</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Actuadores PneuNets</h3>
+        <p>Son estructuras con cámaras internas que, al inflarse con aire, generan movimiento direccional gracias a una
+            <strong>capa restrictiva</strong> que limita la expansión en un lado.
+        </p>
+
+        <div class="mt-3" style="text-align: center;">
+            <img src="imagenes/diagrama-pneunets.jpg" alt="Diagrama PneuNets"
+                style="width: 100%; max-height: 60mm; object-fit: contain;">
+        </div>
+
+        <div class="nota-exito mt-4">
+            <strong>Complianza mecánica:</strong> Estos "dedos" blandos pueden agarrar objetos irregulares (frutas,
+            huevos) sin necesidad de sensores complejos, adaptándose naturalmente a la forma del objeto.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Capítulo 3: Soft Robotics</span>
+            <span class="numero-pagina">54</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 55: ACTIVIDAD 10 - SOFT GRIPPER
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Fabricación de Soft Gripper Bio-Inspirado</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Objetivo</h4>
+                    <p>Crear un dedo robótico blando que se curva al inflarse.</p>
+                </div>
+
+                <h4>Materiales:</h4>
+                <ul class="text-small">
+                    <li>Silicona de calafateo transparente</li>
+                    <li>Maicena (almidón de maíz)</li>
+                    <li>Molde impreso en 3D o hecho con plastilina</li>
+                    <li>Tira de tela o papel resistente</li>
+                    <li>Jeringa grande para inflado</li>
+                    <li>Manguera delgada</li>
+                </ul>
+
+                <h4 class="mt-3">Procedimiento:</h4>
+                <ol class="text-small">
+                    <li>Mezclar silicona y maicena (proporción 1:1 en volumen)</li>
+                    <li>Vaciar en el molde con las cámaras internas</li>
+                    <li>Antes de que cure, pegar la tira de tela en la base</li>
+                    <li>Dejar curar (15-30 minutos con maicena)</li>
+                    <li>Desmoldar y conectar la manguera de inflado</li>
+                </ol>
+
+                <h4 class="mt-3">Registro de tu gripper:</h4>
+                <div class="dos-columnas">
+                    <div class="columna">
+                        <p class="text-small">Foto o dibujo antes de inflar:</p>
+                        <div class="espacio-respuesta" style="height: 30mm;"></div>
+                    </div>
+                    <div class="columna">
+                        <p class="text-small">Foto o dibujo después de inflar:</p>
+                        <div class="espacio-respuesta" style="height: 30mm;"></div>
+                    </div>
+                </div>
+
+                <h4 class="mt-2">¿Qué objetos logró agarrar tu gripper?</h4>
+                <div class="linea-respuesta"></div>
+                <div class="linea-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 10: Soft Gripper</span>
+            <span class="numero-pagina">55</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 56: PROFESIONALES - CHALLENGER
+         ============================================ -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-graduado.png" alt="">
+                <div class="titulo">Profesionales con Valor</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Lección de Historia: El Desastre del Challenger (1986)</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">La ingeniería de fluidos y materiales tiene consecuencias de vida o muerte.</p>
+
+        <h3 class="mt-3">El Hecho</h3>
+        <p>El transbordador espacial Challenger explotó <strong>73 segundos</strong> después del despegue debido al
+            fallo de una junta tórica (O-ring) en el cohete derecho.</p>
+
+        <h3 class="mt-3">La Física</h3>
+        <p>Las juntas eran de un elastómero llamado <strong>Viton</strong>. Todos los polímeros tienen una
+            <strong>Temperatura de Transición Vítrea (T<sub>g</sub>)</strong>.
+        </p>
+
+        <ul>
+            <li>Por debajo de T<sub>g</sub>, la goma pierde su elasticidad</li>
+            <li>Se comporta como vidrio quebradizo</li>
+            <li>El día del lanzamiento: <strong>-2°C</strong> (inusualmente frío)</li>
+            <li>El Viton se endureció y no pudo sellar los gases</li>
+        </ul>
+
+        <h3 class="mt-3">La Ética</h3>
+        <p>Los ingenieros de Morton Thiokol <strong>sabían</strong> que el material fallaría con el frío y recomendaron
+            <strong>"NO LANZAR"</strong>.
+        </p>
+
+        <p>La gerencia, bajo presión política y de itinerario, <strong>ignoró a los ingenieros</strong>.</p>
+
+        <div class="nota-alerta mt-4">
+            <strong>Mensaje Albatros:</strong> Un ingeniero competente debe tener el <strong>coraje ético</strong> de
+            decir "No" cuando la seguridad está comprometida, respaldando su decisión con datos sólidos (como la curva
+            de T<sub>g</sub> del material).
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Profesionales: Challenger</span>
+            <span class="numero-pagina">56</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 57: ACTIVIDAD 11 - REFLEXIÓN ÉTICA
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">11</div>
+                <div class="titulo">Reflexión Ética: El Dilema del Ingeniero</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Contexto</h4>
+                    <p>Has estudiado dos casos donde las decisiones de ingeniería tuvieron consecuencias fatales: la
+                        Presa Austin (1911) y el Challenger (1986). Ambos comparten un patrón: <strong>los datos
+                            técnicos fueron ignorados por presiones externas</strong>.</p>
+                </div>
+
+                <h4>Preguntas de Reflexión</h4>
+
+                <p class="text-small"><strong>1.</strong> En el caso Challenger, los ingenieros dijeron "No" pero fueron
+                    ignorados. ¿Qué más podrían haber hecho? ¿Tenían opciones?</p>
+                <div class="espacio-respuesta"></div>
+
+                <p class="text-small mt-2"><strong>2.</strong> Imagina que trabajas en una empresa y descubres un
+                    defecto de seguridad, pero tu jefe te presiona para no reportarlo. ¿Qué harías y por qué?</p>
+                <div class="espacio-respuesta"></div>
+
+                <p class="text-small mt-2"><strong>3.</strong> El código de ética de ingeniería establece que "la
+                    seguridad del público es primordial". ¿Crees que esto siempre se cumple en la práctica? ¿Qué
+                    barreras existen?</p>
+                <div class="espacio-respuesta"></div>
+
+                <p class="text-small mt-2"><strong>4.</strong> ¿Qué lecciones de estos casos aplicarías en tu futura
+                    carrera?</p>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 11: Reflexión Ética</span>
+            <span class="numero-pagina">57</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 58: CONCLUSIÓN DE LA UNIDAD
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <img class="icono" src="imagenes/icono-diploma.png" alt="">
+                <div class="titulo">Conclusión</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Conclusión de la Unidad</h4>
+            </div>
+        </div>
+
+        <p class="mt-4">Hemos recorrido el camino del fluido: desde la molécula que se adhiere al vidrio, pasando por la
+            presión que derriba presas, hasta el aire que pega un F1 al suelo y el aceite que da fuerza a un robot.</p>
+
+        <h3 class="mt-4">En el modelo Albatros, la teoría no es el fin, es el medio.</h3>
+
+        <div class="pasos-container mt-4">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>La <strong>Hidrostática</strong> nos enseñó sobre integridad estructural y ética profesional.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>La <strong>Hidrodinámica</strong> nos dio herramientas de simulación y optimización de
+                        eficiencia.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <p>La <strong>Hidráulica y Robótica Blanda</strong> nos permitieron interactuar con el mundo físico
+                        de manera tangible.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-exito mt-6">
+            <strong>Mensaje final:</strong> Ahora poseen las herramientas para ver el mundo no como cuerpos rígidos,
+            sino como <strong>flujos de energía y materia</strong> que pueden ser modelados, diseñados y controlados. El
+            siguiente paso es aplicar estos conocimientos en competencias, proyectos y, eventualmente, en su carrera
+            profesional.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Conclusión de la Unidad</span>
+            <span class="numero-pagina">58</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 59: TIP EXTRA - FLUIDOS NO NEWTONIANOS
+         ============================================ -->
+    <div class="page">
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Tip Extra</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Fluidos No Newtonianos en Protección</h4>
+            </div>
+        </div>
+
+        <p class="mt-3">No todos los fluidos fluyen más fácil al empujarlos. Los <strong>Fluidos Espesantes al Corte
+                (STF)</strong>, como la mezcla de maicena y agua, se vuelven sólidos al golpearlos.</p>
+
+        <h3 class="mt-4">Tecnología Militar</h3>
+        <p>Se están desarrollando <strong>chalecos antibalas "líquidos"</strong> impregnando Kevlar con fluidos STF
+            (nanopartículas de sílice en polietilenglicol).</p>
+
+        <div class="dos-columnas mt-3">
+            <div class="columna">
+                <h4>Comportamiento normal:</h4>
+                <ul>
+                    <li>Flexibles para caminar</li>
+                    <li>Cómodos de usar</li>
+                    <li>Permiten movimiento</li>
+                </ul>
+            </div>
+            <div class="columna">
+                <h4>Bajo impacto:</h4>
+                <ul>
+                    <li>Duros como el acero</li>
+                    <li>Disipan mejor la energía</li>
+                    <li>Protección superior</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Experimento Casero: "Oobleck"</h3>
+        <ol>
+            <li>Mezcla 2 partes de maicena con 1 parte de agua</li>
+            <li>Trata de golpear la superficie con el puño</li>
+            <li>Sentirás una pared sólida</li>
+            <li>Mete la mano despacio y será líquido</li>
+        </ol>
+
+        <div class="nota-exito mt-4">
+            <strong>¡Es la misma física que protege a los soldados del futuro!</strong>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Tip Extra: Fluidos No Newtonianos</span>
+            <span class="numero-pagina">59</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 60: ACTIVIDAD 12 - OOBLECK
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">12</div>
+                <div class="titulo">Experimento: Oobleck y Fluidos No Newtonianos</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <h4>Objetivo</h4>
+                    <p>Experimentar con un fluido no newtoniano y comprender su comportamiento dual.</p>
+                </div>
+
+                <h4>Materiales:</h4>
+                <ul class="text-small">
+                    <li>Maicena (250g aproximadamente)</li>
+                    <li>Agua (125ml aproximadamente)</li>
+                    <li>Recipiente amplio</li>
+                    <li>Objetos pequeños para probar (canica, moneda)</li>
+                </ul>
+
+                <h4 class="mt-3">Procedimiento y Observaciones:</h4>
+
+                <p class="text-small"><strong>Prueba 1:</strong> Introduce tu dedo lentamente. ¿Qué observas?</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <p class="text-small mt-2"><strong>Prueba 2:</strong> Golpea la superficie rápidamente. ¿Qué observas?
+                </p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <p class="text-small mt-2"><strong>Prueba 3:</strong> Forma una bola apretándola. ¿Qué pasa cuando dejas
+                    de apretar?</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <p class="text-small mt-2"><strong>Prueba 4:</strong> Deja caer una canica sobre la superficie. ¿Rebota
+                    o se hunde?</p>
+                <div class="espacio-respuesta pequeño"></div>
+
+                <h4 class="mt-3">Análisis:</h4>
+                <p class="text-small">¿Por qué este fluido se comporta diferente según la velocidad de deformación?
+                    Explica en términos de las partículas de almidón.</p>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Actividad 12: Oobleck</span>
+            <span class="numero-pagina">60</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 61: RECURSOS ADICIONALES
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Recursos</div>
+            </div>
+            <div class="capsula-contenido">
+                <h4>Recursos Adicionales y Referencias</h4>
+            </div>
+        </div>
+
+        <table class="mt-4">
+            <thead>
+                <tr>
+                    <th>Recurso</th>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>SimScale</strong></td>
+                    <td>Software</td>
+                    <td>Plataforma CFD en la nube (Licencia Académica)</td>
+                </tr>
+                <tr>
+                    <td><strong>PhET</strong></td>
+                    <td>Simulador</td>
+                    <td>"Under Pressure" y "Fluid Pressure and Flow"</td>
+                </tr>
+                <tr>
+                    <td><strong>Arduino IDE</strong></td>
+                    <td>Software</td>
+                    <td>Entorno para programar el sensor FSR</td>
+                </tr>
+                <tr>
+                    <td><strong>Tinkercad</strong></td>
+                    <td>CAD</td>
+                    <td>Diseño 3D básico para moldes de Soft Robotics</td>
+                </tr>
+                <tr>
+                    <td><strong>Onshape</strong></td>
+                    <td>CAD</td>
+                    <td>Diseño de componentes hidráulicos (nube)</td>
+                </tr>
+                <tr>
+                    <td><strong>Challenger: Final Flight</strong></td>
+                    <td>Documental</td>
+                    <td>Netflix - Decisión de los ingenieros</td>
+                </tr>
+                <tr>
+                    <td><strong>Why Buildings Fall Down</strong></td>
+                    <td>Libro</td>
+                    <td>Matthys Levy - Capítulo sobre presas</td>
+                </tr>
+                <tr>
+                    <td><strong>Manual Grundfos</strong></td>
+                    <td>Técnico</td>
+                    <td>NPSH y Cavitación en bombas</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="mt-4">🔗 Links Directos a Simuladores PhET</h3>
+        <div class="esquema">
+            <div class="esquema-body" style="font-size: 8pt;">
+                <p><strong>Under Pressure (Bajo Presión):</strong></p>
+                <p
+                    style="background: var(--gray-light); padding: 2mm; border-radius: var(--radius-small); font-family: monospace; word-break: break-all;">
+                    https://phet.colorado.edu/es/simulations/under-pressure
+                </p>
+                <p class="mt-2"><strong>Fluid Pressure and Flow (Presión y Flujo):</strong></p>
+                <p
+                    style="background: var(--gray-light); padding: 2mm; border-radius: var(--radius-small); font-family: monospace; word-break: break-all;">
+                    https://phet.colorado.edu/es/simulations/fluid-pressure-and-flow
+                </p>
+                <p class="mt-2"><strong>Density (Densidad):</strong></p>
+                <p
+                    style="background: var(--gray-light); padding: 2mm; border-radius: var(--radius-small); font-family: monospace; word-break: break-all;">
+                    https://phet.colorado.edu/es/simulations/density
+                </p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Competencias Relacionadas</h3>
+        <ul>
+            <li><strong>F1 in Schools:</strong> f1inschools.com - Aerodinámica y manufactura</li>
+            <li><strong>World Robot Olympiad:</strong> wro.org - Robótica y automatización</li>
+            <li><strong>ISEF:</strong> societyforscience.org - Ferias de ciencia</li>
+        </ul>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Recursos Adicionales</span>
+            <span class="numero-pagina">61</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 62: AUTOEVALUACIÓN
+         ============================================ -->
+    <div class="page">
+        <h2>Autoevaluación de la Unidad</h2>
+
+        <p>Antes de continuar a la Unidad 2, verifica que puedas responder las siguientes preguntas:</p>
+
+        <h3 class="mt-4">Capítulo 1: Hidrostática</h3>
+        <ul>
+            <li>¿Cuál es la diferencia entre cohesión y adhesión?</li>
+            <li>¿Cómo funciona la capilaridad y qué factores la afectan?</li>
+            <li>¿Qué establece la paradoja hidrostática?</li>
+            <li>¿Por qué es importante considerar la presión atmosférica local?</li>
+        </ul>
+
+        <h3 class="mt-4">Capítulo 2: Hidrodinámica</h3>
+        <ul>
+            <li>¿Qué relaciona la ecuación de continuidad?</li>
+            <li>¿Cómo se interpreta el principio de Bernoulli?</li>
+            <li>¿Por qué la explicación de "igual tiempo de tránsito" es incorrecta?</li>
+            <li>¿Cómo genera downforce un coche de F1?</li>
+        </ul>
+
+        <h3 class="mt-4">Capítulo 3: Proyecto Maker</h3>
+        <ul>
+            <li>¿Qué ventajas tiene la actuación hidráulica sobre la eléctrica?</li>
+            <li>¿Por qué es crítico eliminar el aire del sistema hidráulico?</li>
+            <li>¿Cómo funciona un sensor FSR?</li>
+            <li>¿Qué son los actuadores PneuNets y cómo funcionan?</li>
+        </ul>
+
+        <h3 class="mt-4">Ética Profesional</h3>
+        <ul>
+            <li>¿Qué lecciones nos dejan los casos de la Presa Austin y el Challenger?</li>
+            <li>¿Cuál es la responsabilidad principal de un ingeniero según el código de ética?</li>
+        </ul>
+
+        <div class="nota-info mt-4">
+            <strong>Siguiente unidad:</strong> Termodinámica y Gestión Energética
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 1</span>
+            <span>Autoevaluación</span>
+            <span class="numero-pagina">62</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA 63: CONTRAPORTADA
+         ============================================ -->
+    <div class="page"
+        style="background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-color) 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <h1 style="color: white; font-size: 20pt;">FIN DE LA UNIDAD 1</h1>
+        <p style="font-size: 14pt; margin-top: 5mm;">Mecánica de Fluidos y Sistemas Hidráulicos</p>
+        <p style="font-size: 11pt; margin-top: 10mm; opacity: 0.8;">Edición Albatros Competitiva</p>
+
+        <div style="margin-top: 20mm; padding: 5mm 10mm; background: rgba(255,255,255,0.1); border-radius: 10px;">
+            <p style="font-size: 9pt; margin: 0;">
+                <strong>Resumen de contenidos:</strong><br><br>
+                3 Capítulos | 12 Actividades<br>
+                5 Cuadros Comparativos | 8 Esquemas<br>
+                2 Casos de Ética Profesional<br>
+                1 Proyecto Maker Completo
+            </p>
+        </div>
+
+        <div style="margin-top: 30mm;">
+            <div
+                style="width: 30mm; height: 30mm; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 2mm;">
+                <img src="imagenes/24. logo-albatros.png" alt="Logo Albatros"
+                    style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Web Effects -->
+    <link rel="stylesheet" href="../web-effects.css">
+    <script src="web-effects-u1.js"></script>
+
+    <!-- Back to Home Button -->
+    <a href="../index-web.html" class="back-to-home">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        Inicio
+    </a>
+
+</body>
+
+</html>

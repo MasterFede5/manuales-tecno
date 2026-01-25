@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexos - Manual de Química</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        /* Estilos específicos para Anexos */
+        .page-break {
+            page-break-before: always;
+        }
+
+        /* Ajuste para la tabla periódica para que ocupe toda la página */
+        .periodic-table-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Ajustes para tablas de VSEPR y Constantes */
+        .table-compact th,
+        .table-compact td {
+            padding: 4px 8px;
+            font-size: 0.9em;
+        }
+
+        /* Glosario */
+        .glossary-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .glossary-term {
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        /* Ajuste de Recursos */
+        .resource-link {
+            color: var(--color-procedure);
+            /* Azulito */
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+        }
+
+        .resource-desc {
+            color: var(--color-muted);
+            font-size: 0.9em;
+        }
+
+        /* Columnas para el Glosario */
+        .glossary-columns {
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        @media print {
+            .page-break {
+                break-before: page;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            /* Override global image limit for Periodic Table */
+            .periodic-table-container img {
+                max-height: 26cm !important;
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ANEXO A: TABLA PERIÓDICA -->
+    <div class="page">
+        <h1 class="h1">Anexo A: Tabla Periódica de los Elementos</h1>
+        <div class="periodic-table-container">
+            <!-- Asumimos que la imagen está en el mismo directorio o ajusta la ruta -->
+            <img src="tabla periódica.png" alt="Tabla Periódica de los Elementos"
+                style="width: 100%; height: auto; object-fit: contain;">
+        </div>
+    </div>
+
+    <!-- ANEXO B (1/3): ESTADÍSTICA Y ESTRUCTURA ATÓMICA -->
+    <div class="page page-break">
+        <div class="unit-header" style="background: var(--color-primary);">
+            <h1>Anexo B: Caja de Herramientas (1/3)</h1>
+            <div class="unit-subtitle">Estadística y Estructura Atómica</div>
+        </div>
+
+        <!-- Kit de Estadística Experimental -->
+        <div class="card card-objective">
+            <!-- Usamos objective por los colores (morado/azul) o el que cuadre mejor, en la imagen es azul borde -->
+            <!-- Borde azul en imagen -> card-concept o card-procedure? En la imagen 4 se ve borde azul y titulo negro. Usaremos card con borde custom si es necesario, pero card-procedure es azul -->
+            <!-- En css card-procedure es azul claro. El de la imagen tiene borde solido azul a la izquierda -->
+            <div class="card-header" style="color: var(--color-text);">
+                <span class="icon">📊</span> Kit de Estadística Experimental
+            </div>
+
+            <table class="table-compact" style="margin-bottom: 1rem;">
+                <tr>
+                    <td style="font-weight:bold;">Promedio (Media)</td>
+                    <td>x̄ = (Σx) / n</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">Desviación Estándar</td>
+                    <td>s = √ [ Σ(x - x̄)² / (n - 1) ]</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">Porcentaje de Error</td>
+                    <td>%E = | (Valor Teórico - Experimental) / Teórico | × 100</td>
+                </tr>
+            </table>
+
+            <div style="background: #F8F9FA; padding: 10px; border-radius: 4px;">
+                <strong>Reglas de Cifras Significativas:</strong>
+                <ul style="margin-bottom: 0;">
+                    <li>Los ceros a la izquierda <strong>nunca</strong> cuentan (0.005 → 1 cifra).</li>
+                    <li>Los ceros en medio <strong>siempre</strong> cuentan (1.05 → 3 cifras).</li>
+                    <li>Los ceros al final solo cuentan si hay punto decimal (10.0 → 3 cifras).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Secretos Atómicos -->
+        <div class="card" style="border-left-color: #DB2777;"> <!-- Color rosa/fucsia -->
+            <div class="card-header" style="color: var(--color-text);">
+                <span class="icon">⚛️</span> Secretos Atómicos
+            </div>
+
+            <strong>Excepciones de Configuración Electrónica:</strong>
+            <table class="table-compact" style="margin-top: 5px;">
+                <tr>
+                    <td style="font-weight:bold;">Cromo (Cr, Z=24)</td>
+                    <td>[Ar] 4s¹ 3d⁵</td>
+                    <td style="font-size: 0.85em; color: var(--color-muted);">(Estabilidad de subcapa semillena)</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;">Cobre (Cu, Z=29)</td>
+                    <td>[Ar] 4s¹ 3d¹⁰</td>
+                    <td style="font-size: 0.85em; color: var(--color-muted);">(Estabilidad de subcapa llena)</td>
+                </tr>
+            </table>
+
+            <strong class="mt-md display-block">Números Cuánticos:</strong>
+            <div class="row mt-sm">
+                <div class="col">
+                    <p style="margin-bottom: 4px;"><strong>n (Principal):</strong> Nivel de energía (1, 2, 3...) →
+                        Tamaño.</p>
+                    <p style="margin-bottom: 0;"><strong>m (Magnético):</strong> Orientación espacial (-l...0...+l).</p>
+                </div>
+                <div class="col">
+                    <p style="margin-bottom: 4px;"><strong>l (Azimutal):</strong> Forma (s=0, p=1, d=2, f=3).</p>
+                    <p style="margin-bottom: 0;"><strong>s (Spin):</strong> Giro del electrón (+½, -½).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANEXO B (2/3): ENLACES, REDOX Y TERMODINÁMICA -->
+    <div class="page page-break">
+        <div class="unit-header" style="background: var(--color-primary);">
+            <h1>Anexo B: Caja de Herramientas (2/3)</h1>
+            <div class="unit-subtitle">Enlaces, Redox y Termodinámica</div>
+        </div>
+
+        <!-- Geometría Molecular (VSEPR) -->
+        <div class="card" style="border-left-color: #6B7280;"> <!-- Gris/Plata -->
+            <div class="card-header" style="color: var(--color-text);">
+                <span class="icon">📐</span> Geometría Molecular (VSEPR)
+            </div>
+            <table>
+                <thead>
+                    <tr style="background: #F3F4F6; color: #374151;">
+                        <th>Regiones</th>
+                        <th>Geometría</th>
+                        <th>Ángulo</th>
+                        <th>Hibridación</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td>Lineal</td>
+                        <td class="text-center">180°</td>
+                        <td class="text-center">sp</td>
+                        <td>CO₂, BeCl₂</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td>Trigonal Plana</td>
+                        <td class="text-center">120°</td>
+                        <td class="text-center">sp²</td>
+                        <td>BF₃, SO₃</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4</td>
+                        <td>Tetraédrica</td>
+                        <td class="text-center">109.5°</td>
+                        <td class="text-center">sp³</td>
+                        <td>CH₄</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4 (1 par libre)</td>
+                        <td>Piramidal</td>
+                        <td class="text-center">&lt; 109.5°</td>
+                        <td class="text-center">sp³</td>
+                        <td>NH₃</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4 (2 pares)</td>
+                        <td>Angular</td>
+                        <td class="text-center">&lt;&lt; 109.5°</td>
+                        <td class="text-center">sp³</td>
+                        <td>H₂O</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Balanceo Redox (Método Ion-Electrón) -->
+        <div class="card card-procedure">
+            <div class="card-header" style="color: var(--color-text);">
+                <span class="icon">⚖️</span> Balanceo Redox (Método Ion-Electrón)
+            </div>
+            <ol style="margin-bottom: 0;">
+                <li>Dividir la ecuación en dos <strong>semirreacciones</strong> (oxidación y reducción).</li>
+                <li>Balancear <strong>átomos</strong> distintos de O y H.</li>
+                <li>Balancear <strong>O</strong> agregando moléculas de agua (H₂O).</li>
+                <li>Balancear <strong>H</strong> agregando protones (H⁺) (en medio ácido).</li>
+                <li>Balancear <strong>cargas</strong> agregando electrones (e⁻).</li>
+                <li>Igualar electrones multiplicando las semirreacciones.</li>
+                <li><strong>Sumar</strong> y simplificar términos comunes.</li>
+            </ol>
+        </div>
+
+        <!-- Termodinámica y pH -->
+        <div class="card card-activity"> <!-- Borde verde -->
+            <div class="card-header" style="color: var(--color-text);">
+                <span class="icon">🔥</span> Termodinámica y pH
+            </div>
+            <div class="row text-center">
+                <div class="col"
+                    style="background: #ECFDF5; padding: 10px; border-radius: 4px; border: 1px solid #A7F3D0;">
+                    <strong style="color:0EA5E9;">Gibbs (Espontaneidad)</strong><br>
+                    ΔG = ΔH - TΔS
+                </div>
+                <div class="col"
+                    style="background: #ECFDF5; padding: 10px; border-radius: 4px; border: 1px solid #A7F3D0;">
+                    <strong style="color:0EA5E9;">pH y pOH</strong><br>
+                    pH = -log[H⁺]<br>
+                    pH + pOH = 14
+                </div>
+                <div class="col"
+                    style="background: #ECFDF5; padding: 10px; border-radius: 4px; border: 1px solid #A7F3D0;">
+                    <strong style="color:0EA5E9;">Calor (q)</strong><br>
+                    q = m · c · ΔT
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANEXO B (3/3): FORMULARIO Y CONSTANTES -->
+    <div class="page page-break">
+        <div class="unit-header" style="background: var(--color-primary);">
+            <h1>Anexo B: Caja de Herramientas (3/3)</h1>
+            <div class="unit-subtitle">Formulario y Constantes</div>
+        </div>
+
+        <!-- Formulario Estequiométrico -->
+        <div class="card card-concept"> <!-- Borde azul intenso -->
+            <div class="card-header" style="color: var(--color-text);">
+                <span class="icon">⚗️</span> Formulario Estequiométrico
+            </div>
+            <div class="row">
+                <div class="col" style="background: #F3F4F6; padding: 8px; border-radius: 4px;">
+                    <strong>Gases Ideales:</strong><br> PV = nRT
+                </div>
+                <div class="col" style="background: #F3F4F6; padding: 8px; border-radius: 4px;">
+                    <strong>Molaridad (M):</strong><br> M = moles soluto / Litros solución
+                </div>
+            </div>
+            <div class="row mt-sm">
+                <div class="col" style="background: #F3F4F6; padding: 8px; border-radius: 4px;">
+                    <strong>Moles (n):</strong><br> n = masa (g) / Masa Molar (g/mol)
+                </div>
+                <div class="col" style="background: #F3F4F6; padding: 8px; border-radius: 4px;">
+                    <strong>Dilución:</strong><br> C₁V₁ = C₂V₂
+                </div>
+            </div>
+        </div>
+
+        <h3 class="h3"
+            style="color: var(--color-primary); border-bottom: 2px solid var(--color-primary); margin-top: 20px;">
+            Constantes Físicas y Químicas</h3>
+
+        <table class="table-compact">
+            <thead>
+                <tr style="background: #F3F4F6; color: #374151;">
+                    <th>Constante</th>
+                    <th>Símbolo</th>
+                    <th>Valor</th>
+                    <th>Unidades</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número de Avogadro</td>
+                    <td><i>N<sub>A</sub></i></td>
+                    <td>6.022 × 10²³</td>
+                    <td>partículas/mol</td>
+                </tr>
+                <tr>
+                    <td>Constante de gases ideales</td>
+                    <td><i>R</i></td>
+                    <td>0.08206</td>
+                    <td>L·atm / (mol·K)</td>
+                </tr>
+                <tr>
+                    <td>Constante de gases (energía)</td>
+                    <td><i>R</i></td>
+                    <td>8.314</td>
+                    <td>J / (mol·K)</td>
+                </tr>
+                <tr>
+                    <td>Presión Estándar (STP)</td>
+                    <td><i>P°</i></td>
+                    <td>1</td>
+                    <td>atm</td>
+                </tr>
+                <tr>
+                    <td>Temp. Estándar (STP)</td>
+                    <td><i>T°</i></td>
+                    <td>273.15</td>
+                    <td>K (0°C)</td>
+                </tr>
+                <tr>
+                    <td>Volumen Molar (STP)</td>
+                    <td><i>V<sub>m</sub></i></td>
+                    <td>22.4</td>
+                    <td>L/mol</td>
+                </tr>
+                <tr>
+                    <td>Constante de Planck</td>
+                    <td><i>h</i></td>
+                    <td>6.626 × 10⁻³⁴</td>
+                    <td>J·s</td>
+                </tr>
+                <tr>
+                    <td>Velocidad de la luz</td>
+                    <td><i>c</i></td>
+                    <td>3.00 × 10⁸</td>
+                    <td>m/s</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ANEXO C: GLOSARIO GENERAL -->
+    <div class="page page-break">
+        <h1 class="h1" style="border-bottom: 2px solid var(--color-primary); padding-bottom: 8px;">Anexo C: Glosario
+            General</h1>
+
+        <div class="glossary-columns">
+            <div class="glossary-item">
+                <span class="glossary-term">Átomo:</span> Unidad básica de la materia que conserva las propiedades de un
+                elemento.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Catión:</span> Ion con carga positiva formado por la pérdida de electrones.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Cinética Química:</span> Rama de la química que estudia la velocidad de las
+                reacciones.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Compuesto:</span> Sustancia formada por la unión química de dos o más
+                elementos.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Covalente:</span> Enlace químico caracterizado por el compartimiento de
+                electrones.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Densidad:</span> Relación entre la masa y el volumen de una sustancia.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Electrón:</span> Partícula subatómica con carga negativa que orbita el
+                núcleo.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Electronegatividad:</span> Medida de la capacidad de un átomo para atraer
+                electrones.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Enlace Iónico:</span> Atracción electrostática entre iones de carga opuesta.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Estequiometría:</span> Cálculo de las relaciones cuantitativas en reacciones
+                químicas.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Hipótesis:</span> Explicación tentativa que puede ser probada mediante
+                experimentación.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Isótopo:</span> Átomos del mismo elemento con diferente número de neutrones.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Mol:</span> Cantidad de sustancia que contiene 6.022×10²³ partículas
+                elementales.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Molaridad:</span> Concentración expresada en moles de soluto por litro de
+                solución.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Neutrón:</span> Partícula subatómica sin carga eléctrica presente en el
+                núcleo.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Orbital:</span> Región del espacio donde es más probable encontrar un
+                electrón.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Oxidación:</span> Proceso químico donde una especie pierde electrones.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">pH:</span> Medida de la acidez o alcalinidad de una solución.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Protón:</span> Partícula subatómica con carga positiva presente en el
+                núcleo.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Reducción:</span> Proceso químico donde una especie gana electrones.
+            </div>
+            <div class="glossary-item">
+                <span class="glossary-term">Valencia:</span> Capacidad de combinación de un átomo.
+            </div>
+        </div>
+    </div>
+
+    <!-- ANEXO D: BIBLIOGRAFÍA Y RECURSOS -->
+    <div class="page page-break">
+        <h1 class="h1" style="border-bottom: 2px solid var(--color-primary); padding-bottom: 8px;">Anexo D: Bibliografía
+            y Recursos</h1>
+
+        <!-- Libros de Texto -->
+        <div class="card" style="border-left-color: var(--color-primary); background: #F3F4F6;">
+            <div class="h3" style="margin-bottom: 10px;">Libros de Texto</div>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 8px;">
+                    📚 <strong>Chang, R. & Goldsby, K.</strong> (2017). <em>Química</em> (12ª ed.). McGraw-Hill
+                    Education.
+                </li>
+                <li style="margin-bottom: 8px;">
+                    📚 <strong>Brown, T. L., LeMay, H. E., & Bursten, B. E.</strong> (2014). <em>Química: La Ciencia
+                        Central</em>. Pearson Educación.
+                </li>
+                <li style="margin-bottom: 8px;">
+                    📚 <strong>Petrucci, R. H.</strong> (2011). <em>Química General</em>. Prentice Hall.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Recursos Digitales Recomendados -->
+        <div class="card" style="border-left-color: var(--color-activity); background: #F3F4F6;">
+            <div class="h3" style="margin-bottom: 15px;">Recursos Digitales Recomendados</div>
+
+            <div style="margin-bottom: 15px;">
+                <div style="font-weight: bold; margin-bottom: 2px;">🌐 PhET Interactive Simulations - Universidad de
+                    Colorado</div>
+                <a href="https://phet.colorado.edu/es" class="resource-link">phet.colorado.edu/es</a>
+                <div class="resource-desc">Simuladores excelentes para estados de la materia, modelos atómicos y
+                    soluciones.</div>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <div style="font-weight: bold; margin-bottom: 2px;">🌐 Tabla Periódica Dinámica (Ptable)</div>
+                <a href="https://ptable.com" class="resource-link">ptable.com</a>
+                <div class="resource-desc">Propiedades detalladas de cada elemento, isótopos y orbitales.</div>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <div style="font-weight: bold; margin-bottom: 2px;">🌐 Khan Academy - Química</div>
+                <a href="https://es.khanacademy.org" class="resource-link">es.khanacademy.org</a>
+                <div class="resource-desc">Videos tutoriales y ejercicios de práctica paso a paso.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+/* ============================================
+   EFECTOS WEB COMPARTIDOS - ALBATROS FÍSICA
+   ============================================ */
+
+/* PARTICLE CANVAS - ya no necesita estilos, se aplican inline */
+
+/* BACK TO HOME BUTTON */
+.back-to-home {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: linear-gradient(135deg, #B71C1C, #FF6F00);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-to-home:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 111, 0, 0.4);
+}
+
+.back-to-home svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Ajustar padding del body para la barra de navegación */
+body {
+    padding-top: 50px;
+}
+
+/* Asegurarse que las páginas del manual se vean bien */
+.page {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ocultar efectos en impresión */
+@media print {
+
+    #particles-canvas,
+    .web-nav-bar,
+    .back-to-home {
+        display: none !important;
+    }
+
+    body {
+        padding-top: 0;
+    }
+}

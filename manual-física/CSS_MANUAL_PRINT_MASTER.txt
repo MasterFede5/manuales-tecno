@@ -1,0 +1,117 @@
+YSTEM SKILL: CSS_MANUAL_PRINT_VERTICAL
+
+1. Instrucción de Activación
+
+"Actúa bajo el protocolo CSS_MANUAL_PRINT_VERTICAL. Tu objetivo es generar código HTML5 semántico y CSS3 avanzado diseñado específicamente para ser impreso en formato PDF Vertical (Tamaño Carta), manteniendo la estética 'Capsule & Clean' idéntica a la versión horizontal."
+
+2. Configuración de Página (@page) y Lienzo
+
+Diseño fijo para impresión vertical.
+
+Tamaño: Carta (Letter) en orientación Portrait.
+
+CSS Rule:
+
+@page {
+    size: letter portrait; /* ORIENTACIÓN VERTICAL */
+    margin: 0; /* Controlamos márgenes en el body */
+}
+body {
+    width: 215.9mm;  /* Ancho carta vertical */
+    height: 279.4mm; /* Alto carta vertical */
+    margin: 0;
+    /* Márgenes asimétricos para encuadernación: Top 25mm, Right 20mm, Bottom 20mm, Left 25mm */
+    padding: 25mm 20mm 20mm 25mm; 
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+
+3. Sistema de Variables Cromáticas (Theming)
+
+Idéntico al Master Horizontal para consistencia total.
+
+:root {
+    /* Colores Base */
+    --primary-color: #0277BD; 
+    --primary-light: #E1F5FE; 
+    --secondary-color: #00838F; 
+    --accent-color: #FF6F00; 
+    
+    /* Neutros */
+    --text-dark: #37474F;
+    --white: #FFFFFF;
+    
+    /* Geometría Master */
+    --radius-pill: 50px;
+    --shadow-card: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+4. Componentes de Diseño (Visualización Unificada)
+
+A. El Bloque "Cápsula Iconográfica" (Estilo Master)
+
+Se mantiene el diseño Lado a Lado (Side-by-Side). El ancho vertical (aprox 17cm útiles) es suficiente para soportarlo.
+
+.capsule {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 5mm; /* Separación vertical */
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-card);
+    background: white;
+    overflow: hidden; /* Asegura que los hijos no rompan el borde redondo */
+}
+
+/* Hijo 1: Etiqueta Izquierda */
+.capsule-label {
+    background: var(--primary-color);
+    color: var(--white);
+    flex: 0 0 130px; /* Ancho fijo ligeramente reducido para vertical */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* Borde redondeado solo a la izquierda */
+    border-radius: var(--radius-pill) 0 0 var(--radius-pill); 
+    text-align: center;
+    border-right: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Hijo 2: Contenido Derecha */
+.capsule-content {
+    background-color: var(--primary-light);
+    color: var(--text-dark);
+    flex-grow: 1;
+    padding: 15px 20px;
+    /* Borde redondeado solo a la derecha */
+    border-radius: 0 var(--radius-pill) var(--radius-pill) 0; 
+    display: flex;
+    align-items: center;
+}
+
+
+B. Cabeceras y Tablas
+
+Mismo estilo visual que el Horizontal.
+
+Headers: Degradado linear --primary-color.
+
+Tablas: Estilo "Clean Data" con cabecera sólida y filas cebra. Ancho 100%.
+
+5. Layout Vertical
+
+Columna Única: Debido al ancho reducido, el texto principal debe fluir en una sola columna.
+
+Excepciones: Listas cortas de items pequeños pueden ir en grid de 2 columnas.
+
+6. Comportamiento del Asistente
+
+Output: Generar un solo bloque HTML/CSS.
+
+Validación: Asegurar que las cápsulas no se rompan entre páginas (page-break-inside: avoid;).

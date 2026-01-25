@@ -1,0 +1,995 @@
+/* ==========================================================================
+   MANUAL DE QUÍMICA - PREPARATORIA GRUPO CULTURAL ALBATROS
+   Sistema de Diseño Doc-as-Code
+   Compatible: HTML color / Impresión B/N
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TOKENS DE DISEÑO (Variables CSS)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colores institucionales */
+  --color-primary: #5B21B6;
+  --color-accent: #DB2777;
+
+  /* Colores semánticos */
+  --color-concept: #2563EB;
+  --color-procedure: #0EA5E9;
+  --color-activity: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  /* Neutros */
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-line: #E5E7EB;
+  --color-bg-soft: #F3F4F6;
+  --color-white: #FFFFFF;
+
+  /* Tipografía */
+  --font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-size-h1: 24px;
+  --font-size-h2: 18px;
+  --font-size-h3: 14px;
+  --font-size-body: 11pt;
+  --font-size-caption: 9pt;
+
+  /* Espaciado */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Página */
+  --page-width: 8.5in;
+  --page-height: 11in;
+  --page-margin: 20mm;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET Y BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   3. ESTRUCTURA DE PÁGINA (para impresión)
+   -------------------------------------------------------------------------- */
+.page {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  padding: var(--page-margin);
+  margin: 0 auto 20px auto;
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  page-break-after: always;
+  position: relative;
+}
+
+.page:last-child {
+  page-break-after: auto;
+}
+
+/* Pie de página */
+.page-footer {
+  position: absolute;
+  bottom: 15mm;
+  left: var(--page-margin);
+  right: var(--page-margin);
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-caption);
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--spacing-sm);
+}
+
+/* --------------------------------------------------------------------------
+   4. TIPOGRAFÍA
+   -------------------------------------------------------------------------- */
+h1,
+.h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  text-align: justify;
+}
+
+/* --------------------------------------------------------------------------
+   5. PORTADA Y PÁGINAS ESPECIALES
+   -------------------------------------------------------------------------- */
+.cover-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #7C3AED 100%);
+  color: var(--color-white);
+}
+
+.cover-page h1 {
+  font-size: 42px;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cover-page .subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.cover-page .institution {
+  font-size: 18px;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.cover-page .semester {
+  margin-top: var(--spacing-lg);
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   6. CINTILLOS DE UNIDAD
+   -------------------------------------------------------------------------- */
+.unit-header {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: var(--color-white);
+  padding: var(--spacing-lg);
+  margin: calc(-1 * var(--page-margin));
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.unit-header h1 {
+  color: var(--color-white);
+  font-size: 28px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.unit-header .unit-subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* --------------------------------------------------------------------------
+   7. TARJETAS DE COMPONENTES
+   -------------------------------------------------------------------------- */
+.card {
+  background: var(--color-bg-soft);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-left: 4px solid var(--color-primary);
+}
+
+/* Tarjeta de Objetivo */
+.card-objective {
+  border-left-color: var(--color-primary);
+  background: linear-gradient(90deg, rgba(91, 33, 182, 0.08) 0%, var(--color-bg-soft) 100%);
+}
+
+.card-objective .card-header {
+  color: var(--color-primary);
+}
+
+/* Tarjeta de Concepto */
+.card-concept {
+  border-left-color: var(--color-concept);
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.08) 0%, var(--color-bg-soft) 100%);
+}
+
+.card-concept .card-header {
+  color: var(--color-concept);
+}
+
+/* Tarjeta de Procedimiento */
+.card-procedure {
+  border-left-color: var(--color-procedure);
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.08) 0%, var(--color-bg-soft) 100%);
+}
+
+.card-procedure .card-header {
+  color: var(--color-procedure);
+}
+
+/* Tarjeta de Actividad */
+.card-activity {
+  border-left-color: var(--color-activity);
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.08) 0%, var(--color-bg-soft) 100%);
+}
+
+.card-activity .card-header {
+  color: var(--color-activity);
+}
+
+/* Tarjeta de Advertencia */
+.card-warning {
+  border-left-color: var(--color-warning);
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, var(--color-bg-soft) 100%);
+}
+
+.card-warning .card-header {
+  color: var(--color-warning);
+}
+
+/* Tarjeta de Error Común */
+.card-danger {
+  border-left-color: var(--color-danger);
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.08) 0%, var(--color-bg-soft) 100%);
+}
+
+.card-danger .card-header {
+  color: var(--color-danger);
+}
+
+/* Header de tarjeta */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 700;
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-header .icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. ICONOGRAFÍA (SVG inline compatible B/N)
+   -------------------------------------------------------------------------- */
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.icon-objetivo {
+  color: var(--color-primary);
+}
+
+.icon-concepto {
+  color: var(--color-concept);
+}
+
+.icon-procedimiento {
+  color: var(--color-procedure);
+}
+
+.icon-actividad {
+  color: var(--color-activity);
+}
+
+.icon-advertencia {
+  color: var(--color-warning);
+}
+
+.icon-error {
+  color: var(--color-danger);
+}
+
+.icon-info {
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------------------------
+   9. TABLAS
+   -------------------------------------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-body);
+}
+
+thead {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+th {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--color-line);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--color-bg-soft);
+}
+
+tbody tr:hover {
+  background: rgba(91, 33, 182, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   10. LISTAS
+   -------------------------------------------------------------------------- */
+ul,
+ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
+}
+
+li {
+  margin-bottom: var(--spacing-xs);
+}
+
+ul.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.checklist li {
+  padding-left: var(--spacing-lg);
+  position: relative;
+}
+
+ul.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------------------------
+   11. EJEMPLOS Y FÓRMULAS
+   -------------------------------------------------------------------------- */
+.example-box {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.example-box .example-title {
+  font-weight: 700;
+  color: var(--color-concept);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.formula-box {
+  background: var(--color-bg-soft);
+  border: 2px dashed var(--color-concept);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Cambria Math', 'Times New Roman', serif;
+}
+
+/* --------------------------------------------------------------------------
+   12. ESPACIOS DE RESPUESTA (para el alumno)
+   -------------------------------------------------------------------------- */
+.answer-space {
+  border: 1px dashed var(--color-muted);
+  border-radius: 4px;
+  min-height: 60px;
+  margin-bottom: var(--spacing-md);
+  background: repeating-linear-gradient(transparent,
+      transparent 23px,
+      var(--color-line) 23px,
+      var(--color-line) 24px);
+}
+
+.answer-space.large {
+  min-height: 120px;
+}
+
+.answer-line {
+  border-bottom: 1px solid var(--color-text);
+  height: 24px;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* --------------------------------------------------------------------------
+   13. ÍNDICE / TOC
+   -------------------------------------------------------------------------- */
+.toc {
+  column-count: 1;
+}
+
+.toc-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.toc-section-title {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: var(--font-size-h3);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.toc-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px dotted var(--color-line);
+}
+
+.toc-item:hover {
+  background: var(--color-bg-soft);
+}
+
+.toc-item .toc-title {
+  flex: 1;
+}
+
+.toc-item .toc-page {
+  font-weight: 600;
+  color: var(--color-muted);
+  min-width: 30px;
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   14. INDICADORES DE TIEMPO Y DIFICULTAD
+   -------------------------------------------------------------------------- */
+.meta-info {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-caption);
+  color: var(--color-muted);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.difficulty {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.difficulty-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-line);
+}
+
+.difficulty-dot.active {
+  background: var(--color-activity);
+}
+
+/* --------------------------------------------------------------------------
+   15. NUMERACIÓN DE PASOS
+   -------------------------------------------------------------------------- */
+.steps {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.steps li {
+  counter-increment: step-counter;
+  padding-left: 40px;
+  position: relative;
+  margin-bottom: var(--spacing-md);
+}
+
+.steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--color-procedure);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   16. BADGES Y ETIQUETAS
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.badge-concept {
+  background: var(--color-concept);
+  color: white;
+}
+
+.badge-activity {
+  background: var(--color-activity);
+  color: white;
+}
+
+.badge-warning {
+  background: var(--color-warning);
+  color: white;
+}
+
+/* --------------------------------------------------------------------------
+   17. GRILLAS Y COLUMNAS
+   -------------------------------------------------------------------------- */
+.row {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.col {
+  flex: 1;
+}
+
+.col-2 {
+  flex: 2;
+}
+
+.col-3 {
+  flex: 3;
+}
+
+/* --------------------------------------------------------------------------
+   18. UTILIDADES
+   -------------------------------------------------------------------------- */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-small {
+  font-size: var(--font-size-caption);
+}
+
+.mt-sm {
+  margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.no-break {
+  page-break-inside: avoid;
+}
+
+/* --------------------------------------------------------------------------
+   19. IMPRESIÓN (B/N compatible)
+   -------------------------------------------------------------------------- */
+@media print {
+
+  /* 1. Configuración de Página */
+  @page {
+    size: letter;
+    margin: 2cm;
+  }
+
+  /* 2. Reset y Limpieza */
+  body {
+    background: white;
+    font-size: 11pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ocultar elementos de UI no deseados */
+  /* Ocultar elementos de UI no deseados */
+  .no-print,
+  nav,
+  button,
+  iframe,
+  .page-footer {
+    display: none !important;
+  }
+
+  /* Reset de Layout */
+  .row,
+  .col,
+  .col-2,
+  .col-3 {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: none !important;
+  }
+
+  .col,
+  .col-2,
+  .col-3 {
+    margin-bottom: 1em !important;
+  }
+
+  /* Reset de margenes negativos para impresion segura */
+  .tema-header,
+  .unit-header {
+    margin: 0 0 20px 0 !important;
+    padding: 15px !important;
+    width: 100% !important;
+    border-radius: 4px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* 3. Estructura del Manual */
+  .page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+    border: none !important;
+    page-break-after: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .cover-page,
+  .unit-header {
+    background: white !important;
+    color: var(--color-text) !important;
+    border: 1px solid #000 !important;
+    page-break-after: always !important;
+  }
+
+  .cover-page *,
+  .unit-header * {
+    color: var(--color-text) !important;
+  }
+
+  /* 4. Lógica "Anti-Huecos" */
+  .card,
+  table,
+  .example-box,
+  .formula-box,
+  figure,
+  img,
+  .badge,
+  .meta-info {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 1.5em !important;
+    display: block;
+    max-width: 100% !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  /* 5. Tipografía */
+  p {
+    orphans: 3 !important;
+    widows: 3 !important;
+    text-align: justify;
+  }
+
+  a {
+    text-decoration: none;
+    color: black !important;
+  }
+
+  img,
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .card {
+    border: 1px solid #ccc !important;
+    border-left-width: 4px !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+
+  .card-objective {
+    border-left-color: var(--color-primary) !important;
+  }
+
+  .card-concept {
+    border-left-color: var(--color-concept) !important;
+  }
+
+  .card-procedure {
+    border-left-color: var(--color-procedure) !important;
+  }
+
+  .card-activity {
+    border-left-color: var(--color-activity) !important;
+  }
+
+  .card-warning {
+    border-left-color: var(--color-warning) !important;
+  }
+
+  .card-danger {
+    border-left-color: var(--color-danger) !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    background: white !important;
+    color: black !important;
+  }
+
+  thead th {
+    border-bottom: 2px solid #000;
+    font-weight: bold;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   20. ICONOGRAFÍA DEL MANUAL (SVG embebido)
+   -------------------------------------------------------------------------- */
+/* Los iconos se incluyen como SVG inline en el HTML para máxima compatibilidad */
+
+/* ==========================================================================
+   21. ESTILOS ADICIONALES PARA UNIDADES 4-6
+   ========================================================================== */
+
+/* Alias para compatibilidad con clases en español */
+.pagina {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  padding: var(--page-margin);
+  margin: 0 auto 20px auto;
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  page-break-after: always;
+  position: relative;
+}
+
+.pagina:last-of-type {
+  page-break-after: auto;
+}
+
+/* --------------------------------------------------------------------------
+   22. PORTADA DE UNIDAD
+   -------------------------------------------------------------------------- */
+.portada-unidad {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.unidad-numero {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.unidad-titulo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.unidad-subtitulo {
+  font-size: 16px;
+  color: var(--color-muted);
+  margin-bottom: 20px;
+}
+
+.unidad-meta {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: var(--color-bg-soft);
+  border-radius: 8px;
+}
+
+.unidad-meta .meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.unidad-meta .meta-label {
+  font-size: 11px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.unidad-meta .meta-valor {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.competencias-unidad {
+  margin-top: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(91, 33, 182, 0.08) 0%, var(--color-bg-soft) 100%);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+}
+
+.competencias-unidad h3 {
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.competencias-unidad ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.competencias-unidad li {
+  margin-bottom: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   23. HEADER DE TEMA
+   -------------------------------------------------------------------------- */
+.tema-header {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: white;
+  padding: 20px 25px;
+  margin: -20mm -20mm 25px -20mm;
+  border-radius: 0;
+}
+
+.tema-numero {
+  display: block;
+  font-size: 12px;
+  opacity: 0.85;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tema-titulo {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 5px 0;
+  border: none;
+  padding: 0;
+}
+
+.tema-paginas {
+  font-size: 13px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   24. ICONOS DE CONTENIDO
+   -------------------------------------------------------------------------- */
+.icono-contenido {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4: Sistemas Energéticos Integrados e Instrumentación, Control e IoT - Edición Albatros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&family=Open+Sans+Condensed:wght@300;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B1F3A;
+            --primary-light: #E6EEF7;
+            --primary-dark: #081325;
+            --secondary-color: #B71C1C;
+            --accent-color: #D32F2F;
+            --success-color: #2E7D32;
+            --warning-color: #F57C00;
+            --text-dark: #1E2A36;
+            --text-light: #607D8B;
+            --white: #FFFFFF;
+            --black: #111111;
+            --gray-light: #F5F7FA;
+            --gray-medium: #E0E6ED;
+            --radius-pill: 50px;
+            --radius-card: 12px;
+            --radius-small: 6px;
+            --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        @page {
+            size: letter portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            font-size: 10pt;
+            line-height: 14pt;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 215.9mm;
+            height: 279.4mm;
+            padding: 20mm 18mm 18mm 22mm;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24pt;
+            color: var(--primary-color);
+            margin-bottom: 6mm;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16pt;
+            color: var(--secondary-color);
+            margin-bottom: 4mm;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 12pt;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 10pt;
+            color: var(--secondary-color);
+            margin-bottom: 2mm;
+        }
+
+        p {
+            margin-bottom: 3mm;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin-left: 5mm;
+            margin-bottom: 3mm;
+        }
+
+        li {
+            margin-bottom: 1.5mm;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        .capsula {
+            display: flex;
+            margin-bottom: 5mm;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            page-break-inside: avoid;
+        }
+
+        .capsula-etiqueta {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            min-width: 42mm;
+            border-radius: var(--radius-card) 0 0 var(--radius-card);
+        }
+
+        .capsula-etiqueta .icono {
+            width: 6mm;
+            height: 6mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12pt;
+        }
+
+        .capsula-etiqueta .icono img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .capsula-etiqueta .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .capsula-contenido {
+            background: var(--primary-light);
+            padding: 3mm 4mm;
+            flex: 1;
+            border-radius: 0 var(--radius-card) var(--radius-card) 0;
+        }
+
+        .capsula-contenido p:last-child,
+        .capsula-contenido ul:last-child,
+        .capsula-contenido ol:last-child {
+            margin-bottom: 0;
+        }
+
+        .capsula.secundaria .capsula-etiqueta {
+            background: var(--secondary-color);
+        }
+
+        .capsula.acento .capsula-etiqueta {
+            background: var(--accent-color);
+        }
+
+        .capsula.exito .capsula-etiqueta {
+            background: var(--success-color);
+        }
+
+        .actividad {
+            border: 2px solid var(--accent-color);
+            border-radius: var(--radius-card);
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+
+        .actividad-header {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .actividad-header .numero {
+            background: var(--white);
+            color: var(--accent-color);
+            width: 8mm;
+            height: 8mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .actividad-header .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 11pt;
+        }
+
+        .actividad-body {
+            padding: 4mm;
+            background: #FFF8E1;
+        }
+
+        .actividad-instrucciones {
+            background: var(--white);
+            border-radius: var(--radius-small);
+            padding: 3mm;
+            margin-bottom: 3mm;
+        }
+
+        .espacio-respuesta {
+            border: 1px dashed var(--accent-color);
+            border-radius: var(--radius-small);
+            min-height: 25mm;
+            background: var(--white);
+            padding: 2mm;
+            margin-top: 2mm;
+        }
+
+        .espacio-respuesta.grande {
+            min-height: 40mm;
+        }
+
+        .espacio-respuesta.pequeno {
+            min-height: 15mm;
+        }
+
+        .linea-respuesta {
+            border-bottom: 1px solid var(--gray-medium);
+            height: 7mm;
+            margin-bottom: 1mm;
+        }
+
+        .cuadro-comparativo {
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+        }
+
+        .cuadro-comparativo-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            text-align: center;
+        }
+
+        .cuadro-comparativo-header h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: 11pt;
+        }
+
+        .cuadro-comparativo-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .cuadro-col {
+            padding: 3mm;
+        }
+
+        .cuadro-col:nth-child(1) {
+            background: var(--primary-light);
+            border-right: 1px solid var(--primary-color);
+        }
+
+        .cuadro-col:nth-child(2) {
+            background: #FCECEC;
+            border-right: 1px solid var(--primary-color);
+        }
+
+        .cuadro-col:nth-child(3) {
+            background: #E8F5E9;
+        }
+
+        .cuadro-col h4 {
+            text-align: center;
+            padding-bottom: 2mm;
+            border-bottom: 1px solid currentColor;
+            margin-bottom: 2mm;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 9pt;
+            line-height: 11pt;
+            margin-bottom: 4mm;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 3mm;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 2mm 3mm;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        tr:nth-child(even) {
+            background: var(--primary-light);
+        }
+
+        .formula {
+            background: var(--gray-light);
+            padding: 3mm 4mm;
+            border-radius: var(--radius-small);
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            text-align: center;
+            margin: 3mm 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .formula-destacada {
+            background: linear-gradient(135deg, var(--primary-light), var(--white));
+            border: 2px solid var(--primary-color);
+            padding: 4mm;
+            border-radius: var(--radius-card);
+            text-align: center;
+            margin: 4mm 0;
+        }
+
+        .formula-destacada .nombre {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--secondary-color);
+            margin-bottom: 2mm;
+        }
+
+        .formula-destacada .ecuacion {
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            color: var(--primary-dark);
+        }
+
+        .esquema {
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+        }
+
+        .esquema-header {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 2mm 4mm;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 10pt;
+        }
+
+        .esquema-body {
+            padding: 4mm;
+            background: #FCECEC;
+        }
+
+        .imagen-placeholder {
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--gray-medium) 100%);
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--radius-card);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4mm;
+            text-align: center;
+            color: var(--primary-color);
+            min-height: 35mm;
+            margin-bottom: 4mm;
+        }
+
+        .imagen-placeholder .nombre-archivo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 8pt;
+            margin-bottom: 1mm;
+        }
+
+        .imagen-placeholder .descripcion {
+            font-size: 7pt;
+            opacity: 0.8;
+        }
+
+        .codigo {
+            background: #263238;
+            color: #ECEFF1;
+            padding: 3mm;
+            border-radius: var(--radius-small);
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 7pt;
+            line-height: 10pt;
+            overflow-x: auto;
+            margin: 3mm 0;
+        }
+
+        .nota-alerta {
+            background: #FFF3E0;
+            border-left: 4px solid var(--accent-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .nota-info {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .nota-exito {
+            background: #E8F5E9;
+            border-left: 4px solid var(--success-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .portada {
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 30mm 20mm;
+        }
+
+        .portada h1 {
+            color: var(--white);
+            font-size: 28pt;
+            margin-bottom: 3mm;
+        }
+
+        .portada .subtitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            font-weight: 400;
+            margin-bottom: 8mm;
+            opacity: 0.9;
+        }
+
+        .portada .edicion {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 3mm 6mm;
+            border-radius: var(--radius-pill);
+            margin-bottom: 12mm;
+        }
+
+        .portada .logo-placeholder {
+            width: 35mm;
+            height: 35mm;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8mm;
+        }
+
+        .portada .descripcion {
+            max-width: 140mm;
+            font-size: 10pt;
+            line-height: 14pt;
+            opacity: 0.9;
+        }
+
+        .indice-visual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3mm;
+        }
+
+        .indice-item {
+            background: var(--primary-light);
+            border-radius: var(--radius-card);
+            padding: 3mm;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .indice-item.destacado {
+            grid-column: span 2;
+            background: var(--secondary-color);
+            color: var(--white);
+            border-left: none;
+            text-align: center;
+        }
+
+        .indice-item.destacado h3 {
+            color: var(--white);
+        }
+
+        .indice-item h3 {
+            font-size: 10pt;
+            margin-bottom: 1mm;
+        }
+
+        .indice-item p {
+            font-size: 8pt;
+            line-height: 10pt;
+            margin: 0;
+            text-align: left;
+        }
+
+        .dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+
+        .tres-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .pie-pagina {
+            position: absolute;
+            bottom: 8mm;
+            left: 22mm;
+            right: 18mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 7pt;
+            color: var(--text-light);
+            border-top: 1px solid var(--gray-medium);
+            padding-top: 2mm;
+        }
+
+        .pie-pagina .unidad-tag {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1mm 2mm;
+            border-radius: var(--radius-pill);
+            font-size: 6pt;
+            font-weight: 600;
+        }
+
+        .numero-pagina {
+            background: var(--gray-light);
+            padding: 1mm 3mm;
+            border-radius: var(--radius-small);
+            font-weight: 600;
+        }
+
+        .separador-capitulo {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 40mm 20mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .separador-capitulo .numero-capitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48pt;
+            font-weight: 700;
+            opacity: 0.3;
+            margin-bottom: 5mm;
+        }
+
+        .separador-capitulo h1 {
+            color: var(--white);
+            font-size: 22pt;
+            margin-bottom: 5mm;
+        }
+
+        .separador-capitulo .descripcion {
+            font-size: 11pt;
+            max-width: 140mm;
+            opacity: 0.9;
+        }
+
+        .pasos-container {
+            counter-reset: paso;
+        }
+
+        .paso {
+            display: flex;
+            gap: 2mm;
+            margin-bottom: 3mm;
+            page-break-inside: avoid;
+        }
+
+        .paso-numero {
+            counter-increment: paso;
+            background: var(--primary-color);
+            color: var(--white);
+            width: 6mm;
+            height: 6mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            flex-shrink: 0;
+        }
+
+        .paso-numero::before {
+            content: counter(paso);
+        }
+
+        .paso-contenido {
+            flex: 1;
+            font-size: 9pt;
+        }
+
+        .lista-materiales {
+            background: var(--gray-light);
+            border-radius: var(--radius-card);
+            padding: 3mm;
+            margin-bottom: 4mm;
+        }
+
+        .material-item {
+            display: flex;
+            gap: 2mm;
+            align-items: flex-start;
+            margin-bottom: 2mm;
+            font-size: 9pt;
+        }
+
+        .material-check {
+            width: 4mm;
+            height: 4mm;
+            border: 2px solid var(--secondary-color);
+            border-radius: 2px;
+            margin-top: 1mm;
+            flex-shrink: 0;
+        }
+
+        .mt-2 {
+            margin-top: 2mm;
+        }
+
+        .mt-3 {
+            margin-top: 3mm;
+        }
+
+        .mt-4 {
+            margin-top: 4mm;
+        }
+
+        .mt-5 {
+            margin-top: 5mm;
+        }
+
+        .text-small {
+            font-size: 8pt;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PAGINA 1: PORTADA -->
+    <div class="page portada">
+        <div style="font-size: 34pt; margin-bottom: 6mm; letter-spacing: 2px;">ALBATROS</div>
+        <h1>UNIDAD 4</h1>
+        <div class="subtitulo">Sistemas Energéticos Integrados e Instrumentación, Control e IoT</div>
+        <p style="font-size: 11pt; margin-bottom: 6mm; opacity: 0.9;">De la conversión de energía a los sistemas
+            inteligentes</p>
+        <div class="edicion">EDICIÓN ALBATROS COMPETITIVA</div>
+        <div
+            style="background: rgba(255, 255, 255, 0.95); padding: 5mm 8mm; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); margin-bottom: 8mm;">
+            <img src="LOGO.png" alt="Logo Grupo Cultural Albatros" style="height: 22mm; width: auto; display: block;">
+        </div>
+        <p class="descripcion">Esta unidad integra los grandes pilares estudiados: mecánica de fluidos, termodinámica y
+            electromagnetismo, y los conecta con instrumentación, control y conectividad. El objetivo es comprender cómo
+            la energía se transforma, se transporta y se aprovecha en sistemas reales, y cómo los sensores y el control
+            permiten optimizar esos procesos.</p>
+    </div>
+
+    <!-- PAGINA 2: INDICE -->
+    <div class="page">
+        <h2>Mapa de Contenidos de la Unidad 4</h2>
+        <div class="indice-visual">
+            <div class="indice-item destacado">
+                <h3>4.1 Conversión de Energía</h3>
+                <p>De la energía primaria al trabajo útil</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.2 Potencia Hidráulica</h3>
+                <p>Presión, caudal y rendimiento</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.3 Gestión Térmica</h3>
+                <p>Transferencia de calor y eficiencia</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.4 Electromecánica</h3>
+                <p>Generación eléctrica y control</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.5 Integración de Sistemas</h3>
+                <p>Casos reales y balance energético</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.6 Sensores e Instrumentación</h3>
+                <p>Medición de variables físicas</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.7 Actuadores y Potencia</h3>
+                <p>Control del movimiento y energía</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.8 Control y Retroalimentación</h3>
+                <p>Lazo abierto y cerrado</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.9 Comunicación e IoT</h3>
+                <p>Protocolos y conectividad</p>
+            </div>
+            <div class="indice-item">
+                <h3>4.10 Gestión Energética Inteligente</h3>
+                <p>Eficiencia y optimización</p>
+            </div>
+            <div class="indice-item">
+                <h3>Procedimientos</h3>
+                <p>Cálculo, calibración y pruebas</p>
+            </div>
+            <div class="indice-item">
+                <h3>Prácticas Integradoras</h3>
+                <p>Problemas de ingeniería aplicada</p>
+            </div>
+            <div class="indice-item">
+                <h3>Mini Actividades</h3>
+                <p>Refuerzos rápidos</p>
+            </div>
+            <div class="indice-item">
+                <h3>Reto Digital</h3>
+                <p>Proyecto integrador inteligente</p>
+            </div>
+            <div class="indice-item">
+                <h3>Recursos y Conclusión</h3>
+                <p>Material de apoyo y cierre</p>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Mapa de contenidos</span>
+            <span class="numero-pagina">2</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 3: OBJETIVO -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diana.png" alt=""></div>
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Comprender cómo se integran los procesos de <strong>flujo, transferencia de calor, generación
+                        eléctrica</strong> y control, aplicando instrumentación e IoT para optimizar sistemas reales con
+                    criterios de eficiencia y seguridad.</p>
+            </div>
+        </div>
+
+        <h3>Al finalizar, serás capaz de:</h3>
+        <ul>
+            <li>Modelar cadenas de conversión de energía con balances simples.</li>
+            <li>Calcular potencia hidráulica y pérdidas por fricción.</li>
+            <li>Evaluar la eficiencia térmica de procesos de calentamiento y enfriamiento.</li>
+            <li>Relacionar la generación eléctrica con la mecánica de fluidos y el calor.</li>
+            <li>Seleccionar sensores y actuadores para medir y controlar variables físicas.</li>
+            <li>Diferenciar sistemas en lazo abierto y lazo cerrado.</li>
+            <li>Proponer mejoras de eficiencia en sistemas energéticos cotidianos.</li>
+        </ul>
+
+        <div class="nota-info mt-4">
+            <strong>Enfoque Albatros:</strong> La física se convierte en herramienta de diseño. Cada fórmula debe
+            transformarse en una decisión de ingeniería.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Objetivo</span>
+            <span class="numero-pagina">3</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 4: CONCEPTOS FUNDAMENTALES -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-cerebro.png" alt=""></div>
+                <div class="titulo">Conceptos Fundamentales</div>
+            </div>
+            <div class="capsula-contenido">
+                <ul>
+                    <li><strong>Energía:</strong> capacidad de realizar trabajo (J).</li>
+                    <li><strong>Potencia:</strong> rapidez de transferencia de energía (W).</li>
+                    <li><strong>Eficiencia:</strong> relación entre salida útil y entrada total.</li>
+                    <li><strong>Balance energético:</strong> lo que entra = lo que sale + pérdidas.</li>
+                    <li><strong>Cadena de conversión:</strong> energía mecánica ↔ térmica ↔ eléctrica.</li>
+                    <li><strong>Sensor:</strong> convierte una variable física en señal eléctrica.</li>
+                    <li><strong>Actuador:</strong> transforma señal eléctrica en acción física.</li>
+                    <li><strong>Setpoint:</strong> valor objetivo que el sistema busca mantener.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="formula-destacada">
+            <div class="nombre">Potencia</div>
+            <div class="ecuacion">P = ΔE / Δt</div>
+            <p class="text-small">E en joules, t en segundos, P en watts</p>
+        </div>
+
+        <div class="formula-destacada">
+            <div class="nombre">Eficiencia</div>
+            <div class="ecuacion">η = P<sub>útil</sub> / P<sub>entrada</sub></div>
+            <p class="text-small">Nunca supera 1 (100%) por pérdidas reales</p>
+        </div>
+
+        <div class="formula-destacada">
+            <div class="nombre">Error de control</div>
+            <div class="ecuacion">e = SP − PV</div>
+            <p class="text-small">SP: setpoint, PV: variable medida</p>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Conceptos Fundamentales</span>
+            <span class="numero-pagina">4</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 5: 4.1 CONVERSION DE ENERGIA -->
+    <div class="page">
+        <h2>4.1 Conversión de Energía en Sistemas Reales</h2>
+        <p>En la vida real, la energía rara vez se usa en la forma en que se obtiene. Un sistema energético convierte
+            una
+            forma de energía en otra para lograr trabajo útil.</p>
+
+        <div class="dos-columnas mt-3">
+            <div class="capsula secundaria">
+                <div class="capsula-etiqueta">
+                    <div class="icono"><img src="imagenes/icono-flujo.png" alt=""></div>
+                    <div class="titulo">Ejemplo</div>
+                </div>
+                <div class="capsula-contenido">
+                    <p>En una central hidroeléctrica, el agua almacenada posee <strong>energía potencial</strong>, que
+                        se
+                        transforma en <strong>energía cinética</strong> al bajar y, finalmente, en <strong>energía
+                            eléctrica</strong> en el generador.</p>
+                </div>
+            </div>
+            <div class="capsula acento">
+                <div class="capsula-etiqueta">
+                    <div class="icono"><img src="imagenes/icono-nota.png" alt=""></div>
+                    <div class="titulo">Regla</div>
+                </div>
+                <div class="capsula-contenido">
+                    <p>Mientras más conversiones haya, mayor es la pérdida. Diseñar sistemas eficientes requiere
+                        <strong>minimizar pasos intermedios</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="capsula secundaria mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-nota.png" alt=""></div>
+                <div class="titulo">Cadena</div>
+            </div>
+            <div class="capsula-contenido">
+                <p><strong>Energía potencial</strong> → <strong>turbina</strong> → <strong>generador</strong> →
+                    <strong>red
+                        eléctrica</strong> → <strong>consumo útil</strong>. Cada etapa introduce pérdidas; por eso el
+                    diseño busca minimizar conversiones innecesarias.
+                </p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.1 Conversión de Energía</span>
+            <span class="numero-pagina">5</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 6: 4.2 POTENCIA HIDRAULICA -->
+    <div class="page">
+        <h2>4.2 Potencia Hidráulica y Caudal</h2>
+        <p>Los sistemas hidráulicos transforman energía de presión en trabajo mecánico. El parámetro clave es la
+            potencia
+            hidráulica, que depende del caudal y la altura de elevación.</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Potencia hidráulica</div>
+            <div class="ecuacion">P = ρ · g · Q · h</div>
+            <p class="text-small">ρ: densidad del fluido, Q: caudal, h: altura</p>
+        </div>
+
+        <div class="nota-info">
+            <strong>Dato clave:</strong> Duplicar el caudal <strong>duplica la potencia</strong>, pero también aumenta
+            las
+            pérdidas por fricción en tuberías.
+        </div>
+
+        <h3 class="mt-4">Ejemplo aplicado</h3>
+        <p>Una bomba mueve 0.02 m³/s de agua a 15 m de altura. Si ρ = 1000 kg/m³ y g = 9.81 m/s², la potencia ideal es
+            de aproximadamente 2.9 kW. En la realidad, la potencia eléctrica será mayor por pérdidas.</p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.2 Potencia Hidráulica</span>
+            <span class="numero-pagina">6</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 7: 4.3 GESTION TERMICA -->
+    <div class="page">
+        <h2>4.3 Gestión Térmica y Transferencia de Calor</h2>
+        <p>Todo sistema energético genera calor. Si no se controla, reduce la eficiencia y puede dañar componentes. La
+            ingeniería térmica busca controlar la transferencia de calor por conducción, convección y radiación.</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Calor sensible</div>
+            <div class="ecuacion">Q = m · c · ΔT</div>
+            <p class="text-small">m: masa, c: calor específico, ΔT: cambio de temperatura</p>
+        </div>
+
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-nota.png" alt=""></div>
+                <div class="titulo">Estrategias</div>
+            </div>
+            <div class="capsula-contenido">
+                <ul>
+                    <li>Aletas y disipadores para aumentar el área de intercambio.</li>
+                    <li>Uso de fluidos refrigerantes en circuitos cerrados.</li>
+                    <li>Aislamiento térmico para reducir pérdidas no deseadas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-3">
+            <strong>Riesgo:</strong> Una mala gestión térmica puede llevar a <strong>fallas catastróficas</strong>, como
+            sobrecalentamiento de motores o explosión de calderas.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.3 Gestión Térmica</span>
+            <span class="numero-pagina">7</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 8: 4.4 ELECTROMECANICA -->
+    <div class="page">
+        <h2>4.4 Electromecánica y Generación Eléctrica</h2>
+        <p>Los motores y generadores son puentes entre energía eléctrica y mecánica. El flujo de un fluido puede mover
+            una
+            turbina y producir electricidad mediante inducción electromagnética.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Dispositivo</th>
+                    <th>Conversión</th>
+                    <th>Principio físico</th>
+                    <th>Aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Motor</strong></td>
+                    <td>Eléctrica → Mecánica</td>
+                    <td>Fuerza de Lorentz</td>
+                    <td>Bombas, ventiladores</td>
+                </tr>
+                <tr>
+                    <td><strong>Generador</strong></td>
+                    <td>Mecánica → Eléctrica</td>
+                    <td>Ley de Faraday</td>
+                    <td>Plantas eléctricas</td>
+                </tr>
+                <tr>
+                    <td><strong>Transformador</strong></td>
+                    <td>AC → AC (voltaje)</td>
+                    <td>Inducción mutua</td>
+                    <td>Transmisión</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="dos-columnas mt-3">
+            <div class="formula-destacada">
+                <div class="nombre">Potencia eléctrica</div>
+                <div class="ecuacion">P = V · I</div>
+            </div>
+            <div class="formula-destacada">
+                <div class="nombre">Pérdidas por calor</div>
+                <div class="ecuacion">P<sub>perdida</sub> = I² · R</div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.4 Electromecánica</span>
+            <span class="numero-pagina">8</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 9: 4.5 INTEGRACION DE SISTEMAS -->
+    <div class="page">
+        <h2>4.5 Integración de Sistemas Energéticos</h2>
+        <p>Un sistema energético real combina varias disciplinas: la hidráulica mueve un fluido, la termodinámica
+            controla
+            el calor y la electricidad distribuye la energía útil.</p>
+
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-layout.png" alt=""></div>
+                <div class="titulo">Caso</div>
+            </div>
+            <div class="capsula-contenido">
+                <p><strong>Planta termoeléctrica:</strong> el combustible genera calor, el vapor mueve una turbina y el
+                    generador produce electricidad. Se requieren torres de enfriamiento para disipar calor residual.</p>
+            </div>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>Insight:</strong> La eficiencia global se multiplica: η<sub>total</sub> = η<sub>turbina</sub> ·
+            η<sub>generador</sub> · η<sub>transmisión</sub>.
+        </div>
+
+        <table class="mt-3">
+            <thead>
+                <tr>
+                    <th>Subsistema</th>
+                    <th>Entrada</th>
+                    <th>Salida útil</th>
+                    <th>Pérdidas típicas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Caldera</strong></td>
+                    <td>Combustible</td>
+                    <td>Vapor a alta presión</td>
+                    <td>Calor al ambiente</td>
+                </tr>
+                <tr>
+                    <td><strong>Turbina</strong></td>
+                    <td>Vapor</td>
+                    <td>Energía mecánica</td>
+                    <td>Fricción, vibraciones</td>
+                </tr>
+                <tr>
+                    <td><strong>Generador</strong></td>
+                    <td>Rotación</td>
+                    <td>Electricidad</td>
+                    <td>Pérdidas eléctricas I²R</td>
+                </tr>
+                <tr>
+                    <td><strong>Enfriamiento</strong></td>
+                    <td>Calor residual</td>
+                    <td>Condensación</td>
+                    <td>Disipación al ambiente</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.5 Integración de Sistemas</span>
+            <span class="numero-pagina">9</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 10: CUADRO COMPARATIVO -->
+    <div class="page">
+        <div class="cuadro-comparativo">
+            <div class="cuadro-comparativo-header">
+                <h3>Comparativa de Sistemas Energéticos</h3>
+            </div>
+            <div class="cuadro-comparativo-body">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">Hidráulico</h4>
+                    <ul>
+                        <li>Presión y caudal</li>
+                        <li>Fluido incompresible</li>
+                        <li>Alta densidad energética</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">Térmico</h4>
+                    <ul>
+                        <li>Calor y temperatura</li>
+                        <li>Transferencia por medios</li>
+                        <li>Pérdidas por disipación</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--success-color);">Eléctrico</h4>
+                    <ul>
+                        <li>Voltaje y corriente</li>
+                        <li>Alta eficiencia de transporte</li>
+                        <li>Conversión con motores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-exito mt-3">
+            <strong>Conclusión técnica:</strong> Los mejores sistemas combinan las fortalezas de cada dominio y reducen
+            pérdidas en interfaces.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Comparativa</span>
+            <span class="numero-pagina">10</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 11: 4.6 SENSORES E INSTRUMENTACION -->
+    <div class="page">
+        <h2>4.6 Sensores e Instrumentación</h2>
+        <p>Los sensores traducen el mundo físico a datos. Un sistema confiable inicia con una medición precisa y una
+            calibración adecuada.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Sensor</th>
+                    <th>Variable</th>
+                    <th>Principio</th>
+                    <th>Aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>FSR</strong></td>
+                    <td>Presión/Fuerza</td>
+                    <td>Resistencia variable</td>
+                    <td>Robótica blanda</td>
+                </tr>
+                <tr>
+                    <td><strong>LDR</strong></td>
+                    <td>Luz</td>
+                    <td>Fotoconductividad</td>
+                    <td>Domótica</td>
+                </tr>
+                <tr>
+                    <td><strong>Termistor</strong></td>
+                    <td>Temperatura</td>
+                    <td>Resistencia térmica</td>
+                    <td>Gestión térmica</td>
+                </tr>
+                <tr>
+                    <td><strong>MPX</strong></td>
+                    <td>Presión</td>
+                    <td>Piezoresistivo</td>
+                    <td>Flujos y bombas</td>
+                </tr>
+                <tr>
+                    <td><strong>Caudalímetro</strong></td>
+                    <td>Flujo</td>
+                    <td>Efecto Hall</td>
+                    <td>Riego inteligente</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-info mt-3">
+            <strong>Consejo:</strong> Define el rango de operación y calibra el sensor antes de usarlo en control.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.6 Sensores</span>
+            <span class="numero-pagina">11</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 12: 4.7 ACTUADORES Y POTENCIA -->
+    <div class="page">
+        <h2>4.7 Actuadores y Potencia</h2>
+        <p>Los actuadores convierten señales eléctricas en acción física. Seleccionar el actuador correcto garantiza
+            eficiencia, seguridad y control.</p>
+
+        <div class="dos-columnas mt-3">
+            <div>
+                <h4>Actuadores eléctricos</h4>
+                <ul>
+                    <li>Motores DC y paso a paso</li>
+                    <li>Servomotores</li>
+                    <li>Relés y contactores</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Actuadores de fluido</h4>
+                <ul>
+                    <li>Válvulas solenoides</li>
+                    <li>Bombas peristálticas</li>
+                    <li>Actuadores neumáticos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="formula-destacada mt-3">
+            <div class="nombre">Potencia eléctrica</div>
+            <div class="ecuacion">P = V · I</div>
+        </div>
+
+        <div class="nota-alerta">
+            <strong>Seguridad:</strong> Los actuadores de potencia deben usarse con protecciones (fusibles, relés y
+            aislamiento eléctrico).
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.7 Actuadores</span>
+            <span class="numero-pagina">12</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 13: 4.8 CONTROL Y RETROALIMENTACION -->
+    <div class="page">
+        <h2>4.8 Control y Retroalimentación</h2>
+        <p>Un sistema de control toma decisiones para mantener una variable en el valor deseado. La retroalimentación
+            mejora la precisión y la estabilidad.</p>
+
+        <div class="cuadro-comparativo">
+            <div class="cuadro-comparativo-header">
+                <h3>Lazo Abierto vs Lazo Cerrado</h3>
+            </div>
+            <div class="cuadro-comparativo-body" style="grid-template-columns: 1fr 1fr;">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">Lazo Abierto</h4>
+                    <ul>
+                        <li>No mide el resultado</li>
+                        <li>Más simple y barato</li>
+                        <li>Menos preciso</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">Lazo Cerrado</h4>
+                    <ul>
+                        <li>Mide y corrige</li>
+                        <li>Mayor precisión</li>
+                        <li>Requiere sensores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>PID básico:</strong> El control proporcional, integral y derivativo combina respuesta rápida y
+            estabilidad en sistemas reales.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.8 Control</span>
+            <span class="numero-pagina">13</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 14: 4.9 COMUNICACION E IOT -->
+    <div class="page">
+        <h2>4.9 Comunicación e IoT</h2>
+        <p>La conectividad permite que los sistemas compartan datos y se coordinen. En IoT, la confiabilidad y la
+            seguridad son críticas.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Protocolo</th>
+                    <th>Tipo</th>
+                    <th>Ventaja</th>
+                    <th>Uso típico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>UART</strong></td>
+                    <td>Serial</td>
+                    <td>Simple y estable</td>
+                    <td>Comunicación local</td>
+                </tr>
+                <tr>
+                    <td><strong>I2C</strong></td>
+                    <td>Serial</td>
+                    <td>Varios sensores</td>
+                    <td>Placas de sensores</td>
+                </tr>
+                <tr>
+                    <td><strong>SPI</strong></td>
+                    <td>Serial</td>
+                    <td>Alta velocidad</td>
+                    <td>Memorias y displays</td>
+                </tr>
+                <tr>
+                    <td><strong>Wi-Fi</strong></td>
+                    <td>Inalámbrico</td>
+                    <td>Largo alcance</td>
+                    <td>IoT doméstico</td>
+                </tr>
+                <tr>
+                    <td><strong>MQTT</strong></td>
+                    <td>Mensajería</td>
+                    <td>Ligero y eficiente</td>
+                    <td>IoT en la nube</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-alerta mt-3">
+            <strong>Seguridad:</strong> Protege datos sensibles con autenticación y cifrado básico.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.9 Comunicación</span>
+            <span class="numero-pagina">14</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 15: 4.10 GESTION ENERGETICA INTELIGENTE -->
+    <div class="page">
+        <h2>4.10 Gestión Energética Inteligente</h2>
+        <p>Un sistema conectado debe ser eficiente. La optimización energética incluye modos de reposo, control por
+            eventos y selección adecuada de fuentes de energía.</p>
+
+        <div class="capsula secundaria mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-nota.png" alt=""></div>
+                <div class="titulo">Estrategias</div>
+            </div>
+            <div class="capsula-contenido">
+                <ul>
+                    <li>Uso de <strong>sleep modes</strong> en microcontroladores.</li>
+                    <li>Activación por eventos (sensor de movimiento).</li>
+                    <li>Transmitir datos en bloques en lugar de continuo.</li>
+                    <li>Elegir fuentes de energía según demanda real.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>Balance energético:</strong> Calcula el consumo diario de cada módulo para dimensionar baterías y
+            paneles solares.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>4.10 Gestión Energética</span>
+            <span class="numero-pagina">15</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 16: SINTESIS INTEGRADA -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-documento.png" alt=""></div>
+                <div class="titulo">Síntesis</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>La integración de energía y control se logra cuando cada etapa del sistema es medida, regulada y
+                    optimizada con criterios técnicos y éticos.</p>
+            </div>
+        </div>
+
+        <table class="mt-3">
+            <thead>
+                <tr>
+                    <th>Etapa</th>
+                    <th>Variable clave</th>
+                    <th>Herramienta</th>
+                    <th>Control</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Captación</td>
+                    <td>Caudal / temperatura</td>
+                    <td>Sensor de flujo / termistor</td>
+                    <td>Válvula o bomba</td>
+                </tr>
+                <tr>
+                    <td>Conversión</td>
+                    <td>Potencia mecánica</td>
+                    <td>Turbina / motor</td>
+                    <td>Velocidad regulada</td>
+                </tr>
+                <tr>
+                    <td>Distribución</td>
+                    <td>Voltaje / corriente</td>
+                    <td>Transformador</td>
+                    <td>Protecciones eléctricas</td>
+                </tr>
+                <tr>
+                    <td>Uso final</td>
+                    <td>Consumo energético</td>
+                    <td>Medidores</td>
+                    <td>Optimización y ahorro</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-exito mt-3">
+            <strong>Clave Albatros:</strong> La eficiencia global depende de integrar medición, control y decisión.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Síntesis integrada</span>
+            <span class="numero-pagina">16</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 17: ESTUDIO DE CASO -->
+    <div class="page">
+        <h2>Estudio de Caso Integrador</h2>
+        <p>Un campus escolar necesita bombear agua, mantener temperatura en laboratorios y reducir el consumo eléctrico.
+            Se plantea una microred inteligente con sensores, actuadores y monitoreo en la nube.</p>
+
+        <h3 class="mt-3">Componentes del sistema</h3>
+        <ul>
+            <li>Bomba hidráulica con sensor de caudal y presión.</li>
+            <li>Control térmico con termistores y ventiladores.</li>
+            <li>Medidores de consumo eléctrico por área.</li>
+            <li>Plataforma IoT para reportes y alertas.</li>
+        </ul>
+
+        <div class="capsula secundaria mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-nota.png" alt=""></div>
+                <div class="titulo">Desafío</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Define qué variables deben medirse, cómo actuar ante fallas y qué indicadores usar para evaluar la
+                    eficiencia del sistema.</p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Estudio de caso</span>
+            <span class="numero-pagina">17</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 18: PROCEDIMIENTOS -->
+    <div class="page">
+        <h2>Procedimientos Paso a Paso</h2>
+
+        <h3>Cálculo rápido de potencia hidráulica</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Convertir caudal a m³/s</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Multiplicar por ρ·g·h</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Aplicar eficiencia de la bomba (η)</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Comparar con potencia eléctrica disponible</div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Balance térmico simple</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Identificar masas y temperaturas iniciales</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Aplicar Q = m·c·ΔT</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Igualar calor ganado y perdido</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Verificar coherencia con límites físicos</div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Procedimientos</span>
+            <span class="numero-pagina">18</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 19: PROCEDIMIENTOS DE INSTRUMENTACION -->
+    <div class="page">
+        <h2>Procedimientos de Instrumentación</h2>
+
+        <h3>Calibración de sensor analógico</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Medir valores mínimo y máximo</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Crear curva de conversión</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Validar con una referencia real</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Guardar parámetros en el código</div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Prueba de actuador con relé</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Verificar tensión del actuador</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Conectar con fuente externa y relé</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Probar activación segura</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Añadir protección con fusible</div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Procedimientos</span>
+            <span class="numero-pagina">19</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 20: PRACTICAS INTEGRADORAS -->
+    <div class="page">
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-engranaje.png" alt=""></div>
+                <div class="titulo">Prácticas Integradoras</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Ejercicios que combinan conceptos de fluidos, calor y electricidad.</p>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">1</div>
+                <div class="titulo">Dimensionamiento de una Bomba de Agua</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Se requiere elevar 0.03 m³/s de agua a 20 m de altura. La eficiencia de la bomba es 75%.</p>
+                    <p><strong>a)</strong> Calcula la potencia hidráulica ideal.</p>
+                    <p><strong>b)</strong> Determina la potencia eléctrica necesaria.</p>
+                    <p><strong>c)</strong> Estima el consumo mensual si opera 3 h diarias.</p>
+                </div>
+                <div class="espacio-respuesta grande"></div>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">2</div>
+                <div class="titulo">Intercambiador de Calor Simple</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Un flujo de aceite (c = 2100 J/kg·K) se enfría de 90 °C a 50 °C con agua a 20 °C.</p>
+                    <p><strong>a)</strong> ¿Qué cantidad de calor pierde el aceite por cada kg?</p>
+                    <p><strong>b)</strong> ¿Qué masa de agua se requiere para absorber ese calor si sube a 40 °C?</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Prácticas Integradoras</span>
+            <span class="numero-pagina">20</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 21: PRACTICAS INTEGRADORAS CONT -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">3</div>
+                <div class="titulo">Eficiencia de Turbina</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Una turbina recibe 500 kW de potencia hidráulica y entrega 320 kW eléctricos.</p>
+                    <p><strong>a)</strong> Calcula la eficiencia global.</p>
+                    <p><strong>b)</strong> ¿Cuánta potencia se pierde en calor y fricción?</p>
+                    <p><strong>c)</strong> Propón una mejora para aumentar la eficiencia.</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">4</div>
+                <div class="titulo">Refrigeración de Motor Eléctrico</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Un motor disipa 600 W en calor. Se usa un ventilador que aumenta la convección.</p>
+                    <p><strong>a)</strong> Explica por qué la temperatura del motor disminuye.</p>
+                    <p><strong>b)</strong> ¿Qué riesgos habría si el ventilador falla?</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Prácticas Integradoras</span>
+            <span class="numero-pagina">21</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 22: PRACTICAS INTEGRADORAS CONTROL -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">5</div>
+                <div class="titulo">Sistema de Riego Inteligente</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Un sensor de humedad activa una bomba cuando la tierra está seca.</p>
+                    <p><strong>a)</strong> Define el setpoint y la variable medida.</p>
+                    <p><strong>b)</strong> ¿Es lazo abierto o cerrado?</p>
+                    <p><strong>c)</strong> Propón una mejora para ahorrar energía.</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">6</div>
+                <div class="titulo">Control de Temperatura en Incubadora</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Se requiere mantener 37 °C con un termistor y un calentador.</p>
+                    <p><strong>a)</strong> Diseña un plan de control básico.</p>
+                    <p><strong>b)</strong> ¿Qué ocurre si el sensor falla?</p>
+                    <p><strong>c)</strong> ¿Cómo registrarías datos para mejora continua?</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Prácticas Integradoras</span>
+            <span class="numero-pagina">22</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 23: PRACTICAS INTEGRADORAS IOT -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">7</div>
+                <div class="titulo">Monitoreo Energético en Aula</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Se monitorea consumo eléctrico para apagar equipos cuando no hay uso.</p>
+                    <p><strong>a)</strong> ¿Qué sensor usarías?</p>
+                    <p><strong>b)</strong> Diseña una lógica simple de apagado.</p>
+                    <p><strong>c)</strong> ¿Qué indicador usarías para evaluar ahorro?</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">8</div>
+                <div class="titulo">Alarma de Fuga de Agua</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Un sensor de flujo detecta fugas y envía alerta a la nube.</p>
+                    <p><strong>a)</strong> ¿Qué protocolo usarías para enviar datos?</p>
+                    <p><strong>b)</strong> ¿Cómo protegerías los datos del usuario?</p>
+                    <p><strong>c)</strong> ¿Qué acción automática ejecutarías ante una fuga?</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Prácticas Integradoras</span>
+            <span class="numero-pagina">23</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 24: MINI ACTIVIDADES -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-lista.png" alt=""></div>
+                <div class="titulo">Mini Actividades</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Ejercicios rápidos para afianzar ideas clave en energía, control e IoT.</p>
+            </div>
+        </div>
+
+        <div class="nota-info"><strong>1.</strong> Explica con tus palabras qué significa eficiencia global.</div>
+        <div class="nota-info"><strong>2.</strong> ¿Por qué una bomba consume más electricidad de la potencia hidráulica
+            que entrega?</div>
+        <div class="nota-info"><strong>3.</strong> Menciona dos formas de reducir pérdidas térmicas en una tubería
+            caliente.</div>
+        <div class="nota-info"><strong>4.</strong> Identifica un sistema en tu casa que convierta energía eléctrica en
+            mecánica.</div>
+        <div class="nota-info"><strong>5.</strong> ¿Qué variable controlarías para aumentar el caudal sin cambiar la
+            bomba?</div>
+        <div class="nota-info"><strong>6.</strong> ¿Qué papel cumple el transformador en la distribución eléctrica?
+        </div>
+        <div class="nota-info"><strong>7.</strong> Nombra dos sensores y la variable que miden.</div>
+        <div class="nota-info"><strong>8.</strong> ¿Por qué un relé es útil para actuadores de potencia?</div>
+        <div class="nota-info"><strong>9.</strong> ¿Qué ventaja tiene MQTT en IoT?</div>
+        <div class="nota-info"><strong>10.</strong> Propón una forma de ahorrar energía en un nodo conectado.</div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Mini Actividades</span>
+            <span class="numero-pagina">24</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 25: TIP EXTRA -->
+    <div class="page">
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-clip.png" alt=""></div>
+                <div class="titulo">Tip Extra</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Pequeños cambios en el diseño pueden aumentar la eficiencia y la confiabilidad del sistema.</p>
+            </div>
+        </div>
+
+        <div class="nota-alerta">
+            <strong>Unidades críticas:</strong> Usa siempre SI (m, kg, s). En potencia hidráulica, el error típico es
+            usar
+            litros/minuto sin convertir a m³/s.
+        </div>
+
+        <div class="nota-alerta mt-3">
+            <strong>Ruido eléctrico:</strong> Usa resistencias pull-up/pull-down y cables cortos para señales sensibles.
+        </div>
+
+        <div class="nota-exito mt-3">
+            <strong>Buenas prácticas:</strong> Documenta conexiones, calibra sensores y verifica protecciones
+            eléctricas.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Tip Extra</span>
+            <span class="numero-pagina">25</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 26: RETO DIGITAL INTEGRADOR -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">R</div>
+                <div class="titulo">Reto Digital Integrador: Microred Inteligente</div>
+            </div>
+            <div class="actividad-body">
+                <h4>Desafío</h4>
+                <p>Diseña un sistema inteligente que integre bombeo de agua, gestión térmica y monitoreo eléctrico con
+                    sensores y conexión IoT para un campus o invernadero escolar.</p>
+
+                <h4 class="mt-3">Instrucciones</h4>
+                <ol>
+                    <li>Plantea el balance de energía del sistema (entradas, salidas y pérdidas).</li>
+                    <li>Selecciona sensores para caudal, presión, temperatura y consumo eléctrico.</li>
+                    <li>Define actuadores: bomba, ventilador y válvula.</li>
+                    <li>Configura un setpoint y un lazo de control básico.</li>
+                    <li>Envía datos a la nube y genera alertas ante fallas.</li>
+                </ol>
+
+                <h4 class="mt-3">Entregables</h4>
+                <ul>
+                    <li>Diagrama funcional del sistema</li>
+                    <li>Tabla de sensores, actuadores y rangos</li>
+                    <li>Resultados de simulación o cálculo</li>
+                    <li>Conclusiones sobre eficiencia y seguridad</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Reto Digital</span>
+            <span class="numero-pagina">26</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 27: EVALUACION RETO -->
+    <div class="page">
+        <h3>Criterios de Evaluación del Reto Digital</h3>
+        <table>
+            <tr>
+                <th>Dimensión</th>
+                <th>Puntos</th>
+                <th>Criterios</th>
+            </tr>
+            <tr>
+                <td><strong>Aplicación de conceptos</strong></td>
+                <td>20</td>
+                <td>Uso correcto de potencia, eficiencia y balances energéticos</td>
+            </tr>
+            <tr>
+                <td><strong>Diseño del sistema</strong></td>
+                <td>15</td>
+                <td>Selección adecuada de sensores y actuadores</td>
+            </tr>
+            <tr>
+                <td><strong>Control y lógica</strong></td>
+                <td>10</td>
+                <td>Setpoints claros y respuesta coherente</td>
+            </tr>
+            <tr>
+                <td><strong>Conectividad</strong></td>
+                <td>10</td>
+                <td>Datos enviados y visualizados correctamente</td>
+            </tr>
+            <tr>
+                <td><strong>Impacto</strong></td>
+                <td>10</td>
+                <td>Ahorro de energía y seguridad del sistema</td>
+            </tr>
+        </table>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Evaluación</span>
+            <span class="numero-pagina">27</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 28: PROFESIONALES CON VALOR -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-graduado.png" alt=""></div>
+                <div class="titulo">Profesionales con valor</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>La ética también es eficiencia: diseñar sistemas seguros, sostenibles y justos para la sociedad.</p>
+            </div>
+        </div>
+
+        <h3>Caso 1: Falla por sobrecarga térmica</h3>
+        <p>Un centro de datos sufrió un apagón porque su sistema de enfriamiento estaba subdimensionado. Las alertas
+            térmicas fueron ignoradas para ahorrar costos en mantenimiento.</p>
+
+        <h3 class="mt-3">Caso 2: Privacidad en IoT</h3>
+        <p>Un sistema inteligente recolecta datos personales. Sin transparencia, puede generar riesgos de seguridad y
+            pérdida de confianza.</p>
+
+        <div class="nota-alerta mt-3">
+            <strong>Reflexión ética:</strong> La eficiencia económica nunca debe justificar riesgos para las personas ni
+            la exposición indebida de datos.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Profesionales con valor</span>
+            <span class="numero-pagina">28</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 29: RECURSOS -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-documento.png" alt=""></div>
+                <div class="titulo">Recursos</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Material complementario para profundizar en energía, instrumentación y control.</p>
+            </div>
+        </div>
+
+        <div class="lista-materiales">
+            <h4>Lecturas recomendadas</h4>
+            <div class="material-item">
+                <div class="material-check"></div><span>OpenStax Physics: capítulos de energía y potencia</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div><span>Manual de bombas centrífugas y pérdidas de carga</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div><span>Guía básica de sensores y actuadores</span>
+            </div>
+        </div>
+
+        <div class="lista-materiales">
+            <h4>Software y simuladores</h4>
+            <div class="material-item">
+                <div class="material-check"></div><span>Energy2D (transferencia de calor)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div><span>SimScale (flujo y térmica)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div><span>Arduino IDE y simuladores en línea</span>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Recursos</span>
+            <span class="numero-pagina">29</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 30: CONCLUSION -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diploma.png" alt=""></div>
+                <div class="titulo">Conclusión</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>En esta unidad conectaste la hidráulica, la termodinámica, la electricidad y el control para entender
+                    cómo se construyen sistemas inteligentes. La clave está en medir, decidir y actuar con eficiencia y
+                    responsabilidad.</p>
+            </div>
+        </div>
+
+        <div class="nota-exito mt-4">
+            <strong>Mensaje final:</strong> Un ingeniero Albatros integra ciencia, tecnología y ética para transformar
+            su
+            entorno.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 4</span>
+            <span>Conclusión</span>
+            <span class="numero-pagina">30</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 31: CONTRAPORTADA -->
+    <div class="page"
+        style="background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-color) 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <h1 style="color: white; font-size: 20pt;">FIN DE LA UNIDAD 4</h1>
+        <p style="font-size: 13pt; margin-top: 5mm;">Sistemas Energéticos Integrados e Instrumentación, Control e IoT
+        </p>
+        <p style="font-size: 11pt; margin-top: 6mm; opacity: 0.85;">Edición Albatros Competitiva</p>
+
+        <div style="margin-top: 16mm; padding: 5mm 10mm; background: rgba(255,255,255,0.1); border-radius: 10px;">
+            <p style="font-size: 9pt; margin: 0;">
+                <strong>Resumen de contenidos:</strong><br><br>
+                10 Ejes temáticos | 8 Prácticas Integradoras<br>
+                1 Reto Digital Integrador | Control e IoT<br>
+                Gestión hidráulica, térmica y eléctrica
+            </p>
+        </div>
+
+        <div style="margin-top: 18mm;">
+            <div style="background: rgba(255, 255, 255, 0.95); padding: 4mm 6mm; border-radius: 8px;">
+                <img src="LOGO.png" alt="Logo Grupo Cultural Albatros" style="height: 20mm; width: auto;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Effects -->
+    <link rel="stylesheet" href="../web-effects.css">
+    <script src="web-effects-u4.js"></script>
+
+    <!-- Back to Home Button -->
+    <a href="../index-web.html" class="back-to-home">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        Inicio
+    </a>
+
+</body>
+
+</html>

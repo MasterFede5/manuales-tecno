@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de Actividades - Química</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pdf-container {
+            width: 8.5in;
+            height: calc(100vh - 100px);
+            margin: 20px auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pdf-header {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .pdf-header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: white;
+        }
+
+        .pdf-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">📚 Química Digital</div>
+            <ul class="nav-menu">
+                <li><a href="manual_quimica_digital.html">Manual de Química</a></li>
+                <li><a href="libro_actividades.html" class="active">Libro de Actividades</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="pdf-header">
+            <h1>📝 Libro de Actividades</h1>
+            <p>Preparatoria - Ciencias Naturales, Experimentales y Tecnología I</p>
+        </div>
+
+        <div class="pdf-container">
+            <iframe src="LIBRO ACTIVIDADES PREPA.pdf" title="Libro de Actividades"></iframe>
+        </div>
+    </main>
+
+    <script src="particles.js"></script>
+</body>
+
+</html>

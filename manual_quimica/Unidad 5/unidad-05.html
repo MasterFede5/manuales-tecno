@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 5 · Estequiometría y Sostenibilidad | Manual de Química</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- ==================== PORTADA UNIDAD 5 ==================== -->
+    <section class="pagina portada-unidad">
+        <div class="unidad-numero">UNIDAD 5</div>
+        <h1 class="unidad-titulo">Estequiometría y Sostenibilidad</h1>
+        <p class="unidad-subtitulo">Cálculos químicos y química verde</p>
+
+        <div class="unidad-meta">
+            <div class="meta-item">
+                <span class="meta-label">Páginas</span>
+                <span class="meta-valor">146–185</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Temas</span>
+                <span class="meta-valor">7</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Extensión</span>
+                <span class="meta-valor">40 páginas</span>
+            </div>
+        </div>
+
+        <figure class="imagen-contenido">
+            <img src="images/Imagen de Portada Unidad 5.png" alt="Portada Unidad 5 - Estequiometría y Sostenibilidad">
+        </figure>
+
+        <div class="competencias-unidad">
+            <h3>Competencias a desarrollar</h3>
+            <ul>
+                <li>Realiza cálculos estequiométricos usando el concepto de mol</li>
+                <li>Identifica el reactivo limitante en una reacción</li>
+                <li>Calcula concentraciones de soluciones</li>
+                <li>Aplica la ley de los gases ideales</li>
+                <li>Determina fórmulas empíricas y moleculares</li>
+                <li>Aplica principios de química verde y sostenibilidad</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">146</div>
+    </section>
+
+    <!-- ==================== TABLA DE MASAS ATÓMICAS ==================== -->
+    <section class="pagina">
+        <h2>Tabla de Masas Atómicas de Referencia</h2>
+        <p>Utiliza esta tabla para resolver los ejercicios de la unidad. Las masas están redondeadas para facilitar los cálculos.</p>
+
+        <div class="tabla-container">
+            <table class="tabla-datos tabla-masas">
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Símbolo</th>
+                        <th>Masa (u)</th>
+                        <th>Elemento</th>
+                        <th>Símbolo</th>
+                        <th>Masa (u)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hidrógeno</td><td>H</td><td><strong>1</strong></td>
+                        <td>Calcio</td><td>Ca</td><td><strong>40</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Carbono</td><td>C</td><td><strong>12</strong></td>
+                        <td>Hierro</td><td>Fe</td><td><strong>56</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Nitrógeno</td><td>N</td><td><strong>14</strong></td>
+                        <td>Cobre</td><td>Cu</td><td><strong>64</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Oxígeno</td><td>O</td><td><strong>16</strong></td>
+                        <td>Zinc</td><td>Zn</td><td><strong>65</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Sodio</td><td>Na</td><td><strong>23</strong></td>
+                        <td>Plata</td><td>Ag</td><td><strong>108</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Magnesio</td><td>Mg</td><td><strong>24</strong></td>
+                        <td>Bario</td><td>Ba</td><td><strong>137</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Aluminio</td><td>Al</td><td><strong>27</strong></td>
+                        <td>Plomo</td><td>Pb</td><td><strong>207</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Azufre</td><td>S</td><td><strong>32</strong></td>
+                        <td>Cloro</td><td>Cl</td><td><strong>35.5</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Potasio</td><td>K</td><td><strong>39</strong></td>
+                        <td>Bromo</td><td>Br</td><td><strong>80</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-nota">
+            <h4>Constantes importantes</h4>
+            <ul>
+                <li><strong>Número de Avogadro (N<sub>A</sub>):</strong> 6.022 × 10²³ mol⁻¹</li>
+                <li><strong>Volumen molar en CNPT (V<sub>m</sub>):</strong> 22.4 L/mol</li>
+                <li><strong>Constante de los gases (R):</strong> 0.082 atm·L/mol·K = 8.314 J/mol·K</li>
+                <li><strong>CNPT:</strong> 0°C (273 K) y 1 atm</li>
+                <li><strong>Condiciones estándar:</strong> 25°C (298 K) y 1 atm</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">147</div>
+    </section>
+
+    <!-- ==================== TEMA 5.1: EL MOL ==================== -->
+    <section class="pagina">
+        <header class="tema-header">
+            <span class="tema-numero">Tema 5.1</span>
+            <h2 class="tema-titulo">El Mol: La Unidad del Químico</h2>
+            <p class="tema-paginas">Páginas 148–152</p>
+        </header>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
+            <span class="icono-texto">Objetivo de aprendizaje</span>
+        </div>
+
+        <div class="objetivo-box">
+            <p>Comprender el concepto de mol como unidad de cantidad de sustancia y aplicarlo en cálculos que relacionan número de partículas, masa y volumen molar.</p>
+        </div>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+            <span class="icono-texto">Conceptos Fundamentales</span>
+        </div>
+
+        <div class="card card-concepto">
+            <h4>¿Por qué necesitamos el mol?</h4>
+            <p>Los átomos y moléculas son extremadamente pequeños. ¡Un gramo de hidrógeno contiene aproximadamente 600,000,000,000,000,000,000,000 átomos! Para manejar estas cantidades tan grandes, los químicos crearon una unidad especial: el <strong>mol</strong>.</p>
+        </div>
+
+        <div class="card card-destacado">
+            <h4>Definición de mol</h4>
+            <p>Un <strong>mol</strong> es la cantidad de sustancia que contiene exactamente <strong>6.02214076 × 10²³</strong> entidades elementales (átomos, moléculas, iones, etc.).</p>
+            <div class="formula-destacada">
+                N<sub>A</sub> = 6.022 × 10²³ mol⁻¹
+            </div>
+            <p class="text-center"><em>Número de Avogadro</em></p>
+        </div>
+
+        <div class="card card-nota">
+            <h4>Analogía para entender el mol</h4>
+            <p>Así como una "docena" representa 12 unidades de cualquier cosa (huevos, lápices, personas), un "mol" representa 6.022 × 10²³ unidades de cualquier partícula.</p>
+            <ul>
+                <li>1 docena de huevos = 12 huevos</li>
+                <li>1 mol de átomos de carbono = 6.022 × 10²³ átomos de C</li>
+                <li>1 mol de moléculas de agua = 6.022 × 10²³ moléculas de H₂O</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">148</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Masa molar (M)</h3>
+        <p>Es la masa de un mol de sustancia. Numéricamente coincide con la masa atómica o molecular expresada en gramos.</p>
+
+        <div class="formula-destacada">
+            M = masa de 1 mol de sustancia (g/mol)
+        </div>
+
+        <div class="tabla-container">
+            <table class="tabla-datos">
+                <thead>
+                    <tr>
+                        <th>Sustancia</th>
+                        <th>Masa atómica/molecular</th>
+                        <th>Masa molar (g/mol)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Carbono (C)</td>
+                        <td>12 u</td>
+                        <td>12 g/mol</td>
+                    </tr>
+                    <tr>
+                        <td>Oxígeno (O₂)</td>
+                        <td>32 u</td>
+                        <td>32 g/mol</td>
+                    </tr>
+                    <tr>
+                        <td>Agua (H₂O)</td>
+                        <td>18 u</td>
+                        <td>18 g/mol</td>
+                    </tr>
+                    <tr>
+                        <td>Ácido sulfúrico (H₂SO₄)</td>
+                        <td>98 u</td>
+                        <td>98 g/mol</td>
+                    </tr>
+                    <tr>
+                        <td>Glucosa (C₆H₁₂O₆)</td>
+                        <td>180 u</td>
+                        <td>180 g/mol</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-procedimiento">
+            <h4>Cálculo de masa molar de compuestos</h4>
+            <p><strong>Ejemplo:</strong> Calcular la masa molar de H₂SO₄</p>
+            <div class="calculo-paso">
+                <p>M = 2(H) + 1(S) + 4(O)</p>
+                <p>M = 2(1) + 1(32) + 4(16)</p>
+                <p>M = 2 + 32 + 64 = <strong>98 g/mol</strong></p>
+            </div>
+        </div>
+
+        <figure class="imagen-contenido">
+            <img src="images/Infografía El Concepto del Mol.jpg" alt="Infografía: El Concepto de Mol">
+            <figcaption>El mol permite relacionar el mundo macroscópico con el microscópico</figcaption>
+        </figure>
+        <div class="numero-pagina">149</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Relaciones fundamentales del mol</h3>
+
+        <div class="triangulo-mol">
+            <div class="card card-concepto">
+                <h4>Las tres relaciones clave</h4>
+                <div class="relaciones-grid">
+                    <div class="relacion-item">
+                        <span class="relacion-formula">n = m / M</span>
+                        <span class="relacion-descripcion">Moles a partir de masa</span>
+                    </div>
+                    <div class="relacion-item">
+                        <span class="relacion-formula">n = N / N<sub>A</sub></span>
+                        <span class="relacion-descripcion">Moles a partir de partículas</span>
+                    </div>
+                    <div class="relacion-item">
+                        <span class="relacion-formula">n = V / V<sub>m</sub></span>
+                        <span class="relacion-descripcion">Moles a partir de volumen (gases en CNPT)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leyenda-variables">
+            <p><strong>Donde:</strong></p>
+            <ul>
+                <li><strong>n</strong> = número de moles (mol)</li>
+                <li><strong>m</strong> = masa (g)</li>
+                <li><strong>M</strong> = masa molar (g/mol)</li>
+                <li><strong>N</strong> = número de partículas</li>
+                <li><strong>N<sub>A</sub></strong> = número de Avogadro (6.022 × 10²³)</li>
+                <li><strong>V</strong> = volumen del gas (L)</li>
+                <li><strong>V<sub>m</sub></strong> = volumen molar (22.4 L/mol en CNPT)</li>
+            </ul>
+        </div>
+
+        <figure class="imagen-contenido">
+            <img src="images/Diagrama Triángulo del Mol.png" alt="Diagrama: Triángulo del Mol">
+            <figcaption>El triángulo del mol muestra las conversiones entre masa, partículas y volumen</figcaption>
+        </figure>
+        <div class="numero-pagina">150</div>
+    </section>
+
+    <section class="pagina">
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            <span class="icono-texto">Mini Actividad</span>
+        </div>
+
+        <div class="actividad-box">
+            <h4>Ejercicios de conversión</h4>
+            <p>Resuelve los siguientes problemas:</p>
+
+            <div class="ejercicio">
+                <p><strong>1.</strong> ¿Cuántos moles hay en 90 g de agua (H₂O)?</p>
+                <p><em>Datos: M(H₂O) = 18 g/mol</em></p>
+                <div class="espacio-calculo">
+                    <p>Fórmula: n = m / M</p>
+                    <p>Sustitución: n = _____ / _____</p>
+                    <p>Resultado: n = _____ mol</p>
+                </div>
+            </div>
+
+            <div class="ejercicio">
+                <p><strong>2.</strong> ¿Cuántos gramos pesan 0.5 moles de NaCl?</p>
+                <p><em>Datos: M(NaCl) = 58.5 g/mol</em></p>
+                <div class="espacio-calculo">
+                    <p>Fórmula: m = n × M</p>
+                    <p>Sustitución: m = _____ × _____</p>
+                    <p>Resultado: m = _____ g</p>
+                </div>
+            </div>
+
+            <div class="ejercicio">
+                <p><strong>3.</strong> ¿Cuántos átomos hay en 1 mol de hierro (Fe)?</p>
+                <div class="espacio-calculo">
+                    <p>Fórmula: N = n × N<sub>A</sub></p>
+                    <p>Sustitución: N = _____ × 6.022 × 10²³</p>
+                    <p>Resultado: N = _____ átomos</p>
+                </div>
+            </div>
+
+            <div class="ejercicio">
+                <p><strong>4.</strong> ¿Cuántos moles de gas hay en 44.8 L a CNPT?</p>
+                <p><em>Datos: V<sub>m</sub> = 22.4 L/mol</em></p>
+                <div class="espacio-calculo">
+                    <p>Fórmula: n = V / V<sub>m</sub></p>
+                    <p>Sustitución: n = _____ / _____</p>
+                    <p>Resultado: n = _____ mol</p>
+                </div>
+            </div>
+        </div>
+        <div class="numero-pagina">151</div>
+    </section>
+
+    <section class="pagina">
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+            <span class="icono-texto">Conclusión del tema</span>
+        </div>
+
+        <div class="conclusion-box">
+            <h4>Ideas clave del Tema 5.1</h4>
+            <ul>
+                <li>El mol es la unidad de cantidad de sustancia del SI</li>
+                <li>1 mol = 6.022 × 10²³ partículas (número de Avogadro)</li>
+                <li>La masa molar (g/mol) es numéricamente igual a la masa atómica/molecular</li>
+                <li>En CNPT, 1 mol de gas ocupa 22.4 L</li>
+                <li>Las tres relaciones permiten convertir entre masa, partículas y volumen</li>
+            </ul>
+        </div>
+
+        <div class="card card-nota">
+            <h4>Pregunta de reflexión</h4>
+            <p><strong>¿Qué pesa más: 1 mol de plomo (Pb) o 1 mol de plumas?</strong></p>
+            <p>Respuesta: 1 mol de Pb pesa 207 g, mientras que 1 mol de plumas (si fueran de queratina, C₃H₇NO₂S) pesaría aproximadamente 121 g. Aunque ambos tienen el mismo número de "unidades", la masa depende de qué tan pesada es cada unidad individual.</p>
+        </div>
+        <div class="numero-pagina">152</div>
+    </section>
+
+    <!-- ==================== TEMA 5.2: RELACIONES ESTEQUIOMÉTRICAS ==================== -->
+    <section class="pagina">
+        <header class="tema-header">
+            <span class="tema-numero">Tema 5.2</span>
+            <h2 class="tema-titulo">Relaciones Estequiométricas</h2>
+            <p class="tema-paginas">Páginas 153–157</p>
+        </header>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
+            <span class="icono-texto">Objetivo de aprendizaje</span>
+        </div>
+
+        <div class="objetivo-box">
+            <p>Realizar cálculos estequiométricos utilizando las relaciones molares entre reactivos y productos en una ecuación química balanceada.</p>
+        </div>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+            <span class="icono-texto">Conceptos Fundamentales</span>
+        </div>
+
+        <div class="card card-concepto">
+            <h4>¿Qué es la estequiometría?</h4>
+            <p>La <strong>estequiometría</strong> (del griego <em>stoicheion</em> = elemento y <em>metron</em> = medida) es el estudio de las relaciones cuantitativas entre las sustancias que participan en una reacción química.</p>
+        </div>
+
+        <div class="card card-destacado">
+            <h4>Los coeficientes nos dan la proporción</h4>
+            <p>En una ecuación balanceada, los coeficientes indican la <strong>proporción molar</strong> en que reaccionan y se producen las sustancias.</p>
+            <div class="ecuacion-ejemplo">
+                <p class="ecuacion">N₂ + 3H₂ → 2NH₃</p>
+                <p class="interpretacion">1 mol N₂ : 3 mol H₂ : 2 mol NH₃</p>
+            </div>
+        </div>
+
+        <div class="card card-procedimiento">
+            <h4>Pasos para resolver problemas estequiométricos</h4>
+            <ol>
+                <li><strong>Escribir</strong> la ecuación química balanceada</li>
+                <li><strong>Convertir</strong> los datos a moles (si es necesario)</li>
+                <li><strong>Usar</strong> la proporción molar para relacionar sustancias</li>
+                <li><strong>Convertir</strong> los moles a la unidad solicitada</li>
+            </ol>
+        </div>
+        <div class="numero-pagina">153</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Ejemplo resuelto paso a paso</h3>
+
+        <div class="problema-box">
+            <h4>Problema</h4>
+            <p>Dada la reacción N₂ + 3H₂ → 2NH₃, si tengo 3 moles de N₂, ¿cuántos moles de NH₃ produzco?</p>
+        </div>
+
+        <div class="solucion-pasos">
+            <div class="paso">
+                <span class="paso-numero">1</span>
+                <div class="paso-contenido">
+                    <h5>Identificar proporción molar</h5>
+                    <p>Según la ecuación: 1 mol N₂ → 2 mol NH₃</p>
+                </div>
+            </div>
+
+            <div class="paso">
+                <span class="paso-numero">2</span>
+                <div class="paso-contenido">
+                    <h5>Aplicar proporción</h5>
+                    <p>3 mol N₂ × (2 mol NH₃ / 1 mol N₂) = <strong>6 mol NH₃</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="problema-box">
+            <h4>Problema 2</h4>
+            <p>¿Cuántos gramos de N₂ se necesitan para producir 34 g de NH₃?</p>
+            <p><em>M(N₂) = 28 g/mol, M(NH₃) = 17 g/mol</em></p>
+        </div>
+
+        <div class="solucion-pasos">
+            <div class="paso">
+                <span class="paso-numero">1</span>
+                <div class="paso-contenido">
+                    <h5>Convertir g de NH₃ a moles</h5>
+                    <p>n(NH₃) = 34 g / 17 g/mol = <strong>2 mol NH₃</strong></p>
+                </div>
+            </div>
+
+            <div class="paso">
+                <span class="paso-numero">2</span>
+                <div class="paso-contenido">
+                    <h5>Usar proporción molar</h5>
+                    <p>2 mol NH₃ × (1 mol N₂ / 2 mol NH₃) = <strong>1 mol N₂</strong></p>
+                </div>
+            </div>
+
+            <div class="paso">
+                <span class="paso-numero">3</span>
+                <div class="paso-contenido">
+                    <h5>Convertir moles de N₂ a gramos</h5>
+                    <p>m(N₂) = 1 mol × 28 g/mol = <strong>28 g N₂</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <figure class="imagen-contenido">
+            <img src="images/Diagrama Método de Resolución Estequiométrica.jpg" alt="Diagrama: Método de Resolución Estequiométrica">
+            <figcaption>El método general: dato → moles → proporción → moles → resultado</figcaption>
+        </figure>
+        <div class="numero-pagina">154</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Rendimiento de una reacción</h3>
+
+        <div class="card card-concepto">
+            <h4>Rendimiento teórico vs real</h4>
+            <p>En la práctica, las reacciones no siempre producen la cantidad de producto esperada. Por eso distinguimos:</p>
+            <ul>
+                <li><strong>Rendimiento teórico:</strong> Cantidad máxima de producto calculada estequiométricamente (100%)</li>
+                <li><strong>Rendimiento real:</strong> Cantidad de producto obtenida experimentalmente</li>
+            </ul>
+        </div>
+
+        <div class="formula-destacada">
+            % Rendimiento = (Rendimiento real / Rendimiento teórico) × 100
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo</h4>
+            <p>Si teóricamente deberían formarse 20 g de producto, pero solo se obtienen 15 g:</p>
+            <p>% Rendimiento = (15 / 20) × 100 = <strong>75%</strong></p>
+        </div>
+
+        <div class="card card-nota">
+            <h4>¿Por qué el rendimiento es menor al 100%?</h4>
+            <ul>
+                <li>Reacciones secundarias no deseadas</li>
+                <li>Pérdidas durante la manipulación</li>
+                <li>Reacciones incompletas</li>
+                <li>Impurezas en los reactivos</li>
+                <li>Equilibrio químico desfavorable</li>
+            </ul>
+        </div>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+            <span class="icono-texto">Conclusión del tema</span>
+        </div>
+
+        <div class="conclusion-box">
+            <h4>Ideas clave del Tema 5.2</h4>
+            <ul>
+                <li>Los coeficientes de una ecuación balanceada indican la proporción molar</li>
+                <li>El método general: dato → moles → proporción → moles → resultado</li>
+                <li>Para gases, los volúmenes guardan la misma proporción que los moles</li>
+                <li>El rendimiento real suele ser menor al teórico</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">155</div>
+    </section>
+
+    <!-- ==================== TEMA 5.3: REACTIVO LIMITANTE ==================== -->
+    <section class="pagina">
+        <header class="tema-header">
+            <span class="tema-numero">Tema 5.3</span>
+            <h2 class="tema-titulo">Reactivo Limitante y Exceso</h2>
+            <p class="tema-paginas">Páginas 156–160</p>
+        </header>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
+            <span class="icono-texto">Objetivo de aprendizaje</span>
+        </div>
+
+        <div class="objetivo-box">
+            <p>Identificar el reactivo limitante en una reacción química y calcular la cantidad de producto formada y el exceso de reactivo.</p>
+        </div>
+
+        <div class="card card-concepto">
+            <h4>¿Qué es el reactivo limitante?</h4>
+            <p>Es el reactivo que se <strong>consume completamente</strong> durante la reacción y determina la cantidad máxima de producto que puede formarse.</p>
+            <p>El otro reactivo (que sobra) se llama <strong>reactivo en exceso</strong>.</p>
+        </div>
+
+        <div class="card card-nota">
+            <h4>Analogía: Haciendo sándwiches</h4>
+            <p>Para hacer un sándwich necesitas: 2 rebanadas de pan + 1 queso</p>
+            <p>Si tienes 5 panes y 4 quesos:</p>
+            <ul>
+                <li>Con 5 panes puedes hacer solo <strong>2 sándwiches</strong> (necesitas 4 panes)</li>
+                <li>El <strong>pan es el limitante</strong> (se acaba primero)</li>
+                <li>Sobran 3 quesos → <strong>queso en exceso</strong></li>
+            </ul>
+        </div>
+
+        <figure class="imagen-contenido">
+            <img src="images/Ilustración Analogía del Sandwich.png" alt="Ilustración: Analogía del Sándwich">
+            <figcaption>La analogía del sándwich ilustra el concepto de reactivo limitante</figcaption>
+        </figure>
+        <div class="numero-pagina">156</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Método para identificar el reactivo limitante</h3>
+
+        <div class="card card-procedimiento">
+            <h4>Método de comparación de moles</h4>
+            <ol>
+                <li><strong>Convertir</strong> las cantidades de ambos reactivos a moles</li>
+                <li><strong>Dividir</strong> los moles de cada reactivo entre su coeficiente</li>
+                <li><strong>Comparar:</strong> El que tenga el menor valor es el limitante</li>
+                <li><strong>Calcular</strong> el producto usando el reactivo limitante</li>
+            </ol>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo resuelto</h4>
+            <p>Se mezclan 4 mol de H₂ con 1 mol de O₂ según: <strong>2H₂ + O₂ → 2H₂O</strong></p>
+            <p>¿Cuál es el reactivo limitante? ¿Cuánta agua se forma?</p>
+
+            <div class="solucion-pasos">
+                <div class="paso">
+                    <span class="paso-numero">1</span>
+                    <div class="paso-contenido">
+                        <h5>Dividir entre coeficientes</h5>
+                        <p>H₂: 4 mol / 2 = 2</p>
+                        <p>O₂: 1 mol / 1 = 1 ← <strong>MENOR → LIMITANTE</strong></p>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">2</span>
+                    <div class="paso-contenido">
+                        <h5>Calcular producto (usando O₂)</h5>
+                        <p>1 mol O₂ → 2 mol H₂O</p>
+                        <p>m(H₂O) = 2 mol × 18 g/mol = <strong>36 g H₂O</strong></p>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">3</span>
+                    <div class="paso-contenido">
+                        <h5>Calcular exceso de H₂</h5>
+                        <p>H₂ consumido: 1 mol O₂ × (2 mol H₂ / 1 mol O₂) = 2 mol H₂</p>
+                        <p>H₂ en exceso: 4 mol - 2 mol = <strong>2 mol H₂</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <figure class="imagen-contenido">
+            <img src="images/Diagrama Reactivo Limitante y Exceso.jpg" alt="Diagrama: Reactivo Limitante y Exceso">
+            <figcaption>El reactivo limitante determina cuánto producto se puede formar</figcaption>
+        </figure>
+        <div class="numero-pagina">157</div>
+    </section>
+
+    <section class="pagina">
+        <div class="card card-tip">
+            <h4>Verificación rápida</h4>
+            <p>Siempre verifica que la masa se conserve:</p>
+            <ul>
+                <li>Masa inicial: 4 mol H₂ × 2 g/mol + 1 mol O₂ × 32 g/mol = 8 + 32 = 40 g</li>
+                <li>Masa final: 36 g H₂O + 2 mol H₂ × 2 g/mol = 36 + 4 = 40 g ✓</li>
+            </ul>
+        </div>
+
+        <div class="card card-nota">
+            <h4>Importancia industrial del reactivo en exceso</h4>
+            <p>En la industria, frecuentemente se usa un exceso de uno de los reactivos (generalmente el más barato) para asegurar que el reactivo más costoso se consuma completamente, maximizando el aprovechamiento de recursos y la eficiencia económica del proceso.</p>
+        </div>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+            <span class="icono-texto">Conclusión del tema</span>
+        </div>
+
+        <div class="conclusion-box">
+            <h4>Ideas clave del Tema 5.3</h4>
+            <ul>
+                <li>El reactivo limitante se consume completamente y determina la cantidad de producto</li>
+                <li>El reactivo en exceso es el que sobra al final de la reacción</li>
+                <li>Para identificarlo: dividir moles entre coeficientes y comparar</li>
+                <li>Los cálculos de producto siempre se hacen con el limitante</li>
+                <li>La ley de conservación de la masa sirve para verificar resultados</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">158</div>
+    </section>
+
+    <!-- ==================== TEMA 5.4: GASES IDEALES ==================== -->
+    <section class="pagina">
+        <header class="tema-header">
+            <span class="tema-numero">Tema 5.4</span>
+            <h2 class="tema-titulo">Gases Ideales y Estequiometría</h2>
+            <p class="tema-paginas">Páginas 159–163</p>
+        </header>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
+            <span class="icono-texto">Objetivo de aprendizaje</span>
+        </div>
+
+        <div class="objetivo-box">
+            <p>Aplicar la ley de los gases ideales (PV=nRT) y las leyes de Boyle, Charles y Gay-Lussac en cálculos estequiométricos que involucran gases.</p>
+        </div>
+
+        <div class="card card-destacado">
+            <h4>Ley de los Gases Ideales</h4>
+            <div class="formula-destacada">
+                PV = nRT
+            </div>
+            <p><strong>Donde:</strong></p>
+            <ul>
+                <li><strong>P</strong> = Presión (atm)</li>
+                <li><strong>V</strong> = Volumen (L)</li>
+                <li><strong>n</strong> = Moles de gas (mol)</li>
+                <li><strong>R</strong> = Constante de los gases = 0.082 atm·L/mol·K</li>
+                <li><strong>T</strong> = Temperatura absoluta (K) → K = °C + 273</li>
+            </ul>
+        </div>
+
+        <div class="card card-concepto">
+            <h4>Condiciones estándar</h4>
+            <ul>
+                <li><strong>CNPT (Condiciones Normales):</strong> 0°C (273 K) y 1 atm → V<sub>m</sub> = 22.4 L/mol</li>
+                <li><strong>STP (Standard):</strong> 25°C (298 K) y 1 atm → V<sub>m</sub> = 24.5 L/mol</li>
+            </ul>
+            <p><em>Justificación:</em> Usamos condiciones estándar para poder comparar volúmenes de gases de manera consistente, ya que el volumen de un gas depende fuertemente de P y T.</p>
+        </div>
+        <div class="numero-pagina">159</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Leyes de los gases</h3>
+
+        <div class="tabla-container">
+            <table class="tabla-datos">
+                <thead>
+                    <tr>
+                        <th>Ley</th>
+                        <th>Variables</th>
+                        <th>Constante</th>
+                        <th>Relación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Boyle</strong></td>
+                        <td>P y V</td>
+                        <td>T, n</td>
+                        <td>P₁V₁ = P₂V₂ (inversamente proporcionales)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Charles</strong></td>
+                        <td>V y T</td>
+                        <td>P, n</td>
+                        <td>V₁/T₁ = V₂/T₂ (directamente proporcionales)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gay-Lussac</strong></td>
+                        <td>P y T</td>
+                        <td>V, n</td>
+                        <td>P₁/T₁ = P₂/T₂ (directamente proporcionales)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo: Ley de Boyle</h4>
+            <p><strong>Si el volumen de un gas se duplica (a T constante), ¿qué pasa con la presión?</strong></p>
+            <div class="calculo-paso">
+                <p>P₁V₁ = P₂V₂</p>
+                <p>Si V₂ = 2V₁, entonces: P₁V₁ = P₂(2V₁)</p>
+                <p>P₂ = P₁/2 → <strong>La presión se reduce a la mitad</strong></p>
+            </div>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo: Ley de los gases ideales</h4>
+            <p><strong>Calcula la presión de 2 moles de gas en 10 L a 300 K</strong></p>
+            <div class="calculo-paso">
+                <p>PV = nRT</p>
+                <p>P = nRT/V = (2 mol)(0.082 atm·L/mol·K)(300 K) / (10 L)</p>
+                <p>P = 49.2 / 10 = <strong>4.92 atm</strong></p>
+            </div>
+        </div>
+        <div class="numero-pagina">160</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Estequiometría de gases</h3>
+
+        <div class="card card-procedimiento">
+            <h4>Cálculos con gases en condiciones no estándar</h4>
+            <p>Cuando las condiciones son diferentes a CNPT, usa PV=nRT para convertir entre volumen y moles:</p>
+            <div class="formula-destacada">
+                n = PV / RT
+            </div>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo: Volumen de CO₂ producido</h4>
+            <p><strong>¿Qué volumen de CO₂ se produce al quemar 1 kg de propano (C₃H₈) a 25°C y 1 atm?</strong></p>
+            <p><em>Reacción: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O</em></p>
+            <p><em>M(C₃H₈) = 44 g/mol</em></p>
+
+            <div class="solucion-pasos">
+                <div class="paso">
+                    <span class="paso-numero">1</span>
+                    <div class="paso-contenido">
+                        <h5>Moles de propano</h5>
+                        <p>n(C₃H₈) = 1000 g / 44 g/mol = 22.73 mol</p>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">2</span>
+                    <div class="paso-contenido">
+                        <h5>Moles de CO₂ (proporción 1:3)</h5>
+                        <p>n(CO₂) = 22.73 × 3 = 68.18 mol</p>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">3</span>
+                    <div class="paso-contenido">
+                        <h5>Volumen de CO₂ (usando PV=nRT)</h5>
+                        <p>V = nRT/P = (68.18)(0.082)(298) / 1</p>
+                        <p>V = <strong>1665 L de CO₂</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h4>Ideas clave del Tema 5.4</h4>
+            <ul>
+                <li>PV = nRT relaciona presión, volumen, moles y temperatura</li>
+                <li>La ley de Boyle: P y V son inversamente proporcionales</li>
+                <li>Las leyes de Charles y Gay-Lussac establecen proporcionalidad directa</li>
+                <li>Usa PV=nRT cuando las condiciones no son CNPT</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">161</div>
+    </section>
+
+    <!-- ==================== TEMA 5.5: COMPOSICIÓN PORCENTUAL Y FÓRMULAS ==================== -->
+    <section class="pagina">
+        <header class="tema-header">
+            <span class="tema-numero">Tema 5.5</span>
+            <h2 class="tema-titulo">Composición Porcentual y Fórmulas</h2>
+            <p class="tema-paginas">Páginas 162–166</p>
+        </header>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
+            <span class="icono-texto">Objetivo de aprendizaje</span>
+        </div>
+
+        <div class="objetivo-box">
+            <p>Calcular la composición porcentual de un compuesto y determinar fórmulas empíricas y moleculares a partir de datos experimentales.</p>
+        </div>
+
+        <div class="card card-destacado">
+            <h4>Composición porcentual</h4>
+            <p>Indica qué porcentaje de la masa total del compuesto corresponde a cada elemento.</p>
+            <div class="formula-destacada">
+                % elemento = (masa del elemento en la fórmula / masa molar del compuesto) × 100
+            </div>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo: Composición porcentual del CO₂</h4>
+            <p><em>M(CO₂) = 12 + 2(16) = 44 g/mol</em></p>
+            <div class="calculo-paso">
+                <p>% C = (12 / 44) × 100 = <strong>27.3%</strong></p>
+                <p>% O = (32 / 44) × 100 = <strong>72.7%</strong></p>
+                <p>Verificación: 27.3 + 72.7 = 100% ✓</p>
+            </div>
+        </div>
+
+        <div class="card card-concepto">
+            <h4>Fórmula empírica vs molecular</h4>
+            <ul>
+                <li><strong>Fórmula empírica:</strong> Proporción más simple de átomos (ej: CH₂O)</li>
+                <li><strong>Fórmula molecular:</strong> Número real de átomos (ej: C₆H₁₂O₆)</li>
+            </ul>
+            <p>La fórmula molecular es un múltiplo entero de la empírica.</p>
+        </div>
+        <div class="numero-pagina">162</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Determinación de la fórmula empírica</h3>
+
+        <div class="card card-procedimiento">
+            <h4>Pasos para determinar la fórmula empírica</h4>
+            <ol>
+                <li>Suponer 100 g de muestra (los % se convierten en gramos)</li>
+                <li>Convertir gramos a moles para cada elemento</li>
+                <li>Dividir todos los moles entre el menor valor</li>
+                <li>Redondear a números enteros (o multiplicar si es necesario)</li>
+            </ol>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo: Fórmula empírica</h4>
+            <p><strong>Un compuesto tiene 40% C, 6.7% H y 53.3% O. Determina su fórmula empírica.</strong></p>
+
+            <div class="solucion-pasos">
+                <div class="paso">
+                    <span class="paso-numero">1</span>
+                    <div class="paso-contenido">
+                        <h5>Convertir % a gramos (base 100 g)</h5>
+                        <p>C: 40 g | H: 6.7 g | O: 53.3 g</p>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">2</span>
+                    <div class="paso-contenido">
+                        <h5>Convertir a moles</h5>
+                        <p>C: 40/12 = 3.33 mol | H: 6.7/1 = 6.7 mol | O: 53.3/16 = 3.33 mol</p>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">3</span>
+                    <div class="paso-contenido">
+                        <h5>Dividir entre el menor (3.33)</h5>
+                        <p>C: 3.33/3.33 = 1 | H: 6.7/3.33 = 2 | O: 3.33/3.33 = 1</p>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">4</span>
+                    <div class="paso-contenido">
+                        <h5>Fórmula empírica</h5>
+                        <p><strong>CH₂O</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-nota">
+            <h4>Fórmula molecular a partir de combustión</h4>
+            <p>En reacciones de combustión de hidrocarburos (C<sub>x</sub>H<sub>y</sub>), la masa de CO₂ y H₂O producidos permite calcular la cantidad de C y H en la muestra original:</p>
+            <ul>
+                <li>Moles de C = moles de CO₂</li>
+                <li>Moles de H = 2 × moles de H₂O</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">163</div>
+    </section>
+
+    <!-- ==================== TEMA 5.6: SOLUCIONES ==================== -->
+    <section class="pagina">
+        <header class="tema-header">
+            <span class="tema-numero">Tema 5.6</span>
+            <h2 class="tema-titulo">Soluciones y Concentración</h2>
+            <p class="tema-paginas">Páginas 164–170</p>
+        </header>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
+            <span class="icono-texto">Objetivo de aprendizaje</span>
+        </div>
+
+        <div class="objetivo-box">
+            <p>Preparar y calcular la concentración de soluciones expresándola en diferentes unidades: molaridad, molalidad, porcentaje y partes por millón.</p>
+        </div>
+
+        <div class="card card-concepto">
+            <h4>¿Qué es una solución?</h4>
+            <p>Una <strong>solución</strong> es una mezcla homogénea de dos o más sustancias:</p>
+            <ul>
+                <li><strong>Soluto:</strong> Sustancia que se disuelve (menor cantidad)</li>
+                <li><strong>Solvente:</strong> Sustancia que disuelve (mayor cantidad)</li>
+            </ul>
+        </div>
+
+        <div class="card card-destacado">
+            <h4>1. Molaridad (M)</h4>
+            <p>Moles de soluto por litro de <strong>solución</strong>.</p>
+            <div class="formula-destacada">
+                M = n(soluto) / V(solución) = mol / L
+            </div>
+            <p><strong>Ejemplo:</strong> Una solución 2M de NaCl contiene 2 moles de NaCl por cada litro de solución.</p>
+        </div>
+
+        <div class="card card-destacado">
+            <h4>2. Molalidad (m)</h4>
+            <p>Moles de soluto por kilogramo de <strong>solvente</strong>.</p>
+            <div class="formula-destacada">
+                m = n(soluto) / masa(solvente en kg) = mol / kg
+            </div>
+            <p><strong>Diferencia clave:</strong> La molalidad usa la masa del solvente, no el volumen de la solución. Esto la hace independiente de la temperatura.</p>
+        </div>
+        <div class="numero-pagina">164</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Más unidades de concentración</h3>
+
+        <div class="card card-concepto">
+            <h4>3. Porcentaje masa/volumen (% m/V)</h4>
+            <p>Gramos de soluto por cada 100 mL de solución.</p>
+            <div class="formula-destacada">
+                % m/V = (masa soluto / volumen solución) × 100
+            </div>
+        </div>
+
+        <div class="card card-concepto">
+            <h4>4. Partes por millón (ppm)</h4>
+            <p>Miligramos de soluto por litro (o kg) de solución. Se usa para concentraciones muy pequeñas.</p>
+            <div class="formula-destacada">
+                ppm = mg de soluto / L de solución = mg/kg
+            </div>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo: Cálculo de ppm</h4>
+            <p><strong>¿Cuántas ppm representa 0.002 g de soluto en 1000 g de agua?</strong></p>
+            <div class="calculo-paso">
+                <p>0.002 g = 2 mg</p>
+                <p>ppm = 2 mg / 1 kg = <strong>2 ppm</strong></p>
+            </div>
+        </div>
+
+        <figure class="imagen-contenido">
+            <img src="images/Infografía Unidades de Concentración.jpg" alt="Infografía: Unidades de Concentración">
+            <figcaption>Comparación de las unidades de concentración más comunes</figcaption>
+        </figure>
+        <div class="numero-pagina">165</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Preparación de soluciones y diluciones</h3>
+
+        <div class="card card-procedimiento">
+            <h4>Preparar una solución de molaridad conocida</h4>
+            <p><strong>Ejemplo:</strong> Preparar 250 mL de solución 0.1M de CuSO₄ (M = 160 g/mol)</p>
+            <div class="calculo-paso">
+                <p>n = M × V = 0.1 mol/L × 0.250 L = 0.025 mol</p>
+                <p>m = n × M = 0.025 mol × 160 g/mol = <strong>4 g de CuSO₄</strong></p>
+                <p>Procedimiento: Pesar 4 g de CuSO₄, disolver en agua y aforar a 250 mL.</p>
+            </div>
+        </div>
+
+        <h3>Diluciones</h3>
+        <p>Una dilución es la preparación de una solución menos concentrada a partir de una más concentrada.</p>
+
+        <div class="formula-destacada">
+            C₁V₁ = C₂V₂
+        </div>
+        <p class="text-center"><em>Los moles de soluto se mantienen constantes</em></p>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo de dilución</h4>
+            <p><strong>¿Cuánta agua hay que agregar a 10 mL de HCl 10M para obtener una solución 1M?</strong></p>
+            <div class="calculo-paso">
+                <p>C₁V₁ = C₂V₂</p>
+                <p>(10 M)(10 mL) = (1 M)(V₂)</p>
+                <p>V₂ = 100 mL (volumen final)</p>
+                <p>Agua a agregar = 100 - 10 = <strong>90 mL</strong></p>
+            </div>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo: Molaridad de una solución</h4>
+            <p><strong>Calcula la molaridad al disolver 58.5 g de NaCl en 1 L de solución.</strong></p>
+            <p><em>M(NaCl) = 58.5 g/mol</em></p>
+            <div class="calculo-paso">
+                <p>n = m/M = 58.5 g / 58.5 g/mol = 1 mol</p>
+                <p>M = n/V = 1 mol / 1 L = <strong>1 M</strong></p>
+            </div>
+        </div>
+        <div class="numero-pagina">166</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Titulación</h3>
+
+        <div class="card card-concepto">
+            <h4>¿Qué es una titulación?</h4>
+            <p>Es una técnica analítica para determinar la concentración desconocida de una solución mediante una reacción con otra solución de concentración conocida.</p>
+        </div>
+
+        <div class="card card-destacado">
+            <h4>Punto de equivalencia</h4>
+            <p>Es el punto en una titulación donde los moles de ácido igualan a los moles de base (en relación estequiométrica). En este punto, la reacción está completa.</p>
+            <div class="formula-destacada">
+                M<sub>ácido</sub> × V<sub>ácido</sub> = M<sub>base</sub> × V<sub>base</sub>
+            </div>
+            <p><em>(Para reacciones 1:1 como HCl + NaOH → NaCl + H₂O)</em></p>
+        </div>
+
+        <div class="ejemplo-box">
+            <h4>Ejemplo de titulación</h4>
+            <p><strong>Se necesitan 25 mL de NaOH 0.5M para neutralizar 50 mL de HCl. ¿Cuál es la concentración del HCl?</strong></p>
+            <div class="calculo-paso">
+                <p>M<sub>HCl</sub> × V<sub>HCl</sub> = M<sub>NaOH</sub> × V<sub>NaOH</sub></p>
+                <p>M<sub>HCl</sub> × 50 mL = 0.5 M × 25 mL</p>
+                <p>M<sub>HCl</sub> = 12.5 / 50 = <strong>0.25 M</strong></p>
+            </div>
+        </div>
+
+        <div class="card card-nota">
+            <h4>Solubilidad y temperatura</h4>
+            <ul>
+                <li><strong>Sólidos:</strong> Generalmente, la solubilidad <strong>aumenta</strong> con la temperatura (ej: azúcar en agua caliente)</li>
+                <li><strong>Gases:</strong> La solubilidad <strong>disminuye</strong> con la temperatura (ej: burbujas en agua al calentarse)</li>
+            </ul>
+            <p><em>Esto explica por qué el agua caliente disuelve más azúcar pero menos CO₂.</em></p>
+        </div>
+        <div class="numero-pagina">167</div>
+    </section>
+
+    <section class="pagina">
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            <span class="icono-texto">Mini Actividad</span>
+        </div>
+
+        <div class="actividad-box">
+            <h4>Práctica de concentraciones</h4>
+
+            <div class="ejercicio">
+                <p><strong>1.</strong> ¿Cuál es la molaridad de una solución con 4 g de NaOH en 500 mL?</p>
+                <p><em>M(NaOH) = 40 g/mol</em></p>
+                <div class="espacio-calculo">
+                    <p>n = m/M = _____ / _____ = _____ mol</p>
+                    <p>M = n/V = _____ / _____ = _____ M</p>
+                </div>
+            </div>
+
+            <div class="ejercicio">
+                <p><strong>2.</strong> Calcula los moles de soluto en 500 mL de solución 0.5 M</p>
+                <div class="espacio-calculo">
+                    <p>n = M × V = _____ × _____ = _____ mol</p>
+                </div>
+            </div>
+
+            <div class="ejercicio">
+                <p><strong>3.</strong> Se diluyen 25 mL de HCl 6M para preparar 150 mL de solución. ¿Nueva concentración?</p>
+                <div class="espacio-calculo">
+                    <p>C₁V₁ = C₂V₂</p>
+                    <p>(_____)(_____) = C₂ (_____)</p>
+                    <p>C₂ = _____ M</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h4>Ideas clave del Tema 5.6</h4>
+            <ul>
+                <li>Molaridad (M) = mol soluto / L solución</li>
+                <li>Molalidad (m) = mol soluto / kg solvente</li>
+                <li>En diluciones: C₁V₁ = C₂V₂</li>
+                <li>El punto de equivalencia indica neutralización completa</li>
+                <li>Los sólidos se disuelven más en caliente; los gases, menos</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">168</div>
+    </section>
+
+    <!-- ==================== TEMA 5.7: QUÍMICA VERDE ==================== -->
+    <section class="pagina">
+        <header class="tema-header tema-verde">
+            <span class="tema-numero">Tema 5.7</span>
+            <h2 class="tema-titulo">Química Verde y Sostenibilidad</h2>
+            <p class="tema-paginas">Páginas 169–175</p>
+        </header>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
+            <span class="icono-texto">Objetivo de aprendizaje</span>
+        </div>
+
+        <div class="objetivo-box objetivo-verde">
+            <p>Comprender los principios de la química verde y analizar cómo la estequiometría contribuye al diseño de procesos químicos sostenibles y ambientalmente responsables.</p>
+        </div>
+
+        <div class="card card-concepto card-verde">
+            <h4>¿Qué es la Química Verde?</h4>
+            <p>La <strong>química verde</strong> (o química sostenible) es el diseño de productos y procesos químicos que reducen o eliminan el uso y generación de sustancias peligrosas para la salud humana y el medio ambiente.</p>
+            <p>Fue propuesta por <strong>Paul Anastas y John Warner</strong> en 1998.</p>
+        </div>
+
+        <div class="card card-nota">
+            <h4>No es lo mismo que "química ambiental"</h4>
+            <ul>
+                <li><strong>Química ambiental:</strong> Estudia los contaminantes y sus efectos (después del problema)</li>
+                <li><strong>Química verde:</strong> Previene la contaminación desde el diseño (antes del problema)</li>
+            </ul>
+            <p><em>"Es más fácil evitar crear un problema que limpiarlo después"</em></p>
+        </div>
+        <div class="numero-pagina">169</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Los 12 Principios de la Química Verde</h3>
+
+        <figure class="imagen-contenido">
+            <img src="images/Infografía Los 12 Principios de la Química Verde.jpg" alt="Los 12 Principios de la Química Verde">
+            <figcaption>Los 12 principios guían el diseño de procesos químicos sostenibles</figcaption>
+        </figure>
+
+        <div class="principios-destacados">
+            <div class="card card-verde">
+                <h4>Principio 2: Economía atómica</h4>
+                <p>Los métodos de síntesis deben diseñarse para <strong>maximizar la incorporación</strong> de todos los materiales usados en el producto final.</p>
+                <div class="formula-destacada formula-verde">
+                    % Economía atómica = (Masa molar producto deseado / Σ Masa molar reactivos) × 100
+                </div>
+            </div>
+        </div>
+        <div class="numero-pagina">170</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Economía atómica en la práctica</h3>
+
+        <div class="comparacion-verde">
+            <div class="card card-mal">
+                <h4>Baja economía atómica</h4>
+                <p><strong>Síntesis tradicional de óxido de etileno:</strong></p>
+                <p class="reaccion">C₂H₄Cl₂ + Ca(OH)₂ → C₂H₄O + CaCl₂ + H₂O</p>
+                <p>Producto deseado: C₂H₄O (44 g/mol)</p>
+                <p>Reactivos: 99 + 74 = 173 g/mol</p>
+                <p class="resultado">% E.A. = 44/173 × 100 = <strong>25%</strong></p>
+                <p><em>¡Se desperdicia el 75% de los átomos!</em></p>
+            </div>
+
+            <div class="card card-bien">
+                <h4>Alta economía atómica</h4>
+                <p><strong>Proceso moderno con catalizador:</strong></p>
+                <p class="reaccion">2C₂H₄ + O₂ → 2C₂H₄O</p>
+                <p>Producto deseado: 2 × 44 = 88 g/mol</p>
+                <p>Reactivos: 2×28 + 32 = 88 g/mol</p>
+                <p class="resultado">% E.A. = 88/88 × 100 = <strong>100%</strong></p>
+                <p><em>¡Todos los átomos van al producto!</em></p>
+            </div>
+        </div>
+
+        <div class="card card-concepto card-verde">
+            <h4>La estequiometría como herramienta de sostenibilidad</h4>
+            <p>Los cálculos estequiométricos permiten:</p>
+            <ul>
+                <li>Optimizar las cantidades de reactivos (reducir desperdicios)</li>
+                <li>Evaluar la economía atómica de diferentes rutas de síntesis</li>
+                <li>Calcular la generación de subproductos y residuos</li>
+                <li>Diseñar procesos más eficientes</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">171</div>
+    </section>
+
+    <section class="pagina">
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            <span class="icono-texto">Mini Actividad</span>
+        </div>
+
+        <div class="actividad-box actividad-verde">
+            <h4>Calcula la economía atómica</h4>
+            <p>Compara dos métodos para producir agua:</p>
+
+            <div class="ejercicio">
+                <p><strong>Método A:</strong> 2H₂ + O₂ → 2H₂O</p>
+                <div class="espacio-calculo">
+                    <p>Σ Reactivos = 2(2) + 32 = ___ g/mol</p>
+                    <p>Productos = 2(18) = ___ g/mol</p>
+                    <p>% E.A. = ___ / ___ × 100 = ___%</p>
+                </div>
+            </div>
+
+            <div class="ejercicio">
+                <p><strong>Método B:</strong> Ca(OH)₂ + CO₂ → CaCO₃ + H₂O</p>
+                <p><em>(Producto deseado: solo H₂O)</em></p>
+                <div class="espacio-calculo">
+                    <p>Σ Reactivos = 74 + 44 = ___ g/mol</p>
+                    <p>Producto deseado (H₂O) = ___ g/mol</p>
+                    <p>% E.A. = ___ / ___ × 100 = ___%</p>
+                </div>
+            </div>
+
+            <p><strong>Conclusión:</strong> ¿Cuál método es más "verde"? ________________</p>
+        </div>
+
+        <div class="conclusion-box conclusion-verde">
+            <h4>Ideas clave del Tema 5.7</h4>
+            <ul>
+                <li>La química verde busca prevenir la contaminación desde el diseño</li>
+                <li>Los 12 principios guían el desarrollo de procesos sostenibles</li>
+                <li>La economía atómica mide qué porcentaje de átomos va al producto</li>
+                <li>Una mayor economía atómica = menos residuos = más sostenibilidad</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">172</div>
+    </section>
+
+    <!-- ==================== COMPENDIO DE EJERCICIOS ==================== -->
+    <section class="pagina">
+        <h2 class="titulo-compendio">Compendio de Ejercicios</h2>
+        <p>Utiliza la tabla de masas atómicas de la página 147 para resolver estos ejercicios.</p>
+
+        <h3>Sección A: El Mol y Conversiones (Tema 5.1)</h3>
+
+        <div class="ejercicio-compendio">
+            <p><strong>1.</strong> Calcula la masa molar del H₂SO₄ (H=1, S=32, O=16).</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>2.</strong> Calcula la masa molar de la glucosa C₆H₁₂O₆.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>3.</strong> Convierte: ¿Cuántos moles hay en 90 g de agua?</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>4.</strong> Convierte: ¿Cuántos gramos pesan 0.5 moles de NaCl?</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>5.</strong> Calcula el número de átomos en 1 mol de Hierro.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>6.</strong> Calcula cuántos moles de gas hay en 44.8 L a STP.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <h3>Sección B: Estequiometría (Tema 5.2)</h3>
+
+        <div class="ejercicio-compendio">
+            <p><strong>7.</strong> Interpreta la ecuación N₂ + 3H₂ → 2NH₃ en términos de moles.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>8.</strong> Calcula: Si tengo 3 moles de N₂, ¿cuántos de NH₃ produzco? (Ecuación anterior)</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>9.</strong> Calcula: Si tengo 6 moles de H₂, ¿cuántos de N₂ necesito? (Ecuación anterior)</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+        <div class="numero-pagina">173</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Sección C: Composición y Fórmulas (Tema 5.5)</h3>
+
+        <div class="ejercicio-compendio">
+            <p><strong>10.</strong> Calcula la composición porcentual de Carbono en CO₂.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>11.</strong> Determina la Fórmula Empírica de un compuesto con 40% C, 6.7% H, 53.3% O.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <h3>Sección D: Reactivo Limitante (Tema 5.3)</h3>
+
+        <div class="ejercicio-compendio">
+            <p><strong>12.</strong> Identifica el Reactivo Limitante: 5 panes y 4 quesos (receta: 2 panes + 1 queso = 1 sándwich).</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>13.</strong> Calcula el Reactivo Limitante: 2H₂ + O₂ → 2H₂O (mezcla 4 mol H₂ y 1 mol O₂).</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>14.</strong> Calcula el rendimiento teórico de agua en el ejercicio anterior.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>15.</strong> Calcula el % de Rendimiento si obtuviste 15 g y esperabas 20 g.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <h3>Sección E: Gases Ideales (Tema 5.4)</h3>
+
+        <div class="ejercicio-compendio">
+            <p><strong>16.</strong> Aplica PV=nRT: Calcula la presión de 2 moles en 10 L a 300 K.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>17.</strong> Aplica Ley de Boyle: Si V aumenta al doble (T constante), ¿qué pasa con P?</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+        <div class="numero-pagina">174</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Sección F: Soluciones (Tema 5.6)</h3>
+
+        <div class="ejercicio-compendio">
+            <p><strong>18.</strong> Calcula la Molaridad al disolver 58.5 g de NaCl en 1 L de solución.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>19.</strong> Calcula los moles de soluto en 500 mL de solución 0.5 M.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>20.</strong> Aplica Dilución C₁V₁=C₂V₂: ¿Cuánta agua agregar a 10 mL de HCl 10M para tener 1M?</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>21.</strong> Define qué es el punto de equivalencia en una titulación.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>22.</strong> Investiga qué es la "Economía Atómica" en química verde.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>23.</strong> Calcula las partes por millón (ppm) de 0.002 g de soluto en 1000 g de agua.</p>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>24.</strong> Prepara virtualmente 250 mL de una solución 0.1M de CuSO₄. (M = 160 g/mol)</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>25.</strong> Explica la diferencia entre Molaridad y Molalidad.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+        <div class="numero-pagina">175</div>
+    </section>
+
+    <section class="pagina">
+        <h3>Sección G: Preguntas Conceptuales</h3>
+
+        <div class="ejercicio-compendio">
+            <p><strong>26.</strong> Justifica por qué usamos STP (Temperatura y Presión Estándar).</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>27.</strong> Analiza: ¿Qué pesa más, 1 mol de Pb o 1 mol de Plumas?</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>28.</strong> Describe cómo afecta la temperatura a la solubilidad de un gas.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>29.</strong> Describe cómo afecta la temperatura a la solubilidad de un sólido.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio">
+            <p><strong>30.</strong> Investiga el concepto de Reactivo en Exceso y su importancia industrial.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <h3>Sección H: Problemas Avanzados</h3>
+
+        <div class="ejercicio-compendio ejercicio-avanzado">
+            <p><strong>31.</strong> Combustión: Determina la fórmula molecular de un hidrocarburo C<sub>x</sub>H<sub>y</sub> si al quemar 10 g se producen 30.8 g de CO₂ y 12.6 g de H₂O.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio ejercicio-avanzado">
+            <p><strong>32.</strong> Estequiometría de Gases: Calcula el volumen de CO₂ producido por la combustión de 1 kg de Propano (C₃H₈) a 25°C y 1 atm.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+        <div class="numero-pagina">176</div>
+    </section>
+
+    <section class="pagina">
+        <div class="ejercicio-compendio ejercicio-avanzado">
+            <p><strong>33.</strong> Titulación: Se titulan 25 mL de HCl de concentración desconocida con 30 mL de NaOH 0.2M. Calcula la concentración del HCl.</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio ejercicio-avanzado">
+            <p><strong>34.</strong> Precipitación: Calcula la masa de precipitado BaSO₄ formado al mezclar 100 mL de BaCl₂ 0.5M con 100 mL de Na₂SO₄ 0.3M.</p>
+            <p><em>Reacción: BaCl₂ + Na₂SO₄ → BaSO₄↓ + 2NaCl</em></p>
+            <p><em>M(BaSO₄) = 233 g/mol</em></p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+
+        <div class="ejercicio-compendio ejercicio-avanzado">
+            <p><strong>35.</strong> Problema integrador: Se mezclan 20 g de Zn con exceso de HCl. La reacción produce H₂ gas.</p>
+            <p><em>Zn + 2HCl → ZnCl₂ + H₂</em></p>
+            <p>a) Calcula el volumen de H₂ producido a 25°C y 1 atm.</p>
+            <p>b) Si el rendimiento real es 85%, ¿cuántos litros se obtienen realmente?</p>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+            <div class="espacio-respuesta-linea"></div>
+        </div>
+        <div class="numero-pagina">177</div>
+    </section>
+
+    <!-- ==================== CIERRE DE UNIDAD ==================== -->
+    <section class="pagina cierre-unidad">
+        <h2>Cierre de la Unidad 5</h2>
+
+        <div class="icono-contenido">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4"/>
+                <path d="M12 8h.01"/>
+            </svg>
+            <span class="icono-texto">Mapa Mental de la Unidad</span>
+        </div>
+
+        <figure class="imagen-contenido">
+            <img src="images/Mapa Mental Estequiometría y Sostenibilidad.jpg" alt="Mapa Mental: Estequiometría y Sostenibilidad">
+            <figcaption>Mapa conceptual que integra todos los temas de la unidad</figcaption>
+        </figure>
+
+        <div class="evaluacion-formativa">
+            <h3>Evaluación formativa</h3>
+            <ol class="preguntas-evaluacion">
+                <li>¿Cuántos átomos hay en 2 moles de carbono?</li>
+                <li>¿Cómo se identifica el reactivo limitante?</li>
+                <li>¿Qué significa una solución 0.5 M?</li>
+                <li>¿Por qué es importante la economía atómica?</li>
+                <li>¿Qué relación hay entre PV=nRT y CNPT?</li>
+                <li>Menciona 3 principios de la química verde.</li>
+            </ol>
+        </div>
+        <div class="numero-pagina">178</div>
+    </section>
+
+    <footer class="pie-manual">
+        <p>Manual de Química · Preparatoria Grupo Cultural Albatros</p>
+        <p>Unidad 5 · Estequiometría y Sostenibilidad</p>
+    </footer>
+</body>
+</html>

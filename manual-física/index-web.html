@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Física Albatros - Edición Completa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0B1F3A;
+            --primary: #0277BD;
+            --secondary: #B71C1C;
+            --accent: #FF6F00;
+            --u1-color: #0277BD;
+            --u2-color: #FF6F00;
+            --u3-color: #9C27B0;
+            --u4-color: #0B1F3A;
+            --anexos-color: #B71C1C;
+            --text-light: #E0E6ED;
+            --white: #FFFFFF;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --card-border: rgba(255, 255, 255, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #0B1F3A 50%, #1a0a2e 100%);
+            min-height: 100vh;
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           PARTICLE CANVAS
+           ============================================ */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ============================================
+           CURSOR CREATURE (SVG)
+           ============================================ */
+        #cursor-creature {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease-out;
+            filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.6)) drop-shadow(0 0 20px rgba(139, 0, 0, 0.3));
+        }
+
+        #cursor-creature svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ============================================
+           MAIN CONTAINER
+           ============================================ */
+        .main-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 31, 58, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid transparent;
+        }
+
+        .nav-links a:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 111, 0, 0.4);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .hero-cover {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(255, 111, 0, 0.15);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .hero-cover:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6),
+                0 0 80px rgba(255, 111, 0, 0.25);
+        }
+
+        .hero-cover img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FF6F00 50%, #B71C1C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           SECTION TITLE
+           ============================================ */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ============================================
+           UNITS GRID
+           ============================================ */
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .unit-card {
+            position: relative;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .unit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 20px 20px 0 0;
+            transition: height 0.3s ease;
+        }
+
+        .unit-card.u1::before {
+            background: var(--u1-color);
+        }
+
+        .unit-card.u2::before {
+            background: var(--u2-color);
+        }
+
+        .unit-card.u3::before {
+            background: var(--u3-color);
+        }
+
+        .unit-card.u4::before {
+            background: var(--u4-color);
+        }
+
+        .unit-card.anexos::before {
+            background: var(--anexos-color);
+        }
+
+        .unit-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .unit-card:hover::before {
+            height: 6px;
+        }
+
+        .unit-number {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 15px;
+            opacity: 0.2;
+        }
+
+        .unit-card.u1 .unit-number {
+            color: var(--u1-color);
+        }
+
+        .unit-card.u2 .unit-number {
+            color: var(--u2-color);
+        }
+
+        .unit-card.u3 .unit-number {
+            color: var(--u3-color);
+        }
+
+        .unit-card.u4 .unit-number {
+            color: var(--u4-color);
+        }
+
+        .unit-card.anexos .unit-number {
+            color: var(--anexos-color);
+        }
+
+        .unit-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .unit-desc {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .unit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .unit-card.u1 .unit-btn {
+            background: var(--u1-color);
+        }
+
+        .unit-card.u2 .unit-btn {
+            background: var(--u2-color);
+        }
+
+        .unit-card.u3 .unit-btn {
+            background: var(--u3-color);
+        }
+
+        .unit-card.u4 .unit-btn {
+            background: var(--u4-color);
+        }
+
+        .unit-card.anexos .unit-btn {
+            background: var(--anexos-color);
+        }
+
+        .unit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .unit-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        .footer-credits {
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .units-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .unit-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Cursor Creature - Spider -->
+    <div id="cursor-creature">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="spiderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2a2a2a" />
+                    <stop offset="50%" style="stop-color:#1a1a1a" />
+                    <stop offset="100%" style="stop-color:#0a0a0a" />
+                </linearGradient>
+                <linearGradient id="legGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#333" />
+                    <stop offset="100%" style="stop-color:#1a1a1a" />
+                </linearGradient>
+                <filter id="spiderGlow">
+                    <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+                    <feMerge>
+                        <feMergeNode in="coloredBlur" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+            <g filter="url(#spiderGlow)">
+                <!-- Back legs (4) -->
+                <g class="legs-back">
+                    <!-- Left back legs -->
+                    <path class="leg leg-bl1" d="M55,60 Q30,45 15,25 Q10,15 5,10" stroke="url(#legGrad)"
+                        stroke-width="3" fill="none" stroke-linecap="round" />
+                    <path class="leg leg-bl2" d="M55,65 Q25,60 10,55 Q0,52 -5,48" stroke="url(#legGrad)"
+                        stroke-width="3" fill="none" stroke-linecap="round" />
+                    <!-- Right back legs -->
+                    <path class="leg leg-br1" d="M65,60 Q90,45 105,25 Q110,15 115,10" stroke="url(#legGrad)"
+                        stroke-width="3" fill="none" stroke-linecap="round" />
+                    <path class="leg leg-br2" d="M65,65 Q95,60 110,55 Q120,52 125,48" stroke="url(#legGrad)"
+                        stroke-width="3" fill="none" stroke-linecap="round" />
+                </g>
+                <!-- Front legs (4) -->
+                <g class="legs-front">
+                    <!-- Left front legs -->
+                    <path class="leg leg-fl1" d="M55,60 Q30,75 15,95 Q10,105 5,110" stroke="url(#legGrad)"
+                        stroke-width="3" fill="none" stroke-linecap="round" />
+                    <path class="leg leg-fl2" d="M55,65 Q25,80 10,85 Q0,88 -5,92" stroke="url(#legGrad)"
+                        stroke-width="3" fill="none" stroke-linecap="round" />
+                    <!-- Right front legs -->
+                    <path class="leg leg-fr1" d="M65,60 Q90,75 105,95 Q110,105 115,110" stroke="url(#legGrad)"
+                        stroke-width="3" fill="none" stroke-linecap="round" />
+                    <path class="leg leg-fr2" d="M65,65 Q95,80 110,85 Q120,88 125,92" stroke="url(#legGrad)"
+                        stroke-width="3" fill="none" stroke-linecap="round" />
+                </g>
+                <!-- Abdomen (back) -->
+                <ellipse cx="60" cy="75" rx="18" ry="22" fill="url(#spiderGrad)" />
+                <ellipse cx="60" cy="72" rx="12" ry="15" fill="#222" opacity="0.5" />
+                <!-- Cephalothorax (head) -->
+                <ellipse cx="60" cy="50" rx="14" ry="12" fill="url(#spiderGrad)" />
+                <!-- Eyes (8 eyes arranged) -->
+                <circle cx="54" cy="45" r="3" fill="#8B0000" />
+                <circle cx="66" cy="45" r="3" fill="#8B0000" />
+                <circle cx="50" cy="48" r="2" fill="#8B0000" />
+                <circle cx="70" cy="48" r="2" fill="#8B0000" />
+                <circle cx="55" cy="42" r="1.5" fill="#8B0000" />
+                <circle cx="65" cy="42" r="1.5" fill="#8B0000" />
+                <circle cx="57" cy="40" r="1" fill="#8B0000" />
+                <circle cx="63" cy="40" r="1" fill="#8B0000" />
+                <!-- Eye shine -->
+                <circle cx="55" cy="44" r="1" fill="#FF4444" opacity="0.8" />
+                <circle cx="67" cy="44" r="1" fill="#FF4444" opacity="0.8" />
+                <!-- Fangs/Chelicerae -->
+                <path d="M56,52 Q54,56 55,60" stroke="#444" stroke-width="2" fill="none" />
+                <path d="M64,52 Q66,56 65,60" stroke="#444" stroke-width="2" fill="none" />
+            </g>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <div class="nav-logo">ALBATROS <span>FÍSICA</span></div>
+            <div class="nav-links">
+                <a href="#portada">Portada</a>
+                <a href="#unidad1">Unidad 1</a>
+                <a href="#unidad2">Unidad 2</a>
+                <a href="#unidad3">Unidad 3</a>
+                <a href="#unidad4">Unidad 4</a>
+                <a href="#anexos">Anexos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Hero Section -->
+        <section class="hero" id="portada">
+            <div class="hero-cover">
+                <img src="PORTADA-FISICA.png" alt="Portada Manual de Física Albatros">
+            </div>
+            <h1>Manual de Física Albatros</h1>
+            <p class="hero-subtitle">Mecánica de Fluidos • Termodinámica • Electromagnetismo • IoT</p>
+            <div class="hero-badge">Edición Albatros Tech & Plus</div>
+        </section>
+
+        <!-- Units Section -->
+        <section class="section-title">
+            <h2>Contenido del Manual</h2>
+            <p>Explora cada unidad de este manual interactivo</p>
+        </section>
+
+        <div class="units-grid">
+
+            <!-- Unit 1 -->
+            <a href="unidad 1/index.html" class="unit-card u1" id="unidad1">
+                <div class="unit-number">01</div>
+                <h3 class="unit-title">Mecánica de Fluidos</h3>
+                <p class="unit-desc">Sistemas Hidráulicos y Neumáticos. Presión, Pascal, Bernoulli y aplicaciones en
+                    tecnología moderna.</p>
+                <div class="unit-btn">
+                    Explorar Unidad
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Unit 2 -->
+            <a href="unidad 2/index.html" class="unit-card u2" id="unidad2">
+                <div class="unit-number">02</div>
+                <h3 class="unit-title">Termodinámica</h3>
+                <p class="unit-desc">Gestión Energética. Calor, temperatura, leyes de la termodinámica y eficiencia en
+                    sistemas reales.</p>
+                <div class="unit-btn">
+                    Explorar Unidad
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Unit 3 -->
+            <a href="unidad 3/index.html" class="unit-card u3" id="unidad3">
+                <div class="unit-number">03</div>
+                <h3 class="unit-title">Electricidad y Magnetismo</h3>
+                <p class="unit-desc">Conectividad e IoT. Electrostática, circuitos, electromagnetismo y aplicaciones
+                    Smart Cities.</p>
+                <div class="unit-btn">
+                    Explorar Unidad
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Unit 4 -->
+            <a href="unidad 4/index.html" class="unit-card u4" id="unidad4">
+                <div class="unit-number">04</div>
+                <h3 class="unit-title">Sistemas Energéticos e IoT</h3>
+                <p class="unit-desc">Instrumentación y Control. Integración de energía, sensores, actuadores y gestión
+                    inteligente.</p>
+                <div class="unit-btn">
+                    Explorar Unidad
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Anexos -->
+            <a href="ANEXOS/index.html" class="unit-card anexos" id="anexos">
+                <div class="unit-number">📚</div>
+                <h3 class="unit-title">ANEXOS</h3>
+                <p class="unit-desc">Material complementario, tablas de referencia, fórmulas esenciales y recursos
+                    adicionales.</p>
+                <div class="unit-btn">
+                    Ver Anexos
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-logo">GRUPO CULTURAL <span>ALBATROS</span></div>
+            <p>Manual de Física - Edición Albatros Tech & Plus</p>
+            <p class="footer-credits">© 2024 Grupo Cultural Albatros. Todos los derechos reservados.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for Particles and Cursor Creature -->
+    <script>
+        // ============================================
+        // PARTICLE SYSTEM
+        // ============================================
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function createParticle() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 3 + 1,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.5,
+                opacity: Math.random() * 0.5 + 0.2,
+                hue: Math.random() * 60 + 20 // Orange-yellow range
+            };
+        }
+
+        function initParticles() {
+            particles = [];
+            const numParticles = Math.floor((canvas.width * canvas.height) / 10000);
+            for (let i = 0; i < Math.min(numParticles, 150); i++) {
+                particles.push(createParticle());
+            }
+        }
+
+        function updateParticles() {
+            particles.forEach(p => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+
+                // Mouse interaction - slight attraction
+                const dx = mouseX - p.x;
+                const dy = mouseY - p.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 200) {
+                    p.x += dx * 0.001;
+                    p.y += dy * 0.001;
+                }
+
+                // Wrap around edges
+                if (p.x < 0) p.x = canvas.width;
+                if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height;
+                if (p.y > canvas.height) p.y = 0;
+            });
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${p.opacity})`;
+                ctx.fill();
+            });
+
+            // Draw connections between close particles
+            particles.forEach((p1, i) => {
+                particles.slice(i + 1).forEach(p2 => {
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(255, 111, 0, ${0.1 * (1 - dist / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                });
+            });
+        }
+
+        function animateParticles() {
+            updateParticles();
+            drawParticles();
+            requestAnimationFrame(animateParticles);
+        }
+
+        // ============================================
+        // CURSOR CREATURE
+        // ============================================
+        const creature = document.getElementById('cursor-creature');
+        let creatureX = window.innerWidth / 2;
+        let creatureY = window.innerHeight / 2;
+        let creatureAngle = 0;
+
+        function updateCreature() {
+            // Smooth follow with easing
+            const dx = mouseX - creatureX;
+            const dy = mouseY - creatureY;
+
+            creatureX += dx * 0.08;
+            creatureY += dy * 0.08;
+
+            // Calculate rotation angle
+            const targetAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+            const angleDiff = targetAngle - creatureAngle;
+            creatureAngle += angleDiff * 0.1;
+
+            // Apply position and rotation
+            creature.style.left = (creatureX - 30) + 'px';
+            creature.style.top = (creatureY - 30) + 'px';
+            creature.style.transform = `rotate(${creatureAngle}deg)`;
+
+            // Animate wings based on speed
+            const speed = Math.sqrt(dx * dx + dy * dy);
+            const wingScale = 1 + Math.sin(Date.now() / 50) * 0.1 * Math.min(speed / 50, 1);
+            const wings = creature.querySelectorAll('.wing-left, .wing-right');
+            wings.forEach(w => {
+                w.style.transform = `scale(${wingScale})`;
+            });
+
+            requestAnimationFrame(updateCreature);
+        }
+
+        // ============================================
+        // MOUSE TRACKING
+        // ============================================
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        window.addEventListener('load', () => {
+            resizeCanvas();
+            initParticles();
+            animateParticles();
+            updateCreature();
+        });
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+
+        // Touch support for mobile
+        document.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                mouseX = e.touches[0].clientX;
+                mouseY = e.touches[0].clientY;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

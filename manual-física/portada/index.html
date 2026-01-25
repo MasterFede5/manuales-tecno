@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portada e Introducción - Manual de Física Albatros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&family=Open+Sans+Condensed:wght@300;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B1F3A;
+            --primary-light: #E6EEF7;
+            --primary-dark: #081325;
+            --secondary-color: #B71C1C;
+            --accent-color: #D32F2F;
+            --success-color: #2E7D32;
+            --warning-color: #F57C00;
+            --text-dark: #1E2A36;
+            --text-light: #607D8B;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray-medium: #E0E6ED;
+            --radius-pill: 50px;
+            --radius-card: 12px;
+            --radius-small: 6px;
+            --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @page {
+            size: letter portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            font-size: 10pt;
+            line-height: 14pt;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 215.9mm;
+            height: 279.4mm;
+            padding: 20mm 18mm 18mm 22mm;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 26pt;
+            color: var(--primary-color);
+            margin-bottom: 6mm;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16pt;
+            color: var(--secondary-color);
+            margin-bottom: 4mm;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 12pt;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        p {
+            margin-bottom: 3mm;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 5mm;
+            margin-bottom: 3mm;
+        }
+
+        li {
+            margin-bottom: 1.5mm;
+        }
+
+        .capsula {
+            display: flex;
+            margin-bottom: 5mm;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            page-break-inside: avoid;
+        }
+
+        .capsula-etiqueta {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            min-width: 42mm;
+        }
+
+        .capsula-etiqueta .icono img {
+            width: 18px;
+            height: 18px;
+            filter: brightness(0) invert(1);
+        }
+
+        .capsula-etiqueta .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .capsula-contenido {
+            background: var(--primary-light);
+            padding: 3mm 4mm;
+            flex: 1;
+        }
+
+        .capsula.secundaria .capsula-etiqueta {
+            background: var(--secondary-color);
+        }
+
+        .capsula.acento .capsula-etiqueta {
+            background: var(--accent-color);
+        }
+
+        .portada {
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 30mm 20mm;
+        }
+
+        .portada h1 {
+            color: var(--white);
+            font-size: 30pt;
+        }
+
+        .portada .subtitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            margin-bottom: 8mm;
+            opacity: 0.9;
+        }
+
+        .portada .edicion {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 3mm 6mm;
+            border-radius: var(--radius-pill);
+            margin-bottom: 12mm;
+        }
+
+        .portada .logo-placeholder {
+            width: 35mm;
+            height: 35mm;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8mm;
+        }
+
+        .indice-visual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3mm;
+        }
+
+        .indice-item {
+            background: var(--primary-light);
+            border-radius: var(--radius-card);
+            padding: 3mm;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .indice-item.destacado {
+            grid-column: span 2;
+            background: var(--secondary-color);
+            color: var(--white);
+            border-left: none;
+            text-align: center;
+        }
+
+        .indice-item.destacado h3 {
+            color: var(--white);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 9pt;
+            line-height: 11pt;
+            margin-bottom: 4mm;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 3mm;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 2mm 3mm;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        tr:nth-child(even) {
+            background: var(--primary-light);
+        }
+
+        .cuadro-comparativo {
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+        }
+
+        .cuadro-comparativo-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            text-align: center;
+        }
+
+        .cuadro-comparativo-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .cuadro-col {
+            padding: 3mm;
+        }
+
+        .cuadro-col:first-child {
+            background: var(--primary-light);
+            border-right: 1px solid var(--primary-color);
+        }
+
+        .cuadro-col:last-child {
+            background: #FCECEC;
+        }
+
+        .pasos-container {
+            counter-reset: paso;
+        }
+
+        .paso {
+            display: flex;
+            gap: 2mm;
+            margin-bottom: 3mm;
+        }
+
+        .paso-numero {
+            counter-increment: paso;
+            background: var(--primary-color);
+            color: var(--white);
+            width: 6mm;
+            height: 6mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            flex-shrink: 0;
+        }
+
+        .paso-numero::before {
+            content: counter(paso);
+        }
+
+        .pie-pagina {
+            position: absolute;
+            bottom: 8mm;
+            left: 22mm;
+            right: 18mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 7pt;
+            color: var(--text-light);
+            border-top: 1px solid var(--gray-medium);
+            padding-top: 2mm;
+        }
+
+        .pie-pagina .unidad-tag {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1mm 2mm;
+            border-radius: var(--radius-pill);
+            font-size: 6pt;
+            font-weight: 600;
+        }
+
+        .numero-pagina {
+            background: var(--gray-light);
+            padding: 1mm 3mm;
+            border-radius: var(--radius-small);
+            font-weight: 600;
+        }
+
+        .mt-2 {
+            margin-top: 2mm;
+        }
+
+        .mt-3 {
+            margin-top: 3mm;
+        }
+
+        .mt-4 {
+            margin-top: 4mm;
+        }
+
+        /* Sistema de contenido combinado (boarding) */
+        .contenido-combinado {
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 12mm);
+        }
+
+        .seccion-combinada {
+            flex: 1;
+            padding-bottom: 4mm;
+            margin-bottom: 4mm;
+            border-bottom: 1px dashed var(--gray-medium);
+        }
+
+        .seccion-combinada:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .grid-dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+
+        .compact-list {
+            margin-bottom: 2mm;
+        }
+
+        .compact-list li {
+            margin-bottom: 1mm;
+            font-size: 9pt;
+        }
+
+        .cuadro-comparativo h3 {
+            margin-bottom: 2mm;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PAGINA 1: PORTADA GENERAL -->
+    <div class="page portada">
+        <h1>MANUAL DE FÍSICA</h1>
+        <div class="subtitulo">Edición Albatros Competitiva</div>
+        <div class="edicion">Ciclo 2025-2026</div>
+        <div class="logo-placeholder">LOGO</div>
+        <p style="max-width: 140mm; font-size: 10pt; opacity: 0.9;">
+            Una ruta de aprendizaje para comprender el mundo físico y construir soluciones con rigor científico,
+            creatividad y valores.
+        </p>
+    </div>
+
+    <!-- PAGINA 2: PRESENTACIÓN + ÍNDICE DEL PLAN DE ESTUDIOS -->
+    <div class="page">
+        <div class="contenido-combinado">
+            <!-- Presentación -->
+            <div class="seccion-combinada">
+                <div class="capsula">
+                    <div class="capsula-etiqueta">
+                        <div class="icono"><img src="../unidad 1/imagenes/icono-documento.png" alt=""></div>
+                        <div class="titulo">Presentación</div>
+                    </div>
+                    <div class="capsula-contenido">
+                        <p>Bienvenido al Manual de Física Albatros. Este material fue diseñado para estudiantes que desean
+                            comprender la ciencia con profundidad y aplicarla en proyectos reales.</p>
+                    </div>
+                </div>
+                <div class="grid-dos-columnas">
+                    <div>
+                        <h3>Misión del programa</h3>
+                        <p>Formar jóvenes capaces de analizar fenómenos físicos, resolver problemas complejos y diseñar soluciones
+                            tecnológicas con impacto social positivo.</p>
+                    </div>
+                    <div>
+                        <h3>Visión formativa</h3>
+                        <p>La física no es solo teoría: es una herramienta para entender el mundo y transformar la realidad con ética y
+                            responsabilidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Índice del Plan de Estudios -->
+            <div class="seccion-combinada">
+                <h2>Índice del Plan de Estudios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unidad</th>
+                            <th>Tema central</th>
+                            <th>Competencias clave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Unidad 1</strong></td>
+                            <td>Mecánica de Fluidos y Sistemas Hidráulicos</td>
+                            <td>Modelar presión, flujo y aplicaciones hidráulicas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unidad 2</strong></td>
+                            <td>Termodinámica y Gestión Energética</td>
+                            <td>Comprender calor, eficiencia y cambios de fase</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unidad 3</strong></td>
+                            <td>Electricidad, Magnetismo y Conectividad</td>
+                            <td>Analizar circuitos, campos e inducción</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unidad 4</strong></td>
+                            <td>Sistemas Energéticos Integrados e Instrumentación, Control e IoT</td>
+                            <td>Integrar energía, medición y control en sistemas inteligentes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">PORTADA</span>
+            <span>Presentación e Índice</span>
+            <span class="numero-pagina">2</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 3: METODOLOGÍA + ICONOGRAFÍA -->
+    <div class="page">
+        <div class="contenido-combinado">
+            <!-- Metodología -->
+            <div class="seccion-combinada">
+                <h2>Metodología Albatros</h2>
+                <p>El manual integra dos enfoques complementarios: <strong>Albatros Tech</strong> (práctico) y
+                    <strong>Albatros Plus</strong> (analítico). Juntos garantizan comprensión profunda y aplicación real.</p>
+                <div class="cuadro-comparativo mt-2">
+                    <div class="cuadro-comparativo-header">
+                        <h3 style="color: white; margin: 0; font-size: 10pt;">Tech vs Plus</h3>
+                    </div>
+                    <div class="cuadro-comparativo-body">
+                        <div class="cuadro-col">
+                            <h3 style="color: var(--primary-color); font-size: 9pt;">Albatros Tech</h3>
+                            <ul class="compact-list">
+                                <li>Aprendizaje práctico</li>
+                                <li>Proyectos Maker</li>
+                                <li>Resolución de problemas reales</li>
+                            </ul>
+                        </div>
+                        <div class="cuadro-col">
+                            <h3 style="color: var(--secondary-color); font-size: 9pt;">Albatros Plus</h3>
+                            <ul class="compact-list">
+                                <li>Rigor teórico</li>
+                                <li>Análisis de modelos</li>
+                                <li>Ética y pensamiento crítico</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Iconografía -->
+            <div class="seccion-combinada">
+                <h2>Iconografía y Estructura</h2>
+                <p>Cada sección del manual usa iconos para orientar al estudiante:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Icono</th>
+                            <th>Sección</th>
+                            <th>Propósito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="../unidad 1/imagenes/icono-diana.png" alt="" style="width:14px;"></td>
+                            <td>Objetivo</td>
+                            <td>Meta de aprendizaje</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../unidad 1/imagenes/icono-cerebro.png" alt="" style="width:14px;"></td>
+                            <td>Conceptos Fundamentales</td>
+                            <td>Base teórica</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../unidad 1/imagenes/icono-flujo.png" alt="" style="width:14px;"></td>
+                            <td>Procedimientos</td>
+                            <td>Pasos técnicos</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../unidad 1/imagenes/icono-engranaje.png" alt="" style="width:14px;"></td>
+                            <td>Prácticas Integradoras</td>
+                            <td>Aplicación real</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../unidad 1/imagenes/icono-clip.png" alt="" style="width:14px;"></td>
+                            <td>Tip Extra</td>
+                            <td>Recomendaciones útiles</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../unidad 1/imagenes/icono-circuito.png" alt="" style="width:14px;"></td>
+                            <td>Reto Digital</td>
+                            <td>Proyecto tecnológico</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">PORTADA</span>
+            <span>Metodología e Iconografía</span>
+            <span class="numero-pagina">3</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 4: CÓMO USAR EL MANUAL + DERECHOS DE AUTOR -->
+    <div class="page">
+        <div class="contenido-combinado">
+            <!-- Cómo usar el manual -->
+            <div class="seccion-combinada">
+                <h2>Cómo usar este manual</h2>
+                <p>Este manual está diseñado para que avances de forma gradual: primero la teoría, después la práctica y al final
+                    la integración en proyectos.</p>
+                <div class="pasos-container grid-dos-columnas">
+                    <div>
+                        <div class="paso"><div class="paso-numero"></div><div class="paso-contenido" style="font-size: 8pt;">Lee el objetivo y activa conocimientos previos.</div></div>
+                        <div class="paso"><div class="paso-numero"></div><div class="paso-contenido" style="font-size: 8pt;">Estudia los conceptos fundamentales.</div></div>
+                        <div class="paso"><div class="paso-numero"></div><div class="paso-contenido" style="font-size: 8pt;">Realiza mini actividades y ejercicios.</div></div>
+                    </div>
+                    <div>
+                        <div class="paso"><div class="paso-numero"></div><div class="paso-contenido" style="font-size: 8pt;">Desarrolla prácticas integradoras.</div></div>
+                        <div class="paso"><div class="paso-numero"></div><div class="paso-contenido" style="font-size: 8pt;">Finaliza con el reto digital.</div></div>
+                    </div>
+                </div>
+                <div class="capsula acento mt-2">
+                    <div class="capsula-etiqueta">
+                        <div class="icono"><img src="../unidad 1/imagenes/icono-nota.png" alt=""></div>
+                        <div class="titulo">Recomendación</div>
+                    </div>
+                    <div class="capsula-contenido">
+                        <p>Trabaja en equipo, documenta tus resultados y mantén un cuaderno de laboratorio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Derechos de autor -->
+            <div class="seccion-combinada">
+                <div class="capsula acento">
+                    <div class="capsula-etiqueta">
+                        <div class="icono"><img src="../unidad 1/imagenes/icono-documento.png" alt=""></div>
+                        <div class="titulo">Derechos de autor</div>
+                    </div>
+                    <div class="capsula-contenido">
+                        <p>© 2026 Albatros. Todos los derechos reservados. Este manual es para uso educativo interno. Queda
+                            prohibida su reproducción total o parcial sin autorización.</p>
+                    </div>
+                </div>
+                <div class="grid-dos-columnas">
+                    <div>
+                        <h3>Uso permitido</h3>
+                        <ul class="compact-list">
+                            <li>Impresión para estudiantes inscritos.</li>
+                            <li>Adaptaciones didácticas con cita de origen.</li>
+                            <li>Uso en proyectos académicos sin fines comerciales.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Uso no permitido</h3>
+                        <ul class="compact-list">
+                            <li>Distribución pública sin licencia.</li>
+                            <li>Venta o reproducción comercial.</li>
+                            <li>Modificaciones que alteren el contenido científico.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">PORTADA</span>
+            <span>Guía de uso y Derechos</span>
+            <span class="numero-pagina">4</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 5: PRÓLOGO + PERFIL DE EGRESO -->
+    <div class="page">
+        <div class="contenido-combinado">
+            <!-- Prólogo -->
+            <div class="seccion-combinada">
+                <div class="capsula">
+                    <div class="capsula-etiqueta">
+                        <div class="icono"><img src="../unidad 1/imagenes/icono-diploma.png" alt=""></div>
+                        <div class="titulo">Prólogo</div>
+                    </div>
+                    <div class="capsula-contenido">
+                        <p>La física es el lenguaje del universo. Este manual busca que cada estudiante domine ese lenguaje y lo
+                            utilice para crear soluciones reales. La curiosidad es la chispa; el método científico es el camino.</p>
+                    </div>
+                </div>
+                <p>En Albatros creemos en el aprendizaje significativo: experimentar, analizar y construir. Cada unidad está
+                    pensada para conectar teoría y práctica con desafíos que inspiran a pensar como científicos e ingenieros.</p>
+            </div>
+
+            <!-- Perfil de egreso -->
+            <div class="seccion-combinada">
+                <h2>Perfil de egreso y evaluación</h2>
+                <p>Al concluir el manual, el estudiante será capaz de:</p>
+                <div class="grid-dos-columnas">
+                    <ul class="compact-list">
+                        <li>Aplicar principios físicos para resolver problemas reales.</li>
+                        <li>Diseñar sistemas con enfoque en eficiencia energética.</li>
+                    </ul>
+                    <ul class="compact-list">
+                        <li>Integrar sensores, actuadores y control en proyectos.</li>
+                        <li>Argumentar decisiones técnicas con bases científicas.</li>
+                    </ul>
+                </div>
+                <div class="capsula secundaria mt-2">
+                    <div class="capsula-etiqueta">
+                        <div class="icono"><img src="../unidad 1/imagenes/icono-lista.png" alt=""></div>
+                        <div class="titulo">Evaluación</div>
+                    </div>
+                    <div class="capsula-contenido">
+                        <p>La evaluación se basa en actividades, prácticas integradoras, retos digitales y participación en
+                            laboratorio. Se valora tanto el proceso como el resultado final.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">PORTADA</span>
+            <span>Prólogo y Perfil de egreso</span>
+            <span class="numero-pagina">5</span>
+        </div>
+    </div>
+</body>
+
+</html>

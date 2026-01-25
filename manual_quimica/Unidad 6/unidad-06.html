@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 6: Energía y Sistemas Dinámicos - Manual de Química</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- ========================================
+         UNIDAD 6: ENERGÍA Y SISTEMAS DINÁMICOS
+         Páginas 171-192 (22 páginas)
+         ======================================== -->
+
+    <!-- ==================== PORTADA UNIDAD 6 ==================== -->
+    <section class="pagina portada-unidad">
+        <div class="unidad-numero">UNIDAD 6</div>
+        <h1 class="unidad-titulo">Energía y Sistemas Dinámicos</h1>
+        <p class="unidad-subtitulo">Termodinámica, Cinética y Equilibrio Químico</p>
+
+        <div class="unidad-meta">
+            <div class="meta-item">
+                <span class="meta-label">Páginas</span>
+                <span class="meta-valor">171–192</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Temas</span>
+                <span class="meta-valor">4</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Extensión</span>
+                <span class="meta-valor">22 páginas</span>
+            </div>
+        </div>
+
+        <!-- Espacio para imagen de portada -->
+        <!-- IMAGEN: IMG-U6-001 -->
+        <!-- IMAGEN: IMG-U6-001 -->
+        <div class="imagen-contenedor">
+            <img src="images/IMG-U6-001 Imagen de Portada Unidad 6.jpg" alt="Imagen de Portada - Unidad 6"
+                class="img-fluid">
+        </div>
+
+        <div class="competencias-unidad">
+            <h3>Competencias a desarrollar</h3>
+            <ul>
+                <li>Analiza los intercambios de energía en reacciones químicas</li>
+                <li>Comprende los factores que afectan la velocidad de reacción</li>
+                <li>Aplica el principio de Le Chatelier al equilibrio químico</li>
+                <li>Relaciona los conceptos termodinámicos con el equilibrio ambiental</li>
+            </ul>
+        </div>
+        <div class="numero-pagina">171</div>
+    </section>
+
+    <!-- ========================================
+         TEMA 6.1: SISTEMAS TERMODINÁMICOS
+         Páginas 171-174
+         ======================================== -->
+
+    <!-- PÁGINA 172: Introducción a Sistemas -->
+    <section class="pagina" id="pagina-172">
+        <div class="numero-pagina">172</div>
+
+        <header class="tema-header">
+            <div class="tema-info">
+                <span class="tema-numero">Tema 6.1</span>
+                <h2 class="tema-titulo">Sistemas Termodinámicos</h2>
+            </div>
+            <span class="icono-contenido">🌡️</span>
+        </header>
+
+        <div class="objetivo-box">
+            <strong>Objetivo:</strong> Identificar y clasificar los sistemas termodinámicos según su intercambio de
+            materia y energía con el entorno.
+        </div>
+
+        <div class="card-concepto">
+            <h3>¿Qué es un Sistema Termodinámico?</h3>
+            <p>Un <strong>sistema termodinámico</strong> es una porción del universo que se aísla para su estudio. Todo
+                lo que está fuera del sistema se denomina <strong>entorno</strong> o <strong>alrededores</strong>.</p>
+
+            <div class="formula-destacada">
+                Universo = Sistema + Entorno
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <h3>Clasificación de Sistemas</h3>
+
+            <div class="grid-3col" style="margin-top: 15px;">
+                <div class="sistema-tipo">
+                    <div class="sistema-icono">📦</div>
+                    <h4>Sistema Aislado</h4>
+                    <p>No intercambia materia ni energía</p>
+                    <p class="ejemplo-sistema"><em>Ejemplo: Termo ideal</em></p>
+                </div>
+
+                <div class="sistema-tipo">
+                    <div class="sistema-icono">🔒</div>
+                    <h4>Sistema Cerrado</h4>
+                    <p>Intercambia energía pero NO materia</p>
+                    <p class="ejemplo-sistema"><em>Ejemplo: Olla a presión</em></p>
+                </div>
+
+                <div class="sistema-tipo">
+                    <div class="sistema-icono">🔓</div>
+                    <h4>Sistema Abierto</h4>
+                    <p>Intercambia materia Y energía</p>
+                    <p class="ejemplo-sistema"><em>Ejemplo: Vaso con agua</em></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="imagen-contenedor">
+            <img src="images/Diagrama Tipos de Sistemas Termodinámicos.jpg"
+                alt="Diagrama: Tipos de Sistemas Termodinámicos" class="img-fluid">
+        </div>
+    </section>
+
+    <!-- PÁGINA 173: Variables de Estado -->
+    <section class="pagina" id="pagina-173">
+        <div class="numero-pagina">173</div>
+
+        <div class="card-concepto">
+            <h3>Variables de Estado</h3>
+            <p>Las <strong>variables de estado</strong> son propiedades que describen el estado de un sistema en un
+                momento dado:</p>
+
+            <div class="tabla-datos">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Símbolo</th>
+                            <th>Unidad SI</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Presión</td>
+                            <td>P</td>
+                            <td>Pascal (Pa)</td>
+                            <td>Fuerza por unidad de área</td>
+                        </tr>
+                        <tr>
+                            <td>Volumen</td>
+                            <td>V</td>
+                            <td>Metro cúbico (m³)</td>
+                            <td>Espacio ocupado</td>
+                        </tr>
+                        <tr>
+                            <td>Temperatura</td>
+                            <td>T</td>
+                            <td>Kelvin (K)</td>
+                            <td>Energía cinética promedio</td>
+                        </tr>
+                        <tr>
+                            <td>Cantidad</td>
+                            <td>n</td>
+                            <td>Mol (mol)</td>
+                            <td>Cantidad de sustancia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <h3>Primera Ley de la Termodinámica</h3>
+            <p>También conocida como <strong>Ley de conservación de la energía</strong>:</p>
+
+            <div class="formula-destacada">
+                ΔU = Q - W
+            </div>
+
+            <div class="leyenda-variables">
+                <ul>
+                    <li><strong>ΔU</strong> = Cambio en energía interna del sistema</li>
+                    <li><strong>Q</strong> = Calor transferido al sistema (+) o desde el sistema (-)</li>
+                    <li><strong>W</strong> = Trabajo realizado por el sistema (+) o sobre él (-)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card-procedimiento">
+            <h4>Cálculo de Calor (Q)</h4>
+            <p>El calor transferido se calcula usando el <strong>calor específico (Ce)</strong> de la sustancia:</p>
+            <div class="formula-destacada">
+                Q = m · Ce · ΔT
+            </div>
+            <div class="leyenda-variables">
+                <ul>
+                    <li><strong>m</strong> = Masa (g)</li>
+                    <li><strong>Ce</strong> = Calor específico (J/g·°C)</li>
+                    <li><strong>ΔT</strong> = Cambio de temperatura (Tf - Ti)</li>
+                </ul>
+            </div>
+            <p class="ejemplo-pequeno"><em>Ejemplo: Calentar 100g de agua (Ce=4.18) de 20°C a 80°C requiere: Q = 100 ·
+                    4.18 · (80-20) = 25,080 J.</em></p>
+        </div>
+
+        <div class="card-nota">
+            <h4>Importante</h4>
+            <p>La energía no se crea ni se destruye, solo se transforma. En un sistema aislado, la energía total
+                permanece constante.</p>
+        </div>
+
+        <div class="card-tip">
+            <h4>Conexión con la vida real</h4>
+            <p>Tu cuerpo es un sistema abierto: intercambia materia (alimentos, oxígeno, desechos) y energía (calor) con
+                el entorno constantemente.</p>
+        </div>
+    </section>
+
+    <!-- PÁGINA 174: Actividad Sistemas -->
+    <section class="pagina" id="pagina-174">
+        <div class="numero-pagina">174</div>
+
+        <div class="card-actividad">
+            <h3>Actividad Plus Albatros: Identificando Sistemas</h3>
+
+            <p><strong>Instrucciones:</strong> Clasifica cada ejemplo como sistema aislado, cerrado o abierto. Justifica
+                tu respuesta.</p>
+
+            <div class="ejercicios-sistemas">
+                <div class="ejercicio-sistema">
+                    <span class="numero-ejercicio">1</span>
+                    <p><strong>Un globo inflado sellado al sol:</strong></p>
+                    <div class="espacio-respuesta">
+                        <p>Tipo de sistema: _________________</p>
+                        <p>Justificación: _________________</p>
+                    </div>
+                </div>
+
+                <div class="ejercicio-sistema">
+                    <span class="numero-ejercicio">2</span>
+                    <p><strong>Una fogata al aire libre:</strong></p>
+                    <div class="espacio-respuesta">
+                        <p>Tipo de sistema: _________________</p>
+                        <p>Justificación: _________________</p>
+                    </div>
+                </div>
+
+                <div class="ejercicio-sistema">
+                    <span class="numero-ejercicio">3</span>
+                    <p><strong>Una lata de refresco cerrada en el refrigerador:</strong></p>
+                    <div class="espacio-respuesta">
+                        <p>Tipo de sistema: _________________</p>
+                        <p>Justificación: _________________</p>
+                    </div>
+                </div>
+
+                <div class="ejercicio-sistema">
+                    <span class="numero-ejercicio">4</span>
+                    <p><strong>El planeta Tierra:</strong></p>
+                    <div class="espacio-respuesta">
+                        <p>Tipo de sistema: _________________</p>
+                        <p>Justificación: _________________</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-procedimiento">
+            <h4>Simulación Virtual</h4>
+            <p>Utiliza el simulador PhET "Energía en formas y cambios" para visualizar cómo fluye la energía entre
+                sistemas.</p>
+            <p class="enlace-simulador">phet.colorado.edu/es/simulations/energy-forms-and-changes</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TEMA 6.2: ENTALPÍA Y CAMBIOS DE ENERGÍA
+         Páginas 175-178
+         ======================================== -->
+
+    <!-- PÁGINA 175: Introducción a Entalpía -->
+    <section class="pagina" id="pagina-175">
+        <div class="numero-pagina">175</div>
+
+        <header class="tema-header">
+            <div class="tema-info">
+                <span class="tema-numero">Tema 6.2</span>
+                <h2 class="tema-titulo">Entalpía y Cambios de Energía</h2>
+            </div>
+            <span class="icono-contenido">⚡</span>
+        </header>
+
+        <div class="objetivo-box">
+            <strong>Objetivo:</strong> Comprender el concepto de entalpía y diferenciar entre reacciones exotérmicas y
+            endotérmicas.
+        </div>
+
+        <div class="card-concepto">
+            <h3>¿Qué es la Entalpía?</h3>
+            <p>La <strong>entalpía (H)</strong> es una función termodinámica que representa el contenido energético
+                total de un sistema a presión constante. El cambio de entalpía (ΔH) indica si una reacción libera o
+                absorbe energía.</p>
+
+            <div class="formula-destacada">
+                ΔH = H<sub>productos</sub> - H<sub>reactivos</sub>
+            </div>
+        </div>
+
+        <div class="comparacion-reacciones">
+            <div class="reaccion-tipo exotermica">
+                <h4>Reacción Exotérmica</h4>
+                <div class="caracteristicas">
+                    <p><strong>ΔH &lt; 0</strong> (negativo)</p>
+                    <p>Libera energía al entorno</p>
+                    <p>El sistema se calienta</p>
+                </div>
+                <div class="ejemplos-reaccion">
+                    <p><strong>Ejemplos:</strong></p>
+                    <ul>
+                        <li>Combustión de metano</li>
+                        <li>Neutralización ácido-base</li>
+                        <li>Respiración celular</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reaccion-tipo endotermica">
+                <h4>Reacción Endotérmica</h4>
+                <div class="caracteristicas">
+                    <p><strong>ΔH &gt; 0</strong> (positivo)</p>
+                    <p>Absorbe energía del entorno</p>
+                    <p>El sistema se enfría</p>
+                </div>
+                <div class="ejemplos-reaccion">
+                    <p><strong>Ejemplos:</strong></p>
+                    <ul>
+                        <li>Fotosíntesis</li>
+                        <li>Evaporación del agua</li>
+                        <li>Compresas frías</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 176: Diagramas de Entalpía -->
+    <section class="pagina" id="pagina-176">
+        <div class="numero-pagina">176</div>
+
+        <div class="card-concepto">
+            <h3>Diagramas de Entalpía</h3>
+            <p>Los diagramas de entalpía representan gráficamente los cambios energéticos durante una reacción química.
+            </p>
+        </div>
+
+        <div class="imagen-contenedor">
+            <img src="images/Diagramas de Entalpía Exotérmica vs Endotérmica.jpg"
+                alt="Diagramas de Entalpía: Exotérmica vs Endotérmica" class="img-fluid">
+        </div>
+
+        <div class="card-concepto">
+            <h3>Entalpías Estándar de Formación</h3>
+            <p>La <strong>entalpía estándar de formación (ΔH°f)</strong> es el cambio de entalpía cuando se forma 1 mol
+                de un compuesto a partir de sus elementos en estado estándar (25°C, 1 atm).</p>
+
+            <div class="tabla-datos">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Compuesto</th>
+                            <th>Fórmula</th>
+                            <th>ΔH°f (kJ/mol)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Agua líquida</td>
+                            <td>H₂O(l)</td>
+                            <td>-285.8</td>
+                        </tr>
+                        <tr>
+                            <td>Dióxido de carbono</td>
+                            <td>CO₂(g)</td>
+                            <td>-393.5</td>
+                        </tr>
+                        <tr>
+                            <td>Metano</td>
+                            <td>CH₄(g)</td>
+                            <td>-74.8</td>
+                        </tr>
+                        <tr>
+                            <td>Glucosa</td>
+                            <td>C₆H₁₂O₆(s)</td>
+                            <td>-1273</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-nota">
+            <h4>Convención</h4>
+            <p>Por definición, la entalpía de formación de los elementos en su estado estándar es cero: ΔH°f(O₂) = 0,
+                ΔH°f(C grafito) = 0</p>
+        </div>
+    </section>
+
+    <!-- PÁGINA 177: Ley de Hess -->
+    <section class="pagina" id="pagina-177">
+        <div class="numero-pagina">177</div>
+
+        <div class="card-concepto">
+            <h3>Ley de Hess</h3>
+            <p>La <strong>Ley de Hess</strong> establece que el cambio de entalpía de una reacción es independiente del
+                camino seguido. El ΔH total es la suma de los ΔH parciales.</p>
+
+            <div class="formula-destacada">
+                ΔH°<sub>rxn</sub> = Σ ΔH°f (productos) - Σ ΔH°f (reactivos)
+            </div>
+        </div>
+
+        <div class="card-procedimiento">
+            <h4>Ejemplo de Cálculo</h4>
+            <p>Calcular el ΔH de la combustión del metano:</p>
+            <div class="ecuacion-ejemplo">
+                <p class="ecuacion">CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)</p>
+            </div>
+
+            <div class="solucion-pasos pasos-horizontal">
+                <div class="paso">
+                    <span class="paso-numero">1</span>
+                    <div class="paso-contenido">
+                        <h5>Datos:</h5>
+                        <ul>
+                            <li>CH₄: -74.8</li>
+                            <li>CO₂: -393.5</li>
+                            <li>H₂O: -285.8</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">2</span>
+                    <div class="paso-contenido">
+                        <h5>Sustitución:</h5>
+                        <p class="text-small">ΔH = [(-393.5) + 2(-285.8)] - [-74.8]</p>
+                        <p class="text-small">ΔH = -965.1 + 74.8</p>
+                    </div>
+                </div>
+
+                <div class="paso">
+                    <span class="paso-numero">3</span>
+                    <div class="paso-contenido resultado-destacado">
+                        <h5>Resultado:</h5>
+                        <p><strong>ΔH = -890.3 kJ</strong></p>
+                        <p>Exotérmica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 178: Actividad Entalpía -->
+    <section class="pagina" id="pagina-178">
+        <div class="numero-pagina">178</div>
+
+        <div class="card-actividad">
+            <h3>Actividad: Cálculos de Entalpía</h3>
+
+            <p><strong>Ejercicio 1:</strong> Clasifica las siguientes reacciones como exotérmicas o endotérmicas:</p>
+
+            <div class="ejercicios-clasificacion">
+                <div class="ejercicio-item">
+                    <p>a) 2H₂(g) + O₂(g) → 2H₂O(l) ΔH = -572 kJ</p>
+                    <div class="espacio-respuesta-linea"></div>
+                </div>
+                <div class="ejercicio-item">
+                    <p>b) CaCO₃(s) → CaO(s) + CO₂(g) ΔH = +178 kJ</p>
+                    <div class="espacio-respuesta-linea"></div>
+                </div>
+                <div class="ejercicio-item">
+                    <p>c) N₂(g) + O₂(g) → 2NO(g) ΔH = +180.5 kJ</p>
+                    <div class="espacio-respuesta-linea"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-actividad">
+            <p><strong>Ejercicio 2:</strong> Usando los datos de entalpía de formación, calcula el ΔH de la siguiente
+                reacción:</p>
+
+            <div class="ecuacion-ejemplo">
+                <p class="ecuacion">2C₂H₆(g) + 7O₂(g) → 4CO₂(g) + 6H₂O(l)</p>
+            </div>
+
+            <p><em>Datos: ΔH°f C₂H₆(g) = -84.7 kJ/mol</em></p>
+
+            <div class="espacio-trabajo">
+                <p><strong>Desarrollo:</strong></p>
+                <div class="lineas-escritura">
+                    <div class="linea"></div>
+                    <div class="linea"></div>
+                    <div class="linea"></div>
+                    <div class="linea"></div>
+                </div>
+                <p><strong>Respuesta: ΔH = _____________ kJ</strong></p>
+            </div>
+        </div>
+
+        <div class="card-tip">
+            <h4>Aplicación Industrial</h4>
+            <p>La industria utiliza los cálculos de entalpía para diseñar procesos eficientes energéticamente, desde la
+                producción de fertilizantes hasta la generación de energía en plantas termoeléctricas.</p>
+        </div>
+    </section>
+
+    <!-- PÁGINA 178-B: Entropía y Energía Libre de Gibbs -->
+    <section class="pagina" id="pagina-178b">
+        <div class="numero-pagina">178-B</div>
+
+        <div class="card-concepto">
+            <h3>Entropía (S)</h3>
+            <p>La <strong>entropía</strong> es una medida del desorden o aleatoriedad de un sistema. Es una función de
+                estado que indica cuántas formas diferentes pueden organizarse las partículas.</p>
+
+            <div class="formula-destacada">
+                ΔS = S<sub>productos</sub> - S<sub>reactivos</sub>
+            </div>
+
+            <div class="interpretacion-K">
+                <div class="caso-K">
+                    <h5>ΔS > 0</h5>
+                    <p>Aumento de desorden (favorable)</p>
+                </div>
+                <div class="caso-K">
+                    <h5>ΔS < 0</h5>
+                            <p>Disminución de desorden</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <h3>Predicción del Signo de ΔS</h3>
+            <div class="tabla-datos">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Proceso</th>
+                            <th>Signo de ΔS</th>
+                            <th>Razón</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sólido → Líquido → Gas</td>
+                            <td>Positivo (+)</td>
+                            <td>Aumenta el desorden molecular</td>
+                        </tr>
+                        <tr>
+                            <td>Gas → Líquido → Sólido</td>
+                            <td>Negativo (-)</td>
+                            <td>Disminuye el desorden</td>
+                        </tr>
+                        <tr>
+                            <td>Aumentan moles de gas</td>
+                            <td>Positivo (+)</td>
+                            <td>Más partículas gaseosas</td>
+                        </tr>
+                        <tr>
+                            <td>Disminuyen moles de gas</td>
+                            <td>Negativo (-)</td>
+                            <td>Menos partículas gaseosas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-procedimiento">
+            <h4>Ejemplo: Predicción de ΔS</h4>
+            <p>Predice el signo de ΔS para: N₂(g) + 3H₂(g) → 2NH₃(g)</p>
+            <div class="solucion-pasos">
+                <div class="paso">
+                    <div class="paso-numero">1</div>
+                    <div class="paso-contenido">
+                        <h5>Contar moles de gas:</h5>
+                        <p>Reactivos: 1 + 3 = 4 moles de gas</p>
+                        <p>Productos: 2 moles de gas</p>
+                    </div>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">2</div>
+                    <div class="paso-contenido resultado-destacado">
+                        <h5>Conclusión:</h5>
+                        <p><strong>ΔS < 0</strong> (negativo)</p>
+                        <p>Los moles de gas disminuyen, por lo tanto disminuye el desorden.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 178-C: Energía Libre de Gibbs -->
+    <section class="pagina" id="pagina-178c">
+        <div class="numero-pagina">178-C</div>
+
+        <div class="card-concepto">
+            <h3>Energía Libre de Gibbs (G)</h3>
+            <p>La <strong>energía libre de Gibbs</strong> combina entalpía y entropía para predecir si una reacción
+                ocurrirá espontáneamente a temperatura y presión constantes.</p>
+
+            <div class="formula-destacada">
+                ΔG = ΔH - TΔS
+            </div>
+
+            <div class="leyenda-variables">
+                <ul>
+                    <li><strong>ΔG</strong> = Cambio en energía libre de Gibbs (kJ/mol)</li>
+                    <li><strong>ΔH</strong> = Cambio de entalpía (kJ/mol)</li>
+                    <li><strong>T</strong> = Temperatura absoluta (K)</li>
+                    <li><strong>ΔS</strong> = Cambio de entropía (kJ/mol·K)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <h3>Criterio de Espontaneidad</h3>
+            <div class="interpretacion-K">
+                <div class="caso-K">
+                    <h5>ΔG < 0</h5>
+                            <p>Reacción ESPONTÁNEA (ocurre naturalmente)</p>
+                </div>
+                <div class="caso-K">
+                    <h5>ΔG = 0</h5>
+                    <p>Sistema en EQUILIBRIO</p>
+                </div>
+                <div class="caso-K">
+                    <h5>ΔG > 0</h5>
+                    <p>Reacción NO ESPONTÁNEA (requiere energía)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <h3>Combinaciones de ΔH y ΔS</h3>
+            <div class="tabla-datos">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ΔH</th>
+                            <th>ΔS</th>
+                            <th>ΔG</th>
+                            <th>Espontaneidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Negativo (-)</td>
+                            <td>Positivo (+)</td>
+                            <td>Siempre negativo</td>
+                            <td>Espontánea a todas las T</td>
+                        </tr>
+                        <tr>
+                            <td>Positivo (+)</td>
+                            <td>Negativo (-)</td>
+                            <td>Siempre positivo</td>
+                            <td>No espontánea a ninguna T</td>
+                        </tr>
+                        <tr>
+                            <td>Negativo (-)</td>
+                            <td>Negativo (-)</td>
+                            <td>Depende de T</td>
+                            <td>Espontánea a T bajas</td>
+                        </tr>
+                        <tr>
+                            <td>Positivo (+)</td>
+                            <td>Positivo (+)</td>
+                            <td>Depende de T</td>
+                            <td>Espontánea a T altas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-procedimiento">
+            <h4>Ejemplo de Cálculo de ΔG</h4>
+            <p>Calcula ΔG a 25°C para una reacción donde ΔH = -92 kJ/mol y ΔS = -0.199 kJ/mol·K. ¿Es espontánea?</p>
+            <div class="solucion-pasos pasos-horizontal">
+                <div class="paso">
+                    <span class="paso-numero">1</span>
+                    <div class="paso-contenido">
+                        <h5>Conversión T:</h5>
+                        <p>T = 25+273 = 298 K</p>
+                    </div>
+                </div>
+                <div class="paso">
+                    <span class="paso-numero">2</span>
+                    <div class="paso-contenido">
+                        <h5>Cálculo:</h5>
+                        <p class="text-small">ΔG = -92 - (298)(-0.199)</p>
+                        <p class="text-small">ΔG = -92 + 59.3</p>
+                    </div>
+                </div>
+                <div class="paso">
+                    <span class="paso-numero">3</span>
+                    <div class="paso-contenido resultado-destacado">
+                        <h5>Conclusión:</h5>
+                        <p><strong>ΔG = -32.7 kJ</strong></p>
+                        <p>Espontánea (ΔG < 0)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-nota">
+            <h4>Relación con Equilibrio</h4>
+            <p>La energía libre de Gibbs se relaciona con la constante de equilibrio: <strong>ΔG° = -RT ln K</strong>.
+                Si K > 1, entonces ΔG° < 0 (favorece productos).</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TEMA 6.3: CINÉTICA QUÍMICA
+         Páginas 179-183
+         ======================================== -->
+
+    <!-- PÁGINA 179: Introducción a Cinética -->
+    <section class="pagina" id="pagina-179">
+        <div class="numero-pagina">179</div>
+
+        <header class="tema-header">
+            <div class="tema-info">
+                <span class="tema-numero">Tema 6.3</span>
+                <h2 class="tema-titulo">Cinética Química</h2>
+            </div>
+            <span class="icono-contenido">⏱️</span>
+        </header>
+
+        <div class="objetivo-box">
+            <strong>Objetivo:</strong> Analizar los factores que afectan la velocidad de las reacciones químicas y
+            comprender el concepto de energía de activación.
+        </div>
+
+        <div class="card-concepto">
+            <h3>¿Qué es la Cinética Química?</h3>
+            <p>La <strong>cinética química</strong> estudia la <em>velocidad</em> de las reacciones químicas y los
+                factores que la afectan. No todas las reacciones ocurren a la misma rapidez.</p>
+
+            <div class="comparacion">
+                <div class="ejemplo-rapido">
+                    <h5>Reacciones Rápidas</h5>
+                    <ul>
+                        <li>Explosiones</li>
+                        <li>Neutralización ácido-base</li>
+                        <li>Combustión de gas</li>
+                    </ul>
+                    <p class="tiempo">Tiempo: milisegundos a segundos</p>
+                </div>
+                <div class="ejemplo-lento">
+                    <h5>Reacciones Lentas</h5>
+                    <ul>
+                        <li>Oxidación del hierro</li>
+                        <li>Fermentación</li>
+                        <li>Formación de petróleo</li>
+                    </ul>
+                    <p class="tiempo">Tiempo: horas a millones de años</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <h3>Velocidad de Reacción</h3>
+            <p>La <strong>velocidad de reacción</strong> mide qué tan rápido los reactivos se convierten en productos.
+            </p>
+
+            <div class="formula-destacada">
+                v = -Δ[Reactivo]/Δt = +Δ[Producto]/Δt
+            </div>
+
+            <p class="nota-formula">Se mide en mol/(L·s) o M/s</p>
+        </div>
+
+        <div class="card-procedimiento">
+            <h4>Guía de Resolución: Cálculo de Velocidad</h4>
+            <p><strong>Ejemplo:</strong> En la descomposición del N₂O₅, la concentración inicial es 0.30 M y después de
+                60 segundos desciende a 0.24 M. Calcula la velocidad promedio.</p>
+
+            <div class="solucion-pasos pasos-horizontal">
+                <div class="paso">
+                    <span class="paso-numero">1</span>
+                    <div class="paso-contenido">
+                        <h5>Datos:</h5>
+                        <ul style="font-size:0.9em; padding-left:15px;">
+                            <li>[A]₀ = 0.30 M</li>
+                            <li>[A]f = 0.24 M</li>
+                            <li>Δt = 60 s</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="paso">
+                    <span class="paso-numero">2</span>
+                    <div class="paso-contenido">
+                        <h5>Sustitución:</h5>
+                        <p class="text-small">v = -(0.24 - 0.30)/60</p>
+                        <p class="text-small">v = -(-0.06)/60</p>
+                    </div>
+                </div>
+                <div class="paso">
+                    <span class="paso-numero">3</span>
+                    <div class="paso-contenido resultado-destacado">
+                        <h5>Resultado:</h5>
+                        <p><strong>v = 0.001 M/s</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 180: Energía de Activación -->
+    <section class="pagina" id="pagina-180">
+        <div class="numero-pagina">180</div>
+
+        <div class="card-concepto">
+            <h3>Energía de Activación (Ea)</h3>
+            <p>La <strong>energía de activación</strong> es la energía mínima necesaria para que una reacción química
+                ocurra. Es como la "barrera" que los reactivos deben superar.</p>
+
+            <div class="row">
+                <div class="col">
+                    <h4>Ecuación de Arrhenius</h4>
+                    <p>Relaciona la constante de velocidad (k) con la temperatura y la Ea:</p>
+                    <div class="formula-box" style="font-size: 14px; padding: 10px;">
+                        k = A · e<sup>-Ea/RT</sup>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4>Ley de Velocidad</h4>
+                    <p>Expresión matemática que relaciona velocidad y concentración:</p>
+                    <div class="formula-box" style="font-size: 14px; padding: 10px;">
+                        v = k [A]<sup>m</sup> [B]<sup>n</sup>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="imagen-contenedor">
+            <img src="images/Diagrama de Energía de Activación.jpg" alt="Diagrama de Energía de Activación"
+                class="img-fluid">
+        </div>
+
+        <div class="card-concepto">
+            <h3>Teoría de Colisiones</h3>
+            <p>Para que una reacción ocurra, las moléculas deben:</p>
+
+            <div class="requisitos-colision">
+                <div class="requisito">
+                    <span class="requisito-numero">1</span>
+                    <div class="requisito-contenido">
+                        <h5>Colisionar</h5>
+                        <p>Las partículas deben encontrarse físicamente</p>
+                    </div>
+                </div>
+                <div class="requisito">
+                    <span class="requisito-numero">2</span>
+                    <div class="requisito-contenido">
+                        <h5>Orientación correcta</h5>
+                        <p>Deben chocar en la posición adecuada</p>
+                    </div>
+                </div>
+                <div class="requisito">
+                    <span class="requisito-numero">3</span>
+                    <div class="requisito-contenido">
+                        <h5>Energía suficiente</h5>
+                        <p>Deben tener energía ≥ Ea</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 181: Factores que Afectan la Velocidad -->
+    <section class="pagina" id="pagina-181">
+        <div class="numero-pagina">181</div>
+
+        <div class="card-concepto">
+            <h3>Factores que Afectan la Velocidad de Reacción</h3>
+        </div>
+
+        <div class="factores-grid">
+            <div class="factor-card">
+                <div class="factor-icono">🌡️</div>
+                <h4>1. Temperatura</h4>
+                <p><strong>Efecto:</strong> A mayor temperatura, mayor velocidad</p>
+                <p><strong>¿Por qué?</strong> Las moléculas tienen más energía cinética, más colisiones efectivas</p>
+                <div class="regla-practica">
+                    <em>Regla general: Por cada 10°C de aumento, la velocidad se duplica aproximadamente</em>
+                </div>
+            </div>
+
+            <div class="factor-card">
+                <div class="factor-icono">📦</div>
+                <h4>2. Concentración</h4>
+                <p><strong>Efecto:</strong> A mayor concentración, mayor velocidad</p>
+                <p><strong>¿Por qué?</strong> Más partículas en el mismo espacio = más colisiones</p>
+            </div>
+
+            <div class="factor-card">
+                <div class="factor-icono">🧊</div>
+                <h4>3. Superficie de Contacto</h4>
+                <p><strong>Efecto:</strong> A mayor superficie, mayor velocidad</p>
+                <p><strong>¿Por qué?</strong> Más área expuesta para que ocurran colisiones</p>
+                <p class="ejemplo"><em>Ejemplo: Polvo de hierro vs bloque de hierro</em></p>
+            </div>
+
+            <div class="factor-card">
+                <div class="factor-icono">⚗️</div>
+                <h4>4. Catalizadores</h4>
+                <p><strong>Efecto:</strong> Aumentan la velocidad sin consumirse</p>
+                <p><strong>¿Por qué?</strong> Disminuyen la energía de activación</p>
+                <p class="ejemplo"><em>Ejemplo: Enzimas en el cuerpo</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 182: Catalizadores -->
+    <section class="pagina" id="pagina-182">
+        <div class="numero-pagina">182</div>
+
+        <div class="card-concepto">
+            <h3>Catalizadores</h3>
+            <p>Un <strong>catalizador</strong> es una sustancia que acelera una reacción química sin consumirse en ella.
+                Proporciona un camino alternativo con menor energía de activación.</p>
+        </div>
+
+        <div class="tipos-catalizadores">
+            <div class="tipo-catalizador">
+                <h4>Catalizadores Homogéneos</h4>
+                <p>Están en la misma fase que los reactivos</p>
+                <p class="ejemplo"><em>Ejemplo: Ácidos en reacciones de esterificación</em></p>
+            </div>
+            <div class="tipo-catalizador">
+                <h4>Catalizadores Heterogéneos</h4>
+                <p>Están en diferente fase que los reactivos</p>
+                <p class="ejemplo"><em>Ejemplo: Platino en convertidores catalíticos</em></p>
+            </div>
+            <div class="tipo-catalizador">
+                <h4>Biocatalizadores (Enzimas)</h4>
+                <p>Catalizadores biológicos altamente específicos</p>
+                <p class="ejemplo"><em>Ejemplo: Amilasa, lipasa, proteasa</em></p>
+            </div>
+        </div>
+
+        <div class="imagen-contenedor">
+            <img src="images/Efecto del Catalizador en la Energía de Activación.jpg"
+                alt="Efecto del Catalizador en la Energía de Activación" class="img-fluid">
+        </div>
+
+        <div class="card-tip">
+            <h4>Aplicación: Convertidor Catalítico</h4>
+            <p>Los automóviles usan catalizadores de platino y paladio para convertir gases nocivos (CO, NOx) en
+                compuestos menos dañinos (CO₂, N₂, H₂O).</p>
+        </div>
+    </section>
+
+    <!-- PÁGINA 183: Actividad Cinética -->
+    <section class="pagina" id="pagina-183">
+        <div class="numero-pagina">183</div>
+
+        <div class="card-actividad">
+            <h3>Actividad Experimental: Factores de Velocidad</h3>
+
+            <p><strong>Objetivo:</strong> Observar cómo diferentes factores afectan la velocidad de disolución de una
+                tableta efervescente.</p>
+
+            <div class="materiales-box">
+                <h4>Materiales:</h4>
+                <ul>
+                    <li>4 tabletas efervescentes iguales</li>
+                    <li>4 vasos con 200 mL de agua cada uno</li>
+                    <li>Termómetro</li>
+                    <li>Cronómetro</li>
+                    <li>Mortero (opcional)</li>
+                </ul>
+            </div>
+
+            <div class="procedimiento-box">
+                <h4>Procedimiento:</h4>
+                <div class="pasos-experimento">
+                    <div class="paso-exp">
+                        <span class="paso-letra">A</span>
+                        <p><strong>Temperatura:</strong> Vaso 1 con agua fría (5°C), Vaso 2 con agua tibia (25°C).
+                            Agregar tableta y medir tiempo.</p>
+                    </div>
+                    <div class="paso-exp">
+                        <span class="paso-letra">B</span>
+                        <p><strong>Superficie:</strong> Vaso 3 con tableta entera, Vaso 4 con tableta triturada. Usar
+                            agua a la misma temperatura.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabla-resultados">
+                <h4>Tabla de Resultados:</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Condición</th>
+                            <th>Tiempo de disolución</th>
+                            <th>Factor estudiado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Agua fría + tableta entera</td>
+                            <td>_______ seg</td>
+                            <td>Control</td>
+                        </tr>
+                        <tr>
+                            <td>Agua tibia + tableta entera</td>
+                            <td>_______ seg</td>
+                            <td>Temperatura</td>
+                        </tr>
+                        <tr>
+                            <td>Agua fría + tableta triturada</td>
+                            <td>_______ seg</td>
+                            <td>Superficie</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="conclusiones-box">
+                <h4>Conclusiones:</h4>
+                <div class="lineas-escritura">
+                    <div class="linea"></div>
+                    <div class="linea"></div>
+                    <div class="linea"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TEMA 6.4: EQUILIBRIO QUÍMICO Y AMBIENTAL
+         Páginas 184-188
+         ======================================== -->
+
+    <!-- PÁGINA 184: Introducción a Equilibrio -->
+    <section class="pagina" id="pagina-184">
+        <div class="numero-pagina">184</div>
+
+        <header class="tema-header">
+            <div class="tema-info">
+                <span class="tema-numero">Tema 6.4</span>
+                <h2 class="tema-titulo">Equilibrio Químico y Ambiental</h2>
+            </div>
+            <span class="icono-contenido">⚖️</span>
+        </header>
+
+        <div class="objetivo-box">
+            <strong>Objetivo:</strong> Comprender el concepto de equilibrio químico dinámico y su aplicación en sistemas
+            ambientales.
+        </div>
+
+        <div class="card-concepto">
+            <h3>Equilibrio Químico Dinámico</h3>
+            <p>El <strong>equilibrio químico</strong> se alcanza cuando la velocidad de la reacción directa es igual a
+                la velocidad de la reacción inversa. Las concentraciones permanecen constantes, pero las reacciones
+                siguen ocurriendo.</p>
+
+            <div class="ecuacion-equilibrio">
+                <p class="ecuacion">A + B ⇌ C + D</p>
+                <p class="descripcion">La doble flecha indica que la reacción es reversible</p>
+            </div>
+        </div>
+
+        <div class="card-concepto">
+            <h3>Constante de Equilibrio (K)</h3>
+            <p>Para una reacción: aA + bB ⇌ cC + dD</p>
+
+            <div class="formula-destacada">
+                K = [C]<sup>c</sup> · [D]<sup>d</sup> / [A]<sup>a</sup> · [B]<sup>b</sup>
+            </div>
+
+            <div class="interpretacion-K">
+                <div class="caso-K">
+                    <h5>K >> 1</h5>
+                    <p>Equilibrio favorece productos</p>
+                </div>
+                <div class="caso-K">
+                    <h5>K ≈ 1</h5>
+                    <p>Cantidades similares de reactivos y productos</p>
+                </div>
+                <div class="caso-K">
+                    <h5>K << 1</h5>
+                            <p>Equilibrio favorece reactivos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-procedimiento">
+            <h4>Guía de Resolución: Cálculo de K</h4>
+            <p><strong>Ejemplo:</strong> Para la reacción H₂(g) + I₂(g) ⇌ 2HI(g), las concentraciones en equilibrio son:
+                [H₂]=0.1M, [I₂]=0.2M, [HI]=0.8M.</p>
+
+            <div class="solucion-pasos pasos-horizontal">
+                <div class="paso">
+                    <span class="paso-numero">1</span>
+                    <div class="paso-contenido">
+                        <h5>Expresión K:</h5>
+                        <p class="text-small">K = [HI]² / ([H₂][I₂])</p>
+                    </div>
+                </div>
+                <div class="paso">
+                    <span class="paso-numero">2</span>
+                    <div class="paso-contenido">
+                        <h5>Sustitución:</h5>
+                        <p class="text-small">K = (0.8)² / (0.1 · 0.2)</p>
+                        <p class="text-small">K = 0.64 / 0.02</p>
+                    </div>
+                </div>
+                <div class="paso">
+                    <span class="paso-numero">3</span>
+                    <div class="paso-contenido resultado-destacado">
+                        <h5>Resultado:</h5>
+                        <p><strong>K = 32</strong></p>
+                        <p class="text-small">Productos favorecidos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-nota">
+            <h4>Importante</h4>
+            <p>La constante K depende solo de la temperatura. No cambia al modificar concentraciones, presión o agregar
+                catalizadores.</p>
+        </div>
+    </section>
+
+    <!-- PÁGINA 185: Principio de Le Chatelier -->
+    <section class="pagina" id="pagina-185">
+        <div class="numero-pagina">185</div>
+
+        <div class="card-concepto">
+            <h3>Principio de Le Chatelier</h3>
+            <blockquote class="cita-principio">
+                "Si un sistema en equilibrio es sometido a una perturbación, el sistema se desplazará en la dirección
+                que tienda a contrarrestar dicha perturbación."
+            </blockquote>
+        </div>
+
+        <div class="perturbaciones-equilibrio">
+            <div class="perturbacion">
+                <h4>Cambio de Concentración</h4>
+                <div class="efecto-grid">
+                    <div class="efecto">
+                        <p><strong>Si aumenta [reactivo]:</strong></p>
+                        <p>→ Equilibrio se desplaza hacia productos</p>
+                    </div>
+                    <div class="efecto">
+                        <p><strong>Si aumenta [producto]:</strong></p>
+                        <p>→ Equilibrio se desplaza hacia reactivos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perturbacion">
+                <h4>Cambio de Presión (para gases)</h4>
+                <div class="efecto-grid">
+                    <div class="efecto">
+                        <p><strong>Si aumenta la presión:</strong></p>
+                        <p>→ Equilibrio se desplaza hacia donde hay menos moles de gas</p>
+                    </div>
+                    <div class="efecto">
+                        <p><strong>Si disminuye la presión:</strong></p>
+                        <p>→ Equilibrio se desplaza hacia donde hay más moles de gas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perturbacion">
+                <h4>Cambio de Temperatura</h4>
+                <div class="efecto-grid">
+                    <div class="efecto">
+                        <p><strong>Si aumenta T (reacción exotérmica):</strong></p>
+                        <p>→ Equilibrio se desplaza hacia reactivos</p>
+                    </div>
+                    <div class="efecto">
+                        <p><strong>Si aumenta T (reacción endotérmica):</strong></p>
+                        <p>→ Equilibrio se desplaza hacia productos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-tip">
+            <h4>Catalizadores y Equilibrio</h4>
+            <p>Los catalizadores NO alteran la posición del equilibrio, solo aceleran el tiempo necesario para
+                alcanzarlo.</p>
+        </div>
+    </section>
+
+    <!-- PÁGINA 186: Aplicación Ambiental -->
+    <section class="pagina tema-verde" id="pagina-186">
+        <div class="numero-pagina">186</div>
+
+        <div class="card-verde">
+            <h3>Equilibrio en Sistemas Ambientales</h3>
+            <p>Los conceptos de equilibrio químico son fundamentales para comprender y resolver problemas ambientales.
+            </p>
+        </div>
+
+        <div class="caso-ambiental">
+            <h4>Caso 1: El Equilibrio del CO₂ y el Cambio Climático</h4>
+
+            <div class="ecuacion-ejemplo">
+                <p class="ecuacion">CO₂(g) + H₂O(l) ⇌ H₂CO₃(aq) ⇌ H⁺ + HCO₃⁻</p>
+                <p class="interpretacion">Equilibrio entre CO₂ atmosférico y océanos</p>
+            </div>
+
+            <div class="explicacion-ambiental">
+                <p><strong>Problema:</strong> El aumento de CO₂ atmosférico desplaza el equilibrio hacia la derecha,
+                    aumentando la acidez de los océanos.</p>
+                <p><strong>Consecuencia:</strong> Acidificación oceánica que afecta corales y organismos con conchas de
+                    carbonato de calcio.</p>
+            </div>
+        </div>
+
+        <div class="imagen-contenedor">
+            <img src="images/Ciclo del Carbono y Equilibrios.png" alt="Ciclo del Carbono y Equilibrios"
+                class="img-fluid">
+        </div>
+    </section>
+
+    <!-- PÁGINA 187: Más Equilibrios Ambientales -->
+    <section class="pagina tema-verde" id="pagina-187">
+        <div class="numero-pagina">187</div>
+
+        <div class="caso-ambiental">
+            <h4>Caso 2: El Equilibrio del Ozono</h4>
+
+            <div class="reacciones-ozono">
+                <div class="reaccion-box">
+                    <p class="titulo-reaccion">Formación de ozono (estratosfera):</p>
+                    <p class="ecuacion">O₂ + radiación UV → 2O</p>
+                    <p class="ecuacion">O + O₂ → O₃</p>
+                </div>
+                <div class="reaccion-box">
+                    <p class="titulo-reaccion">Destrucción natural:</p>
+                    <p class="ecuacion">O₃ + radiación UV → O₂ + O</p>
+                </div>
+                <div class="reaccion-box problema">
+                    <p class="titulo-reaccion">Destrucción por CFCs:</p>
+                    <p class="ecuacion">CF₂Cl₂ + UV → Cl + CF₂Cl</p>
+                    <p class="ecuacion">Cl + O₃ → ClO + O₂</p>
+                    <p class="ecuacion">ClO + O → Cl + O₂</p>
+                    <p class="nota-problema">El cloro actúa como catalizador destruyendo miles de moléculas de O₃</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="caso-ambiental">
+            <h4>Caso 3: Equilibrio de Nitrógeno en Suelos</h4>
+
+            <div class="ecuacion-ejemplo">
+                <p class="ecuacion">NH₄⁺(aq) ⇌ NH₃(g) + H⁺(aq)</p>
+            </div>
+
+            <div class="explicacion-ambiental">
+                <p><strong>Aplicación agrícola:</strong> El pH del suelo afecta la disponibilidad de nitrógeno para las
+                    plantas. En suelos alcalinos, el equilibrio se desplaza hacia NH₃ (amoniaco), que se volatiliza y se
+                    pierde.</p>
+            </div>
+        </div>
+
+        <div class="card-verde">
+            <h4>Soluciones basadas en equilibrio</h4>
+            <ul>
+                <li>Protocolo de Montreal: Eliminación de CFCs para restaurar equilibrio del ozono</li>
+                <li>Captura de CO₂: Desplazar equilibrio para remover CO₂ atmosférico</li>
+                <li>Fertilización eficiente: Ajustar pH para optimizar disponibilidad de nutrientes</li>
+            </ul>
+        </div>
+
+        <div class="card-concepto">
+            <h3>Equilibrio Ácido-Base (pH)</h3>
+            <p>El pH mide la acidez o basicidad de una solución. Escala de 0 a 14.</p>
+            <div class="formula-destacada">
+                pH = -log[H⁺] | pOH = -log[OH⁻] | pH + pOH = 14
+            </div>
+            <div class="tabla-datos">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Rango pH</th>
+                            <th>Ejemplos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ácido</td>
+                            <td>0 - 6.9</td>
+                            <td>Limón (2), Vinagre (3)</td>
+                        </tr>
+                        <tr>
+                            <td>Neutro</td>
+                            <td>7.0</td>
+                            <td>Agua pura, Sangre (7.4)</td>
+                        </tr>
+                        <tr>
+                            <td>Base</td>
+                            <td>7.1 - 14</td>
+                            <td>Jabón (9), Lejía (13)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="nota-formula"><strong>Buffers:</strong> Soluciones que resisten cambios de pH (ej. sangre).</p>
+        </div>
+    </section>
+
+    <!-- PÁGINA 188: Actividad Equilibrio -->
+    <section class="pagina" id="pagina-188">
+        <div class="numero-pagina">188</div>
+
+        <div class="card-actividad">
+            <h3>Actividad: Aplicando Le Chatelier</h3>
+
+            <p><strong>Instrucciones:</strong> Para cada sistema en equilibrio, predice hacia dónde se desplazará el
+                equilibrio según la perturbación indicada.</p>
+
+            <div class="ejercicio-equilibrio">
+                <p><strong>1. Síntesis de amoniaco (Proceso Haber):</strong></p>
+                <div class="ecuacion-ejemplo">
+                    <p class="ecuacion">N₂(g) + 3H₂(g) ⇌ 2NH₃(g) ΔH = -92 kJ</p>
+                </div>
+
+                <div class="preguntas-equilibrio">
+                    <p>a) Si se aumenta la presión: _________________</p>
+                    <p>b) Si se aumenta la temperatura: _________________</p>
+                    <p>c) Si se agrega más N₂: _________________</p>
+                    <p>d) Si se remueve NH₃ continuamente: _________________</p>
+                </div>
+            </div>
+
+            <div class="ejercicio-equilibrio">
+                <p><strong>2. Equilibrio del agua:</strong></p>
+                <div class="ecuacion-ejemplo">
+                    <p class="ecuacion">H₂O(l) ⇌ H₂O(g) ΔH = +44 kJ</p>
+                </div>
+
+                <div class="preguntas-equilibrio">
+                    <p>a) Si se aumenta la temperatura: _________________</p>
+                    <p>b) Si se disminuye la presión: _________________</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-procedimiento">
+            <h4>Simulación Virtual</h4>
+            <p>Explora el simulador PhET "Reacciones y Tasas" para visualizar cómo los cambios afectan el equilibrio
+                químico.</p>
+            <p class="enlace-simulador">phet.colorado.edu/es/simulations/reactions-and-rates</p>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- PÁGINA 189: Cierre de Unidad -->
+    <section class="pagina" id="pagina-189">
+        <div class="numero-pagina">189</div>
+
+        <div class="card-concepto conclusion-verde">
+            <h3>Síntesis de la Unidad 6</h3>
+
+            <div class="resumen-conceptos">
+                <div class="concepto-clave">
+                    <h4>Sistemas Termodinámicos</h4>
+                    <p>Clasificación según intercambio de materia y energía (aislado, cerrado, abierto). Primera Ley: ΔU
+                        = Q - W</p>
+                </div>
+
+                <div class="concepto-clave">
+                    <h4>Entalpía</h4>
+                    <p>Cambios energéticos en reacciones: exotérmicas (ΔH < 0) y endotérmicas (ΔH> 0). Ley de Hess para
+                            cálculos.</p>
+                </div>
+
+                <div class="concepto-clave">
+                    <h4>Cinética Química</h4>
+                    <p>Factores que afectan la velocidad: temperatura, concentración, superficie, catalizadores. Energía
+                        de activación.</p>
+                </div>
+
+                <div class="concepto-clave">
+                    <h4>Equilibrio Químico</h4>
+                    <p>Estado dinámico donde v(directa) = v(inversa). Principio de Le Chatelier para predecir
+                        desplazamientos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="imagen-contenedor">
+            <img src="images/Mapa Mental Energía y Sistemas Dinámicos.jpg"
+                alt="Mapa Mental: Energía y Sistemas Dinámicos" class="img-fluid">
+        </div>
+    </section>
+
+    <!-- PÁGINA 190: Evaluación Final -->
+    <section class="pagina" id="pagina-190">
+        <div class="numero-pagina">190</div>
+
+        <div class="evaluacion-formativa">
+            <h3>Evaluación Formativa - Unidad 6</h3>
+
+            <ol class="preguntas-evaluacion">
+                <li>
+                    <p>¿Cuál es la diferencia entre un sistema cerrado y uno abierto?</p>
+                    <div class="espacio-respuesta-linea"></div>
+                    <div class="espacio-respuesta-linea"></div>
+                </li>
+
+                <li>
+                    <p>Si una reacción tiene ΔH = -250 kJ, ¿es exotérmica o endotérmica? ¿Qué sucede con la temperatura
+                        del entorno?</p>
+                    <div class="espacio-respuesta-linea"></div>
+                    <div class="espacio-respuesta-linea"></div>
+                </li>
+
+                <li>
+                    <p>Explica por qué un catalizador acelera una reacción sin cambiar el ΔH de la misma.</p>
+                    <div class="espacio-respuesta-linea"></div>
+                    <div class="espacio-respuesta-linea"></div>
+                </li>
+
+                <li>
+                    <p>Para la reacción: 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) ΔH = -198 kJ<br>
+                        ¿Cómo se desplaza el equilibrio si se aumenta la temperatura?</p>
+                    <div class="espacio-respuesta-linea"></div>
+                </li>
+
+                <li>
+                    <p>¿Cómo afecta el aumento de CO₂ atmosférico al equilibrio CO₂-océano y qué consecuencias tiene?
+                    </p>
+                    <div class="espacio-respuesta-linea"></div>
+                    <div class="espacio-respuesta-linea"></div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="cierre-manual">
+            <h3>Cierre del Manual</h3>
+            <p>Has completado el estudio de <strong>Ciencias Naturales, Experimentales y Tecnología I</strong>. Los
+                conceptos aprendidos desde la estructura atómica hasta el equilibrio químico te proporcionan las
+                herramientas para comprender el mundo que te rodea desde una perspectiva científica.</p>
+            <p class="mensaje-final"><em>"La ciencia no es solo un cuerpo de conocimientos, es una forma de
+                    pensar."</em> - Carl Sagan</p>
+        </div>
+    </section>
+
+    <footer class="pie-manual">
+        <p>Manual de Química · Preparatoria Grupo Cultural Albatros</p>
+        <p>Unidad 6 · Energía y Sistemas Dinámicos</p>
+    </footer>
+</body>
+
+</html>

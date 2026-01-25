@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3: Electricidad, Magnetismo y Conectividad - Edición Albatros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&family=Open+Sans+Condensed:wght@300;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #9C27B0;
+            --primary-light: #F3E5F5;
+            --primary-dark: #7B1FA2;
+            --secondary-color: #43A047;
+            --accent-color: #FF6F00;
+            --success-color: #2E7D32;
+            --text-dark: #37474F;
+            --text-light: #78909C;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray-medium: #E0E0E0;
+            --radius-pill: 50px;
+            --radius-card: 12px;
+            --radius-small: 6px;
+            --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @page {
+            size: letter portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            font-size: 10pt;
+            line-height: 14pt;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 215.9mm;
+            height: 279.4mm;
+            padding: 18mm 16mm 16mm 20mm;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 22pt;
+            color: var(--primary-color);
+            margin-bottom: 5mm;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15pt;
+            color: var(--secondary-color);
+            margin-bottom: 4mm;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 11pt;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 10pt;
+            color: var(--secondary-color);
+            margin-bottom: 2mm;
+        }
+
+        p {
+            margin-bottom: 3mm;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin-left: 5mm;
+            margin-bottom: 3mm;
+        }
+
+        li {
+            margin-bottom: 1.5mm;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        .capsula {
+            display: flex;
+            margin-bottom: 4mm;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            page-break-inside: avoid;
+        }
+
+        .capsula-etiqueta {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1mm;
+            min-width: 32mm;
+            text-align: center;
+        }
+
+        .capsula-etiqueta .icono {
+            font-size: 14pt;
+        }
+
+        .capsula-etiqueta .icono img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .capsula-etiqueta .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 7pt;
+            text-transform: uppercase;
+        }
+
+        .capsula-contenido {
+            background: var(--primary-light);
+            padding: 3mm 4mm;
+            flex: 1;
+        }
+
+        .capsula.secundaria .capsula-etiqueta {
+            background: var(--secondary-color);
+        }
+
+        .capsula.acento .capsula-etiqueta {
+            background: var(--accent-color);
+        }
+
+        .capsula.exito .capsula-etiqueta {
+            background: var(--success-color);
+        }
+
+        .actividad {
+            border: 2px solid var(--accent-color);
+            border-radius: var(--radius-card);
+            margin-bottom: 4mm;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+
+        .actividad-header {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 2mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .actividad-header .numero {
+            background: var(--white);
+            color: var(--accent-color);
+            width: 7mm;
+            height: 7mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 9pt;
+        }
+
+        .actividad-header .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .actividad-body {
+            padding: 3mm 4mm;
+            background: #FFF8E1;
+        }
+
+        .cuadro-comparativo {
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 4mm;
+            page-break-inside: avoid;
+        }
+
+        .cuadro-comparativo-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 4mm;
+            text-align: center;
+        }
+
+        .cuadro-comparativo-header h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: 10pt;
+        }
+
+        .cuadro-comparativo-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .cuadro-col {
+            padding: 3mm;
+            font-size: 9pt;
+        }
+
+        .cuadro-col:first-child {
+            background: var(--primary-light);
+            border-right: 1px solid var(--primary-color);
+        }
+
+        .cuadro-col:last-child {
+            background: #E8F5E9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 8pt;
+            margin-bottom: 4mm;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 2mm;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 1.5mm 2mm;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        tr:nth-child(even) {
+            background: var(--primary-light);
+        }
+
+        .formula {
+            background: var(--gray-light);
+            padding: 2mm 4mm;
+            border-radius: var(--radius-small);
+            font-family: 'Times New Roman', serif;
+            font-size: 11pt;
+            text-align: center;
+            margin: 3mm 0;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .formula-destacada {
+            background: linear-gradient(135deg, var(--primary-light), var(--white));
+            border: 2px solid var(--primary-color);
+            padding: 3mm;
+            border-radius: var(--radius-card);
+            text-align: center;
+            margin: 3mm 0;
+        }
+
+        .formula-destacada .nombre {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 8pt;
+            color: var(--secondary-color);
+            margin-bottom: 1mm;
+        }
+
+        .formula-destacada .ecuacion {
+            font-family: 'Times New Roman', serif;
+            font-size: 13pt;
+            color: var(--primary-dark);
+        }
+
+        .esquema {
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 4mm;
+            page-break-inside: avoid;
+        }
+
+        .esquema-header {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 2mm 3mm;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+
+        .esquema-body {
+            padding: 3mm;
+            background: #E8F5E9;
+            font-size: 9pt;
+        }
+
+        .imagen-placeholder {
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--gray-medium) 100%);
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--radius-card);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3mm;
+            text-align: center;
+            color: var(--primary-color);
+            min-height: 35mm;
+            margin: 3mm 0;
+        }
+
+        .imagen-contenido {
+            width: 100%;
+            max-height: 70mm;
+            object-fit: contain;
+            border-radius: var(--radius-card);
+            margin: 3mm 0;
+            box-shadow: var(--shadow-card);
+        }
+
+        .imagen-grande {
+            max-height: 85mm;
+        }
+
+        .imagen-mediana {
+            max-height: 55mm;
+        }
+
+        .imagen-placeholder .nombre-archivo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 8pt;
+            margin-bottom: 2mm;
+            background: var(--primary-color);
+            color: white;
+            padding: 1mm 3mm;
+            border-radius: 4px;
+        }
+
+        .imagen-placeholder .prompt {
+            font-size: 7pt;
+            opacity: 0.9;
+            text-align: left;
+            background: white;
+            padding: 2mm;
+            border-radius: 4px;
+            margin-top: 1mm;
+            line-height: 9pt;
+        }
+
+        .codigo {
+            background: #263238;
+            color: #ECEFF1;
+            padding: 3mm;
+            border-radius: var(--radius-small);
+            font-family: 'Consolas', monospace;
+            font-size: 7pt;
+            line-height: 9pt;
+            overflow-x: auto;
+            margin: 3mm 0;
+            white-space: pre-wrap;
+        }
+
+        .nota-alerta {
+            background: #FFF3E0;
+            border-left: 4px solid var(--accent-color);
+            padding: 2mm 3mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 8pt;
+        }
+
+        .nota-info {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 2mm 3mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 8pt;
+        }
+
+        .nota-tip {
+            background: #E8F5E9;
+            border-left: 4px solid var(--secondary-color);
+            padding: 2mm 3mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 8pt;
+        }
+
+        .portada {
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 25mm 18mm;
+        }
+
+        .portada h1 {
+            color: var(--white);
+            font-size: 26pt;
+            margin-bottom: 3mm;
+        }
+
+        .portada .subtitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13pt;
+            margin-bottom: 8mm;
+            opacity: 0.9;
+        }
+
+        .portada .edicion {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10pt;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2mm 5mm;
+            border-radius: var(--radius-pill);
+            margin-bottom: 12mm;
+        }
+
+        .indice-visual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2mm;
+        }
+
+        .indice-item {
+            background: var(--primary-light);
+            border-radius: var(--radius-card);
+            padding: 2mm 3mm;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .indice-item.destacado {
+            grid-column: span 2;
+            background: var(--primary-color);
+            color: var(--white);
+            border-left: none;
+            text-align: center;
+        }
+
+        .indice-item.destacado h3 {
+            color: var(--white);
+            margin-bottom: 0;
+        }
+
+        .indice-item h3 {
+            font-size: 9pt;
+            margin-bottom: 1mm;
+        }
+
+        .indice-item p {
+            font-size: 7pt;
+            margin: 0;
+            text-align: left;
+        }
+
+        .dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .tres-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2mm;
+        }
+
+        .pie-pagina {
+            position: absolute;
+            bottom: 6mm;
+            left: 20mm;
+            right: 16mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6pt;
+            color: var(--text-light);
+            border-top: 1px solid var(--gray-medium);
+            padding-top: 2mm;
+        }
+
+        .pie-pagina .unidad-tag {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5mm 2mm;
+            border-radius: var(--radius-pill);
+            font-size: 5pt;
+            font-weight: 600;
+        }
+
+        .numero-pagina {
+            background: var(--gray-light);
+            padding: 1mm 2mm;
+            border-radius: var(--radius-small);
+            font-weight: 600;
+        }
+
+        .separador-capitulo {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 35mm 18mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .separador-capitulo .numero-capitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42pt;
+            font-weight: 700;
+            opacity: 0.3;
+            margin-bottom: 4mm;
+        }
+
+        .separador-capitulo h1 {
+            color: var(--white);
+            font-size: 20pt;
+            margin-bottom: 4mm;
+        }
+
+        .separador-capitulo .descripcion {
+            font-size: 10pt;
+            max-width: 130mm;
+            opacity: 0.9;
+        }
+
+        .pasos-container {
+            counter-reset: paso;
+        }
+
+        .paso {
+            display: flex;
+            gap: 2mm;
+            margin-bottom: 3mm;
+            page-break-inside: avoid;
+        }
+
+        .paso-numero {
+            counter-increment: paso;
+            background: var(--primary-color);
+            color: var(--white);
+            width: 6mm;
+            height: 6mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            flex-shrink: 0;
+        }
+
+        .paso-numero::before {
+            content: counter(paso);
+        }
+
+        .paso-contenido {
+            flex: 1;
+            font-size: 9pt;
+        }
+
+        .mini-actividades {
+            background: #E3F2FD;
+            border-radius: var(--radius-card);
+            padding: 3mm;
+            margin: 3mm 0;
+        }
+
+        .mini-actividades h4 {
+            color: #1565C0;
+        }
+
+        .reto-digital {
+            background: linear-gradient(135deg, #E8EAF6, #C5CAE9);
+            border: 2px solid #3F51B5;
+            border-radius: var(--radius-card);
+            padding: 3mm;
+            margin: 3mm 0;
+        }
+
+        .reto-digital h4 {
+            color: #3F51B5;
+        }
+
+        .mt-2 {
+            margin-top: 2mm;
+        }
+
+        .mt-3 {
+            margin-top: 3mm;
+        }
+
+        .mt-4 {
+            margin-top: 4mm;
+        }
+
+        .mb-2 {
+            margin-bottom: 2mm;
+        }
+
+        .mb-3 {
+            margin-bottom: 3mm;
+        }
+
+        .mb-4 {
+            margin-bottom: 4mm;
+        }
+
+        .text-small {
+            font-size: 8pt;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PÁGINA 1: PORTADA -->
+    <div class="page portada">
+        <div
+            style="background: rgba(255, 255, 255, 0.95); padding: 5mm 8mm; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); margin-bottom: 8mm;">
+            <img src="LOGO.png" alt="Logo Grupo Cultural Albatros" style="height: 22mm; width: auto; display: block;">
+        </div>
+        <h1>BLOQUE III</h1>
+        <div class="subtitulo">Electricidad, Magnetismo y Conectividad</div>
+        <p style="font-size: 11pt; margin-bottom: 6mm; opacity: 0.85;">De la Bombilla a las Smart Cities y el IoT</p>
+        <div class="edicion">EDICIÓN ALBATROS COMPETITIVA</div>
+        <p style="max-width: 140mm; opacity: 0.9; font-size: 9pt;">
+            La evolución de la civilización moderna ha sido la historia del dominio sobre el electrón.
+            Desde los primeros experimentos con ámbar en la Grecia antigua hasta la complejidad sistémica
+            de una ciudad inteligente contemporánea.
+        </p>
+        <div style="margin-top: 12mm; opacity: 0.7; font-size: 8pt;">
+            <p>ALBATROS TECH | ALBATROS PLUS | PROYECTO MAKER IoT</p>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: ÍNDICE VISUAL -->
+    <div class="page">
+        <h2 style="margin-bottom: 4mm;">Mapa de Contenidos del Bloque III</h2>
+        <div class="indice-visual">
+            <div class="indice-item destacado">
+                <h3>🔌 3.1 Electrostática</h3>
+                <p>Cargas en Reposo</p>
+            </div>
+            <div class="indice-item">
+                <h3>Carga Eléctrica</h3>
+                <p>Frotamiento, Contacto, Inducción</p>
+            </div>
+            <div class="indice-item">
+                <h3>Ley de Coulomb</h3>
+                <p>Campo y Potencial Eléctrico</p>
+            </div>
+            <div class="indice-item">
+                <h3>ALBATROS TECH</h3>
+                <p>Pantallas Táctiles Capacitivas</p>
+            </div>
+            <div class="indice-item destacado">
+                <h3>⚡ 3.2 Electrodinámica</h3>
+                <p>Circuitos Inteligentes</p>
+            </div>
+            <div class="indice-item">
+                <h3>Corriente DC vs AC</h3>
+                <p>Ley de Ohm, Resistencia</p>
+            </div>
+            <div class="indice-item">
+                <h3>Circuitos</h3>
+                <p>Serie, Paralelo, Kirchhoff</p>
+            </div>
+            <div class="indice-item">
+                <h3>ALBATROS TECH</h3>
+                <p>Arduino, Sensores IoT, Domótica</p>
+            </div>
+            <div class="indice-item destacado">
+                <h3>🧲 3.3 Magnetismo</h3>
+                <p>El Mundo Inalámbrico</p>
+            </div>
+            <div class="indice-item">
+                <h3>Electromagnetismo</h3>
+                <p>Oersted, Faraday, Lenz</p>
+            </div>
+            <div class="indice-item">
+                <h3>Aplicaciones</h3>
+                <p>Motores, Generadores, Transformadores</p>
+            </div>
+            <div class="indice-item">
+                <h3>ALBATROS TECH</h3>
+                <p>Carga Qi, MagLev, Eólica</p>
+            </div>
+            <div class="indice-item destacado" style="background: var(--accent-color);">
+                <h3>🚀 Taller Maker</h3>
+                <p>Electroimán y Control de Iluminación</p>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>Índice</span>
+            <span class="numero-pagina">2</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 3: INTRODUCCIÓN -->
+    <div class="page">
+        <h1>Introducción al Bloque III</h1>
+
+        <p>La evolución de la civilización moderna ha sido, en esencia, la historia del dominio sobre el electrón.
+            Este bloque se estructura como un <strong>viaje conceptual</strong> que comienza en la quietud de la
+            electrostática, atraviesa el flujo vital de la electrodinámica y culmina en la interconexión inalámbrica
+            del electromagnetismo.</p>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diana.png" alt=""></div>
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Comprender los principios fundamentales de la electricidad, el magnetismo y el electromagnetismo,
+                    aplicando estos conceptos en tecnologías modernas como Internet de las Cosas (IoT), sensores
+                    inteligentes, domótica y sistemas de energía renovable.</p>
+            </div>
+        </div>
+
+        <div class="capsula secundaria mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-documento.png" alt=""></div>
+                <div class="titulo">Enfoque</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>El Modelo Albatros prioriza el <strong>aprendizaje basado en la experiencia</strong>, donde la
+                    curiosidad se convierte en el motor del descubrimiento y la técnica en el lenguaje de la creación.
+                    Cada etapa está diseñada para transformar al alumno en un <em>"prosumidor" tecnológico</em>.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Competencias a Desarrollar</h3>
+        <div class="dos-columnas">
+            <div>
+                <ul>
+                    <li>Modelar fenómenos naturales y aplicaciones tecnológicas</li>
+                    <li>Analizar circuitos eléctricos complejos</li>
+                    <li>Diseñar sistemas electromagnéticos funcionales</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Integrar sensores y dispositivos IoT</li>
+                    <li>Desarrollar proyectos de domótica básica</li>
+                    <li>Liderar proyectos de energías renovables</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Nota Destacada:</strong>
+            <em>"La electricidad es lo más parecido a la magia que existe en la
+                naturaleza ordinaria. Sin embargo, obedece reglas matemáticas perfectas que podemos predecir y
+                controlar."</em>
+            — Adaptado de Richard Feynman
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>Introducción</span>
+            <span class="numero-pagina">3</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 4: SEPARADOR 3.1 -->
+    <div class="page separador-capitulo">
+        <div class="numero-capitulo">3.1</div>
+        <h1>Electrostática: Cargas en Reposo</h1>
+        <p class="descripcion">
+            La electrostática constituye la piedra angular de la arquitectura eléctrica,
+            centrándose en el estudio de las cargas eléctricas en equilibrio y los campos que generan.
+            La materia no es inerte, sino un reservorio vibrante de fuerzas electromagnéticas.
+        </p>
+    </div>
+
+    <!-- PÁGINA 5: CARGA ELÉCTRICA -->
+    <div class="page">
+        <h2>3.1.1 Carga Eléctrica y Electrización</h2>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diana.png" alt=""></div>
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Lograr una comprensión profunda de las interacciones fundamentales entre partículas cargadas,
+                    permitiendo modelar fenómenos naturales y aplicaciones como sensores biométricos y pantallas
+                    táctiles capacitivas.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Conceptos Fundamentales</h3>
+        <p>La materia está compuesta por átomos con <strong>protones (+)</strong> y <strong>electrones (−)</strong>.
+            La carga eléctrica se mide en <strong>Coulombs (C)</strong>. Un concepto crítico es la <em>cuantización
+                de la carga</em>: cualquier carga q es un múltiplo entero de la carga elemental del electrón
+            (1.6 × 10⁻¹⁹ C).</p>
+
+        <h3 class="mt-3">Formas de Electrización</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Frotamiento</strong></td>
+                    <td>Fricción transfiere electrones (serie triboeléctrica)</td>
+                    <td>Globo con cabello</td>
+                </tr>
+                <tr>
+                    <td><strong>Contacto</strong></td>
+                    <td>Transferencia directa al tocar objeto cargado</td>
+                    <td>Tocar electroscopio</td>
+                </tr>
+                <tr>
+                    <td><strong>Inducción</strong></td>
+                    <td>Polarización sin contacto + conexión a tierra</td>
+                    <td>Esfera y barra de ebonita</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <img src="imagenes/infografia-electrizacion.png" alt="Infografía de los 3 métodos de electrización"
+            class="imagen-contenido imagen-grande">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.1 Electrostática</span>
+            <span class="numero-pagina">5</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 6: LEY DE COULOMB -->
+    <div class="page">
+        <h2>3.1.2 Ley de Coulomb</h2>
+
+        <p>La interacción entre cargas se cuantifica mediante la <strong>Ley de Coulomb</strong>, fundamental
+            para el diseño de dispositivos de precisión:</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Ley de Coulomb</div>
+            <div class="ecuacion">F = k |q₁ · q₂| / r²</div>
+            <p class="text-small mt-2">k = 8.99 × 10⁹ N·m²/C² | F = Fuerza (N) | q = Carga (C) | r = Distancia (m)</p>
+        </div>
+
+        <div class="capsula secundaria mt-3">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Interpretación</div>
+            </div>
+            <div class="capsula-contenido">
+                <ul>
+                    <li>Cargas del <strong>mismo signo</strong> → <strong>Repulsión</strong></li>
+                    <li>Cargas de <strong>signo opuesto</strong> → <strong>Atracción</strong></li>
+                    <li>La fuerza disminuye con el <strong>cuadrado de la distancia</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Campo Eléctrico y Potencial</h3>
+        <div class="dos-columnas">
+            <div>
+                <div class="formula-destacada">
+                    <div class="nombre">Campo Eléctrico</div>
+                    <div class="ecuacion">E = F/q = k Q/r²</div>
+                    <p class="text-small">Unidad: N/C ó V/m</p>
+                </div>
+            </div>
+            <div>
+                <div class="formula-destacada">
+                    <div class="nombre">Potencial Eléctrico</div>
+                    <div class="ecuacion">V = W/q = k Q/r</div>
+                    <p class="text-small">Unidad: Voltio (V)</p>
+                </div>
+            </div>
+        </div>
+
+        <img src="imagenes/diagrama-campo-electrico.png" alt="Diagrama de líneas de campo eléctrico"
+            class="imagen-contenido">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.1 Ley de Coulomb</span>
+            <span class="numero-pagina">6</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 7: PROCEDIMIENTOS Y TABLA MATERIALES -->
+    <div class="page">
+        <h2>3.1.3 Procedimientos Experimentales</h2>
+
+        <h3>Demostración de la Serie Triboeléctrica</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Frotar parejas de materiales (vidrio-lana, PVC-seda) y acercar a un
+                    electroscopio</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Anotar la dirección de la deflexión de las láminas</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Determinar qué material quedó cargado positiva o negativamente</div>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Carga por Inducción</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Colocar esfera conductora neutra sobre soporte aislante</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Acercar barra de ebonita cargada SIN tocar la esfera</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Tocar el lado opuesto de la esfera con el dedo (conexión a tierra)</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Retirar dedo primero, luego la barra. Verificar carga con electroscopio
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Clasificación de Materiales (Infografía)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Característica</th>
+                    <th>Ejemplos</th>
+                    <th>Aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Conductores</strong></td>
+                    <td>Electrones se mueven libremente</td>
+                    <td>Oro, Cobre, Grafeno</td>
+                    <td>Cableado, electrodos</td>
+                </tr>
+                <tr>
+                    <td><strong>Aislantes</strong></td>
+                    <td>Electrones fuertemente ligados</td>
+                    <td>Vidrio, Plástico</td>
+                    <td>Carcasas, protección</td>
+                </tr>
+                <tr>
+                    <td><strong>Semiconductores</strong></td>
+                    <td>Conductividad variable</td>
+                    <td>Silicio, ITO</td>
+                    <td>Transistores, pantallas</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-alerta mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Nota Destacada:</strong> En
+            dispositivos móviles, la selección de materiales dieléctricos para
+            protección de pantallas es crítica. Deben tener permitividad eléctrica específica para que el campo del
+            dedo interactúe con los sensores. Un dieléctrico inadecuado causa "fantasmas" táctiles.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.1 Procedimientos</span>
+            <span class="numero-pagina">7</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 8: MAPA MENTAL Y ACTIVIDADES -->
+    <div class="page">
+        <h2>3.1.4 Mapa Mental: Electrostática</h2>
+
+        <img src="imagenes/mapa-mental-electrostatica.png" alt="Mapa mental de Electrostática"
+            class="imagen-contenido imagen-grande">
+
+        <div class="mini-actividades mt-3">
+            <h4><img src="imagenes/icono-cerebro.png" alt=""
+                    style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"> Mini Actividades</h4>
+            <p><strong>Pregunta de Reflexión:</strong> ¿Por qué los camiones que transportan combustible llevan una
+                cadena metálica que arrastra por el suelo?</p>
+            <p><strong>Ejercicio Rápido:</strong> Calcula la fuerza entre dos cargas de 2 µC separadas por 10 cm.</p>
+            <p><strong>Opinión:</strong> ¿Cómo crees que la electrostática influye en la limpieza de microchips
+                durante su fabricación?</p>
+        </div>
+
+        <div class="nota-tip mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Tip Extra:</strong> Las
+            descargas electrostáticas (ESD) pueden destruir componentes electrónicos
+            en milisegundos. Siempre usa una <strong>pulsera antiestática</strong> al manipular placas de circuito
+            como Arduino para garantizar la integridad de tus proyectos.
+        </div>
+
+        <div class="capsula exito mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diploma.png" alt=""></div>
+                <div class="titulo">Profesionales</div>
+            </div>
+            <div class="capsula-contenido">
+                <p><strong>Profesionales con Valor:</strong> El respeto por la propiedad intelectual y la honestidad
+                    en la investigación son valores fundamentales. Los estudiantes deben valorar el trabajo de sus
+                    compañeros y reconocer las fuentes de información, practicando conducta ética.</p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.1 Mapa Mental</span>
+            <span class="numero-pagina">8</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 9: PRÁCTICA INTEGRADORA -->
+    <div class="page">
+        <h2>3.1.5 Práctica Integradora</h2>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">P</div>
+                <div class="titulo">Caso: Sistema de Detección de Guantes</div>
+            </div>
+            <div class="actividad-body">
+                <p><strong>Escenario:</strong> Una empresa de logística necesita detectar si los trabajadores llevan
+                    guantes de seguridad (aislantes) antes de operar una consola táctil.</p>
+                <p><strong>Problema:</strong> Explica por qué una pantalla capacitiva estándar fallaría con guantes
+                    aislantes y propone una solución técnica basada en inducción o materiales conductores especiales.
+                </p>
+                <div
+                    style="border: 1px dashed var(--accent-color); border-radius: 6px; min-height: 25mm; background: white; padding: 2mm; margin-top: 2mm;">
+                    <p class="text-small" style="color: var(--text-light);">Espacio para respuesta del estudiante...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reto-digital mt-3">
+            <h4><img src="imagenes/icono-engranaje.png" alt=""
+                    style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"> Reto Digital ALBATROS TECH
+            </h4>
+            <p>Utilizando un simulador de circuitos, modela una <strong>matriz X-Y de electrodos de ITO</strong> y
+                explica mediante un breve ensayo digital cómo el controlador traduce un cambio en la capacitancia
+                mutua en una coordenada de pantalla. El reto es <em>optimizar la resolución del sensor minimizando
+                    el número de electrodos</em>.</p>
+        </div>
+
+        <div class="nota-info mt-3">
+            <strong>📚 Recursos:</strong> Simuladores como PhET de la Universidad de Colorado permiten visualizar
+            la Ley de Coulomb en tiempo real. Bibliografía técnica de la American Physical Society sobre ciencia
+            de materiales.
+        </div>
+
+        <h3 class="mt-3">Conclusión 3.1</h3>
+        <p>La electrostática no es simplemente el estudio de globos que pegan al cabello; es la ciencia de la
+            <strong>interacción a distancia</strong>. Sin la comprensión de las fuerzas de Coulomb y la manipulación
+            de campos eléctricos, la tecnología de consumo actual no existiría.
+        </p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.1 Práctica</span>
+            <span class="numero-pagina">9</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 10: ALBATROS TECH - PANTALLAS TÁCTILES -->
+    <div class="page">
+        <h2>ALBATROS TECH: Pantallas Táctiles Capacitivas</h2>
+
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-circuito.png" alt=""></div>
+                <div class="titulo">Aplicación</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Las pantallas táctiles capacitivas son una maravilla del diseño de ingeniería que aprovecha la
+                    <strong>conductividad del cuerpo humano</strong>. Funcionan detectando distorsiones en un campo
+                    eléctrico constante.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Componentes de una Pantalla Capacitiva</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Función Física</th>
+                    <th>Material</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Vidrio de Cubierta</strong></td>
+                    <td>Dieléctrico protector</td>
+                    <td>Vidrio reforzado químicamente</td>
+                </tr>
+                <tr>
+                    <td><strong>Electrodos X-Y</strong></td>
+                    <td>Rejilla capacitiva de detección</td>
+                    <td>Óxido de Indio y Estaño (ITO)</td>
+                </tr>
+                <tr>
+                    <td><strong>Controlador IC</strong></td>
+                    <td>Escanea capacitancia + algoritmos</td>
+                    <td>Microprocesador dedicado</td>
+                </tr>
+                <tr>
+                    <td><strong>Adhesivo Óptico</strong></td>
+                    <td>Une capas sin alterar campo</td>
+                    <td>Polímero acrílico (OCA)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <img src="imagenes/esquema-pantalla-tactil.png" alt="Esquema de pantalla táctil capacitiva"
+            class="imagen-contenido">
+
+        <h3 class="mt-3">Funcionamiento</h3>
+        <p>El cuerpo humano es conductor eléctrico. Cuando un dedo se aproxima a la rejilla de electrodos, se crea
+            un <strong>condensador</strong> entre el dedo y los sensores. Esto provoca una <strong>caída en la
+                capacitancia mutua</strong> en ese punto. El controlador IC detecta esta variación en milisegundos
+            y calcula las coordenadas mediante interpolación, permitiendo funciones como el <em>multitouch</em>.</p>
+
+        <div class="esquema mt-3">
+            <div class="esquema-header">💬 ¿Por qué no funciona con guantes normales?</div>
+            <div class="esquema-body">
+                <p>Los materiales aislantes no alteran el campo eléctrico. Los guantes capacitivos tienen
+                    <strong>hilos conductores</strong> tejidos que sí modifican la capacitancia, permitiendo la
+                    interacción con la pantalla.
+                </p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.1 Tech - Pantallas</span>
+            <span class="numero-pagina">10</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 11: SEPARADOR BLOQUE 3.2 -->
+    <div class="page separador-capitulo">
+        <div class="numero-capitulo">3.2</div>
+        <h1>Electrodinámica: Circuitos Inteligentes</h1>
+        <p class="descripcion">
+            La electrodinámica es el estudio de las cargas eléctricas en movimiento.
+            Los estudiantes pasan de la teoría estática a la acción dinámica, aprendiendo a
+            canalizar la energía para alimentar sistemas inteligentes que reaccionan al entorno.
+        </p>
+    </div>
+
+    <!-- PÁGINA 12: CORRIENTE Y DC vs AC -->
+    <div class="page">
+        <h2>3.2.1 Corriente Eléctrica: DC vs AC</h2>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diana.png" alt=""></div>
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Dominar el análisis de circuitos eléctricos, comprendiendo las leyes que rigen el flujo de
+                    corriente y la disipación de energía. Diseñar prototipos de domótica básica usando
+                    microcontroladores.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Conceptos Fundamentales</h3>
+        <p>La <strong>corriente eléctrica (I)</strong> es el flujo neto de carga por unidad de tiempo, medida en
+            <strong>Amperios (A)</strong>. La diferencia entre DC y AC radica en la dirección del flujo.
+        </p>
+
+        <div class="cuadro-comparativo mt-3">
+            <div class="cuadro-comparativo-header">
+                <h3>Comparativa: Corriente Continua vs Alterna</h3>
+            </div>
+            <div class="cuadro-comparativo-body">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">DC - Corriente Continua</h4>
+                    <ul>
+                        <li>Electrones viajan en <strong>un solo sentido</strong></li>
+                        <li>Voltaje constante</li>
+                        <li>Fuentes: Baterías, USB, paneles solares</li>
+                        <li>Uso: Electrónica, smartphones, IoT</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">AC - Corriente Alterna</h4>
+                    <ul>
+                        <li>Polaridad se <strong>invierte cíclicamente</strong></li>
+                        <li>V(t) = V₀ sin(2πft)</li>
+                        <li>Fuentes: Red eléctrica, generadores</li>
+                        <li>Uso: Electrodomésticos, industria</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <img src="imagenes/grafica-dc-vs-ac.jpg" alt="Gráfica comparativa DC vs AC" class="imagen-contenido">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.2 DC vs AC</span>
+            <span class="numero-pagina">12</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 13: LEY DE OHM -->
+    <div class="page">
+        <h2>3.2.2 Ley de Ohm y Resistencia</h2>
+
+        <p>La <strong>Ley de Ohm</strong> es la herramienta predictiva por excelencia del ingeniero eléctrico:</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Ley de Ohm</div>
+            <div class="ecuacion">V = I · R</div>
+            <p class="text-small mt-2">V = Voltaje (V) | I = Intensidad (A) | R = Resistencia (Ω)</p>
+        </div>
+
+        <p class="mt-3">Esta ley permite calcular la resistencia necesaria para proteger un LED o el voltaje
+            requerido para mover un motor en un sistema domótico.</p>
+
+        <div class="formula-destacada mt-3">
+            <div class="nombre">Potencia Eléctrica</div>
+            <div class="ecuacion">P = V · I = I² · R = V² / R</div>
+            <p class="text-small">Unidad: Watt (W)</p>
+        </div>
+
+        <h3 class="mt-3">Infografía: Comparativa DC vs AC (Tabla)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>DC</th>
+                    <th>AC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Fuente común</strong></td>
+                    <td>Baterías, USB, Solar</td>
+                    <td>Enchufes, Generadores</td>
+                </tr>
+                <tr>
+                    <td><strong>Uso principal</strong></td>
+                    <td>Electrónica de control, IoT</td>
+                    <td>Electrodomésticos, industria</td>
+                </tr>
+                <tr>
+                    <td><strong>Transporte</strong></td>
+                    <td>Difícil a larga distancia</td>
+                    <td>Eficiente con transformadores</td>
+                </tr>
+                <tr>
+                    <td><strong>Seguridad</strong></td>
+                    <td>Bajo riesgo (&lt;24V)</td>
+                    <td>Alto riesgo (110V/220V)</td>
+                </tr>
+                <tr>
+                    <td><strong>Frecuencia</strong></td>
+                    <td>N/A</td>
+                    <td>60 Hz (México)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <img src="imagenes/triangulo-ohm.png" alt="Triángulo de Ohm" class="imagen-contenido">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.2 Ley de Ohm</span>
+            <span class="numero-pagina">13</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 14: CIRCUITOS -->
+    <div class="page">
+        <h2>3.2.3 Circuitos Serie y Paralelo</h2>
+
+        <div class="dos-columnas">
+            <div>
+                <div class="esquema">
+                    <div class="esquema-header">Circuitos en SERIE</div>
+                    <div class="esquema-body">
+                        <p>Componentes conectados uno tras otro.</p>
+                        <ul>
+                            <li><strong>Corriente igual:</strong> I = I₁ = I₂ = I₃</li>
+                            <li><strong>Voltaje se reparte:</strong> V = V₁ + V₂ + V₃</li>
+                            <li><strong>R_total = R₁ + R₂ + R₃</strong></li>
+                        </ul>
+                        <p class="text-small mt-2"><em>Desventaja:</em> Si un componente falla, todo el circuito se
+                            abre.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="esquema">
+                    <div class="esquema-header">Circuitos en PARALELO</div>
+                    <div class="esquema-body">
+                        <p>Componentes en ramas separadas.</p>
+                        <ul>
+                            <li><strong>Voltaje igual:</strong> V = V₁ = V₂ = V₃</li>
+                            <li><strong>Corriente se divide:</strong> I = I₁ + I₂ + I₃</li>
+                            <li><strong>1/R_total = 1/R₁ + 1/R₂ + 1/R₃</strong></li>
+                        </ul>
+                        <p class="text-small mt-2"><em>Ventaja:</em> Si uno falla, los otros funcionan (casa).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img src="imagenes/diagrama-circuitos-serie-paralelo.png" alt="Diagrama de circuitos serie y paralelo"
+            class="imagen-contenido">
+
+        <h3 class="mt-3">Leyes de Kirchhoff</h3>
+        <div class="dos-columnas">
+            <div class="formula-destacada">
+                <div class="nombre">Ley de Nodos (LCK)</div>
+                <div class="ecuacion">∑ I_entrada = ∑ I_salida</div>
+                <p class="text-small">Conservación de carga</p>
+            </div>
+            <div class="formula-destacada">
+                <div class="nombre">Ley de Mallas (LVK)</div>
+                <div class="ecuacion">∑ V = 0</div>
+                <p class="text-small">Conservación de energía</p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.2 Circuitos</span>
+            <span class="numero-pagina">14</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 15: PROCEDIMIENTOS CIRCUITOS -->
+    <div class="page">
+        <h2>3.2.4 Procedimientos y Cálculos</h2>
+
+        <h3>Cálculo de Resistencia para LEDs</h3>
+        <div class="formula">R = (V_fuente − V_LED) / I_LED</div>
+        <p class="text-small">Ejemplo: Para LED rojo (V=2V, I=20mA) con fuente de 5V: R = (5-2)/0.02 = 150Ω</p>
+
+        <h3 class="mt-3">Montaje en Protoboard</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Identificar líneas de alimentación (buses + y −) en los lados</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Conectar la fuente de alimentación a los buses</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Insertar componentes en los nodos centrales (filas conectadas)</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Usar cables jumper para conexiones entre componentes</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Verificar con multímetro antes de energizar</div>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Nota Destacada:</strong> Al
+            trabajar con Arduino, la estabilidad del voltaje es primordial.
+            Una caída de tensión (brownout) causada por un motor conectado directamente puede provocar errores de
+            lectura o reinicio del programa. Siempre <strong>separa las líneas de potencia de las de señal</strong>.
+        </div>
+
+        <div class="nota-tip mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Tip Extra:</strong> Si un
+            circuito no funciona, usa el "camino del electrón": verifica desde
+            el polo (+) de la fuente, componente por componente, hasta el polo (−). El 90% de los fallos son
+            conexiones sueltas o cables en nodos incorrectos.
+        </div>
+
+        <div class="mini-actividades mt-3">
+            <h4><img src="imagenes/icono-cerebro.png" alt=""
+                    style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"> Mini Actividades</h4>
+            <p><strong>Reto de Lógica:</strong> Si tienes dos resistencias de 100Ω en serie, ¿cuál es R_total? ¿Y en
+                paralelo?</p>
+            <p><strong>Reflexión:</strong> ¿Por qué los dispositivos electrónicos usan transformadores (cubos de carga)?
+            </p>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.2 Procedimientos</span>
+            <span class="numero-pagina">15</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 16: MAPA MENTAL Y PRÁCTICA -->
+    <div class="page">
+        <h2>3.2.5 Mapa Mental: Electrodinámica</h2>
+
+        <img src="imagenes/mapa-mental-electrodinamica.jpg" alt="Mapa mental de Electrodinámica"
+            class="imagen-contenido imagen-grande">
+
+        <div class="actividad mt-3">
+            <div class="actividad-header">
+                <div class="numero">P</div>
+                <div class="titulo">Práctica Integradora: Habitación Inteligente</div>
+            </div>
+            <div class="actividad-body">
+                <p><strong>Diseñar el esquema de una habitación inteligente que incluya:</strong></p>
+                <ul>
+                    <li>Sistema de iluminación en <strong>paralelo</strong> (si una bombilla falla, las otras siguen)
+                    </li>
+                    <li>Sensor de temperatura que active un ventilador mediante un <strong>relé</strong></li>
+                </ul>
+                <p><strong>Entregar:</strong> Diagrama de conexiones y cálculo de potencias.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Conclusión 3.2</h3>
+        <p>El dominio de los circuitos inteligentes es el primer paso hacia la creación de <strong>Smart
+                Cities</strong>.
+            Entender cómo fluye la energía y cómo condicionarla mediante lógica de programación permite visualizar
+            soluciones a gran escala para el ahorro de recursos y la automatización de procesos.</p>
+
+        <div class="capsula exito mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diploma.png" alt=""></div>
+                <div class="titulo">Profesionales</div>
+            </div>
+            <div class="capsula-contenido">
+                <p><strong>Profesionales con Valor:</strong> La responsabilidad social implica diseñar sistemas
+                    seguros para el usuario final. Nunca se compromete la seguridad por el costo. Seguir las normas
+                    internacionales de instalaciones eléctricas previene accidentes.</p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.2 Mapa Mental</span>
+            <span class="numero-pagina">16</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 17: ALBATROS TECH - IoT -->
+    <div class="page">
+        <h2>ALBATROS TECH: Sensores IoT y Domótica</h2>
+
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-red.png" alt=""></div>
+                <div class="titulo">IoT</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>El <strong>Internet de las Cosas (IoT)</strong> permite que objetos físicos se conecten a la red,
+                    intercambien datos y tomen decisiones inteligentes. En el centro: microcontroladores y sensores.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Sensores para Smart Cities</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sensor</th>
+                    <th>Función</th>
+                    <th>Impacto Social</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Ultrasónico (HC-SR04)</strong></td>
+                    <td>Gestión de tráfico y parqueo</td>
+                    <td>Reducción de emisiones</td>
+                </tr>
+                <tr>
+                    <td><strong>LDR (Fotoresistencia)</strong></td>
+                    <td>Alumbrado público adaptativo</td>
+                    <td>Ahorro energético municipal</td>
+                </tr>
+                <tr>
+                    <td><strong>Humedad de Suelo</strong></td>
+                    <td>Riego automatizado</td>
+                    <td>Conservación del agua</td>
+                </tr>
+                <tr>
+                    <td><strong>PIR (Movimiento)</strong></td>
+                    <td>Seguridad urbana</td>
+                    <td>Vigilancia inteligente</td>
+                </tr>
+                <tr>
+                    <td><strong>DHT22</strong></td>
+                    <td>Temperatura y humedad</td>
+                    <td>Confort y eficiencia HVAC</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <img src="imagenes/esquema-iot-arduino.png" alt="Esquema de sistema IoT con Arduino" class="imagen-contenido">
+
+        <div class="reto-digital mt-3">
+            <h4><img src="imagenes/icono-engranaje.png" alt=""
+                    style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"> Reto Digital ALBATROS TECH
+            </h4>
+            <p>Usando el IDE de Arduino, escribe un código que lea un <strong>potenciómetro</strong> y ajuste la
+                intensidad de un LED mediante <strong>PWM</strong>. Reto plus: enviar datos por conexión serie para
+                graficar el consumo de energía en tiempo real.</p>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.2 Tech - IoT</span>
+            <span class="numero-pagina">17</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 18: SEPARADOR BLOQUE 3.3 -->
+    <div class="page separador-capitulo">
+        <div class="numero-capitulo">3.3</div>
+        <h1>Magnetismo y Electromagnetismo</h1>
+        <p class="descripcion">
+            El magnetismo es la fuerza invisible que mueve al mundo moderno. Desde la generación
+            de energía hasta la carga inalámbrica, el electromagnetismo es el lenguaje universal
+            de la energía y la comunicación.
+        </p>
+    </div>
+
+    <!-- PÁGINA 19: IMANES Y CAMPO MAGNÉTICO -->
+    <div class="page">
+        <h2>3.3.1 Imanes y Campo Magnético Terrestre</h2>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diana.png" alt=""></div>
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Comprender la naturaleza dual de la electricidad y el magnetismo. Dominar los principios de
+                    inducción electromagnética de Faraday y Lenz, aplicándolos a motores, generadores y tecnologías
+                    inalámbricas. Capacitar para liderar proyectos de energías renovables.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Propiedades de los Imanes</h3>
+        <ul>
+            <li>Todo imán tiene <strong>dos polos</strong>: Norte (N) y Sur (S)</li>
+            <li><strong>No existen monopolos magnéticos</strong></li>
+            <li>Polos iguales se <strong>repelen</strong>, opuestos se <strong>atraen</strong></li>
+            <li>Las líneas de campo salen del polo N y entran al polo S</li>
+        </ul>
+
+        <h3 class="mt-3">Campo Magnético Terrestre</h3>
+        <p>La Tierra posee su propio campo magnético que actúa como escudo protector contra el viento solar
+            y permite el uso de la brújula para navegación.</p>
+
+        <img src="imagenes/campo-magnetico-terrestre.png" alt="Campo magnético terrestre" class="imagen-contenido">
+
+        <div class="nota-info mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Nota Curiosa:</strong> El
+            campo magnético terrestre se invierte aproximadamente cada
+            300,000 años. La última inversión fue hace 780,000 años. Actualmente, la intensidad está
+            disminuyendo a razón de 1.7% por siglo.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.3 Magnetismo</span>
+            <span class="numero-pagina">19</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 20: OERSTED Y FARADAY -->
+    <div class="page">
+        <h2>3.3.2 Oersted y Faraday: Inducción Electromagnética</h2>
+
+        <p>El electromagnetismo surge de la <strong>relación intrínseca</strong> entre corrientes y campos:</p>
+
+        <div class="dos-columnas mt-3">
+            <div>
+                <div class="esquema">
+                    <div class="esquema-header">Experimento de Oersted (1820)</div>
+                    <div class="esquema-body">
+                        <p><strong>Corriente genera Magnetismo</strong></p>
+                        <p>Una corriente eléctrica crea un campo magnético circular alrededor del conductor.</p>
+                        <div class="nota-alerta mt-2">
+                            <strong>Regla Mano Derecha:</strong><br>
+                            Pulgar → Dirección de corriente<br>
+                            Dedos curvados → Campo magnético
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="esquema">
+                    <div class="esquema-header">Ley de Faraday (1831)</div>
+                    <div class="esquema-body">
+                        <p><strong>Magnetismo genera Electricidad</strong></p>
+                        <p>Un campo magnético variable induce un voltaje (fem) en un circuito.</p>
+                        <div class="formula-destacada mt-2">
+                            <div class="ecuacion">ℰ = −N (dΦ_B / dt)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="capsula acento mt-3">
+            <div class="capsula-etiqueta">
+                <div class="titulo">Ley de Lenz</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>El sentido de la corriente inducida <strong>se opone</strong> a la variación del flujo que la
+                    produce.
+                    Es una manifestación de la conservación de la energía.</p>
+            </div>
+        </div>
+
+        <img src="imagenes/experimentos-oersted-faraday.jpg" alt="Experimentos de Oersted y Faraday"
+            class="imagen-contenido">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.3 Inducción</span>
+            <span class="numero-pagina">20</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 21: MOTORES, GENERADORES, TRANSFORMADORES -->
+    <div class="page">
+        <h2>3.3.3 Motores, Generadores y Transformadores</h2>
+
+        <p>Los dispositivos electromagnéticos son pilares de la industria moderna:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Dispositivo</th>
+                    <th>Conversión</th>
+                    <th>Principio</th>
+                    <th>Aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Motor</strong></td>
+                    <td>Eléctrica → Mecánica</td>
+                    <td>Fuerza de Lorentz</td>
+                    <td>Vehículos, ventiladores</td>
+                </tr>
+                <tr>
+                    <td><strong>Generador</strong></td>
+                    <td>Mecánica → Eléctrica</td>
+                    <td>Ley de Faraday</td>
+                    <td>Plantas eléctricas, eólica</td>
+                </tr>
+                <tr>
+                    <td><strong>Transformador</strong></td>
+                    <td>Modifica voltaje AC</td>
+                    <td>Inducción mutua</td>
+                    <td>Transmisión de energía</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="dos-columnas mt-3">
+            <div class="formula-destacada">
+                <div class="nombre">Fuerza sobre conductor</div>
+                <div class="ecuacion">F = B · I · L</div>
+                <p class="text-small">F en Newtons, B en Tesla</p>
+            </div>
+            <div class="formula-destacada">
+                <div class="nombre">Ecuación Transformador</div>
+                <div class="ecuacion">V_s/V_p = N_s/N_p = I_p/I_s</div>
+            </div>
+        </div>
+
+        <img src="imagenes/motor-generador-transformador.png" alt="Motor, generador y transformador"
+            class="imagen-contenido">
+
+        <div class="nota-alerta mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Nota Destacada:</strong> Los
+            transformadores permiten transmitir electricidad a grandes
+            distancias. Las plantas generan a ~10,000V, se eleva a ~230,000V para transmisión (reduciendo
+            pérdidas I²R), y se baja a 120V/240V en tu casa.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.3 Dispositivos</span>
+            <span class="numero-pagina">21</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 22: PROCEDIMIENTOS Y MAPA MENTAL -->
+    <div class="page">
+        <h2>3.3.4 Procedimientos Experimentales</h2>
+
+        <h3>Construcción de Motor Sencillo</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Usar pila AA, imán de neodimio y cable de cobre esmaltado</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Formar una espira con el cable, dejando extremos rectos</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Raspar el esmalte de un lado de los extremos (conmutador)</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Colocar la espira sobre soportes metálicos conectados a la pila</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Observar la rotación continua por la fuerza de Lorentz</div>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Verificación de Ley de Faraday</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Conectar bobina de múltiples espiras a un galvanómetro</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Introducir y extraer rápidamente un imán de neodimio</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Notar que la intensidad depende de velocidad y número de espiras (N)</div>
+            </div>
+        </div>
+
+        <img src="imagenes/mapa-mental-magnetismo.png" alt="Mapa mental de Magnetismo y Electromagnetismo"
+            class="imagen-contenido imagen-grande">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.3 Procedimientos</span>
+            <span class="numero-pagina">22</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 23: ALBATROS TECH - CARGA QI, MAGLEV, EÓLICA -->
+    <div class="page">
+        <h2>ALBATROS TECH: Carga Qi, MagLev y Energía Eólica</h2>
+
+        <h3>Tecnologías de Transporte y Carga Inalámbrica</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tecnología</th>
+                    <th>Principio Físico</th>
+                    <th>Aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Carga Qi</strong></td>
+                    <td>Inducción resonante</td>
+                    <td>Smartphones, wearables</td>
+                </tr>
+                <tr>
+                    <td><strong>MagLev (EMS)</strong></td>
+                    <td>Atracción magnética controlada</td>
+                    <td>Trenes sobre riel ferromagnético</td>
+                </tr>
+                <tr>
+                    <td><strong>MagLev (EDS)</strong></td>
+                    <td>Repulsión con superconductores</td>
+                    <td>Altísima velocidad (&gt;600 km/h)</td>
+                </tr>
+                <tr>
+                    <td><strong>Generador Eólico</strong></td>
+                    <td>Inducción de Faraday</td>
+                    <td>Producción de energía limpia</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <img src="imagenes/tecnologias-electromagneticas.jpg" alt="Tecnologías electromagnéticas"
+            class="imagen-contenido">
+
+        <div class="nota-alerta mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Nota MagLev:</strong> En los
+            trenes MagLev, la eliminación del contacto físico suprime la
+            fricción mecánica, permitiendo velocidades que superan los 600 km/h. Los electroimanes se ajustan
+            miles de veces por segundo para mantener el tren a distancia constante de la guía.
+        </div>
+
+        <div class="mini-actividades mt-3">
+            <h4><img src="imagenes/icono-cerebro.png" alt=""
+                    style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"> Mini Actividades</h4>
+            <p><strong>Pregunta:</strong> Si detienes el movimiento de un imán dentro de una bobina, ¿qué sucede con la
+                corriente?</p>
+            <p><strong>Debate:</strong> ¿Es el MagLev viable para carga pesada o solo para pasajeros?</p>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>3.3 Tech</span>
+            <span class="numero-pagina">23</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 24: SEPARADOR TALLER MAKER -->
+    <div class="page separador-capitulo" style="background: linear-gradient(135deg, var(--accent-color), #E65100);">
+        <div class="numero-capitulo"><img src="imagenes/icono-engranaje.png" alt="" style="width:40px;height:40px;">
+        </div>
+        <h1>TALLER MAKER DEL BLOQUE III</h1>
+        <p class="descripcion">
+            El Taller Maker es el corazón práctico del modelo educativo Albatros,
+            donde la teoría se convierte en tangible y la competencia se vive
+            a través del diseño y la resolución de problemas reales.
+        </p>
+    </div>
+
+    <!-- PÁGINA 25: TALLER MAKER OPCIÓN 1 -->
+    <div class="page">
+        <h2>Opción 1: Grúa Magnética (Electroimán de Alta Potencia)</h2>
+
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diana.png" alt=""></div>
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Construir un electroimán funcional integrado en una estructura de grúa que pueda
+                    levantar y mover objetos metálicos, aplicando los principios del electromagnetismo.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Materiales</h3>
+        <ul>
+            <li>Clavo de hierro de 10 cm (núcleo)</li>
+            <li>5 metros de hilo de cobre esmaltado</li>
+            <li>Batería de 9V</li>
+            <li>Interruptor</li>
+            <li>Cartón y poleas para estructura de grúa</li>
+        </ul>
+
+        <h3 class="mt-3">Proceso</h3>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Realizar bobinado apretado y uniforme alrededor del clavo</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Conectar extremos del cable a batería con interruptor en medio</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Construir estructura de grúa con cartón (base, torre, brazo)</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Integrar sistema de poleas para movimiento del electroimán</div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">Probar levantamiento de clips, tornillos u objetos metálicos</div>
+            </div>
+        </div>
+
+        <div class="nota-tip mt-3">
+            <strong><img src="imagenes/icono-nota.png" alt=""
+                    style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Clave del éxito:</strong> A
+            mayor número de vueltas (N), mayor fuerza magnética.
+            Usa núcleo de hierro dulce de alta permeabilidad para canalizar las líneas de flujo eficientemente.
+        </div>
+
+        <img src="imagenes/proyecto-grua-magnetica.png" alt="Proyecto de grúa magnética" class="imagen-contenido">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">BLOQUE III</span>
+            <span>Taller Maker 1</span>
+            <span class="numero-pagina">25</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 26: TALLER MAKER OPCIÓN 2 -->
+    <div class="page">
+        <h2>Opción 2: Control de Iluminación Automático (Domótica)</h2>
+
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="icono"><img src="imagenes/icono-diana.png" alt=""></div>
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Diseñar un sistema de iluminación automático que encienda una luz cuando oscurece y
+                    la apague con luz natural, aplicando conceptos de sensores y lógica de control.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Materiales</h3>
+        <div class="dos-columnas">
+            <div>
+                <ul>
+                    <li>Arduino Nano o ESP32</li>
+                    <li>Sensor LDR (fotoresistencia)</li>
+                    <li>Resistencia de 10 kΩ</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>LED de alta potencia o foco 12V</li>
+                    <li>Módulo relé 5V</li>
+                    <li>Protoboard y cableado</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Lógica de Control</h3>
+        <p>El sensor LDR actúa como divisor de tensión. Arduino lee el valor analógico: si es menor a un
+            umbral (oscuridad), activa el relé para encender la luz.</p>
+
+        <div class="codigo">// CONTROL DE ILUMINACIÓN AUTOMÁTICO
+            const int LDR_PIN = A0;
+            const int RELAY_PIN = 7;
+            const int UMBRAL = 300;
+
+            void setup() {
+            pinMode(RELAY_PIN, OUTPUT);
+            Serial.begin(9600);
+            }
+
+            void loop() {
+            int valorLuz = analogRead(LDR_PIN);
+            Serial.println(valorLuz);
+
+            if (valorLuz < UMBRAL) { digitalWrite(RELAY_PIN, HIGH); // Encender luz } else { digitalWrite(RELAY_PIN,
+                LOW); // Apagar luz } delay(500); }</div>
+
+                <div class="reto-digital mt-3">
+                    <h4><img src="imagenes/icono-engranaje.png" alt=""
+                            style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"> Reto Plus ALBATROS
+                    </h4>
+                    <p>Añadir un <strong>sensor PIR de movimiento</strong>: la luz solo se enciende si ADEMÁS de
+                        oscuridad, se detecta movimiento. Aplicar lógica booleana:
+                        <code>if (oscuro AND movimiento)</code>
+                    </p>
+                </div>
+
+                <div class="pie-pagina">
+                    <span class="unidad-tag">BLOQUE III</span>
+                    <span>Taller Maker 2</span>
+                    <span class="numero-pagina">26</span>
+                </div>
+        </div>
+
+        <!-- PÁGINA 27: CONCLUSIÓN GENERAL -->
+        <div class="page">
+            <h2>Conclusión General del Bloque III</h2>
+
+            <div class="capsula">
+                <div class="capsula-etiqueta">
+                    <div class="icono"><img src="imagenes/icono-documento.png" alt=""></div>
+                    <div class="titulo">Resumen</div>
+                </div>
+                <div class="capsula-contenido">
+                    <p>El recorrido desde la bombilla hasta las Smart Cities nos revela que el progreso no es lineal,
+                        sino una <strong>red de descubrimientos interconectados</strong>. Al estudiar la electricidad
+                        y el magnetismo bajo el modelo Albatros, el estudiante desarrolla una mentalidad de
+                        <em>liderazgo e innovación</em>.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="mt-4">Competencias Desarrolladas</h3>
+            <ul>
+                <li>✓ Modelar fenómenos electrostáticos y aplicaciones como pantallas táctiles</li>
+                <li>✓ Analizar circuitos eléctricos con Leyes de Ohm y Kirchhoff</li>
+                <li>✓ Comprender la inducción electromagnética de Faraday y Lenz</li>
+                <li>✓ Diseñar sistemas IoT con Arduino y sensores inteligentes</li>
+                <li>✓ Aplicar conceptos en proyectos Maker reales</li>
+                <li>✓ Visualizar el impacto social de tecnologías como MagLev y energía eólica</li>
+            </ul>
+
+            <div class="capsula exito mt-4">
+                <div class="capsula-etiqueta">
+                    <div class="icono"><img src="imagenes/icono-diploma.png" alt=""></div>
+                    <div class="titulo">Valores</div>
+                </div>
+                <div class="capsula-contenido">
+                    <p><strong>Profesionales con Valor:</strong> La excelencia académica, la calidez humana y la
+                        audacia tecnológica se unen para formar ciudadanos capaces de iluminar el futuro con
+                        responsabilidad, ética y una inquebrantable voluntad de servicio.</p>
+                </div>
+            </div>
+
+            <div class="nota-info mt-4">
+                <strong><img src="imagenes/icono-documento.png" alt=""
+                        style="width:14px;height:14px;vertical-align:middle;margin-right:3px;"> Reflexión
+                    Final:</strong> "La capacidad de entender cómo una pantalla siente un toque
+                o cómo un tren puede flotar sobre el suelo empodera a los jóvenes para ser los creadores de las
+                soluciones del mañana."
+            </div>
+
+            <div class="pie-pagina">
+                <span class="unidad-tag">BLOQUE III</span>
+                <span>Conclusión</span>
+                <span class="numero-pagina">27</span>
+            </div>
+        </div>
+
+        <!-- PÁGINA 28: CIERRE -->
+        <div class="page"
+            style="background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-color) 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <h1 style="color: white; font-size: 22pt;">FIN DEL BLOQUE III</h1>
+            <p style="font-size: 13pt; margin-top: 5mm;">Electricidad, Magnetismo y Conectividad</p>
+            <p style="font-size: 11pt; margin-top: 4mm; opacity: 0.85;">De la Bombilla a las Smart Cities</p>
+            <p style="font-size: 10pt; margin-top: 8mm; opacity: 0.8;">Edición Albatros Competitiva</p>
+
+            <div style="margin-top: 12mm; padding: 5mm 10mm; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                <p style="font-size: 9pt; margin: 0;">
+                    <strong>Contenidos:</strong><br><br>
+                    3 Bloques Temáticos | 28 Páginas<br>
+                    Electrostática | Electrodinámica | Magnetismo<br>
+                    Pantallas Táctiles | IoT y Domótica | Carga Qi | MagLev<br>
+                    2 Proyectos Maker: Grúa Magnética + Control de Iluminación
+                </p>
+            </div>
+
+            <div style="margin-top: 15mm; font-size: 40pt;">⚡🧲🏙️🚀</div>
+        </div>
+
+
+        <!-- Web Effects -->
+        <link rel="stylesheet" href="../web-effects.css">
+        <script src="web-effects-u3.js"></script>
+
+        <!-- Back to Home Button -->
+        <a href="../index-web.html" class="back-to-home">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            Inicio
+        </a>
+
+</body>
+
+</html>

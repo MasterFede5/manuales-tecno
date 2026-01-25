@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2: Termodinamica y Gestion Energetica - Edicion Albatros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&family=Open+Sans+Condensed:wght@300;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ============================================
+           CSS_MANUAL_PRINT_VERTICAL - UNIDAD 2 (NARANJA)
+           Formato: Carta Vertical (Portrait)
+           ============================================ */
+
+        :root {
+            --primary-color: #FF6F00;
+            --primary-light: #FFF3E0;
+            --primary-dark: #E65100;
+            --secondary-color: #CC9900;
+            --accent-color: #D84315;
+            --success-color: #2E7D32;
+            --warning-color: #F57C00;
+            --text-dark: #37474F;
+            --text-light: #78909C;
+            --white: #FFFFFF;
+            --black: #212121;
+            --gray-light: #F5F5F5;
+            --gray-medium: #E0E0E0;
+            --radius-pill: 50px;
+            --radius-card: 12px;
+            --radius-small: 6px;
+            --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        @page {
+            size: letter portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            font-size: 10pt;
+            line-height: 14pt;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ============================================
+           PAGINA BASE - VERTICAL
+           ============================================ */
+        .page {
+            width: 215.9mm;
+            height: 279.4mm;
+            padding: 20mm 18mm 18mm 22mm;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* ============================================
+           TIPOGRAFIA
+           ============================================ */
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24pt;
+            color: var(--primary-color);
+            margin-bottom: 6mm;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16pt;
+            color: var(--secondary-color);
+            margin-bottom: 4mm;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 12pt;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 10pt;
+            color: var(--secondary-color);
+            margin-bottom: 2mm;
+        }
+
+        p {
+            margin-bottom: 3mm;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin-left: 5mm;
+            margin-bottom: 3mm;
+        }
+
+        li {
+            margin-bottom: 1.5mm;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        /* ============================================
+           SISTEMA DE CAPSULAS DOBLES
+           ============================================ */
+        .capsula {
+            display: flex;
+            margin-bottom: 5mm;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            page-break-inside: avoid;
+        }
+
+        .capsula-etiqueta {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            min-width: 42mm;
+            border-radius: var(--radius-card) 0 0 var(--radius-card);
+        }
+
+        .capsula-etiqueta .icono {
+            width: 6mm;
+            height: 6mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12pt;
+        }
+
+        .capsula-etiqueta .icono img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .capsula-etiqueta .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .capsula-contenido {
+            background: var(--primary-light);
+            padding: 3mm 4mm;
+            flex: 1;
+            border-radius: 0 var(--radius-card) var(--radius-card) 0;
+        }
+
+        .capsula-contenido p:last-child,
+        .capsula-contenido ul:last-child,
+        .capsula-contenido ol:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Variantes de capsula */
+        .capsula.secundaria .capsula-etiqueta {
+            background: var(--secondary-color);
+        }
+
+        .capsula.acento .capsula-etiqueta {
+            background: var(--accent-color);
+        }
+
+        .capsula.exito .capsula-etiqueta {
+            background: var(--success-color);
+        }
+
+        /* ============================================
+           CAPSULA DE ACTIVIDAD (ESPECIAL)
+           ============================================ */
+        .actividad {
+            border: 2px solid var(--accent-color);
+            border-radius: var(--radius-card);
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+
+        .actividad-header {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .actividad-header .numero {
+            background: var(--white);
+            color: var(--accent-color);
+            width: 8mm;
+            height: 8mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .actividad-header .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 11pt;
+        }
+
+        .actividad-body {
+            padding: 4mm;
+            background: #FFF8E1;
+        }
+
+        .actividad-instrucciones {
+            background: var(--white);
+            border-radius: var(--radius-small);
+            padding: 3mm;
+            margin-bottom: 3mm;
+        }
+
+        .espacio-respuesta {
+            border: 1px dashed var(--accent-color);
+            border-radius: var(--radius-small);
+            min-height: 25mm;
+            background: var(--white);
+            padding: 2mm;
+            margin-top: 2mm;
+        }
+
+        .espacio-respuesta.grande {
+            min-height: 40mm;
+        }
+
+        .espacio-respuesta.pequeno {
+            min-height: 15mm;
+        }
+
+        .linea-respuesta {
+            border-bottom: 1px solid var(--gray-medium);
+            height: 7mm;
+            margin-bottom: 1mm;
+        }
+
+        /* ============================================
+           CUADROS COMPARATIVOS
+           ============================================ */
+        .cuadro-comparativo {
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+        }
+
+        .cuadro-comparativo-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            text-align: center;
+        }
+
+        .cuadro-comparativo-header h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: 11pt;
+        }
+
+        .cuadro-comparativo-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .cuadro-col {
+            padding: 3mm;
+        }
+
+        .cuadro-col:first-child {
+            background: var(--primary-light);
+            border-right: 1px solid var(--primary-color);
+        }
+
+        .cuadro-col:last-child {
+            background: #FFF8E1;
+        }
+
+        .cuadro-col h4 {
+            text-align: center;
+            padding-bottom: 2mm;
+            border-bottom: 1px solid currentColor;
+            margin-bottom: 2mm;
+        }
+
+        /* ============================================
+           TABLAS
+           ============================================ */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 9pt;
+            line-height: 11pt;
+            margin-bottom: 4mm;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 3mm;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 2mm 3mm;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        tr:nth-child(even) {
+            background: var(--primary-light);
+        }
+
+        /* ============================================
+           FORMULAS
+           ============================================ */
+        .formula {
+            background: var(--gray-light);
+            padding: 3mm 4mm;
+            border-radius: var(--radius-small);
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            text-align: center;
+            margin: 3mm 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .formula-destacada {
+            background: linear-gradient(135deg, var(--primary-light), var(--white));
+            border: 2px solid var(--primary-color);
+            padding: 4mm;
+            border-radius: var(--radius-card);
+            text-align: center;
+            margin: 4mm 0;
+        }
+
+        .formula-destacada .nombre {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--secondary-color);
+            margin-bottom: 2mm;
+        }
+
+        .formula-destacada .ecuacion {
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            color: var(--primary-dark);
+        }
+
+        /* ============================================
+           ESQUEMAS Y DIAGRAMAS
+           ============================================ */
+        .esquema {
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+        }
+
+        .esquema-header {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 2mm 4mm;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 10pt;
+        }
+
+        .esquema-body {
+            padding: 4mm;
+            background: #FFF8E1;
+        }
+
+        /* ============================================
+           PLACEHOLDER DE IMAGENES
+           ============================================ */
+        .imagen-placeholder {
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--gray-medium) 100%);
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--radius-card);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4mm;
+            text-align: center;
+            color: var(--primary-color);
+            min-height: 35mm;
+            margin-bottom: 4mm;
+        }
+
+        .imagen-placeholder .nombre-archivo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 8pt;
+            margin-bottom: 1mm;
+        }
+
+        .imagen-placeholder .descripcion {
+            font-size: 7pt;
+            opacity: 0.8;
+        }
+
+        /* ============================================
+           NOTAS Y ALERTAS
+           ============================================ */
+        .nota-alerta {
+            background: #FFF3E0;
+            border-left: 4px solid var(--accent-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .nota-alerta strong {
+            color: var(--accent-color);
+        }
+
+        .nota-info {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .nota-exito {
+            background: #E8F5E9;
+            border-left: 4px solid var(--success-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        /* ============================================
+           PORTADA
+           ============================================ */
+        .portada {
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 30mm 20mm;
+        }
+
+        .portada h1 {
+            color: var(--white);
+            font-size: 28pt;
+            margin-bottom: 3mm;
+        }
+
+        .portada .subtitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            font-weight: 400;
+            margin-bottom: 10mm;
+            opacity: 0.9;
+        }
+
+        .portada .edicion {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3mm 6mm;
+            border-radius: var(--radius-pill);
+            margin-bottom: 15mm;
+        }
+
+        .portada .logo-placeholder {
+            width: 35mm;
+            height: 35mm;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10mm;
+        }
+
+        .portada .descripcion {
+            max-width: 140mm;
+            font-size: 10pt;
+            line-height: 14pt;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           INDICE VISUAL (BENTO BOX)
+           ============================================ */
+        .indice-visual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3mm;
+        }
+
+        .indice-item {
+            background: var(--primary-light);
+            border-radius: var(--radius-card);
+            padding: 3mm;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .indice-item.destacado {
+            grid-column: span 2;
+            background: var(--primary-color);
+            color: var(--white);
+            border-left: none;
+            text-align: center;
+        }
+
+        .indice-item.destacado h3 {
+            color: var(--white);
+        }
+
+        .indice-item h3 {
+            font-size: 10pt;
+            margin-bottom: 1mm;
+        }
+
+        .indice-item p {
+            font-size: 8pt;
+            line-height: 10pt;
+            margin: 0;
+            text-align: left;
+        }
+
+        /* ============================================
+           DOS COLUMNAS
+           ============================================ */
+        .dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+
+        .columna {
+            overflow: hidden;
+        }
+
+        /* ============================================
+           PIE DE PAGINA
+           ============================================ */
+        .pie-pagina {
+            position: absolute;
+            bottom: 8mm;
+            left: 22mm;
+            right: 18mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 7pt;
+            color: var(--text-light);
+            border-top: 1px solid var(--gray-medium);
+            padding-top: 2mm;
+        }
+
+        .pie-pagina .unidad-tag {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1mm 2mm;
+            border-radius: var(--radius-pill);
+            font-size: 6pt;
+            font-weight: 600;
+        }
+
+        .numero-pagina {
+            background: var(--gray-light);
+            padding: 1mm 3mm;
+            border-radius: var(--radius-small);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           SEPARADOR DE CAPITULO
+           ============================================ */
+        .separador-capitulo {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 40mm 20mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .separador-capitulo .numero-capitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48pt;
+            font-weight: 700;
+            opacity: 0.3;
+            margin-bottom: 5mm;
+        }
+
+        .separador-capitulo h1 {
+            color: var(--white);
+            font-size: 22pt;
+            margin-bottom: 5mm;
+        }
+
+        .separador-capitulo .descripcion {
+            font-size: 11pt;
+            max-width: 140mm;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           LISTA DE MATERIALES
+           ============================================ */
+        .lista-materiales {
+            background: var(--gray-light);
+            border-radius: var(--radius-card);
+            padding: 4mm;
+            margin-bottom: 4mm;
+        }
+
+        .lista-materiales h4 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 2mm;
+            margin-bottom: 3mm;
+        }
+
+        .material-item {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            padding: 1mm 0;
+            border-bottom: 1px dotted var(--gray-medium);
+        }
+
+        .material-item:last-child {
+            border-bottom: none;
+        }
+
+        .material-check {
+            width: 4mm;
+            height: 4mm;
+            border: 1px solid var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* ============================================
+           PASOS NUMERADOS
+           ============================================ */
+        .pasos-container {
+            counter-reset: paso;
+        }
+
+        .paso {
+            display: flex;
+            gap: 3mm;
+            margin-bottom: 4mm;
+            page-break-inside: avoid;
+        }
+
+        .paso-numero {
+            counter-increment: paso;
+            background: var(--primary-color);
+            color: var(--white);
+            width: 7mm;
+            height: 7mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 9pt;
+            flex-shrink: 0;
+        }
+
+        .paso-numero::before {
+            content: counter(paso);
+        }
+
+        .paso-contenido {
+            flex: 1;
+        }
+
+        .paso-contenido h4 {
+            margin-bottom: 1mm;
+        }
+
+        /* ============================================
+           UTILIDADES
+           ============================================ */
+        .mt-2 {
+            margin-top: 2mm;
+        }
+
+        .mt-3 {
+            margin-top: 3mm;
+        }
+
+        .mt-4 {
+            margin-top: 4mm;
+        }
+
+        .mt-6 {
+            margin-top: 6mm;
+        }
+
+        .mb-2 {
+            margin-bottom: 2mm;
+        }
+
+        .mb-3 {
+            margin-bottom: 3mm;
+        }
+
+        .mb-4 {
+            margin-bottom: 4mm;
+        }
+
+        .mb-6 {
+            margin-bottom: 6mm;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-small {
+            font-size: 8pt;
+        }
+
+        /* ============================================
+           DIALOGO CIENTIFICO
+           ============================================ */
+        .dialogo {
+            background: #FFFDE7;
+            border: 1px solid var(--secondary-color);
+            border-radius: var(--radius-card);
+            padding: 4mm;
+            margin: 4mm 0;
+        }
+
+        .dialogo-header {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--secondary-color);
+            margin-bottom: 2mm;
+        }
+
+        .dialogo-linea {
+            margin-bottom: 2mm;
+            padding-left: 3mm;
+            border-left: 2px solid var(--secondary-color);
+        }
+
+        .dialogo-personaje {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================
+         PAGINA 1: PORTADA
+         ============================================ -->
+    <div class="page portada">
+        <div
+            style="background: rgba(255, 255, 255, 0.95); padding: 5mm 8mm; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); margin-bottom: 8mm;">
+            <img src="imagenes/LOGO.png" alt="Logo Grupo Cultural Albatros"
+                style="height: 22mm; width: auto; display: block;">
+        </div>
+        <div class="edicion">Edicion Albatros Tech & Plus</div>
+        <h1>Unidad 2</h1>
+        <div class="subtitulo">Termodinamica y Gestion Energetica</div>
+        <p class="descripcion">
+            Explora los principios de la Termodinamica y su aplicacion en la gestion eficiente de la energia,
+            desde el calor en los motores de combustion hasta la refrigeracion de procesadores (CPU).
+        </p>
+    </div>
+
+    <!-- ============================================
+         PAGINA 2: INDICE
+         ============================================ -->
+    <div class="page">
+        <h1>Indice de Contenidos</h1>
+
+        <div class="indice-visual">
+            <div class="indice-item destacado">
+                <h3>Unidad 2: Termodinamica y Gestion Energetica</h3>
+                <p>Del calor molecular a la eficiencia de los sistemas modernos</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Objetivo</h3>
+                <p>Competencias a desarrollar en esta unidad</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Conceptos Fundamentales</h3>
+                <p>Calor, temperatura, escalas y dilatacion</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Propagacion del Calor</h3>
+                <p>Conduccion, conveccion y radiacion</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Calorimetria</h3>
+                <p>Capacidad calorifica y calor especifico</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Cambios de Fase</h3>
+                <p>Calor latente de fusion y vaporizacion</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Leyes de la Termodinamica</h3>
+                <p>Ley Cero, Primera y Segunda Ley</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Aplicaciones Modernas</h3>
+                <p>Motores, eficiencia y efecto invernadero</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Procedimientos</h3>
+                <p>Experimento de calorimetria</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Practicas Integradoras</h3>
+                <p>Ejercicios aplicados</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Reto Digital</h3>
+                <p>Diseno de refrigerador pasivo</p>
+            </div>
+
+            <div class="indice-item">
+                <h3>Recursos</h3>
+                <p>Material complementario</p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">2</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 3: OBJETIVO
+         ============================================ -->
+    <div class="page">
+        <h1>Objetivo de la Unidad</h1>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-diana.png" alt="Diana">
+                </div>
+                <div class="titulo">Objetivo</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>En esta unidad exploraremos los principios de la <strong>Termodinamica</strong> y su aplicacion en la
+                    gestion eficiente de la energia, <strong>desde el calor en los motores de combustion hasta la
+                        refrigeracion de procesadores (CPU)</strong>.</p>
+            </div>
+        </div>
+
+        <h3>Al finalizar, seras capaz de:</h3>
+
+        <ul>
+            <li><strong>Diferenciar calor y temperatura</strong>, comprendiendo su naturaleza y unidades de medida.</li>
+            <li><strong>Manejar escalas termometricas</strong> (Celsius, Fahrenheit, Kelvin) y convertir valores entre
+                ellas.</li>
+            <li><strong>Explicar la dilatacion termica</strong> en solidos, liquidos y gases, y sus implicaciones
+                practicas (ej. dilatacion en puentes y componentes electronicos).</li>
+            <li><strong>Describir los mecanismos de transferencia de calor</strong>: conduccion, conveccion y radiacion,
+                identificando ejemplos cotidianos de cada uno.</li>
+            <li><strong>Aplicar conceptos de calorimetria</strong>, incluyendo capacidad calorifica, calor especifico y
+                calor latente, para resolver problemas.</li>
+            <li><strong>Enunciar y aplicar las Leyes de la Termodinamica</strong> (Ley Cero, Primera y Segunda),
+                comprendiendo sus implicaciones.</li>
+            <li><strong>Relacionar la teoria con aplicaciones modernas</strong>, evaluando la eficiencia energetica en
+                tecnologias actuales.</li>
+        </ul>
+
+        <img src="imagenes/diagrama-objetivos-termodinamica.jpg" alt="Diagrama de objetivos de termodinámica"
+            class="imagen-contenido mt-4"
+            style="width: 100%; max-height: 60mm; object-fit: contain; border-radius: 8px;">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">3</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 4: CONCEPTOS FUNDAMENTALES - CALOR VS TEMPERATURA
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-cerebro.png" alt="Cerebro">
+                </div>
+                <div class="titulo">Conceptos Fundamentales</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Fundamentos teoricos de la termodinamica: calor, temperatura y sus diferencias esenciales.</p>
+            </div>
+        </div>
+
+        <h2>Calor vs. Temperatura</h2>
+
+        <p><strong>Temperatura</strong> y <strong>calor</strong> son conceptos relacionados pero distintos. La
+            <strong>temperatura</strong> es una medida de la energia cinetica promedio de las moleculas de un cuerpo -
+            esencialmente <em>que tan caliente esta</em>.
+        </p>
+
+        <p>En cambio, el <strong>calor</strong> es energia termica en transito: energia que se transfiere de un cuerpo a
+            otro debido a una diferencia de temperatura. Un objeto no "posee" calor; mas bien <strong>gana o pierde
+                calor</strong> cuando hay intercambio energetico con su entorno.</p>
+
+        <div class="cuadro-comparativo">
+            <div class="cuadro-comparativo-header">
+                <h3>Comparativa: Calor vs Temperatura</h3>
+            </div>
+            <div class="cuadro-comparativo-body">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">Temperatura</h4>
+                    <ul>
+                        <li>Energia cinetica promedio molecular</li>
+                        <li>Magnitud de <strong>estado</strong></li>
+                        <li>Se mide en: °C, K, °F</li>
+                        <li>Un objeto "tiene" temperatura</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">Calor</h4>
+                    <ul>
+                        <li>Energia termica en transito</li>
+                        <li>Magnitud de <strong>proceso</strong></li>
+                        <li>Se mide en: Joules (J), calorias</li>
+                        <li>Un objeto "gana o pierde" calor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-nota.png" alt="Nota">
+                </div>
+                <div class="titulo">Nota Destacada</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>El calor se mide en unidades de energia (joules en el SI, o calorias tradicionalmente), mientras que
+                    la temperatura se mide en grados. Durante <strong>cambios de fase</strong> (como fusion o
+                    ebullicion) una sustancia puede absorber gran cantidad de calor <em>sin cambiar su temperatura</em>
+                    - esa energia se invierte en romper enlaces, fenomeno conocido como <strong>calor latente</strong>.
+                </p>
+            </div>
+        </div>
+
+        <p><strong>Ejemplo:</strong> Si se coloca en contacto un bloque caliente con uno frio, el calor fluira
+            espontaneamente del caliente al frio hasta que ambos alcancen la misma temperatura (equilibrio termico). La
+            temperatura final sera intermedia, reflejando la nueva energia cinetica promedio comun.</p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">4</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 5: ESCALAS TERMOMETRICAS
+         ============================================ -->
+    <div class="page">
+        <h2>Escalas Termometricas (°C, °F, K)</h2>
+
+        <p>Existen distintas <strong>escalas de temperatura</strong>:</p>
+
+        <table>
+            <tr>
+                <th>Escala</th>
+                <th>Punto de Congelacion (Agua)</th>
+                <th>Punto de Ebullicion (Agua)</th>
+                <th>Cero Absoluto</th>
+            </tr>
+            <tr>
+                <td><strong>Celsius (°C)</strong></td>
+                <td>0 °C</td>
+                <td>100 °C</td>
+                <td>-273.15 °C</td>
+            </tr>
+            <tr>
+                <td><strong>Fahrenheit (°F)</strong></td>
+                <td>32 °F</td>
+                <td>212 °F</td>
+                <td>-459.67 °F</td>
+            </tr>
+            <tr>
+                <td><strong>Kelvin (K)</strong></td>
+                <td>273.15 K</td>
+                <td>373.15 K</td>
+                <td>0 K</td>
+            </tr>
+        </table>
+
+        <div class="formula-destacada">
+            <div class="nombre">Formulas de Conversion</div>
+            <div class="ecuacion">T(K) = T(°C) + 273.15 &nbsp;&nbsp;|&nbsp;&nbsp; T(°F) = 1.8 × T(°C) + 32</div>
+            <p class="text-small mt-2">Una diferencia de 1 °C equivale a 1.8 °F y a 1 K</p>
+        </div>
+
+        <p>La escala <strong>Kelvin (K)</strong> fija su cero en el <strong>cero absoluto</strong> (0 K), la temperatura
+            mas baja fisicamente posible, donde la energia cinetica molecular es minima. Los incrementos son
+            equivalentes a los de Celsius.</p>
+
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-clip.png" alt="Clip">
+                </div>
+                <div class="titulo">Curiosidad</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>La temperatura mas baja alcanzada experimentalmente esta del orden de <strong>nanokelvins</strong>
+                    sobre el cero absoluto, en condensados Bose-Einstein. En contraste, la temperatura mas alta
+                    registrada en laboratorio supera los <strong>billones de kelvins</strong> (en colisionadores de
+                    particulas). <em>Dato curioso: -40 °C = -40 °F (coinciden ambas escalas)</em>.</p>
+            </div>
+        </div>
+
+        <h2 class="mt-4">Dilatacion Termica</h2>
+
+        <p>La mayoria de los materiales <strong>se expanden al calentarse</strong> y se contraen al enfriarse. Este
+            cambio de tamano con la temperatura se cuantifica mediante el <strong>coeficiente de dilatacion
+                termica</strong>.</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Dilatacion Lineal</div>
+            <div class="ecuacion">ΔL = α × L × ΔT</div>
+            <p class="text-small mt-2">α = coeficiente de dilatacion lineal | L = longitud inicial | ΔT = cambio de
+                temperatura</p>
+        </div>
+
+        <p><strong>Ejemplo:</strong> Una viga de acero de 10 m con α ≈ 12×10⁻⁶/°C se alargara unos ~3.6 mm si su
+            temperatura sube 30 °C.</p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">5</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 6: DILATACION TERMICA - APLICACIONES
+         ============================================ -->
+    <div class="page">
+        <h3>Aplicaciones de la Dilatacion Termica</h3>
+
+        <img src="imagenes/foto-junta-dilatacion-puente.png" alt="Junta de dilatación en puente"
+            class="imagen-contenido" style="width: 100%; max-height: 55mm; object-fit: contain; border-radius: 8px;">
+
+        <p>Las <strong>juntas de expansion</strong> se instalan en puentes para absorber el alargamiento termico de los
+            materiales. Sin ellas, el aumento de longitud al calentarse generaria esfuerzos mecanicos enormes que
+            podrian agrietar la estructura. En las vias de ferrocarril tambien se dejan pequenos espacios entre rieles
+            para evitar pandeos en dias calurosos.</p>
+
+        <div class="esquema">
+            <div class="esquema-header">Enfoque Albatros Tech: Estres Termico en Electronica</div>
+            <div class="esquema-body">
+                <p>En los circuitos electronicos, componentes distintos (chips de silicio, soldaduras de estano, placas
+                    de fibra de vidrio) tienen <strong>coeficientes de dilatacion diferentes</strong>.</p>
+                <p>Cuando un dispositivo se calienta y enfria repetidamente (ciclo de encendido/apagado de una CPU),
+                    cada material se expande o contrae en distinta magnitud. Estas <strong>tensiones
+                        termomecanicas</strong> pueden deformar y hasta fisurar las soldaduras, causando fallas.</p>
+                <p><strong>Solucion:</strong> Los ingenieros utilizan soldaduras flexibles y empaques con almohadillas
+                    termicas para acomodar estas dilataciones sin romper conexiones.</p>
+            </div>
+        </div>
+
+        <table>
+            <tr>
+                <th>Material</th>
+                <th>Coeficiente α (×10⁻⁶/°C)</th>
+                <th>Aplicacion</th>
+            </tr>
+            <tr>
+                <td>Aluminio</td>
+                <td>24</td>
+                <td>Disipadores, cables</td>
+            </tr>
+            <tr>
+                <td>Acero</td>
+                <td>12</td>
+                <td>Estructuras, rieles</td>
+            </tr>
+            <tr>
+                <td>Vidrio comun</td>
+                <td>9</td>
+                <td>Ventanas</td>
+            </tr>
+            <tr>
+                <td>Vidrio Pyrex</td>
+                <td>3</td>
+                <td>Utensilios de cocina</td>
+            </tr>
+            <tr>
+                <td>Silicio</td>
+                <td>2.6</td>
+                <td>Chips semiconductores</td>
+            </tr>
+        </table>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">6</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 7: PROPAGACION DEL CALOR
+         ============================================ -->
+    <div class="page">
+        <h2>Propagacion del Calor: Conduccion, Conveccion y Radiacion</h2>
+
+        <p>Cuando existe una diferencia de temperatura, el calor puede transferirse de <strong>tres formas
+                basicas</strong>:</p>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">1</div>
+                <div class="titulo">Conduccion</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Transferencia de energia por <strong>contacto directo</strong>, sin movimiento neto de materia. Las
+                    moleculas mas calientes vibran intensamente y transfieren parte de su energia a sus vecinas mas
+                    frias. Ocurre principalmente en <strong>solidos</strong>.</p>
+                <p><em>Ejemplo: Una cuchara metalica que se calienta desde la punta sumergida en te caliente hasta el
+                        mango.</em></p>
+            </div>
+        </div>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">2</div>
+                <div class="titulo">Conveccion</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Transferencia de calor mediante el <strong>movimiento de un fluido</strong> (liquido o gas) que
+                    transporta energia. Al calentarse, un fluido suele dilatarse, volviendose menos denso y ascendiendo,
+                    mientras el fluido mas frio desciende.</p>
+                <p><em>Ejemplo: Hervir agua en una olla - el liquido cercano a la llama sube mientras el agua fria
+                        desciende.</em></p>
+            </div>
+        </div>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">3</div>
+                <div class="titulo">Radiacion</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Transferencia de energia mediante <strong>ondas electromagneticas</strong> (principalmente
+                    infrarrojas). No requiere medio material: puede viajar por el vacio. La potencia emitida crece con
+                    T⁴ (ley de Stefan-Boltzmann).</p>
+                <p><em>Ejemplo: El Sol nos entrega calor a 150 millones de km de distancia.</em></p>
+            </div>
+        </div>
+
+        <table class="mt-3">
+            <tr>
+                <th>Mecanismo</th>
+                <th>¿Como ocurre?</th>
+                <th>Ejemplo cotidiano</th>
+            </tr>
+            <tr>
+                <td><strong>Conduccion</strong></td>
+                <td>Atomos transmiten energia a vecinas por contacto directo</td>
+                <td>La base de una olla calienta el mango metalico</td>
+            </tr>
+            <tr>
+                <td><strong>Conveccion</strong></td>
+                <td>Un fluido mueve calor al desplazarse masas calientes y frias</td>
+                <td>El aire caliente sube sobre un radiador</td>
+            </tr>
+            <tr>
+                <td><strong>Radiacion</strong></td>
+                <td>Emision de energia electromagnetica desde la superficie</td>
+                <td>Los rayos del sol calientan tu cara</td>
+            </tr>
+        </table>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">7</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 8: DISIPADORES DE CALOR
+         ============================================ -->
+    <div class="page">
+        <div class="esquema">
+            <div class="esquema-header">Enfoque Albatros Tech: Diseno de Disipadores de Calor (Heat Sinks)</div>
+            <div class="esquema-body">
+                <p>Los <strong>disipadores</strong> son dispositivos (generalmente de aluminio o cobre) con aletas que
+                    incrementan la superficie para disipar mejor el calor de componentes electronicos potentes (CPU,
+                    GPU, transistores de potencia).</p>
+
+                <div class="dos-columnas mt-3">
+                    <div class="columna">
+                        <h4>Proceso de Disipacion:</h4>
+                        <ol>
+                            <li><strong>Conduccion:</strong> El calor fluye desde la CPU hacia la base del disipador
+                                (pasta termica elimina bolsas de aire)</li>
+                            <li><strong>Conveccion:</strong> El calor se entrega al aire a traves de las aletas</li>
+                            <li><strong>Radiacion:</strong> Una pequena parte se emite desde las superficies</li>
+                        </ol>
+                    </div>
+                    <div class="columna">
+                        <h4>Tipos de Conveccion:</h4>
+                        <ul>
+                            <li><strong>Natural:</strong> El aire caliente asciende por entre las aletas</li>
+                            <li><strong>Forzada:</strong> Un ventilador impulsa aire fresco a traves del disipador</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img src="imagenes/foto-disipador-calor-pc.png" alt="Disipador de calor de PC con aletas y heat pipes"
+            class="imagen-contenido" style="width: 100%; max-height: 55mm; object-fit: contain; border-radius: 8px;">
+
+        <p>En la imagen se ve un disipador de aluminio con aletas y heat pipes de cobre, junto a un ventilador. El calor
+            de la CPU se conduce a traves de la base de cobre y los heat pipes hacia las aletas, donde el flujo de aire
+            forzado por el ventilador lo disipa al ambiente.</p>
+
+        <div class="nota-info">
+            <p><strong>Heat Pipes (Tubos de Calor):</strong> Son tubos sellados con un fluido interno que al calentarse
+                en un extremo se evapora y viaja al otro extremo, donde cede calor y condensa, regresando por
+                capilaridad. Transfieren calor con alta eficiencia combinando conduccion + cambio de fase + conveccion
+                interna.</p>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">8</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 9: CALORIMETRIA
+         ============================================ -->
+    <div class="page">
+        <h2>Calorimetria: Capacidad Calorifica y Calor Especifico</h2>
+
+        <p><strong>Calorimetria</strong> es la rama de la fisica que estudia la transferencia de calor entre cuerpos. Un
+            concepto clave es el <strong>calor especifico</strong> (c): el calor necesario para elevar en 1 °C la
+            temperatura de 1 kg de sustancia.</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Formula Fundamental de la Calorimetria</div>
+            <div class="ecuacion">Q = m × c × ΔT</div>
+            <p class="text-small mt-2">Q = calor (J) | m = masa (kg) | c = calor especifico (J/kg·K) | ΔT = cambio de
+                temperatura</p>
+        </div>
+
+        <table>
+            <tr>
+                <th>Sustancia</th>
+                <th>Calor Especifico c (J/kg·K)</th>
+                <th>Caracteristica</th>
+            </tr>
+            <tr>
+                <td><strong>Agua</strong></td>
+                <td>4,180</td>
+                <td>Muy alto - regula el clima</td>
+            </tr>
+            <tr>
+                <td>Aceite</td>
+                <td>~2,000</td>
+                <td>Medio</td>
+            </tr>
+            <tr>
+                <td>Arena</td>
+                <td>~800</td>
+                <td>Bajo</td>
+            </tr>
+            <tr>
+                <td>Hierro</td>
+                <td>~450</td>
+                <td>Bajo</td>
+            </tr>
+            <tr>
+                <td>Cobre</td>
+                <td>~385</td>
+                <td>Muy bajo</td>
+            </tr>
+        </table>
+
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-nota.png" alt="Nota">
+                </div>
+                <div class="titulo">Ejemplo Practico</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Si sumergimos un bloque de 0.5 kg de hierro a 300 °C en 1 kg de agua a 20 °C dentro de un calorimetro
+                    aislado, la temperatura final quedara mucho mas cerca de 20 °C que de 300 °C. Esto ocurre porque el
+                    agua (mayor capacidad calorifica) domina el intercambio: puede absorber mucha mas energia por cada
+                    grado que cambia.</p>
+            </div>
+        </div>
+
+        <h3 class="mt-3">Calorias y Joules</h3>
+        <p>Historicamente, la energia termica se midio en <strong>calorias</strong>. Una caloria (1 cal) es el calor
+            necesario para elevar en 1 °C la temperatura de 1 g de agua.</p>
+
+        <div class="formula">
+            <strong>Equivalencia:</strong> 1 cal = 4.1868 J &nbsp;&nbsp;|&nbsp;&nbsp; 1 kcal ≈ 4,184 J
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">9</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 10: CALOR LATENTE
+         ============================================ -->
+    <div class="page">
+        <h2>Calor Latente y Cambios de Fase</h2>
+
+        <p>Cuando un material <strong>cambia de estado</strong> (solido ↔ liquido ↔ gas), absorbe o libera energia
+            <strong>sin cambiar de temperatura</strong> durante la transicion. A esta energia se le llama <strong>calor
+                latente</strong>.
+        </p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Calor Latente</div>
+            <div class="ecuacion">Q = m × L</div>
+            <p class="text-small mt-2">L<sub>f</sub> = calor latente de fusion | L<sub>v</sub> = calor latente de
+                vaporizacion</p>
+        </div>
+
+        <div class="dos-columnas">
+            <div class="columna">
+                <div class="nota-info">
+                    <h4>Fusion (Solido → Liquido)</h4>
+                    <p><strong>Agua:</strong> L<sub>f</sub> ≈ 334,000 J/kg</p>
+                    <p>El hielo a 0 °C necesita absorber esta energia para convertirse en agua liquida a 0 °C, sin
+                        elevar su temperatura.</p>
+                </div>
+            </div>
+            <div class="columna">
+                <div class="nota-alerta">
+                    <h4>Vaporizacion (Liquido → Gas)</h4>
+                    <p><strong>Agua:</strong> L<sub>v</sub> ≈ 2,260,000 J/kg</p>
+                    <p>Evaporar 1 kg de agua a 100 °C requiere muchisima mas energia que calentarla de 0 a 100 °C.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="capsula secundaria mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-clip.png" alt="Clip">
+                </div>
+                <div class="titulo">Aplicaciones</div>
+            </div>
+            <div class="capsula-contenido">
+                <ul>
+                    <li><strong>Sudor:</strong> Cuando el agua de la piel se evapora, toma calor de nuestro cuerpo
+                        (enfriandonos) para cambiar de liquido a vapor.</li>
+                    <li><strong>Hielo en bebidas:</strong> Absorbe calor latente al derretirse, enfriando la bebida sin
+                        bajar de 0 °C.</li>
+                    <li><strong>Refrigeracion por evaporacion:</strong> Los coolers evaporativos usan este principio en
+                        climas secos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <img src="imagenes/diagrama-cambios-fase-agua.jpg" alt="Diagrama de cambios de fase del agua"
+            class="imagen-contenido mt-3"
+            style="width: 100%; max-height: 60mm; object-fit: contain; border-radius: 8px;">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">10</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 11: LEY CERO Y PRIMERA LEY
+         ============================================ -->
+    <div class="page">
+        <h2>Leyes de la Termodinamica</h2>
+
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">0</div>
+                <div class="titulo">Ley Cero</div>
+            </div>
+            <div class="capsula-contenido">
+                <p><strong>Equilibrio Termico:</strong> "Si dos sistemas A y B estan por separado en equilibrio termico
+                    con un tercer sistema C, entonces A y B estan en equilibrio termico entre si".</p>
+                <p>Esto significa que comparten la misma temperatura. Es una ley "cero" porque conceptualmente precede a
+                    las demas: nos permite <strong>definir la temperatura</strong> y usar termometros.</p>
+            </div>
+        </div>
+
+        <div class="capsula mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono">1</div>
+                <div class="titulo">Primera Ley</div>
+            </div>
+            <div class="capsula-contenido">
+                <p><strong>Conservacion de la Energia:</strong> La energia interna (U) de un sistema puede cambiar
+                    mediante transferencia de calor (Q) o realizacion de trabajo (W).</p>
+            </div>
+        </div>
+
+        <div class="formula-destacada">
+            <div class="nombre">Primera Ley de la Termodinamica</div>
+            <div class="ecuacion">ΔU = Q - W</div>
+            <p class="text-small mt-2">Q = calor suministrado al sistema | W = trabajo realizado por el sistema</p>
+        </div>
+
+        <p>La energia que entra en forma de calor se usa en aumentar la energia interna o en hacer trabajo, pero la
+            <strong>energia total se conserva</strong>. No es posible crear o destruir energia de la nada.
+        </p>
+
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-nota.png" alt="Nota">
+                </div>
+                <div class="titulo">Nota Destacada</div>
+            </div>
+            <div class="capsula-contenido">
+                <p><strong>"La energia no puede crearse ni destruirse, solo transformarse"</strong> - Primera Ley de la
+                    Termodinamica. Todo balance energetico debe cerrar contabilizando calor, trabajo y cambios de
+                    energia interna.</p>
+            </div>
+        </div>
+
+        <h4 class="mt-3">Ejemplo: Motor de Combustion Interna</h4>
+        <p>La mezcla de combustible y aire al quemarse libera energia quimica en forma de calor Q. Parte se convierte en
+            trabajo mecanico W (empujando los pistones) y el resto se queda como energia interna en los gases de escape
+            calientes o en el motor (debe disiparse por el radiador).</p>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">11</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 12: SEGUNDA LEY
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">2</div>
+                <div class="titulo">Segunda Ley</div>
+            </div>
+            <div class="capsula-contenido">
+                <p><strong>Entropia y Eficiencia:</strong> "Es imposible construir una maquina termica que, operando en
+                    un ciclo, convierta todo el calor absorbido en trabajo". Siempre habra calor que no se puede
+                    convertir en trabajo util.</p>
+            </div>
+        </div>
+
+        <p>La <strong>entropia</strong> (S) es una medida del "desorden" o dispersion de la energia. En cualquier
+            proceso real, la entropia total del sistema + entorno <strong>nunca disminuye</strong>.</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Eficiencia de Carnot (Maxima Teorica)</div>
+            <div class="ecuacion">η<sub>Carnot</sub> = 1 - T<sub>fria</sub>/T<sub>caliente</sub></div>
+            <p class="text-small mt-2">Temperaturas en Kelvin | Ningun motor real superara esta eficiencia</p>
+        </div>
+
+        <h3 class="mt-3">Implicaciones de la Segunda Ley</h3>
+
+        <ul>
+            <li><strong>El calor fluye espontaneamente de caliente a frio</strong>, nunca al reves de forma espontanea.
+            </li>
+            <li>Existe un <strong>limite teorico de eficiencia</strong> para las maquinas termicas.</li>
+            <li>No existe maquina 100% eficiente (adios al motor de movimiento perpetuo).</li>
+            <li>La entropia del universo aumenta hacia un estado de equilibrio maximo (maximo desorden).</li>
+        </ul>
+
+        <div class="cuadro-comparativo mt-3">
+            <div class="cuadro-comparativo-header">
+                <h3>Eficiencia Energetica Moderna</h3>
+            </div>
+            <div class="cuadro-comparativo-body">
+                <div class="cuadro-col">
+                    <h4 style="color: var(--primary-color);">Motor de Combustion</h4>
+                    <ul>
+                        <li>Eficiencia: <strong>20-40%</strong></li>
+                        <li>Pierde 60-70% como calor</li>
+                        <li>Limitado por ciclo de Carnot</li>
+                        <li>Emite CO₂, NOₓ</li>
+                    </ul>
+                </div>
+                <div class="cuadro-col">
+                    <h4 style="color: var(--secondary-color);">Motor Electrico</h4>
+                    <ul>
+                        <li>Eficiencia: <strong>85-95%</strong></li>
+                        <li>No opera con ciclo termico</li>
+                        <li>No limitado por Carnot</li>
+                        <li>Sin emisiones locales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">12</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 13: DIALOGO CIENTIFICO
+         ============================================ -->
+    <div class="page">
+        <div class="dialogo">
+            <div class="dialogo-header">Dialogo Cientifico Simulado: Sadi Carnot y Nikola Tesla</div>
+            <p><em>Encuentro imaginario entre Sadi Carnot (ingeniero frances pionero de la termodinamica) y Nikola Tesla
+                    (inventor y promotor de la energia electrica) en un cafe, discutiendo motores.</em></p>
+
+            <div class="dialogo-linea mt-3">
+                <span class="dialogo-personaje">Carnot:</span> Senor Tesla, he deducido que ningun motor termico puede
+                convertir todo el calor en trabajo; siempre hay perdidas. Mi ciclo ideal es el mejor posible, pero
+                incluso asi, un motor con vapor a 600 K y ambiente a 300 K apenas ronda un 50% de eficiencia teorica.
+            </div>
+
+            <div class="dialogo-linea">
+                <span class="dialogo-personaje">Tesla:</span> Fascinante, ingeniero Carnot. Yo he dedicado mi vida a los
+                motores electricos de corriente alterna. No queman combustible internamente, por lo que evitamos ese
+                ciclo calor-trabajo limitado. De hecho, mis motores convierten alrededor del 90% de la energia electrica
+                en movimiento util.
+            </div>
+
+            <div class="dialogo-linea">
+                <span class="dialogo-personaje">Carnot:</span> ¡90%! Eso suena milagroso desde la perspectiva de un
+                motor termico. ¿Como es posible?
+            </div>
+
+            <div class="dialogo-linea">
+                <span class="dialogo-personaje">Tesla:</span> La electricidad ya es energia "ordenada". Un motor
+                electrico simplemente la canaliza hacia trabajo mecanico con poca disipacion. Claro, hay que contar las
+                perdidas de generar y transportar la electricidad...
+            </div>
+
+            <div class="dialogo-linea">
+                <span class="dialogo-personaje">Carnot:</span> El Segundo Principio siempre manda: en algun lugar del
+                proceso la entropia aumenta. Pero es cierto que al llevar la energia como electricidad hasta el punto de
+                uso, el vehiculo ya no tiene que desperdiciarla en calor.
+            </div>
+
+            <div class="dialogo-linea">
+                <span class="dialogo-personaje">Tesla:</span> Vuestro trabajo fue visionario. Incluso en nuestros
+                tiempos usamos la nocion de eficiencia de Carnot para mejorar las centrales electricas. La termodinamica
+                clasica y la ingenieria electrica, juntas, nos permiten aspirar a un sistema de transporte mas eficiente
+                y limpio.
+            </div>
+        </div>
+
+        <div class="capsula secundaria mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-cerebro.png" alt="Cerebro">
+                </div>
+                <div class="titulo">Reflexion</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>En el dialogo se aprecia que los <strong>motores termicos</strong> estan fundamentalmente limitados
+                    por la segunda ley, mientras que los <strong>motores electricos</strong> logran eficiencias mayores
+                    porque la conversion de energia electrica a mecanica implica menos aumento de entropia durante el
+                    uso.</p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">13</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 14: APLICACIONES MODERNAS
+         ============================================ -->
+    <div class="page">
+        <h2>Aplicaciones Modernas: Eficiencia Energetica</h2>
+
+        <h3>Efecto Invernadero</h3>
+
+        <p>La fisica de la atmosfera es un ejemplo de termodinamica a escala planetaria. La Tierra recibe radiacion
+            solar; la superficie emite radiacion infrarroja. Ciertos gases (vapor de agua, CO₂, metano) <strong>absorben
+                gran parte de esa radiacion</strong> y la reirradian, atrapando calor.</p>
+
+        <div class="nota-alerta">
+            <p><strong>El efecto invernadero natural</strong> eleva la temperatura media global ~33 °C por encima de lo
+                que seria sin atmosfera (de -18 °C a +15 °C). Sin el, la Tierra seria inhabitable.</p>
+        </div>
+
+        <p>El problema es que las actividades humanas estan <strong>intensificando</strong> este efecto al elevar la
+            concentracion de gases de efecto invernadero (GEI). Mas GEI = menos radiacion escapa al espacio = mas
+            calentamiento global.</p>
+
+        <h3 class="mt-4">Gestion Termica en Electronica</h3>
+
+        <p>En dispositivos modernos (CPU, GPU, baterias) la gestion del calor es crucial. Un procesador de alto
+            rendimiento puede disipar <strong>100+ W en pocos cm²</strong> - sin buena refrigeracion se quemaria
+            rapidamente.</p>
+
+        <div class="lista-materiales">
+            <h4>Soluciones de Gestion Termica</h4>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>Disipadores con aletas:</strong> Aumentan superficie de transferencia</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>Heat pipes:</strong> Conduccion + cambio de fase</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>Refrigeracion liquida:</strong> Circuito cerrado con bomba y radiador</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>Pasta termica:</strong> Elimina bolsas de aire entre CPU y disipador</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>Throttling:</strong> Reduccion automatica de velocidad si se calienta demasiado</span>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">14</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 15: PROCEDIMIENTOS - EXPERIMENTO
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-flujo.png" alt="Flujo">
+                </div>
+                <div class="titulo">Procedimientos</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Experimento: Determinacion del Calor Especifico de un Metal por Calorimetria</p>
+            </div>
+        </div>
+
+        <p><strong>Objetivo:</strong> Medir el calor especifico desconocido de un metal (ej. aluminio) utilizando un
+            calorimetro simple y el principio de equilibrio termico.</p>
+
+        <div class="lista-materiales">
+            <h4>Materiales</h4>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Calorimetro de mezcla (o dos vasos de poliestireno con tapa)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Termometro (rango ambiente a 100 °C)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Balanza (precision ±0.1 g)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Muestra de metal (~100 g)</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span>Agua y mechero o fuente de agua hirviendo</span>
+            </div>
+        </div>
+
+        <div class="pasos-container mt-3">
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Preparacion de la muestra metalica</h4>
+                    <p>Pesa la muestra de metal (m<sub>metal</sub>). Calientala en agua hirviendo hasta ~100 °C.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Preparacion del calorimetro</h4>
+                    <p>Coloca una cantidad conocida de agua (ej. 200 g) en el calorimetro. Anota m<sub>agua</sub>.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Temperatura inicial</h4>
+                    <p>Mide la temperatura inicial del agua T<sub>i,agua</sub> (ej. ~20 °C).</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Transferencia</h4>
+                    <p>Transfiere rapidamente el metal caliente al calorimetro. Tapa y agita suavemente.</p>
+                </div>
+            </div>
+            <div class="paso">
+                <div class="paso-numero"></div>
+                <div class="paso-contenido">
+                    <h4>Lectura de equilibrio</h4>
+                    <p>Registra la temperatura maxima alcanzada T<sub>f</sub> (temperatura de equilibrio).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">15</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 16: PROCEDIMIENTOS - CALCULO
+         ============================================ -->
+    <div class="page">
+        <h3>Calculo del Calor Especifico</h3>
+
+        <p>Aplicando conservacion de la energia (calor cedido = calor absorbido):</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Balance de Energia</div>
+            <div class="ecuacion">m<sub>metal</sub> × c<sub>metal</sub> × (T<sub>f</sub> - T<sub>i,metal</sub>) +
+                m<sub>agua</sub> × c<sub>agua</sub> × (T<sub>f</sub> - T<sub>i,agua</sub>) = 0</div>
+        </div>
+
+        <p>Despejando c<sub>metal</sub>:</p>
+
+        <div class="formula-destacada">
+            <div class="nombre">Calor Especifico del Metal</div>
+            <div class="ecuacion">c<sub>metal</sub> = m<sub>agua</sub> × c<sub>agua</sub> × (T<sub>f</sub> -
+                T<sub>i,agua</sub>) / [m<sub>metal</sub> × (T<sub>i,metal</sub> - T<sub>f</sub>)]</div>
+        </div>
+
+        <table>
+            <tr>
+                <th>Metal</th>
+                <th>Calor Especifico Teorico (J/kg·K)</th>
+            </tr>
+            <tr>
+                <td>Aluminio</td>
+                <td>~900</td>
+            </tr>
+            <tr>
+                <td>Cobre</td>
+                <td>~385</td>
+            </tr>
+            <tr>
+                <td>Hierro</td>
+                <td>~450</td>
+            </tr>
+        </table>
+
+        <div class="capsula secundaria mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-diploma.png" alt="Diploma">
+                </div>
+                <div class="titulo">Conclusion</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Este experimento demuestra el principio de <strong>equilibrio termico</strong> y permite medir una
+                    propiedad caracteristica del material (su calor especifico) aplicando directamente la
+                    <strong>Primera Ley</strong> (conservacion de la energia). El metal y el agua llegan a la misma
+                    temperatura final, pero la cantidad de calor cedida por uno es igual a la ganada por el otro.
+                </p>
+            </div>
+        </div>
+
+        <div class="nota-alerta mt-3">
+            <p><strong>Fuentes de error:</strong> Perdidas de calor al ambiente, calor absorbido por el recipiente,
+                termometro no leido en el instante correcto. Un buen calorimetro deberia darte un valor cercano al
+                teorico (dentro de 5-10% de error).</p>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">16</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 17: INFOGRAFIA
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-layout.png" alt="Layout">
+                </div>
+                <div class="titulo">Infografia</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Resumen visual de los conceptos clave de Termodinamica y Gestion Energetica</p>
+            </div>
+        </div>
+
+        <img src="imagenes/infografia-termodinamica-completa.jpg" alt="Infografía completa de termodinámica"
+            class="imagen-contenido" style="width: 100%; max-height: 180mm; object-fit: contain; border-radius: 8px;">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">17</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 18: CONCLUSION
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-diploma.png" alt="Diploma">
+                </div>
+                <div class="titulo">Conclusion</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Sintesis de los conocimientos adquiridos y su relevancia en el mundo actual.</p>
+            </div>
+        </div>
+
+        <p>En esta unidad, hemos construido una comprension integrada de la <strong>termodinamica clasica</strong> y su
+            importancia practica.</p>
+
+        <h4>Lo que aprendimos:</h4>
+        <ul>
+            <li>Diferenciamos <strong>calor y temperatura</strong> - el calor es energia en transito, no algo contenido.
+            </li>
+            <li>Exploramos como medimos la temperatura en diferentes <strong>escalas</strong>.</li>
+            <li>Estudiamos como los materiales responden al calor <strong>expandiendose</strong>.</li>
+            <li>Analizamos como viaja la energia termica: <strong>conduccion, conveccion y radiacion</strong>.</li>
+            <li>Aplicamos la <strong>calorimetria</strong> para predecir temperaturas de equilibrio.</li>
+            <li>Comprendimos el <strong>calor latente</strong> en transiciones de fase.</li>
+            <li>Afianzamos los principios de las <strong>Leyes de la Termodinamica</strong>.</li>
+        </ul>
+
+        <h4 class="mt-3">Conexion con el mundo actual:</h4>
+        <p>Entendemos por que un <strong>coche electrico</strong> es mas eficiente que uno de gasolina; como el mismo
+            principio que limita la eficiencia de un motor explica el <strong>calentamiento global</strong>; como la
+            gestion termica es crucial en tecnologia de punta (refrigeracion de CPUs, conservacion de energia en
+            edificios).</p>
+
+        <div class="capsula exito mt-3">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-engranaje.png" alt="Engranaje">
+                </div>
+                <div class="titulo">Sintesis Final</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>La <strong>gestion energetica</strong> se basa en aplicar inteligentemente la termodinamica: aumentar
+                    eficiencias para requerir menos energia, aprovechar mejor la energia disponible y minimizar la
+                    disipacion inutil. La termodinamica nos brinda tanto <strong>leyes universales</strong> (que ningun
+                    invento puede violar) como <strong>herramientas de analisis</strong> para innovar dentro de esos
+                    limites.</p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">18</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 19: PROFESIONALES CON VALOR
+         ============================================ -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-graduado.png" alt="Graduado">
+                </div>
+                <div class="titulo">Profesionales con Valor</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Cientificos e ingenieros cuyo aporte a la termodinamica tiene gran valor en nuestra sociedad.</p>
+            </div>
+        </div>
+
+        <h4>Sadi Carnot (1796-1832)</h4>
+        <p>Considerado el "padre" de la termodinamica. Analizo el rendimiento de los motores de vapor y establecio el
+            concepto de <strong>ciclo de Carnot</strong> y eficiencia maxima teorica, sentando la Segunda Ley antes de
+            que se formulara formalmente.</p>
+
+        <h4 class="mt-3">James Prescott Joule (1818-1889)</h4>
+        <p>Fisico ingles que demostro la <strong>equivalencia entre trabajo mecanico y calor</strong>. Sus hallazgos
+            consolidaron la Primera Ley. La unidad de energia (joule) lleva su nombre.</p>
+
+        <h4 class="mt-3">Emily Warren Roebling (1843-1903)</h4>
+        <p>Ingeniera "de facto" del <strong>Puente de Brooklyn</strong>. Lidio con desafios termodinamicos indirectos:
+            dilatacion termica de cables, resistencia de materiales a cambios de temperatura. Un ejemplo de como
+            integrar teoria y practica.</p>
+
+        <h4 class="mt-3">Ingenieros en Energia y Medio Ambiente (Siglo XXI)</h4>
+        <p>Hoy, profesionales multidisciplinarios trabajan para mejorar la eficiencia energetica: ingenieros mecanicos
+            disenan turbinas eficientes, ingenieros quimicos desarrollan procesos con recuperacion de calor, cientificos
+            atmosfericos como <strong>Dr. Syukuro Manabe</strong> (Premio Nobel 2021) integran principios termodinamicos
+            en modelos climaticos.</p>
+
+        <div class="nota-exito mt-3">
+            <p><strong>Tu turno:</strong> La formacion en estos conceptos te permitira unirte a ese extenso equipo de
+                mentes que entienden y aplican las leyes del calor para crear un mundo mejor. ¡La siguiente persona con
+                valor podrias ser tu!</p>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">19</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 20: PRACTICAS INTEGRADORAS
+         ============================================ -->
+    <div class="page">
+        <div class="capsula exito">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-engranaje.png" alt="Engranaje">
+                </div>
+                <div class="titulo">Practicas Integradoras</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Ejercicios que combinan varios conceptos de la unidad para poner a prueba lo aprendido.</p>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">1</div>
+                <div class="titulo">Mezcla de Liquidos a Distintas Temperaturas</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Tienes 2 kg de agua a 80 °C y 3 kg de agua a 20 °C. Los mezclas en un recipiente aislado.</p>
+                    <p><strong>a)</strong> ¿Que temperatura final esperas?</p>
+                    <p><strong>b)</strong> ¿Cuanto calor cedio el agua caliente y cuanto gano la fria?</p>
+                    <p><strong>c)</strong> Si en lugar de agua fria fuera aceite (3 kg a 20 °C, con c ≈ 2000 J/kg·K),
+                        ¿seria la temperatura final mas alta o mas baja?</p>
+                </div>
+                <div class="espacio-respuesta grande"></div>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">2</div>
+                <div class="titulo">Diseno de Junta de Expansion</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Una viga de acero de 15 m a 10 °C puede alcanzar 40 °C en verano (α = 12×10⁻⁶/°C).</p>
+                    <p><strong>a)</strong> ¿En cuanto se alarga?</p>
+                    <p><strong>b)</strong> Si el puente tiene tramos de 30 m, ¿de que tamano minimo debe ser la junta?
+                    </p>
+                    <p><strong>c)</strong> ¿Que podria suceder si la junta es insuficiente?</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">20</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 21: PRACTICAS INTEGRADORAS (CONT)
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">3</div>
+                <div class="titulo">Analisis de Ciclo de Motor Ideal</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Un motor termico opera entre 600 K y 300 K.</p>
+                    <p><strong>a)</strong> ¿Cual es la eficiencia de Carnot teorica maxima?</p>
+                    <p><strong>b)</strong> Si absorbe 500 J de calor, ¿cual es el trabajo maximo que podria entregar?
+                    </p>
+                    <p><strong>c)</strong> Un motor real tiene 30% de eficiencia. ¿Cuanto trabajo entrega por 500 J? ¿Es
+                        violada la 2ª Ley?</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">4</div>
+                <div class="titulo">Refrigerador Domestico Abierto</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Un refrigerador esta encendido dentro de una cocina aislada.</p>
+                    <p><strong>a)</strong> Si se deja la puerta abierta, ¿que sucede con la temperatura de la cocina?
+                        Explica usando la primera y segunda ley.</p>
+                    <p><strong>b)</strong> ¿Y si en cambio colocas una bolsa de hielo? Analiza la diferencia.</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">5</div>
+                <div class="titulo">Eficiencia de Bomba de Calor</div>
+            </div>
+            <div class="actividad-body">
+                <div class="actividad-instrucciones">
+                    <p>Un climatizador extrae calor del aire exterior a 5 °C para calentar una casa a 20 °C.</p>
+                    <p><strong>a)</strong> ¿Va contra la segunda ley? ¿Por que no la viola?</p>
+                    <p><strong>b)</strong> Si consume 1 kWh electrico y provee 3 kWh de calor, ¿cuanto extrajo del
+                        exterior?</p>
+                    <p><strong>c)</strong> Calcula el COP (coeficiente de rendimiento).</p>
+                </div>
+                <div class="espacio-respuesta"></div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">21</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 22: RECURSOS
+         ============================================ -->
+    <div class="page">
+        <div class="capsula">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-documento.png" alt="Documento">
+                </div>
+                <div class="titulo">Recursos</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Material complementario para profundizar en los temas de esta unidad.</p>
+            </div>
+        </div>
+
+        <div class="lista-materiales">
+            <h4>Recursos en Linea</h4>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>Khan Academy (Termodinamica):</strong> Videos y ejercicios interactivos en espanol.</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>OpenStax University Physics vol.2:</strong> Libro abierto con capitulos de
+                    termodinamica.</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>PhET - "Formas y Cambios de Energia":</strong> Simulacion interactiva gratuita.</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>El Fisico Loco (Blog):</strong> Entrada "Calor especifico y calores latentes".</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>QuantumFracture (YouTube):</strong> "Leyes de la termodinamica en 5 minutos".</span>
+            </div>
+        </div>
+
+        <div class="lista-materiales mt-3">
+            <h4>Tablas de Propiedades Termicas</h4>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>Conductividades termicas:</strong> Plata 430 W/mK, Cobre 400 W/mK, Aire 0.026 W/mK</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>HyperPhysics:</strong> Recurso en ingles con datos y calculadoras interactivas.</span>
+            </div>
+        </div>
+
+        <div class="lista-materiales mt-3">
+            <h4>Software de Simulacion</h4>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>Energy2D (Concord Consortium):</strong> Simulacion 2D de transferencia de calor.</span>
+            </div>
+            <div class="material-item">
+                <div class="material-check"></div>
+                <span><strong>SimScale:</strong> Herramienta online de simulacion CFD y termica.</span>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">22</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 23: MINI ACTIVIDADES
+         ============================================ -->
+    <div class="page">
+        <div class="capsula secundaria">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-lista.png" alt="Lista">
+                </div>
+                <div class="titulo">Mini Actividades</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Ejercicios rapidos para reforzar conceptos clave en escenarios simples.</p>
+            </div>
+        </div>
+
+        <div class="nota-info">
+            <p><strong>Mini-actividad 1:</strong> Verdadero o falso: "Dos objetos a la misma temperatura tienen la misma
+                cantidad de calor". Justifica brevemente tu respuesta.</p>
+        </div>
+
+        <div class="nota-info mt-2">
+            <p><strong>Mini-actividad 2:</strong> Si tomas una cucharilla de metal y una de madera, ambas a temperatura
+                ambiente, e introduces sus extremos en cafe caliente, ¿cual sentiras caliente primero? ¿Por que?</p>
+        </div>
+
+        <div class="nota-info mt-2">
+            <p><strong>Mini-actividad 3:</strong> Tienes ollas de hierro fundido, aluminio y acero inoxidable (misma
+                masa). ¿Cual calentara el agua mas rapido? Explica considerando capacidad calorifica y conductividad.
+            </p>
+        </div>
+
+        <div class="nota-info mt-2">
+            <p><strong>Mini-actividad 4:</strong> Predice que le pasa a un globo inflado si lo metes al congelador 10
+                minutos y luego lo sacas. Aplica la ley cero y la dilatacion de gases.</p>
+        </div>
+
+        <div class="nota-info mt-2">
+            <p><strong>Mini-actividad 5:</strong> Lista tres situaciones de tu vida cotidiana donde notes efectos de la
+                dilatacion termica.</p>
+        </div>
+
+        <div class="nota-info mt-2">
+            <p><strong>Mini-actividad 6:</strong> Investiga cuanta energia (en kJ) se requiere para hervir completamente
+                1 L de agua a 100 °C. Usa L<sub>v</sub> del agua y recuerda que primero hay que llevarla de 20 °C a 100
+                °C.</p>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">23</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 24: TIP EXTRA
+         ============================================ -->
+    <div class="page">
+        <div class="capsula acento">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-clip.png" alt="Clip">
+                </div>
+                <div class="titulo">Tip Extra</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>Recomendaciones profesionales para dominar la termodinamica.</p>
+            </div>
+        </div>
+
+        <div class="nota-alerta">
+            <p><strong>Equilibrio de unidades y conversiones:</strong> Lleva todo al SI (joules, kelvins, kg) en las
+                formulas. Si un ejercicio te da calorias, convierte a joules (1 cal = 4.1868 J). Para temperaturas en
+                formulas de Carnot, usa <strong>Kelvin</strong>. Olvidar sumar 273.15 podria llevarte a eficiencias
+                mayores al 100% (¡imposibles!).</p>
+        </div>
+
+        <div class="nota-info mt-3">
+            <p><strong>Truco de signos en calorimetria:</strong> Cuando plantees Q<sub>cedido</sub> +
+                Q<sub>absorbido</sub> = 0, una forma segura es: "calor perdido = calor ganado" en magnitud. Si obtienes
+                un c negativo, ¡sospecha de un error de signo!</p>
+        </div>
+
+        <div class="nota-exito mt-3">
+            <p><strong>Regla mnemotecnica para la 2ª Ley:</strong> "No existe almuerzo gratis" - no puedes obtener
+                trabajo sin gastar energia. O tambien: "You can't unscramble an egg" - una vez aumenta la entropia
+                (huevo revuelto), no vuelve solo a ordenarse.</p>
+        </div>
+
+        <div class="esquema mt-3">
+            <div class="esquema-header">Cuidando el medioambiente con termodinamica</div>
+            <div class="esquema-body">
+                <p>Un tip aplicado: cuando hiervas agua para un te, hierve solo la que necesitas y apaga en cuanto rompa
+                    hervor. El exceso de agua y el mantener ebullicion innecesariamente gastan mucha energia en
+                    <strong>calor latente</strong> para evaporarla.
+                </p>
+                <p>A escala global, gestos asi ahorran una cantidad de energia sorprendente. La termodinamica te ensena
+                    a ser eficiente tambien en casa.</p>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">24</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 25: RETO DIGITAL
+         ============================================ -->
+    <div class="page">
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="icono" style="background: transparent;">
+                    <img src="imagenes/icono-circuito.png" alt="Circuito"
+                        style="width: 20px; filter: brightness(0) invert(1);">
+                </div>
+                <div class="titulo">Reto Digital: Diseno de Refrigerador Pasivo</div>
+            </div>
+            <div class="actividad-body">
+                <h4>Proyecto Final - Diseno Asistido por Simulacion</h4>
+
+                <p><strong>Reto:</strong> Disena un <strong>refrigerador portatil pasivo</strong> (tipo cooler) de
+                    maxima eficiencia, utilizando simulacion computacional para probar distintas configuraciones.</p>
+
+                <p><strong>Contexto:</strong> Imagina que debes mantener frias unas bebidas durante un dia de campo, sin
+                    electricidad. Quieres que el hielo dure el mayor tiempo posible.</p>
+
+                <h4 class="mt-3">Instrucciones:</h4>
+                <ol>
+                    <li><strong>Planteamiento:</strong> Define el problema en terminos termodinamicos. ¿Que vias de
+                        transferencia de calor debes minimizar?</li>
+                    <li><strong>Seleccion de materiales:</strong> Investiga conductividades termicas de EPS,
+                        poliuretano, aerogel. ¿Usaras lamina reflectiva?</li>
+                    <li><strong>Simulacion:</strong> Usa Energy2D o similar para modelar la tasa de fusion del hielo en
+                        distintas configuraciones.</li>
+                    <li><strong>Analisis:</strong> Compara variantes: aislante mas grueso vs mas fino, con vs sin capa
+                        reflectante.</li>
+                    <li><strong>Optimizacion:</strong> Determina el diseno mas eficiente considerando peso, costo y
+                        volumen util.</li>
+                </ol>
+
+                <h4 class="mt-3">Entregables:</h4>
+                <ul>
+                    <li>Descripcion del modelo y supuestos</li>
+                    <li>Capturas o graficos de la simulacion</li>
+                    <li>Tabla comparativa de configuraciones</li>
+                    <li>Diseno final propuesto con diagrama</li>
+                    <li>Discusion conectando con conceptos de la unidad</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">25</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PAGINA 26: RETO DIGITAL (CONTINUACION)
+         ============================================ -->
+    <div class="page">
+        <h3>Criterios de Evaluacion del Reto Digital</h3>
+
+        <table>
+            <tr>
+                <th>Dimension</th>
+                <th>Pts</th>
+                <th>Criterios</th>
+            </tr>
+            <tr>
+                <td><strong>Aplicacion de conceptos</strong></td>
+                <td>20</td>
+                <td>Correcta aplicacion de principios termodinamicos</td>
+            </tr>
+            <tr>
+                <td><strong>Uso de simulacion</strong></td>
+                <td>15</td>
+                <td>Datos coherentes y analisis de resultados</td>
+            </tr>
+            <tr>
+                <td><strong>Creatividad en diseno</strong></td>
+                <td>10</td>
+                <td>Soluciones innovadoras y justificadas</td>
+            </tr>
+            <tr>
+                <td><strong>Argumentacion</strong></td>
+                <td>10</td>
+                <td>Claridad en la explicacion cientifico-tecnica</td>
+            </tr>
+            <tr>
+                <td><strong>Consideraciones practicas</strong></td>
+                <td>5</td>
+                <td>Costo, materiales, impacto ambiental</td>
+            </tr>
+        </table>
+
+        <div class="capsula exito mt-4">
+            <div class="capsula-etiqueta">
+                <div class="icono">
+                    <img src="imagenes/icono-engranaje.png" alt="Engranaje">
+                </div>
+                <div class="titulo">Mensaje Final</div>
+            </div>
+            <div class="capsula-contenido">
+                <p>¡Mucho exito! Al completar este proyecto habras dado un gran paso de ser un estudiante que resuelve
+                    ejercicios a un joven cientifico/ingeniero que aplica lo aprendido para crear soluciones.</p>
+                <p>El dominio de herramientas digitales de simulacion y la integracion de teoria con practica son
+                    habilidades valiosas en los desafios del mundo actual.</p>
+                <p><strong>¡Adelante, a enfriar esas ideas con calor de ingenio!</strong></p>
+            </div>
+        </div>
+
+        <img src="imagenes/diagrama-refrigerador-pasivo.png" alt="Diagrama de refrigerador pasivo"
+            class="imagen-contenido mt-4"
+            style="width: 100%; max-height: 70mm; object-fit: contain; border-radius: 8px;">
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">UNIDAD 2</span>
+            <span>Termodinamica y Gestion Energetica</span>
+            <span class="numero-pagina">26</span>
+        </div>
+    </div>
+
+
+    <!-- Web Effects -->
+    <link rel="stylesheet" href="../web-effects.css">
+    <script src="web-effects-u2.js"></script>
+
+    <!-- Back to Home Button -->
+    <a href="../index-web.html" class="back-to-home">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        Inicio
+    </a>
+
+</body>
+
+</html>

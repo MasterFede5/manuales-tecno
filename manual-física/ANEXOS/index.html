@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexos - Manual de Física Albatros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&family=Open+Sans+Condensed:wght@300;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B1F3A;
+            --primary-light: #E6EEF7;
+            --primary-dark: #081325;
+            --secondary-color: #B71C1C;
+            --accent-color: #D32F2F;
+            --success-color: #2E7D32;
+            --text-dark: #1E2A36;
+            --text-light: #607D8B;
+            --white: #FFFFFF;
+            --gray-light: #F5F7FA;
+            --gray-medium: #E0E6ED;
+            --radius-pill: 50px;
+            --radius-card: 12px;
+            --radius-small: 6px;
+            --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @page {
+            size: letter portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            font-size: 10pt;
+            line-height: 14pt;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 215.9mm;
+            height: 279.4mm;
+            padding: 20mm 18mm 18mm 22mm;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24pt;
+            color: var(--primary-color);
+            margin-bottom: 6mm;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16pt;
+            color: var(--secondary-color);
+            margin-bottom: 4mm;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 12pt;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        p {
+            margin-bottom: 3mm;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin-left: 5mm;
+            margin-bottom: 3mm;
+        }
+
+        li {
+            margin-bottom: 1.5mm;
+        }
+
+        .capsula {
+            display: flex;
+            margin-bottom: 5mm;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            page-break-inside: avoid;
+        }
+
+        .capsula-etiqueta {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            min-width: 42mm;
+        }
+
+        .capsula-etiqueta .icono img {
+            width: 18px;
+            height: 18px;
+            filter: brightness(0) invert(1);
+        }
+
+        .capsula-etiqueta .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .capsula-contenido {
+            background: var(--primary-light);
+            padding: 3mm 4mm;
+            flex: 1;
+        }
+
+        .capsula.secundaria .capsula-etiqueta {
+            background: var(--secondary-color);
+        }
+
+        .capsula.acento .capsula-etiqueta {
+            background: var(--accent-color);
+        }
+
+        .actividad {
+            border: 2px solid var(--accent-color);
+            border-radius: var(--radius-card);
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+
+        .actividad-header {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .actividad-header .numero {
+            background: var(--white);
+            color: var(--accent-color);
+            width: 8mm;
+            height: 8mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .actividad-header .titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 11pt;
+        }
+
+        .actividad-body {
+            padding: 4mm;
+            background: #FFF8E1;
+        }
+
+        .espacio-respuesta {
+            border: 1px dashed var(--accent-color);
+            border-radius: var(--radius-small);
+            min-height: 25mm;
+            background: var(--white);
+            padding: 2mm;
+            margin-top: 2mm;
+        }
+
+        .espacio-respuesta.pequeno {
+            min-height: 12mm;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 9pt;
+            line-height: 11pt;
+            margin-bottom: 4mm;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 3mm;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 2mm 3mm;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        tr:nth-child(even) {
+            background: var(--primary-light);
+        }
+
+        .nota-info {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .nota-exito {
+            background: #E8F5E9;
+            border-left: 4px solid var(--success-color);
+            padding: 3mm 4mm;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 3mm 0;
+            font-size: 9pt;
+        }
+
+        .portada {
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 30mm 20mm;
+        }
+
+        .portada h1 {
+            color: var(--white);
+            font-size: 28pt;
+        }
+
+        .portada .subtitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            margin-bottom: 8mm;
+            opacity: 0.9;
+        }
+
+        .portada .logo-placeholder {
+            width: 35mm;
+            height: 35mm;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8mm;
+        }
+
+        .indice-visual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3mm;
+        }
+
+        .indice-item {
+            background: var(--primary-light);
+            border-radius: var(--radius-card);
+            padding: 3mm;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .indice-item.destacado {
+            grid-column: span 2;
+            background: var(--secondary-color);
+            color: var(--white);
+            border-left: none;
+            text-align: center;
+        }
+
+        .indice-item.destacado h3 {
+            color: var(--white);
+        }
+
+        .pie-pagina {
+            position: absolute;
+            bottom: 8mm;
+            left: 22mm;
+            right: 18mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 7pt;
+            color: var(--text-light);
+            border-top: 1px solid var(--gray-medium);
+            padding-top: 2mm;
+        }
+
+        .pie-pagina .unidad-tag {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1mm 2mm;
+            border-radius: var(--radius-pill);
+            font-size: 6pt;
+            font-weight: 600;
+        }
+
+        .numero-pagina {
+            background: var(--gray-light);
+            padding: 1mm 3mm;
+            border-radius: var(--radius-small);
+            font-weight: 600;
+        }
+
+        .text-small {
+            font-size: 8pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PAGINA 1: PORTADA ANEXOS -->
+    <div class="page portada">
+        <h1>ANEXOS</h1>
+        <div class="subtitulo">Información complementaria y banco de ejercicios</div>
+        <div
+            style="background: rgba(255, 255, 255, 0.95); padding: 5mm 8mm; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); margin-bottom: 8mm;">
+            <img src="LOGO.png" alt="Logo Grupo Cultural Albatros" style="height: 22mm; width: auto; display: block;">
+        </div>
+        <p style="max-width: 140mm; font-size: 10pt; opacity: 0.9;">
+            Este apartado reúne tablas útiles, datos curiosos, frases célebres y un banco de ejercicios por tema para
+            reforzar los aprendizajes de las unidades.
+        </p>
+    </div>
+
+    <!-- PAGINA 2: INDICE -->
+    <div class="page">
+        <h2>Índice de Anexos</h2>
+        <div class="indice-visual">
+            <div class="indice-item destacado">
+                <h3>Anexos Informativos</h3>
+                <p>Constantes, unidades y fórmulas clave</p>
+            </div>
+            <div class="indice-item">
+                <h3>Datos Curiosos</h3>
+                <p>Hechos sorprendentes de la física</p>
+            </div>
+            <div class="indice-item">
+                <h3>Frases Célebres</h3>
+                <p>Inspiración científica</p>
+            </div>
+            <div class="indice-item">
+                <h3>Banco de Ejercicios</h3>
+                <p>10 ejercicios por tema</p>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Índice</span>
+            <span class="numero-pagina">2</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 3: ANEXOS INFORMATIVOS -->
+    <div class="page">
+        <h2>Anexos Informativos</h2>
+        <h3>Constantes y valores útiles</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Magnitud</th>
+                    <th>Símbolo</th>
+                    <th>Valor aproximado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aceleración gravitatoria</td>
+                    <td>g</td>
+                    <td>9.81 m/s²</td>
+                </tr>
+                <tr>
+                    <td>Densidad del agua</td>
+                    <td>ρ</td>
+                    <td>1000 kg/m³</td>
+                </tr>
+                <tr>
+                    <td>Presión atmosférica</td>
+                    <td>P<sub>atm</sub></td>
+                    <td>101 325 Pa</td>
+                </tr>
+                <tr>
+                    <td>Calor específico del agua</td>
+                    <td>c</td>
+                    <td>4186 J/kg·K</td>
+                </tr>
+                <tr>
+                    <td>Constante de Coulomb</td>
+                    <td>k</td>
+                    <td>9×10⁹ N·m²/C²</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nota-info">
+            <strong>Nota:</strong> Usa valores con unidades coherentes para evitar errores de cálculo.
+        </div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Constantes</span>
+            <span class="numero-pagina">3</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 4: ANEXOS INFORMATIVOS CONT -->
+    <div class="page">
+        <h2>Anexos Informativos</h2>
+        <h3>Fórmulas clave por tema</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tema</th>
+                    <th>Fórmula</th>
+                    <th>Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hidrostática</td>
+                    <td>P = ρ·g·h</td>
+                    <td>Presión en un fluido</td>
+                </tr>
+                <tr>
+                    <td>Hidrodinámica</td>
+                    <td>A₁v₁ = A₂v₂</td>
+                    <td>Continuidad</td>
+                </tr>
+                <tr>
+                    <td>Termodinámica</td>
+                    <td>Q = m·c·ΔT</td>
+                    <td>Calor sensible</td>
+                </tr>
+                <tr>
+                    <td>Cambios de fase</td>
+                    <td>Q = m·L</td>
+                    <td>Calor latente</td>
+                </tr>
+                <tr>
+                    <td>Electricidad</td>
+                    <td>V = I·R</td>
+                    <td>Ley de Ohm</td>
+                </tr>
+                <tr>
+                    <td>Magnetismo</td>
+                    <td>F = B·I·L</td>
+                    <td>Fuerza sobre conductor</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Fórmulas</span>
+            <span class="numero-pagina">4</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 5: DATOS CURIOSOS -->
+    <div class="page">
+        <h2>Datos Curiosos</h2>
+        <ul>
+            <li>El agua puede soportar insectos porque la tensión superficial actúa como “película elástica”.</li>
+            <li>Un tornado puede tener diferencias de presión capaces de levantar techos completos.</li>
+            <li>El hielo es menos denso que el agua, por eso flota y protege la vida en lagos.</li>
+            <li>Un metal se expande al calentarse; por eso los rieles de tren tienen juntas.</li>
+            <li>La energía del Sol que llega a la Tierra en una hora supera el consumo mundial anual.</li>
+            <li>Un cable muy largo puede calentarse solo por efecto Joule aunque no esté “corto”.</li>
+            <li>Los imanes no atraen todos los metales: el aluminio no es ferromagnético.</li>
+            <li>La corriente eléctrica viaja casi a la velocidad de la luz, pero los electrones se mueven lento.</li>
+            <li>Un LED es más eficiente porque convierte más energía en luz que en calor.</li>
+            <li>El sonido no viaja en el vacío, pero la luz sí.</li>
+        </ul>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Datos curiosos</span>
+            <span class="numero-pagina">5</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 6: FRASES CELEBRES -->
+    <div class="page">
+        <h2>Frases Célebres</h2>
+        <div class="nota-info">“La imaginación es más importante que el conocimiento.” — Albert Einstein</div>
+        <div class="nota-info">“Lo que no se mide, no se puede mejorar.” — Lord Kelvin</div>
+        <div class="nota-info">“La ciencia es una forma de pensar, mucho más que un cuerpo de conocimientos.” — Carl
+            Sagan</div>
+        <div class="nota-info">“Nada en la vida debe ser temido, solo comprendido.” — Marie Curie</div>
+        <div class="nota-info">“El objetivo principal de la educación es crear personas capaces de hacer cosas nuevas.”
+            — Jean Piaget</div>
+        <div class="nota-info">“La simplicidad es el último grado de sofisticación.” — Leonardo da Vinci</div>
+
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Frases célebres</span>
+            <span class="numero-pagina">6</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 7: EJERCICIOS HIDROSTATICA -->
+    <div class="page">
+        <h2>Ejercicios - Hidrostática</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Calcula la presión manométrica a 8 m de profundidad en agua.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> Una placa de 0.2 m² está a 5 m de profundidad. ¿Qué fuerza
+                    ejerce el agua?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Compara la presión a 3 m en agua y en aceite (ρ = 850 kg/m³).
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Una prensa hidráulica tiene A1 = 5 cm² y A2 = 200 cm². Si
+                    aplicas 120 N, ¿qué fuerza sale?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> Calcula el empuje sobre un objeto que desplaza 0.015 m³ de
+                    agua.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Un bloque de madera (ρ = 600 kg/m³) se coloca en agua. ¿Flota
+                    o se hunde?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿En qué tubo sube más el agua por capilaridad: radio 1 mm o 2
+                    mm?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> Explica la paradoja hidrostática en recipientes con forma
+                    distinta pero misma altura.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> Calcula la presión absoluta a 10 m si P<sub>atm</sub> = 101
+                    kPa.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Por qué las presas son más gruesas en la base?</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Hidrostática</span>
+            <span class="numero-pagina">7</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 8: EJERCICIOS HIDRODINAMICA -->
+    <div class="page">
+        <h2>Ejercicios - Hidrodinámica</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Un tubo se estrecha de 6 cm a 3 cm de diámetro. Si v1 = 2 m/s,
+                    calcula v2.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> Aplica Bernoulli para estimar la diferencia de presión entre
+                    dos puntos con distinta altura.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> En un Venturi, la presión baja 5000 Pa. ¿Qué indica esto sobre
+                    la velocidad?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Calcula el caudal si el área es 0.01 m² y la velocidad 3 m/s.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> ¿Qué sucede con la presión cuando el fluido acelera?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Un flujo tiene Re = 2500. ¿Es laminar o turbulento?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> Menciona dos efectos negativos de la cavitación en bombas.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> Explica por qué un avión genera sustentación usando Bernoulli.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> ¿Cómo cambia el flujo si duplicas el diámetro de una tubería?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Qué relación hay entre viscosidad y pérdida de energía?</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Hidrodinámica</span>
+            <span class="numero-pagina">8</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 9: EJERCICIOS SISTEMAS HIDRAULICOS -->
+    <div class="page">
+        <h2>Ejercicios - Sistemas Hidráulicos y Robótica Blanda</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Un pistón de 30 cm² soporta 600 N. ¿Qué presión se aplica?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> ¿Por qué el aire atrapado reduce la precisión hidráulica?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Calcula la fuerza en un pistón de 200 cm² con presión de 150
+                    kPa.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Menciona dos ventajas de la hidráulica frente a la neumática.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> ¿Qué función cumple un acumulador hidráulico?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Describe cómo se mueve un actuador PneuNet al presurizarlo.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> Un FSR cambia su resistencia con la fuerza. ¿Cómo se lee en
+                    Arduino?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> Dibuja un esquema básico para controlar una válvula solenoide
+                    con relé.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> ¿Qué material es común en robótica blanda y por qué?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> Menciona dos riesgos de seguridad en sistemas hidráulicos.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Sistemas Hidráulicos</span>
+            <span class="numero-pagina">9</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 10: EJERCICIOS CALOR Y TEMPERATURA -->
+    <div class="page">
+        <h2>Ejercicios - Calor y Temperatura</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Explica la diferencia entre calor y temperatura.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> Convierte 25 °C a Kelvin.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Convierte 68 °F a °C.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Dos objetos en contacto llegan a 40 °C. ¿Qué ley se cumple?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> ¿Por qué una cuchara metálica se siente más fría que una de
+                    madera?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Define calor específico con tus palabras.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿Cuál es la unidad SI de temperatura?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> Un objeto aumenta 15 °C. ¿Qué indica ese cambio?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> ¿Por qué un metal se dilata al calentarse?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Puede un objeto tener calor si su temperatura es baja?
+                    Explica.</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Calor y Temperatura</span>
+            <span class="numero-pagina">10</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 11: EJERCICIOS PROPAGACION DEL CALOR -->
+    <div class="page">
+        <h2>Ejercicios - Propagación del Calor</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Identifica el mecanismo dominante al tocar una sartén
+                    caliente.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> ¿Por qué el aire caliente sube en una habitación?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Explica cómo actúa la radiación en un horno solar.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Menciona dos materiales buenos aislantes térmicos.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> ¿Qué ocurre con la transferencia de calor si aumenta el área?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> ¿Por qué una casa con ventanas dobles pierde menos calor?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿Cómo se reduce la convección en un termo?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> Da un ejemplo cotidiano de radiación térmica.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> ¿Por qué el metal transmite calor más rápido que la madera?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> Explica el papel de las aletas en un disipador de calor.</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Propagación del calor</span>
+            <span class="numero-pagina">11</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 12: EJERCICIOS CALORIMETRIA -->
+    <div class="page">
+        <h2>Ejercicios - Calorimetría</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Calcula el calor necesario para elevar 2 kg de agua 10 °C.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> ¿Qué temperatura final resulta al mezclar agua a 80 °C con
+                    agua a 20 °C (masas iguales)?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Un metal de 0.5 kg sube 25 °C y absorbe 6 kJ. ¿Cuál es su c?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> ¿Por qué se igualan temperaturas en una mezcla aislada?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> Calcula el calor cedido por 1 kg de agua que baja de 70 °C a
+                    30 °C.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> ¿Qué masa de agua se calienta 5 °C con 10 kJ?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> Explica por qué el hielo puede absorber mucho calor sin subir
+                    de 0 °C.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> ¿Qué ocurre si el calorímetro no está aislado?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> Un bloque caliente calienta aceite. ¿Qué variable cambia
+                    primero?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> Diferencia entre calor específico y capacidad calorífica.</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Calorimetría</span>
+            <span class="numero-pagina">12</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 13: EJERCICIOS CAMBIOS DE FASE -->
+    <div class="page">
+        <h2>Ejercicios - Cambios de Fase</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Calcula la energía para fundir 0.4 kg de hielo (L = 334
+                    kJ/kg).</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> ¿Por qué la temperatura permanece constante durante un cambio
+                    de fase?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> ¿Cuánta energía se requiere para evaporar 0.2 kg de agua (L =
+                    2260 kJ/kg)?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Explica la diferencia entre fusión y vaporización.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> ¿Qué sucede con la presión de vapor al aumentar la
+                    temperatura?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Describe un ejemplo cotidiano de sublimación.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿Por qué sudar ayuda a enfriar el cuerpo?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> ¿Qué ocurre si agregas sal al hielo en un sistema térmico?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> Explica el concepto de calor latente.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Qué fase tiene mayor orden: sólido o gas? Justifica.</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Cambios de fase</span>
+            <span class="numero-pagina">13</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 14: EJERCICIOS LEYES TERMODINAMICA -->
+    <div class="page">
+        <h2>Ejercicios - Leyes de la Termodinámica</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Enuncia la primera ley de la termodinámica con tus palabras.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> Un gas recibe 500 J y realiza 200 J de trabajo. ¿Cómo cambia
+                    su energía interna?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Explica por qué no existe una máquina con 100% de eficiencia.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> ¿Qué expresa la segunda ley sobre la entropía?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> Calcula la eficiencia de Carnot entre 500 K y 300 K.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> ¿Qué diferencia hay entre motor térmico y refrigerador?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> Da un ejemplo cotidiano donde aumente la entropía.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> ¿Puede un refrigerador enfriar una habitación si la puerta
+                    está abierta?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> Explica el significado de “no existe almuerzo gratis” en
+                    termodinámica.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Cómo se relaciona la segunda ley con la eficiencia
+                    energética?</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Leyes de la termodinámica</span>
+            <span class="numero-pagina">14</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 15: EJERCICIOS EFICIENCIA ENERGETICA -->
+    <div class="page">
+        <h2>Ejercicios - Eficiencia y Gestión Energética</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Calcula la eficiencia de una máquina que entrega 600 W y
+                    consume 900 W.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> ¿Por qué es mejor usar LED que focos incandescentes?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Un equipo consume 1.2 kW por 4 h diarias. ¿Cuánta energía usa
+                    al mes?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Menciona dos hábitos domésticos para ahorrar energía.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> ¿Qué relación tiene la eficiencia con el cambio climático?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Explica el concepto de COP en una bomba de calor.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿Cómo reduce pérdidas eléctricas el uso de alto voltaje?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> ¿Qué significa “gestión energética” en un edificio?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> ¿Qué indicador usarías para comparar dos motores eléctricos?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> Describe una mejora para reducir pérdidas en una planta
+                    industrial.</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Eficiencia energética</span>
+            <span class="numero-pagina">15</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 16: EJERCICIOS ELECTROSTATICA -->
+    <div class="page">
+        <h2>Ejercicios - Electrostática</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Explica cómo se carga un objeto por frotamiento.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> Dos cargas iguales se repelen con 0.2 N. ¿Qué sucede si se
+                    duplica la distancia?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Calcula la fuerza entre 2 μC separados 0.05 m.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> ¿Qué es un campo eléctrico y cómo se representa?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> Una carga positiva entra en un campo uniforme. ¿En qué
+                    dirección se mueve?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Explica el proceso de carga por inducción.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿Qué es el potencial eléctrico?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> ¿Por qué los globos se pegan a la pared después de frotarlos?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> Describe una aplicación de la electrostática en tecnología.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Qué precaución se usa para evitar descargas electrostáticas
+                    en laboratorios?</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Electrostática</span>
+            <span class="numero-pagina">16</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 17: EJERCICIOS ELECTRODINAMICA -->
+    <div class="page">
+        <h2>Ejercicios - Electrodinámica y Circuitos</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Calcula la corriente en un resistor de 12 Ω con 24 V.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> Dos resistencias de 10 Ω en serie. ¿Cuál es la resistencia
+                    equivalente?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Dos resistencias de 6 Ω en paralelo. ¿Cuál es la resistencia
+                    equivalente?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> ¿Qué indica la primera ley de Kirchhoff?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> Calcula la potencia en un circuito con V = 12 V e I = 2 A.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> ¿Qué ocurre si duplicas la resistencia manteniendo el voltaje?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿Para qué se usa un fusible en un circuito?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> Menciona una diferencia entre corriente continua y alterna.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> Dibuja un circuito básico con batería, interruptor y foco.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Qué significa cortocircuito y por qué es peligroso?</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Electrodinámica</span>
+            <span class="numero-pagina">17</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 18: EJERCICIOS MAGNETISMO -->
+    <div class="page">
+        <h2>Ejercicios - Magnetismo</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Describe la forma del campo magnético de un imán de barra.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> ¿Cómo se determina la dirección del campo en un conductor con
+                    corriente?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> Calcula la fuerza sobre un conductor con I = 3 A en un campo
+                    de 0.5 T y L = 0.2 m.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> ¿Qué es un electroimán y de qué depende su fuerza?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> Explica la diferencia entre imanes permanentes y temporales.
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> ¿Por qué el hierro es atraído por los imanes?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> Menciona una aplicación del magnetismo en la vida diaria.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> ¿Qué relación tiene el magnetismo con los motores eléctricos?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> Describe el efecto del campo magnético sobre una carga en
+                    movimiento.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Qué papel juega el núcleo en un electroimán?</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Magnetismo</span>
+            <span class="numero-pagina">18</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 19: EJERCICIOS INDUCCION -->
+    <div class="page">
+        <h2>Ejercicios - Inducción Electromagnética</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> Explica la ley de Faraday con tus palabras.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> ¿Qué indica la ley de Lenz sobre el sentido de la corriente
+                    inducida?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> ¿Cómo aumenta el voltaje inducido en una bobina?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Describe cómo funciona un generador eléctrico básico.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> ¿Qué diferencia existe entre un generador y un motor?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Explica el principio de un transformador.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿Por qué se usa alto voltaje en transmisión eléctrica?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> ¿Qué ocurre si detienes el imán dentro de una bobina?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> Menciona una aplicación de la inducción en la vida diaria.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> ¿Qué es el flujo magnético?</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Inducción electromagnética</span>
+            <span class="numero-pagina">19</span>
+        </div>
+    </div>
+
+    <!-- PAGINA 20: EJERCICIOS CONECTIVIDAD E IOT -->
+    <div class="page">
+        <h2>Ejercicios - Conectividad e IoT</h2>
+        <div class="actividad">
+            <div class="actividad-header">
+                <div class="numero">10</div>
+                <div class="titulo">Banco de ejercicios</div>
+            </div>
+            <div class="actividad-body">
+                <p class="text-small"><strong>1.</strong> ¿Qué significa IoT y qué lo diferencia de un dispositivo
+                    aislado?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>2.</strong> Menciona dos protocolos de comunicación usados en IoT.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>3.</strong> ¿Qué sensor usarías para medir humedad del suelo y por qué?
+                </p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>4.</strong> Define un ejemplo de sistema inteligente en casa.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>5.</strong> ¿Por qué es importante la seguridad en redes IoT?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>6.</strong> Explica qué es un dashboard de monitoreo.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>7.</strong> ¿Qué sucede si el sensor envía datos erróneos?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>8.</strong> Propón una forma de ahorrar energía en un nodo IoT.</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>9.</strong> ¿Qué es el setpoint en un sistema conectado?</p>
+                <div class="espacio-respuesta pequeno"></div>
+                <p class="text-small"><strong>10.</strong> Diseña un flujo básico de datos: sensor → microcontrolador →
+                    nube → app.</p>
+                <div class="espacio-respuesta pequeno"></div>
+            </div>
+        </div>
+        <div class="pie-pagina">
+            <span class="unidad-tag">ANEXOS</span>
+            <span>Conectividad e IoT</span>
+            <span class="numero-pagina">20</span>
+        </div>
+    </div>
+
+    <!-- Web Effects -->
+    <link rel="stylesheet" href="../web-effects.css">
+    <script src="web-effects-anexos.js"></script>
+
+    <!-- Back to Home Button -->
+    <a href="../index-web.html" class="back-to-home">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        Inicio
+    </a>
+
+</body>
+
+</html>
