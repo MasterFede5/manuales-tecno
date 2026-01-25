@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Cultural Albatros - Preparatoria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #1a1a2e 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Partículas de fondo */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Logo Watermark */
+        .logo-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            max-width: 80vw;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 1;
+            filter: brightness(1.2);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #fff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        /* Contenedor principal del carrusel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            padding: 40px 0 80px;
+            z-index: 10;
+        }
+
+        /* Scroll horizontal */
+        .carousel {
+            display: flex;
+            gap: 40px;
+            padding: 40px 80px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Tarjetas de cristal */
+        .card {
+            flex: 0 0 320px;
+            height: 420px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transition: left 0.7s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 255, 255, 0.1),
+                inset 0 0 60px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Icono de la tarjeta */
+        .card-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1);
+        }
+
+        .card-icon svg {
+            width: 50px;
+            height: 50px;
+            fill: #fff;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        /* Colores específicos por materia */
+        .card.fisica .card-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .card.fisica:hover {
+            border-color: rgba(102, 126, 234, 0.5);
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(102, 126, 234, 0.3);
+        }
+
+        .card.quimica .card-icon {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            box-shadow: 0 10px 30px rgba(17, 153, 142, 0.4);
+        }
+
+        .card.quimica:hover {
+            border-color: rgba(56, 239, 125, 0.5);
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(56, 239, 125, 0.3);
+        }
+
+        .card.empty .card-icon {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .card.empty {
+            cursor: default;
+            opacity: 0.5;
+        }
+
+        .card.empty:hover {
+            transform: none;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: none;
+        }
+
+        /* Contenido de la tarjeta */
+        .card-content {
+            text-align: center;
+            padding: 0 30px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .card-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .card.fisica .card-badge {
+            background: rgba(102, 126, 234, 0.2);
+            color: #a5b4fc;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .card.quimica .card-badge {
+            background: rgba(56, 239, 125, 0.2);
+            color: #6ee7b7;
+            border: 1px solid rgba(56, 239, 125, 0.3);
+        }
+
+        .card.empty .card-badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card:hover .card-badge {
+            transform: scale(1.05);
+        }
+
+        /* Indicador de scroll */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            animation: slideRight 1.5s infinite;
+        }
+
+        @keyframes slideRight {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+
+        /* Efecto de brillo en los bordes */
+        .glow-border {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 26px;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .card:hover .glow-border {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            .header p {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+
+            .logo-watermark {
+                width: 300px;
+            }
+
+            .carousel {
+                padding: 20px 30px;
+                gap: 25px;
+            }
+
+            .card {
+                flex: 0 0 280px;
+                height: 380px;
+            }
+
+            .card-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .card-icon svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Cursor personalizado */
+        .card:not(.empty) {
+            cursor: pointer;
+        }
+
+        .card:not(.empty):active {
+            transform: translateY(-10px) scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Logo Watermark -->
+    <img src="LOGO.png" alt="Logo Albatros" class="logo-watermark">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Grupo Cultural Albatros</h1>
+        <p>Preparatoria - Selecciona un manual</p>
+    </header>
+
+    <!-- Carrusel de tarjetas -->
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+
+            <!-- Tarjeta Física -->
+            <a href="manual-física/unidad 1/index.html" class="card fisica">
+                <div class="glow-border"></div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="none"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                        <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(60 12 12)"/>
+                        <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(120 12 12)"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Física</h2>
+                    <p class="card-description">Explora los fundamentos de la mecánica, energía y movimiento</p>
+                    <span class="card-badge">Acceder</span>
+                </div>
+            </a>
+
+            <!-- Tarjeta Química -->
+            <a href="manual_quimica/manual_quimica_digital.html" class="card quimica">
+                <div class="glow-border"></div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 2v2h1v5.17L3.39 16.7A2.5 2.5 0 0 0 5.5 21h13a2.5 2.5 0 0 0 2.11-4.3L16 9.17V4h1V2H7zm2 2h6v5.83l4.28 7.09c.14.23.22.49.22.77 0 .83-.67 1.5-1.5 1.5h-13c-.83 0-1.5-.67-1.5-1.5 0-.28.08-.54.22-.77L9 9.83V4z" fill="currentColor"/>
+                        <circle cx="10" cy="15" r="1.5" fill="currentColor"/>
+                        <circle cx="14" cy="13" r="1" fill="currentColor"/>
+                        <circle cx="12" cy="17" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Química</h2>
+                    <p class="card-description">Descubre las reacciones, elementos y compuestos químicos</p>
+                    <span class="card-badge">Acceder</span>
+                </div>
+            </a>
+
+            <!-- Tarjeta vacía 1 - Próximamente -->
+            <div class="card empty">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Próximamente</h2>
+                    <p class="card-description">Nuevo manual en desarrollo</p>
+                    <span class="card-badge">En espera</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta vacía 2 - Próximamente -->
+            <div class="card empty">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Próximamente</h2>
+                    <p class="card-description">Nuevo manual en desarrollo</p>
+                    <span class="card-badge">En espera</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta vacía 3 - Próximamente -->
+            <div class="card empty">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Próximamente</h2>
+                    <p class="card-description">Nuevo manual en desarrollo</p>
+                    <span class="card-badge">En espera</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator">
+            <span>Desliza para ver más</span>
+            <svg viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        // Crear partículas de fondo
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Efecto parallax suave en las tarjetas
+        document.querySelectorAll('.card:not(.empty)').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Inicializar
+        createParticles();
+
+        // Scroll con rueda del ratón horizontal
+        const carousel = document.getElementById('carousel');
+        carousel.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                carousel.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
