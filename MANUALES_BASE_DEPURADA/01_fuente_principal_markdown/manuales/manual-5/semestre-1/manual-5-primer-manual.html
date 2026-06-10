@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manual 5 IA con Programacion - Primer manual</title>
+  <link rel="stylesheet" href="../../primer-manual.css">
+</head>
+<body>
+  <section class="page cover">
+    <div class="cover-text">
+      <p class="kicker">Manual 5 / IA con Programacion / Primer manual</p>
+      <h1>Tu primer Python para IA</h1>
+      <p class="subtitle">Cargar y entender una lista de calificaciones desde Python para iniciar un predictor de rendimiento escolar.</p>
+    </div>
+    <figure class="visual full" data-visual-id="M5-u01-01">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-01.jpg" alt="Portadilla de Python desde cero para IA">
+      <figcaption>M5-u01-01. Match: portadilla Python para abrir la unidad de programacion inicial.</figcaption>
+    </figure>
+    <div class="meta-strip">
+      <div class="meta"><strong>Historia</strong>Predictor de rendimiento escolar.</div>
+      <div class="meta"><strong>Producto</strong>Script que carga datos escolares.</div>
+      <div class="meta"><strong>Formato</strong>40% teoria / 60% practica.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <h2>Historia conductora</h2>
+    <p>La coordinacion academica entrega un archivo CSV anonimo con horas de estudio, asistencia y calificacion final. Todavia no construiremos un modelo de IA; primero necesitamos que Python lea datos sin romperse.</p>
+    <p>La programacion entra como una herramienta concreta: cargar datos, revisar valores, guardar resultados y preparar el camino para analisis posteriores. El objetivo de la unidad es que el estudiante escriba codigo pequeno, real y entendible.</p>
+    <div class="box question-box">
+      <h3>Preguntas introductorias</h3>
+      <ul>
+        <li>Que es una variable y por que ayuda a guardar datos?</li>
+        <li>Como decide un programa entre dos caminos?</li>
+        <li>Por que un CSV es util para IA?</li>
+        <li>Que debe hacer el programa si encuentra un dato incorrecto?</li>
+      </ul>
+    </div>
+    <figure class="visual compact" data-visual-id="M5-u01-02">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-02.jpg" alt="Mapa mental de Python para IA">
+      <figcaption>M5-u01-02. Match: mapa mental del recorrido de Python antes de leer datos escolares.</figcaption>
+    </figure>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 2</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Entorno minimo</h2>
+    <p>Para empezar, el estudiante necesita un lugar donde escribir y ejecutar codigo. Puede usar Colab para evitar instalaciones, o VS Code si ya tiene Python configurado.</p>
+    <figure class="visual half" data-visual-id="M5-u01-03">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-03.jpg" alt="Opciones para empezar Python">
+      <figcaption>M5-u01-03. Match: visual de opciones de entorno colocado en la pagina de configuracion inicial.</figcaption>
+    </figure>
+    <table>
+      <tr><th>Opcion</th><th>Ventaja</th><th>Uso recomendado</th></tr>
+      <tr><td>Google Colab</td><td>No requiere instalar.</td><td>Inicio rapido.</td></tr>
+      <tr><td>VS Code</td><td>Control local.</td><td>Proyecto continuo.</td></tr>
+      <tr><td>Anaconda</td><td>Paquetes cientificos incluidos.</td><td>Analisis de datos.</td></tr>
+    </table>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 3</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Variables, tipos y operadores</h2>
+    <p>Una variable es una etiqueta para guardar un valor. En el predictor escolar, una variable puede guardar horas de estudio, porcentaje de asistencia o calificacion previa.</p>
+    <figure class="visual half" data-visual-id="M5-u01-04">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-04.jpg" alt="Tipos de datos en Python">
+      <figcaption>M5-u01-04. Match: cuadro de tipos usado en la pagina de variables y datos.</figcaption>
+    </figure>
+    <div class="formula">horas_estudio = 6.5<br>asistencia = 0.92<br>aprobo = True</div>
+    <p>Los tipos importan porque no se suma igual un numero que un texto. Un error comun es leer "8" como texto y querer operarlo como numero.</p>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 4</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Control de flujo</h2>
+    <p>Un programa necesita decidir. Si una calificacion es mayor o igual a 6, el estudiante aprueba; si no, requiere apoyo. Esta idea se expresa con condicionales.</p>
+    <figure class="visual half" data-visual-id="M5-u01-05">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-05.jpg" alt="Flujo de control en Python">
+      <figcaption>M5-u01-05. Match: diagrama de flujo para explicar condicionales y decisiones.</figcaption>
+    </figure>
+    <div class="formula">if calificacion &gt;= 6:<br>&nbsp;&nbsp;estado = "aprobado"<br>else:<br>&nbsp;&nbsp;estado = "requiere apoyo"</div>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 5</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Funciones</h2>
+    <p>Una funcion guarda una tarea reutilizable. En vez de repetir la misma condicion para cada estudiante, creamos una funcion que reciba calificacion y devuelva estado.</p>
+    <figure class="visual half" data-visual-id="M5-u01-06">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-06.jpg" alt="Anatomia de una funcion en Python">
+      <figcaption>M5-u01-06. Match: anatomia de una funcion colocada al explicar funciones.</figcaption>
+    </figure>
+    <div class="formula">def clasificar(calificacion):<br>&nbsp;&nbsp;if calificacion &gt;= 6:<br>&nbsp;&nbsp;&nbsp;&nbsp;return "aprobado"<br>&nbsp;&nbsp;return "requiere apoyo"</div>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 6</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Listas, diccionarios y archivos</h2>
+    <p>Una lista guarda varios valores. Un diccionario guarda valores con nombre. Para datos escolares, un diccionario puede representar un estudiante y una lista puede reunir muchos estudiantes.</p>
+    <div class="grid-2">
+      <figure class="visual compact" data-visual-id="M5-u01-07">
+        <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-07.jpg" alt="Colecciones en Python">
+        <figcaption>M5-u01-07. Match: visual de colecciones para listas y diccionarios.</figcaption>
+      </figure>
+      <figure class="visual compact" data-visual-id="M5-u01-08">
+        <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-08.jpg" alt="Escritura y lectura de archivos en Python">
+        <figcaption>M5-u01-08. Match: visual de archivos para conectar Python con CSV.</figcaption>
+      </figure>
+    </div>
+    <div class="formula">estudiante = {"nombre": "A01", "horas": 6.5, "calificacion": 8.2}</div>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 7</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Errores comunes</h2>
+    <p>Programar tambien implica manejar errores. Un archivo puede no existir, un valor puede estar vacio o una calificacion puede venir como texto. El objetivo no es evitar todo error, sino detectarlo y responder con claridad.</p>
+    <figure class="visual half" data-visual-id="M5-u01-09">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-09.jpg" alt="Excepciones comunes en Python">
+      <figcaption>M5-u01-09. Match: visual de excepciones justo en la pagina de errores comunes.</figcaption>
+    </figure>
+    <div class="formula">try:<br>&nbsp;&nbsp;calificacion = float(valor)<br>except ValueError:<br>&nbsp;&nbsp;calificacion = None</div>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 8</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Ejemplo resuelto</h2>
+    <p>El siguiente fragmento clasifica tres calificaciones sin usar librerias externas. Es pequeno porque la unidad busca control basico antes de Pandas.</p>
+    <div class="formula">calificaciones = [8.5, 5.9, 7.2]<br>for nota in calificaciones:<br>&nbsp;&nbsp;print(clasificar(nota))</div>
+    <p>El bucle recorre una nota a la vez. La funcion decide si cada estudiante esta aprobado o requiere apoyo. Esta salida sera la base para analizar datos mas grandes.</p>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 9</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Banco de ejercicios</h2>
+    <div class="exercise"><strong>Ejercicio 1.</strong> Crea variables para horas_estudio, asistencia y calificacion_final con valores inventados.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 2.</strong> Escribe un if que clasifique una calificacion como aprobado o requiere apoyo.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 3.</strong> Crea una funcion llamada clasificar que reciba calificacion y devuelva texto.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 4.</strong> Crea una lista con cinco calificaciones y calcula cuantas son aprobatorias.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 10</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Banco de ejercicios</h2>
+    <div class="exercise"><strong>Ejercicio 5.</strong> Crea un diccionario con nombre anonimo, horas de estudio, asistencia y calificacion.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 6.</strong> Explica por que un CSV es mejor que escribir datos manualmente uno por uno.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 7.</strong> Escribe un try/except para convertir texto a numero y manejar error.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 8.</strong> Redacta una conclusion: que debe hacer Python antes de construir un modelo de IA?<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 11</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Practica integradora</h2>
+    <p><strong>Rol:</strong> programador inicial del predictor escolar.</p>
+    <p><strong>Escenario:</strong> recibes una lista pequena de estudiantes anonimos y debes clasificar su estado antes de pasar a Pandas.</p>
+    <p><strong>Producto:</strong> script `u01_python_basico.py` con variables, funcion, lista de datos, bucle y manejo de error simple.</p>
+    <table>
+      <tr><th>Criterio</th><th>Logro esperado</th></tr>
+      <tr><td>Codigo</td><td>Funciona con tres a cinco registros.</td></tr>
+      <tr><td>Claridad</td><td>Usa nombres de variables comprensibles.</td></tr>
+      <tr><td>Preparacion IA</td><td>Explica por que limpiar datos viene antes de modelar.</td></tr>
+    </table>
+    <div class="footer"><span>M5 IA Programacion</span><span>Pagina 12</span></div>
+  </section>
+</body>
+</html>

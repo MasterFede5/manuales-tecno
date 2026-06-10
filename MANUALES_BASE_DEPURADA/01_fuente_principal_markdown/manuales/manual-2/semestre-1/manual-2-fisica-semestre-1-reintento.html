@@ -1,0 +1,2719 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Colegio Nuevo Tecno - Física - Manual 2 Semestre 1</title>
+  <style>
+
+  @page { size: letter; margin: 0; }
+  @page landscape { size: letter landscape; margin: 0; }
+
+  :root {
+    --blue: #0E3A8A;
+    --cyan: #0E7490;
+    --orange: #F39C12;
+    --green: #15803D;
+    --ink: #172033;
+    --muted: #5B6472;
+    --line: #D8DEE9;
+    --soft: #F7FAFC;
+    --cream: #FFF8E8;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #E8EEF6;
+    color: var(--ink);
+    font-family: Arial, "Segoe UI", sans-serif;
+    line-height: 1.28;
+  }
+  .page {
+    width: 216mm;
+    height: 279mm;
+    min-height: 279mm;
+    padding: 13mm 13mm 14mm;
+    margin: 0 auto 8mm;
+    background: #FFFFFF;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4mm;
+    page-break-after: always;
+    break-after: page;
+  }
+  .landscape {
+    page: landscape;
+    width: 279mm;
+    height: 216mm;
+    min-height: 216mm;
+    padding: 8mm 10mm 11mm;
+    gap: 2mm;
+  }
+  .cover {
+    padding: 0;
+    color: #FFFFFF;
+    display: block;
+  }
+  .cover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 31, 84, 0.92), rgba(14, 116, 144, 0.35));
+  }
+  .cover-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 22mm 18mm 18mm;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .school {
+    font-size: 16pt;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .cover h1 {
+    margin: 28mm 0 4mm;
+    font-size: 42pt;
+    line-height: .96;
+    letter-spacing: 0;
+    max-width: 145mm;
+  }
+  .cover .lead {
+    max-width: 142mm;
+    font-size: 15pt;
+    color: rgba(255,255,255,.9);
+  }
+  .cover-meta {
+    border-top: 1px solid rgba(255,255,255,.55);
+    padding-top: 6mm;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11pt;
+  }
+  h2 {
+    margin: 0;
+    color: var(--blue);
+    font-size: 20pt;
+    line-height: 1.06;
+    letter-spacing: 0;
+  }
+  h3 {
+    margin: 1mm 0 2mm;
+    color: var(--blue);
+    font-size: 12.6pt;
+    line-height: 1.12;
+  }
+  p, li {
+    font-size: 11.2pt;
+    line-height: 1.32;
+  }
+  .kicker {
+    margin: 0 0 1.5mm;
+    color: var(--orange);
+    font-size: 9.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+  .subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11.2pt;
+  }
+  .note {
+    border-left: 5px solid var(--orange);
+    background: var(--cream);
+    padding: 3mm;
+    font-size: 11pt;
+    break-inside: avoid;
+  }
+  .footer {
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 8.4pt;
+    padding-top: 2mm;
+    display: flex;
+    justify-content: space-between;
+    gap: 5mm;
+    margin-top: auto;
+  }
+  .toc {
+    display: grid;
+    grid-template-columns: 18mm 1fr 23mm;
+    border: 1px solid var(--line);
+    font-size: 10.8pt;
+  }
+  .toc div {
+    padding: 2.5mm;
+    border-bottom: 1px solid var(--line);
+  }
+  .toc .head {
+    background: var(--blue);
+    color: #FFFFFF;
+    font-weight: 800;
+  }
+  .temario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+  }
+  .temario-unit {
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--blue);
+    padding: 3mm;
+    break-inside: avoid;
+  }
+  .temario-unit h3 {
+    margin-top: 0;
+    font-size: 12pt;
+  }
+  .temario-unit ul {
+    margin: 1mm 0 0;
+    padding-left: 5mm;
+  }
+  .temario-unit li {
+    font-size: 10.4pt;
+    line-height: 1.2;
+    margin-bottom: .8mm;
+  }
+  .route {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3mm;
+  }
+  .route-card,
+  .concept,
+  .development-card,
+  .formula-card,
+  .appendix-card {
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--cyan);
+    padding: 3mm;
+    break-inside: avoid;
+    background: #FFFFFF;
+  }
+  .route-card strong,
+  .concept strong {
+    display: block;
+    color: var(--blue);
+    font-size: 11.4pt;
+    margin-bottom: 1mm;
+  }
+  .route-card p,
+  .concept,
+  .development-card p,
+  .development-card li,
+  .formula-card p,
+  .appendix-card p,
+  .appendix-card li {
+    font-size: 10.8pt;
+    line-height: 1.26;
+  }
+  .concept-list,
+  .development-grid,
+  .formula-grid,
+  .appendix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+  }
+  .concept-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .questions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+  }
+  .question {
+    border: 1px solid var(--line);
+    padding: 2.7mm;
+    break-inside: avoid;
+  }
+  .question p {
+    margin: 0 0 2mm;
+    font-size: 10.8pt;
+  }
+  .answer-lines span,
+  .worksheet-lines span {
+    display: block;
+    height: 4.4mm;
+    border-bottom: 1px solid #B8C0CC;
+  }
+  .case-image-page {
+  }
+  .case-image {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 0;
+    flex: 1 1 auto;
+  }
+  .case-image img {
+    display: block;
+    max-width: 100%;
+    max-height: 186mm;
+    object-fit: contain;
+    object-position: center;
+  }
+  .landscape .case-image img {
+    max-width: 255mm;
+    max-height: 142mm;
+  }
+  .image-frase {
+    margin: 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 10pt;
+    line-height: 1.2;
+  }
+  .mini-activity,
+  .exercise-development {
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--green);
+    padding: 3mm;
+    break-inside: avoid;
+  }
+  .mini-activity h3,
+  .exercise-development h3 {
+    color: var(--green);
+    margin-top: 0;
+  }
+  .mini-activity p,
+  .exercise-development p {
+    font-size: 10.8pt;
+    margin: 0 0 2mm;
+  }
+  .mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.6pt;
+    line-height: 1.22;
+    break-inside: avoid;
+  }
+  .mini-table th,
+  .mini-table td {
+    border: 1px solid var(--line);
+    padding: 2.2mm;
+    vertical-align: top;
+  }
+  .mini-table th {
+    background: var(--blue);
+    color: #FFFFFF;
+    font-size: 10.8pt;
+  }
+  .step-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5mm;
+  }
+  .step-box {
+    border: 1px solid var(--line);
+    padding: 2.5mm;
+    min-height: 23mm;
+    font-size: 10.7pt;
+    line-height: 1.25;
+  }
+  .worked-example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+  }
+  .worked-step {
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--orange);
+    padding: 2.6mm;
+    min-height: 33mm;
+    break-inside: avoid;
+  }
+  .worked-step h3 {
+    margin: 0 0 1mm;
+    color: var(--orange);
+    font-size: 11.6pt;
+  }
+  .worked-step p {
+    font-size: 10.5pt;
+    line-height: 1.22;
+    margin: 0;
+  }
+  .formula-card {
+    border-left-color: var(--orange);
+  }
+  .formula {
+    margin: 1.5mm 0;
+    color: var(--blue);
+    font-size: 15pt;
+    font-weight: 800;
+  }
+  .exercise-bank {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3.5mm;
+  }
+  .bank-item {
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--blue);
+    padding: 3mm;
+    min-height: 93mm;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    break-inside: avoid;
+  }
+  .bank-item p {
+    margin: 0 0 2mm;
+    font-size: 10.9pt;
+    line-height: 1.26;
+  }
+  .bank-lines::before {
+    content: "Aquí deja tus operaciones";
+    display: block;
+    color: var(--muted);
+    font-size: 9.6pt;
+    margin-bottom: 1mm;
+  }
+  .bank-lines span {
+    display: block;
+    height: 6mm;
+    border-bottom: 1px solid #B8C0CC;
+  }
+  .calc-bank {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .calc-bank .bank-item {
+    min-height: 98mm;
+  }
+  .appendix-cover {
+    background: linear-gradient(135deg, rgba(14,58,138,.95), rgba(14,116,144,.84)), var(--blue);
+    color: #FFFFFF;
+  }
+  .appendix-cover h2,
+  .appendix-cover h3 {
+    color: #FFFFFF;
+  }
+  .appendix-cover .subtitle,
+  .appendix-cover p,
+  .appendix-cover li {
+    color: rgba(255,255,255,.9);
+  }
+  .constant-table {
+    font-size: 10.8pt;
+  }
+  @media print {
+    body { background: #FFFFFF; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  </style>
+</head>
+<body>
+<section class="page cover">
+
+  <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/sem1/M2-sem1-01.jpg" alt="Coche F1 escolar con telemetría">
+  <div class="cover-content">
+    <div class="school">Colegio Nuevo Tecno</div>
+    <div>
+      <h1>Física<br>Manual 2</h1>
+      <p class="lead">Semestre 1: mecánica, energía, termodinámica, ondas y sonido aplicadas al diseño de un coche F1 escolar.</p>
+    </div>
+    <div class="cover-meta"><span>Primer semestre</span><span>Equipo F1 Albatros</span></div>
+  </div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Manual 2 / Semestre 1</p>
+  <h2>Temario completo del primer semestre</h2>
+  <p class="subtitle">Este primer manual te ayudará a comprender las bases de la física y funciona como complemento de tu aprendizaje. La continuidad del proyecto llegará en el siguiente semestre, pero este tramo ya se trabaja como una ruta completa: leer, medir, calcular, comprobar y decidir.</p>
+  <div class="toc"><div class="head">Unidad</div><div class="head">Ruta de aprendizaje</div><div class="head">Extensión</div><div>U1</div><div>Cinemática: posición, velocidad, aceleración, gráficas y trayectorias.</div><div>23 pp</div><div>U2</div><div>Dinámica: fuerzas, leyes de Newton, torque, Hooke, gravitación y Kepler.</div><div>26 pp</div><div>U3</div><div>Trabajo y energía: potencia, energía mecánica, ímpetu, colisiones y fricción.</div><div>26 pp</div><div>U4</div><div>Termodinámica: calor, temperatura, transferencia, leyes y gases ideales.</div><div>29 pp</div><div>U5</div><div>Ondas y sonido: parámetros, fenómenos ondulatorios, sonido y Doppler.</div><div>22 pp</div><div>Cierre</div><div>Examen integrador, recursos, lecturas, constantes e índice analítico.</div><div>10 pp</div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Temario del semestre</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Temario desglosado / parte 1</p>
+  <h2>Unidades 1 a 3</h2>
+  <p class="subtitle">Cada subtema se trabaja con historia, lectura visual, fórmula, unidades, práctica y banco de ejercicios.</p>
+  <div class="temario-grid"><div class="temario-unit"><h3>U1 - Cinemática</h3><ul><li>1.1 Características de los fenómenos mecánicos.</li><li>1.2 Sistemas de referencia, posición, distancia y desplazamiento.</li><li>1.3 Movimiento rectilíneo uniforme: v constante y x = x0 + vt.</li><li>1.4 Movimiento rectilíneo uniformemente acelerado: a constante.</li><li>1.5 Caída libre y tiro vertical: gravedad y sentido del movimiento.</li><li>1.6 Movimiento parabólico: componentes horizontal y vertical.</li><li>1.7 Movimiento circular uniforme: rapidez, radio y aceleración centrípeta.</li></ul></div><div class="temario-unit"><h3>U2 - Fuerzas, Newton y Gravitación</h3><ul><li>2.1 Concepto vectorial de fuerza, suma y descomposición.</li><li>2.2 Primera ley: inercia y equilibrio.</li><li>2.3 Segunda ley: ΣF = ma, masa, peso y aceleración.</li><li>2.4 Tercera ley: pares de acción y reacción.</li><li>2.5 Equilibrio rotacional, torca y momento de inercia.</li><li>2.6 Ley de Hooke: fuerza, constante elástica y deformación.</li><li>2.7 Ley de gravitación universal.</li><li>2.8 Leyes de Kepler como modelo orbital.</li></ul></div><div class="temario-unit"><h3>U3 - Trabajo y Energía</h3><ul><li>3.1 Trabajo mecánico y ángulo entre fuerza y desplazamiento.</li><li>3.2 Potencia como rapidez de transferencia de energía.</li><li>3.3 Energía cinética y velocidad del prototipo.</li><li>3.4 Energía potencial gravitacional y elástica.</li><li>3.5 Conservación de energía mecánica.</li><li>3.6 Ímpetu, impulso y conservación.</li><li>3.7 Colisiones unidimensionales.</li><li>3.8 Procesos disipativos: fricción, calor y sonido.</li></ul></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Temario completo 1/2</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Temario desglosado / parte 2</p>
+  <h2>Unidades 4, 5 y cierre</h2>
+  <p class="subtitle">El semestre cierra con evidencia integradora, recursos, lecturas y herramientas de consulta.</p>
+  <div class="temario-grid"><div class="temario-unit"><h3>U4 - Termodinámica</h3><ul><li>4.1 Calor y temperatura.</li><li>4.2 Equilibrio térmico y ley cero.</li><li>4.3 Escalas termométricas: °C, °F y K.</li><li>4.4 Dilatación térmica.</li><li>4.5 Conductividad y calor específico.</li><li>4.6 Conducción, convección y radiación.</li><li>4.7 Cambios de fase y calor latente.</li><li>4.8 Primera y segunda ley de la termodinámica.</li><li>4.9 Teoría cinética y gases ideales.</li></ul></div><div class="temario-unit"><h3>U5 - Ondas y Sonido</h3><ul><li>5.1 Caracterización de ondas mecánicas.</li><li>5.2 Parámetros: amplitud, longitud de onda, frecuencia y periodo.</li><li>5.3 Reflexión y refracción.</li><li>5.4 Difracción e interferencia.</li><li>5.5 Energía transmitida, reflejada e intensidad.</li><li>5.6 Sonido, ondas estacionarias y efecto Doppler.</li></ul></div><div class="temario-unit"><h3>Cierre - Integración del semestre</h3><ul><li>Examen integrador con cálculo e interpretación.</li><li>Bibliografía, recursos de consulta y enlaces.</li><li>Lecturas complementarias.</li><li>Constantes, conversiones e índice analítico.</li><li>Portadas de trimestre y continuidad al siguiente semestre.</li></ul></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Temario completo 2/2</span></div>
+        
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Manual 2 / Semestre 1</p>
+    <h2>Mapa visual del semestre</h2>
+  </div>
+  <p class="subtitle">El semestre avanza como una pista de pruebas: primero se mide el movimiento, luego se explican fuerzas, energía, calor y sonido hasta cerrar con una decisión técnica.</p>
+  <figure class="case-image" data-visual-id="M2-sem1-05">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/sem1/M2-sem1-05.jpg" alt="Mapa visual del semestre">
+  </figure>
+  <p class="image-frase">Cada unidad agrega una herramienta distinta; juntas forman la lectura física del prototipo.</p>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Mapa visual del semestre</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Caso conductor</p>
+  <h2>Equipo F1 Albatros</h2>
+  <p>La escuela quiere competir con un coche F1 escolar. El reto parece de diseño, pero pronto se vuelve físico: el coche debe acelerar, resistir fuerzas, usar energía con eficiencia, controlar calor y reducir ruido o vibraciones.</p>
+  <p>La historia del semestre no se cuenta como teoría aislada. Cada unidad agrega una herramienta para mejorar el prototipo: primero se mide el movimiento, después se interpretan fuerzas, se revisan pérdidas de energía, se controla la temperatura y finalmente se escucha el comportamiento del coche.</p>
+  <div class="route"><div class="route-card"><strong>Medir</strong><p>Registrar posición, tiempo, fuerza, energía, temperatura y frecuencia con unidades claras.</p></div><div class="route-card"><strong>Modelar</strong><p>Convertir el fenómeno físico en diagrama, gráfica, ecuación o tabla de datos.</p></div><div class="route-card"><strong>Calcular</strong><p>Sustituir datos con unidades y revisar si el resultado tiene sentido físico.</p></div><div class="route-card"><strong>Probar</strong><p>Usar mini actividades, bancos y prácticas para defender una decisión del equipo.</p></div><div class="route-card"><strong>Cerrar</strong><p>Integrar evidencia en el diseño del coche F1 escolar del Colegio Nuevo Tecno.</p></div></div>
+  <div class="note"><strong>Regla de trabajo:</strong> ninguna conclusión del equipo se acepta sin dato, unidad, fórmula, sustitución y explicación breve.</div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Caso conductor</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Diagnóstico inicial</p>
+  <h2>Antes de entrar a pista</h2>
+  <p class="subtitle">Responde sin buscar todavía. Estas preguntas permiten ubicar tus ideas previas antes de usar fórmulas o gráficas.</p>
+  <div class="questions-grid"><div class="question"><p>1. ¿Qué diferencia hay entre distancia recorrida y desplazamiento?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Por qué una fuerza necesita dirección para estar completa?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo sabes si una energía se conserva o se disipa?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>4. ¿Qué cambia cuando una medición de temperatura se expresa en kelvin?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>5. ¿Qué dato de una onda permite relacionar frecuencia y longitud de onda?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>6. ¿Qué evidencia pedirías antes de modificar el diseño del coche F1?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Diagnóstico</span></div>
+        
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>U1 - Cinemática</h2>
+  </div>
+  <p class="subtitle">El primer prototipo del coche F1 cruza la pista y todos celebran, pero nadie sabe si realmente mejoró. La historia cambia cuando el equipo coloca marcas en la pista, registra tiempos y transforma el recorrido en datos.</p>
+  <figure class="case-image" data-visual-id="M2-u01-01">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-01.jpg" alt="U1 - Cinemática">
+  </figure>
+  <p class="image-frase">La telemetría no vuelve más rápido al coche por sí sola; permite saber dónde acelera, dónde pierde velocidad y qué tramo conviene corregir.</p>
+  <div class="mini-activity">
+    <h3>Arranque de unidad</h3>
+    <p>Antes de resolver, escribe qué variable del coche F1 se debe medir primero y qué instrumento escolar permitiría obtenerla con unidad.</p>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / inicio</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Contar el movimiento sin perseguirlo</h2>
+  <p>Desde Galileo, estudiar movimiento significa comparar posiciones y tiempos. Una caída, un tiro o un coche en línea recta se vuelven comprensibles cuando se elige un sistema de referencia y se registra cómo cambia la posición.</p>
+  <p>En esta unidad el coche F1 sirve para distinguir distancia, desplazamiento, velocidad, aceleración y trayectorias. La meta no es memorizar ecuaciones: es saber cuándo cada ecuación describe el movimiento observado.</p>
+  <div class="note"><strong>Idea central:</strong> El movimiento se entiende al relacionar posición, tiempo, velocidad y aceleración con gráficas y unidades.</div>
+  <h3>Elementos necesarios para comprender el tema</h3>
+  <div class="concept-list"><div class="concept"><strong>Sistema de referencia</strong>Lugar y orientación desde donde se describe la posición.</div><div class="concept"><strong>Distancia</strong>Longitud recorrida; es escalar y se mide en metros.</div><div class="concept"><strong>Desplazamiento</strong>Cambio de posición con dirección; es vectorial.</div><div class="concept"><strong>Velocidad</strong>Cambio de posición respecto al tiempo, en m/s.</div><div class="concept"><strong>Aceleración</strong>Cambio de velocidad respecto al tiempo, en m/s².</div><div class="concept"><strong>Trayectoria</strong>Camino seguido por el objeto durante el movimiento.</div></div>
+  <div class="questions">
+    <h3>Preguntas introductorias</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Puede un coche recorrer distancia y terminar con desplazamiento cero?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué diferencia ves entre rapidez y velocidad?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo una gráfica puede mostrar aceleración sin mirar el coche?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / introducción</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>Ruta de decisiones de la cinemática</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ruta de decisiones de la cinemática deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u01-02">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-02.svg" alt="Ruta de decisiones de la cinemática">
+  </figure>
+  <p class="image-frase">La pista se vuelve legible cuando cada tramo tiene una pregunta de medición.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / visual 02</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Cómo leer la infografía de tipos de movimiento</h2>
+  <p class="subtitle">La infografía no es un resumen decorativo: funciona como una ruta para elegir modelo. Primero mira la trayectoria; después revisa si la velocidad cambia; al final selecciona fórmula y unidades.</p>
+  <table class="mini-table"><thead><tr><th>Tipo</th><th>Cómo reconocerlo</th><th>Fórmulas clave</th><th>Unidades</th><th>Relación con el caso F1</th></tr></thead><tbody><tr><td>MRU</td><td>Línea recta, velocidad constante, aceleración cero.</td><td>v = Δx / Δt; x = x0 + vt</td><td>m, s, m/s</td><td>El coche cruza un tramo con marcas igualmente separadas.</td></tr><tr><td>MRUA</td><td>Línea recta con aceleración constante.</td><td>a = Δv / Δt; v = v0 + at; x = x0 + v0t + 1/2at²</td><td>m/s², m/s, s</td><td>Las marcas se separan cada vez más si acelera.</td></tr><tr><td>Caída libre</td><td>Movimiento vertical bajo gravedad.</td><td>g = 9.8 m/s²; y = y0 + 1/2gt²</td><td>m, s, m/s²</td><td>Una pieza cae al banco de pruebas desde reposo.</td></tr><tr><td>Parabólico</td><td>Horizontal constante más vertical acelerado.</td><td>x = vx t; y = y0 + v0yt - 1/2gt²</td><td>m, s, m/s</td><td>Una pieza lanzada describe una curva.</td></tr><tr><td>Circular</td><td>Trayectoria circular con cambio continuo de dirección.</td><td>ac = v² / r</td><td>m/s², m/s, m</td><td>Una rueda o trayectoria curva exige aceleración al centro.</td></tr></tbody></table>
+  <div class="note"><strong>Regla de decisión:</strong> si el coche se mueve en línea recta y la velocidad no cambia, usa MRU; si la velocidad cambia, usa MRUA; si aparece curva, separa componentes o revisa aceleración centrípeta.</div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / lectura de infografía</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>Magnitudes escalares y vectoriales</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, magnitudes escalares y vectoriales deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u01-03">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-03.jpg" alt="Magnitudes escalares y vectoriales">
+  </figure>
+  <p class="image-frase">Una cantidad sin dirección puede informar; una cantidad con dirección puede decidir.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / visual 03</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Conceptos fundamentales: Magnitudes escalares y vectoriales</h2>
+  <p class="subtitle">En el caso del coche F1, magnitudes escalares y vectoriales deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Magnitudes escalares y vectoriales se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Aceleración promedio: a = Δv / Δt. a se expresa en m/s²; Δv es cambio de velocidad y Δt tiempo transcurrido.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>MRU: x = x0 + vt. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar magnitudes escalares y vectoriales. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>Sistema de referencia, posición y desplazamiento</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, sistema de referencia, posición y desplazamiento deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u01-04">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-04.jpg" alt="Sistema de referencia, posición y desplazamiento">
+  </figure>
+  <p class="image-frase">Moverse no siempre significa alejarse: por eso posición y desplazamiento no se confunden.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con sistema de referencia, posición y desplazamiento, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / visual 04</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Conceptos fundamentales: Sistema de referencia, posición y desplazamiento</h2>
+  <p class="subtitle">En el caso del coche F1, sistema de referencia, posición y desplazamiento deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Sistema de referencia, posición y desplazamiento se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>MRU: x = x0 + vt. x y x0 están en metros; v en m/s; t en segundos.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>MRUA: v = v0 + at. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Relación de columnas</h3>
+    <p>Relaciona la Columna A con la Columna B. Escribe parejas en formato A-__, B-__, C-__, D-__. Usa la teoría de sistema de referencia, posición y desplazamiento para justificar una pareja.</p>
+    <table class="mini-table"><thead><tr><th>Columna A: letras</th><th>Columna B: números</th></tr></thead><tbody><tr><td>A. Magnitud física</td><td>1. Se escribe antes de sustituir valores.</td></tr><tr><td>B. Unidad compatible</td><td>2. Puede ser gráfica, vector, tabla o ecuación.</td></tr><tr><td>C. Representación útil</td><td>3. Debe coincidir con la fórmula usada.</td></tr><tr><td>D. Error frecuente</td><td>4. Confundir escalar con vector o mezclar unidades.</td></tr></tbody></table>
+    <div class="worksheet-lines"><span></span><span></span></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>Movimiento rectilíneo uniforme</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, movimiento rectilíneo uniforme deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u01-05">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-05.svg" alt="Movimiento rectilíneo uniforme">
+  </figure>
+  <p class="image-frase">En MRU la constancia es la pista: si la pendiente no cambia, la velocidad tampoco.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / visual 05</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Conceptos fundamentales: Movimiento rectilíneo uniforme</h2>
+  <p class="subtitle">En el caso del coche F1, movimiento rectilíneo uniforme deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Movimiento rectilíneo uniforme se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>MRUA: v = v0 + at. v y v0 están en m/s; a en m/s²; t en segundos.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Posición en MRUA: x = x0 + v0t + 1/2 at². Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Cuadro comparativo aplicado</h3>
+    <p>Compara <strong>Movimiento rectilíneo uniforme</strong> en un prototipo lento y en un prototipo rápido. Usa como criterios: variable medida, unidad, gráfica esperada, fórmula útil y decisión de diseño.</p>
+    <table class="mini-table"><thead><tr><th>Criterio</th><th>Prototipo lento</th><th>Prototipo rápido</th><th>Decisión</th></tr></thead><tbody>
+      <tr><td>Variable medida</td><td></td><td></td><td></td></tr>
+      <tr><td>Unidad</td><td></td><td></td><td></td></tr>
+      <tr><td>Gráfica o diagrama</td><td></td><td></td><td></td></tr>
+      <tr><td>Fórmula útil</td><td></td><td></td><td></td></tr>
+    </tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>Movimiento rectilíneo uniformemente acelerado</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, movimiento rectilíneo uniformemente acelerado deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u01-06">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-06.svg" alt="Movimiento rectilíneo uniformemente acelerado">
+  </figure>
+  <p class="image-frase">Acelerar es cambiar la historia de la velocidad, no solo ir rápido.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / visual 06</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Conceptos fundamentales: Movimiento rectilíneo uniformemente acelerado</h2>
+  <p class="subtitle">En el caso del coche F1, movimiento rectilíneo uniformemente acelerado deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Movimiento rectilíneo uniformemente acelerado se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Posición en MRUA: x = x0 + v0t + 1/2 at². Usa metros, segundos y m/s² de forma compatible.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Caída libre: y = y0 + 1/2 gt². Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Preguntas abiertas con evidencia</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Qué dato de movimiento rectilíneo uniformemente acelerado pedirías antes de aceptar una mejora del coche?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué error de medición podría cambiar la conclusión?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo explicarías el resultado a alguien que no vio el experimento?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>Caída libre y tiro vertical</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, caída libre y tiro vertical deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u01-07">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-07.svg" alt="Caída libre y tiro vertical">
+  </figure>
+  <p class="image-frase">La gravedad no empuja con reloj visible, pero deja marcas cada vez más separadas.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con caída libre y tiro vertical, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / visual 07</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Conceptos fundamentales: Caída libre y tiro vertical</h2>
+  <p class="subtitle">En el caso del coche F1, caída libre y tiro vertical deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Caída libre y tiro vertical se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Caída libre: y = y0 + 1/2 gt². y y y0 están en metros; g = 9.8 m/s²; t en segundos cuando parte del reposo.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Parabólico horizontal: x = vx t. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Explicación con evidencia</h3>
+    <p>Redacta una explicación breve de caída libre y tiro vertical. Debe contener una analogía, una magnitud con unidad, una fórmula o diagrama y una decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Analogía propia.</div>
+      <div class="step-box"><strong>2.</strong> Dato medible.</div>
+      <div class="step-box"><strong>3.</strong> Representación física.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>Movimiento parabólico</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, movimiento parabólico deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u01-08">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-08.svg" alt="Movimiento parabólico">
+  </figure>
+  <p class="image-frase">Una trayectoria curva se entiende separando lo horizontal de lo vertical.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / visual 08</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Conceptos fundamentales: Movimiento parabólico</h2>
+  <p class="subtitle">En el caso del coche F1, movimiento parabólico deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Movimiento parabólico se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Parabólico horizontal: x = vx t. x en metros; vx en m/s; t en segundos. El eje horizontal se analiza aparte.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Parabólico vertical: y = y0 + v0y t - 1/2 gt². Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Comprobación con cálculo</h3>
+    <p>Usa la relación <strong>x = vx t</strong> para crear un dato del coche F1. Debes escribir fórmula, sustitución, resultado y unidad final.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Dato inicial y unidad.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula elegida y despeje si hace falta.</div>
+      <div class="step-box"><strong>3.</strong> Sustitución con unidades visibles.</div>
+      <div class="step-box"><strong>4.</strong> Resultado y revisión de sentido físico.</div>
+    </div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 1 / Cinemática</p>
+    <h2>Movimiento circular uniforme</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, movimiento circular uniforme deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u01-09">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u01/M2-u01-09.svg" alt="Movimiento circular uniforme">
+  </figure>
+  <p class="image-frase">Girar exige aceleración aunque la rapidez parezca constante.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / visual 09</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Conceptos fundamentales: Movimiento circular uniforme</h2>
+  <p class="subtitle">En el caso del coche F1, movimiento circular uniforme deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Movimiento circular uniforme se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Parabólico vertical: y = y0 + v0y t - 1/2 gt². y en metros; v0y en m/s; g en m/s²; t en segundos.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Movimiento circular: ac = v² / r. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar movimiento circular uniforme. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / conceptos</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Fórmulas antes de practicar 1</h2>
+  <p class="subtitle">Una fórmula no es una receta para poner números: expresa qué magnitudes se relacionan y en qué unidades deben estar. Si una unidad no coincide, primero se convierte y después se calcula.</p>
+  <div class="formula-grid"><div class="formula-card"><h3>Velocidad promedio</h3><div class="formula">v = Δx / Δt</div><p>v se expresa en m/s; Δx es desplazamiento en metros y Δt es tiempo en segundos.</p></div><div class="formula-card"><h3>Aceleración promedio</h3><div class="formula">a = Δv / Δt</div><p>a se expresa en m/s²; Δv es cambio de velocidad y Δt tiempo transcurrido.</p></div><div class="formula-card"><h3>MRU</h3><div class="formula">x = x0 + vt</div><p>x y x0 están en metros; v en m/s; t en segundos.</p></div><div class="formula-card"><h3>MRUA</h3><div class="formula">v = v0 + at</div><p>v y v0 están en m/s; a en m/s²; t en segundos.</p></div><div class="formula-card"><h3>Posición en MRUA</h3><div class="formula">x = x0 + v0t + 1/2 at²</div><p>Usa metros, segundos y m/s² de forma compatible.</p></div><div class="formula-card"><h3>Caída libre</h3><div class="formula">y = y0 + 1/2 gt²</div><p>y y y0 están en metros; g = 9.8 m/s²; t en segundos cuando parte del reposo.</p></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / fórmulas</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Fórmulas antes de practicar 2</h2>
+  <p class="subtitle">Una fórmula no es una receta para poner números: expresa qué magnitudes se relacionan y en qué unidades deben estar. Si una unidad no coincide, primero se convierte y después se calcula.</p>
+  <div class="formula-grid"><div class="formula-card"><h3>Parabólico horizontal</h3><div class="formula">x = vx t</div><p>x en metros; vx en m/s; t en segundos. El eje horizontal se analiza aparte.</p></div><div class="formula-card"><h3>Parabólico vertical</h3><div class="formula">y = y0 + v0y t - 1/2 gt²</div><p>y en metros; v0y en m/s; g en m/s²; t en segundos.</p></div><div class="formula-card"><h3>Movimiento circular</h3><div class="formula">ac = v² / r</div><p>ac está en m/s²; v en m/s; r en metros.</p></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / fórmulas</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática / ejemplo resuelto</p>
+  <h2>Ejemplo resuelto de principio a fin</h2>
+  <p class="subtitle">Antes del banco, resolvemos un caso completo para ver cómo se elige la fórmula, cómo se sustituyen datos y cómo se comprueba el resultado.</p>
+  <div class="worked-example"><div class="worked-step"><h3>Datos del caso</h3><p>Un coche parte de x0 = 0 m. En 2.0 s llega a x = 12 m. En ese intervalo su velocidad cambia de 2.0 m/s a 8.0 m/s. En una curva posterior lleva v = 5.0 m/s y r = 2.0 m.</p></div><div class="worked-step"><h3>1. Velocidad promedio</h3><p>v = Δx / Δt = (12 m - 0 m) / 2.0 s = 6.0 m/s. Esto resume el tramo completo, no cada instante.</p></div><div class="worked-step"><h3>2. Aceleración promedio</h3><p>a = Δv / Δt = (8.0 m/s - 2.0 m/s) / 2.0 s = 3.0 m/s². La velocidad aumenta 3.0 m/s cada segundo.</p></div><div class="worked-step"><h3>3. MRU como comparación</h3><p>Si el coche mantuviera v = 6.0 m/s durante 2.0 s: x = x0 + vt = 0 + (6.0 m/s)(2.0 s) = 12 m.</p></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / ejemplo resuelto 1</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática / ejemplo resuelto</p>
+  <h2>Ejemplo resuelto: comprobación y decisión</h2>
+  <p class="subtitle">Las fórmulas de la infografía se usan como herramientas distintas. No todas responden la misma pregunta.</p>
+  <div class="worked-example"><div class="worked-step"><h3>4. MRUA: velocidad final</h3><p>Con v0 = 2.0 m/s, a = 3.0 m/s² y t = 2.0 s: v = v0 + at = 2.0 + (3.0)(2.0) = 8.0 m/s.</p></div><div class="worked-step"><h3>5. MRUA: posición</h3><p>x = x0 + v0t + 1/2at² = 0 + (2.0)(2.0) + 1/2(3.0)(2.0)² = 4.0 + 6.0 = 10.0 m. Si el dato real fue 12 m, revisa si a fue constante durante todo el tramo.</p></div><div class="worked-step"><h3>6. Movimiento circular</h3><p>En la curva: ac = v² / r = (5.0 m/s)² / 2.0 m = 12.5 m/s² hacia el centro. Aunque la rapidez sea constante, la dirección cambia.</p></div><div class="worked-step"><h3>Conclusión técnica</h3><p>El prototipo muestra aceleración clara en recta y demanda mucha aceleración centrípeta en curva; por eso conviene revisar alineación, ruedas y masa antes de aumentar potencia.</p></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / ejemplo resuelto 2</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Banco de cálculo 1</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>1.</strong> Velocidad promedio: el coche pasa de x0 = 0 m a x = 18 m en 1.2 s. Usa v = Δx / Δt y explica el resultado en m/s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> MRU: si después mantiene v = 6.5 m/s durante 3.0 s desde x0 = 2 m, calcula posición con x = x0 + vt.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / cálculo 1-2</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Banco de cálculo 2</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>3.</strong> Aceleración promedio: la velocidad cambia de 1.5 m/s a 7.5 m/s en 2.0 s. Usa a = Δv / Δt.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> MRUA velocidad final: con v0 = 2.0 m/s, a = 3.5 m/s² y t = 1.6 s, calcula v = v0 + at.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / cálculo 3-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Banco de cálculo 3</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>5.</strong> MRUA posición: con x0 = 0, v0 = 1.0 m/s, a = 4.0 m/s² y t = 1.8 s, calcula x = x0 + v0t + 1/2at².</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>6.</strong> Caída libre: una pieza cae desde reposo durante 0.80 s. Usa y = y0 + 1/2gt² con g = 9.8 m/s² y reporta la distancia.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / cálculo 5-6</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Banco de cálculo 4</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>7.</strong> Parabólico: una pieza sale con vx = 3.0 m/s durante 1.4 s. Calcula x = vx t y explica por qué el eje vertical se resuelve aparte.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>8.</strong> Circular: un coche toma una curva de radio 1.4 m a 3.2 m/s. Calcula ac = v² / r y explica hacia dónde apunta esa aceleración.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / cálculo 7-8</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Banco de ejercicios 1</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>1.</strong> Calcula velocidad promedio si el coche recorre 20 m en 1.25 s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> Distingue distancia y desplazamiento en una pista de ida y vuelta de 10 m.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>3.</strong> Convierte 72 km/h a m/s y explica si la unidad sirve para MRU.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Traza una gráfica x-t para un coche que avanza 5 m cada segundo.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / ejercicios 1-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Banco de ejercicios 2</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>5.</strong> Calcula aceleración si la velocidad cambia de 0 a 8 m/s en 2 s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>6.</strong> Usa x = x0 + vt para encontrar la posición a los 3 s si v = 4 m/s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>7.</strong> Calcula distancia de caída libre desde reposo durante 1.5 s usando g = 9.8 m/s².</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>8.</strong> Explica por qué en MRU la aceleración es cero.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / ejercicios 5-8</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Banco de ejercicios 3</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>9.</strong> Identifica en una gráfica v-t cuándo el coche acelera, frena o mantiene velocidad.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>10.</strong> Calcula velocidad final con v = v0 + at si v0 = 2 m/s, a = 3 m/s² y t = 4 s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>11.</strong> Describe un ejemplo de movimiento parabólico en el lanzamiento de una pieza.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>12.</strong> Calcula aceleración centrípeta si v = 5 m/s y r = 2 m.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / ejercicios 9-12</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 1 / Cinemática</p>
+  <h2>Cierre de U1 - Cinemática</h2>
+  <p class="subtitle">Al terminar la unidad, el estudiante puede describir el movimiento del prototipo sin depender de impresiones: usa datos, gráficas y unidades.</p>
+  <div class="note"><strong>Producto de unidad:</strong> Registro de telemetría básica con tabla x-t, gráfica, cálculo de velocidad, cálculo de aceleración y decisión sobre un tramo de pista.</div>
+  <div class="exercise-development">
+    <h3>Entrega breve</h3>
+    <p>Entrega una hoja con evidencia, cálculo, error posible y decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Evidencia principal.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula y sustitución.</div>
+      <div class="step-box"><strong>3.</strong> Límite o error detectado.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U1 / Cinemática / cierre</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>U2 - Dinámica</h2>
+  </div>
+  <p class="subtitle">El coche ya tiene telemetría, pero ahora aparece otra pregunta: ¿qué lo hace arrancar, frenar, girar o deformarse? El equipo aprende que ningún movimiento cambia sin interacción.</p>
+  <figure class="case-image" data-visual-id="M2-u02-01">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-01.jpg" alt="U2 - Dinámica">
+  </figure>
+  <p class="image-frase">La dinámica convierte la pista en un balance de fuerzas: lo que empuja, lo que se opone y lo que mantiene al prototipo estable.</p>
+  <div class="mini-activity">
+    <h3>Arranque de unidad</h3>
+    <p>Antes de resolver, escribe qué variable del coche F1 se debe medir primero y qué instrumento escolar permitiría obtenerla con unidad.</p>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / inicio</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>La fuerza detrás del cambio</h2>
+  <p>Newton organizó una idea decisiva: los cambios de movimiento no aparecen de la nada. Si el coche acelera, frena o se desvía, alguna fuerza neta está actuando sobre él.</p>
+  <p>En esta unidad se usan vectores, leyes de Newton, torque, resortes y gravitación para explicar cómo un prototipo responde a empujes, peso, fricción y equilibrio.</p>
+  <div class="note"><strong>Idea central:</strong> La fuerza neta explica la aceleración; el equilibrio aparece cuando las fuerzas o torques se compensan.</div>
+  <h3>Elementos necesarios para comprender el tema</h3>
+  <div class="concept-list"><div class="concept"><strong>Fuerza</strong>Interacción capaz de cambiar movimiento o deformar un cuerpo.</div><div class="concept"><strong>Vector</strong>Cantidad con magnitud y dirección.</div><div class="concept"><strong>Masa</strong>Medida de inercia; se expresa en kg.</div><div class="concept"><strong>Peso</strong>Fuerza gravitatoria: W = mg, en newton.</div><div class="concept"><strong>Fricción</strong>Fuerza que se opone al movimiento relativo.</div><div class="concept"><strong>Torque</strong>Tendencia de una fuerza a producir giro.</div></div>
+  <div class="questions">
+    <h3>Preguntas introductorias</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Por qué empujar más fuerte no siempre significa acelerar más?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué fuerzas aparecen en el coche cuando está quieto sobre la pista?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo puede un resorte ayudar a medir una fuerza?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / introducción</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Ruta de decisiones de la dinámica</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ruta de decisiones de la dinámica deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-02">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-02.jpg" alt="Ruta de decisiones de la dinámica">
+  </figure>
+  <p class="image-frase">Cada fuerza cuenta una parte de la historia; la suma decide el movimiento.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 02</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Fuerza como vector y diagrama de cuerpo libre</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, fuerza como vector y diagrama de cuerpo libre deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-03">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-03.jpg" alt="Fuerza como vector y diagrama de cuerpo libre">
+  </figure>
+  <p class="image-frase">Una flecha bien dibujada puede evitar una conclusión mal calculada.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 03</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Conceptos fundamentales: Fuerza como vector y diagrama de cuerpo libre</h2>
+  <p class="subtitle">En el caso del coche F1, fuerza como vector y diagrama de cuerpo libre deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Fuerza como vector y diagrama de cuerpo libre se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Peso: W = mg. W en N; m en kg; g ≈ 9.8 m/s².</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Fricción: f = μN. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar fuerza como vector y diagrama de cuerpo libre. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Primera ley: inercia y equilibrio</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, primera ley: inercia y equilibrio deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-04">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-04.jpg" alt="Primera ley: inercia y equilibrio">
+  </figure>
+  <p class="image-frase">La inercia no es falta de movimiento: es resistencia a cambiar el estado actual.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con primera ley: inercia y equilibrio, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 04</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Conceptos fundamentales: Primera ley: inercia y equilibrio</h2>
+  <p class="subtitle">En el caso del coche F1, primera ley: inercia y equilibrio deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Primera ley: inercia y equilibrio se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Fricción: f = μN. f y N en newton; μ no tiene unidad.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Torque: τ = Fr senθ. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Relación de columnas</h3>
+    <p>Relaciona la Columna A con la Columna B. Escribe parejas en formato A-__, B-__, C-__, D-__. Usa la teoría de primera ley: inercia y equilibrio para justificar una pareja.</p>
+    <table class="mini-table"><thead><tr><th>Columna A: letras</th><th>Columna B: números</th></tr></thead><tbody><tr><td>A. Magnitud física</td><td>1. Se escribe antes de sustituir valores.</td></tr><tr><td>B. Unidad compatible</td><td>2. Puede ser gráfica, vector, tabla o ecuación.</td></tr><tr><td>C. Representación útil</td><td>3. Debe coincidir con la fórmula usada.</td></tr><tr><td>D. Error frecuente</td><td>4. Confundir escalar con vector o mezclar unidades.</td></tr></tbody></table>
+    <div class="worksheet-lines"><span></span><span></span></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Segunda ley de Newton</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, segunda ley de newton deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-05">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-05.jpg" alt="Segunda ley de Newton">
+  </figure>
+  <p class="image-frase">La segunda ley une lo que empuja con lo que cambia.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 05</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Conceptos fundamentales: Segunda ley de Newton</h2>
+  <p class="subtitle">En el caso del coche F1, segunda ley de newton deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Segunda ley de Newton se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Torque: τ = Fr senθ. τ en N·m; F en N; r en m.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Hooke: F = kx. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Cuadro comparativo aplicado</h3>
+    <p>Compara <strong>Segunda ley de Newton</strong> en un prototipo lento y en un prototipo rápido. Usa como criterios: variable medida, unidad, gráfica esperada, fórmula útil y decisión de diseño.</p>
+    <table class="mini-table"><thead><tr><th>Criterio</th><th>Prototipo lento</th><th>Prototipo rápido</th><th>Decisión</th></tr></thead><tbody>
+      <tr><td>Variable medida</td><td></td><td></td><td></td></tr>
+      <tr><td>Unidad</td><td></td><td></td><td></td></tr>
+      <tr><td>Gráfica o diagrama</td><td></td><td></td><td></td></tr>
+      <tr><td>Fórmula útil</td><td></td><td></td><td></td></tr>
+    </tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Tercera ley: acción y reacción</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, tercera ley: acción y reacción deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-06">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-06.jpg" alt="Tercera ley: acción y reacción">
+  </figure>
+  <p class="image-frase">Toda interacción tiene dos lados, aunque el efecto en cada cuerpo sea distinto.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con tercera ley: acción y reacción, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 06</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Conceptos fundamentales: Tercera ley: acción y reacción</h2>
+  <p class="subtitle">En el caso del coche F1, tercera ley: acción y reacción deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Tercera ley: acción y reacción se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Hooke: F = kx. F en N; k en N/m; x en m.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Gravitación: F = Gm1m2 / r². Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Preguntas abiertas con evidencia</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Qué dato de tercera ley: acción y reacción pedirías antes de aceptar una mejora del coche?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué error de medición podría cambiar la conclusión?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo explicarías el resultado a alguien que no vio el experimento?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Torque y equilibrio rotacional</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, torque y equilibrio rotacional deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-07">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-07.jpg" alt="Torque y equilibrio rotacional">
+  </figure>
+  <p class="image-frase">Cuando una fuerza actúa lejos del eje, puede convertir un empuje en giro.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 07</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Conceptos fundamentales: Torque y equilibrio rotacional</h2>
+  <p class="subtitle">En el caso del coche F1, torque y equilibrio rotacional deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Torque y equilibrio rotacional se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Gravitación: F = Gm1m2 / r². G = 6.67 x 10^-11 N·m²/kg²; masas en kg; r en m.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Segunda ley: ΣF = ma. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Explicación con evidencia</h3>
+    <p>Redacta una explicación breve de torque y equilibrio rotacional. Debe contener una analogía, una magnitud con unidad, una fórmula o diagrama y una decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Analogía propia.</div>
+      <div class="step-box"><strong>2.</strong> Dato medible.</div>
+      <div class="step-box"><strong>3.</strong> Representación física.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Ley de Hooke</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ley de hooke deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-08">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-08.jpg" alt="Ley de Hooke">
+  </figure>
+  <p class="image-frase">Un resorte traduce deformación en fuerza medible.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 08</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Conceptos fundamentales: Ley de Hooke</h2>
+  <p class="subtitle">En el caso del coche F1, ley de hooke deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Ley de Hooke se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Segunda ley: ΣF = ma. ΣF en N; m en kg; a en m/s².</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Peso: W = mg. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Comprobación con cálculo</h3>
+    <p>Usa la relación <strong>ΣF = ma</strong> para crear un dato del coche F1. Debes escribir fórmula, sustitución, resultado y unidad final.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Dato inicial y unidad.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula elegida y despeje si hace falta.</div>
+      <div class="step-box"><strong>3.</strong> Sustitución con unidades visibles.</div>
+      <div class="step-box"><strong>4.</strong> Resultado y revisión de sentido físico.</div>
+    </div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Gravitación universal</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, gravitación universal deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-09">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-09.jpg" alt="Gravitación universal">
+  </figure>
+  <p class="image-frase">La gravedad aparece pequeña en el prototipo y enorme en el sistema solar.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 09</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Conceptos fundamentales: Gravitación universal</h2>
+  <p class="subtitle">En el caso del coche F1, gravitación universal deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Gravitación universal se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Peso: W = mg. W en N; m en kg; g ≈ 9.8 m/s².</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Fricción: f = μN. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar gravitación universal. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+    <h2>Leyes de Kepler</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, leyes de kepler deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u02-10">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u02/M2-u02-10.jpg" alt="Leyes de Kepler">
+  </figure>
+  <p class="image-frase">Las órbitas muestran que una misma idea física puede cruzar escalas.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / visual 10</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Conceptos fundamentales: Leyes de Kepler</h2>
+  <p class="subtitle">En el caso del coche F1, leyes de kepler deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Leyes de Kepler se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Fricción: f = μN. f y N en newton; μ no tiene unidad.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Torque: τ = Fr senθ. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Relación de columnas</h3>
+    <p>Relaciona la Columna A con la Columna B. Escribe parejas en formato A-__, B-__, C-__, D-__. Usa la teoría de leyes de kepler para justificar una pareja.</p>
+    <table class="mini-table"><thead><tr><th>Columna A: letras</th><th>Columna B: números</th></tr></thead><tbody><tr><td>A. Magnitud física</td><td>1. Se escribe antes de sustituir valores.</td></tr><tr><td>B. Unidad compatible</td><td>2. Puede ser gráfica, vector, tabla o ecuación.</td></tr><tr><td>C. Representación útil</td><td>3. Debe coincidir con la fórmula usada.</td></tr><tr><td>D. Error frecuente</td><td>4. Confundir escalar con vector o mezclar unidades.</td></tr></tbody></table>
+    <div class="worksheet-lines"><span></span><span></span></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Fórmulas antes de practicar</h2>
+  <p class="subtitle">Una fórmula no es una receta para poner números: expresa qué magnitudes se relacionan y en qué unidades deben estar. Si una unidad no coincide, primero se convierte y después se calcula.</p>
+  <div class="formula-grid"><div class="formula-card"><h3>Segunda ley</h3><div class="formula">ΣF = ma</div><p>ΣF en N; m en kg; a en m/s².</p></div><div class="formula-card"><h3>Peso</h3><div class="formula">W = mg</div><p>W en N; m en kg; g ≈ 9.8 m/s².</p></div><div class="formula-card"><h3>Fricción</h3><div class="formula">f = μN</div><p>f y N en newton; μ no tiene unidad.</p></div><div class="formula-card"><h3>Torque</h3><div class="formula">τ = Fr senθ</div><p>τ en N·m; F en N; r en m.</p></div><div class="formula-card"><h3>Hooke</h3><div class="formula">F = kx</div><p>F en N; k en N/m; x en m.</p></div><div class="formula-card"><h3>Gravitación</h3><div class="formula">F = Gm1m2 / r²</div><p>G = 6.67 x 10^-11 N·m²/kg²; masas en kg; r en m.</p></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / fórmulas</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Banco de cálculo 1</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>1.</strong> Un prototipo de 0.055 kg acelera a 9.0 m/s². Calcula fuerza neta y explica qué interacción podría producirla.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> El coche pesa 0.62 N. Calcula su masa aproximada con m = W/g.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / cálculo 1-2</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Banco de cálculo 2</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>3.</strong> Si la normal es 0.54 N y μ = 0.18, calcula fricción y decide si conviene revisar ruedas o pista.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Un alerón recibe 2.5 N a 0.08 m del eje. Calcula torque máximo.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / cálculo 3-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Banco de ejercicios 1</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>1.</strong> Calcula fuerza neta para m = 0.050 kg y a = 12 m/s².</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> Calcula peso de un coche de 0.060 kg usando g = 9.8 m/s².</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>3.</strong> Dibuja el diagrama de cuerpo libre de un coche que acelera en línea recta.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Explica qué ley de Newton aparece cuando el coche no arranca aunque se empuje poco.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / ejercicios 1-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Banco de ejercicios 2</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>5.</strong> Calcula fricción si μ = 0.20 y N = 0.60 N.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>6.</strong> Compara masa y peso con ejemplo del prototipo.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>7.</strong> Calcula torque con F = 3 N, r = 0.12 m y θ = 90°.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>8.</strong> Calcula fuerza de un resorte con k = 120 N/m y x = 0.03 m.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / ejercicios 5-8</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Banco de ejercicios 3</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>9.</strong> Explica por qué acción y reacción no se cancelan si actúan en cuerpos distintos.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>10.</strong> Relaciona fuerza centrípeta con una curva de radio pequeño.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>11.</strong> Describe una situación de equilibrio traslacional en el coche.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>12.</strong> Explica por qué la gravedad universal importa aunque el coche sea pequeño.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / ejercicios 9-12</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 2 / Fuerzas, Newton y Gravitación</p>
+  <h2>Cierre de U2 - Dinámica</h2>
+  <p class="subtitle">Al terminar la unidad, el estudiante interpreta el cambio de movimiento como resultado de fuerzas, no como simple apariencia de rapidez.</p>
+  <div class="note"><strong>Producto de unidad:</strong> Diagrama de cuerpo libre del prototipo con cálculo de fuerza neta, fricción o torque y recomendación de diseño.</div>
+  <div class="exercise-development">
+    <h3>Entrega breve</h3>
+    <p>Entrega una hoja con evidencia, cálculo, error posible y decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Evidencia principal.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula y sustitución.</div>
+      <div class="step-box"><strong>3.</strong> Límite o error detectado.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U2 / Dinámica / cierre</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>U3 - Trabajo y Energía</h2>
+  </div>
+  <p class="subtitle">Dos prototipos llegan casi al mismo tiempo, pero uno vibra más, se calienta y pierde velocidad al final. El equipo descubre que la pregunta no es solo cuánto corre, sino cuánta energía conserva.</p>
+  <figure class="case-image" data-visual-id="M2-u03-01">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-01.jpg" alt="U3 - Trabajo y Energía">
+  </figure>
+  <p class="image-frase">La energía permite rastrear lo útil y lo perdido: movimiento, altura, deformación, fricción, impacto y potencia.</p>
+  <div class="mini-activity">
+    <h3>Arranque de unidad</h3>
+    <p>Antes de resolver, escribe qué variable del coche F1 se debe medir primero y qué instrumento escolar permitiría obtenerla con unidad.</p>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / inicio</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Seguir la energía hasta la meta</h2>
+  <p>La idea de conservación permitió explicar máquinas, choques y movimientos sin mirar cada detalle microscópico. En el coche F1, la energía muestra qué parte del impulso termina como avance y qué parte se pierde.</p>
+  <p>Esta unidad conecta trabajo, potencia, energía cinética, potencial, conservación, ímpetu y colisiones para evaluar el desempeño real del prototipo.</p>
+  <div class="note"><strong>Idea central:</strong> La energía no desaparece: se transforma, se transfiere o se disipa en formas menos útiles para el objetivo.</div>
+  <h3>Elementos necesarios para comprender el tema</h3>
+  <div class="concept-list"><div class="concept"><strong>Trabajo</strong>Transferencia de energía por fuerza a lo largo de una distancia.</div><div class="concept"><strong>Potencia</strong>Rapidez con que se realiza trabajo o se transfiere energía.</div><div class="concept"><strong>Energía cinética</strong>Energía asociada al movimiento.</div><div class="concept"><strong>Energía potencial</strong>Energía asociada a posición o deformación.</div><div class="concept"><strong>Ímpetu</strong>Cantidad de movimiento: p = mv.</div><div class="concept"><strong>Disipación</strong>Transformación en calor, sonido o fricción.</div></div>
+  <div class="questions">
+    <h3>Preguntas introductorias</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Puede un coche tener mucha energía y aun así perder una carrera?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué evidencia mostraría que hay fricción importante?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Por qué potencia y energía no significan lo mismo?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / introducción</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Ruta de decisiones de energía</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ruta de decisiones de energía deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-02">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-02.jpg" alt="Ruta de decisiones de energía">
+  </figure>
+  <p class="image-frase">La energía se sigue como una pista: entra, se transforma y deja huellas.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 02</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Trabajo mecánico</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, trabajo mecánico deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-03">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-03.jpg" alt="Trabajo mecánico">
+  </figure>
+  <p class="image-frase">Una fuerza solo realiza trabajo útil si acompaña al desplazamiento.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con trabajo mecánico, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 03</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Conceptos fundamentales: Trabajo mecánico</h2>
+  <p class="subtitle">En el caso del coche F1, trabajo mecánico deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Trabajo mecánico se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Potencia: P = W / t. P en W; W en joule; t en segundos.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Energía cinética: K = 1/2 mv². Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar trabajo mecánico. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Energía cinética y energía potencial</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, energía cinética y energía potencial deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-04">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-04.jpg" alt="Energía cinética y energía potencial">
+  </figure>
+  <p class="image-frase">Moverse y estar en posición también son formas de almacenar energía.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 04</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Conceptos fundamentales: Energía cinética y energía potencial</h2>
+  <p class="subtitle">En el caso del coche F1, energía cinética y energía potencial deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Energía cinética y energía potencial se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Energía cinética: K = 1/2 mv². K en J; m en kg; v en m/s.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Energía potencial: U = mgh. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Relación de columnas</h3>
+    <p>Relaciona la Columna A con la Columna B. Escribe parejas en formato A-__, B-__, C-__, D-__. Usa la teoría de energía cinética y energía potencial para justificar una pareja.</p>
+    <table class="mini-table"><thead><tr><th>Columna A: letras</th><th>Columna B: números</th></tr></thead><tbody><tr><td>A. Magnitud física</td><td>1. Se escribe antes de sustituir valores.</td></tr><tr><td>B. Unidad compatible</td><td>2. Puede ser gráfica, vector, tabla o ecuación.</td></tr><tr><td>C. Representación útil</td><td>3. Debe coincidir con la fórmula usada.</td></tr><tr><td>D. Error frecuente</td><td>4. Confundir escalar con vector o mezclar unidades.</td></tr></tbody></table>
+    <div class="worksheet-lines"><span></span><span></span></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Gráficas de energía</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, gráficas de energía deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-05">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-05.jpg" alt="Gráficas de energía">
+  </figure>
+  <p class="image-frase">Una gráfica de energía revela pérdidas que el cronómetro no explica solo.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 05</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Conceptos fundamentales: Gráficas de energía</h2>
+  <p class="subtitle">En el caso del coche F1, gráficas de energía deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Gráficas de energía se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Energía potencial: U = mgh. U en J; m en kg; g en m/s²; h en m.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Ímpetu: p = mv. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Cuadro comparativo aplicado</h3>
+    <p>Compara <strong>Gráficas de energía</strong> en un prototipo lento y en un prototipo rápido. Usa como criterios: variable medida, unidad, gráfica esperada, fórmula útil y decisión de diseño.</p>
+    <table class="mini-table"><thead><tr><th>Criterio</th><th>Prototipo lento</th><th>Prototipo rápido</th><th>Decisión</th></tr></thead><tbody>
+      <tr><td>Variable medida</td><td></td><td></td><td></td></tr>
+      <tr><td>Unidad</td><td></td><td></td><td></td></tr>
+      <tr><td>Gráfica o diagrama</td><td></td><td></td><td></td></tr>
+      <tr><td>Fórmula útil</td><td></td><td></td><td></td></tr>
+    </tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Potencia</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, potencia deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-06">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-06.jpg" alt="Potencia">
+  </figure>
+  <p class="image-frase">La potencia pregunta qué tan rápido ocurre la transferencia.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con potencia, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 06</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Conceptos fundamentales: Potencia</h2>
+  <p class="subtitle">En el caso del coche F1, potencia deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Potencia se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Ímpetu: p = mv. p en kg·m/s; m en kg; v en m/s.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Impulso: J = FΔt = Δp. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Preguntas abiertas con evidencia</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Qué dato de potencia pedirías antes de aceptar una mejora del coche?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué error de medición podría cambiar la conclusión?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo explicarías el resultado a alguien que no vio el experimento?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Conservación de energía mecánica</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, conservación de energía mecánica deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-07">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-07.jpg" alt="Conservación de energía mecánica">
+  </figure>
+  <p class="image-frase">Conservar energía no significa que toda sea útil para ganar.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 07</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Conceptos fundamentales: Conservación de energía mecánica</h2>
+  <p class="subtitle">En el caso del coche F1, conservación de energía mecánica deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Conservación de energía mecánica se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Impulso: J = FΔt = Δp. J en N·s; conecta fuerza aplicada con cambio de ímpetu.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Trabajo: W = Fd cosθ. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Explicación con evidencia</h3>
+    <p>Redacta una explicación breve de conservación de energía mecánica. Debe contener una analogía, una magnitud con unidad, una fórmula o diagrama y una decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Analogía propia.</div>
+      <div class="step-box"><strong>2.</strong> Dato medible.</div>
+      <div class="step-box"><strong>3.</strong> Representación física.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Ímpetu e impulso</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ímpetu e impulso deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-08">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-08.jpg" alt="Ímpetu e impulso">
+  </figure>
+  <p class="image-frase">El ímpetu ayuda a leer choques y cambios bruscos de movimiento.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con ímpetu e impulso, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 08</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Conceptos fundamentales: Ímpetu e impulso</h2>
+  <p class="subtitle">En el caso del coche F1, ímpetu e impulso deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Ímpetu e impulso se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Trabajo: W = Fd cosθ. W en J; F en N; d en m; θ es el ángulo entre fuerza y desplazamiento.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Potencia: P = W / t. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Comprobación con cálculo</h3>
+    <p>Usa la relación <strong>W = Fd cosθ</strong> para crear un dato del coche F1. Debes escribir fórmula, sustitución, resultado y unidad final.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Dato inicial y unidad.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula elegida y despeje si hace falta.</div>
+      <div class="step-box"><strong>3.</strong> Sustitución con unidades visibles.</div>
+      <div class="step-box"><strong>4.</strong> Resultado y revisión de sentido físico.</div>
+    </div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Colisiones unidimensionales</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, colisiones unidimensionales deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-09">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-09.jpg" alt="Colisiones unidimensionales">
+  </figure>
+  <p class="image-frase">En una colisión, la pregunta es qué se conserva y qué se transforma.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 09</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Conceptos fundamentales: Colisiones unidimensionales</h2>
+  <p class="subtitle">En el caso del coche F1, colisiones unidimensionales deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Colisiones unidimensionales se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Potencia: P = W / t. P en W; W en joule; t en segundos.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Energía cinética: K = 1/2 mv². Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar colisiones unidimensionales. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+    <h2>Procesos disipativos</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, procesos disipativos deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u03-10">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u03/M2-u03-10.jpg" alt="Procesos disipativos">
+  </figure>
+  <p class="image-frase">La fricción no roba energía: la cambia a formas menos aprovechables.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con procesos disipativos, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / visual 10</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Conceptos fundamentales: Procesos disipativos</h2>
+  <p class="subtitle">En el caso del coche F1, procesos disipativos deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Procesos disipativos se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Energía cinética: K = 1/2 mv². K en J; m en kg; v en m/s.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Energía potencial: U = mgh. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Relación de columnas</h3>
+    <p>Relaciona la Columna A con la Columna B. Escribe parejas en formato A-__, B-__, C-__, D-__. Usa la teoría de procesos disipativos para justificar una pareja.</p>
+    <table class="mini-table"><thead><tr><th>Columna A: letras</th><th>Columna B: números</th></tr></thead><tbody><tr><td>A. Magnitud física</td><td>1. Se escribe antes de sustituir valores.</td></tr><tr><td>B. Unidad compatible</td><td>2. Puede ser gráfica, vector, tabla o ecuación.</td></tr><tr><td>C. Representación útil</td><td>3. Debe coincidir con la fórmula usada.</td></tr><tr><td>D. Error frecuente</td><td>4. Confundir escalar con vector o mezclar unidades.</td></tr></tbody></table>
+    <div class="worksheet-lines"><span></span><span></span></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / conceptos</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Fórmulas antes de practicar</h2>
+  <p class="subtitle">Una fórmula no es una receta para poner números: expresa qué magnitudes se relacionan y en qué unidades deben estar. Si una unidad no coincide, primero se convierte y después se calcula.</p>
+  <div class="formula-grid"><div class="formula-card"><h3>Trabajo</h3><div class="formula">W = Fd cosθ</div><p>W en J; F en N; d en m; θ es el ángulo entre fuerza y desplazamiento.</p></div><div class="formula-card"><h3>Potencia</h3><div class="formula">P = W / t</div><p>P en W; W en joule; t en segundos.</p></div><div class="formula-card"><h3>Energía cinética</h3><div class="formula">K = 1/2 mv²</div><p>K en J; m en kg; v en m/s.</p></div><div class="formula-card"><h3>Energía potencial</h3><div class="formula">U = mgh</div><p>U en J; m en kg; g en m/s²; h en m.</p></div><div class="formula-card"><h3>Ímpetu</h3><div class="formula">p = mv</div><p>p en kg·m/s; m en kg; v en m/s.</p></div><div class="formula-card"><h3>Impulso</h3><div class="formula">J = FΔt = Δp</div><p>J en N·s; conecta fuerza aplicada con cambio de ímpetu.</p></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / fórmulas</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Banco de cálculo 1</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>1.</strong> Una fuerza de 1.8 N actúa durante 5 m en la dirección del movimiento. Calcula trabajo.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> El coche recibe 9 J en 1.5 s. Calcula potencia promedio.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / cálculo 1-2</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Banco de cálculo 2</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>3.</strong> Calcula K para m = 0.052 kg y v = 7.0 m/s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Calcula U para m = 0.060 kg y h = 0.45 m.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / cálculo 3-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Banco de ejercicios 1</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>1.</strong> Calcula trabajo si una fuerza de 2 N desplaza el coche 4 m en la misma dirección.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> Calcula potencia si se realizan 12 J en 3 s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>3.</strong> Calcula energía cinética de 0.055 kg a 6 m/s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Calcula energía potencial de 0.050 kg a 0.80 m de altura.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / ejercicios 1-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Banco de ejercicios 2</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>5.</strong> Explica por qué la fricción convierte energía útil en calor.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>6.</strong> Compara trabajo positivo, negativo y cero con ejemplos.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>7.</strong> Calcula ímpetu de 0.060 kg a 5 m/s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>8.</strong> Calcula impulso si una fuerza de 1.5 N actúa durante 0.20 s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / ejercicios 5-8</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Banco de ejercicios 3</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>9.</strong> Describe una colisión elástica y una inelástica en una pista escolar.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>10.</strong> Interpreta una gráfica donde la energía cinética baja al final.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>11.</strong> Relaciona potencia con tiempo de carrera.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>12.</strong> Propón una mejora para disminuir disipación.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / ejercicios 9-12</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 3 / Trabajo y Energía</p>
+  <h2>Cierre de U3 - Trabajo y Energía</h2>
+  <p class="subtitle">Al terminar la unidad, el estudiante puede defender si una modificación mejora el uso de energía o solo cambia la apariencia del prototipo.</p>
+  <div class="note"><strong>Producto de unidad:</strong> Reporte de energía con cálculo de trabajo, energía cinética, potencia y una hipótesis sobre pérdidas por fricción.</div>
+  <div class="exercise-development">
+    <h3>Entrega breve</h3>
+    <p>Entrega una hoja con evidencia, cálculo, error posible y decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Evidencia principal.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula y sustitución.</div>
+      <div class="step-box"><strong>3.</strong> Límite o error detectado.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U3 / Energía / cierre</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>U4 - Termodinámica</h2>
+  </div>
+  <p class="subtitle">Después de varias pruebas, una parte del prototipo se siente caliente. El equipo podría ignorarlo, pero el calor cuenta una historia: fricción, energía interna, transferencia y eficiencia.</p>
+  <figure class="case-image" data-visual-id="M2-u04-01">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-01.jpg" alt="U4 - Termodinámica">
+  </figure>
+  <p class="image-frase">La termodinámica permite decidir si el prototipo pierde energía en calor, cómo se transfiere y qué medición térmica conviene registrar.</p>
+  <div class="mini-activity">
+    <h3>Arranque de unidad</h3>
+    <p>Antes de resolver, escribe qué variable del coche F1 se debe medir primero y qué instrumento escolar permitiría obtenerla con unidad.</p>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / inicio</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Cuando el prototipo también habla en calor</h2>
+  <p>La termodinámica nació al intentar entender máquinas, vapor, calor y trabajo. En el aula, esas ideas aparecen cuando una pieza se calienta, un gas cambia de volumen o una superficie transfiere energía.</p>
+  <p>Esta unidad distingue calor y temperatura, usa escalas termométricas, calcula energía térmica y conecta gases ideales con decisiones de diseño.</p>
+  <div class="note"><strong>Idea central:</strong> El calor es energía en tránsito; la temperatura indica estado térmico y debe expresarse con escala adecuada.</div>
+  <h3>Elementos necesarios para comprender el tema</h3>
+  <div class="concept-list"><div class="concept"><strong>Calor</strong>Energía que se transfiere por diferencia de temperatura.</div><div class="concept"><strong>Temperatura</strong>Medida relacionada con energía cinética promedio de partículas.</div><div class="concept"><strong>Equilibrio térmico</strong>Estado donde no hay transferencia neta de calor.</div><div class="concept"><strong>Calor específico</strong>Energía necesaria por masa y cambio de temperatura.</div><div class="concept"><strong>Calor latente</strong>Energía en cambio de fase sin cambio de temperatura.</div><div class="concept"><strong>Gas ideal</strong>Modelo que relaciona presión, volumen, temperatura y moles.</div></div>
+  <div class="questions">
+    <h3>Preguntas introductorias</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Por qué no es lo mismo calor que temperatura?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué pieza del coche podría calentarse por fricción?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Por qué kelvin se usa en gases ideales?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / introducción</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Ruta de decisiones térmicas</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ruta de decisiones térmicas deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-02">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-02.jpg" alt="Ruta de decisiones térmicas">
+  </figure>
+  <p class="image-frase">El calor deja pistas donde la energía útil se transforma.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 02</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Calor y temperatura</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, calor y temperatura deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-03">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-03.jpg" alt="Calor y temperatura">
+  </figure>
+  <p class="image-frase">Temperatura es lectura de estado; calor es energía en camino.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 03</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Calor y temperatura</h2>
+  <p class="subtitle">En el caso del coche F1, calor y temperatura deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Calor y temperatura se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Fahrenheit: °F = 9/5 °C + 32. Convierte escalas cuando el instrumento reporte otra unidad.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Calor sensible: Q = mcΔT. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar calor y temperatura. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Equilibrio térmico y ley cero</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, equilibrio térmico y ley cero deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-04">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-04.jpg" alt="Equilibrio térmico y ley cero">
+  </figure>
+  <p class="image-frase">El equilibrio térmico aparece cuando los intercambios dejan de tener dirección neta.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con equilibrio térmico y ley cero, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 04</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Equilibrio térmico y ley cero</h2>
+  <p class="subtitle">En el caso del coche F1, equilibrio térmico y ley cero deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Equilibrio térmico y ley cero se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Calor sensible: Q = mcΔT. Q en J; m en kg o g según c; ΔT en °C o K.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Calor latente: Q = mL. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Relación de columnas</h3>
+    <p>Relaciona la Columna A con la Columna B. Escribe parejas en formato A-__, B-__, C-__, D-__. Usa la teoría de equilibrio térmico y ley cero para justificar una pareja.</p>
+    <table class="mini-table"><thead><tr><th>Columna A: letras</th><th>Columna B: números</th></tr></thead><tbody><tr><td>A. Magnitud física</td><td>1. Se escribe antes de sustituir valores.</td></tr><tr><td>B. Unidad compatible</td><td>2. Puede ser gráfica, vector, tabla o ecuación.</td></tr><tr><td>C. Representación útil</td><td>3. Debe coincidir con la fórmula usada.</td></tr><tr><td>D. Error frecuente</td><td>4. Confundir escalar con vector o mezclar unidades.</td></tr></tbody></table>
+    <div class="worksheet-lines"><span></span><span></span></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Escalas termométricas y dilatación</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, escalas termométricas y dilatación deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-05">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-05.jpg" alt="Escalas termométricas y dilatación">
+  </figure>
+  <p class="image-frase">Cambiar de escala sin perder significado es parte del cálculo físico.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 05</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Escalas termométricas y dilatación</h2>
+  <p class="subtitle">En el caso del coche F1, escalas termométricas y dilatación deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Escalas termométricas y dilatación se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Calor latente: Q = mL. Q en J; m es masa; L es calor latente.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Dilatación lineal: ΔL = αL0ΔT. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Cuadro comparativo aplicado</h3>
+    <p>Compara <strong>Escalas termométricas y dilatación</strong> en un prototipo lento y en un prototipo rápido. Usa como criterios: variable medida, unidad, gráfica esperada, fórmula útil y decisión de diseño.</p>
+    <table class="mini-table"><thead><tr><th>Criterio</th><th>Prototipo lento</th><th>Prototipo rápido</th><th>Decisión</th></tr></thead><tbody>
+      <tr><td>Variable medida</td><td></td><td></td><td></td></tr>
+      <tr><td>Unidad</td><td></td><td></td><td></td></tr>
+      <tr><td>Gráfica o diagrama</td><td></td><td></td><td></td></tr>
+      <tr><td>Fórmula útil</td><td></td><td></td><td></td></tr>
+    </tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Calor específico y conductividad</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, calor específico y conductividad deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-06">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-06.jpg" alt="Calor específico y conductividad">
+  </figure>
+  <p class="image-frase">Cada material responde distinto al mismo calor recibido.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con calor específico y conductividad, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 06</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Calor específico y conductividad</h2>
+  <p class="subtitle">En el caso del coche F1, calor específico y conductividad deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Calor específico y conductividad se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Dilatación lineal: ΔL = αL0ΔT. ΔL y L0 en m; α en 1/°C; ΔT en °C.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Gas ideal: PV = nRT. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Preguntas abiertas con evidencia</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Qué dato de calor específico y conductividad pedirías antes de aceptar una mejora del coche?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué error de medición podría cambiar la conclusión?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo explicarías el resultado a alguien que no vio el experimento?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Conducción, convección y radiación</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, conducción, convección y radiación deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-07">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-07.jpg" alt="Conducción, convección y radiación">
+  </figure>
+  <p class="image-frase">La energía térmica viaja por contacto, movimiento de fluido o radiación.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 07</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Conducción, convección y radiación</h2>
+  <p class="subtitle">En el caso del coche F1, conducción, convección y radiación deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Conducción, convección y radiación se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Gas ideal: PV = nRT. P, V, n, R y T deben estar en unidades compatibles; T en K.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Kelvin: K = °C + 273.15. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Explicación con evidencia</h3>
+    <p>Redacta una explicación breve de conducción, convección y radiación. Debe contener una analogía, una magnitud con unidad, una fórmula o diagrama y una decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Analogía propia.</div>
+      <div class="step-box"><strong>2.</strong> Dato medible.</div>
+      <div class="step-box"><strong>3.</strong> Representación física.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Cambios de fase y calor latente</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, cambios de fase y calor latente deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-08">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-08.jpg" alt="Cambios de fase y calor latente">
+  </figure>
+  <p class="image-frase">En un cambio de fase la energía trabaja aunque la temperatura parezca quieta.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con cambios de fase y calor latente, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 08</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Cambios de fase y calor latente</h2>
+  <p class="subtitle">En el caso del coche F1, cambios de fase y calor latente deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Cambios de fase y calor latente se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Kelvin: K = °C + 273.15. La temperatura absoluta se expresa en kelvin para gases.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Fahrenheit: °F = 9/5 °C + 32. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Comprobación con cálculo</h3>
+    <p>Usa la relación <strong>K = °C + 273.15</strong> para crear un dato del coche F1. Debes escribir fórmula, sustitución, resultado y unidad final.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Dato inicial y unidad.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula elegida y despeje si hace falta.</div>
+      <div class="step-box"><strong>3.</strong> Sustitución con unidades visibles.</div>
+      <div class="step-box"><strong>4.</strong> Resultado y revisión de sentido físico.</div>
+    </div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Curvas de calentamiento</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, curvas de calentamiento deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-09">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-09.jpg" alt="Curvas de calentamiento">
+  </figure>
+  <p class="image-frase">Una meseta en la curva no es pausa: es energía cambiando el estado.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 09</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Curvas de calentamiento</h2>
+  <p class="subtitle">En el caso del coche F1, curvas de calentamiento deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Curvas de calentamiento se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Fahrenheit: °F = 9/5 °C + 32. Convierte escalas cuando el instrumento reporte otra unidad.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Calor sensible: Q = mcΔT. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar curvas de calentamiento. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Primera y segunda ley de la termodinámica</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, primera y segunda ley de la termodinámica deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-10">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-10.jpg" alt="Primera y segunda ley de la termodinámica">
+  </figure>
+  <p class="image-frase">La eficiencia obliga a preguntar qué energía queda disponible para trabajo útil.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 10</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Primera y segunda ley de la termodinámica</h2>
+  <p class="subtitle">En el caso del coche F1, primera y segunda ley de la termodinámica deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Primera y segunda ley de la termodinámica se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Calor sensible: Q = mcΔT. Q en J; m en kg o g según c; ΔT en °C o K.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Calor latente: Q = mL. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Relación de columnas</h3>
+    <p>Relaciona la Columna A con la Columna B. Escribe parejas en formato A-__, B-__, C-__, D-__. Usa la teoría de primera y segunda ley de la termodinámica para justificar una pareja.</p>
+    <table class="mini-table"><thead><tr><th>Columna A: letras</th><th>Columna B: números</th></tr></thead><tbody><tr><td>A. Magnitud física</td><td>1. Se escribe antes de sustituir valores.</td></tr><tr><td>B. Unidad compatible</td><td>2. Puede ser gráfica, vector, tabla o ecuación.</td></tr><tr><td>C. Representación útil</td><td>3. Debe coincidir con la fórmula usada.</td></tr><tr><td>D. Error frecuente</td><td>4. Confundir escalar con vector o mezclar unidades.</td></tr></tbody></table>
+    <div class="worksheet-lines"><span></span><span></span></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 4 / Termodinámica</p>
+    <h2>Teoría cinética y gases ideales</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, teoría cinética y gases ideales deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u04-11">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u04/M2-u04-11.jpg" alt="Teoría cinética y gases ideales">
+  </figure>
+  <p class="image-frase">Un gas se entiende mejor cuando presión, volumen y temperatura se leen juntos.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / visual 11</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Conceptos fundamentales: Teoría cinética y gases ideales</h2>
+  <p class="subtitle">En el caso del coche F1, teoría cinética y gases ideales deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Teoría cinética y gases ideales se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Calor latente: Q = mL. Q en J; m es masa; L es calor latente.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Dilatación lineal: ΔL = αL0ΔT. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Cuadro comparativo aplicado</h3>
+    <p>Compara <strong>Teoría cinética y gases ideales</strong> en un prototipo lento y en un prototipo rápido. Usa como criterios: variable medida, unidad, gráfica esperada, fórmula útil y decisión de diseño.</p>
+    <table class="mini-table"><thead><tr><th>Criterio</th><th>Prototipo lento</th><th>Prototipo rápido</th><th>Decisión</th></tr></thead><tbody>
+      <tr><td>Variable medida</td><td></td><td></td><td></td></tr>
+      <tr><td>Unidad</td><td></td><td></td><td></td></tr>
+      <tr><td>Gráfica o diagrama</td><td></td><td></td><td></td></tr>
+      <tr><td>Fórmula útil</td><td></td><td></td><td></td></tr>
+    </tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / conceptos</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Fórmulas antes de practicar</h2>
+  <p class="subtitle">Una fórmula no es una receta para poner números: expresa qué magnitudes se relacionan y en qué unidades deben estar. Si una unidad no coincide, primero se convierte y después se calcula.</p>
+  <div class="formula-grid"><div class="formula-card"><h3>Kelvin</h3><div class="formula">K = °C + 273.15</div><p>La temperatura absoluta se expresa en kelvin para gases.</p></div><div class="formula-card"><h3>Fahrenheit</h3><div class="formula">°F = 9/5 °C + 32</div><p>Convierte escalas cuando el instrumento reporte otra unidad.</p></div><div class="formula-card"><h3>Calor sensible</h3><div class="formula">Q = mcΔT</div><p>Q en J; m en kg o g según c; ΔT en °C o K.</p></div><div class="formula-card"><h3>Calor latente</h3><div class="formula">Q = mL</div><p>Q en J; m es masa; L es calor latente.</p></div><div class="formula-card"><h3>Dilatación lineal</h3><div class="formula">ΔL = αL0ΔT</div><p>ΔL y L0 en m; α en 1/°C; ΔT en °C.</p></div><div class="formula-card"><h3>Gas ideal</h3><div class="formula">PV = nRT</div><p>P, V, n, R y T deben estar en unidades compatibles; T en K.</p></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / fórmulas</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Banco de cálculo 1</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>1.</strong> Convierte 22 °C, 35 °C y 45 °C a kelvin. Explica por qué se suma 273.15.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> Calcula Q para 80 g de material con c = 0.90 J/g°C y ΔT = 18 °C.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / cálculo 1-2</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Banco de cálculo 2</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>3.</strong> Una varilla de 0.15 m cambia 25 °C. Usa α = 23 x 10^-6 1/°C y calcula ΔL.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Calcula energía para fundir 0.020 kg de hielo si L = 334000 J/kg.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / cálculo 3-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Banco de ejercicios 1</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>1.</strong> Convierte 25 °C a K.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> Convierte 40 °C a °F.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>3.</strong> Calcula Q si m = 100 g, c = 4.18 J/g°C y ΔT = 10 °C.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Explica por qué dos objetos pueden tener misma temperatura y distinta energía térmica.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / ejercicios 1-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Banco de ejercicios 2</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>5.</strong> Calcula dilatación si α = 12 x 10^-6 1/°C, L0 = 0.20 m y ΔT = 30 °C.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>6.</strong> Describe conducción, convección y radiación con ejemplos del prototipo.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>7.</strong> Calcula calor latente si m = 0.05 kg y L = 334000 J/kg.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>8.</strong> Interpreta una curva de calentamiento con meseta.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / ejercicios 5-8</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Banco de ejercicios 3</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>9.</strong> Explica la primera ley con Q, W y ΔU.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>10.</strong> Convierte 30 °C a K y úsalo en PV = nRT.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>11.</strong> Describe cómo medir temperatura sin tocar una pieza caliente.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>12.</strong> Propón una mejora para reducir calentamiento por fricción.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / ejercicios 9-12</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 4 / Termodinámica</p>
+  <h2>Cierre de U4 - Termodinámica</h2>
+  <p class="subtitle">Al terminar la unidad, el estudiante puede distinguir temperatura, calor, transferencia y energía interna en situaciones del prototipo.</p>
+  <div class="note"><strong>Producto de unidad:</strong> Bitácora térmica del prototipo con conversión de temperatura, cálculo de calor y recomendación para reducir pérdidas.</div>
+  <div class="exercise-development">
+    <h3>Entrega breve</h3>
+    <p>Entrega una hoja con evidencia, cálculo, error posible y decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Evidencia principal.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula y sustitución.</div>
+      <div class="step-box"><strong>3.</strong> Límite o error detectado.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U4 / Termodinámica / cierre</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+    <h2>U5 - Ondas y Sonido</h2>
+  </div>
+  <p class="subtitle">El coche más veloz no siempre es el mejor: un prototipo puede vibrar, sonar demasiado o revelar fallas por su frecuencia dominante. El equipo aprende a escuchar datos.</p>
+  <figure class="case-image" data-visual-id="M2-u05-01">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u05/M2-u05-01.jpg" alt="U5 - Ondas y Sonido">
+  </figure>
+  <p class="image-frase">Las ondas permiten estudiar vibración, reflexión, interferencia, sonido y Doppler como evidencia del comportamiento del prototipo.</p>
+  <div class="mini-activity">
+    <h3>Arranque de unidad</h3>
+    <p>Antes de resolver, escribe qué variable del coche F1 se debe medir primero y qué instrumento escolar permitiría obtenerla con unidad.</p>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / inicio</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Escuchar el prototipo como sistema físico</h2>
+  <p>Las ondas explican cómo se transporta energía sin transportar materia de la misma manera. En sonido, vibración y señales, la información viaja en forma de frecuencia, periodo, longitud de onda y amplitud.</p>
+  <p>En esta unidad el ruido del coche se convierte en dato: se mide, se grafica y se relaciona con vibración, energía y diseño.</p>
+  <div class="note"><strong>Idea central:</strong> Una onda se describe por amplitud, longitud de onda, frecuencia, periodo y rapidez; el sonido aplica esas relaciones a vibraciones audibles.</div>
+  <h3>Elementos necesarios para comprender el tema</h3>
+  <div class="concept-list"><div class="concept"><strong>Onda</strong>Perturbación que transporta energía.</div><div class="concept"><strong>Amplitud</strong>Máxima separación respecto al equilibrio.</div><div class="concept"><strong>Frecuencia</strong>Ciclos por segundo, en hertz.</div><div class="concept"><strong>Periodo</strong>Tiempo de un ciclo, en segundos.</div><div class="concept"><strong>Longitud de onda</strong>Distancia entre puntos equivalentes, en metros.</div><div class="concept"><strong>Doppler</strong>Cambio aparente de frecuencia por movimiento relativo.</div></div>
+  <div class="questions">
+    <h3>Preguntas introductorias</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Qué diferencia hay entre frecuencia y periodo?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Por qué una vibración puede revelar una falla del prototipo?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo se relacionan longitud de onda y rapidez del sonido?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / introducción</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+    <h2>Ruta de decisiones ondulatorias</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ruta de decisiones ondulatorias deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u05-02">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u05/M2-u05-02.jpg" alt="Ruta de decisiones ondulatorias">
+  </figure>
+  <p class="image-frase">Una vibración ordenada se puede medir, comparar y corregir.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / visual 02</span></div>
+    
+</section>
+
+<section class="page case-image-page">
+
+  <div>
+    <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+    <h2>Ondas mecánicas</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ondas mecánicas deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u05-03">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u05/M2-u05-03.jpg" alt="Ondas mecánicas">
+  </figure>
+  <p class="image-frase">La onda lleva energía aunque el material no viaje con ella hasta la meta.</p>
+  
+  <div class="mini-activity">
+    <h3>Mini actividad conectada al caso</h3>
+    <p>Construye una versión pequeña del caso: elige una medición relacionada con ondas mecánicas, anota unidad, instrumento y cómo la usarías para mejorar el coche.</p>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / visual 03</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Conceptos fundamentales: Ondas mecánicas</h2>
+  <p class="subtitle">En el caso del coche F1, ondas mecánicas deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Ondas mecánicas se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Periodo: T = 1 / f. T en segundos; f en hertz.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Frecuencia: f = 1 / T. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Tabla de registro experimental</h3>
+    <p>Completa la tabla para estudiar ondas mecánicas. Registra un ejemplo del coche, la magnitud, la unidad correcta y una conclusión breve.</p>
+    <table class="mini-table"><thead><tr><th>Ejemplo del caso</th><th>Magnitud</th><th>Unidad</th><th>Conclusión</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+    <h2>Parámetros de una onda</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, parámetros de una onda deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u05-04">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u05/M2-u05-04.jpg" alt="Parámetros de una onda">
+  </figure>
+  <p class="image-frase">Frecuencia, periodo y longitud de onda son tres formas de contar el mismo ritmo.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / visual 04</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Conceptos fundamentales: Parámetros de una onda</h2>
+  <p class="subtitle">En el caso del coche F1, parámetros de una onda deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Parámetros de una onda se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Frecuencia: f = 1 / T. f en hertz; T en segundos.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Intensidad: I = P / A. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Relación de columnas</h3>
+    <p>Relaciona la Columna A con la Columna B. Escribe parejas en formato A-__, B-__, C-__, D-__. Usa la teoría de parámetros de una onda para justificar una pareja.</p>
+    <table class="mini-table"><thead><tr><th>Columna A: letras</th><th>Columna B: números</th></tr></thead><tbody><tr><td>A. Magnitud física</td><td>1. Se escribe antes de sustituir valores.</td></tr><tr><td>B. Unidad compatible</td><td>2. Puede ser gráfica, vector, tabla o ecuación.</td></tr><tr><td>C. Representación útil</td><td>3. Debe coincidir con la fórmula usada.</td></tr><tr><td>D. Error frecuente</td><td>4. Confundir escalar con vector o mezclar unidades.</td></tr></tbody></table>
+    <div class="worksheet-lines"><span></span><span></span></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+    <h2>Reflexión y refracción</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, reflexión y refracción deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u05-05">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u05/M2-u05-05.jpg" alt="Reflexión y refracción">
+  </figure>
+  <p class="image-frase">Cuando una onda cambia de medio, cambia también la forma de interpretarla.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / visual 05</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Conceptos fundamentales: Reflexión y refracción</h2>
+  <p class="subtitle">En el caso del coche F1, reflexión y refracción deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Reflexión y refracción se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Intensidad: I = P / A. I en W/m²; P en watt; A en m².</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Nivel sonoro: β = 10 log(I/I0). Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Cuadro comparativo aplicado</h3>
+    <p>Compara <strong>Reflexión y refracción</strong> en un prototipo lento y en un prototipo rápido. Usa como criterios: variable medida, unidad, gráfica esperada, fórmula útil y decisión de diseño.</p>
+    <table class="mini-table"><thead><tr><th>Criterio</th><th>Prototipo lento</th><th>Prototipo rápido</th><th>Decisión</th></tr></thead><tbody>
+      <tr><td>Variable medida</td><td></td><td></td><td></td></tr>
+      <tr><td>Unidad</td><td></td><td></td><td></td></tr>
+      <tr><td>Gráfica o diagrama</td><td></td><td></td><td></td></tr>
+      <tr><td>Fórmula útil</td><td></td><td></td><td></td></tr>
+    </tbody></table>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+    <h2>Difracción e interferencia</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, difracción e interferencia deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u05-06">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u05/M2-u05-06.jpg" alt="Difracción e interferencia">
+  </figure>
+  <p class="image-frase">Dos ondas pueden reforzarse o debilitarse sin tocar piezas del coche.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / visual 06</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Conceptos fundamentales: Difracción e interferencia</h2>
+  <p class="subtitle">En el caso del coche F1, difracción e interferencia deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Difracción e interferencia se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Nivel sonoro: β = 10 log(I/I0). β en dB; I0 = 1 x 10^-12 W/m².</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Tubo abierto: fn = n v / 2L. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Preguntas abiertas con evidencia</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Qué dato de difracción e interferencia pedirías antes de aceptar una mejora del coche?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué error de medición podría cambiar la conclusión?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>3. ¿Cómo explicarías el resultado a alguien que no vio el experimento?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+    <h2>Energía, intensidad y sonido</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, energía, intensidad y sonido deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u05-07">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u05/M2-u05-07.jpg" alt="Energía, intensidad y sonido">
+  </figure>
+  <p class="image-frase">El ruido tiene números: intensidad, frecuencia y energía transportada.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / visual 07</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Conceptos fundamentales: Energía, intensidad y sonido</h2>
+  <p class="subtitle">En el caso del coche F1, energía, intensidad y sonido deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Energía, intensidad y sonido se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Tubo abierto: fn = n v / 2L. fn en Hz; v en m/s; L en m; n entero positivo.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Rapidez de onda: v = fλ. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Explicación con evidencia</h3>
+    <p>Redacta una explicación breve de energía, intensidad y sonido. Debe contener una analogía, una magnitud con unidad, una fórmula o diagrama y una decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Analogía propia.</div>
+      <div class="step-box"><strong>2.</strong> Dato medible.</div>
+      <div class="step-box"><strong>3.</strong> Representación física.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+    
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / conceptos</span></div>
+    
+</section>
+
+<section class="page case-image-page landscape">
+
+  <div>
+    <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+    <h2>Ondas estacionarias y efecto Doppler</h2>
+  </div>
+  <p class="subtitle">En el caso del coche F1, ondas estacionarias y efecto doppler deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <figure class="case-image" data-visual-id="M2-u05-08">
+    <img src="../../../../05_assets_visuales_iconos/visuales/manual-2/u05/M2-u05-08.jpg" alt="Ondas estacionarias y efecto Doppler">
+  </figure>
+  <p class="image-frase">El Doppler recuerda que escuchar también depende del movimiento relativo.</p>
+  
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / visual 08</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Conceptos fundamentales: Ondas estacionarias y efecto Doppler</h2>
+  <p class="subtitle">En el caso del coche F1, ondas estacionarias y efecto doppler deja de ser una definición de cuaderno: se convierte en una forma de decidir qué medir, qué comparar y qué cambio del prototipo se puede justificar.</p>
+  <div class="development-grid"><div class="development-card"><h3>Concepto físico</h3><p>Ondas estacionarias y efecto Doppler se usa para traducir una situación del coche en una magnitud medible.</p></div><div class="development-card"><h3>Analogía útil</h3><p>Trabajar con física es como leer la pista por capas: primero ubicas la situación, luego eliges el dato y al final verificas el cambio.</p></div><div class="development-card"><h3>Fórmula cercana</h3><p>Rapidez de onda: v = fλ. v en m/s; f en Hz; λ en m.</p></div><div class="development-card"><h3>Unidad y cuidado</h3><p>Periodo: T = 1 / f. Antes de sustituir, revisa que las unidades sean compatibles.</p></div></div>
+  
+  <div class="exercise-development">
+    <h3>Comprobación con cálculo</h3>
+    <p>Usa la relación <strong>v = fλ</strong> para crear un dato del coche F1. Debes escribir fórmula, sustitución, resultado y unidad final.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Dato inicial y unidad.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula elegida y despeje si hace falta.</div>
+      <div class="step-box"><strong>3.</strong> Sustitución con unidades visibles.</div>
+      <div class="step-box"><strong>4.</strong> Resultado y revisión de sentido físico.</div>
+    </div>
+  </div>
+        
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / conceptos</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Fórmulas antes de practicar</h2>
+  <p class="subtitle">Una fórmula no es una receta para poner números: expresa qué magnitudes se relacionan y en qué unidades deben estar. Si una unidad no coincide, primero se convierte y después se calcula.</p>
+  <div class="formula-grid"><div class="formula-card"><h3>Rapidez de onda</h3><div class="formula">v = fλ</div><p>v en m/s; f en Hz; λ en m.</p></div><div class="formula-card"><h3>Periodo</h3><div class="formula">T = 1 / f</div><p>T en segundos; f en hertz.</p></div><div class="formula-card"><h3>Frecuencia</h3><div class="formula">f = 1 / T</div><p>f en hertz; T en segundos.</p></div><div class="formula-card"><h3>Intensidad</h3><div class="formula">I = P / A</div><p>I en W/m²; P en watt; A en m².</p></div><div class="formula-card"><h3>Nivel sonoro</h3><div class="formula">β = 10 log(I/I0)</div><p>β en dB; I0 = 1 x 10^-12 W/m².</p></div><div class="formula-card"><h3>Tubo abierto</h3><div class="formula">fn = n v / 2L</div><p>fn en Hz; v en m/s; L en m; n entero positivo.</p></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / fórmulas</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Banco de cálculo 1</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>1.</strong> El sonido del prototipo tiene f = 850 Hz. Calcula λ con v = 343 m/s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> Una vibración tiene T = 0.004 s. Calcula frecuencia.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / cálculo 1-2</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Banco de cálculo 2</h2>
+  <p class="subtitle">Resuelve con fórmula, despeje cuando sea necesario, sustitución, resultado, unidades y comprobación del sentido físico.</p>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>3.</strong> Una onda mide λ = 0.50 m y f = 12 Hz. Calcula rapidez.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Calcula intensidad si una fuente de 0.05 W distribuye energía en 2.5 m².</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / cálculo 3-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Banco de ejercicios 1</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>1.</strong> Calcula longitud de onda si v = 343 m/s y f = 686 Hz.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> Calcula periodo si f = 50 Hz.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>3.</strong> Calcula frecuencia si T = 0.02 s.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Explica por qué el sonido necesita un medio material.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / ejercicios 1-4</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Banco de ejercicios 2</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>5.</strong> Distingue reflexión y refracción con ejemplos de onda.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>6.</strong> Describe interferencia constructiva y destructiva.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>7.</strong> Calcula intensidad si P = 0.02 W y A = 4 m².</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>8.</strong> Explica qué indica un aumento de amplitud en una vibración.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / ejercicios 5-8</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Banco de ejercicios 3</h2>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>9.</strong> Relaciona frecuencia dominante con ruido del prototipo.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>10.</strong> Describe un caso donde aparezca efecto Doppler.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>11.</strong> Propón cómo usar Audacity o una app de audio para registrar sonido.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>12.</strong> Explica por qué reducir vibración puede mejorar energía útil.</p><div class="bank-lines"><span></span><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / ejercicios 9-12</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Unidad 5 / Ondas y Sonido</p>
+  <h2>Cierre de U5 - Ondas y Sonido</h2>
+  <p class="subtitle">Al terminar la unidad, el estudiante puede leer el sonido como evidencia física y no solo como molestia.</p>
+  <div class="note"><strong>Producto de unidad:</strong> Registro acústico o de vibración con cálculo de frecuencia, periodo o longitud de onda y propuesta de reducción de ruido.</div>
+  <div class="exercise-development">
+    <h3>Entrega breve</h3>
+    <p>Entrega una hoja con evidencia, cálculo, error posible y decisión para el Equipo F1 Albatros.</p>
+    <div class="step-grid">
+      <div class="step-box"><strong>1.</strong> Evidencia principal.</div>
+      <div class="step-box"><strong>2.</strong> Fórmula y sustitución.</div>
+      <div class="step-box"><strong>3.</strong> Límite o error detectado.</div>
+      <div class="step-box"><strong>4.</strong> Decisión de diseño.</div>
+    </div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>U5 / Ondas / cierre</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Cierre del semestre</p>
+  <h2>Examen integrador</h2>
+  <p class="subtitle">El examen exige unir datos de movimiento, fuerzas, energía, temperatura y sonido para tomar decisiones sobre el coche F1 escolar.</p>
+  <div class="exercise-bank"><div class="bank-item"><p><strong>1.</strong> Un coche recorre 18 m en 1.2 s desde reposo. Estima aceleración promedio y velocidad final si el movimiento se considera uniformemente acelerado.</p><div class="bank-lines"><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>2.</strong> Dibuja el diagrama de cuerpo libre del coche al arrancar y explica qué fuerzas favorecen o se oponen al movimiento.</p><div class="bank-lines"><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>3.</strong> Calcula la energía cinética de un prototipo de 0.055 kg que alcanza 6.8 m/s y relaciona el resultado con pérdidas por fricción.</p><div class="bank-lines"><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>4.</strong> Una pieza se calienta de 22 °C a 45 °C. Convierte ambas temperaturas a kelvin y explica por qué la escala importa en gases ideales.</p><div class="bank-lines"><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Examen integrador 1</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Cierre del semestre</p>
+  <h2>Examen integrador: decisión final</h2>
+  <div class="exercise-bank calc-bank"><div class="bank-item"><p><strong>5.</strong> Un ruido dominante tiene frecuencia de 850 Hz. Si la rapidez del sonido es 343 m/s, calcula la longitud de onda y propón una mejora.</p><div class="bank-lines"><span></span><span></span><span></span></div></div><div class="bank-item"><p><strong>6.</strong> Redacta una decisión técnica final: ¿qué modificarías primero, masa, fricción, alineación, ventilación o vibración? Justifica con evidencia.</p><div class="bank-lines"><span></span><span></span><span></span></div></div></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Examen integrador 2</span></div>
+        
+</section>
+
+<section class="page">
+
+  <p class="kicker">Bibliografía y recursos</p>
+  <h2>Recursos de consulta</h2>
+  <p class="subtitle">Usa estas fuentes para ampliar teoría, revisar simulaciones o contrastar constantes. Registra la liga consultada y el dato que tomaste.</p>
+  <table class="mini-table constant-table"><thead><tr><th>Recurso</th><th>Uso sugerido</th><th>Liga</th></tr></thead><tbody><tr><td>OpenStax University Physics</td><td>Lectura de mecánica, energía, termodinámica y ondas</td><td><a href="https://openstax.org/details/books/university-physics-volume-1">https://openstax.org/details/books/university-physics-volume-1</a></td></tr><tr><td>PhET Física</td><td>Simulaciones de movimiento, fuerzas, energía, ondas y calor</td><td><a href="https://phet.colorado.edu/es/simulations/filter?subjects=physics">https://phet.colorado.edu/es/simulations/filter?subjects=physics</a></td></tr><tr><td>NASA Glenn Beginner&#x27;s Guide</td><td>Fuerzas, movimiento, aerodinámica y mediciones</td><td><a href="https://www.grc.nasa.gov/www/k-12/airplane/">https://www.grc.nasa.gov/www/k-12/airplane/</a></td></tr><tr><td>NIST Constants</td><td>Constantes físicas de referencia</td><td><a href="https://physics.nist.gov/cuu/Constants/">https://physics.nist.gov/cuu/Constants/</a></td></tr><tr><td>Khan Academy Física</td><td>Repaso guiado de conceptos</td><td><a href="https://es.khanacademy.org/science/physics">https://es.khanacademy.org/science/physics</a></td></tr></tbody></table>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Recursos</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Índice analítico</p>
+  <h2>Conceptos clave del semestre</h2>
+  <p class="subtitle">Este índice ayuda a volver a los puntos de mayor uso en actividades y cálculos.</p>
+  <table class="mini-table constant-table"><thead><tr><th>Concepto</th><th>Unidad</th><th>Uso</th></tr></thead><tbody><tr><td>Aceleración</td><td>U1</td><td>Cambio de velocidad por unidad de tiempo.</td></tr><tr><td>Fuerza neta</td><td>U2</td><td>Suma vectorial responsable de acelerar el sistema.</td></tr><tr><td>Trabajo</td><td>U3</td><td>Transferencia de energía por fuerza a lo largo de una distancia.</td></tr><tr><td>Calor específico</td><td>U4</td><td>Energía necesaria para cambiar temperatura por masa.</td></tr><tr><td>Frecuencia</td><td>U5</td><td>Ciclos por segundo de una onda o vibración.</td></tr><tr><td>Doppler</td><td>U5</td><td>Cambio aparente de frecuencia por movimiento relativo.</td></tr></tbody></table>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Índice analítico</span></div>
+    
+</section>
+
+<section class="page appendix-cover">
+
+  <div>
+    <p class="kicker">Portada de trimestre 1</p>
+    <h2>Trimestre 1 - Movimiento y fuerzas</h2>
+    <p class="subtitle">Cinemática y dinámica del coche F1 escolar.</p>
+  </div>
+  <div class="note"><strong>Propósito:</strong><ul><li>Medir posición, tiempo y velocidad.</li><li>Construir gráficas de movimiento.</li><li>Interpretar fuerzas y diagramas de cuerpo libre.</li></ul></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Trimestre 1</span></div>
+    
+</section>
+
+<section class="page appendix-cover">
+
+  <div>
+    <p class="kicker">Portada de trimestre 2</p>
+    <h2>Trimestre 2 - Energía y calor</h2>
+    <p class="subtitle">Trabajo, energía, fricción, temperatura y transferencia térmica.</p>
+  </div>
+  <div class="note"><strong>Propósito:</strong><ul><li>Calcular energía útil y pérdidas.</li><li>Comparar potencia y trabajo.</li><li>Registrar datos térmicos con unidades.</li></ul></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Trimestre 2</span></div>
+    
+</section>
+
+<section class="page appendix-cover">
+
+  <div>
+    <p class="kicker">Portada de trimestre 3</p>
+    <h2>Trimestre 3 - Ondas y cierre</h2>
+    <p class="subtitle">Vibraciones, sonido, análisis de datos y decisión final.</p>
+  </div>
+  <div class="note"><strong>Propósito:</strong><ul><li>Medir frecuencia y longitud de onda.</li><li>Interpretar ruido del prototipo.</li><li>Cerrar el caso con evidencia.</li></ul></div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Trimestre 3</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Material complementario</p>
+  <h2>Constantes y conversiones útiles</h2>
+  <p class="subtitle">Antes de calcular, revisa que las magnitudes estén en unidades compatibles.</p>
+  <table class="mini-table constant-table"><thead><tr><th>Magnitud</th><th>Valor o conversión</th><th>Uso</th></tr></thead><tbody><tr><td>Gravedad</td><td>g = 9.8 m/s²</td><td>Caída libre, peso y energía potencial</td></tr><tr><td>Rapidez del sonido</td><td>v ≈ 343 m/s a 20 °C</td><td>Ondas sonoras y Doppler</td></tr><tr><td>Kelvin</td><td>K = °C + 273.15</td><td>Gases ideales y temperatura absoluta</td></tr><tr><td>Newton</td><td>1 N = 1 kg·m/s²</td><td>Fuerza y segunda ley</td></tr><tr><td>Joule</td><td>1 J = 1 N·m</td><td>Trabajo y energía</td></tr><tr><td>Watt</td><td>1 W = 1 J/s</td><td>Potencia</td></tr></tbody></table>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Constantes</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Lectura complementaria 1</p>
+  <h2>Cuando medir cambió el movimiento</h2>
+  <div><p>La física moderna avanzó cuando el movimiento dejó de explicarse solo con impresiones. Galileo comparó tiempos, distancias y pendientes para estudiar cómo cambian las velocidades. Esa idea sigue vigente: si el coche parece rápido, todavía falta registrar cuánto recorre y en cuánto tiempo.</p><p>En el proyecto F1, una gráfica x-t o v-t permite discutir con evidencia. La medición no hace perfecto al prototipo, pero vuelve posible decidir qué modificación probar después.</p></div>
+  <div class="questions">
+    <h3>Preguntas de comprensión</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Por qué una gráfica puede defender mejor una conclusión que una opinión?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Qué dato mínimo necesitas para estimar velocidad promedio?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Lectura 1</span></div>
+    
+</section>
+
+<section class="page">
+
+  <p class="kicker">Lectura complementaria 2</p>
+  <h2>Energía que se conserva y energía que se pierde</h2>
+  <div><p>Un prototipo no solo se mueve: transforma energía. Parte se vuelve movimiento útil y parte se disipa en fricción, calor, vibración o ruido. Por eso mejorar un coche no significa únicamente hacerlo más ligero; también implica reducir pérdidas.</p><p>Cuando calculas trabajo, energía cinética o potencia, conviertes una historia de pista en una comparación técnica. La energía ayuda a explicar por qué dos coches con apariencia similar pueden tener desempeños distintos.</p></div>
+  <div class="questions">
+    <h3>Preguntas de comprensión</h3>
+    <div class="questions-grid"><div class="question"><p>1. ¿Qué pérdida de energía sería más fácil observar en el aula?</p><div class="answer-lines"><span></span><span></span><span></span></div></div><div class="question"><p>2. ¿Cómo conectarías fricción, calor y sonido en un mismo reporte?</p><div class="answer-lines"><span></span><span></span><span></span></div></div></div>
+  </div>
+  <div class="footer"><span>Colegio Nuevo Tecno</span><span>Lectura 2</span></div>
+    
+</section>
+
+</body>
+</html>

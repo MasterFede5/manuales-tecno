@@ -1,0 +1,71 @@
+/* Digital overrides. Base print CSS is prepended by converter.py. */
+
+body {
+  max-width: 21cm;
+  margin: 0 auto;
+  background: #EEF2F7;
+  padding: 10mm;
+}
+
+.md-file,
+.manual-header,
+.manual-footer {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.manual-header,
+.manual-footer {
+  padding: 14mm;
+  border-radius: 4mm;
+}
+
+.md-file {
+  padding: 16mm;
+  margin: 10mm 0;
+  border-radius: 4mm;
+}
+
+.mcq-correct {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, transparent 42%, var(--accent) 43% 57%, transparent 58%);
+}
+
+.blank {
+  background: #FFFBEB;
+}
+
+aside:hover,
+section[class^="box-"]:hover,
+.act-fill:hover,
+.act-mcq:hover,
+.act-table:hover,
+.act-calc:hover,
+.act-match:hover,
+.act-tf:hover,
+.act-order:hover,
+.act-case:hover,
+.act-puzzle:hover,
+.act-mindmap:hover,
+.act-label:hover,
+.act-challenge:hover {
+  border-color: #94A3B8;
+}
+
+@media print {
+  body {
+    max-width: none;
+    padding: 0;
+    background: #FFFFFF;
+  }
+
+  .md-file,
+  .manual-header,
+  .manual-footer {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+  }
+}

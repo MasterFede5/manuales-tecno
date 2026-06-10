@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 56px; font-weight: 800; fill: #0E3A8A; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 30px; font-weight: 600; fill: #5B6472; }
+      .h { font-family: Arial, sans-serif; font-size: 34px; font-weight: 800; fill: #0E3A8A; }
+      .body { font-family: Arial, sans-serif; font-size: 27px; font-weight: 600; fill: #172033; }
+      .small { font-family: Arial, sans-serif; font-size: 23px; font-weight: 600; fill: #5B6472; }
+      .formula { font-family: Arial, sans-serif; font-size: 35px; font-weight: 800; fill: #F39C12; }
+      .label { font-family: Arial, sans-serif; font-size: 25px; font-weight: 800; fill: white; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="white"/>
+  <rect x="0" y="0" width="1536" height="18" fill="#F39C12"/>
+  <text x="54" y="76" class="title">Movimiento parabólico</text>
+  <text x="56" y="120" class="subtitle">Dos movimientos al mismo tiempo: horizontal y vertical</text>
+
+  <path d="M160 790 C410 390, 820 310, 1280 790" fill="none" stroke="#F39C12" stroke-width="10"/>
+  <line x1="150" y1="790" x2="1320" y2="790" stroke="#D8DEE9" stroke-width="5"/>
+  <line x1="160" y1="810" x2="160" y2="220" stroke="#D8DEE9" stroke-width="5"/>
+  <text x="1290" y="850" class="small">x</text>
+  <text x="105" y="240" class="small">y</text>
+  <circle cx="160" cy="790" r="18" fill="#0E3A8A"/>
+  <circle cx="500" cy="490" r="18" fill="#0E3A8A"/>
+  <circle cx="860" cy="490" r="18" fill="#0E3A8A"/>
+  <circle cx="1280" cy="790" r="18" fill="#0E3A8A"/>
+
+  <rect x="90" y="150" width="500" height="210" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="90" y="150" width="500" height="58" rx="18" fill="#0E3A8A"/>
+  <text x="118" y="190" class="label">Eje horizontal</text>
+  <text x="118" y="242" class="body">No hay aceleración horizontal</text><text x="118" y="278" class="body">La velocidad vx se conserva</text>
+  <text x="118" y="326" class="formula">x = vx · t</text>
+
+  <rect x="946" y="150" width="500" height="210" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="946" y="150" width="500" height="58" rx="18" fill="#15803D"/>
+  <text x="974" y="190" class="label">Eje vertical</text>
+  <text x="974" y="242" class="body">La gravedad actúa hacia abajo</text><text x="974" y="278" class="body">La velocidad vy cambia</text>
+  <text x="974" y="326" class="formula">y = y0 + v0yt - 1/2gt²</text>
+
+  <rect x="390" y="870" width="756" height="70" rx="18" fill="#FFF8E8" stroke="#F39C12" stroke-width="3"/>
+  <text x="768" y="916" text-anchor="middle" class="body">La parábola aparece al combinar x constante con y acelerado.</text>
+
+  <text x="1480" y="989" text-anchor="end" class="small">Colegio Nuevo Tecno · Física · Unidad 1</text>
+</svg>

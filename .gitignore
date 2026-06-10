@@ -1,0 +1,16 @@
+# System and editor noise
+desktop.ini
+.DS_Store
+Thumbs.db
+
+# Generated/runtime caches
+__pycache__/
+*.pyc
+node_modules/
+
+# Local Git metadata accidentally copied inside reference folders
+**/.git/
+
+# Archives over GitHub's file-size limit.
+# The recovered JPG files are preserved individually in IMAGENES_RECUPERADAS_511_JPG.
+*.rar

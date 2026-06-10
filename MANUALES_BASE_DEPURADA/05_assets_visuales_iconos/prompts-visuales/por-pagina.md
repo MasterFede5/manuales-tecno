@@ -1,0 +1,544 @@
+# Visuales ordenados por página del PDF
+
+Lista cronológica: si abres un PDF y vas pasando páginas, en qué página aparece cada visual.
+
+## Manual 1 · Semestre 1
+
+- **p.   1** · `M1-sem1-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 1 del Manual 1: Química Albatros. C..._
+- **p.   1** · `M1-sem1-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   3** · `M1-sem1-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   5** · `M1-sem1-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.   6** · `M1-sem1-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 1 del manual Química Albatros:..._
+- **p.   8** · `M1-sem1-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 1: en el extremo izquierdo, el problema ..._
+- **p.  10** · `M1-sem1-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  12** · `M1-sem1-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  13** · `M1-u00-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla: un químico moderno con bata sostiene un matraz a..._
+- **p.  13** · `M1-u00-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central LENGUAJE DEL QUÍMICO en azul Albatros. Cuatro ramas..._
+- **p.  18** · `M1-u00-03` · diagrama-flujo (0.5 pp) · ✓ · _Diagrama de flujo del método científico aplicado al bebedero escolar. Cinco caja..._
+- **p.  22** · `M1-u00-04` · tabla-grande (1 pp) · ✓ · _Tabla SI completa: las 7 unidades fundamentales en filas con columnas para símbo..._
+- **p.  26** · `M1-u00-05` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro de instrumentos vs cifras significativas que reportan: tira de pH (1 cs),..._
+- **p.  32** · `M1-u00-06` · ilustracion (0.5 pp) · ✓ · _Cuatro dianas tipo blanco de tiro en cuadrícula 2×2. Cuadrante A (preciso y exac..._
+- **p.  59** · `M1-u00-07` · diagrama-flujo (0.5 pp) · ✓ · _Diagrama de flujo en tres estaciones (A temperatura, B volumen, C masa) mostrand..._
+- **p.  68** · `M1-u01-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla: zoom progresivo de izquierda a derecha que va de..._
+- **p.  68** · `M1-u01-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central TEMAS BÁSICOS DE LA MATERIA en azul Albatros. Ocho ..._
+- **p.  72** · `M1-u01-03` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de doble entrada que muestra ejemplos cotidianos clasificados..._
+- **p.  74** · `M1-u01-04` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal con los cinco modelos atómicos: Dalton 1803 (esfera m..._
+- **p.  76** · `M1-u01-05` · ilustracion (0.5 pp) · ✓ · _Diagrama de tres átomos lado a lado mostrando los isótopos del hidrógeno: protio..._
+- **p.  80** · `M1-u01-06` · ilustracion (0.5 pp) · ✓ · _Diagrama de Moeller (regla de las diagonales) que muestra el orden de llenado de..._
+- **p.  84** · `M1-u01-07` · tabla-grande (1 pp) · ✓ · _Tabla periódica completa de los 118 elementos, coloreada por bloques (s azul, p ..._
+- **p.  84** · `M1-u01-08` · ilustracion (0.5 pp) · ✓ · _Galería de símbolos de Lewis para 10 elementos representativos: H, He, C, N, O, ..._
+- **p.  89** · `M1-u01-09` · infografia (1 pp) · ✓ · _Infografía con la tabla periódica simplificada y tres flechas curvas superpuesta..._
+- **p.  92** · `M1-u01-10` · ilustracion (1 pp) · ✓ · _Ilustración comparativa de los tres tipos de enlace mostrados lado a lado: iónic..._
+- **p.  93** · `M1-u01-11` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de las cuatro fuerzas intermoleculares: dispersión de London ..._
+- **p.  99** · `M1-u01-12` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de los tres sistemas de nomenclatura aplicados a 8 compuestos..._
+- **p. 103** · `M1-u01-13` · infografia (0.5 pp) · ✓ · _Infografía del concepto de mol comparando escalas: a la izquierda, una cucharadi..._
+- **p. 126** · `M1-u01-14` · ilustracion (0.5 pp) · ✓ · _Ilustración de un vaso del bebedero ampliado con una lupa que muestra moléculas ..._
+- **p. 134** · `M1-u02-01` · ilustracion (1 pp) · ✓ · _Ilustración hero: una molécula de agua estilizada (O central, dos H en ángulo de..._
+- **p. 134** · `M1-u02-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central AGUA en azul Albatros y siete ramas: 1) MOLÉCULA H2..._
+- **p. 138** · `M1-u02-03` · ilustracion (0.5 pp) · ✓ · _Modelo 3D estilo bola y palo de la molécula de H₂O: oxígeno rojo central con dos..._
+- **p. 140** · `M1-u02-04` · ilustracion (0.5 pp) · ✓ · _Diagrama tridimensional de una red de puentes de hidrógeno entre 6-8 moléculas d..._
+- **p. 144** · `M1-u02-05` · grafica (0.5 pp) · ✓ · _Gráfica de densidad vs temperatura para el agua. Eje x de -10 a +30 °C; eje y de..._
+- **p. 148** · `M1-u02-06` · infografia (1 pp) · ✓ · _Infografía vertical de la escala de pH de 0 a 14 con franja de colores (rojo int..._
+- **p. 152** · `M1-u02-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de doble entrada con 7 unidades de concentración (% m/m, % m/..._
+- **p. 156** · `M1-u02-08` · infografia (1 pp) · ✓ · _Infografía a tres columnas con los tres tipos de contaminación del agua: FÍSICOS..._
+- **p. 158** · `M1-u02-09` · diagrama-flujo (0.5 pp) · ✓ · _Diagrama de flujo horizontal de una planta de tratamiento de agua: 6 etapas cone..._
+- **p. 185** · `M1-u02-10` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de las tres estaciones del taller (pH, dureza, cloro). Filas:..._
+- **p. 192** · `M1-u03-01` · ilustracion (1 pp) · ✓ · _Ilustración hero: corte transversal de un patio escolar al mediodía con flechas ..._
+- **p. 193** · `M1-u03-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central AIRE y seis ramas: 1) COMPOSICIÓN (N2 78%, O2 21%, ..._
+- **p. 195** · `M1-u03-03` · grafica (0.5 pp) · ✓ · _Gráfica de pastel del aire seco a nivel del mar: N2 78.08% azul oscuro, O2 20.95..._
+- **p. 197** · `M1-u03-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de doble entrada con combustión completa vs incompleta: filas..._
+- **p. 204** · `M1-u03-05` · diagrama-flujo (1 pp) · ✓ · _Diagrama de flujo comparativo de tres métodos de balanceo de ecuaciones químicas..._
+- **p. 209** · `M1-u03-06` · diagrama-flujo (1 pp) · ✓ · _Ciclo del carbono visualizado como esquema circular con cuatro reservorios princ..._
+- **p. 213** · `M1-u03-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de doble entrada con los 6 contaminantes criterio en filas (C..._
+- **p. 216** · `M1-u03-08` · ilustracion (1 pp) · ✓ · _Cuatro paneles ilustrativos: 1) Smog fotoquímico - silueta urbana con sol y flec..._
+- **p. 242** · `M1-u03-09` · diagrama-flujo (0.5 pp) · ✓ · _Diagrama de flujo en 4 etapas: lluvia ácida simulada (vaso con pH 3) → 3 materia..._
+- **p. 250** · `M1-sem1-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 253** · `M1-sem1-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 255** · `M1-sem1-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 257** · `M1-sem1-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 258** · `M1-sem1-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 1 · Semestre 2
+
+- **p.   1** · `M1-sem2-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 2 del Manual 1: Química Albatros. C..._
+- **p.   1** · `M1-sem2-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   3** · `M1-sem2-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   5** · `M1-sem2-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.   6** · `M1-sem2-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 2 del manual Química Albatros:..._
+- **p.   8** · `M1-sem2-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 2: en el extremo izquierdo, el problema ..._
+- **p.  10** · `M1-sem2-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  13** · `M1-sem2-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  13** · `M1-u04-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla mostrando un plato escolar mexicano (arroz, frijo..._
+- **p.  14** · `M1-u04-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central ALIMENTOS y cinco ramas: 1) CARBOHIDRATOS (mono, di..._
+- **p.  18** · `M1-u04-03` · ilustracion (0.5 pp) · ✓ · _Ilustración de los tres niveles de carbohidratos en columna: arriba glucosa mono..._
+- **p.  21** · `M1-u04-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo en cuatro filas (ácidos grasos saturado, monoinsaturado, poli..._
+- **p.  24** · `M1-u04-05` · ilustracion (1 pp) · ✓ · _Ilustración esquemática de los cuatro niveles de estructura proteica: primaria (..._
+- **p.  28** · `M1-u04-06` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de doble entrada con vitaminas hidrosolubles (8 vitaminas B +..._
+- **p.  33** · `M1-u04-07` · infografia (1 pp) · ✓ · _Infografía de cuatro reacciones culinarias clave en cuadrantes: 1) Maillard arri..._
+- **p.  60** · `M1-u04-08` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de las tres estaciones del taller: filas con tipo de reacción..._
+- **p.  67** · `M1-u05-01` · ilustracion (1 pp) · ✓ · _Ilustración hero mostrando una reacción química representada como balance contab..._
+- **p.  67** · `M1-u05-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central ENERGÍA Y REACCIONES y ocho ramas: 1) ESTEQUIOMETRÍ..._
+- **p.  73** · `M1-u05-03` · diagrama-flujo (0.5 pp) · ✓ · _Diagrama del 'puente del mol' visualizado como puente con tres tramos: izquierda..._
+- **p.  77** · `M1-u05-04` · ilustracion (0.5 pp) · ✓ · _Ilustración con la metáfora del sándwich: a la izquierda receta con 2 panes + 1 ..._
+- **p.  83** · `M1-u05-05` · grafica (0.5 pp) · ✓ · _Tres gráficas paralelas de las leyes de los gases: 1) Boyle (P vs V a T cte, hip..._
+- **p.  88** · `M1-u05-06` · ilustracion (0.5 pp) · ✓ · _Dos diagramas de energía contrapuestos lado a lado: izquierda reacción exotérmic..._
+- **p.  92** · `M1-u05-07` · diagrama-flujo (1 pp) · ✓ · _Diagrama de la Ley de Hess: dos rutas posibles entre carbono y CO2. Ruta directa..._
+- **p.  97** · `M1-u05-08` · ilustracion (0.5 pp) · ✓ · _Diagrama de energía con dos curvas comparativas para la misma reacción: 1) sin c..._
+- **p. 103** · `M1-u05-09` · ilustracion (0.5 pp) · ✓ · _Ilustración del equilibrio dinámico como balanza con dos plataformas: izquierda ..._
+- **p. 108** · `M1-u05-10` · infografia (1 pp) · ✓ · _Infografía de los 12 principios de química verde organizados en tres bloques: PR..._
+- **p. 134** · `M1-u05-11` · grafica (0.5 pp) · ✓ · _Gráfica de velocidad de descomposición de H2O2 (eje Y, mL O2/min) vs temperatura..._
+- **p. 142** · `M1-u06-01` · ilustracion (1 pp) · ✓ · _Ilustración hero mostrando los 9 pictogramas SGA en formación de constelación al..._
+- **p. 142** · `M1-u06-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central SEGURIDAD INDUSTRIAL y cuatro ramas: 1) SGA Y PICTO..._
+- **p. 146** · `M1-u06-03` · infografia (1 pp) · ✓ · _Infografía oficial con los 9 pictogramas SGA en rejilla 3x3: 1) Bomba explotando..._
+- **p. 149** · `M1-u06-04` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo en dos columnas con las 16 secciones obligatorias de una FDS:..._
+- **p. 152** · `M1-u06-05` · diagrama-flujo (1 pp) · ✓ · _Diagrama de flujo horizontal del ciclo de residuos peligrosos: GENERACIÓN (icono..._
+- **p. 156** · `M1-u06-06` · cuadro-comparativo (1 pp) · ✓ · _Tabla de las 8 NOM más relevantes para química industrial: filas con cada NOM (0..._
+- **p. 183** · `M1-u06-07` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo lado a lado: columna inspector con checklist (etiquetado SGA,..._
+- **p. 192** · `M1-sem2-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 196** · `M1-sem2-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 198** · `M1-sem2-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 200** · `M1-sem2-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 201** · `M1-sem2-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 2 · Semestre 1
+
+- **p.   1** · `M2-sem1-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 1 del Manual 2: Física Albatros. Co..._
+- **p.   1** · `M2-sem1-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   3** · `M2-sem1-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   4** · `M2-sem1-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.   5** · `M2-sem1-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 1 del manual Física Albatros: ..._
+- **p.   7** · `M2-sem1-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 1: en el extremo izquierdo, el problema ..._
+- **p.   9** · `M2-sem1-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  11** · `M2-sem1-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  11** · `M2-u01-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla mostrando un coche F1 escolar en pista con sensor..._
+- **p.  12** · `M2-u01-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central CINEMÁTICA y siete ramas: 1) MAGNITUDES (escalares ..._
+- **p.  14** · `M2-u01-03` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo en dos columnas: ESCALARES (con ejemplos visuales: número en ..._
+- **p.  19** · `M2-u01-04` · ilustracion (0.5 pp) · ✓ · _Diagrama de coordenadas mostrando: 1D con coche F1 en línea horizontal, x_inicia..._
+- **p.  23** · `M2-u01-05` · grafica (0.5 pp) · ✓ · _Tres gráficas paralelas verticales en MRU: 1) x vs t recta ascendente con etique..._
+- **p.  29** · `M2-u01-06` · grafica (1 pp) · ✓ · _Cuatro gráficas paralelas para MRUA con aceleración positiva: 1) x vs t parábola..._
+- **p.  33** · `M2-u01-07` · ilustracion (0.5 pp) · ✓ · _Ilustración con dos casos: izquierda CAÍDA LIBRE — objeto soltado desde altura h..._
+- **p.  37** · `M2-u01-08` · ilustracion (0.5 pp) · ✓ · _Tiro parabólico ilustrado: cañón a la izquierda disparando con velocidad inicial..._
+- **p.  41** · `M2-u01-09` · ilustracion (0.5 pp) · ✓ · _Diagrama de movimiento circular uniforme: círculo grande con objeto en una posic..._
+- **p.  71** · `M2-u02-01` · ilustracion (1 pp) · ✓ · _Ilustración hero mostrando el coche F1 con todos los vectores de fuerza dibujado..._
+- **p.  71** · `M2-u02-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central FUERZAS Y NEWTON y ocho ramas: 1) FUERZA VECTORIAL ..._
+- **p.  76** · `M2-u02-03` · ilustracion (1 pp) · ✓ · _Diagrama de cuerpo libre del coche F1 dibujado de perfil: silueta del coche en e..._
+- **p.  79** · `M2-u02-04` · ilustracion (0.5 pp) · ✓ · _Tres viñetas ilustrando la Primera Ley: 1) Pelota en reposo sobre mesa - se mant..._
+- **p.  84** · `M2-u02-05` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo en dos columnas: MASA (escalar, kg, propiedad intrínseca, bal..._
+- **p.  87** · `M2-u02-06` · ilustracion (0.5 pp) · ✓ · _Cuatro viñetas ilustrando pares acción-reacción: 1) Persona caminando: pie empuj..._
+- **p.  93** · `M2-u02-07` · ilustracion (1 pp) · ✓ · _Dos viñetas: izquierda TORCA — llave inglesa apretando tuerca con brazo de palan..._
+- **p.  98** · `M2-u02-08` · grafica (0.5 pp) · ✓ · _Gráfica F vs x para un resorte: línea recta con pendiente positiva en el rango e..._
+- **p. 101** · `M2-u02-09` · ilustracion (0.5 pp) · ✓ · _Esquema con la Tierra y la Luna como dos esferas separadas por distancia r marca..._
+- **p. 105** · `M2-u02-10` · ilustracion (0.5 pp) · ✓ · _Tres viñetas ilustrando las leyes de Kepler: 1) Órbita elíptica de un planeta co..._
+- **p. 139** · `M2-u03-01` · ilustracion (1 pp) · ✓ · _Ilustración hero mostrando la transformación de energía en el coche F1: cartucho..._
+- **p. 139** · `M2-u03-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central TRABAJO Y ENERGÍA y ocho ramas: 1) TRABAJO (W = F·d..._
+- **p. 143** · `M2-u03-03` · ilustracion (0.5 pp) · ✓ · _Tres viñetas: 1) TRABAJO POSITIVO: persona empujando caja horizontalmente con fl..._
+- **p. 146** · `M2-u03-04` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla con escala logarítmica de potencias típicas en watts, desde lo más pequeño..._
+- **p. 148** · `M2-u03-05` · grafica (0.5 pp) · ✓ · _Gráfica parabólica de Ek vs v: eje horizontal velocidad v desde 0 hasta 30 m/s, ..._
+- **p. 152** · `M2-u03-06` · ilustracion (0.5 pp) · ✓ · _Dos viñetas: izquierda ENERGÍA POTENCIAL GRAVITACIONAL — manzana en el árbol a a..._
+- **p. 156** · `M2-u03-07` · ilustracion (1 pp) · ✓ · _Conservación de energía en montaña rusa: track curvo con cuatro puntos numerados..._
+- **p. 161** · `M2-u03-08` · ilustracion (0.5 pp) · ✓ · _Diagrama de conservación de momento en colisión: arriba ANTES — coche A (50g) mo..._
+- **p. 166** · `M2-u03-09` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo en tres filas para los tipos de colisión: ELÁSTICA (ilustraci..._
+- **p. 170** · `M2-u03-10` · ilustracion (0.5 pp) · ✓ · _Cuatro viñetas con tipos de fricción: 1) ESTÁTICA — caja en reposo, persona empu..._
+- **p. 204** · `M2-u04-01` · ilustracion (1 pp) · ✓ · _Ilustración hero mostrando un motor de combustión seccionado con flechas de calo..._
+- **p. 204** · `M2-u04-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central TERMODINÁMICA y nueve ramas: 1) CALOR vs TEMPERATUR..._
+- **p. 207** · `M2-u04-03` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo en dos columnas: CALOR (Q, energía en tránsito, joules, depen..._
+- **p. 209** · `M2-u04-04` · ilustracion (0.5 pp) · ✓ · _Diagrama de la Ley Cero: tres recipientes etiquetados A, B, C. A y C en contacto..._
+- **p. 212** · `M2-u04-05` · grafica (0.5 pp) · ✓ · _Tres termómetros paralelos verticales (Celsius, Fahrenheit, Kelvin) con escalas ..._
+- **p. 216** · `M2-u04-06` · ilustracion (0.5 pp) · ✓ · _Tres viñetas de dilatación: 1) LINEAL — varilla metálica antes (longitud L₀) y d..._
+- **p. 220** · `M2-u04-07` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de doble entrada: filas para CALOR ESPECÍFICO con materiales ..._
+- **p. 223** · `M2-u04-08` · ilustracion (1 pp) · ✓ · _Tres viñetas: 1) CONDUCCIÓN — barra metálica con un extremo en una llama, calor ..._
+- **p. 226** · `M2-u04-09` · grafica (0.5 pp) · ✓ · _Gráfica T vs Q para 1 kg de agua: eje horizontal energía Q (en kJ acumulados de ..._
+- **p. 229** · `M2-u04-10` · ilustracion (1 pp) · ✓ · _Dos viñetas: 1) PRIMERA LEY — sistema (caja con gas) representado en el centro, ..._
+- **p. 232** · `M2-u04-11` · ilustracion (0.5 pp) · ✓ · _Caja transparente conteniendo aproximadamente 30 moléculas de gas (esferas peque..._
+- **p. 263** · `M2-u05-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con tres tipos de ondas superpuestas: 1) Onda en una cuerda con..._
+- **p. 264** · `M2-u05-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central ONDAS y seis ramas: 1) TIPOS (mecánicas vs EM, tran..._
+- **p. 266** · `M2-u05-03` · ilustracion (0.5 pp) · ✓ · _Dos viñetas: izquierda ONDA TRANSVERSAL — persona sacudiendo cuerda verticalment..._
+- **p. 268** · `M2-u05-04` · ilustracion (0.5 pp) · ✓ · _Onda senoidal completa con etiquetas: amplitud A marcada con flecha vertical des..._
+- **p. 271** · `M2-u05-05` · ilustracion (0.5 pp) · ✓ · _Dos viñetas: 1) REFLEXIÓN — superficie horizontal (espejo o pared), normal perpe..._
+- **p. 274** · `M2-u05-06` · ilustracion (0.5 pp) · ✓ · _Tres viñetas: 1) DIFRACCIÓN POR RENDIJA — ondas planas paralelas vienen desde la..._
+- **p. 277** · `M2-u05-07` · grafica (0.5 pp) · ✓ · _Diagrama radial de fuente puntual (fuente emisora en el centro) con esferas conc..._
+- **p. 281** · `M2-u05-08` · ilustracion (0.5 pp) · ✓ · _Tres viñetas: 1) ONDAS ESTACIONARIAS — cuerda de guitarra con tres modos: fundam..._
+- **p. 314** · `M2-sem1-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 317** · `M2-sem1-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 319** · `M2-sem1-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 320** · `M2-sem1-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 321** · `M2-sem1-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 2 · Semestre 2
+
+- **p.   1** · `M2-sem2-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 2 del Manual 2: Física Albatros. Co..._
+- **p.   1** · `M2-sem2-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   2** · `M2-sem2-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   4** · `M2-sem2-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.   5** · `M2-sem2-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 2 del manual Física Albatros: ..._
+- **p.   6** · `M2-sem2-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 2: en el extremo izquierdo, el problema ..._
+- **p.   8** · `M2-sem2-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  10** · `M2-sem2-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  10** · `M2-u06-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con cuatro elementos: 1) Cables transportando electrones (corri..._
+- **p.  11** · `M2-u06-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central ELECTROMAGNETISMO y seis ramas: 1) ELECTROSTÁTICA (..._
+- **p.  14** · `M2-u06-03` · ilustracion (1 pp) · ✓ · _Cuatro viñetas: 1) CARGAS — protón (esfera roja con +) y electrón (esfera azul c..._
+- **p.  17** · `M2-u06-04` · ilustracion (1 pp) · ✓ · _Cuatro viñetas: 1) CORRIENTE — cable con electrones moviéndose en una dirección,..._
+- **p.  19** · `M2-u06-05` · ilustracion (0.5 pp) · ✓ · _Tres viñetas: 1) IMÁN DE BARRA — barra rectangular con polos N (rojo) y S (azul)..._
+- **p.  21** · `M2-u06-06` · ilustracion (0.5 pp) · ✓ · _Tres viñetas: 1) OERSTED — cable horizontal con corriente fluyendo, brújula deba..._
+- **p.  23** · `M2-u06-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla con las 4 ecuaciones de Maxwell en formato físico (no integral). Filas: 1)..._
+- **p.  25** · `M2-u06-08` · infografia (1 pp) · ✓ · _Espectro EM completo horizontal en escala logarítmica desde 10⁴ Hz hasta 10²⁴ Hz..._
+- **p.  53** · `M2-u07-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con cuatro elementos: 1) Vaso con agua mostrando presión que cr..._
+- **p.  53** · `M2-u07-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central FLUIDOS y dos grandes ramas: 1) FLUIDOS EN REPOSO —..._
+- **p.  58** · `M2-u07-03` · ilustracion (1 pp) · ✓ · _Cuatro viñetas: 1) DENSIDAD — cubo de 1 cm³ y balanza junto a tres muestras: agu..._
+- **p.  59** · `M2-u07-04` · ilustracion (0.5 pp) · ✓ · _Esquema del experimento de Torricelli: cubeta abierta con mercurio y tubo de vid..._
+- **p.  61** · `M2-u07-05` · infografia (1 pp) · ✓ · _Prensa hidráulica con dos pistones conectados por tubería con aceite: pistón A1 ..._
+- **p.  63** · `M2-u07-06` · infografia (1 pp) · ✓ · _Tres bloques cúbicos del mismo tamaño sumergidos en agua. (1) Bloque de plomo: p..._
+- **p.  67** · `M2-u07-07` · ilustracion (1 pp) · ✓ · _Dos viñetas alineadas: 1) CONTINUIDAD — tubería horizontal con sección ancha A1 ..._
+- **p.  70** · `M2-u07-08` · infografia (1 pp) · ✓ · _Perfil aerodinámico (sección de ala) en dos versiones lado a lado: 1) ALA DE AVI..._
+- **p.  73** · `M2-u07-09` · ilustracion (0.5 pp) · ✓ · _Comparación lado a lado de flujo alrededor de una pelota esférica: 1) FLUJO LAMI..._
+- **p. 112** · `M2-u08-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con cuatro elementos: 1) Rayo láser que se refleja en un espejo..._
+- **p. 113** · `M2-u08-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central ÓPTICA y cuatro ramas: 1) REFLEXIÓN Y REFRACCIÓN — ..._
+- **p. 117** · `M2-u08-03` · ilustracion (0.5 pp) · ✓ · _Diagrama clásico de Snell: rayo incidente desde aire (medio 1, n₁=1.00) chocando..._
+- **p. 118** · `M2-u08-04` · infografia (0.5 pp) · ✓ · _Reflexión total interna en fibra óptica: corte longitudinal de un cable de fibra..._
+- **p. 121** · `M2-u08-05` · ilustracion (1 pp) · ✓ · _Tres viñetas: 1) ESPEJO PLANO — figura humana frente a espejo vertical y su imag..._
+- **p. 123** · `M2-u08-06` · infografia (1 pp) · ✓ · _Cuatro aplicaciones reales de espejos esféricos lado a lado: 1) ESPEJO RETROVISO..._
+- **p. 126** · `M2-u08-07` · ilustracion (1 pp) · ✓ · _Diagrama de trazado de rayos: 1) LENTE CONVERGENTE biconvexa vertical con eje ho..._
+- **p. 128** · `M2-u08-08` · infografia (1 pp) · ✓ · _Cinco aplicaciones reales de lentes con esquema óptico al lado de cada una: 1) L..._
+- **p. 131** · `M2-u08-09` · ilustracion (1 pp) · ✓ · _Experimento de Young de doble rendija: a la izquierda una fuente de luz láser mo..._
+- **p. 133** · `M2-u08-10` · ilustracion (0.5 pp) · ✓ · _Esquema del efecto fotoeléctrico: izquierda haz de luz monocromática incidiendo ..._
+- **p. 134** · `M2-u08-11` · infografia (1 pp) · ✓ · _Espectro electromagnético en banda horizontal: izquierda RADIO (λ km, f kHz, baj..._
+- **p. 175** · `M2-u09-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de cuatro elementos: 1) Modelo atómico de Bohr con núcleo y ele..._
+- **p. 176** · `M2-u09-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central FÍSICA CONTEMPORÁNEA y tres ramas: 1) ESTRUCTURA AT..._
+- **p. 178** · `M2-u09-03` · linea-tiempo (1 pp) · ✓ · _Línea horizontal con cinco hitos atómicos: 1808 DALTON (esfera indivisible), 189..._
+- **p. 179** · `M2-u09-04` · ilustracion (0.5 pp) · ✓ · _Experimento de Rutherford: a la izquierda fuente radiactiva emitiendo partículas..._
+- **p. 180** · `M2-u09-05` · infografia (1 pp) · ✓ · _Niveles de energía del átomo de hidrógeno según Bohr: cinco niveles concéntricos..._
+- **p. 185** · `M2-u09-06` · ilustracion (1 pp) · ✓ · _Tres tipos de radiación nuclear ilustrados como flechas saliendo de un núcleo am..._
+- **p. 187** · `M2-u09-07` · ilustracion (0.5 pp) · ✓ · _Reacción de fisión nuclear en cadena: a la izquierda un neutrón lento (esfera az..._
+- **p. 188** · `M2-u09-08` · ilustracion (0.5 pp) · ✓ · _Reacción de fusión D+T → He: a la izquierda dos núcleos pequeños (deuterio con 1..._
+- **p. 189** · `M2-u09-09` · grafica (1 pp) · ✓ · _Gráfica de energía de enlace por nucleón vs número másico A: eje X horizontal de..._
+- **p. 194** · `M2-u09-10` · infografia (1 pp) · ✓ · _Cinco fuentes renovables en columnas paralelas con esquema visual y datos: 1) SO..._
+- **p. 195** · `M2-u09-11` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de 6 tecnologías energéticas con columnas: capacidad instalad..._
+- **p. 195** · `M2-u09-12` · diagrama-flujo (1 pp) · ✓ · _Microrred solar-hidrógeno-batería: panel solar 400W con flecha hacia controlador..._
+- **p. 227** · `M2-sem2-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 229** · `M2-sem2-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 231** · `M2-sem2-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 232** · `M2-sem2-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 233** · `M2-sem2-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 3 · Semestre 1
+
+- **p.   1** · `M3-sem1-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 1 del Manual 3: Inteligencia Artifi..._
+- **p.   2** · `M3-sem1-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   3** · `M3-sem1-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   6** · `M3-sem1-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.   7** · `M3-sem1-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 1 del manual Inteligencia Arti..._
+- **p.  10** · `M3-sem1-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 1: en el extremo izquierdo, el problema ..._
+- **p.  12** · `M3-sem1-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  15** · `M3-sem1-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  16** · `M3-u01-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de cuatro elementos: 1) Alan Turing en 1950 frente a una hoja c..._
+- **p.  17** · `M3-u01-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central FUNDAMENTOS DE IA y seis ramas: 1) DEFINICIÓN — IA ..._
+- **p.  20** · `M3-u01-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo en tres columnas con definiciones operativas de IA: 1) DEFINI..._
+- **p.  22** · `M3-u01-04` · infografia (1 pp) · ✓ · _Infografía con dos paneles: 1) GRÁFICA DE FINANCIAMIENTO IA 1956-2025 — eje X dé..._
+- **p.  26** · `M3-u01-05` · ilustracion (1 pp) · ✓ · _Tres círculos concéntricos crecientes representando los niveles de IA: 1) ANI (I..._
+- **p.  29** · `M3-u01-06` · infografia (1 pp) · ✓ · _Cuatro círculos concéntricos: 1) IA (más grande) con ejemplos: sistemas expertos..._
+- **p.  32** · `M3-u01-07` · ilustracion (0.5 pp) · ✓ · _Analogía del aprendiz de cocinero en 3 viñetas: 1) PRETRAINING — joven aprendiz ..._
+- **p.  35** · `M3-u01-08` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de 8 LLMs principales 2025 en formato tabla con columnas: 1) ..._
+- **p.  67** · `M3-u02-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con tres pestañas de navegador abiertas en paralelo: ChatGPT (l..._
+- **p.  68** · `M3-u02-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central ASISTENTE CONVERSACIONAL y siete ramas: 1) ANATOMÍA..._
+- **p.  70** · `M3-u02-03` · infografia (1 pp) · ✓ · _Pipeline de un chat IA: 1) USUARIO escribe 'Hola, ¿cómo estás?' en input box. 2)..._
+- **p.  72** · `M3-u02-04` · ilustracion (0.5 pp) · ✓ · _Comparación visual de ventanas de contexto: barras horizontales escaladas a tama..._
+- **p.  76** · `M3-u02-05` · interfaz (1 pp) · ✓ · _Captura anotada de la interfaz ChatGPT en 2025: barra lateral izquierda con hist..._
+- **p.  80** · `M3-u02-06` · interfaz (1 pp) · ✓ · _Interfaz Claude 2025: barra lateral con sección 'Projects' (lista de proyectos d..._
+- **p.  82** · `M3-u02-07` · interfaz (1 pp) · ✓ · _Captura mostrando Gemini integrado en cuatro apps Google: 1) GMAIL con panel lat..._
+- **p.  85** · `M3-u02-08` · interfaz (1 pp) · ✓ · _Captura cuadricular de Copilot integrado en 4 apps Office: 1) WORD con sidebar '..._
+- **p.  87** · `M3-u02-09` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de 4 plataformas en formato tabla: Columnas: ChatGPT Plus / C..._
+- **p.  88** · `M3-u02-10` · ilustracion (0.5 pp) · ✓ · _Diagrama de árbol de decisión visual: nodo raíz '¿Qué necesitas hacer?' con 5 ra..._
+- **p.  94** · `M3-u02-11` · infografia (1 pp) · ✓ · _Tres limitaciones de LLMs en infografía con personajes ilustrados: 1) ALUCINACIO..._
+- **p. 131** · `M3-u03-01` · ilustracion (1 pp) · ✓ · _Ilustración hero contrastando dos prompts: a la izquierda, persona escribe 'haz ..._
+- **p. 131** · `M3-u03-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central PROMPT ENGINEERING y cinco ramas: 1) ANATOMÍA — rol..._
+- **p. 135** · `M3-u03-03` · infografia (1 pp) · ✓ · _Anatomía completa de un prompt profesional descompuesta en 6 capas con colores d..._
+- **p. 136** · `M3-u03-04` · cuadro-comparativo (1 pp) · ✓ · _Tabla comparativa de Prompt Malo vs Bueno con dos columnas: PROMPT MALO 'ayúdame..._
+- **p. 139** · `M3-u03-05` · ilustracion (1 pp) · ✓ · _Tres técnicas en columnas paralelas comparando aplicación a la misma pregunta de..._
+- **p. 141** · `M3-u03-06` · ilustracion (1 pp) · ✓ · _Técnicas avanzadas en 3 paneles: 1) SELF-CONSISTENCY — mismo prompt enviado 5 ve..._
+- **p. 143** · `M3-u03-07` · infografia (1 pp) · ✓ · _Cinco personajes con la misma pregunta '¿qué es Bernoulli?': 1) PROFESOR pedagóg..._
+- **p. 145** · `M3-u03-08` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 4 formatos de structured output con misma pregunta 'lista ..._
+- **p. 147** · `M3-u03-09` · diagrama-flujo (1 pp) · ✓ · _Diagrama circular con 5 estaciones: 1) ESCRIBE — texto 'prompt v1 con R-T-C-R-F-..._
+- **p. 151** · `M3-u03-10` · cuadro-comparativo (1 pp) · ✓ · _Cuadro de 12 antipatrones en formato tabla con 3 columnas: ANTIPATRÓN | EJEMPLO ..._
+- **p. 187** · `M3-u04-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con cuatro paneles convergentes hacia un tutor virtual central:..._
+- **p. 187** · `M3-u04-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central IA GENERATIVA MULTIMODAL y cuatro ramas: 1) IMAGEN ..._
+- **p. 190** · `M3-u04-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de 5 generadores de imagen 2025 en formato tabla: 1) DALL·E 3..._
+- **p. 191** · `M3-u04-04` · infografia (1 pp) · ✓ · _Anatomía de prompt visual en 5 capas apiladas con colores distintos: 1) SUJETO a..._
+- **p. 196** · `M3-u04-05` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de 6 plataformas de video IA 2025 en formato tabla: 1) SORA (..._
+- **p. 200** · `M3-u04-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de plataformas de audio IA 2025: 1) ElevenLabs — voces sintét..._
+- **p. 204** · `M3-u04-07` · ilustracion (1 pp) · ✓ · _Pipeline de análisis multimodal en 4 pasos: 1) USUARIO arrastra al chat: PDF de ..._
+- **p. 239** · `M3-u05-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con cuatro elementos convergiendo a un estudiante con laptop: 1..._
+- **p. 240** · `M3-u05-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central IA PARA ESTUDIO y seis ramas: 1) NOTEBOOKLM (Google..._
+- **p. 243** · `M3-u05-03` · interfaz (1 pp) · ✓ · _Captura anotada de NotebookLM: layout de 3 paneles: izquierda 'Sources' (lista d..._
+- **p. 244** · `M3-u05-04` · ilustracion (1 pp) · ✓ · _Caso de uso real ilustrado: estudiante con laptop carga 8 PDFs (libro Tippens + ..._
+- **p. 248** · `M3-u05-05` · interfaz (1 pp) · ✓ · _Captura de Perplexity: arriba pregunta del usuario '¿cuál es el estado actual de..._
+- **p. 251** · `M3-u05-06` · interfaz (1 pp) · ✓ · _Captura split en dos paneles: 1) IZQUIERDA — Consensus con pregunta '¿el ayuno i..._
+- **p. 255** · `M3-u05-07` · interfaz (1 pp) · ✓ · _Captura de Elicit: arriba pregunta de investigación '¿el ayuno intermitente redu..._
+- **p. 259** · `M3-u05-08` · interfaz (1 pp) · ✓ · _Captura tripartita: 1) WHIMSICAL AI — board con mapa mental visual estilo whiteb..._
+- **p. 263** · `M3-u05-09` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de citación de IA en 4 estilos: APA 7ma, MLA 9, IEEE, Chicago..._
+- **p. 296** · `M3-sem1-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 300** · `M3-sem1-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 303** · `M3-sem1-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 305** · `M3-sem1-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 306** · `M3-sem1-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 3 · Semestre 2
+
+- **p.   1** · `M3-sem2-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 2 del Manual 3: Inteligencia Artifi..._
+- **p.   2** · `M3-sem2-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   3** · `M3-sem2-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   6** · `M3-sem2-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.   7** · `M3-sem2-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 2 del manual Inteligencia Arti..._
+- **p.  10** · `M3-sem2-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 2: en el extremo izquierdo, el problema ..._
+- **p.  12** · `M3-sem2-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  15** · `M3-sem2-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  16** · `M3-u06-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con un escritorio digital donde 6 herramientas trabajan simultá..._
+- **p.  16** · `M3-u06-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central PRODUCTIVIDAD CON IA y seis ramas: 1) CORREO — Gemi..._
+- **p.  20** · `M3-u06-03` · interfaz (1 pp) · ✓ · _Captura tripartita comparando 3 plataformas: 1) GMAIL con Gemini panel lateral d..._
+- **p.  24** · `M3-u06-04` · interfaz (1 pp) · ✓ · _Captura split: 1) IZQUIERDA Google Sheets con GPT for Sheets activo: columna A c..._
+- **p.  28** · `M3-u06-05` · interfaz (1 pp) · ✓ · _Captura de Gamma generando presentación: pantalla dividida. Arriba: input box co..._
+- **p.  33** · `M3-u06-06` · interfaz (1 pp) · ✓ · _Captura tripartita: 1) CLAUDE PROJECTS — sidebar con 'My Tesis' Project: knowled..._
+- **p.  37** · `M3-u06-07` · interfaz (1 pp) · ✓ · _Captura de Motion: layout de 3 paneles. Izquierda: lista de tareas con prioridad..._
+- **p.  41** · `M3-u06-08` · interfaz (1 pp) · ✓ · _Captura de Otter durante reunión Zoom activa: panel lateral derecho. Arriba: 'Li..._
+- **p.  75** · `M3-u07-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con un estudiante en el centro construyendo su propio tutor IA:..._
+- **p.  75** · `M3-u07-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central GPTs/GEMS/AGENTES y cinco ramas: 1) GPTs OPENAI — i..._
+- **p.  78** · `M3-u07-03` · ilustracion (1 pp) · ✓ · _Anatomía de GPT en 5 capas apiladas: 1) IDENTIDAD azul — Name 'Albatros Tutor Fí..._
+- **p.  83** · `M3-u07-04` · interfaz (1 pp) · ✓ · _Interfaz Gem builder de Gemini: panel izquierdo con campos Name 'Tutor Física Al..._
+- **p.  86** · `M3-u07-05` · interfaz (1 pp) · ✓ · _Captura de Claude Projects: sidebar con lista de Projects (Tesis, Trabajo, Marca..._
+- **p.  90** · `M3-u07-06` · interfaz (1 pp) · ✓ · _Captura de Copilot Studio: lienzo central con flowchart de conversación: nodos '..._
+- **p.  95** · `M3-u07-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de 5 casos de uso en formato tabla: 1) TUTOR ACADÉMICO — inst..._
+- **p. 134** · `M3-u08-01` · ilustracion (1 pp) · ✓ · _Ilustración hero con flujo de producción: 1) IDEA chispa cerebro. 2) GUIÓN texto..._
+- **p. 134** · `M3-u08-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central CREACIÓN DE CONTENIDO IA y seis ramas: 1) REDACCIÓN..._
+- **p. 138** · `M3-u08-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de 4 herramientas de redacción IA en 2025: 1) Claude Opus 4.7..._
+- **p. 141** · `M3-u08-04` · ilustracion (1 pp) · ✓ · _Estructura narrativa visualizada: arco horizontal con 3 actos: Acto 1 (subida) c..._
+- **p. 144** · `M3-u08-05` · interfaz (1 pp) · ✓ · _Captura de Canva Magic Studio: arriba prompt 'genera infografía sobre Bernoulli ..._
+- **p. 147** · `M3-u08-06` · interfaz (1 pp) · ✓ · _Captura split: 1) DESCRIPT — transcript del video a la izquierda con palabras ta..._
+- **p. 150** · `M3-u08-07` · ilustracion (1 pp) · ✓ · _Pipeline de podcast con IA en 5 pasos: 1) GUIÓN en LLM (icono ChatGPT/Claude). 2..._
+- **p. 153** · `M3-u08-08` · diagrama-flujo (1 pp) · ✓ · _Pipeline horizontal de 7 estaciones: 1) IDEA en globo de pensamiento (5 min). 2)..._
+- **p. 189** · `M3-u09-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 9: una mano humana firma con tinta..._
+- **p. 190** · `M3-u09-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Ética, sesgo y uso responsable' del que salen 6 ra..._
+- **p. 194** · `M3-u09-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de 6 tipos de sesgo aplicados al case study Mi tutor IA perso..._
+- **p. 196** · `M3-u09-04` · infografia (1 pp) · ✓ · _Infografía horizontal 'El viaje de tu prompt' con 5 estaciones en línea: tu disp..._
+- **p. 200** · `M3-u09-05` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de las 6 licencias Creative Commons (CC0 dominio público, CC ..._
+- **p. 203** · `M3-u09-06` · infografia (1 pp) · ✓ · _Infografía 'Pipeline de un deepfake y dónde detectarlo' con 4 columnas: 1) Recol..._
+- **p. 207** · `M3-u09-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro 'Mapa de tu carrera frente a la IA' con 8 columnas (medicina, derecho, in..._
+- **p. 211** · `M3-u09-08` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo paralela 2018–2027 con dos carriles. Carril UE: 2018 GDPR · 2021..._
+- **p. 245** · `M3-sem2-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 249** · `M3-sem2-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 252** · `M3-sem2-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 254** · `M3-sem2-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 255** · `M3-sem2-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 4 · Semestre 1
+
+- **p.   1** · `M4-sem1-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 1 del Manual 4: Inteligencia Artifi..._
+- **p.   2** · `M4-sem1-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   5** · `M4-sem1-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   8** · `M4-sem1-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.  10** · `M4-sem1-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 1 del manual Inteligencia Arti..._
+- **p.  13** · `M4-sem1-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 1: en el extremo izquierdo, el problema ..._
+- **p.  16** · `M4-sem1-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  19** · `M4-sem1-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  21** · `M4-u01-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 1: a la izquierda, un prompt corto..._
+- **p.  22** · `M4-u01-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Prompt Engineering Avanzado' y 8 ramas: 1) Estruct..._
+- **p.  31** · `M4-u01-03` · ilustracion (1 pp) · ✓ · _Diagrama tipo 'anatomía' de un prompt XML profesional, con cada una de las 6 sec..._
+- **p.  34** · `M4-u01-04` · diagrama-flujo (1 pp) · ✓ · _Diagrama de flujo circular del bucle meta-prompt: 1) Tarea → 2) Modelo escribe p..._
+- **p.  40** · `M4-u01-05` · diagrama-flujo (1 pp) · ✓ · _Diagrama comparativo lado a lado. Izquierda: Chain-of-Thought con 4 cajas en lín..._
+- **p.  44** · `M4-u01-06` · ilustracion (1 pp) · ✓ · _Ilustración comparativa de tamaño media página. Lado izquierdo etiquetado 'Self-..._
+- **p.  48** · `M4-u01-07` · diagrama-flujo (1 pp) · ✓ · _Diagrama de pipeline de 5 prompts encadenados a tamaño página completa. Caja 1 '..._
+- **p.  54** · `M4-u01-08` · ilustracion (1 pp) · ✓ · _Ilustración 'curaduría de ejemplos few-shot' tamaño media página: cuadrícula de ..._
+- **p.  58** · `M4-u01-09` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo de los 4 niveles de constrained output con 5 columnas: nivel ..._
+- **p.  62** · `M4-u01-10` · cuadro-comparativo (1 pp) · ✓ · _Cuadro 'Pirámide de evaluación de prompts' tamaño página completa con 4 niveles ..._
+- **p.  98** · `M4-u02-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 2: en el centro un documento PRD e..._
+- **p. 100** · `M4-u02-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Especificaciones de Tareas y Proyectos' y 6 ramas:..._
+- **p. 107** · `M4-u02-03` · ilustracion (1 pp) · ✓ · _Plantilla visual del PRD del Asistente Institucional Albatros como hoja tamaño c..._
+- **p. 112** · `M4-u02-04` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página completa de las 3 plantillas Albatros lado a lado: Brief,..._
+- **p. 116** · `M4-u02-05` · ilustracion (1 pp) · ✓ · _Checklist visual de Definition of Done a tamaño página, dividido en 3 columnas c..._
+- **p. 120** · `M4-u02-06` · ilustracion (1 pp) · ✓ · _Pirámide invertida (de pocas a muchas) con 4 niveles de especificación: en la ci..._
+- **p. 126** · `M4-u02-07` · diagrama-flujo (1 pp) · ✓ · _Diagrama de flujo spec-driven a tamaño página: a la izquierda 'spec.md' con fron..._
+- **p. 131** · `M4-u02-08` · ilustracion (1 pp) · ✓ · _Triángulo equilátero con vértices etiquetados: Calidad arriba, Velocidad abajo-i..._
+- **p. 164** · `M4-u03-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 3: a la izquierda una ventana de c..._
+- **p. 166** · `M4-u03-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Artifacts y Canvases' y 6 ramas: 1) Qué son los Ar..._
+- **p. 172** · `M4-u03-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página completa con los 8 tipos de Artifacts en filas. Columnas:..._
+- **p. 177** · `M4-u03-04` · interfaz (1 pp) · ✓ · _Captura anotada a tamaño página de la interfaz Claude Artifacts mostrando: chat ..._
+- **p. 179** · `M4-u03-05` · diagrama-flujo (1 pp) · ✓ · _Diagrama de flujo del ciclo Claude Artifacts a página completa: 1) Primer prompt..._
+- **p. 185** · `M4-u03-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparando los 3 sistemas: Claude Artifacts, ChatGPT Canv..._
+- **p. 191** · `M4-u03-07` · ilustracion (1 pp) · ✓ · _Galería tipo grid 2x3 con 6 mini-apps representadas: dashboard React (cards y gr..._
+- **p. 196** · `M4-u03-08` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 4 columnas: Link público, Embed iframe, Download, Dep..._
+- **p. 201** · `M4-u03-09` · diagrama-flujo (1 pp) · ✓ · _Diagrama de versionado a página completa con dos carriles paralelos: arriba 'Ver..._
+- **p. 236** · `M4-u04-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 4: a la izquierda una pila de PDFs..._
+- **p. 237** · `M4-u04-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Bases de Conocimiento y RAG' y 6 ramas: 1) Concept..._
+- **p. 245** · `M4-u04-03` · diagrama-flujo (1 pp) · ✓ · _Diagrama de pipeline RAG a tamaño página: lado izquierdo 'Indexación offline' co..._
+- **p. 250** · `M4-u04-04` · ilustracion (1 pp) · ✓ · _Visualización a tamaño página de un espacio de embeddings 2D simplificado. Eje h..._
+- **p. 255** · `M4-u04-05` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparando GPT files (Projects/Custom GPT), Claude Projec..._
+- **p. 261** · `M4-u04-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo a tamaño página completa de Dify, Flowise y Stack AI con 10 d..._
+- **p. 262** · `M4-u04-07` · interfaz (1 pp) · ✓ · _Captura a tamaño página de Dify mostrando un workflow visual con 7 nodos conecta..._
+- **p. 267** · `M4-u04-08` · ilustracion (1 pp) · ✓ · _Visualización a tamaño página de una página real del reglamento institucional co..._
+- **p. 272** · `M4-u04-09` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparando RAG y Fine-tuning con 10 filas (qué resuelve, ..._
+- **p. 311** · `M4-u05-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 5: a la izquierda mensaje del padr..._
+- **p. 312** · `M4-u05-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Workflows e Integraciones No-Code' y 7 ramas: 1) n..._
+- **p. 320** · `M4-u05-03` · interfaz (1 pp) · ✓ · _Captura anotada a tamaño página del editor n8n mostrando el workflow descrito: 8..._
+- **p. 325** · `M4-u05-04` · interfaz (1 pp) · ✓ · _Captura a tamaño página del editor Make mostrando un escenario complejo con módu..._
+- **p. 330** · `M4-u05-05` · ilustracion (1 pp) · ✓ · _Diagrama a tamaño página de Zapier AI Actions: en el centro un LLM (Claude/ChatG..._
+- **p. 334** · `M4-u05-06` · interfaz (1 pp) · ✓ · _Captura a tamaño página de Power Automate con Copilot: lado izquierdo panel de c..._
+- **p. 339** · `M4-u05-07` · diagrama-flujo (1 pp) · ✓ · _Diagrama comparativo a tamaño página con 3 columnas: Schedule, Polling, Webhook...._
+- **p. 345** · `M4-u05-08` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 3 columnas (Notion, Airtable, Google Workspace) × 8 f..._
+- **p. 350** · `M4-u05-09` · cuadro-comparativo (1 pp) · ✓ · _Galería visual a tamaño página de los 5 patrones: Router (con switch a 3 ramas),..._
+- **p. 386** · `M4-sem1-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 390** · `M4-sem1-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 393** · `M4-sem1-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 396** · `M4-sem1-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 398** · `M4-sem1-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 4 · Semestre 2
+
+- **p.   1** · `M4-sem2-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 2 del Manual 4: Inteligencia Artifi..._
+- **p.   2** · `M4-sem2-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   5** · `M4-sem2-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   8** · `M4-sem2-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.  10** · `M4-sem2-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 2 del manual Inteligencia Arti..._
+- **p.  14** · `M4-sem2-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 2: en el extremo izquierdo, el problema ..._
+- **p.  17** · `M4-sem2-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  20** · `M4-sem2-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  22** · `M4-u06-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 6: en el centro un círculo azul Al..._
+- **p.  23** · `M4-u06-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Agentes de IA' y 6 ramas: 1) Qué es un agente vs c..._
+- **p.  30** · `M4-u06-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparando Chatbot, Workflow y Agente lado a lado: 8 fila..._
+- **p.  37** · `M4-u06-04` · ilustracion (1 pp) · ✓ · _Diagrama anatómico a tamaño página de un agente: cinco bloques rectangulares int..._
+- **p.  41** · `M4-u06-05` · ilustracion (1 pp) · ✓ · _Galería visual a tamaño página con 4 arquitecturas: 1) Reactivo (loop simple con..._
+- **p.  48** · `M4-u06-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparando 6 plataformas de agentes lado a lado: ChatGPT ..._
+- **p.  53** · `M4-u06-07` · diagrama-flujo (1 pp) · ✓ · _Diagrama de ciclo a tamaño página: 5 nodos en círculo. Nodo 1 'App envía prompt ..._
+- **p.  59** · `M4-u06-08` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con los 7 riesgos en filas. Columnas: nombre · qué pasa ·..._
+- **p.  99** · `M4-u07-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 7: a la izquierda la nube (proveed..._
+- **p. 101** · `M4-u07-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'IA Local y Open Source' y 7 ramas: 1) Por qué loca..._
+- **p. 108** · `M4-u07-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro comparativo a tamaño página de Cloud vs Local con 10 dimensiones: setup, ..._
+- **p. 112** · `M4-u07-04` · interfaz (1 pp) · ✓ · _Captura de terminal a tamaño página con 4 paneles: panel 1 muestra `curl install..._
+- **p. 117** · `M4-u07-05` · interfaz (1 pp) · ✓ · _Captura a tamaño página de Open WebUI corriendo en localhost: sidebar izquierda ..._
+- **p. 121** · `M4-u07-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparando 3 stacks locales: Ollama+Open WebUI (icono Doc..._
+- **p. 125** · `M4-u07-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página de las 4 familias en filas (Llama, Mistral, Qwen, DeepSee..._
+- **p. 130** · `M4-u07-08` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 6 niveles de cuantización en filas (FP16, Q8, Q6, Q5,..._
+- **p. 135** · `M4-u07-09` · diagrama-flujo (1 pp) · ✓ · _Diagrama a tamaño página del stack 100% local: caja exterior 'Servidor instituci..._
+- **p. 176** · `M4-u08-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 8: en el centro un cliente IA (Cla..._
+- **p. 177** · `M4-u08-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'MCP y Conexión de Herramientas' y 5 ramas: 1) Qué ..._
+- **p. 184** · `M4-u08-03` · diagrama-flujo (1 pp) · ✓ · _Diagrama a tamaño página comparativo. Lado izquierdo etiquetado 'Pre-MCP (caos)'..._
+- **p. 190** · `M4-u08-04` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 12 servidores MCP en filas. Columnas: nombre · icono ..._
+- **p. 194** · `M4-u08-05` · interfaz (1 pp) · ✓ · _Captura anotada a tamaño página de Claude Desktop con MCP. Sidebar con conversac..._
+- **p. 200** · `M4-u08-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparativo Claude Desktop+MCP vs ChatGPT+Connectors. 8 f..._
+- **p. 205** · `M4-u08-07` · ilustracion (1 pp) · ✓ · _Galería visual a tamaño página con los 5 casos de uso. Cada uno como mini-storyb..._
+- **p. 235** · `M4-u09-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 9: en el centro un Asistente IA es..._
+- **p. 237** · `M4-u09-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Contenido Especializado de Alto Nivel' y 6 ramas: ..._
+- **p. 245** · `M4-u09-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 4 herramientas Deep Research (ChatGPT, Gemini, Perple..._
+- **p. 249** · `M4-u09-04` · ilustracion (1 pp) · ✓ · _Estructura visual a tamaño página de un whitepaper de 12 páginas. Cada sección c..._
+- **p. 255** · `M4-u09-05` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 6 productos educativos en filas (rúbrica, secuencia d..._
+- **p. 259** · `M4-u09-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página de las 5 herramientas (Galileo, Uizard, v0.dev, Lovable, ..._
+- **p. 264** · `M4-u09-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página de 8 tipos de contenido legal en filas. Columnas: nivel d..._
+- **p. 269** · `M4-u09-08` · ilustracion (1 pp) · ✓ · _Ilustración a tamaño página del proceso. Lado izquierdo: caja 'Esquema + restric..._
+- **p. 301** · `M4-u10-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 10: en el centro, un timeline de 1..._
+- **p. 302** · `M4-u10-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Estrategia, Costos y Gobernanza' y 5 ramas: 1) Com..._
+- **p. 309** · `M4-u10-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparativo de los 4 jugadores en columnas. 10 filas: pla..._
+- **p. 316** · `M4-u10-04` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con dos secciones. Sección 1: precios API por modelo (fil..._
+- **p. 320** · `M4-u10-05` · ilustracion (1 pp) · ✓ · _Plantilla visual a tamaño página de la Política de Uso IA Albatros: 9 secciones ..._
+- **p. 325** · `M4-u10-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 4 categorías de KPIs en filas. Por cada KPI: nombre, ..._
+- **p. 329** · `M4-u10-07` · cuadro-comparativo (1 pp) · ✓ · _Matriz a tamaño página dato × sistema con colores: verde (permitido), amarillo (..._
+- **p. 362** · `M4-sem2-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 367** · `M4-sem2-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 370** · `M4-sem2-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 373** · `M4-sem2-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 375** · `M4-sem2-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 5 · Semestre 1
+
+- **p.   1** · `M5-sem1-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 1 del Manual 5: Inteligencia Artifi..._
+- **p.   3** · `M5-sem1-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   6** · `M5-sem1-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   9** · `M5-sem1-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.  11** · `M5-sem1-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 1 del manual Inteligencia Arti..._
+- **p.  15** · `M5-sem1-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 1: en el extremo izquierdo, el problema ..._
+- **p.  18** · `M5-sem1-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  22** · `M5-sem1-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  23** · `M5-u01-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 1: a la izquierda, una hoja de cua..._
+- **p.  25** · `M5-u01-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Tu Primer Python para IA' y 7 ramas: 1) Configurac..._
+- **p.  33** · `M5-u01-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparando los 3 caminos en filas: Colab, Anaconda, VS Co..._
+- **p.  37** · `M5-u01-04` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 4 tipos en filas (int, float, str, bool). Columnas: e..._
+- **p.  41** · `M5-u01-05` · diagrama-flujo (1 pp) · ✓ · _Diagrama de flujo a tamaño página con 3 paneles: 1) if/elif/else como rombo de d..._
+- **p.  46** · `M5-u01-06` · ilustracion (1 pp) · ✓ · _Anatomía visual a tamaño página de una función Python: caja grande con título 'd..._
+- **p.  51** · `M5-u01-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 4 estructuras (lista, tupla, dict, set) en filas. Col..._
+- **p.  56** · `M5-u01-08` · diagrama-flujo (1 pp) · ✓ · _Diagrama de flujo a tamaño página de E/S de archivos. Lado izquierdo lectura: CS..._
+- **p.  62** · `M5-u01-09` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página de 6 excepciones más comunes en Python aplicadas al case ..._
+- **p. 100** · `M5-u02-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portadilla para la Unidad 2: a la izquierda código Python co..._
+- **p. 101** · `M5-u02-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Datos con NumPy y Pandas' y 6 ramas: 1) NumPy (np...._
+- **p. 109** · `M5-u02-03` · ilustracion (1 pp) · ✓ · _Ilustración a tamaño página comparando lista Python vs np.array. Lado izquierdo:..._
+- **p. 114** · `M5-u02-04` · ilustracion (1 pp) · ✓ · _Ilustración a tamaño página comparando Series y DataFrame. Lado izquierdo: Serie..._
+- **p. 119** · `M5-u02-05` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con los 3 formatos en filas (CSV, Excel, JSON). Columnas:..._
+- **p. 123** · `M5-u02-06` · ilustracion (1 pp) · ✓ · _Ilustración antes/después de limpieza a tamaño página. Lado izquierdo: DataFrame..._
+- **p. 129** · `M5-u02-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 4 técnicas (boolean indexing, .loc/.iloc, .query, .is..._
+- **p. 133** · `M5-u02-08` · diagrama-flujo (1 pp) · ✓ · _Diagrama 'split-apply-combine' a tamaño página. Lado izquierdo: tabla original d..._
+- **p. 171** · `M5-u03-01` · ilustracion (1 pp) · ✓ · _Ilustración hero portadilla U3: a la izquierda una tabla larga con 50 filas de n..._
+- **p. 172** · `M5-u03-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Visualización de Datos' y 6 ramas: 1) Matplotlib e..._
+- **p. 179** · `M5-u03-03` · ilustracion (1 pp) · ✓ · _Galería visual a tamaño página con los 3 gráficos básicos. Lado izquierdo: gráfi..._
+- **p. 183** · `M5-u03-04` · ilustracion (1 pp) · ✓ · _Ilustración a tamaño página comparativa. Lado izquierdo: histograma con campana ..._
+- **p. 188** · `M5-u03-05` · ilustracion (1 pp) · ✓ · _Galería visual a tamaño página con 6 gráficos seaborn. 2 filas x 3 columnas. Cad..._
+- **p. 193** · `M5-u03-06` · ilustracion (1 pp) · ✓ · _Ilustración antes/después a tamaño página. Lado izquierdo: bar chart por defecto..._
+- **p. 197** · `M5-u03-07` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página de patrones visuales canónicos. Filas: tendencia ascenden..._
+- **p. 201** · `M5-u03-08` · ilustracion (1 pp) · ✓ · _Estructura narrativa a tamaño página: 3 actos como bloques apilados (Contexto, C..._
+- **p. 236** · `M5-u04-01` · ilustracion (1 pp) · ✓ · _Ilustración hero U4: a la izquierda una mente con signo de interrogación. Al cen..._
+- **p. 237** · `M5-u04-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Estadística para entender datos' y 6 ramas: 1) Ten..._
+- **p. 242** · `M5-u04-03` · ilustracion (1 pp) · ✓ · _Ilustración a tamaño página con 4 histogramas pequeños, todos con media = 7. His..._
+- **p. 245** · `M5-u04-04` · ilustracion (1 pp) · ✓ · _Ilustración a tamaño página de la curva de campana clásica con etiquetas: media ..._
+- **p. 249** · `M5-u04-05` · ilustracion (1 pp) · ✓ · _Ilustración a tamaño página: línea horizontal con 100 puntos representando alumn..._
+- **p. 253** · `M5-u04-06` · cuadro-comparativo (1 pp) · ✓ · _Galería visual a tamaño página de 6 scatter plots: 1) r=+1 puntos en diagonal pe..._
+- **p. 256** · `M5-u04-07` · diagrama-flujo (1 pp) · ✓ · _Diagrama a tamaño página con 4 paneles. Panel 1: A → B (causal directa, flecha s..._
+- **p. 260** · `M5-u04-08` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 3 métodos (IQR, Z-score, Percentil) en filas. Columna..._
+- **p. 296** · `M5-sem1-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 301** · `M5-sem1-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 305** · `M5-sem1-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 307** · `M5-sem1-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 310** · `M5-sem1-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._
+
+## Manual 5 · Semestre 2
+
+- **p.   1** · `M5-sem2-01` · ilustracion (1 pp) · ✓ · _Ilustración hero de portada para el Semestre 2 del Manual 5: Inteligencia Artifi..._
+- **p.   3** · `M5-sem2-02` · ilustracion (0.5 pp) · ✓ · _Pieza de créditos editoriales: logo Albatros centrado en azul Albatros sobre fon..._
+- **p.   6** · `M5-sem2-03` · ilustracion (0.5 pp) · ✓ · _Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escri..._
+- **p.   9** · `M5-sem2-04` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 3 columnas: 'Enfoque tradicional' vs 'Enfoque Albatros' vs..._
+- **p.  11** · `M5-sem2-05` · infografia (1 pp) · ✓ · _Infografía vertical tipo mapa visual del semestre 2 del manual Inteligencia Arti..._
+- **p.  15** · `M5-sem2-06` · linea-tiempo (1 pp) · ✓ · _Línea de tiempo horizontal del semestre 2: en el extremo izquierdo, el problema ..._
+- **p.  18** · `M5-sem2-07` · cuadro-comparativo (1 pp) · ✓ · _Tabla extendida del índice de competencias del semestre con columnas: ID, descri..._
+- **p.  23** · `M5-sem2-08` · grafica (0.5 pp) · ✓ · _Gráfica de radar de 5 ejes para autoevaluación inicial: 1) Familiaridad con el t..._
+- **p.  24** · `M5-u05-01` · ilustracion (1 pp) · ✓ · _Ilustración hero U5: a la izquierda, datos históricos del alumno (horas, asisten..._
+- **p.  26** · `M5-u05-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Tu Primer Modelo de Machine Learning' y 8 ramas: 1..._
+- **p.  31** · `M5-u05-03` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página comparando supervisado, no supervisado, refuerzo. 5 filas..._
+- **p.  34** · `M5-u05-04` · diagrama-flujo (1 pp) · ✓ · _Pipeline ML a tamaño página: 7 cajas conectadas en línea. 1) Datos crudos (icono..._
+- **p.  39** · `M5-u05-05` · ilustracion (1 pp) · ✓ · _Esquema visual a tamaño página. Lado izquierdo: split simple, dataset partido en..._
+- **p.  43** · `M5-u05-06` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página de métricas. Lado izquierdo: clasificación (accuracy, pre..._
+- **p.  47** · `M5-u05-07` · ilustracion (1 pp) · ✓ · _Visualización a tamaño página de regresión lineal. Lado izquierdo: scatter horas..._
+- **p.  51** · `M5-u05-08` · ilustracion (1 pp) · ✓ · _Visualización a tamaño página: curva sigmoidea (S) en el centro. Eje x = combina..._
+- **p.  54** · `M5-u05-09` · ilustracion (1 pp) · ✓ · _Visualización a tamaño página de árbol de decisión real (max_depth=3). Nodos: ra..._
+- **p.  59** · `M5-u05-10` · ilustracion (1 pp) · ✓ · _3 paneles a tamaño página: 1) Underfitting con línea recta sobre datos en U (mal..._
+- **p.  97** · `M5-u06-01` · ilustracion (1 pp) · ✓ · _Ilustración hero U6: 480 puntos dispersos en 2D que se reorganizan en 4 clusters..._
+- **p.  97** · `M5-u06-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Aprendizaje No Supervisado' y 5 ramas: 1) Clusteri..._
+- **p. 102** · `M5-u06-03` · ilustracion (1 pp) · ✓ · _Antes/después de clustering a tamaño página. Lado izquierdo: ~50 puntos disperso..._
+- **p. 106** · `M5-u06-04` · diagrama-flujo (1 pp) · ✓ · _K-Means visualizado en 4 pasos a tamaño página. Paso 1: scatter con K=4 centroid..._
+- **p. 110** · `M5-u06-05` · ilustracion (1 pp) · ✓ · _Visualización a tamaño página de los 2 métodos. Lado izquierdo: gráfica del codo..._
+- **p. 114** · `M5-u06-06` · ilustracion (1 pp) · ✓ · _Visualización a tamaño página de PCA. Lado izquierdo: tabla con 4 features. Flec..._
+- **p. 118** · `M5-u06-07` · ilustracion (1 pp) · ✓ · _Scatter 2D a tamaño página con ~480 puntos. La mayoría agrupados en 4 clusters c..._
+- **p. 155** · `M5-u07-01` · ilustracion (1 pp) · ✓ · _Ilustración hero U7: red neuronal MLP con 3 capas (input 4 features, hidden 16 n..._
+- **p. 156** · `M5-u07-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'Redes Neuronales' y 6 ramas: 1) Neurona artificial..._
+- **p. 160** · `M5-u07-03` · ilustracion (1 pp) · ✓ · _Neurona artificial a tamaño página: 4 inputs con líneas hacia centro, etiquetada..._
+- **p. 165** · `M5-u07-04` · ilustracion (1 pp) · ✓ · _MLP a tamaño página: capa entrada (4 círculos azules), capa oculta 1 (16 círculo..._
+- **p. 169** · `M5-u07-05` · diagrama-flujo (1 pp) · ✓ · _Diagrama de entrenamiento a tamaño página. Forward (flecha rojo izq→der): X entr..._
+- **p. 174** · `M5-u07-06` · ilustracion (1 pp) · ✓ · _Tres bloques a tamaño página: 1) Tensor (cuadrícula con números, etiqueta dtype ..._
+- **p. 179** · `M5-u07-07` · interfaz (1 pp) · ✓ · _Captura de Colab a tamaño página con: izquierdo, código de la arquitectura. Cent..._
+- **p. 182** · `M5-u07-08` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 4 paneles, uno por patrón. Cada uno con curva (train ..._
+- **p. 218** · `M5-u08-01` · ilustracion (1 pp) · ✓ · _Ilustración hero U8: izquierda predictor ML produciendo cal_final=6.5. Centro: A..._
+- **p. 219** · `M5-u08-02` · mapa-mental (1 pp) · ✓ · _Mapa mental con nodo central 'APIs de IA Generativa' y 7 ramas: 1) Configurar AP..._
+- **p. 225** · `M5-u08-03` · ilustracion (1 pp) · ✓ · _Setup a tamaño página: 5 pasos numerados. 1) Cuenta en provider. 2) Generar API ..._
+- **p. 228** · `M5-u08-04` · ilustracion (1 pp) · ✓ · _Anatomía de chat a tamaño página: bloque vertical de mensajes alternando user/as..._
+- **p. 233** · `M5-u08-05` · ilustracion (1 pp) · ✓ · _Visualización a tamaño página: lado izquierdo streaming con texto apareciendo pr..._
+- **p. 238** · `M5-u08-06` · ilustracion (1 pp) · ✓ · _Embeddings y búsqueda a tamaño página. Lado izquierdo: textos del reglamento → e..._
+- **p. 243** · `M5-u08-07` · diagrama-flujo (1 pp) · ✓ · _Pipeline RAG a tamaño página: 3 PDFs → chunker → 50 chunks → embedder → vector s..._
+- **p. 247** · `M5-u08-08` · interfaz (1 pp) · ✓ · _Captura app Streamlit a tamaño página: header 'Predictor Albatros', 3 sliders ho..._
+- **p. 253** · `M5-u08-09` · cuadro-comparativo (1 pp) · ✓ · _Cuadro a tamaño página con 4 cuadrantes: Costo (caching, modelo, tokens), Errore..._
+- **p. 284** · `M5-sem2-09` · ilustracion (1 pp) · ✓ · _Ilustración de cierre cálida: un estudiante revisando su portafolio terminado co..._
+- **p. 290** · `M5-sem2-10` · infografia (1 pp) · ✓ · _Infografía resumen del semestre completo en una sola hoja: panel superior con el..._
+- **p. 293** · `M5-sem2-11` · cuadro-comparativo (0.5 pp) · ✓ · _Tabla amplia con dos columnas principales: 'Término en español' y 'Término en in..._
+- **p. 296** · `M5-sem2-12` · cuadro-comparativo (0.5 pp) · ✓ · _Cuadro comparativo de 5 columnas con los principales tipos de fuente: Libro, Web..._
+- **p. 299** · `M5-sem2-13` · ilustracion (0.5 pp) · ✓ · _Pieza de cierre del semestre: bandera con el logo Albatros izándose en una colin..._

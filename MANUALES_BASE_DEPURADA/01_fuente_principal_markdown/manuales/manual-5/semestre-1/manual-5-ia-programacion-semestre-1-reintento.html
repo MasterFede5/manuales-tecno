@@ -1,0 +1,1204 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manual 5 - Inteligencia Artificial con Programación - Semestre 1</title>
+  <style>
+@page { size: letter; margin: 0; }
+@page landscape { size: letter landscape; margin: 0; }
+
+:root {
+  --blue: #0E3A8A;
+  --teal: #0E7490;
+  --green: #15803D;
+  --amber: #B45309;
+  --red: #B91C1C;
+  --ink: #172033;
+  --muted: #526070;
+  --line: #D7DEE8;
+  --soft: #F7FAFC;
+  --theory: #EFF6FF;
+  --practice: #ECFDF5;
+  --warm: #FFF7ED;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #E6EBF2;
+  color: var(--ink);
+  font-family: Arial, "Segoe UI", sans-serif;
+  line-height: 1.32;
+}
+.page {
+  width: 216mm;
+  height: 279mm;
+  min-height: 279mm;
+  margin: 0 auto 8mm;
+  padding: 12mm 13mm 15mm;
+  background: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+  break-after: page;
+  page-break-after: always;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
+}
+.landscape {
+  page: landscape;
+  width: 279mm;
+  height: 216mm;
+  min-height: 216mm;
+  padding: 8mm 10mm 12mm;
+  gap: 2.6mm;
+}
+.cover {
+  padding: 0;
+  color: #FFFFFF;
+  display: block;
+}
+.cover .visual {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+.cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cover figcaption {
+  display: none;
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14, 58, 138, 0.94), rgba(14, 116, 144, 0.42));
+}
+.cover-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 20mm 17mm 16mm;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.school {
+  font-size: 16pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.cover h1 {
+  margin: 25mm 0 5mm;
+  max-width: 150mm;
+  color: #FFFFFF;
+  font-size: 40pt;
+  line-height: 0.98;
+  letter-spacing: 0;
+  border: 0;
+  padding: 0;
+}
+.cover .lead {
+  max-width: 150mm;
+  color: rgba(255,255,255,0.94);
+  font-size: 15pt;
+  line-height: 1.25;
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 5mm;
+  padding-top: 6mm;
+  border-top: 1px solid rgba(255,255,255,0.55);
+  font-size: 11pt;
+}
+.kicker {
+  margin: 0;
+  color: var(--amber);
+  font-size: 9.8pt;
+  line-height: 1.15;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+h1, h2, h3 {
+  margin: 0;
+  color: var(--blue);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+h2 {
+  font-size: 19.5pt;
+  padding-bottom: 2mm;
+  border-bottom: 2px solid var(--line);
+}
+h3 {
+  font-size: 12.8pt;
+  margin-bottom: 1.5mm;
+}
+p, li {
+  font-size: 11.4pt;
+  line-height: 1.32;
+}
+p { margin: 0 0 2.8mm; }
+ul, ol {
+  margin: 1mm 0 2.8mm 5mm;
+  padding-left: 5mm;
+}
+li { margin: 1mm 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5mm 0 3mm;
+  font-size: 10.2pt;
+  break-inside: avoid;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 2mm;
+  vertical-align: top;
+}
+th {
+  color: #FFFFFF;
+  background: var(--blue);
+  text-align: left;
+}
+.large-table {
+  font-size: 10.8pt;
+}
+.mini-table {
+  font-size: 9.8pt;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  align-items: start;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  align-items: stretch;
+}
+.box, .concept, .formula-card, .route-card, .appendix-card {
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--blue);
+  background: var(--soft);
+  padding: 3mm;
+  break-inside: avoid;
+}
+.theory-box { background: var(--theory); }
+.practice-box { background: var(--practice); border-left-color: var(--green); }
+.question-box { background: var(--warm); border-left-color: var(--amber); }
+.warning-box { background: #FEF2F2; border-left-color: var(--red); }
+.concept strong, .formula-card strong, .route-card strong, .appendix-card strong {
+  color: var(--blue);
+}
+.visual {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  break-inside: avoid;
+}
+.visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.visual.full img { max-height: 205mm; }
+.visual.page-fit img { max-height: 178mm; }
+.landscape .visual.full img { max-height: 176mm; }
+figcaption {
+  color: var(--muted);
+  font-size: 9.8pt;
+  line-height: 1.25;
+  padding-top: 2mm;
+}
+.formula {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11.2pt;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 2mm;
+}
+.worked-example, .worked-step {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 2.5mm;
+  break-inside: avoid;
+}
+.worked-step {
+  margin-bottom: 2mm;
+}
+.exercise, .bank-item {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 2.3mm;
+  margin: 0 0 2.3mm;
+  font-size: 10.4pt;
+  line-height: 1.28;
+  break-inside: avoid;
+}
+.exercise strong, .bank-item strong { color: var(--blue); }
+.operation-lines, .answer-lines {
+  margin-top: 2mm;
+}
+.operation-lines span, .answer-lines span {
+  display: block;
+  border-bottom: 1px solid #AEB7C4;
+  height: 6.4mm;
+}
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+  margin-top: 2mm;
+}
+.match-grid div {
+  border: 1px solid var(--line);
+  padding: 2mm;
+  background: #F8FAFC;
+  font-size: 9.6pt;
+}
+.code-block {
+  background: #111827;
+  color: #F8FAFC;
+  border-radius: 0;
+  padding: 3mm;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 8.3pt;
+  line-height: 1.18;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+.footer {
+  position: absolute;
+  left: 13mm;
+  right: 13mm;
+  bottom: 6mm;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 2mm;
+  color: var(--muted);
+  font-size: 8.8pt;
+}
+.landscape .footer {
+  left: 10mm;
+  right: 10mm;
+}
+.toc-row {
+  display: grid;
+  grid-template-columns: 18mm 1.15fr 1.6fr;
+  gap: 3mm;
+  border-bottom: 1px solid var(--line);
+  padding: 2mm 0;
+  font-size: 10.6pt;
+}
+.badge-row {
+  display: flex;
+  gap: 2mm;
+  flex-wrap: wrap;
+}
+.badge {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 1.5mm 2mm;
+  font-size: 9.5pt;
+  color: var(--blue);
+  font-weight: 700;
+}
+.ratio {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  border: 1px solid var(--line);
+}
+.ratio div {
+  padding: 3mm;
+  color: #FFFFFF;
+  font-weight: 800;
+}
+.ratio .theory { background: var(--blue); }
+.ratio .practice { background: var(--green); }
+@media print {
+  body { background: #FFFFFF; }
+  .page { margin: 0; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+<section class="page cover"><figure class="visual full" data-visual-id="M5-sem1-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-30.svg" alt="Una ruta de aprendizaje funciona cuando cada herramienta deja evidencia."><figcaption>Una ruta de aprendizaje funciona cuando cada herramienta deja evidencia.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Inteligencia Artificial con Programación</h1><p class="lead">De Python al análisis de datos y estadística inicial para IA</p></div><div class="cover-meta"><div><strong>Semestre 1</strong><br>Predictor de rendimiento escolar</div><div><strong>Distribución</strong><br>40% teoría / 60% práctica</div><div><strong>Salida</strong><br>HTML y PDF para hoja carta</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Temario completo del semestre</h2>
+<p>Este primer semestre funciona como un manual completo: inicia con las bases, desarrolla el caso conductor y cierra con evaluación, recursos, glosario, bibliografía e índice analítico. La continuidad del siguiente semestre amplía la misma ruta sin repetirla.</p><div class="toc-list"><div class="toc-row"><strong>U01</strong><span>Tu Primer Python para IA</span><span>Script que calcula resumen básico de calificaciones.</span></div><div class="toc-row"><strong>U02</strong><span>Datos con NumPy y Pandas</span><span>Dataset escolar limpio con bitácora de transformaciones.</span></div><div class="toc-row"><strong>U03</strong><span>Visualización de Datos</span><span>Dashboard de gráficas básicas del dataset escolar.</span></div><div class="toc-row"><strong>U04</strong><span>Estadística para Entender Datos</span><span>Informe estadístico de relación entre horas de estudio y calificación.</span></div></div><div class="ratio"><div class="theory">40% comprender modelos</div><div class="practice">60% practicar, verificar y producir evidencia</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 2</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Desglose del temario 1</h2>
+<table class="mini-table"><tr><th>Unidad</th><th>Caso</th><th>Temas</th><th>Producto</th></tr><tr><td>U01</td><td>Tu Primer Python para IA<br><span>El equipo carga una lista de calificaciones y obtiene un resumen inicial.</span></td><td>Entorno básico; Variables y tipos; Condicionales; Ciclos; Funciones; Lectura de datos simples</td><td>Script que calcula resumen básico de calificaciones.</td></tr><tr><td>U02</td><td>Datos con NumPy y Pandas<br><span>El equipo limpia un dataset escolar con valores faltantes y duplicados.</span></td><td>Arrays y operaciones básicas; Series y DataFrame; Lectura de CSV; Nulos y duplicados; Filtrado y selección; Agrupación y resumen</td><td>Dataset escolar limpio con bitácora de transformaciones.</td></tr><tr><td>U03</td><td>Visualización de Datos<br><span>El equipo visualiza distribución de calificaciones por materia.</span></td><td>Líneas, barras y dispersión; Histogramas; Boxplots; Títulos y ejes; Interpretación visual; Storytelling con datos</td><td>Dashboard de gráficas básicas del dataset escolar.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 3</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Desglose del temario 2</h2>
+<table class="mini-table"><tr><th>Unidad</th><th>Caso</th><th>Temas</th><th>Producto</th></tr><tr><td>U04</td><td>Estadística para Entender Datos<br><span>El equipo analiza si horas de estudio y calificación se relacionan.</span></td><td>Media y mediana; Varianza y desviación estándar; Percentiles; Correlación de Pearson; Correlación vs causalidad; Detección de outliers</td><td>Informe estadístico de relación entre horas de estudio y calificación.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 4</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Cómo trabajar este manual</h2>
+<p>El semestre convierte un dataset escolar en código, limpieza, visualizaciones y análisis estadístico. La meta no es memorizar sintaxis: es construir evidencia con datos.</p><div class="grid-3"><div class="route-card"><strong>1. Historia</strong><br>Entrar por una situación real y preguntas introductorias.</div><div class="route-card"><strong>2. Modelo</strong><br>Nombrar conceptos, fórmulas, criterios, unidades o escalas.</div><div class="route-card"><strong>3. Evidencia</strong><br>Resolver, comparar, verificar y entregar un producto revisable.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 5</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Diagnóstico inicial</h2>
+<div class="exercise"><strong>1.</strong> Explica con tus palabras qué evidencia necesitarías para confiar en una respuesta generada por IA.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Convierte una situación cotidiana del caso conductor en una pregunta verificable.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Identifica una variable, una escala de revisión y un posible error de interpretación.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 6</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Contrato de precisión</h2>
+<div class="box warning-box"><h3>Regla de impresión</h3><p>Las infografías deben ocupar ancho completo o página horizontal cuando tengan texto. Ninguna imagen se encierra en un cuadro que reduzca su lectura.</p></div><div class="box theory-box"><h3>Regla de instrucción</h3><p>Cada actividad explica qué comparar, qué calcular, qué escribir y qué evidencia entregar. Si requiere investigación externa, lo dice de forma explícita.</p></div><div class="box practice-box"><h3>Regla de banco</h3><p>Antes del banco aparece un ejemplo resuelto de principio a fin. El banco usa los modelos de la unidad y varía entre cálculo, tabla, relación de columnas, explicación y decisión de caso.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 7</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M5-u01-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U01</div><div><h1>Tu Primer Python para IA</h1><p class="lead">El equipo carga una lista de calificaciones y obtiene un resumen inicial.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>Programar para IA empieza con acciones pequeñas: guardar valores, repetir pasos, leer datos y detectar errores. Python permite convertir una lista escolar en evidencia manipulable antes de hablar de modelos.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Python es como una libreta que también sabe hacer cuentas: si escribes instrucciones claras, repite el procedimiento sin cansarse.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué es una variable?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Cómo se calcula un promedio?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué error aparece si falta un dato?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Por qué conviene nombrar bien los datos?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 9</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Entorno básico</td></tr><tr><td>2</td><td>Variables y tipos</td></tr><tr><td>3</td><td>Condicionales</td></tr><tr><td>4</td><td>Ciclos</td></tr><tr><td>5</td><td>Funciones</td></tr><tr><td>6</td><td>Lectura de datos simples</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Script que calcula resumen básico de calificaciones.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 10</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M5-u01-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 11</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: cargar calificaciones sin perder datos.</div><div class="concept"><strong>Datos</strong><br>Datos: crear lista o leer archivo simple.</div><div class="concept"><strong>Proceso</strong><br>Proceso: calcular conteo, suma y promedio.</div><div class="concept"><strong>Validación</strong><br>Validación: revisar valores fuera de rango.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El equipo carga una lista de calificaciones y obtiene un resumen inicial. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 12</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Variable</strong></td><td>Nombre que guarda un valor para reutilizarlo.</td></tr><tr><td><strong>Tipo</strong></td><td>Categoría del dato: número, texto, booleano o lista.</td></tr><tr><td><strong>Condicional</strong></td><td>Estructura que ejecuta una acción si una condición se cumple.</td></tr><tr><td><strong>Ciclo</strong></td><td>Repetición controlada sobre datos.</td></tr><tr><td><strong>Función</strong></td><td>Bloque reutilizable con entrada y salida.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 13</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M5-u01-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 14</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Script que calcula resumen básico de calificaciones..</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 15</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">promedio = suma / n</div></td><td>Calcular media simple.</td><td>Suma en puntos; n como conteo de datos.</td></tr><tr><td><div class="formula">if condición: acción</div></td><td>Tomar decisiones.</td><td>Condición booleana; acción indentada.</td></tr><tr><td><div class="formula">for dato in lista</div></td><td>Recorrer datos.</td><td>dato es elemento actual; lista es colección.</td></tr><tr><td><div class="formula">error = valor esperado - valor observado</div></td><td>Comparar salida.</td><td>Misma unidad o escala.</td></tr><tr><td><div class="formula">porcentaje = parte / total x 100</div></td><td>Expresar proporciones.</td><td>Parte y total como conteos.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 16</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 17</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>Se tienen cinco calificaciones: 8.0, 9.5, 7.0, 10.0 y 6.5. Calcula promedio y porcentaje de aprobados.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Lista: [8.0, 9.5, 7.0, 10.0, 6.5].</li><li>Aprobado significa calificación mayor o igual a 6.</li><li>Total de datos: 5.</li><li>Suma: 35.0.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Promedio = 35.0 / 5 = 7.0.</div><div class="worked-step"><strong>Paso 2.</strong> Aprobados: 5 porque todos son &gt;= 6.</div><div class="worked-step"><strong>Paso 3.</strong> Porcentaje = 5 / 5 x 100 = 100%.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 18</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Se revisa si algún valor está fuera de 0 a 10.</div><div class="worked-step"><strong>Paso 5.</strong> La conclusión incluye que el grupo pequeño no representa a toda la escuela.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>El resumen inicial funciona, pero debe ampliarse con más datos antes de tomar decisiones escolares.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 19</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Tu Primer Python para IA en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo promedio = suma / n con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo if condición: acción para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 20</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar for dato in lista. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El equipo carga una lista de calificaciones y obtiene un resumen inicial..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando error = valor esperado - valor observado. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 21</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa porcentaje = parte / total x 100 para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 22</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 23</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 24</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo guiado con código</h2>
+<p>La práctica de programación aparece después de los conceptos para que el código sea consecuencia del razonamiento, no una receta aislada.</p><p><strong>[icono: Sección de código]</strong></p><pre class="code-block">calificaciones = [8.0, 9.5, 7.0, 10.0, 6.5]
+
+total = len(calificaciones)
+suma = sum(calificaciones)
+promedio = suma / total
+
+aprobados = 0
+for calificacion in calificaciones:
+    if calificacion &gt;= 6:
+        aprobados += 1
+
+porcentaje_aprobados = aprobados / total * 100
+
+print(&quot;Total de estudiantes:&quot;, total)
+print(&quot;Promedio:&quot;, promedio)
+print(&quot;Aprobados:&quot;, aprobados)
+print(&quot;Porcentaje de aprobados:&quot;, porcentaje_aprobados)</pre>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 25</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Explicación del código por bloques</h2>
+<div class="grid-2"><div class="concept"><strong>Datos</strong><br>El bloque inicial crea o carga datos mínimos para que la práctica pueda ejecutarse sin depender de archivos externos.</div><div class="concept"><strong>Procedimiento</strong><br>La parte central aplica el concepto de la unidad con nombres claros y pasos visibles.</div><div class="concept"><strong>Salida</strong><br>El cierre imprime una tabla, valor, gráfica o interpretación que permite comprobar el resultado.</div><div class="concept"><strong>Registro</strong><br>El estudiante anota qué cambió, qué funcionó y qué límite conserva el análisis.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 26</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Comprobación y mini actividad controlada</h2>
+<div class="box practice-box"><h3>Comprobación del resultado</h3><ul><li>Verifica que el promedio impreso sea 7.0.</li><li>Confirma que el total de estudiantes sea 5.</li><li>Cambia una calificación a 5.0 y observa cómo baja el porcentaje de aprobados.</li></ul></div><div class="exercise"><strong>[icono: Mini Actividades]</strong> Cambia un solo dato del ejemplo, ejecuta de nuevo el procedimiento y compara la salida anterior con la nueva.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>[icono: Reto Digital]</strong> Entrega una captura, tabla o frase de interpretación que demuestre que el código se ejecutó y que entendiste el cambio.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 27</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Variación práctica del código</h2>
+<p>Ahora conecta el código con el caso conductor: El equipo carga una lista de calificaciones y obtiene un resumen inicial.. La variación debe mantener la misma estructura, pero cambiar el dato, columna, gráfica o criterio principal.</p><div class="exercise"><strong>1.</strong> Escribe qué parte del código modificarás y por qué.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Describe qué salida esperas antes de ejecutar.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Registra si la salida confirmó o contradijo tu predicción.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 28</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Tu Primer Python para IA.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Crear datos, calcular promedio, validar rango y explicar la salida.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Script que calcula resumen básico de calificaciones.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 29</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 30</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee la introducción de la documentación de Python y anota dos reglas sobre nombres, listas o control de flujo.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 31</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Tu Primer Python para IA, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Variable</li><li>Tipo</li><li>Condicional</li><li>Ciclo</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Script que calcula resumen básico de calificaciones.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 32</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M5-u02-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U02</div><div><h1>Datos con NumPy y Pandas</h1><p class="lead">El equipo limpia un dataset escolar con valores faltantes y duplicados.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>Los modelos aprenden de datos, pero los datos reales suelen venir incompletos, repetidos o con tipos incorrectos. NumPy ayuda con operaciones numéricas; pandas permite trabajar con tablas, columnas y transformaciones documentadas.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Limpiar datos es como preparar ingredientes: antes de cocinar, separas, lavas y revisas que no falte lo esencial.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué columna tiene datos faltantes?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Cuándo se elimina un duplicado?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué tipo de dato espera cada campo?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cómo documentas una transformación?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 34</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Arrays y operaciones básicas</td></tr><tr><td>2</td><td>Series y DataFrame</td></tr><tr><td>3</td><td>Lectura de CSV</td></tr><tr><td>4</td><td>Nulos y duplicados</td></tr><tr><td>5</td><td>Filtrado y selección</td></tr><tr><td>6</td><td>Agrupación y resumen</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Dataset escolar limpio con bitácora de transformaciones.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 35</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M5-u02-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 36</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: un dataset escolar tiene faltantes.</div><div class="concept"><strong>Carga</strong><br>Carga: crear o leer tabla.</div><div class="concept"><strong>Diagnóstico</strong><br>Diagnóstico: contar nulos y duplicados.</div><div class="concept"><strong>Limpieza</strong><br>Limpieza: aplicar regla justificada.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El equipo limpia un dataset escolar con valores faltantes y duplicados. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 37</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Array</strong></td><td>Estructura numérica para cálculos eficientes.</td></tr><tr><td><strong>DataFrame</strong></td><td>Tabla con filas y columnas.</td></tr><tr><td><strong>Nulo</strong></td><td>Dato ausente que debe tratarse con regla explícita.</td></tr><tr><td><strong>Duplicado</strong></td><td>Registro repetido que puede distorsionar resultados.</td></tr><tr><td><strong>Groupby</strong></td><td>Agrupación para calcular resúmenes por categoría.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 38</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M5-u02-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 39</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Dataset escolar limpio con bitácora de transformaciones..</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 40</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">missing rate = nulos / total</div></td><td>Medir datos faltantes.</td><td>Nulos y total como conteos.</td></tr><tr><td><div class="formula">duplicate rate = duplicados / total</div></td><td>Medir registros repetidos.</td><td>Conteos.</td></tr><tr><td><div class="formula">media = sum(x) / n</div></td><td>Resumir columna numérica.</td><td>x como valores; n como conteo.</td></tr><tr><td><div class="formula">normalizado = (x - mínimo) / (máximo - mínimo)</div></td><td>Escalar valores entre 0 y 1.</td><td>x, mínimo y máximo en la misma unidad.</td></tr><tr><td><div class="formula">retención = filas limpias / filas originales</div></td><td>Medir cuánto queda tras limpiar.</td><td>Conteos; resultado porcentual.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 41</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 42</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>Un dataset tiene 10 filas, 2 valores faltantes en asistencia y 1 registro duplicado. Limpia y calcula retención.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Filas originales: 10.</li><li>Valores faltantes en asistencia: 2.</li><li>Duplicados: 1.</li><li>Después de eliminar duplicado quedan 9 filas.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Missing rate = 2 / 10 = 20%.</div><div class="worked-step"><strong>Paso 2.</strong> Duplicate rate = 1 / 10 = 10%.</div><div class="worked-step"><strong>Paso 3.</strong> Retención = 9 / 10 = 90%.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 43</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Se decide no eliminar filas por nulos: se documenta revisión de asistencia.</div><div class="worked-step"><strong>Paso 5.</strong> La bitácora separa duplicado eliminado y nulos pendientes.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La limpieza es aceptable para exploración inicial, pero la asistencia faltante debe resolverse antes de modelar.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 44</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Datos con NumPy y Pandas en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo missing rate = nulos / total con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo duplicate rate = duplicados / total para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 45</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar media = sum(x) / n. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El equipo limpia un dataset escolar con valores faltantes y duplicados..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando normalizado = (x - mínimo) / (máximo - mínimo). Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 46</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa retención = filas limpias / filas originales para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 47</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 48</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 49</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo guiado con código</h2>
+<p>La práctica de programación aparece después de los conceptos para que el código sea consecuencia del razonamiento, no una receta aislada.</p><p><strong>[icono: Sección de código]</strong></p><pre class="code-block">import pandas as pd
+
+datos = {
+    &quot;estudiante&quot;: [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Luis&quot;, &quot;Marta&quot;, &quot;Sofía&quot;],
+    &quot;asistencia&quot;: [95, 80, 80, None, 70],
+    &quot;calificacion&quot;: [9.0, 7.5, 7.5, 8.0, 6.5],
+}
+
+tabla = pd.DataFrame(datos)
+
+duplicados = tabla.duplicated().sum()
+nulos = tabla.isna().sum()
+tabla_limpia = tabla.drop_duplicates()
+
+print(&quot;Duplicados:&quot;, duplicados)
+print(&quot;Nulos por columna:&quot;)
+print(nulos)
+print(&quot;Tabla limpia:&quot;)
+print(tabla_limpia)</pre>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 50</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Explicación del código por bloques</h2>
+<div class="grid-2"><div class="concept"><strong>Datos</strong><br>El bloque inicial crea o carga datos mínimos para que la práctica pueda ejecutarse sin depender de archivos externos.</div><div class="concept"><strong>Procedimiento</strong><br>La parte central aplica el concepto de la unidad con nombres claros y pasos visibles.</div><div class="concept"><strong>Salida</strong><br>El cierre imprime una tabla, valor, gráfica o interpretación que permite comprobar el resultado.</div><div class="concept"><strong>Registro</strong><br>El estudiante anota qué cambió, qué funcionó y qué límite conserva el análisis.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 51</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Comprobación y mini actividad controlada</h2>
+<div class="box practice-box"><h3>Comprobación del resultado</h3><ul><li>Confirma que se detecte 1 duplicado.</li><li>Revisa que asistencia tenga 1 valor nulo.</li><li>Verifica que la tabla limpia conserve 4 filas.</li></ul></div><div class="exercise"><strong>[icono: Mini Actividades]</strong> Cambia un solo dato del ejemplo, ejecuta de nuevo el procedimiento y compara la salida anterior con la nueva.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>[icono: Reto Digital]</strong> Entrega una captura, tabla o frase de interpretación que demuestre que el código se ejecutó y que entendiste el cambio.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 52</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Variación práctica del código</h2>
+<p>Ahora conecta el código con el caso conductor: El equipo limpia un dataset escolar con valores faltantes y duplicados.. La variación debe mantener la misma estructura, pero cambiar el dato, columna, gráfica o criterio principal.</p><div class="exercise"><strong>1.</strong> Escribe qué parte del código modificarás y por qué.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Describe qué salida esperas antes de ejecutar.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Registra si la salida confirmó o contradijo tu predicción.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 53</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Datos con NumPy y Pandas.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Cargar tabla, diagnosticar nulos, eliminar duplicados y registrar la regla aplicada.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Dataset escolar limpio con bitácora de transformaciones.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 54</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 55</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee una página de pandas sobre DataFrame o manejo de nulos y resume una función útil.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 56</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Datos con NumPy y Pandas, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Array</li><li>DataFrame</li><li>Nulo</li><li>Duplicado</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Dataset escolar limpio con bitácora de transformaciones.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 57</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M5-u03-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U03</div><div><h1>Visualización de Datos</h1><p class="lead">El equipo visualiza distribución de calificaciones por materia.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>Una gráfica no es decoración. Permite detectar patrones, grupos, errores y valores extremos que una tabla puede ocultar. Antes de entrenar modelos, el equipo debe mirar los datos y explicar qué muestra cada eje.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Una gráfica es como una ventana: muestra algo con claridad, pero también decide qué queda fuera.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué gráfica conviene para comparar materias?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Qué muestra un histograma?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué oculta un promedio?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cómo evitas una gráfica engañosa?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 59</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Líneas, barras y dispersión</td></tr><tr><td>2</td><td>Histogramas</td></tr><tr><td>3</td><td>Boxplots</td></tr><tr><td>4</td><td>Títulos y ejes</td></tr><tr><td>5</td><td>Interpretación visual</td></tr><tr><td>6</td><td>Storytelling con datos</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Dashboard de gráficas básicas del dataset escolar.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 60</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M5-u03-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 61</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: la tabla no revela patrón.</div><div class="concept"><strong>Selección</strong><br>Selección: elegir gráfica según pregunta.</div><div class="concept"><strong>Construcción</strong><br>Construcción: definir ejes y título.</div><div class="concept"><strong>Lectura</strong><br>Lectura: describir patrón visible.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El equipo visualiza distribución de calificaciones por materia. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 62</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Eje x</strong></td><td>Variable horizontal, normalmente categoría o variable independiente.</td></tr><tr><td><strong>Eje y</strong></td><td>Variable vertical, normalmente medida o variable dependiente.</td></tr><tr><td><strong>Histograma</strong></td><td>Distribución de valores por intervalos.</td></tr><tr><td><strong>Boxplot</strong></td><td>Resumen visual de mediana, cuartiles y posibles outliers.</td></tr><tr><td><strong>Outlier</strong></td><td>Valor atípico que requiere revisión.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 63</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M5-u03-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 64</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Dashboard de gráficas básicas del dataset escolar..</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 65</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">x = variable independiente</div></td><td>Definir eje horizontal.</td><td>Unidad del dato original.</td></tr><tr><td><div class="formula">y = variable dependiente</div></td><td>Definir eje vertical.</td><td>Unidad del dato original.</td></tr><tr><td><div class="formula">bins = número de intervalos</div></td><td>Configurar histograma.</td><td>Conteo de grupos.</td></tr><tr><td><div class="formula">IQR = Q3 - Q1</div></td><td>Medir rango intercuartil.</td><td>Misma unidad del dato.</td></tr><tr><td><div class="formula">outlier si x &gt; Q3 + 1.5 IQR</div></td><td>Detectar valor atípico alto.</td><td>x, Q3 e IQR en misma unidad.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 66</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 67</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>Una lista de calificaciones tiene Q1 = 6.5 y Q3 = 8.5. Decide si 10.0 es outlier alto.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Q1 = 6.5.</li><li>Q3 = 8.5.</li><li>Valor a revisar: 10.0.</li><li>Regla: outlier alto si x &gt; Q3 + 1.5 IQR.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> IQR = 8.5 - 6.5 = 2.0.</div><div class="worked-step"><strong>Paso 2.</strong> Límite alto = 8.5 + 1.5(2.0) = 11.5.</div><div class="worked-step"><strong>Paso 3.</strong> 10.0 no es mayor que 11.5.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 68</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> No se marca como outlier alto.</div><div class="worked-step"><strong>Paso 5.</strong> Se interpreta como calificación alta dentro del rango esperado.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La gráfica debe mostrar 10.0 como valor alto, pero no como dato atípico según esta regla.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 69</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Visualización de Datos en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo x = variable independiente con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo y = variable dependiente para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 70</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar bins = número de intervalos. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El equipo visualiza distribución de calificaciones por materia..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando IQR = Q3 - Q1. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 71</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa outlier si x > Q3 + 1.5 IQR para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 72</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 73</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 74</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo guiado con código</h2>
+<p>La práctica de programación aparece después de los conceptos para que el código sea consecuencia del razonamiento, no una receta aislada.</p><p><strong>[icono: Sección de código]</strong></p><pre class="code-block">import matplotlib.pyplot as plt
+
+materias = [&quot;Matemáticas&quot;, &quot;Física&quot;, &quot;Química&quot;, &quot;Historia&quot;]
+promedios = [7.4, 8.1, 7.8, 8.6]
+
+plt.bar(materias, promedios, color=&quot;#0E7490&quot;)
+plt.title(&quot;Promedio por materia&quot;)
+plt.xlabel(&quot;Materia&quot;)
+plt.ylabel(&quot;Calificación promedio&quot;)
+plt.ylim(0, 10)
+plt.tight_layout()
+plt.show()</pre>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 75</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Explicación del código por bloques</h2>
+<div class="grid-2"><div class="concept"><strong>Datos</strong><br>El bloque inicial crea o carga datos mínimos para que la práctica pueda ejecutarse sin depender de archivos externos.</div><div class="concept"><strong>Procedimiento</strong><br>La parte central aplica el concepto de la unidad con nombres claros y pasos visibles.</div><div class="concept"><strong>Salida</strong><br>El cierre imprime una tabla, valor, gráfica o interpretación que permite comprobar el resultado.</div><div class="concept"><strong>Registro</strong><br>El estudiante anota qué cambió, qué funcionó y qué límite conserva el análisis.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 76</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Comprobación y mini actividad controlada</h2>
+<div class="box practice-box"><h3>Comprobación del resultado</h3><ul><li>Confirma que la gráfica tenga cuatro barras.</li><li>Revisa que el eje y vaya de 0 a 10.</li><li>Explica qué materia tiene mayor promedio y cuál requiere atención.</li></ul></div><div class="exercise"><strong>[icono: Mini Actividades]</strong> Cambia un solo dato del ejemplo, ejecuta de nuevo el procedimiento y compara la salida anterior con la nueva.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>[icono: Reto Digital]</strong> Entrega una captura, tabla o frase de interpretación que demuestre que el código se ejecutó y que entendiste el cambio.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 77</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Variación práctica del código</h2>
+<p>Ahora conecta el código con el caso conductor: El equipo visualiza distribución de calificaciones por materia.. La variación debe mantener la misma estructura, pero cambiar el dato, columna, gráfica o criterio principal.</p><div class="exercise"><strong>1.</strong> Escribe qué parte del código modificarás y por qué.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Describe qué salida esperas antes de ejecutar.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Registra si la salida confirmó o contradijo tu predicción.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 78</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Visualización de Datos.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Construir gráfica, explicar ejes y justificar qué patrón se observa.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Dashboard de gráficas básicas del dataset escolar.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 79</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 80</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee documentación de Matplotlib sobre títulos o etiquetas de ejes y escribe dos reglas de claridad visual.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 81</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Visualización de Datos, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Eje x</li><li>Eje y</li><li>Histograma</li><li>Boxplot</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Dashboard de gráficas básicas del dataset escolar.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 82</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M5-u04-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U04</div><div><h1>Estadística para Entender Datos</h1><p class="lead">El equipo analiza si horas de estudio y calificación se relacionan.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>La estadística descriptiva permite distinguir patrón, variación y casualidad. Antes de afirmar que una variable causa otra, se revisan medias, dispersión, percentiles y correlación con cautela.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>La estadística es como una lupa con escala: acerca los datos, pero también muestra cuánto varían.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué diferencia hay entre media y mediana?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Qué mide la desviación estándar?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Cuándo correlación no implica causalidad?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cómo detectas outliers?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 84</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Media y mediana</td></tr><tr><td>2</td><td>Varianza y desviación estándar</td></tr><tr><td>3</td><td>Percentiles</td></tr><tr><td>4</td><td>Correlación de Pearson</td></tr><tr><td>5</td><td>Correlación vs causalidad</td></tr><tr><td>6</td><td>Detección de outliers</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Informe estadístico de relación entre horas de estudio y calificación.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 85</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M5-u04-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 86</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: se sospecha relación entre estudio y calificación.</div><div class="concept"><strong>Resumen</strong><br>Resumen: calcular medidas centrales.</div><div class="concept"><strong>Dispersión</strong><br>Dispersión: estimar variabilidad.</div><div class="concept"><strong>Relación</strong><br>Relación: calcular correlación.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El equipo analiza si horas de estudio y calificación se relacionan. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 87</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Media</strong></td><td>Promedio aritmético.</td></tr><tr><td><strong>Mediana</strong></td><td>Valor central al ordenar datos.</td></tr><tr><td><strong>Varianza</strong></td><td>Medida de dispersión respecto a la media.</td></tr><tr><td><strong>Desviación estándar</strong></td><td>Raíz de la varianza; vuelve a la unidad original.</td></tr><tr><td><strong>Correlación</strong></td><td>Medida de relación entre dos variables, no prueba causalidad.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 88</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M5-u04-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 89</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Informe estadístico de relación entre horas de estudio y calificación..</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 90</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">media = sum(x) / n</div></td><td>Calcular promedio.</td><td>x como valores; n como conteo.</td></tr><tr><td><div class="formula">varianza = sum((x - media)^2) / n</div></td><td>Medir dispersión.</td><td>Unidad original al cuadrado.</td></tr><tr><td><div class="formula">desviación = raíz(varianza)</div></td><td>Volver a unidad original.</td><td>Misma unidad de x.</td></tr><tr><td><div class="formula">r = cov(x,y) / (sigma_x sigma_y)</div></td><td>Correlación de Pearson.</td><td>r no tiene unidad y va de -1 a 1.</td></tr><tr><td><div class="formula">z = (x - media) / desviación</div></td><td>Comparar un valor con el grupo.</td><td>z sin unidad.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 91</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 92</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>Un grupo registra horas de estudio y calificaciones. Se obtiene r = 0.72. Interpreta el resultado y calcula z para una calificación de 9 si media = 7.5 y desviación = 1.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>r = 0.72.</li><li>Calificación del estudiante: 9.</li><li>Media del grupo: 7.5.</li><li>Desviación estándar: 1.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> r = 0.72 indica relación positiva fuerte, no causalidad automática.</div><div class="worked-step"><strong>Paso 2.</strong> z = (9 - 7.5) / 1 = 1.5.</div><div class="worked-step"><strong>Paso 3.</strong> El estudiante está 1.5 desviaciones arriba de la media.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 93</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Se revisan otros factores antes de afirmar causa.</div><div class="worked-step"><strong>Paso 5.</strong> La conclusión debe mencionar límite de interpretación.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>Hay evidencia de relación positiva, pero no prueba de que estudiar más sea la única causa de la calificación.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 94</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Estadística para Entender Datos en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo media = sum(x) / n con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo varianza = sum((x - media)^2) / n para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 95</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar desviación = raíz(varianza). Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El equipo analiza si horas de estudio y calificación se relacionan..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando r = cov(x,y) / (sigma_x sigma_y). Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 96</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa z = (x - media) / desviación para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 97</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 98</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 99</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo guiado con código</h2>
+<p>La práctica de programación aparece después de los conceptos para que el código sea consecuencia del razonamiento, no una receta aislada.</p><p><strong>[icono: Sección de código]</strong></p><pre class="code-block">import pandas as pd
+
+tabla = pd.DataFrame({
+    &quot;horas_estudio&quot;: [1, 2, 3, 4, 5],
+    &quot;calificacion&quot;: [6.0, 6.8, 7.5, 8.4, 9.0],
+})
+
+media = tabla[&quot;calificacion&quot;].mean()
+desviacion = tabla[&quot;calificacion&quot;].std()
+correlacion = tabla[&quot;horas_estudio&quot;].corr(tabla[&quot;calificacion&quot;])
+
+print(&quot;Media:&quot;, round(media, 2))
+print(&quot;Desviación estándar:&quot;, round(desviacion, 2))
+print(&quot;Correlación:&quot;, round(correlacion, 2))</pre>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 100</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Explicación del código por bloques</h2>
+<div class="grid-2"><div class="concept"><strong>Datos</strong><br>El bloque inicial crea o carga datos mínimos para que la práctica pueda ejecutarse sin depender de archivos externos.</div><div class="concept"><strong>Procedimiento</strong><br>La parte central aplica el concepto de la unidad con nombres claros y pasos visibles.</div><div class="concept"><strong>Salida</strong><br>El cierre imprime una tabla, valor, gráfica o interpretación que permite comprobar el resultado.</div><div class="concept"><strong>Registro</strong><br>El estudiante anota qué cambió, qué funcionó y qué límite conserva el análisis.</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 101</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Comprobación y mini actividad controlada</h2>
+<div class="box practice-box"><h3>Comprobación del resultado</h3><ul><li>Verifica que la correlación sea positiva.</li><li>Explica por qué el resultado no prueba causalidad.</li><li>Cambia una calificación y observa cómo cambia la correlación.</li></ul></div><div class="exercise"><strong>[icono: Mini Actividades]</strong> Cambia un solo dato del ejemplo, ejecuta de nuevo el procedimiento y compara la salida anterior con la nueva.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>[icono: Reto Digital]</strong> Entrega una captura, tabla o frase de interpretación que demuestre que el código se ejecutó y que entendiste el cambio.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 102</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Variación práctica del código</h2>
+<p>Ahora conecta el código con el caso conductor: El equipo analiza si horas de estudio y calificación se relacionan.. La variación debe mantener la misma estructura, pero cambiar el dato, columna, gráfica o criterio principal.</p><div class="exercise"><strong>1.</strong> Escribe qué parte del código modificarás y por qué.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Describe qué salida esperas antes de ejecutar.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Registra si la salida confirmó o contradijo tu predicción.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 103</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Estadística para Entender Datos.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Calcular medidas, interpretar correlación y redactar límites de causalidad.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Informe estadístico de relación entre horas de estudio y calificación.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 104</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 105</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee una explicación de correlación en documentación o libro y escribe un ejemplo donde correlación no implique causa.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 106</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Estadística para Entender Datos, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Media</li><li>Mediana</li><li>Varianza</li><li>Desviación estándar</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Informe estadístico de relación entre horas de estudio y calificación.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 107</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M5-tri-1"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-30.svg" alt="Cada trimestre separa avances, evidencias y correcciones."><figcaption>Cada trimestre separa avances, evidencias y correcciones.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Trimestre 1</h1><p class="lead">Inteligencia Artificial con Programación · separador imprimible para seguimiento de evidencias.</p></div><div class="cover-meta"><div><strong>Uso</strong><br>Separar avance</div><div><strong>Entrega</strong><br>Producto y banco</div><div><strong>Revisión</strong><br>Corrección docente</div></div></div></section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M5-tri-2"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-30.svg" alt="Cada trimestre separa avances, evidencias y correcciones."><figcaption>Cada trimestre separa avances, evidencias y correcciones.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Trimestre 2</h1><p class="lead">Inteligencia Artificial con Programación · separador imprimible para seguimiento de evidencias.</p></div><div class="cover-meta"><div><strong>Uso</strong><br>Separar avance</div><div><strong>Entrega</strong><br>Producto y banco</div><div><strong>Revisión</strong><br>Corrección docente</div></div></div></section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M5-tri-3"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-30.svg" alt="Cada trimestre separa avances, evidencias y correcciones."><figcaption>Cada trimestre separa avances, evidencias y correcciones.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Trimestre 3</h1><p class="lead">Inteligencia Artificial con Programación · separador imprimible para seguimiento de evidencias.</p></div><div class="cover-meta"><div><strong>Uso</strong><br>Separar avance</div><div><strong>Entrega</strong><br>Producto y banco</div><div><strong>Revisión</strong><br>Corrección docente</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Material extra de trabajo</h2>
+<table><tr><th>Material</th><th>Uso</th><th>Evidencia esperada</th></tr><tr><td>Bitácora</td><td>Registrar decisiones, cambios y errores.</td><td>Una entrada por práctica.</td></tr><tr><td>Hoja de cálculo</td><td>Verificar puntajes, métricas o datos.</td><td>Tabla con fórmulas visibles.</td></tr><tr><td>Capturas o salidas</td><td>Documentar herramienta, código o resultado.</td><td>Imagen con fecha o explicación.</td></tr><tr><td>Fuentes oficiales</td><td>Contrastar instrucciones y conceptos.</td><td>URL y nota de uso.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 111</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Lecturas complementarias</h2>
+<ul><li>Python como lenguaje de automatización y análisis de datos.</li><li>Datos tabulares, limpieza y bitácora de transformaciones.</li><li>Visualizaciones para detectar patrones antes de modelar.</li><li>Estadística descriptiva para decidir con cautela.</li></ul>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 112</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Bibliografía y recursos oficiales</h2>
+<table class="large-table"><tr><th>Recurso</th><th>Uso sugerido</th><th>Enlace</th></tr><tr><td>Python Docs</td><td>Referencia oficial del lenguaje Python.</td><td><a href="https://docs.python.org/3/">https://docs.python.org/3/</a></td></tr><tr><td>NumPy Docs</td><td>Documentación oficial de NumPy.</td><td><a href="https://numpy.org/doc/">https://numpy.org/doc/</a></td></tr><tr><td>Pandas Docs</td><td>Documentación oficial de pandas.</td><td><a href="https://pandas.pydata.org/docs/">https://pandas.pydata.org/docs/</a></td></tr><tr><td>Matplotlib Docs</td><td>Documentación oficial de Matplotlib.</td><td><a href="https://matplotlib.org/stable/contents.html">https://matplotlib.org/stable/contents.html</a></td></tr><tr><td>scikit-learn User Guide</td><td>Guía oficial para machine learning clásico.</td><td><a href="https://scikit-learn.org/stable/user_guide">https://scikit-learn.org/stable/user_guide</a></td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 113</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Glosario esencial 1</h2>
+<table><tr><th>Término</th><th>Uso dentro del manual</th></tr><tr><td>Variable</td><td>Nombre que guarda un valor.</td></tr><tr><td>Lista</td><td>Colección ordenada de valores.</td></tr><tr><td>CSV</td><td>Archivo de texto separado por comas.</td></tr><tr><td>Array</td><td>Estructura numérica usada por NumPy.</td></tr><tr><td>DataFrame</td><td>Tabla con filas y columnas en pandas.</td></tr><tr><td>Nulo</td><td>Dato faltante o vacío.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 114</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Glosario esencial 2</h2>
+<table><tr><th>Término</th><th>Uso dentro del manual</th></tr><tr><td>Histograma</td><td>Gráfica de distribución por intervalos.</td></tr><tr><td>Boxplot</td><td>Gráfica de cuartiles y posibles valores atípicos.</td></tr><tr><td>Media</td><td>Promedio aritmético.</td></tr><tr><td>Correlación</td><td>Medida de relación entre dos variables.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 115</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Evaluación integradora 1</h2>
+<p>La evaluación retoma el caso conductor: Predictor de rendimiento escolar. El estudiante debe demostrar que comprende modelos y que puede producir evidencia.</p><div class="exercise"><strong>1.</strong> Selecciona una unidad y escribe el problema en formato dato, criterio, procedimiento y evidencia.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Usa un modelo de esa unidad y muestra sustitución, escala o criterios de evaluación.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Explica qué parte del resultado requiere verificación externa.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 116</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Evaluación integradora 2</h2>
+<div class="exercise"><strong>4.</strong> Compara dos productos de unidades distintas y decide cuál tiene evidencia más fuerte.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>5.</strong> Diseña una mejora para el producto final del semestre sin introducir una herramienta nueva.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>6.</strong> Presenta una conclusión técnica en 90 palabras: hecho, inferencia, límite y siguiente acción.<div class="answer-lines"><span></span><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 117</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Índice analítico 1</h2>
+<table><tr><th>Entrada</th><th>Unidad</th><th>Uso</th></tr><tr><td>Variable</td><td>U01</td><td>Tu Primer Python para IA</td></tr><tr><td>Tipo</td><td>U01</td><td>Tu Primer Python para IA</td></tr><tr><td>Array</td><td>U02</td><td>Datos con NumPy y Pandas</td></tr><tr><td>DataFrame</td><td>U02</td><td>Datos con NumPy y Pandas</td></tr><tr><td>Eje x</td><td>U03</td><td>Visualización de Datos</td></tr><tr><td>Eje y</td><td>U03</td><td>Visualización de Datos</td></tr><tr><td>Media</td><td>U04</td><td>Estadística para Entender Datos</td></tr><tr><td>Mediana</td><td>U04</td><td>Estadística para Entender Datos</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 118</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Índice analítico 2</h2>
+<table><tr><th>Modelo o criterio</th><th>Unidad</th><th>Dónde se aplica</th></tr><tr><td>promedio = suma / n</td><td>U01</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>missing rate = nulos / total</td><td>U02</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>x = variable independiente</td><td>U03</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>media = sum(x) / n</td><td>U04</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 119</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Plantilla de reporte final</h2>
+<table><tr><th>Sección</th><th>Contenido obligatorio</th><th>Extensión</th></tr><tr><td>Problema</td><td>Pregunta verificable del caso.</td><td>3 a 5 líneas</td></tr><tr><td>Datos o criterios</td><td>Tabla con unidades, escala o fuente.</td><td>1 tabla</td></tr><tr><td>Procedimiento</td><td>Pasos numerados y modelo usado.</td><td>6 a 10 pasos</td></tr><tr><td>Evidencia</td><td>Cálculo, salida, tabla, imagen, código o rúbrica.</td><td>1 evidencia principal</td></tr><tr><td>Conclusión</td><td>Hecho, inferencia, límite y acción.</td><td>80 a 100 palabras</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 120</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Cierre semestre 1</p>
+<h2>Lista de verificación antes de imprimir</h2>
+<div class="exercise"><strong>1.</strong> Revisa que cada imagen tenga texto legible en hoja carta.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>2.</strong> Confirma que cada banco use los modelos explicados antes.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>3.</strong> Verifica que las instrucciones digan qué entregar.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>4.</strong> Marca fuentes, enlaces y recursos que se usarán en clase.<div class="answer-lines"><span></span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 121</span></div>
+</section>
+</body>
+</html>

@@ -1,0 +1,1353 @@
+{
+  "version": "1.0",
+  "estilo": "outline + duotone",
+  "tamano_base": "256x256",
+  "paleta": {
+    "primario": "#0E3A8A",
+    "acento": "#F39C12",
+    "tecno": "#1E8449",
+    "neutro": "#5C6F7A",
+    "crema": "#FFF8E7",
+    "blanco": "#FFFFFF"
+  },
+  "total": 82,
+  "icons": {
+    "bloque-concepto": {
+      "id": "ico-bloque-concepto",
+      "categoria": "bloques",
+      "alias": [
+        "concepto",
+        "definicion",
+        "libro-abierto"
+      ],
+      "emoji": "📘",
+      "concepto": "Libro abierto con marcador",
+      "svg": "bloques/ico-bloque-concepto.svg",
+      "svg_mono": "bloques/ico-bloque-concepto-mono.svg",
+      "png": "bloque-concepto.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-interioriza": {
+      "id": "ico-bloque-interioriza",
+      "categoria": "bloques",
+      "alias": [
+        "interioriza",
+        "foco",
+        "idea",
+        "lampara"
+      ],
+      "emoji": "💡",
+      "concepto": "Foco encendido con rayos",
+      "svg": "bloques/ico-bloque-interioriza.svg",
+      "svg_mono": "bloques/ico-bloque-interioriza-mono.svg",
+      "png": "bloque-interioriza.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-pausa": {
+      "id": "ico-bloque-pausa",
+      "categoria": "bloques",
+      "alias": [
+        "pausa",
+        "pensar",
+        "burbuja-pensamiento"
+      ],
+      "emoji": "💭",
+      "concepto": "Burbuja de pensamiento",
+      "svg": "bloques/ico-bloque-pausa.svg",
+      "svg_mono": "bloques/ico-bloque-pausa-mono.svg",
+      "png": "bloque-pausa.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-practica": {
+      "id": "ico-bloque-practica",
+      "categoria": "bloques",
+      "alias": [
+        "practica",
+        "pluma",
+        "escribir"
+      ],
+      "emoji": "📝",
+      "concepto": "Pluma sobre hoja",
+      "svg": "bloques/ico-bloque-practica.svg",
+      "svg_mono": "bloques/ico-bloque-practica-mono.svg",
+      "png": "bloque-practica.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-caso": {
+      "id": "ico-bloque-caso",
+      "categoria": "bloques",
+      "alias": [
+        "caso",
+        "brujula"
+      ],
+      "emoji": "🧭",
+      "concepto": "Brújula apuntando al norte",
+      "svg": "bloques/ico-bloque-caso.svg",
+      "svg_mono": "bloques/ico-bloque-caso-mono.svg",
+      "png": "bloque-caso.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-implementacion": {
+      "id": "ico-bloque-implementacion",
+      "categoria": "bloques",
+      "alias": [
+        "implementacion",
+        "cohete",
+        "lanzar"
+      ],
+      "emoji": "🚀",
+      "concepto": "Cohete despegando",
+      "svg": "bloques/ico-bloque-implementacion.svg",
+      "svg_mono": "bloques/ico-bloque-implementacion-mono.svg",
+      "png": "bloque-implementacion.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-albatros": {
+      "id": "ico-bloque-albatros",
+      "categoria": "bloques",
+      "alias": [
+        "albatros",
+        "diana",
+        "target"
+      ],
+      "emoji": "🎯",
+      "concepto": "Diana con flecha clavada",
+      "svg": "bloques/ico-bloque-albatros.svg",
+      "svg_mono": "bloques/ico-bloque-albatros-mono.svg",
+      "png": "bloque-albatros.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-tecno": {
+      "id": "ico-bloque-tecno",
+      "categoria": "bloques",
+      "alias": [
+        "tecno",
+        "engranaje",
+        "tuerca"
+      ],
+      "emoji": "🔧",
+      "concepto": "Engranaje con llave",
+      "svg": "bloques/ico-bloque-tecno.svg",
+      "svg_mono": "bloques/ico-bloque-tecno-mono.svg",
+      "png": "bloque-tecno.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-investiga": {
+      "id": "ico-bloque-investiga",
+      "categoria": "bloques",
+      "alias": [
+        "investiga",
+        "investigacion",
+        "lupa-docs"
+      ],
+      "emoji": "🔎",
+      "concepto": "Lupa sobre documento",
+      "svg": "bloques/ico-bloque-investiga.svg",
+      "svg_mono": "bloques/ico-bloque-investiga-mono.svg",
+      "png": "bloque-investiga.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloque-fuentes": {
+      "id": "ico-bloque-fuentes",
+      "categoria": "bloques",
+      "alias": [
+        "fuentes",
+        "biblioteca",
+        "libros-pila"
+      ],
+      "emoji": "📚",
+      "concepto": "Pila de libros",
+      "svg": "bloques/ico-bloque-fuentes.svg",
+      "svg_mono": "bloques/ico-bloque-fuentes-mono.svg",
+      "png": "bloque-fuentes.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-fill": {
+      "id": "ico-act-fill",
+      "categoria": "actividades",
+      "alias": [
+        "fill",
+        "rellenar",
+        "lineas-respuesta"
+      ],
+      "emoji": "✏️",
+      "concepto": "Lápiz sobre líneas",
+      "svg": "actividades/ico-act-fill.svg",
+      "svg_mono": "actividades/ico-act-fill-mono.svg",
+      "png": "act-fill.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-mcq": {
+      "id": "ico-act-mcq",
+      "categoria": "actividades",
+      "alias": [
+        "mcq",
+        "opcion-multiple",
+        "casillas"
+      ],
+      "emoji": "🔘",
+      "concepto": "Casillas con check",
+      "svg": "actividades/ico-act-mcq.svg",
+      "svg_mono": "actividades/ico-act-mcq-mono.svg",
+      "png": "act-mcq.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-table": {
+      "id": "ico-act-table",
+      "categoria": "actividades",
+      "alias": [
+        "table",
+        "tabla",
+        "celdas-vacias"
+      ],
+      "emoji": "📊",
+      "concepto": "Cuadrícula con celdas",
+      "svg": "actividades/ico-act-table.svg",
+      "svg_mono": "actividades/ico-act-table-mono.svg",
+      "png": "act-table.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-calc": {
+      "id": "ico-act-calc",
+      "categoria": "actividades",
+      "alias": [
+        "calc",
+        "calculadora",
+        "cuadricula-calc"
+      ],
+      "emoji": "🧮",
+      "concepto": "Calculadora con cuadrícula",
+      "svg": "actividades/ico-act-calc.svg",
+      "svg_mono": "actividades/ico-act-calc-mono.svg",
+      "png": "act-calc.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-match": {
+      "id": "ico-act-match",
+      "categoria": "actividades",
+      "alias": [
+        "match",
+        "relacion",
+        "cadena",
+        "flechas"
+      ],
+      "emoji": "🔗",
+      "concepto": "Cadena con flechas",
+      "svg": "actividades/ico-act-match.svg",
+      "svg_mono": "actividades/ico-act-match-mono.svg",
+      "png": "act-match.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-puzzle": {
+      "id": "ico-act-puzzle",
+      "categoria": "actividades",
+      "alias": [
+        "puzzle",
+        "crucigrama",
+        "rompecabezas"
+      ],
+      "emoji": "🧩",
+      "concepto": "Pieza de puzzle",
+      "svg": "actividades/ico-act-puzzle.svg",
+      "svg_mono": "actividades/ico-act-puzzle-mono.svg",
+      "png": "act-puzzle.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-mindmap": {
+      "id": "ico-act-mindmap",
+      "categoria": "actividades",
+      "alias": [
+        "mindmap",
+        "mapa-mental-act"
+      ],
+      "emoji": "🧠",
+      "concepto": "Cerebro con ramas",
+      "svg": "actividades/ico-act-mindmap.svg",
+      "svg_mono": "actividades/ico-act-mindmap-mono.svg",
+      "png": "act-mindmap.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-label": {
+      "id": "ico-act-label",
+      "categoria": "actividades",
+      "alias": [
+        "label",
+        "etiqueta",
+        "diagrama-etiquetar"
+      ],
+      "emoji": "🏷️",
+      "concepto": "Etiqueta numerada",
+      "svg": "actividades/ico-act-label.svg",
+      "svg_mono": "actividades/ico-act-label-mono.svg",
+      "png": "act-label.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-case": {
+      "id": "ico-act-case",
+      "categoria": "actividades",
+      "alias": [
+        "case",
+        "carpeta",
+        "expediente"
+      ],
+      "emoji": "📂",
+      "concepto": "Carpeta abierta",
+      "svg": "actividades/ico-act-case.svg",
+      "svg_mono": "actividades/ico-act-case-mono.svg",
+      "png": "act-case.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-challenge": {
+      "id": "ico-act-challenge",
+      "categoria": "actividades",
+      "alias": [
+        "challenge",
+        "reto-act",
+        "trofeo"
+      ],
+      "emoji": "🏆",
+      "concepto": "Trofeo con cohete",
+      "svg": "actividades/ico-act-challenge.svg",
+      "svg_mono": "actividades/ico-act-challenge-mono.svg",
+      "png": "act-challenge.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-tf": {
+      "id": "ico-act-tf",
+      "categoria": "actividades",
+      "alias": [
+        "tf",
+        "verdadero-falso",
+        "check-cruz"
+      ],
+      "emoji": "✅",
+      "concepto": "Check + cruz",
+      "svg": "actividades/ico-act-tf.svg",
+      "svg_mono": "actividades/ico-act-tf-mono.svg",
+      "png": "act-tf.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "act-order": {
+      "id": "ico-act-order",
+      "categoria": "actividades",
+      "alias": [
+        "order",
+        "ordenar",
+        "pasos"
+      ],
+      "emoji": "🔢",
+      "concepto": "Lista numerada con pasos",
+      "svg": "actividades/ico-act-order.svg",
+      "svg_mono": "actividades/ico-act-order-mono.svg",
+      "png": "act-order.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "fuente-libro": {
+      "id": "ico-fuente-libro",
+      "categoria": "fuentes",
+      "alias": [
+        "libro",
+        "book"
+      ],
+      "emoji": "📘",
+      "concepto": "Libro cerrado de costado",
+      "svg": "fuentes/ico-fuente-libro.svg",
+      "svg_mono": "fuentes/ico-fuente-libro-mono.svg",
+      "png": "fuentes/ico-fuente-libro.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "fuente-web": {
+      "id": "ico-fuente-web",
+      "categoria": "fuentes",
+      "alias": [
+        "web",
+        "internet",
+        "globo"
+      ],
+      "emoji": "🌐",
+      "concepto": "Globo terráqueo + cursor",
+      "svg": "fuentes/ico-fuente-web.svg",
+      "svg_mono": "fuentes/ico-fuente-web-mono.svg",
+      "png": "fuentes/ico-fuente-web.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "fuente-ocw": {
+      "id": "ico-fuente-ocw",
+      "categoria": "fuentes",
+      "alias": [
+        "ocw",
+        "academia",
+        "birrete"
+      ],
+      "emoji": "🎓",
+      "concepto": "Birrete académico",
+      "svg": "fuentes/ico-fuente-ocw.svg",
+      "svg_mono": "fuentes/ico-fuente-ocw-mono.svg",
+      "png": "fuentes/ico-fuente-ocw.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "fuente-video": {
+      "id": "ico-fuente-video",
+      "categoria": "fuentes",
+      "alias": [
+        "video",
+        "play",
+        "claqueta"
+      ],
+      "emoji": "📺",
+      "concepto": "Claqueta + play",
+      "svg": "fuentes/ico-fuente-video.svg",
+      "svg_mono": "fuentes/ico-fuente-video-mono.svg",
+      "png": "fuentes/ico-fuente-video.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "fuente-articulo": {
+      "id": "ico-fuente-articulo",
+      "categoria": "fuentes",
+      "alias": [
+        "articulo",
+        "periodico",
+        "news"
+      ],
+      "emoji": "📰",
+      "concepto": "Periódico doblado",
+      "svg": "fuentes/ico-fuente-articulo.svg",
+      "svg_mono": "fuentes/ico-fuente-articulo-mono.svg",
+      "png": "fuentes/ico-fuente-articulo.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "fuente-mexicana": {
+      "id": "ico-fuente-mexicana",
+      "categoria": "fuentes",
+      "alias": [
+        "mexicana",
+        "mx",
+        "mexico"
+      ],
+      "emoji": "🇲🇽",
+      "concepto": "Silueta MX con bandera",
+      "svg": "fuentes/ico-fuente-mexicana.svg",
+      "svg_mono": "fuentes/ico-fuente-mexicana-mono.svg",
+      "png": "fuentes/ico-fuente-mexicana.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-albatros-experimento": {
+      "id": "ico-tipo-albatros-experimento",
+      "categoria": "albatros-tipos",
+      "alias": [
+        "experimento",
+        "matraz",
+        "lab"
+      ],
+      "emoji": "🧪",
+      "concepto": "Matraz con burbujas",
+      "svg": "albatros-tipos/ico-tipo-albatros-experimento.svg",
+      "svg_mono": "albatros-tipos/ico-tipo-albatros-experimento-mono.svg",
+      "png": "tipo-albatros-experimento.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-albatros-debate": {
+      "id": "ico-tipo-albatros-debate",
+      "categoria": "albatros-tipos",
+      "alias": [
+        "debate",
+        "burbujas-opuestas"
+      ],
+      "emoji": "🗣️",
+      "concepto": "Dos burbujas opuestas",
+      "svg": "albatros-tipos/ico-tipo-albatros-debate.svg",
+      "svg_mono": "albatros-tipos/ico-tipo-albatros-debate-mono.svg",
+      "png": "tipo-albatros-debate.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-albatros-taller": {
+      "id": "ico-tipo-albatros-taller",
+      "categoria": "albatros-tipos",
+      "alias": [
+        "taller",
+        "martillo-llave"
+      ],
+      "emoji": "🛠️",
+      "concepto": "Martillo + llave inglesa",
+      "svg": "albatros-tipos/ico-tipo-albatros-taller.svg",
+      "svg_mono": "albatros-tipos/ico-tipo-albatros-taller-mono.svg",
+      "png": "tipo-albatros-taller.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-albatros-caso": {
+      "id": "ico-tipo-albatros-caso",
+      "categoria": "albatros-tipos",
+      "alias": [
+        "albatros-caso",
+        "expediente-lupa"
+      ],
+      "emoji": "📁",
+      "concepto": "Expediente con lupa",
+      "svg": "albatros-tipos/ico-tipo-albatros-caso.svg",
+      "svg_mono": "albatros-tipos/ico-tipo-albatros-caso-mono.svg",
+      "png": "tipo-albatros-caso.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-albatros-reto": {
+      "id": "ico-tipo-albatros-reto",
+      "categoria": "albatros-tipos",
+      "alias": [
+        "reto",
+        "bandera-meta"
+      ],
+      "emoji": "🏁",
+      "concepto": "Bandera de meta",
+      "svg": "albatros-tipos/ico-tipo-albatros-reto.svg",
+      "svg_mono": "albatros-tipos/ico-tipo-albatros-reto-mono.svg",
+      "png": "tipo-albatros-reto.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-albatros-simulacion": {
+      "id": "ico-tipo-albatros-simulacion",
+      "categoria": "albatros-tipos",
+      "alias": [
+        "simulacion",
+        "monitor-engranaje"
+      ],
+      "emoji": "🖥️",
+      "concepto": "Monitor con engranaje",
+      "svg": "albatros-tipos/ico-tipo-albatros-simulacion.svg",
+      "svg_mono": "albatros-tipos/ico-tipo-albatros-simulacion-mono.svg",
+      "png": "albatros-tipos/ico-tipo-albatros-simulacion.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-albatros-investigacion-corta": {
+      "id": "ico-tipo-albatros-investigacion-corta",
+      "categoria": "albatros-tipos",
+      "alias": [
+        "investigacion-corta",
+        "lupa-hoja"
+      ],
+      "emoji": "🔬",
+      "concepto": "Microscopio / lupa con hoja",
+      "svg": "albatros-tipos/ico-tipo-albatros-investigacion-corta.svg",
+      "svg_mono": "albatros-tipos/ico-tipo-albatros-investigacion-corta-mono.svg",
+      "png": "tipo-albatros-investigacion-corta.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-tecno-maker": {
+      "id": "ico-tipo-tecno-maker",
+      "categoria": "tecno-tipos",
+      "alias": [
+        "maker",
+        "impresora-3d"
+      ],
+      "emoji": "🖨️",
+      "concepto": "Impresora 3D",
+      "svg": "tecno-tipos/ico-tipo-tecno-maker.svg",
+      "svg_mono": "tecno-tipos/ico-tipo-tecno-maker-mono.svg",
+      "png": "tecno-tipos/ico-tipo-tecno-maker.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-tecno-circuito": {
+      "id": "ico-tipo-tecno-circuito",
+      "categoria": "tecno-tipos",
+      "alias": [
+        "circuito",
+        "placa",
+        "pcb"
+      ],
+      "emoji": "🔌",
+      "concepto": "Placa con componentes",
+      "svg": "tecno-tipos/ico-tipo-tecno-circuito.svg",
+      "svg_mono": "tecno-tipos/ico-tipo-tecno-circuito-mono.svg",
+      "png": "tecno-tipos/ico-tipo-tecno-circuito.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-tecno-codigo": {
+      "id": "ico-tipo-tecno-codigo",
+      "categoria": "tecno-tipos",
+      "alias": [
+        "codigo",
+        "code",
+        "llaves"
+      ],
+      "emoji": "💻",
+      "concepto": "Llaves { } de código",
+      "svg": "tecno-tipos/ico-tipo-tecno-codigo.svg",
+      "svg_mono": "tecno-tipos/ico-tipo-tecno-codigo-mono.svg",
+      "png": "tecno-tipos/ico-tipo-tecno-codigo.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-tecno-dato": {
+      "id": "ico-tipo-tecno-dato",
+      "categoria": "tecno-tipos",
+      "alias": [
+        "dato",
+        "data",
+        "db"
+      ],
+      "emoji": "🗄️",
+      "concepto": "Cilindro de base de datos",
+      "svg": "tecno-tipos/ico-tipo-tecno-dato.svg",
+      "svg_mono": "tecno-tipos/ico-tipo-tecno-dato-mono.svg",
+      "png": "tecno-tipos/ico-tipo-tecno-dato.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-tecno-iot": {
+      "id": "ico-tipo-tecno-iot",
+      "categoria": "tecno-tipos",
+      "alias": [
+        "iot",
+        "nube-dispositivos"
+      ],
+      "emoji": "📡",
+      "concepto": "Nube + dispositivos conectados",
+      "svg": "tecno-tipos/ico-tipo-tecno-iot.svg",
+      "svg_mono": "tecno-tipos/ico-tipo-tecno-iot-mono.svg",
+      "png": "tecno-tipos/ico-tipo-tecno-iot.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "tipo-tecno-prototipo": {
+      "id": "ico-tipo-tecno-prototipo",
+      "categoria": "tecno-tipos",
+      "alias": [
+        "prototipo",
+        "wireframe"
+      ],
+      "emoji": "📐",
+      "concepto": "Objeto en wireframe",
+      "svg": "tecno-tipos/ico-tipo-tecno-prototipo.svg",
+      "svg_mono": "tecno-tipos/ico-tipo-tecno-prototipo-mono.svg",
+      "png": "tecno-tipos/ico-tipo-tecno-prototipo.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-infografia": {
+      "id": "ico-visual-infografia",
+      "categoria": "visuales",
+      "alias": [
+        "infografia",
+        "info"
+      ],
+      "emoji": "📊",
+      "concepto": "Hoja con barras + texto",
+      "svg": "visuales/ico-visual-infografia.svg",
+      "svg_mono": "visuales/ico-visual-infografia-mono.svg",
+      "png": "visual-infografia.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-mapa-mental": {
+      "id": "ico-visual-mapa-mental",
+      "categoria": "visuales",
+      "alias": [
+        "mapa-mental-vis",
+        "ramas"
+      ],
+      "emoji": "🧠",
+      "concepto": "Nodo central + ramas",
+      "svg": "visuales/ico-visual-mapa-mental.svg",
+      "svg_mono": "visuales/ico-visual-mapa-mental-mono.svg",
+      "png": "visual-mapa-mental.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-cuadro-comp": {
+      "id": "ico-visual-cuadro-comp",
+      "categoria": "visuales",
+      "alias": [
+        "cuadro-comp",
+        "comparativo"
+      ],
+      "emoji": "📋",
+      "concepto": "Dos columnas",
+      "svg": "visuales/ico-visual-cuadro-comp.svg",
+      "svg_mono": "visuales/ico-visual-cuadro-comp-mono.svg",
+      "png": "visual-cuadro-comp.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-linea-tiempo": {
+      "id": "ico-visual-linea-tiempo",
+      "categoria": "visuales",
+      "alias": [
+        "linea-tiempo",
+        "timeline"
+      ],
+      "emoji": "📅",
+      "concepto": "Línea con hitos",
+      "svg": "visuales/ico-visual-linea-tiempo.svg",
+      "svg_mono": "visuales/ico-visual-linea-tiempo-mono.svg",
+      "png": "visual-linea-tiempo.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-diagrama-flujo": {
+      "id": "ico-visual-diagrama-flujo",
+      "categoria": "visuales",
+      "alias": [
+        "diagrama-flujo",
+        "flowchart"
+      ],
+      "emoji": "🔄",
+      "concepto": "Cajas conectadas",
+      "svg": "visuales/ico-visual-diagrama-flujo.svg",
+      "svg_mono": "visuales/ico-visual-diagrama-flujo-mono.svg",
+      "png": "visual-diagrama-flujo.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-ilustracion": {
+      "id": "ico-visual-ilustracion",
+      "categoria": "visuales",
+      "alias": [
+        "ilustracion",
+        "marco-paisaje"
+      ],
+      "emoji": "🖼️",
+      "concepto": "Marco con paisaje",
+      "svg": "visuales/ico-visual-ilustracion.svg",
+      "svg_mono": "visuales/ico-visual-ilustracion-mono.svg",
+      "png": "visual-ilustracion.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-interfaz": {
+      "id": "ico-visual-interfaz",
+      "categoria": "visuales",
+      "alias": [
+        "interfaz",
+        "ui",
+        "ventana"
+      ],
+      "emoji": "🖥️",
+      "concepto": "Ventana con menús",
+      "svg": "visuales/ico-visual-interfaz.svg",
+      "svg_mono": "visuales/ico-visual-interfaz-mono.svg",
+      "png": "visual-interfaz.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-tabla-grande": {
+      "id": "ico-visual-tabla-grande",
+      "categoria": "visuales",
+      "alias": [
+        "tabla-grande",
+        "grid"
+      ],
+      "emoji": "📑",
+      "concepto": "Tabla amplia",
+      "svg": "visuales/ico-visual-tabla-grande.svg",
+      "svg_mono": "visuales/ico-visual-tabla-grande-mono.svg",
+      "png": "visual-tabla-grande.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "visual-grafica": {
+      "id": "ico-visual-grafica",
+      "categoria": "visuales",
+      "alias": [
+        "grafica",
+        "chart"
+      ],
+      "emoji": "📈",
+      "concepto": "Gráfica de líneas",
+      "svg": "visuales/ico-visual-grafica.svg",
+      "svg_mono": "visuales/ico-visual-grafica-mono.svg",
+      "png": "visual-grafica.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloom-recordar": {
+      "id": "ico-bloom-recordar",
+      "categoria": "pedagogico",
+      "alias": [
+        "bloom-recordar"
+      ],
+      "emoji": "🧠",
+      "concepto": "Bombillo + memoria",
+      "svg": "pedagogico/ico-bloom-recordar.svg",
+      "svg_mono": "pedagogico/ico-bloom-recordar-mono.svg",
+      "png": "pedagogico/ico-bloom-recordar.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloom-comprender": {
+      "id": "ico-bloom-comprender",
+      "categoria": "pedagogico",
+      "alias": [
+        "bloom-comprender"
+      ],
+      "emoji": "👁️",
+      "concepto": "Ojos sobre libro",
+      "svg": "pedagogico/ico-bloom-comprender.svg",
+      "svg_mono": "pedagogico/ico-bloom-comprender-mono.svg",
+      "png": "pedagogico/ico-bloom-comprender.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloom-aplicar": {
+      "id": "ico-bloom-aplicar",
+      "categoria": "pedagogico",
+      "alias": [
+        "bloom-aplicar"
+      ],
+      "emoji": "🛠️",
+      "concepto": "Engranaje en mano",
+      "svg": "pedagogico/ico-bloom-aplicar.svg",
+      "svg_mono": "pedagogico/ico-bloom-aplicar-mono.svg",
+      "png": "pedagogico/ico-bloom-aplicar.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloom-analizar": {
+      "id": "ico-bloom-analizar",
+      "categoria": "pedagogico",
+      "alias": [
+        "bloom-analizar"
+      ],
+      "emoji": "🔍",
+      "concepto": "Lupa sobre gráfica",
+      "svg": "pedagogico/ico-bloom-analizar.svg",
+      "svg_mono": "pedagogico/ico-bloom-analizar-mono.svg",
+      "png": "pedagogico/ico-bloom-analizar.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloom-evaluar": {
+      "id": "ico-bloom-evaluar",
+      "categoria": "pedagogico",
+      "alias": [
+        "bloom-evaluar"
+      ],
+      "emoji": "⚖️",
+      "concepto": "Balanza",
+      "svg": "pedagogico/ico-bloom-evaluar.svg",
+      "svg_mono": "pedagogico/ico-bloom-evaluar-mono.svg",
+      "png": "pedagogico/ico-bloom-evaluar.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "bloom-crear": {
+      "id": "ico-bloom-crear",
+      "categoria": "pedagogico",
+      "alias": [
+        "bloom-crear"
+      ],
+      "emoji": "✨",
+      "concepto": "Lápiz + chispa",
+      "svg": "pedagogico/ico-bloom-crear.svg",
+      "svg_mono": "pedagogico/ico-bloom-crear-mono.svg",
+      "png": "pedagogico/ico-bloom-crear.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "nivel-1": {
+      "id": "ico-nivel-1",
+      "categoria": "pedagogico",
+      "alias": [
+        "nivel-1",
+        "basico"
+      ],
+      "emoji": "⭐",
+      "concepto": "1 estrella",
+      "svg": "pedagogico/ico-nivel-1.svg",
+      "svg_mono": "pedagogico/ico-nivel-1-mono.svg",
+      "png": "pedagogico/ico-nivel-1.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "nivel-2": {
+      "id": "ico-nivel-2",
+      "categoria": "pedagogico",
+      "alias": [
+        "nivel-2",
+        "intermedio"
+      ],
+      "emoji": "🌟",
+      "concepto": "2 estrellas",
+      "svg": "pedagogico/ico-nivel-2.svg",
+      "svg_mono": "pedagogico/ico-nivel-2-mono.svg",
+      "png": "pedagogico/ico-nivel-2.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "nivel-3": {
+      "id": "ico-nivel-3",
+      "categoria": "pedagogico",
+      "alias": [
+        "nivel-3",
+        "avanzado"
+      ],
+      "emoji": "💫",
+      "concepto": "3 estrellas",
+      "svg": "pedagogico/ico-nivel-3.svg",
+      "svg_mono": "pedagogico/ico-nivel-3-mono.svg",
+      "png": "pedagogico/ico-nivel-3.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "flujo-diagnostica": {
+      "id": "ico-flujo-diagnostica",
+      "categoria": "flujo",
+      "alias": [
+        "diagnostica",
+        "diagnostico"
+      ],
+      "emoji": "📋",
+      "concepto": "Clipboard con check",
+      "svg": "flujo/ico-flujo-diagnostica.svg",
+      "svg_mono": "flujo/ico-flujo-diagnostica-mono.svg",
+      "png": "flujo/ico-flujo-diagnostica.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "flujo-examen": {
+      "id": "ico-flujo-examen",
+      "categoria": "flujo",
+      "alias": [
+        "examen",
+        "test",
+        "prueba"
+      ],
+      "emoji": "📝",
+      "concepto": "Hoja + lápiz + reloj",
+      "svg": "flujo/ico-flujo-examen.svg",
+      "svg_mono": "flujo/ico-flujo-examen-mono.svg",
+      "png": "flujo/ico-flujo-examen.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "flujo-glosario": {
+      "id": "ico-flujo-glosario",
+      "categoria": "flujo",
+      "alias": [
+        "glosario",
+        "abc"
+      ],
+      "emoji": "🔤",
+      "concepto": "Libro con letras ABC",
+      "svg": "flujo/ico-flujo-glosario.svg",
+      "svg_mono": "flujo/ico-flujo-glosario-mono.svg",
+      "png": "flujo/ico-flujo-glosario.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "flujo-bibliografia": {
+      "id": "ico-flujo-bibliografia",
+      "categoria": "flujo",
+      "alias": [
+        "bibliografia",
+        "estante"
+      ],
+      "emoji": "📚",
+      "concepto": "Estante de libros",
+      "svg": "flujo/ico-flujo-bibliografia.svg",
+      "svg_mono": "flujo/ico-flujo-bibliografia-mono.svg",
+      "png": "flujo/ico-flujo-bibliografia.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "flujo-indice": {
+      "id": "ico-flujo-indice",
+      "categoria": "flujo",
+      "alias": [
+        "indice",
+        "lista-alfabetica"
+      ],
+      "emoji": "🔖",
+      "concepto": "Hoja con lista alfabética",
+      "svg": "flujo/ico-flujo-indice.svg",
+      "svg_mono": "flujo/ico-flujo-indice-mono.svg",
+      "png": "flujo/ico-flujo-indice.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "manual-1-quimica": {
+      "id": "ico-manual-1-quimica",
+      "categoria": "manuales",
+      "alias": [
+        "quimica",
+        "manual-1"
+      ],
+      "emoji": "🧪",
+      "concepto": "Matraz + molécula H₂O",
+      "svg": "manuales/ico-manual-1-quimica.svg",
+      "svg_mono": "manuales/ico-manual-1-quimica-mono.svg",
+      "png": "manuales/ico-manual-1-quimica.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "manual-2-fisica": {
+      "id": "ico-manual-2-fisica",
+      "categoria": "manuales",
+      "alias": [
+        "fisica",
+        "manual-2"
+      ],
+      "emoji": "⚛️",
+      "concepto": "Átomo + coche F1 estilizado",
+      "svg": "manuales/ico-manual-2-fisica.svg",
+      "svg_mono": "manuales/ico-manual-2-fisica-mono.svg",
+      "png": "manuales/ico-manual-2-fisica.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "manual-3-ia-basica": {
+      "id": "ico-manual-3-ia-basica",
+      "categoria": "manuales",
+      "alias": [
+        "ia-basica",
+        "manual-3"
+      ],
+      "emoji": "🤖",
+      "concepto": "Chatbot conversando",
+      "svg": "manuales/ico-manual-3-ia-basica.svg",
+      "svg_mono": "manuales/ico-manual-3-ia-basica-mono.svg",
+      "png": "manuales/ico-manual-3-ia-basica.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "manual-4-ia-avanzada": {
+      "id": "ico-manual-4-ia-avanzada",
+      "categoria": "manuales",
+      "alias": [
+        "ia-avanzada",
+        "manual-4"
+      ],
+      "emoji": "🧠",
+      "concepto": "Nodo + agentes conectados",
+      "svg": "manuales/ico-manual-4-ia-avanzada.svg",
+      "svg_mono": "manuales/ico-manual-4-ia-avanzada-mono.svg",
+      "png": "manuales/ico-manual-4-ia-avanzada.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "manual-5-ia-programacion": {
+      "id": "ico-manual-5-ia-programacion",
+      "categoria": "manuales",
+      "alias": [
+        "ia-prog",
+        "manual-5"
+      ],
+      "emoji": "💻",
+      "concepto": "Terminal con prompt",
+      "svg": "manuales/ico-manual-5-ia-programacion.svg",
+      "svg_mono": "manuales/ico-manual-5-ia-programacion-mono.svg",
+      "png": "manuales/ico-manual-5-ia-programacion.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "decor-tip": {
+      "id": "ico-decor-tip",
+      "categoria": "decorativos",
+      "alias": [
+        "tip",
+        "consejo"
+      ],
+      "emoji": "💡",
+      "concepto": "Foco con destellos",
+      "svg": "decorativos/ico-decor-tip.svg",
+      "svg_mono": "decorativos/ico-decor-tip-mono.svg",
+      "png": "decorativos/ico-decor-tip.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "decor-warning": {
+      "id": "ico-decor-warning",
+      "categoria": "decorativos",
+      "alias": [
+        "warning",
+        "alerta",
+        "cuidado"
+      ],
+      "emoji": "⚠️",
+      "concepto": "Triángulo con signo de !",
+      "svg": "decorativos/ico-decor-warning.svg",
+      "svg_mono": "decorativos/ico-decor-warning-mono.svg",
+      "png": "decorativos/ico-decor-warning.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "decor-success": {
+      "id": "ico-decor-success",
+      "categoria": "decorativos",
+      "alias": [
+        "success",
+        "ok",
+        "correcto"
+      ],
+      "emoji": "✅",
+      "concepto": "Check verde",
+      "svg": "decorativos/ico-decor-success.svg",
+      "svg_mono": "decorativos/ico-decor-success-mono.svg",
+      "png": "decorativos/ico-decor-success.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "decor-error": {
+      "id": "ico-decor-error",
+      "categoria": "decorativos",
+      "alias": [
+        "error",
+        "incorrecto"
+      ],
+      "emoji": "❌",
+      "concepto": "Cruz roja",
+      "svg": "decorativos/ico-decor-error.svg",
+      "svg_mono": "decorativos/ico-decor-error-mono.svg",
+      "png": "decorativos/ico-decor-error.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "decor-tiempo": {
+      "id": "ico-decor-tiempo",
+      "categoria": "decorativos",
+      "alias": [
+        "tiempo",
+        "duracion",
+        "reloj"
+      ],
+      "emoji": "⏱️",
+      "concepto": "Cronómetro",
+      "svg": "decorativos/ico-decor-tiempo.svg",
+      "svg_mono": "decorativos/ico-decor-tiempo-mono.svg",
+      "png": "decorativos/ico-decor-tiempo.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "decor-grupo": {
+      "id": "ico-decor-grupo",
+      "categoria": "decorativos",
+      "alias": [
+        "grupo",
+        "equipo"
+      ],
+      "emoji": "👥",
+      "concepto": "3 personas en grupo",
+      "svg": "decorativos/ico-decor-grupo.svg",
+      "svg_mono": "decorativos/ico-decor-grupo-mono.svg",
+      "png": "decorativos/ico-decor-grupo.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "decor-individual": {
+      "id": "ico-decor-individual",
+      "categoria": "decorativos",
+      "alias": [
+        "individual",
+        "solo"
+      ],
+      "emoji": "👤",
+      "concepto": "1 persona sola",
+      "svg": "decorativos/ico-decor-individual.svg",
+      "svg_mono": "decorativos/ico-decor-individual-mono.svg",
+      "png": "decorativos/ico-decor-individual.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "decor-rubrica": {
+      "id": "ico-decor-rubrica",
+      "categoria": "decorativos",
+      "alias": [
+        "rubrica",
+        "evaluacion-est"
+      ],
+      "emoji": "🌟",
+      "concepto": "Estrellas + check",
+      "svg": "decorativos/ico-decor-rubrica.svg",
+      "svg_mono": "decorativos/ico-decor-rubrica-mono.svg",
+      "png": "decorativos/ico-decor-rubrica.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "logo-color": {
+      "id": "logo-color",
+      "categoria": "logo",
+      "alias": [
+        "albatros-color"
+      ],
+      "emoji": "🛡️",
+      "concepto": "Logo Albatros completo a color",
+      "svg": "logo/logo-color.svg",
+      "svg_mono": "logo/logo-color-mono.svg",
+      "png": "logo/logo-color.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "logo-mono": {
+      "id": "logo-mono",
+      "categoria": "logo",
+      "alias": [
+        "albatros-mono"
+      ],
+      "emoji": "🛡️",
+      "concepto": "Logo Albatros monocromo azul",
+      "svg": "logo/logo-mono.svg",
+      "svg_mono": "logo/logo-mono-mono.svg",
+      "png": "logo/logo-mono.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "logo-white": {
+      "id": "logo-white",
+      "categoria": "logo",
+      "alias": [
+        "albatros-white"
+      ],
+      "emoji": "🛡️",
+      "concepto": "Logo Albatros blanco",
+      "svg": "logo/logo-white.svg",
+      "svg_mono": "logo/logo-white-mono.svg",
+      "png": "logo/logo-white.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "logo-mini": {
+      "id": "logo-mini",
+      "categoria": "logo",
+      "alias": [
+        "albatros-mini"
+      ],
+      "emoji": "🛡️",
+      "concepto": "Logo Albatros mini cuadrado 64×64",
+      "svg": "logo/logo-mini.svg",
+      "svg_mono": "logo/logo-mini-mono.svg",
+      "png": "logo/logo-mini.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    },
+    "logo-tecno": {
+      "id": "logo-tecno",
+      "categoria": "logo",
+      "alias": [
+        "albatros-tecno"
+      ],
+      "emoji": "🛡️",
+      "concepto": "Logo Albatros + engranaje (variante Tecno)",
+      "svg": "logo/logo-tecno.svg",
+      "svg_mono": "logo/logo-tecno-mono.svg",
+      "png": "logo/logo-tecno.png",
+      "estado": "listo",
+      "color_primario": "#0E3A8A",
+      "color_acento": "#F39C12"
+    }
+  }
+}

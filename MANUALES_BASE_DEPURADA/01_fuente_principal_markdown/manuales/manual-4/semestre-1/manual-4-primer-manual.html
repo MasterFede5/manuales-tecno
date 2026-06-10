@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manual 4 IA Avanzada - Primer manual</title>
+  <link rel="stylesheet" href="../../primer-manual.css">
+</head>
+<body>
+  <section class="page cover">
+    <div class="cover-text">
+      <p class="kicker">Manual 4 / IA Avanzada / Primer manual</p>
+      <h1>Prompt engineering avanzado</h1>
+      <p class="subtitle">Construir un sistema de prompts versionados para el Asistente Institucional Albatros, con estructura, evaluacion y salidas controladas.</p>
+    </div>
+    <figure class="visual full" data-visual-id="M4-u01-01">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-01.jpg" alt="El poder de un buen prompt como portadilla">
+      <figcaption>M4-u01-01. Match: portadilla sobre prompts porque la unidad trata el prompt como activo institucional.</figcaption>
+    </figure>
+    <div class="meta-strip">
+      <div class="meta"><strong>Historia</strong>Asistente Institucional Albatros.</div>
+      <div class="meta"><strong>Producto</strong>Biblioteca de prompts versionados.</div>
+      <div class="meta"><strong>Formato</strong>40% teoria / 60% practica.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <h2>Historia conductora</h2>
+    <p>La institucion ya usa IA, pero cada area escribe prompts distintos, guarda versiones en chats sueltos y obtiene respuestas inconsistentes. Direccion pide ordenar el proceso antes de conectar documentos, agentes o automatizaciones.</p>
+    <p>La primera capa del Asistente Institucional no es una app: es una biblioteca de instrucciones confiables. Un buen prompt debe tener estructura, contexto, formato de salida, criterios de calidad y version.</p>
+    <div class="box question-box">
+      <h3>Preguntas introductorias</h3>
+      <ul>
+        <li>Que diferencia hay entre un prompt casual y una plantilla institucional?</li>
+        <li>Por que conviene delimitar contexto y salida?</li>
+        <li>Como se evalua si un prompt mejora?</li>
+        <li>Cuando se debe usar JSON, tabla o texto libre?</li>
+      </ul>
+    </div>
+    <figure class="visual compact" data-visual-id="M4-u01-02">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-02.jpg" alt="Mapa mental de prompt engineering avanzado">
+      <figcaption>M4-u01-02. Match: mapa mental para ordenar las tecnicas avanzadas de prompt.</figcaption>
+    </figure>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 2</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Estructura con delimitadores XML</h2>
+    <p>Los delimitadores reducen ambiguedad. Separan rol, tarea, contexto, restricciones, ejemplos y salida esperada. En una institucion esto permite auditar y reutilizar instrucciones.</p>
+    <figure class="visual half" data-visual-id="M4-u01-03">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-03.jpg" alt="Anatomia XML de un prompt avanzado">
+      <figcaption>M4-u01-03. Match: anatomia XML usada solo en la pagina de estructura con etiquetas.</figcaption>
+    </figure>
+    <div class="formula">&lt;rol&gt;Asistente academico&lt;/rol&gt; &lt;tarea&gt;Resumir reglamento&lt;/tarea&gt; &lt;salida&gt;Tabla&lt;/salida&gt;</div>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 3</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Meta-prompting</h2>
+    <p>Meta-prompting significa pedir a la IA que ayude a mejorar el propio prompt. No se delega el criterio; se usa la IA como revisor de estructura, claridad, huecos y riesgos.</p>
+    <figure class="visual half" data-visual-id="M4-u01-04">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-04.jpg" alt="Bucle meta prompt para mejorar instrucciones">
+      <figcaption>M4-u01-04. Match: diagrama de bucle usado exactamente para explicar meta-prompting.</figcaption>
+    </figure>
+    <table>
+      <tr><th>Paso</th><th>Accion</th><th>Evidencia</th></tr>
+      <tr><td>1</td><td>Escribir prompt inicial.</td><td>Version 0.1.</td></tr>
+      <tr><td>2</td><td>Pedir critica estructurada.</td><td>Lista de mejoras.</td></tr>
+      <tr><td>3</td><td>Aplicar cambios.</td><td>Version 0.2.</td></tr>
+      <tr><td>4</td><td>Probar con casos reales.</td><td>Resultados comparables.</td></tr>
+    </table>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 4</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Dos formas de guiar el razonamiento</h2>
+    <p>Un prompt avanzado no siempre necesita explicaciones largas. A veces conviene guiar con pasos; otras veces conviene pedir criterios y salida breve. La decision depende de riesgo, trazabilidad y costo.</p>
+    <figure class="visual half" data-visual-id="M4-u01-05">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-05.jpg" alt="Dos formas de guiar un modelo">
+      <figcaption>M4-u01-05. Match: visual de modos de guia para comparar estrategias de razonamiento.</figcaption>
+    </figure>
+    <div class="box theory-box">
+      <h3>Regla practica</h3>
+      <p>Para tareas institucionales, pide razonamiento verificable en forma de criterios, no cadenas internas extensas. Lo importante es poder revisar la decision.</p>
+    </div>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 5</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Self-consistency y pipeline de prompts</h2>
+    <p>Self-consistency compara varias respuestas antes de elegir una. Un pipeline divide una tarea grande en subtareas: interpretar, extraer, validar, redactar y revisar.</p>
+    <div class="grid-2">
+      <figure class="visual compact" data-visual-id="M4-u01-06">
+        <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-06.jpg" alt="Self consistency en prompts">
+        <figcaption>M4-u01-06. Match: diagrama de consistencia usado para comparar respuestas.</figcaption>
+      </figure>
+      <figure class="visual compact" data-visual-id="M4-u01-07">
+        <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-07.jpg" alt="Pipeline de prompts">
+        <figcaption>M4-u01-07. Match: pipeline visual para dividir una tarea institucional.</figcaption>
+      </figure>
+    </div>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 6</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Few-shot estrategico y salida restringida</h2>
+    <p>Few-shot muestra ejemplos de entrada y salida. La salida restringida exige que el modelo responda en una estructura fija, por ejemplo JSON, tabla o checklist.</p>
+    <div class="grid-2">
+      <figure class="visual compact" data-visual-id="M4-u01-08">
+        <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-08.jpg" alt="Curaduria few-shot">
+        <figcaption>M4-u01-08. Match: ejemplos few-shot colocados en la pagina de ejemplos curados.</figcaption>
+      </figure>
+      <figure class="visual compact" data-visual-id="M4-u01-09">
+        <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-09.jpg" alt="Salida restringida con formato">
+        <figcaption>M4-u01-09. Match: visual de salida restringida para hablar de formatos controlados.</figcaption>
+      </figure>
+    </div>
+    <div class="formula">{ "area": "control escolar", "riesgo": "medio", "accion": "revisar documento fuente" }</div>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 7</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Evaluacion de prompts</h2>
+    <p>Un prompt institucional no se aprueba porque "suena bien". Se prueba con casos, se califica con rubrica y se versiona. La evaluacion evita que cada usuario ajuste a ojo.</p>
+    <figure class="visual half" data-visual-id="M4-u01-10">
+      <img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-10.jpg" alt="Piramide de evaluacion de prompts">
+      <figcaption>M4-u01-10. Match: piramide de evaluacion para cerrar con criterios de calidad.</figcaption>
+    </figure>
+    <table>
+      <tr><th>Criterio</th><th>Pregunta de revision</th></tr>
+      <tr><td>Exactitud</td><td>La respuesta respeta la fuente?</td></tr>
+      <tr><td>Formato</td><td>Sale exactamente como se pidio?</td></tr>
+      <tr><td>Consistencia</td><td>Funciona en varios casos?</td></tr>
+      <tr><td>Seguridad</td><td>Evita datos sensibles o recomendaciones indebidas?</td></tr>
+    </table>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 8</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Banco de ejercicios</h2>
+    <div class="exercise"><strong>Ejercicio 1.</strong> Reescribe un prompt casual usando etiquetas de rol, tarea, contexto, restricciones y salida.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 2.</strong> Disena un meta-prompt para pedir critica de una plantilla institucional.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 3.</strong> Define tres criterios para evaluar respuestas de un prompt de control escolar.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 4.</strong> Convierte una salida libre en una salida JSON con tres campos obligatorios.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 9</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Banco de ejercicios</h2>
+    <div class="exercise"><strong>Ejercicio 5.</strong> Escribe dos ejemplos few-shot para clasificar solicitudes como academicas, administrativas o tecnicas.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 6.</strong> Divide una tarea grande en un pipeline de cuatro prompts encadenados.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 7.</strong> Propone una prueba A/B para comparar dos versiones de prompt.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="exercise"><strong>Ejercicio 8.</strong> Redacta una politica de una frase para no incluir datos personales en prompts.<div class="work-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 10</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Practica integradora</h2>
+    <p><strong>Rol:</strong> lider de prompts del Asistente Institucional Albatros.</p>
+    <p><strong>Escenario:</strong> tres areas entregan prompts desordenados. Debes convertirlos en plantillas versionadas y evaluables.</p>
+    <p><strong>Producto:</strong> biblioteca con tres prompts: soporte academico, respuesta a reglamento y resumen de solicitud. Cada prompt debe tener version, objetivo, estructura, formato de salida y rubrica.</p>
+    <table>
+      <tr><th>Criterio</th><th>Logro esperado</th></tr>
+      <tr><td>Estructura</td><td>Usa delimitadores claros.</td></tr>
+      <tr><td>Evaluacion</td><td>Incluye rubrica con al menos cuatro criterios.</td></tr>
+      <tr><td>Gobernanza</td><td>Incluye version, responsable y limite de uso.</td></tr>
+    </table>
+    <div class="footer"><span>M4 IA Avanzada</span><span>Pagina 11</span></div>
+  </section>
+</body>
+</html>

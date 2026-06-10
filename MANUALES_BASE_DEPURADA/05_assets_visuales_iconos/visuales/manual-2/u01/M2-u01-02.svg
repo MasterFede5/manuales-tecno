@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 56px; font-weight: 800; fill: #0E3A8A; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 30px; font-weight: 600; fill: #5B6472; }
+      .h { font-family: Arial, sans-serif; font-size: 34px; font-weight: 800; fill: #0E3A8A; }
+      .body { font-family: Arial, sans-serif; font-size: 27px; font-weight: 600; fill: #172033; }
+      .small { font-family: Arial, sans-serif; font-size: 23px; font-weight: 600; fill: #5B6472; }
+      .formula { font-family: Arial, sans-serif; font-size: 35px; font-weight: 800; fill: #F39C12; }
+      .label { font-family: Arial, sans-serif; font-size: 25px; font-weight: 800; fill: white; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="white"/>
+  <rect x="0" y="0" width="1536" height="18" fill="#F39C12"/>
+  <text x="54" y="76" class="title">Tipos de movimiento en cinemática</text>
+  <text x="56" y="120" class="subtitle">Elige el modelo según trayectoria, velocidad y aceleración</text>
+
+  <rect x="70" y="175" width="420" height="250" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="70" y="175" width="420" height="58" rx="18" fill="#0E3A8A"/>
+  <text x="98" y="215" class="label">MRU</text>
+  <text x="98" y="267" class="body">Línea recta</text><text x="98" y="303" class="body">Velocidad constante</text><text x="98" y="339" class="body">Aceleración = 0</text>
+  <text x="98" y="391" class="formula">x = x0 + vt</text>
+
+  <rect x="518" y="175" width="420" height="250" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="518" y="175" width="420" height="58" rx="18" fill="#0E7490"/>
+  <text x="546" y="215" class="label">MRUA</text>
+  <text x="546" y="267" class="body">Línea recta</text><text x="546" y="303" class="body">Aceleración constante</text><text x="546" y="339" class="body">La velocidad cambia</text>
+  <text x="546" y="391" class="formula">v = v0 + at</text>
+
+  <rect x="966" y="175" width="420" height="250" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="966" y="175" width="420" height="58" rx="18" fill="#15803D"/>
+  <text x="994" y="215" class="label">Caída libre</text>
+  <text x="994" y="267" class="body">Movimiento vertical</text><text x="994" y="303" class="body">La aceleración es g</text><text x="994" y="339" class="body">No depende de la masa</text>
+  <text x="994" y="391" class="formula">g = 9.8 m/s²</text>
+
+  <rect x="180" y="515" width="520" height="270" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="180" y="515" width="520" height="58" rx="18" fill="#F39C12"/>
+  <text x="208" y="555" class="label">Movimiento parabólico</text>
+  <text x="208" y="607" class="body">Trayectoria curva</text><text x="208" y="643" class="body">Eje x: velocidad constante</text><text x="208" y="679" class="body">Eje y: aceleración g</text>
+  <text x="208" y="751" class="formula">x = vxt · t</text>
+
+  <rect x="820" y="515" width="520" height="270" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="820" y="515" width="520" height="58" rx="18" fill="#0E3A8A"/>
+  <text x="848" y="555" class="label">Movimiento circular</text>
+  <text x="848" y="607" class="body">Trayectoria circular</text><text x="848" y="643" class="body">Rapidez puede ser constante</text><text x="848" y="679" class="body">Aceleración hacia el centro</text>
+  <text x="848" y="751" class="formula">ac = v² / r</text>
+
+  <line x1="705" y1="425" x2="770" y2="425" stroke="#F39C12" stroke-width="9" stroke-linecap="round"/>
+  <polygon points="770,425 744,410 744,440" fill="#F39C12"/>
+
+  <rect x="215" y="842" width="1106" height="92" rx="18" fill="#FFF8E8" stroke="#F39C12" stroke-width="3"/>
+  <text x="768" y="884" text-anchor="middle" class="h">Pregunta guía</text>
+  <text x="768" y="922" text-anchor="middle" class="body">¿El coche va en línea recta, acelera, cae, se curva o gira?</text>
+
+  <text x="1480" y="989" text-anchor="end" class="small">Colegio Nuevo Tecno · Física · Unidad 1</text>
+</svg>

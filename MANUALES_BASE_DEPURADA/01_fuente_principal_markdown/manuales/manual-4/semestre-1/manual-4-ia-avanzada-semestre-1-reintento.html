@@ -1,0 +1,1176 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manual 4 - Inteligencia Artificial Avanzada - Semestre 1</title>
+  <style>
+@page { size: letter; margin: 0; }
+@page landscape { size: letter landscape; margin: 0; }
+
+:root {
+  --blue: #0E3A8A;
+  --teal: #0E7490;
+  --green: #15803D;
+  --amber: #B45309;
+  --red: #B91C1C;
+  --ink: #172033;
+  --muted: #526070;
+  --line: #D7DEE8;
+  --soft: #F7FAFC;
+  --theory: #EFF6FF;
+  --practice: #ECFDF5;
+  --warm: #FFF7ED;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #E6EBF2;
+  color: var(--ink);
+  font-family: Arial, "Segoe UI", sans-serif;
+  line-height: 1.32;
+}
+.page {
+  width: 216mm;
+  height: 279mm;
+  min-height: 279mm;
+  margin: 0 auto 8mm;
+  padding: 12mm 13mm 15mm;
+  background: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+  break-after: page;
+  page-break-after: always;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
+}
+.landscape {
+  page: landscape;
+  width: 279mm;
+  height: 216mm;
+  min-height: 216mm;
+  padding: 8mm 10mm 12mm;
+  gap: 2.6mm;
+}
+.cover {
+  padding: 0;
+  color: #FFFFFF;
+  display: block;
+}
+.cover .visual {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+.cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cover figcaption {
+  display: none;
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14, 58, 138, 0.94), rgba(14, 116, 144, 0.42));
+}
+.cover-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 20mm 17mm 16mm;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.school {
+  font-size: 16pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.cover h1 {
+  margin: 25mm 0 5mm;
+  max-width: 150mm;
+  color: #FFFFFF;
+  font-size: 40pt;
+  line-height: 0.98;
+  letter-spacing: 0;
+  border: 0;
+  padding: 0;
+}
+.cover .lead {
+  max-width: 150mm;
+  color: rgba(255,255,255,0.94);
+  font-size: 15pt;
+  line-height: 1.25;
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 5mm;
+  padding-top: 6mm;
+  border-top: 1px solid rgba(255,255,255,0.55);
+  font-size: 11pt;
+}
+.kicker {
+  margin: 0;
+  color: var(--amber);
+  font-size: 9.8pt;
+  line-height: 1.15;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+h1, h2, h3 {
+  margin: 0;
+  color: var(--blue);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+h2 {
+  font-size: 19.5pt;
+  padding-bottom: 2mm;
+  border-bottom: 2px solid var(--line);
+}
+h3 {
+  font-size: 12.8pt;
+  margin-bottom: 1.5mm;
+}
+p, li {
+  font-size: 11.4pt;
+  line-height: 1.32;
+}
+p { margin: 0 0 2.8mm; }
+ul, ol {
+  margin: 1mm 0 2.8mm 5mm;
+  padding-left: 5mm;
+}
+li { margin: 1mm 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5mm 0 3mm;
+  font-size: 10.2pt;
+  break-inside: avoid;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 2mm;
+  vertical-align: top;
+}
+th {
+  color: #FFFFFF;
+  background: var(--blue);
+  text-align: left;
+}
+.large-table {
+  font-size: 10.8pt;
+}
+.mini-table {
+  font-size: 9.8pt;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  align-items: start;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  align-items: stretch;
+}
+.box, .concept, .formula-card, .route-card, .appendix-card {
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--blue);
+  background: var(--soft);
+  padding: 3mm;
+  break-inside: avoid;
+}
+.theory-box { background: var(--theory); }
+.practice-box { background: var(--practice); border-left-color: var(--green); }
+.question-box { background: var(--warm); border-left-color: var(--amber); }
+.warning-box { background: #FEF2F2; border-left-color: var(--red); }
+.concept strong, .formula-card strong, .route-card strong, .appendix-card strong {
+  color: var(--blue);
+}
+.visual {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  break-inside: avoid;
+}
+.visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.visual.full img { max-height: 205mm; }
+.visual.page-fit img { max-height: 178mm; }
+.landscape .visual.full img { max-height: 176mm; }
+figcaption {
+  color: var(--muted);
+  font-size: 9.8pt;
+  line-height: 1.25;
+  padding-top: 2mm;
+}
+.formula {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11.2pt;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 2mm;
+}
+.worked-example, .worked-step {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 2.5mm;
+  break-inside: avoid;
+}
+.worked-step {
+  margin-bottom: 2mm;
+}
+.exercise, .bank-item {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 2.3mm;
+  margin: 0 0 2.3mm;
+  font-size: 10.4pt;
+  line-height: 1.28;
+  break-inside: avoid;
+}
+.exercise strong, .bank-item strong { color: var(--blue); }
+.operation-lines, .answer-lines {
+  margin-top: 2mm;
+}
+.operation-lines span, .answer-lines span {
+  display: block;
+  border-bottom: 1px solid #AEB7C4;
+  height: 6.4mm;
+}
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+  margin-top: 2mm;
+}
+.match-grid div {
+  border: 1px solid var(--line);
+  padding: 2mm;
+  background: #F8FAFC;
+  font-size: 9.6pt;
+}
+.code-block {
+  background: #111827;
+  color: #F8FAFC;
+  border-radius: 0;
+  padding: 3mm;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 8.3pt;
+  line-height: 1.18;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+.footer {
+  position: absolute;
+  left: 13mm;
+  right: 13mm;
+  bottom: 6mm;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 2mm;
+  color: var(--muted);
+  font-size: 8.8pt;
+}
+.landscape .footer {
+  left: 10mm;
+  right: 10mm;
+}
+.toc-row {
+  display: grid;
+  grid-template-columns: 18mm 1.15fr 1.6fr;
+  gap: 3mm;
+  border-bottom: 1px solid var(--line);
+  padding: 2mm 0;
+  font-size: 10.6pt;
+}
+.badge-row {
+  display: flex;
+  gap: 2mm;
+  flex-wrap: wrap;
+}
+.badge {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 1.5mm 2mm;
+  font-size: 9.5pt;
+  color: var(--blue);
+  font-weight: 700;
+}
+.ratio {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  border: 1px solid var(--line);
+}
+.ratio div {
+  padding: 3mm;
+  color: #FFFFFF;
+  font-weight: 800;
+}
+.ratio .theory { background: var(--blue); }
+.ratio .practice { background: var(--green); }
+@media print {
+  body { background: #FFFFFF; }
+  .page { margin: 0; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+<section class="page cover"><figure class="visual full" data-visual-id="M4-sem1-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/sem1/M4-sem1-30.svg" alt="Una ruta de aprendizaje funciona cuando cada herramienta deja evidencia."><figcaption>Una ruta de aprendizaje funciona cuando cada herramienta deja evidencia.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Inteligencia Artificial Avanzada</h1><p class="lead">Especificaciones, artifacts, RAG, agentes básicos y workflows institucionales</p></div><div class="cover-meta"><div><strong>Semestre 1</strong><br>Asistente Institucional Albatros</div><div><strong>Distribución</strong><br>40% teoría / 60% práctica</div><div><strong>Salida</strong><br>HTML y PDF para hoja carta</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Semestre 1</p>
+<h2>Temario completo del semestre</h2>
+<p>Este primer semestre funciona como un manual completo: inicia con las bases, desarrolla el caso conductor y cierra con evaluación, recursos, glosario, bibliografía e índice analítico. La continuidad del siguiente semestre amplía la misma ruta sin repetirla.</p><div class="toc-list"><div class="toc-row"><strong>U01</strong><span>Prompt Engineering Avanzado</span><span>Repositorio de instrucciones institucionales con versión y rúbrica.</span></div><div class="toc-row"><strong>U02</strong><span>Especificaciones de Tareas y Proyectos</span><span>PRD completo de una función del asistente institucional.</span></div><div class="toc-row"><strong>U03</strong><span>Artifacts y Canvases</span><span>Dashboard HTML del asistente con checklist de pruebas.</span></div><div class="toc-row"><strong>U04</strong><span>Bases de Conocimiento y RAG</span><span>Prototipo RAG sin código con preguntas, fuentes y respuestas citadas.</span></div><div class="toc-row"><strong>U05</strong><span>Workflows e Integraciones No-Code</span><span>Workflow no-code para solicitudes estudiantiles con diagrama, prueba y log.</span></div></div><div class="ratio"><div class="theory">40% comprender modelos</div><div class="practice">60% practicar, verificar y producir evidencia</div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 2</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Semestre 1</p>
+<h2>Desglose del temario 1</h2>
+<table class="mini-table"><tr><th>Unidad</th><th>Caso</th><th>Temas</th><th>Producto</th></tr><tr><td>U01</td><td>Prompt Engineering Avanzado<br><span>El equipo crea instrucciones versionadas para todo el asistente institucional.</span></td><td>Delimitadores y estructura; Meta-instrucciones; Salida restringida; Rúbricas y pruebas A/B; Consistencia y seguridad; Repositorio de instrucciones</td><td>Repositorio de instrucciones institucionales con versión y rúbrica.</td></tr><tr><td>U02</td><td>Especificaciones de Tareas y Proyectos<br><span>El asistente institucional necesita un PRD antes de operar.</span></td><td>PRD asistido por IA; Brief y alcance; Definition of Done; Criterios de aceptación; Trade-offs; Especificación por capas</td><td>PRD completo de una función del asistente institucional.</td></tr><tr><td>U03</td><td>Artifacts y Canvases<br><span>El asistente produce un tablero editable para seguimiento institucional.</span></td><td>Tipos de artifacts; Canvas como espacio de iteración; Mini aplicaciones HTML; Pruebas de interfaz; Versionado; Compartir y revisar</td><td>Dashboard HTML del asistente con checklist de pruebas.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 3</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Semestre 1</p>
+<h2>Desglose del temario 2</h2>
+<table class="mini-table"><tr><th>Unidad</th><th>Caso</th><th>Temas</th><th>Producto</th></tr><tr><td>U04</td><td>Bases de Conocimiento y RAG<br><span>El asistente responde usando el reglamento institucional como fuente.</span></td><td>Concepto de RAG; Embeddings y vectores; Fragmentación de documentos; Búsqueda y recuperación; Citas y trazabilidad; RAG vs fine-tuning</td><td>Prototipo RAG sin código con preguntas, fuentes y respuestas citadas.</td></tr><tr><td>U05</td><td>Workflows e Integraciones No-Code<br><span>El asistente automatiza solicitudes con un flujo revisable.</span></td><td>Triggers y webhooks; Validación de datos; Acciones con IA; Aprobaciones humanas; Logs y errores; Patrones reutilizables</td><td>Workflow no-code para solicitudes estudiantiles con diagrama, prueba y log.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 4</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Semestre 1</p>
+<h2>Cómo trabajar este manual</h2>
+<p>El semestre diseña un asistente institucional por capas: instrucciones versionadas, especificaciones, artifacts, base de conocimiento y automatizaciones no-code con control de riesgo.</p><div class="grid-3"><div class="route-card"><strong>1. Historia</strong><br>Entrar por una situación real y preguntas introductorias.</div><div class="route-card"><strong>2. Modelo</strong><br>Nombrar conceptos, fórmulas, criterios, unidades o escalas.</div><div class="route-card"><strong>3. Evidencia</strong><br>Resolver, comparar, verificar y entregar un producto revisable.</div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 5</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Semestre 1</p>
+<h2>Diagnóstico inicial</h2>
+<div class="exercise"><strong>1.</strong> Explica con tus palabras qué evidencia necesitarías para confiar en una respuesta generada por IA.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Convierte una situación cotidiana del caso conductor en una pregunta verificable.<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Identifica una variable, una escala de revisión y un posible error de interpretación.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 6</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Semestre 1</p>
+<h2>Contrato de precisión</h2>
+<div class="box warning-box"><h3>Regla de impresión</h3><p>Las infografías deben ocupar ancho completo o página horizontal cuando tengan texto. Ninguna imagen se encierra en un cuadro que reduzca su lectura.</p></div><div class="box theory-box"><h3>Regla de instrucción</h3><p>Cada actividad explica qué comparar, qué calcular, qué escribir y qué evidencia entregar. Si requiere investigación externa, lo dice de forma explícita.</p></div><div class="box practice-box"><h3>Regla de banco</h3><p>Antes del banco aparece un ejemplo resuelto de principio a fin. El banco usa los modelos de la unidad y varía entre cálculo, tabla, relación de columnas, explicación y decisión de caso.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 7</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M4-u01-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U01</div><div><h1>Prompt Engineering Avanzado</h1><p class="lead">El equipo crea instrucciones versionadas para todo el asistente institucional.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>Cuando una institución usa IA, las instrucciones dejan de ser ocurrencias individuales y se convierten en activos de trabajo. Una instrucción avanzada debe delimitar contexto, salida, seguridad, pruebas y cambios de versión.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Un prompt avanzado se parece a un protocolo de laboratorio: una línea mal definida puede cambiar todo el resultado.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué parte de una instrucción debe versionarse?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Cuándo conviene usar delimitadores?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué salida debe tener esquema?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cómo comparas dos versiones sin opinión?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 9</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Delimitadores y estructura</td></tr><tr><td>2</td><td>Meta-instrucciones</td></tr><tr><td>3</td><td>Salida restringida</td></tr><tr><td>4</td><td>Rúbricas y pruebas A/B</td></tr><tr><td>5</td><td>Consistencia y seguridad</td></tr><tr><td>6</td><td>Repositorio de instrucciones</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Repositorio de instrucciones institucionales con versión y rúbrica.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 10</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M4-u01-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 11</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: los equipos improvisan instrucciones distintas.</div><div class="concept"><strong>Estructura</strong><br>Estructura: separar rol, tarea, contexto y salida.</div><div class="concept"><strong>Restricción</strong><br>Restricción: definir esquema y límites.</div><div class="concept"><strong>Prueba</strong><br>Prueba: comparar dos versiones.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El equipo crea instrucciones versionadas para todo el asistente institucional. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 12</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Delimitador</strong></td><td>Marca que separa instrucciones, contexto y datos.</td></tr><tr><td><strong>Schema</strong></td><td>Forma obligatoria de la salida esperada.</td></tr><tr><td><strong>Versión</strong></td><td>Registro de cambios entre instrucciones.</td></tr><tr><td><strong>Prueba A/B</strong></td><td>Comparación controlada entre dos variantes.</td></tr><tr><td><strong>Seguridad</strong></td><td>Restricciones para evitar datos sensibles o acciones riesgosas.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 13</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M4-u01-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u01/M4-u01-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 14</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Repositorio de instrucciones institucionales con versión y rúbrica..</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 15</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">score = exactitud + formato + utilidad + seguridad</div></td><td>Evaluar una instrucción avanzada.</td><td>Cada criterio se califica de 1 a 5.</td></tr><tr><td><div class="formula">cumplimiento = campos correctos / campos requeridos</div></td><td>Medir salida con schema.</td><td>Conteos; resultado porcentual.</td></tr><tr><td><div class="formula">estabilidad = respuestas válidas / pruebas totales</div></td><td>Comprobar consistencia.</td><td>Conteos en la misma batería de pruebas.</td></tr><tr><td><div class="formula">mejora = score B - score A</div></td><td>Comparar dos versiones.</td><td>Puntajes en escala común.</td></tr><tr><td><div class="formula">riesgo = impacto x probabilidad</div></td><td>Priorizar restricciones.</td><td>Escala 1 a 5.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 16</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 17</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>Dos versiones de una instrucción generan reportes institucionales. La versión A es clara pero no cumple JSON; la versión B cumple estructura y reduce riesgo.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>A: exactitud 4, formato 2, utilidad 4, seguridad 3.</li><li>B: exactitud 4, formato 5, utilidad 4, seguridad 5.</li><li>B requiere 6 campos y entrega 5 correctos.</li><li>Se hacen 10 pruebas y 8 son válidas.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Score A = 4 + 2 + 4 + 3 = 13.</div><div class="worked-step"><strong>Paso 2.</strong> Score B = 4 + 5 + 4 + 5 = 18.</div><div class="worked-step"><strong>Paso 3.</strong> Mejora = 18 - 13 = 5.</div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 18</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Cumplimiento B = 5 / 6 = 83.3%.</div><div class="worked-step"><strong>Paso 5.</strong> Estabilidad = 8 / 10 = 80%.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La versión B se adopta como base, pero debe corregir el campo faltante antes de publicarse.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 19</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Prompt Engineering Avanzado en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo score = exactitud + formato + utilidad + seguridad con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo cumplimiento = campos correctos / campos requeridos para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 20</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar estabilidad = respuestas válidas / pruebas totales. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El equipo crea instrucciones versionadas para todo el asistente institucional..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando mejora = score B - score A. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 21</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa riesgo = impacto x probabilidad para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 22</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 23</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 24</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Prompt Engineering Avanzado.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Diseñar dos versiones, probarlas con la misma tarea y justificar cuál queda vigente.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Repositorio de instrucciones institucionales con versión y rúbrica.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 25</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 26</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee una documentación oficial sobre salidas estructuradas o buenas prácticas y convierte una recomendación en regla de equipo.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 27</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U01 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Prompt Engineering Avanzado, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Delimitador</li><li>Schema</li><li>Versión</li><li>Prueba A/B</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Repositorio de instrucciones institucionales con versión y rúbrica.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 28</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M4-u02-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u02/M4-u02-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U02</div><div><h1>Especificaciones de Tareas y Proyectos</h1><p class="lead">El asistente institucional necesita un PRD antes de operar.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>Muchos errores atribuidos a la IA nacen antes de usarla: objetivos vagos, alcance indefinido, criterios invisibles o riesgos ignorados. Una especificación convierte una idea en un contrato de trabajo revisable.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Una especificación es como un plano: no construye sola, pero evita que todos imaginen edificios distintos.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Quién es el usuario principal?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Qué queda fuera del alcance?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Cómo se define terminado?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Qué riesgo debe controlarse primero?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 30</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>PRD asistido por IA</td></tr><tr><td>2</td><td>Brief y alcance</td></tr><tr><td>3</td><td>Definition of Done</td></tr><tr><td>4</td><td>Criterios de aceptación</td></tr><tr><td>5</td><td>Trade-offs</td></tr><tr><td>6</td><td>Especificación por capas</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>PRD completo de una función del asistente institucional.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 31</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M4-u02-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u02/M4-u02-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 32</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: una solicitud institucional es ambigua.</div><div class="concept"><strong>Usuario</strong><br>Usuario: definir quién recibe valor.</div><div class="concept"><strong>Alcance</strong><br>Alcance: separar incluido y excluido.</div><div class="concept"><strong>Criterios</strong><br>Criterios: escribir aceptación y DoD.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El asistente institucional necesita un PRD antes de operar. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 33</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Usuario</strong></td><td>Persona o grupo que usará la solución.</td></tr><tr><td><strong>Alcance</strong></td><td>Límites de lo que se incluye y excluye.</td></tr><tr><td><strong>DoD</strong></td><td>Criterios para considerar terminada una tarea.</td></tr><tr><td><strong>Trade-off</strong></td><td>Decisión entre beneficios y costos.</td></tr><tr><td><strong>Riesgo</strong></td><td>Evento posible que afecta calidad, costo o seguridad.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 34</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M4-u02-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u02/M4-u02-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 35</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: PRD completo de una función del asistente institucional..</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 36</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">DoD = criterios cumplidos / criterios totales</div></td><td>Medir avance real.</td><td>Conteos; resultado porcentual.</td></tr><tr><td><div class="formula">prioridad = impacto / esfuerzo</div></td><td>Ordenar tareas.</td><td>Impacto y esfuerzo en escala 1 a 5.</td></tr><tr><td><div class="formula">riesgo = impacto x probabilidad</div></td><td>Priorizar controles.</td><td>Escala 1 a 5.</td></tr><tr><td><div class="formula">alcance = objetivo + límites + entregables</div></td><td>Definir proyecto.</td><td>Texto verificable.</td></tr><tr><td><div class="formula">calidad = claridad + completitud + trazabilidad</div></td><td>Evaluar especificación.</td><td>Cada criterio de 1 a 4.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 37</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 38</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>La dirección pide: &#x27;hacer un asistente para alumnos&#x27;. Debes convertir la frase en una especificación mínima y priorizar una función.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Hay 8 criterios de DoD y se cumplen 5.</li><li>Impacto de responder dudas frecuentes: 5.</li><li>Esfuerzo estimado: 2.</li><li>Riesgo de datos personales: impacto 5, probabilidad 3.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> DoD = 5 / 8 = 62.5%.</div><div class="worked-step"><strong>Paso 2.</strong> Prioridad = 5 / 2 = 2.5.</div><div class="worked-step"><strong>Paso 3.</strong> Riesgo = 5 x 3 = 15, alto.</div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 39</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Se limita alcance: responder dudas generales sin datos sensibles.</div><div class="worked-step"><strong>Paso 5.</strong> Se define entregable: FAQ institucional con fuentes.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La especificación aún no está lista para implementación completa, pero sí para un prototipo controlado de preguntas frecuentes.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 40</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Especificaciones de Tareas y Proyectos en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo DoD = criterios cumplidos / criterios totales con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo prioridad = impacto / esfuerzo para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 41</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar riesgo = impacto x probabilidad. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El asistente institucional necesita un PRD antes de operar..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando alcance = objetivo + límites + entregables. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 42</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa calidad = claridad + completitud + trazabilidad para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 43</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 44</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 45</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Especificaciones de Tareas y Proyectos.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Transformar una solicitud ambigua en alcance, criterios, riesgo y entregable.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>PRD completo de una función del asistente institucional.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 46</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 47</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee una plantilla de PRD o criterios de aceptación y adapta sus secciones al caso escolar.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 48</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U02 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Especificaciones de Tareas y Proyectos, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Usuario</li><li>Alcance</li><li>DoD</li><li>Trade-off</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>PRD completo de una función del asistente institucional.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 49</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M4-u03-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u03/M4-u03-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U03</div><div><h1>Artifacts y Canvases</h1><p class="lead">El asistente produce un tablero editable para seguimiento institucional.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>Artifacts y canvases cambian la relación con la IA: la salida deja de ser solo texto y se convierte en documento, tabla, código, visualización o mini aplicación que puede revisarse, probarse y versionarse.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Un artifact es como una mesa de trabajo compartida: la respuesta no queda cerrada, se puede corregir encima.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué tipo de salida conviene editar?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Cómo pruebas una mini aplicación?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué cambio debe guardarse como versión?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cómo compartes sin perder control?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 51</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Tipos de artifacts</td></tr><tr><td>2</td><td>Canvas como espacio de iteración</td></tr><tr><td>3</td><td>Mini aplicaciones HTML</td></tr><tr><td>4</td><td>Pruebas de interfaz</td></tr><tr><td>5</td><td>Versionado</td></tr><tr><td>6</td><td>Compartir y revisar</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Dashboard HTML del asistente con checklist de pruebas.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 52</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M4-u03-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u03/M4-u03-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 53</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: un reporte textual no basta para seguimiento.</div><div class="concept"><strong>Diseño</strong><br>Diseño: elegir tablero, tabla o miniapp.</div><div class="concept"><strong>Construcción</strong><br>Construcción: generar primera versión.</div><div class="concept"><strong>Prueba</strong><br>Prueba: revisar datos, botones o estructura.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El asistente produce un tablero editable para seguimiento institucional. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 54</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Artifact</strong></td><td>Salida editable o interactiva generada con IA.</td></tr><tr><td><strong>Estado</strong></td><td>Información que una mini aplicación conserva o muestra.</td></tr><tr><td><strong>Prueba</strong></td><td>Acción para comparar salida esperada contra salida observada.</td></tr><tr><td><strong>Versión</strong></td><td>Registro de cambios realizados.</td></tr><tr><td><strong>Publicación</strong></td><td>Forma controlada de compartir un resultado.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 55</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M4-u03-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u03/M4-u03-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 56</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Dashboard HTML del asistente con checklist de pruebas..</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 57</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">bug = resultado esperado - resultado observado</div></td><td>Describir una falla.</td><td>Comparación textual; no es resta numérica.</td></tr><tr><td><div class="formula">cobertura = pruebas aprobadas / pruebas totales</div></td><td>Medir revisión.</td><td>Conteos; resultado porcentual.</td></tr><tr><td><div class="formula">versión nueva = versión anterior + cambio probado</div></td><td>Controlar iteraciones.</td><td>Versiones numeradas.</td></tr><tr><td><div class="formula">usabilidad = claridad + navegación + error visible</div></td><td>Evaluar miniapp.</td><td>Cada criterio de 1 a 4.</td></tr><tr><td><div class="formula">riesgo de publicación = exposición x sensibilidad</div></td><td>Decidir si se comparte.</td><td>Escala 1 a 5.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 58</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 59</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>Se genera un tablero para seguimiento de solicitudes. Tiene 6 pruebas, aprueba 4 y falla al filtrar por estado.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Pruebas totales: 6.</li><li>Pruebas aprobadas: 4.</li><li>Claridad 3, navegación 3, error visible 2.</li><li>Exposición 2, sensibilidad 4.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Cobertura = 4 / 6 = 66.7%.</div><div class="worked-step"><strong>Paso 2.</strong> Usabilidad = 3 + 3 + 2 = 8 de 12.</div><div class="worked-step"><strong>Paso 3.</strong> Riesgo publicación = 2 x 4 = 8.</div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 60</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Bug: se esperaba filtrar estado; se observa lista sin cambios.</div><div class="worked-step"><strong>Paso 5.</strong> Se crea versión 1.1 corrigiendo filtro antes de compartir.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>El tablero no debe publicarse todavía. Puede revisarse internamente y pasar a versión 1.1 con filtro corregido.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 61</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Artifacts y Canvases en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo bug = resultado esperado - resultado observado con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo cobertura = pruebas aprobadas / pruebas totales para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 62</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar versión nueva = versión anterior + cambio probado. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El asistente produce un tablero editable para seguimiento institucional..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando usabilidad = claridad + navegación + error visible. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 63</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa riesgo de publicación = exposición x sensibilidad para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 64</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 65</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 66</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Artifacts y Canvases.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Diseñar un artifact, probarlo y documentar cambios de versión.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Dashboard HTML del asistente con checklist de pruebas.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 67</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 68</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee una guía de accesibilidad o pruebas de interfaz y extrae dos criterios aplicables a un artifact escolar.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 69</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U03 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Artifacts y Canvases, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Artifact</li><li>Estado</li><li>Prueba</li><li>Versión</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Dashboard HTML del asistente con checklist de pruebas.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 70</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M4-u04-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u04/M4-u04-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U04</div><div><h1>Bases de Conocimiento y RAG</h1><p class="lead">El asistente responde usando el reglamento institucional como fuente.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>RAG surge porque un modelo general no conoce necesariamente los documentos internos. Recuperar fragmentos relevantes y usarlos como contexto permite responder con trazabilidad, aunque no elimina la necesidad de revisar fuentes.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>RAG es como responder con el archivo abierto al lado: no garantiza verdad automática, pero obliga a mirar la fuente.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué documento entra a la base?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Qué es un fragmento o chunk?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Cómo se cita una fuente?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cuándo RAG no conviene?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 72</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Concepto de RAG</td></tr><tr><td>2</td><td>Embeddings y vectores</td></tr><tr><td>3</td><td>Fragmentación de documentos</td></tr><tr><td>4</td><td>Búsqueda y recuperación</td></tr><tr><td>5</td><td>Citas y trazabilidad</td></tr><tr><td>6</td><td>RAG vs fine-tuning</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Prototipo RAG sin código con preguntas, fuentes y respuestas citadas.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 73</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M4-u04-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u04/M4-u04-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 74</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: el asistente no debe inventar reglamento.</div><div class="concept"><strong>Documento</strong><br>Documento: elegir fuente oficial.</div><div class="concept"><strong>Fragmentación</strong><br>Fragmentación: dividir sin romper sentido.</div><div class="concept"><strong>Búsqueda</strong><br>Búsqueda: recuperar fragmentos relevantes.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El asistente responde usando el reglamento institucional como fuente. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 75</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>RAG</strong></td><td>Generación aumentada por recuperación de documentos.</td></tr><tr><td><strong>Embedding</strong></td><td>Vector que representa significado.</td></tr><tr><td><strong>Chunk</strong></td><td>Fragmento de documento usado para búsqueda.</td></tr><tr><td><strong>Recuperación</strong></td><td>Selección de fragmentos relevantes.</td></tr><tr><td><strong>Trazabilidad</strong></td><td>Capacidad de volver a la fuente original.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 76</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M4-u04-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u04/M4-u04-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 77</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Prototipo RAG sin código con preguntas, fuentes y respuestas citadas..</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 78</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">similitud coseno = A·B / (|A| |B|)</div></td><td>Comparar vectores de consulta y documento.</td><td>A y B son vectores; resultado entre -1 y 1.</td></tr><tr><td><div class="formula">cobertura = fuentes usadas / fuentes necesarias</div></td><td>Revisar base documental.</td><td>Conteos; resultado porcentual.</td></tr><tr><td><div class="formula">precisión de recuperación = fragmentos útiles / fragmentos recuperados</div></td><td>Evaluar búsqueda.</td><td>Conteos.</td></tr><tr><td><div class="formula">tamaño de chunk = palabras por fragmento</div></td><td>Controlar fragmentación.</td><td>Palabras o tokens como conteo.</td></tr><tr><td><div class="formula">alucinación = respuestas sin fuente / respuestas totales</div></td><td>Medir fallas de trazabilidad.</td><td>Conteos; buscar valor bajo.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 79</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 80</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>El asistente responde 10 preguntas del reglamento. Recupera 30 fragmentos, 21 son útiles y 2 respuestas no tienen fuente.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Fragmentos recuperados: 30.</li><li>Fragmentos útiles: 21.</li><li>Respuestas totales: 10.</li><li>Respuestas sin fuente: 2.</li><li>Se usaron 3 fuentes de 4 necesarias.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Precisión de recuperación = 21 / 30 = 70%.</div><div class="worked-step"><strong>Paso 2.</strong> Alucinación = 2 / 10 = 20%.</div><div class="worked-step"><strong>Paso 3.</strong> Cobertura = 3 / 4 = 75%.</div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 81</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Se identifica que falta una fuente sobre becas.</div><div class="worked-step"><strong>Paso 5.</strong> Se bloquean respuestas sin cita hasta agregar documento faltante.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>El prototipo funciona parcialmente. Para uso institucional debe reducir respuestas sin fuente y completar cobertura documental.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 82</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Bases de Conocimiento y RAG en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo similitud coseno = A·B / (|A| |B|) con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo cobertura = fuentes usadas / fuentes necesarias para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 83</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar precisión de recuperación = fragmentos útiles / fragmentos recuperados. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El asistente responde usando el reglamento institucional como fuente..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando tamaño de chunk = palabras por fragmento. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 84</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa alucinación = respuestas sin fuente / respuestas totales para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 85</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 86</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 87</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Bases de Conocimiento y RAG.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Construir una base de conocimiento mínima y evaluar recuperación, cobertura y trazabilidad.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Prototipo RAG sin código con preguntas, fuentes y respuestas citadas.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 88</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 89</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee la documentación oficial de MCP o RAG de una herramienta y localiza cómo recomienda manejar fuentes.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 90</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U04 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Bases de Conocimiento y RAG, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>RAG</li><li>Embedding</li><li>Chunk</li><li>Recuperación</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Prototipo RAG sin código con preguntas, fuentes y respuestas citadas.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 91</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M4-u05-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u05/M4-u05-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U05</div><div><h1>Workflows e Integraciones No-Code</h1><p class="lead">El asistente automatiza solicitudes con un flujo revisable.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Historia, analogía y preguntas introductorias</h2>
+<p>Automatizar no significa soltar decisiones sin control. Un workflow útil define disparador, validación, acción, registro y excepción. La IA puede ayudar a clasificar, redactar o resumir, pero las decisiones sensibles requieren aprobación.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Un workflow es como una receta con sensores: si entra un evento, sigue pasos, pero debe saber cuándo detenerse.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué evento inicia el flujo?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Qué acción requiere aprobación?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Dónde se registra el error?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Qué dato no debe enviarse a IA?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 93</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Ruta interna de la unidad</h2>
+<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Triggers y webhooks</td></tr><tr><td>2</td><td>Validación de datos</td></tr><tr><td>3</td><td>Acciones con IA</td></tr><tr><td>4</td><td>Aprobaciones humanas</td></tr><tr><td>5</td><td>Logs y errores</td></tr><tr><td>6</td><td>Patrones reutilizables</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Workflow no-code para solicitudes estudiantiles con diagrama, prueba y log.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 94</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Infografía principal de la unidad</h2>
+<figure class="visual full" data-visual-id="M4-u05-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u05/M4-u05-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 95</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Explicación de la infografía</h2>
+<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: solicitudes repetidas consumen tiempo.</div><div class="concept"><strong>Entrada</strong><br>Entrada: formulario o correo.</div><div class="concept"><strong>Validación</strong><br>Validación: revisar datos mínimos.</div><div class="concept"><strong>Acción</strong><br>Acción: clasificar, responder o asignar.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El asistente automatiza solicitudes con un flujo revisable. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 96</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Conceptos fundamentales</h2>
+<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Trigger</strong></td><td>Evento que inicia el flujo.</td></tr><tr><td><strong>Webhook</strong></td><td>Señal que envía datos entre herramientas.</td></tr><tr><td><strong>Validación</strong></td><td>Revisión antes de ejecutar una acción.</td></tr><tr><td><strong>Aprobación</strong></td><td>Intervención humana requerida.</td></tr><tr><td><strong>Log</strong></td><td>Registro de lo que ocurrió.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 97</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Modelos visuales de trabajo</h2>
+<figure class="visual full" data-visual-id="M4-u05-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/u05/M4-u05-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 98</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Mini actividad conectada con la imagen</h2>
+<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Workflow no-code para solicitudes estudiantiles con diagrama, prueba y log..</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 99</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas, criterios y unidades</h2>
+<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">SLA = tiempo resuelto / tiempo objetivo</div></td><td>Medir cumplimiento de atención.</td><td>Tiempos en minutos u horas.</td></tr><tr><td><div class="formula">éxito = flujos correctos / flujos probados</div></td><td>Evaluar automatización.</td><td>Conteos; resultado porcentual.</td></tr><tr><td><div class="formula">riesgo = impacto x probabilidad</div></td><td>Priorizar controles.</td><td>Escala 1 a 5.</td></tr><tr><td><div class="formula">costo operativo = pasos x costo por paso</div></td><td>Estimar consumo o esfuerzo.</td><td>Pasos como conteo; costo en moneda o tiempo.</td></tr><tr><td><div class="formula">error = casos fallidos / casos totales</div></td><td>Medir fallas del flujo.</td><td>Conteos; buscar valor bajo.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 100</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 101</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>Se prueba un flujo para solicitudes de constancias. De 12 casos, 9 terminan bien, 2 requieren aprobación y 1 falla por dato faltante.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Casos probados: 12.</li><li>Casos correctos: 9.</li><li>Casos fallidos: 1.</li><li>Tiempo resuelto: 18 min.</li><li>Tiempo objetivo: 20 min.</li><li>Pasos: 6; costo por paso: 0.5 unidades.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Éxito = 9 / 12 = 75%.</div><div class="worked-step"><strong>Paso 2.</strong> Error = 1 / 12 = 8.3%.</div><div class="worked-step"><strong>Paso 3.</strong> SLA = 18 / 20 = 0.9, dentro del objetivo.</div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 102</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Costo operativo = 6 x 0.5 = 3 unidades.</div><div class="worked-step"><strong>Paso 5.</strong> Se agrega validación de datos antes de ejecutar respuesta.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>El flujo puede usarse como piloto, pero no como automatización final hasta reducir fallas y formalizar aprobaciones.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 103</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Define Workflows e Integraciones No-Code en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo SLA = tiempo resuelto / tiempo objetivo con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo éxito = flujos correctos / flujos probados para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 104</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar riesgo = impacto x probabilidad. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El asistente automatiza solicitudes con un flujo revisable..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando costo operativo = pasos x costo por paso. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 105</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa error = casos fallidos / casos totales para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 106</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 107</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5</h2>
+<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 108</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Workflows e Integraciones No-Code.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Diseñar un flujo con trigger, validación, acción, aprobación, error y evidencia.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Workflow no-code para solicitudes estudiantiles con diagrama, prueba y log.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 109</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 110</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>Lee documentación de n8n, Make o Power Automate y registra qué recomienda para errores o credenciales.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 111</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / U05 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Workflows e Integraciones No-Code, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Trigger</li><li>Webhook</li><li>Validación</li><li>Aprobación</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Workflow no-code para solicitudes estudiantiles con diagrama, prueba y log.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 112</span></div>
+</section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M4-tri-1"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/sem1/M4-sem1-30.svg" alt="Cada trimestre separa avances, evidencias y correcciones."><figcaption>Cada trimestre separa avances, evidencias y correcciones.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Trimestre 1</h1><p class="lead">Inteligencia Artificial Avanzada · separador imprimible para seguimiento de evidencias.</p></div><div class="cover-meta"><div><strong>Uso</strong><br>Separar avance</div><div><strong>Entrega</strong><br>Producto y banco</div><div><strong>Revisión</strong><br>Corrección docente</div></div></div></section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M4-tri-2"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/sem1/M4-sem1-30.svg" alt="Cada trimestre separa avances, evidencias y correcciones."><figcaption>Cada trimestre separa avances, evidencias y correcciones.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Trimestre 2</h1><p class="lead">Inteligencia Artificial Avanzada · separador imprimible para seguimiento de evidencias.</p></div><div class="cover-meta"><div><strong>Uso</strong><br>Separar avance</div><div><strong>Entrega</strong><br>Producto y banco</div><div><strong>Revisión</strong><br>Corrección docente</div></div></div></section>
+
+<section class="page cover"><figure class="visual full" data-visual-id="M4-tri-3"><img src="../../../../05_assets_visuales_iconos/visuales/manual-4/sem1/M4-sem1-30.svg" alt="Cada trimestre separa avances, evidencias y correcciones."><figcaption>Cada trimestre separa avances, evidencias y correcciones.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Trimestre 3</h1><p class="lead">Inteligencia Artificial Avanzada · separador imprimible para seguimiento de evidencias.</p></div><div class="cover-meta"><div><strong>Uso</strong><br>Separar avance</div><div><strong>Entrega</strong><br>Producto y banco</div><div><strong>Revisión</strong><br>Corrección docente</div></div></div></section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Material extra de trabajo</h2>
+<table><tr><th>Material</th><th>Uso</th><th>Evidencia esperada</th></tr><tr><td>Bitácora</td><td>Registrar decisiones, cambios y errores.</td><td>Una entrada por práctica.</td></tr><tr><td>Hoja de cálculo</td><td>Verificar puntajes, métricas o datos.</td><td>Tabla con fórmulas visibles.</td></tr><tr><td>Capturas o salidas</td><td>Documentar herramienta, código o resultado.</td><td>Imagen con fecha o explicación.</td></tr><tr><td>Fuentes oficiales</td><td>Contrastar instrucciones y conceptos.</td><td>URL y nota de uso.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 116</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Lecturas complementarias</h2>
+<ul><li>De instrucción simple a sistema versionado de trabajo con IA.</li><li>Especificaciones como puente entre idea, alcance y ejecución.</li><li>RAG como forma de responder con documentos y trazabilidad.</li><li>Automatización no-code con controles, aprobaciones y bitácora.</li></ul>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 117</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Bibliografía y recursos oficiales</h2>
+<table class="large-table"><tr><th>Recurso</th><th>Uso sugerido</th><th>Enlace</th></tr><tr><td>OpenAI API Reference</td><td>Referencia oficial para APIs y uso de modelos.</td><td><a href="https://platform.openai.com/docs/api-reference">https://platform.openai.com/docs/api-reference</a></td></tr><tr><td>Anthropic Docs</td><td>Documentación oficial de Claude.</td><td><a href="https://docs.anthropic.com/">https://docs.anthropic.com/</a></td></tr><tr><td>Model Context Protocol</td><td>Documentación oficial del protocolo MCP.</td><td><a href="https://modelcontextprotocol.io/">https://modelcontextprotocol.io/</a></td></tr><tr><td>n8n Docs</td><td>Documentación oficial para workflows e integraciones.</td><td><a href="https://docs.n8n.io/">https://docs.n8n.io/</a></td></tr><tr><td>Power Automate</td><td>Documentación oficial de automatización de Microsoft.</td><td><a href="https://learn.microsoft.com/power-automate/">https://learn.microsoft.com/power-automate/</a></td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 118</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Glosario esencial 1</h2>
+<table><tr><th>Término</th><th>Uso dentro del manual</th></tr><tr><td>Prompt avanzado</td><td>Instrucción estructurada, evaluable y versionada.</td></tr><tr><td>Schema</td><td>Estructura esperada de una salida, como JSON o tabla.</td></tr><tr><td>PRD</td><td>Documento de requisitos de producto.</td></tr><tr><td>Definition of Done</td><td>Criterios que indican que una tarea está terminada.</td></tr><tr><td>Artifact</td><td>Salida editable, interactiva o reutilizable generada con IA.</td></tr><tr><td>Canvas</td><td>Espacio de trabajo para editar e iterar contenido.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 119</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Glosario esencial 2</h2>
+<table><tr><th>Término</th><th>Uso dentro del manual</th></tr><tr><td>RAG</td><td>Generación aumentada por recuperación de fuentes.</td></tr><tr><td>Embedding</td><td>Representación numérica de significado.</td></tr><tr><td>Workflow</td><td>Secuencia automatizada de pasos con disparadores y acciones.</td></tr><tr><td>Webhook</td><td>Evento que envía datos de una herramienta a otra.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 120</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Evaluación integradora 1</h2>
+<p>La evaluación retoma el caso conductor: Asistente Institucional Albatros. El estudiante debe demostrar que comprende modelos y que puede producir evidencia.</p><div class="exercise"><strong>1.</strong> Selecciona una unidad y escribe el problema en formato dato, criterio, procedimiento y evidencia.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Usa un modelo de esa unidad y muestra sustitución, escala o criterios de evaluación.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Explica qué parte del resultado requiere verificación externa.<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 121</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Evaluación integradora 2</h2>
+<div class="exercise"><strong>4.</strong> Compara dos productos de unidades distintas y decide cuál tiene evidencia más fuerte.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>5.</strong> Diseña una mejora para el producto final del semestre sin introducir una herramienta nueva.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>6.</strong> Presenta una conclusión técnica en 90 palabras: hecho, inferencia, límite y siguiente acción.<div class="answer-lines"><span></span><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 122</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Índice analítico 1</h2>
+<table><tr><th>Entrada</th><th>Unidad</th><th>Uso</th></tr><tr><td>Delimitador</td><td>U01</td><td>Prompt Engineering Avanzado</td></tr><tr><td>Schema</td><td>U01</td><td>Prompt Engineering Avanzado</td></tr><tr><td>Usuario</td><td>U02</td><td>Especificaciones de Tareas y Proyectos</td></tr><tr><td>Alcance</td><td>U02</td><td>Especificaciones de Tareas y Proyectos</td></tr><tr><td>Artifact</td><td>U03</td><td>Artifacts y Canvases</td></tr><tr><td>Estado</td><td>U03</td><td>Artifacts y Canvases</td></tr><tr><td>RAG</td><td>U04</td><td>Bases de Conocimiento y RAG</td></tr><tr><td>Embedding</td><td>U04</td><td>Bases de Conocimiento y RAG</td></tr><tr><td>Trigger</td><td>U05</td><td>Workflows e Integraciones No-Code</td></tr><tr><td>Webhook</td><td>U05</td><td>Workflows e Integraciones No-Code</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 123</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Índice analítico 2</h2>
+<table><tr><th>Modelo o criterio</th><th>Unidad</th><th>Dónde se aplica</th></tr><tr><td>score = exactitud + formato + utilidad + seguridad</td><td>U01</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>DoD = criterios cumplidos / criterios totales</td><td>U02</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>bug = resultado esperado - resultado observado</td><td>U03</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>similitud coseno = A·B / (|A| |B|)</td><td>U04</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>SLA = tiempo resuelto / tiempo objetivo</td><td>U05</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 124</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Plantilla de reporte final</h2>
+<table><tr><th>Sección</th><th>Contenido obligatorio</th><th>Extensión</th></tr><tr><td>Problema</td><td>Pregunta verificable del caso.</td><td>3 a 5 líneas</td></tr><tr><td>Datos o criterios</td><td>Tabla con unidades, escala o fuente.</td><td>1 tabla</td></tr><tr><td>Procedimiento</td><td>Pasos numerados y modelo usado.</td><td>6 a 10 pasos</td></tr><tr><td>Evidencia</td><td>Cálculo, salida, tabla, imagen, código o rúbrica.</td><td>1 evidencia principal</td></tr><tr><td>Conclusión</td><td>Hecho, inferencia, límite y acción.</td><td>80 a 100 palabras</td></tr></table>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 125</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 4 / Cierre semestre 1</p>
+<h2>Lista de verificación antes de imprimir</h2>
+<div class="exercise"><strong>1.</strong> Revisa que cada imagen tenga texto legible en hoja carta.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>2.</strong> Confirma que cada banco use los modelos explicados antes.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>3.</strong> Verifica que las instrucciones digan qué entregar.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>4.</strong> Marca fuentes, enlaces y recursos que se usarán en clase.<div class="answer-lines"><span></span></div></div>
+<div class="footer"><span>Manual 4</span><span>Semestre 1 / p. 126</span></div>
+</section>
+</body>
+</html>

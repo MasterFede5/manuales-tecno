@@ -1,0 +1,39 @@
+---
+seccion: carta-estudiante
+semestre: 2
+manual: 4
+paginas_objetivo: 1
+---
+
+# Carta al estudiante
+
+Bienvenido al **Semestre 2** del manual *Inteligencia Artificial Avanzada*. Lo que tienes en
+las manos no es un libro de teoría que vas a leer pasivamente: es un manual de
+campo diseñado para que **construyas tu propio aprendizaje** mientras resuelves
+un caso real que evolucionará contigo durante todo el manual.
+
+**Tu misión durante este semestre.** La dirección de tu institución te encarga diseñar un Asistente IA Institucional: gestiona conocimiento interno, automatiza flujos, responde a estudiantes, opera con herramientas reales y respeta políticas de gobernanza. Cada unidad agrega una capa.
+
+Vas a recorrer las unidades **U06, U07, U08, U09, U10** y al final
+podrás demostrar que dominas la competencia central:
+
+> *Diseñar, implementar y gobernar sistemas IA institucionales con herramientas reales y políticas claras.*
+
+::interioriza{titulo="Cómo aprovechar este manual"}
+1. **Lee con lápiz en mano.** Cada unidad incluye espacios para que escribas.
+2. **Haz las pausas.** Los bloques 💭 son obligatorios: sin reflexión no hay aprendizaje.
+3. **Resuelve, no solo memorices.** El 60% del manual está pensado para que practiques.
+4. **Conecta con el caso.** Cada concepto se aplica al case study; no son temas sueltos.
+5. **Cuestiona y verifica.** Las fuentes recomendadas están para que vayas más allá.
+::/interioriza
+
+Si en cualquier momento sientes que vas demasiado rápido o lento, vuelve al
+**Mapa de Contenidos** y a la **Evaluación Diagnóstica** del inicio: te dan la
+brújula del semestre.
+
+Buen viaje. Cuando termines este semestre, tendrás una pieza concreta del caso
+resuelto y un cuaderno de evidencias que podrás usar como portafolio.
+
+— *Equipo Albatros*
+
+::visual{tipo="ilustracion" descripcion="Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escritorio con el manual abierto, lápiz en mano, un vaso de agua o una herramienta del case study a un lado y una luz suave entrando por la ventana. Expresión concentrada y motivada. Estilo editorial outline + duotone, paleta azul Albatros y naranja, sin photoreal." paginas=0.5 nota="ilustración de apoyo a la carta al estudiante"}

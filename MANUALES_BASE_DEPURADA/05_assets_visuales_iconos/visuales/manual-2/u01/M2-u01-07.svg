@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 56px; font-weight: 800; fill: #0E3A8A; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 30px; font-weight: 600; fill: #5B6472; }
+      .h { font-family: Arial, sans-serif; font-size: 34px; font-weight: 800; fill: #0E3A8A; }
+      .body { font-family: Arial, sans-serif; font-size: 27px; font-weight: 600; fill: #172033; }
+      .small { font-family: Arial, sans-serif; font-size: 23px; font-weight: 600; fill: #5B6472; }
+      .formula { font-family: Arial, sans-serif; font-size: 35px; font-weight: 800; fill: #F39C12; }
+      .label { font-family: Arial, sans-serif; font-size: 25px; font-weight: 800; fill: white; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="white"/>
+  <rect x="0" y="0" width="1536" height="18" fill="#F39C12"/>
+  <text x="54" y="76" class="title">Caída libre y tiro vertical</text>
+  <text x="56" y="120" class="subtitle">La gravedad acelera en dirección vertical</text>
+
+  <rect x="90" y="180" width="610" height="360" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="90" y="180" width="610" height="58" rx="18" fill="#0E3A8A"/>
+  <text x="118" y="220" class="label">Caída libre</text>
+  <text x="118" y="272" class="body">El objeto se suelta</text><text x="118" y="308" class="body">v0 = 0 si parte del reposo</text><text x="118" y="344" class="body">La rapidez aumenta hacia abajo</text><text x="118" y="380" class="body">La masa no cambia g</text>
+  <text x="118" y="506" class="formula">y = y0 + 1/2gt²</text>
+
+  <rect x="846" y="180" width="610" height="360" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="846" y="180" width="610" height="58" rx="18" fill="#0E7490"/>
+  <text x="874" y="220" class="label">Tiro vertical</text>
+  <text x="874" y="272" class="body">El objeto sube con v0</text><text x="874" y="308" class="body">La gravedad lo frena al subir</text><text x="874" y="344" class="body">En la altura máxima v = 0</text><text x="874" y="380" class="body">Luego baja acelerando</text>
+  <text x="874" y="506" class="formula">v = v0 - gt</text>
+
+  <line x1="760" y1="230" x2="760" y2="795" stroke="#D8DEE9" stroke-width="5"/>
+  <circle cx="760" cy="300" r="18" fill="#F39C12"/>
+  <circle cx="760" cy="410" r="22" fill="#F39C12"/>
+  <circle cx="760" cy="560" r="26" fill="#F39C12"/>
+  <circle cx="760" cy="745" r="30" fill="#F39C12"/>
+  <text x="760" y="875" text-anchor="middle" class="formula">g = 9.8 m/s² hacia abajo</text>
+
+  <text x="1480" y="989" text-anchor="end" class="small">Colegio Nuevo Tecno · Física · Unidad 1</text>
+</svg>

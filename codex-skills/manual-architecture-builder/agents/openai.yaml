@@ -1,0 +1,7 @@
+interface:
+  display_name: "Manual Architecture Builder"
+  short_description: "Replica la arquitectura Albatros de manuales"
+  default_prompt: "Use $manual-architecture-builder para crear o auditar la estructura de un manual Albatros."
+policy:
+  allow_implicit_invocation: true
+

@@ -1,0 +1,330 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Manuales restantes</title><style>
+@page { size: letter; margin: 0; }
+@page landscape { size: letter landscape; margin: 0; }
+
+:root {
+  --blue: #0E3A8A;
+  --teal: #0E7490;
+  --green: #15803D;
+  --amber: #B45309;
+  --red: #B91C1C;
+  --ink: #172033;
+  --muted: #526070;
+  --line: #D7DEE8;
+  --soft: #F7FAFC;
+  --theory: #EFF6FF;
+  --practice: #ECFDF5;
+  --warm: #FFF7ED;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #E6EBF2;
+  color: var(--ink);
+  font-family: Arial, "Segoe UI", sans-serif;
+  line-height: 1.32;
+}
+.page {
+  width: 216mm;
+  height: 279mm;
+  min-height: 279mm;
+  margin: 0 auto 8mm;
+  padding: 12mm 13mm 15mm;
+  background: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+  break-after: page;
+  page-break-after: always;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
+}
+.landscape {
+  page: landscape;
+  width: 279mm;
+  height: 216mm;
+  min-height: 216mm;
+  padding: 8mm 10mm 12mm;
+  gap: 2.6mm;
+}
+.cover {
+  padding: 0;
+  color: #FFFFFF;
+  display: block;
+}
+.cover .visual {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+.cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cover figcaption {
+  display: none;
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14, 58, 138, 0.94), rgba(14, 116, 144, 0.42));
+}
+.cover-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 20mm 17mm 16mm;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.school {
+  font-size: 16pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.cover h1 {
+  margin: 25mm 0 5mm;
+  max-width: 150mm;
+  color: #FFFFFF;
+  font-size: 40pt;
+  line-height: 0.98;
+  letter-spacing: 0;
+  border: 0;
+  padding: 0;
+}
+.cover .lead {
+  max-width: 150mm;
+  color: rgba(255,255,255,0.94);
+  font-size: 15pt;
+  line-height: 1.25;
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 5mm;
+  padding-top: 6mm;
+  border-top: 1px solid rgba(255,255,255,0.55);
+  font-size: 11pt;
+}
+.kicker {
+  margin: 0;
+  color: var(--amber);
+  font-size: 9.8pt;
+  line-height: 1.15;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+h1, h2, h3 {
+  margin: 0;
+  color: var(--blue);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+h2 {
+  font-size: 19.5pt;
+  padding-bottom: 2mm;
+  border-bottom: 2px solid var(--line);
+}
+h3 {
+  font-size: 12.8pt;
+  margin-bottom: 1.5mm;
+}
+p, li {
+  font-size: 11.4pt;
+  line-height: 1.32;
+}
+p { margin: 0 0 2.8mm; }
+ul, ol {
+  margin: 1mm 0 2.8mm 5mm;
+  padding-left: 5mm;
+}
+li { margin: 1mm 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5mm 0 3mm;
+  font-size: 10.2pt;
+  break-inside: avoid;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 2mm;
+  vertical-align: top;
+}
+th {
+  color: #FFFFFF;
+  background: var(--blue);
+  text-align: left;
+}
+.large-table {
+  font-size: 10.8pt;
+}
+.mini-table {
+  font-size: 9.8pt;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  align-items: start;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  align-items: stretch;
+}
+.box, .concept, .formula-card, .route-card, .appendix-card {
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--blue);
+  background: var(--soft);
+  padding: 3mm;
+  break-inside: avoid;
+}
+.theory-box { background: var(--theory); }
+.practice-box { background: var(--practice); border-left-color: var(--green); }
+.question-box { background: var(--warm); border-left-color: var(--amber); }
+.warning-box { background: #FEF2F2; border-left-color: var(--red); }
+.concept strong, .formula-card strong, .route-card strong, .appendix-card strong {
+  color: var(--blue);
+}
+.visual {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  break-inside: avoid;
+}
+.visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.visual.full img { max-height: 205mm; }
+.visual.page-fit img { max-height: 178mm; }
+.landscape .visual.full img { max-height: 176mm; }
+figcaption {
+  color: var(--muted);
+  font-size: 9.8pt;
+  line-height: 1.25;
+  padding-top: 2mm;
+}
+.formula {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11.2pt;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 2mm;
+}
+.worked-example, .worked-step {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 2.5mm;
+  break-inside: avoid;
+}
+.worked-step {
+  margin-bottom: 2mm;
+}
+.exercise, .bank-item {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 2.3mm;
+  margin: 0 0 2.3mm;
+  font-size: 10.4pt;
+  line-height: 1.28;
+  break-inside: avoid;
+}
+.exercise strong, .bank-item strong { color: var(--blue); }
+.operation-lines, .answer-lines {
+  margin-top: 2mm;
+}
+.operation-lines span, .answer-lines span {
+  display: block;
+  border-bottom: 1px solid #AEB7C4;
+  height: 6.4mm;
+}
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+  margin-top: 2mm;
+}
+.match-grid div {
+  border: 1px solid var(--line);
+  padding: 2mm;
+  background: #F8FAFC;
+  font-size: 9.6pt;
+}
+.code-block {
+  background: #111827;
+  color: #F8FAFC;
+  border-radius: 0;
+  padding: 3mm;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 8.3pt;
+  line-height: 1.18;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+.footer {
+  position: absolute;
+  left: 13mm;
+  right: 13mm;
+  bottom: 6mm;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 2mm;
+  color: var(--muted);
+  font-size: 8.8pt;
+}
+.landscape .footer {
+  left: 10mm;
+  right: 10mm;
+}
+.toc-row {
+  display: grid;
+  grid-template-columns: 18mm 1.15fr 1.6fr;
+  gap: 3mm;
+  border-bottom: 1px solid var(--line);
+  padding: 2mm 0;
+  font-size: 10.6pt;
+}
+.badge-row {
+  display: flex;
+  gap: 2mm;
+  flex-wrap: wrap;
+}
+.badge {
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+  padding: 1.5mm 2mm;
+  font-size: 9.5pt;
+  color: var(--blue);
+  font-weight: 700;
+}
+.ratio {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  border: 1px solid var(--line);
+}
+.ratio div {
+  padding: 3mm;
+  color: #FFFFFF;
+  font-weight: 800;
+}
+.ratio .theory { background: var(--blue); }
+.ratio .practice { background: var(--green); }
+@media print {
+  body { background: #FFFFFF; }
+  .page { margin: 0; box-shadow: none; }
+}
+</style></head><body><section class="page"><p class="kicker">Colegio Nuevo Tecno</p><h2>Manuales restantes · Semestre 1 · Versión reintento</h2><p>Índice de revisión para Manual 3, Manual 4 y Manual 5. Cada archivo conserva imágenes grandes en SVG, explicación posterior de infografías, ejemplo resuelto y banco variado alineado a modelos.</p><table><tr><th>Manual</th><th>Título</th><th>Páginas</th><th>Imágenes</th><th>Links</th><th>Rotas</th><th>Archivo</th></tr><tr><td>Manual 3</td><td>Inteligencia Artificial Básica</td><td>126</td><td>19</td><td>4</td><td>0</td><td><a href="manual-3/semestre-1/manual-3-ia-basica-semestre-1-reintento.html">Abrir HTML</a></td></tr><tr><td>Manual 4</td><td>Inteligencia Artificial Avanzada</td><td>126</td><td>19</td><td>5</td><td>0</td><td><a href="manual-4/semestre-1/manual-4-ia-avanzada-semestre-1-reintento.html">Abrir HTML</a></td></tr><tr><td>Manual 5</td><td>Inteligencia Artificial con Programación</td><td>121</td><td>16</td><td>5</td><td>0</td><td><a href="manual-5/semestre-1/manual-5-ia-programacion-semestre-1-reintento.html">Abrir HTML</a></td></tr></table><div class="footer"><span>Serie Albatros</span><span>Revisión de manuales restantes</span></div></section></body></html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidad 0 - Lenguaje del quimico</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 16mm;
+    }
+
+    :root {
+      --azul: #0E3A8A;
+      --azul-2: #0E7490;
+      --naranja: #F39C12;
+      --tinta: #172033;
+      --muted: #5B6472;
+      --linea: #D8DEE9;
+      --fondo: #FFFFFF;
+      --suave: #F7FAFC;
+      --teoria: #EFF6FF;
+      --practica: #ECFDF5;
+      --alerta: #FFF7ED;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #E5E7EB;
+      color: var(--tinta);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.48;
+    }
+
+    .page {
+      width: 216mm;
+      min-height: 279mm;
+      margin: 14px auto;
+      padding: 18mm;
+      background: var(--fondo);
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 8mm;
+      padding: 0;
+    }
+
+    .cover-visual {
+      width: 100%;
+      height: 182mm;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-text {
+      padding: 16mm 18mm 0;
+    }
+
+    .kicker {
+      color: var(--naranja);
+      font-size: 10pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 3mm;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--azul);
+      margin: 0;
+      line-height: 1.12;
+    }
+
+    h1 {
+      font-size: 30pt;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 18pt;
+      margin: 0 0 4mm;
+      border-bottom: 2px solid var(--linea);
+      padding-bottom: 2.5mm;
+    }
+
+    h3 {
+      font-size: 13pt;
+      margin: 5mm 0 2mm;
+    }
+
+    p {
+      margin: 0 0 3mm;
+    }
+
+    ul,
+    ol {
+      margin: 2mm 0 4mm 6mm;
+      padding-left: 5mm;
+    }
+
+    li {
+      margin: 1.4mm 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 13pt;
+      max-width: 130mm;
+      margin-top: 4mm;
+    }
+
+    .meta-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      padding: 0 18mm 16mm;
+    }
+
+    .meta {
+      border: 1px solid var(--linea);
+      border-left: 4px solid var(--naranja);
+      padding: 4mm;
+      background: var(--suave);
+      min-height: 18mm;
+    }
+
+    .meta strong {
+      display: block;
+      color: var(--azul);
+      font-size: 9pt;
+      text-transform: uppercase;
+      margin-bottom: 1mm;
+    }
+
+    .ratio {
+      display: grid;
+      grid-template-columns: 40fr 60fr;
+      border: 1px solid var(--linea);
+      margin: 5mm 0;
+      overflow: hidden;
+    }
+
+    .ratio div {
+      padding: 4mm;
+      color: white;
+      font-weight: 700;
+    }
+
+    .ratio .theory {
+      background: var(--azul);
+    }
+
+    .ratio .practice {
+      background: var(--naranja);
+    }
+
+    .box {
+      border: 1px solid var(--linea);
+      border-left: 5px solid var(--azul);
+      background: var(--suave);
+      padding: 5mm;
+      margin: 5mm 0;
+      break-inside: avoid;
+    }
+
+    .box.theory-box {
+      background: var(--teoria);
+      border-left-color: var(--azul);
+    }
+
+    .box.practice-box {
+      background: var(--practica);
+      border-left-color: #15803D;
+    }
+
+    .box.question-box {
+      background: var(--alerta);
+      border-left-color: var(--naranja);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      align-items: start;
+    }
+
+    .visual {
+      margin: 5mm 0;
+      border: 1px solid var(--linea);
+      background: white;
+      break-inside: avoid;
+    }
+
+    .visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .visual.half img {
+      max-height: 112mm;
+      object-fit: contain;
+      background: white;
+    }
+
+    .visual.full img {
+      max-height: 208mm;
+      object-fit: contain;
+      background: white;
+    }
+
+    figcaption {
+      padding: 3mm 4mm;
+      color: var(--muted);
+      font-size: 9pt;
+      border-top: 1px solid var(--linea);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 3mm 0 5mm;
+      font-size: 9.5pt;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--linea);
+      padding: 2.5mm;
+      vertical-align: top;
+    }
+
+    th {
+      color: white;
+      background: var(--azul);
+      text-align: left;
+    }
+
+    .work-lines {
+      display: grid;
+      gap: 2.4mm;
+      margin-top: 2mm;
+    }
+
+    .line {
+      border-bottom: 1px solid #AAB4C3;
+      height: 7mm;
+    }
+
+    .footer {
+      position: absolute;
+      left: 18mm;
+      right: 18mm;
+      bottom: 8mm;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 8.5pt;
+      border-top: 1px solid var(--linea);
+      padding-top: 2mm;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 2mm;
+      padding: 1.5mm 3mm;
+      color: white;
+      background: var(--azul-2);
+      border-radius: 2mm;
+      font-size: 8.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="page cover">
+    <div class="cover-text">
+      <p class="kicker">Manual de Quimica &middot; Unidad 0</p>
+      <h1>Lenguaje del quimico</h1>
+      <p class="subtitle">Metodo, medicion, unidades e incertidumbre para convertir una sospecha sobre el agua escolar en evidencia defendible.</p>
+    </div>
+
+    <figure class="visual full" data-visual-id="M1-u00-01">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-01.jpg" alt="Ilustracion de portadilla sobre el paso de la alquimia al metodo quimico moderno">
+      <figcaption>M1-u00-01 &middot; Portadilla: rigor historico y metodo actual.</figcaption>
+    </figure>
+
+    <div class="meta-strip">
+      <div class="meta"><strong>Producto</strong>Bitacora de muestra y medicion.</div>
+      <div class="meta"><strong>Distribucion</strong>40% teoria &middot; 60% practica.</div>
+      <div class="meta"><strong>Caso</strong>Agua escolar saludable.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <h2>Entrada a la unidad</h2>
+
+    <div class="ratio" aria-label="Distribucion didactica">
+      <div class="theory">40% teoria: entender el lenguaje de medicion</div>
+      <div class="practice">60% practica: registrar, medir, comparar y justificar</div>
+    </div>
+
+    <div class="box">
+      <h3>Historia conductora</h3>
+      <p>El primer reporte del bebedero dice: "el agua se ve rara". Esa frase no alcanza para tomar una decision responsable. Puede iniciar una investigacion, pero todavia no es evidencia.</p>
+      <p>El equipo de estudiantes recibe una tarea concreta: convertir una impresion en datos que otra persona pueda revisar. Para lograrlo necesita registrar fecha, punto de muestreo, volumen, temperatura, color, olor, unidades y margen de error.</p>
+      <p>La unidad cero funciona como el idioma comun del laboratorio. Antes de hablar de atomos, enlaces o reacciones, el grupo debe aprender a preguntar, medir y reportar sin exagerar lo que sabe.</p>
+    </div>
+
+    <figure class="visual full" data-visual-id="M1-u00-02">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-02.jpg" alt="Mapa mental del lenguaje del quimico con metodo cientifico, sistema internacional, notacion y cifras, e incertidumbre">
+      <figcaption>M1-u00-02 &middot; Mapa mental de unidad: los cuatro lenguajes que sostienen la medicion quimica.</figcaption>
+    </figure>
+
+    <div class="footer"><span>Unidad 0 &middot; Lenguaje del quimico</span><span>Pagina 2</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Preguntas introductorias</h2>
+
+    <div class="box question-box">
+      <p>Antes de tomar instrumentos, el grupo debe aclarar que quiere saber. Responde con frases breves; no busques definiciones perfectas todavia.</p>
+      <ol>
+        <li>Que diferencia hay entre observar y medir?</li>
+        <li>Por que dos equipos pueden medir lo mismo y obtener resultados distintos?</li>
+        <li>Que pasa si una muestra no esta rotulada?</li>
+        <li>Cuando un dato deja de ser confiable?</li>
+        <li>Que dato pedirias primero si alguien dice que el agua "se ve rara"?</li>
+      </ol>
+      <div class="work-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <h2>Teoria esencial - 40%</h2>
+
+    <div class="box theory-box">
+      <h3>1. Metodo cientifico</h3>
+      <p>El metodo cientifico no es una lista para memorizar. Es una forma ordenada de reducir errores. En el caso del bebedero, empieza con una observacion, continua con un problema medible, propone una hipotesis y exige una prueba.</p>
+      <p>Una buena hipotesis debe poder fallar. "El agua esta contaminada" es demasiado general. "La muestra del bebedero tendra mayor carga microbiana que el control por acumulacion de materia organica" ya se puede contrastar.</p>
+    </div>
+
+    <figure class="visual half" data-visual-id="M1-u00-03">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-03.jpg" alt="Diagrama de flujo del metodo cientifico aplicado al bebedero escolar">
+      <figcaption>M1-u00-03 &middot; El metodo como ciclo: observar, preguntar, probar, analizar y volver a observar.</figcaption>
+    </figure>
+
+    <div class="footer"><span>Unidad 0 &middot; Lenguaje del quimico</span><span>Pagina 3</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Teoria esencial - 40%</h2>
+
+    <div class="grid-2">
+      <div class="box theory-box">
+        <h3>2. Sistema Internacional</h3>
+        <p>Medir sin unidad es dejar el dato incompleto. No es igual escribir "temperatura: 27" que "temperatura: 27 &deg;C". La unidad permite comparar, repetir y detectar errores.</p>
+        <p>En quimica escolar se usan con frecuencia masa, volumen, temperatura, cantidad de sustancia y tiempo. El Sistema Internacional ayuda a que todos los equipos hablen el mismo idioma.</p>
+      </div>
+      <div class="box theory-box">
+        <h3>3. Conversiones</h3>
+        <p>Convertir no significa cambiar el fenomeno, sino expresarlo en otra escala. Un litro de agua sigue siendo el mismo volumen aunque se escriba como 1000 mL.</p>
+        <p>La regla practica es cancelar unidades: si la unidad no deseada queda arriba y abajo de una fraccion, desaparece y deja la unidad buscada.</p>
+      </div>
+    </div>
+
+    <figure class="visual full" data-visual-id="M1-u00-04">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-04.jpg" alt="Tabla de unidades fundamentales del Sistema Internacional con ejemplos quimicos e instrumentos">
+      <figcaption>M1-u00-04 &middot; Tabla SI: magnitudes, simbolos, instrumentos y ejemplos quimicos.</figcaption>
+    </figure>
+
+    <div class="footer"><span>Unidad 0 &middot; Lenguaje del quimico</span><span>Pagina 4</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Teoria esencial - 40%</h2>
+
+    <div class="box theory-box">
+      <h3>4. Notacion cientifica y cifras significativas</h3>
+      <p>Algunos datos del laboratorio son muy pequenos o muy grandes. La notacion cientifica evita cadenas largas de ceros y permite comparar escalas. Por ejemplo, una concentracion pequena puede expresarse como 2.5 x 10^-4 mol/L.</p>
+      <p>Las cifras significativas indican hasta donde llega la confianza de una medicion. Un instrumento sencillo no debe producir un reporte con precision de laboratorio avanzado.</p>
+    </div>
+
+    <figure class="visual half" data-visual-id="M1-u00-05">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-05.jpg" alt="Cuadro comparativo de instrumentos y cifras significativas reportadas">
+      <figcaption>M1-u00-05 &middot; Instrumento y precision: no todos los datos merecen el mismo numero de cifras.</figcaption>
+    </figure>
+
+    <div class="box theory-box">
+      <h3>5. Precision, exactitud e incertidumbre</h3>
+      <p>Precision significa que varias mediciones se parecen entre si. Exactitud significa que el resultado se acerca al valor aceptado. Un equipo puede ser preciso pero estar mal calibrado; por eso sus datos se agrupan lejos del valor correcto.</p>
+      <p>La incertidumbre no es una disculpa: es una parte honesta del dato. Decir 25.0 &plusmn; 0.5 &deg;C comunica mas que escribir solo 25 &deg;C.</p>
+    </div>
+
+    <figure class="visual half" data-visual-id="M1-u00-06">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-06.jpg" alt="Cuatro dianas que comparan precision y exactitud con ejemplos quimicos">
+      <figcaption>M1-u00-06 &middot; Precision y exactitud: cuatro escenarios para interpretar mediciones repetidas.</figcaption>
+    </figure>
+
+    <div class="footer"><span>Unidad 0 &middot; Lenguaje del quimico</span><span>Pagina 5</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Especificacion de la actividad - 60%</h2>
+
+    <div class="box practice-box">
+      <h3>Actividad: bitacora de muestra del bebedero</h3>
+      <p><strong>Objetivo.</strong> Registrar una muestra con datos suficientes para que otro equipo pueda repetir el procedimiento y revisar la confiabilidad del resultado.</p>
+      <p><strong>Materiales.</strong> Frasco limpio, etiqueta, marcador, termometro, regla, vaso medidor, cronometro y hoja de registro.</p>
+      <p><strong>Producto.</strong> Bitacora completa con tabla de datos, observacion inicial, hipotesis y comentario de incertidumbre.</p>
+      <span class="tag">60% practica</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Campo</th>
+          <th>Dato esperado</th>
+          <th>Por que importa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Punto de muestreo</td>
+          <td>Bebedero, llave, cisterna o control</td>
+          <td>Permite comparar ubicaciones.</td>
+        </tr>
+        <tr>
+          <td>Fecha y hora</td>
+          <td>Registro completo</td>
+          <td>Relaciona datos con uso y temperatura ambiente.</td>
+        </tr>
+        <tr>
+          <td>Volumen</td>
+          <td>mL o L</td>
+          <td>Define cantidad de muestra.</td>
+        </tr>
+        <tr>
+          <td>Temperatura</td>
+          <td>&deg;C con instrumento indicado</td>
+          <td>Afecta solubilidad y actividad biologica.</td>
+        </tr>
+        <tr>
+          <td>Observacion</td>
+          <td>Color, olor, particulas</td>
+          <td>Guia hipotesis sin reemplazar mediciones.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box question-box">
+      <h3>Mini actividad</h3>
+      <p>Escribe una hipotesis medible para la muestra. Debe incluir una comparacion contra otra muestra o contra un valor esperado.</p>
+      <div class="work-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="footer"><span>Unidad 0 &middot; Lenguaje del quimico</span><span>Pagina 6</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Practica guiada - 60%</h2>
+
+    <div class="grid-2">
+      <div>
+        <ol>
+          <li>Elige un punto de muestreo y explica por que lo elegiste.</li>
+          <li>Rotula el frasco antes de tomar la muestra.</li>
+          <li>Registra fecha, hora, responsable y condicion del entorno.</li>
+          <li>Mide volumen aproximado y temperatura.</li>
+          <li>Describe color, olor y presencia de particulas.</li>
+          <li>Escribe una hipotesis verificable.</li>
+          <li>Senala que dato podria tener mayor error.</li>
+          <li>Repite una medicion y compara resultados.</li>
+        </ol>
+      </div>
+
+      <div class="box practice-box">
+        <h3>Regla de trabajo</h3>
+        <p>Si una medicion cambia mucho entre intentos, no se elige el dato "mas bonito". Se revisa instrumento, tecnica y condiciones antes de reportar.</p>
+        <p>El dato final debe incluir unidad y, cuando sea posible, rango de incertidumbre.</p>
+      </div>
+    </div>
+
+    <figure class="visual half" data-visual-id="M1-u00-07">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-07.jpg" alt="Diagrama de flujo del taller practico con estaciones de temperatura, volumen y masa">
+      <figcaption>M1-u00-07 &middot; Taller practico: estaciones de medicion, repeticiones e incertidumbre.</figcaption>
+    </figure>
+
+    <h2>Practica integradora</h2>
+    <div class="box practice-box">
+      <p><strong>Rol.</strong> Equipo tecnico escolar encargado de preparar el primer reporte del bebedero.</p>
+      <p><strong>Escenario.</strong> La direccion pide evidencia antes de decidir si se cierra temporalmente el bebedero.</p>
+      <p><strong>Entregable.</strong> Archivo `U0_bitacora_bebedero.pdf` con bitacora, tabla de mediciones, hipotesis y comentario de incertidumbre.</p>
+    </div>
+
+    <div class="footer"><span>Unidad 0 &middot; Lenguaje del quimico</span><span>Pagina 7</span></div>
+  </section>
+
+  <section class="page">
+    <h2>Evidencia y criterios de logro</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Criterio</th>
+          <th>Logro basico</th>
+          <th>Logro solido</th>
+          <th>Logro destacado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Identificacion de muestra</td>
+          <td>Incluye nombre de muestra.</td>
+          <td>Incluye punto, fecha y responsable.</td>
+          <td>Permite repetir el muestreo sin aclaraciones.</td>
+        </tr>
+        <tr>
+          <td>Uso de unidades</td>
+          <td>Registra algunos datos con unidad.</td>
+          <td>Todos los datos numericos tienen unidad.</td>
+          <td>Convierte unidades cuando es necesario.</td>
+        </tr>
+        <tr>
+          <td>Hipotesis</td>
+          <td>Propone una idea general.</td>
+          <td>Propone una hipotesis medible.</td>
+          <td>Incluye comparacion y posible causa.</td>
+        </tr>
+        <tr>
+          <td>Incertidumbre</td>
+          <td>Menciona que puede haber error.</td>
+          <td>Identifica una fuente de error.</td>
+          <td>Explica como reducirla o reportarla.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box">
+      <h3>Cierre</h3>
+      <p>La unidad cero no busca resolver todavia el problema del bebedero. Su meta es preparar al grupo para hablar con datos. A partir de ahora, cada conclusion del manual debera apoyarse en una observacion, una medicion o una comparacion verificable.</p>
+    </div>
+
+    <div class="box question-box">
+      <h3>Pregunta de salida</h3>
+      <p>Si solo pudieras repetir una medicion de tu bitacora antes de entregar el reporte, cual repetirias y por que?</p>
+      <div class="work-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="footer"><span>Unidad 0 &middot; Lenguaje del quimico</span><span>Pagina 8</span></div>
+  </section>
+</body>
+</html>

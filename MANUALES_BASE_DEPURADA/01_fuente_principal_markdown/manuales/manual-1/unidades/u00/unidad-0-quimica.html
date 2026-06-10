@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colegio Nuevo Tecno - Quimica - Unidad 0</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    :root {
+      --blue: #0E3A8A;
+      --cyan: #0E7490;
+      --orange: #F39C12;
+      --green: #15803D;
+      --ink: #172033;
+      --muted: #5B6472;
+      --line: #D8DEE9;
+      --soft: #F7FAFC;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #E5E7EB;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.35;
+    }
+
+    .page {
+      width: 216mm;
+      height: 279mm;
+      min-height: 279mm;
+      margin: 14px auto;
+      padding: 16mm;
+      background: #FFFFFF;
+      box-shadow: 0 8px 28px rgba(15, 23, 42, 0.14);
+      position: relative;
+      overflow: hidden;
+      break-after: page;
+    }
+
+    .cover-page {
+      padding: 0;
+      display: grid;
+      grid-template-rows: 1fr;
+      color: #FFFFFF;
+      isolation: isolate;
+    }
+
+    .cover-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cover-shade {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(14, 58, 138, 0.92) 0%, rgba(14, 58, 138, 0.55) 24%, rgba(14, 58, 138, 0.08) 58%, rgba(14, 58, 138, 0.90) 100%);
+      z-index: 0;
+    }
+
+    .cover-copy {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 18mm 16mm 15mm;
+    }
+
+    .school {
+      font-size: 15pt;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .cover-title {
+      align-self: center;
+      max-width: 150mm;
+      background: rgba(14, 58, 138, 0.72);
+      padding: 8mm;
+      border-left: 6px solid var(--orange);
+    }
+
+    .cover-title h1 {
+      margin: 0;
+      font-size: 38pt;
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .cover-title p {
+      margin: 5mm 0 0;
+      max-width: 130mm;
+      font-size: 15pt;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      color: #FFFFFF;
+      font-size: 10pt;
+      border-top: 1px solid rgba(255, 255, 255, 0.55);
+      padding-top: 5mm;
+    }
+
+    .cover-meta strong {
+      display: block;
+      color: #FFD28A;
+      font-size: 8.4pt;
+      text-transform: uppercase;
+      margin-bottom: 1mm;
+    }
+
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 5mm;
+      align-items: start;
+    }
+
+    .intro-layout p {
+      font-size: 9.1pt;
+      line-height: 1.33;
+    }
+
+    .unit-hero {
+      margin: 0;
+      break-inside: avoid;
+    }
+
+    .unit-hero img {
+      display: block;
+      width: 100%;
+      max-height: 84mm;
+      object-fit: contain;
+    }
+
+    .unit-hero figcaption {
+      color: var(--muted);
+      font-size: 8.4pt;
+      padding-top: 2mm;
+    }
+
+    .concept-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6mm;
+      margin: 2mm 0 3mm;
+    }
+
+    .concept {
+      border-left: 4px solid var(--cyan);
+      background: var(--soft);
+      padding: 1.8mm;
+      font-size: 7.8pt;
+      break-inside: avoid;
+    }
+
+    .concept strong {
+      display: block;
+      color: var(--blue);
+      font-size: 7.9pt;
+      margin-bottom: 0.7mm;
+    }
+
+    .questions {
+      margin-top: 3mm;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+    }
+
+    .question {
+      border-top: 1px solid var(--line);
+      padding-top: 2mm;
+      margin-top: 1.5mm;
+      break-inside: avoid;
+    }
+
+    .question p {
+      margin-bottom: 1.6mm;
+      font-weight: 700;
+      font-size: 8.1pt;
+      line-height: 1.24;
+    }
+
+    .answer-lines {
+      display: grid;
+      gap: 1.8mm;
+    }
+
+    .answer-lines span {
+      display: block;
+      border-bottom: 1px solid #AAB4C3;
+      height: 3.1mm;
+    }
+
+    .infographic-page {
+      padding: 10mm 12mm 14mm;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 3mm;
+    }
+
+    .infographic-page h2 {
+      margin-bottom: 0;
+    }
+
+    .full-infographic {
+      margin: 0;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      align-items: center;
+    }
+
+    .full-infographic img {
+      display: block;
+      width: 100%;
+      max-height: 228mm;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .full-infographic figcaption {
+      color: var(--blue);
+      font-size: 10pt;
+      font-weight: 700;
+      text-align: center;
+      padding: 3mm 10mm 0;
+    }
+
+    .fundamental-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+      margin-top: 4mm;
+    }
+
+    .fundamental-card {
+      border-top: 4px solid var(--cyan);
+      background: var(--soft);
+      padding: 3.2mm;
+      min-height: 42mm;
+      break-inside: avoid;
+    }
+
+    .fundamental-card h3 {
+      margin-top: 0;
+      font-size: 11.4pt;
+    }
+
+    .fundamental-card p {
+      font-size: 9.1pt;
+      line-height: 1.32;
+    }
+
+    .fundamental-card .example {
+      color: var(--muted);
+      font-size: 8.6pt;
+      margin-top: 2mm;
+    }
+
+    .case-image-page {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto auto;
+      gap: 3mm;
+    }
+
+    .case-image-page .subtitle {
+      margin-bottom: 0;
+      font-size: 10.4pt;
+      line-height: 1.32;
+    }
+
+    .case-image {
+      margin: 0;
+      min-height: 0;
+      display: grid;
+      align-items: center;
+    }
+
+    .case-image img {
+      display: block;
+      width: 100%;
+      max-height: 128mm;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .image-frase {
+      color: var(--blue);
+      font-size: 10pt;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      padding: 0 10mm;
+    }
+
+    .mini-activity {
+      border-left: 6px solid var(--green);
+      background: #ECFDF5;
+      padding: 3mm;
+      break-inside: avoid;
+    }
+
+    .mini-activity h3 {
+      color: var(--green);
+      margin-top: 0;
+    }
+
+    .mini-activity p,
+    .mini-activity li {
+      font-size: 8.8pt;
+    }
+
+    .development-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+      margin-top: 4mm;
+    }
+
+    .development-card {
+      border-top: 4px solid var(--orange);
+      background: var(--soft);
+      padding: 3mm;
+      break-inside: avoid;
+    }
+
+    .development-card h3 {
+      margin-top: 0;
+      font-size: 11.2pt;
+    }
+
+    .development-card p,
+    .development-card li {
+      font-size: 8.8pt;
+      line-height: 1.32;
+    }
+
+    .exercise-development {
+      margin-top: 4mm;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      padding: 3mm;
+      break-inside: avoid;
+    }
+
+    .exercise-development h3 {
+      margin-top: 0;
+    }
+
+    .exercise-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm 4mm;
+      margin-top: 2mm;
+    }
+
+    .step-box {
+      min-height: 21mm;
+      border-bottom: 1px solid #AAB4C3;
+      font-size: 8.5pt;
+      color: var(--muted);
+      padding-bottom: 2mm;
+    }
+
+    .image-led-page {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto auto;
+      gap: 3mm;
+    }
+
+    .image-led-page .subtitle {
+      margin-bottom: 0;
+      font-size: 10.3pt;
+      line-height: 1.32;
+    }
+
+    .wide-image {
+      margin: 0;
+      display: grid;
+      align-items: center;
+      min-height: 0;
+    }
+
+    .wide-image img {
+      display: block;
+      width: 100%;
+      max-height: 120mm;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .calculation-phrase {
+      color: var(--blue);
+      font-size: 10pt;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 8mm;
+    }
+
+    .story-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      margin-top: 4mm;
+    }
+
+    .story-columns p,
+    .story-columns li {
+      font-size: 9pt;
+      line-height: 1.34;
+    }
+
+    .formula-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      margin-top: 4mm;
+    }
+
+    .formula-card {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      padding: 3mm;
+      break-inside: avoid;
+    }
+
+    .formula-card h3 {
+      margin-top: 0;
+      font-size: 11pt;
+    }
+
+    .formula-card p,
+    .formula-card li {
+      font-size: 8.8pt;
+      line-height: 1.3;
+    }
+
+    .formula {
+      font-family: Consolas, "Courier New", monospace;
+      color: var(--blue);
+      background: #F8FAFC;
+      border: 1px solid var(--line);
+      padding: 1.8mm;
+      margin: 1.8mm 0;
+      font-size: 9.4pt;
+      font-weight: 700;
+    }
+
+    .exercise-bank {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      margin-top: 4mm;
+    }
+
+    .bank-item {
+      min-height: 36mm;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--orange);
+      padding: 2.6mm;
+      break-inside: avoid;
+    }
+
+    .bank-item strong {
+      color: var(--blue);
+    }
+
+    .bank-item p {
+      font-size: 8.6pt;
+      line-height: 1.28;
+      margin-bottom: 2mm;
+    }
+
+    .bank-lines {
+      display: grid;
+      gap: 2mm;
+      margin-top: 1.8mm;
+      border-top: 1px solid var(--line);
+      padding-top: 1.4mm;
+    }
+
+    .bank-lines::before {
+      content: "Aqu\00ed deja tus operaciones:";
+      color: var(--muted);
+      font-size: 7.8pt;
+      font-weight: 700;
+    }
+
+    .bank-lines span {
+      border-bottom: 1px solid #AAB4C3;
+      height: 3.2mm;
+    }
+
+    .density-summary {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 4mm;
+      align-items: start;
+      margin-top: 4mm;
+    }
+
+    h2,
+    h3 {
+      color: var(--blue);
+      margin: 0;
+      line-height: 1.12;
+    }
+
+    h2 {
+      font-size: 20pt;
+      padding-bottom: 2.2mm;
+      border-bottom: 2px solid var(--line);
+      margin-bottom: 4mm;
+    }
+
+    h3 {
+      font-size: 12.4pt;
+      margin: 4mm 0 2mm;
+    }
+
+    p {
+      margin: 0 0 3mm;
+    }
+
+    .kicker {
+      color: var(--orange);
+      font-size: 9.5pt;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin: 0 0 3mm;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      max-width: 150mm;
+      color: var(--muted);
+      font-size: 12pt;
+      margin-bottom: 5mm;
+    }
+
+    .note {
+      border-left: 5px solid var(--orange);
+      background: #FFF7ED;
+      padding: 2.8mm;
+      margin: 3mm 0;
+      break-inside: avoid;
+      font-size: 8.9pt;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 22mm 1fr 22mm;
+      border: 1px solid var(--line);
+      margin-top: 4mm;
+      font-size: 9.3pt;
+    }
+
+    .toc-grid > div {
+      padding: 2.2mm;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .toc-grid > div:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .toc-grid .head {
+      background: var(--blue);
+      color: #FFFFFF;
+      font-weight: 800;
+    }
+
+    .unit-block {
+      border-top: 1px solid var(--line);
+      padding-top: 3mm;
+      margin-top: 4mm;
+      break-inside: avoid;
+    }
+
+    .unit-title {
+      display: grid;
+      grid-template-columns: 22mm 1fr 18mm;
+      gap: 3mm;
+      align-items: baseline;
+      margin-bottom: 2mm;
+    }
+
+    .unit-title .id {
+      color: var(--orange);
+      font-weight: 900;
+      font-size: 14pt;
+    }
+
+    .unit-title .hours {
+      color: var(--muted);
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .case {
+      color: var(--muted);
+      font-size: 9.6pt;
+      margin-bottom: 2mm;
+    }
+
+    ul {
+      margin: 0 0 2mm 7mm;
+      padding: 0;
+    }
+
+    li {
+      margin: 1mm 0;
+      font-size: 9.2pt;
+    }
+
+    .footer {
+      position: absolute;
+      left: 16mm;
+      right: 16mm;
+      bottom: 7mm;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 8.2pt;
+      border-top: 1px solid var(--line);
+      padding-top: 2mm;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 216mm;
+        min-height: 279mm;
+      }
+
+      body {
+        background: #FFFFFF;
+      }
+
+      .page {
+        width: 216mm;
+        height: 279mm;
+        min-height: 279mm;
+        margin: 0;
+        box-shadow: none;
+        overflow: hidden;
+        break-after: page;
+        page-break-after: always;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .cover-page,
+      .cover-title,
+      .cover-shade {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="page cover-page">
+    <img class="cover-image" data-visual-id="M1-sem1-01" src="../../../../../05_assets_visuales_iconos/visuales/manual-1/sem1/M1-sem1-01.jpg" alt="Portada editorial del semestre 1 de Quimica Albatros">
+    <div class="cover-shade"></div>
+    <div class="cover-copy">
+      <div class="school">Colegio Nuevo Tecno</div>
+      <div class="cover-title">
+        <h1>Qu&iacute;mica Albatros</h1>
+        <p>Manual de Qu&iacute;mica para bachillerato: lenguaje del qu&iacute;mico, materia, agua y aire.</p>
+      </div>
+      <div class="cover-meta">
+        <div><strong>Unidad inicial</strong>U0 - Lenguaje del Qu&iacute;mico</div>
+        <div><strong>Caso conductor</strong>Agua escolar saludable</div>
+        <div><strong>Entrega</strong>Semestre 1</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Inicio de manual / temario completo</p>
+    <h2>Temario completo de Qu&iacute;mica - Semestre 1</h2>
+    <p class="subtitle">Este primer manual te ayudar&aacute; a comprender las bases de la qu&iacute;mica desde situaciones cercanas: medir con criterio, reconocer la materia, analizar el agua y entender el aire. Es un complemento para tu aprendizaje y deja preparada la continuidad del siguiente semestre.</p>
+    <div class="note">
+      <strong>Caso conductor:</strong> el bebedero del patio presenta algas y reportes de malestar. La comunidad escolar necesita diagnosticar, proponer y probar una soluci&oacute;n con evidencia qu&iacute;mica.
+    </div>
+    <div class="toc-grid" aria-label="Asignacion general de paginas del manual">
+      <div class="head">Bloque</div><div class="head">Contenido</div><div class="head">P&aacute;ginas</div>
+      <div>Inicio</div><div>Portada, mapa de contenidos, hilo conductor, competencias y diagn&oacute;stica</div><div>10</div>
+      <div>U0</div><div>Lenguaje del Qu&iacute;mico</div><div>30</div>
+      <div>U1</div><div>Temas B&aacute;sicos de la Materia</div><div>65</div>
+      <div>U2</div><div>Agua</div><div>50</div>
+      <div>U3</div><div>Aire</div><div>45</div>
+      <div>Cierre</div><div>Examen integrador, bibliograf&iacute;a, recursos e &iacute;ndice anal&iacute;tico del semestre</div><div>18</div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Temario general</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Temario completo del semestre</p>
+    <h2>Unidades 0 a 3</h2>
+
+    <div class="unit-block">
+      <div class="unit-title"><div class="id">U0</div><h3>Lenguaje del Qu&iacute;mico</h3><div class="hours">30 pp</div></div>
+      <p class="case"><strong>Caso:</strong> &iquest;qu&eacute; tan confiable es tu primera muestra de agua del bebedero?</p>
+      <ul>
+        <li>M&eacute;todo cient&iacute;fico y pensamiento cr&iacute;tico.</li>
+        <li>Sistema Internacional y conversiones.</li>
+        <li>Notaci&oacute;n cient&iacute;fica y cifras significativas.</li>
+        <li>Incertidumbre, precisi&oacute;n y exactitud.</li>
+        <li>Pr&aacute;ctica resuelta, actividades y bit&aacute;cora digital.</li>
+      </ul>
+    </div>
+
+    <div class="unit-block">
+      <div class="unit-title"><div class="id">U1</div><h3>Temas B&aacute;sicos de la Materia</h3><div class="hours">65 pp</div></div>
+      <p class="case"><strong>Caso:</strong> &iquest;qu&eacute; part&iacute;culas e iones forman el agua del bebedero?</p>
+      <ul>
+        <li>Sustancias puras y mezclas.</li>
+        <li>Estructura at&oacute;mica: modelos y part&iacute;culas.</li>
+        <li>Configuraci&oacute;n electr&oacute;nica y n&uacute;meros cu&aacute;nticos.</li>
+        <li>Tabla peri&oacute;dica, octeto, Lewis y propiedades peri&oacute;dicas.</li>
+        <li>Enlaces, nomenclatura inorg&aacute;nica b&aacute;sica, mol y masa molar.</li>
+        <li>Pr&aacute;ctica resuelta e implementaci&oacute;n con tabla peri&oacute;dica interactiva.</li>
+      </ul>
+    </div>
+
+    <div class="unit-block">
+      <div class="unit-title"><div class="id">U2</div><h3>Agua</h3><div class="hours">50 pp</div></div>
+      <p class="case"><strong>Caso:</strong> an&aacute;lisis f&iacute;sico-qu&iacute;mico del bebedero: pH, dureza y contaminantes.</p>
+      <ul>
+        <li>Composici&oacute;n y estructura molecular del H<sub>2</sub>O.</li>
+        <li>Polaridad, puentes de hidr&oacute;geno y propiedades f&iacute;sicas.</li>
+        <li>&Aacute;cidos, bases, electrolitos, pH e indicadores.</li>
+        <li>Soluciones, concentraci&oacute;n, diluciones y titulaci&oacute;n.</li>
+        <li>Contaminaci&oacute;n, tratamiento y uso responsable del agua.</li>
+      </ul>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Temario / unidades 0 a 2</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Temario completo del semestre</p>
+    <h2>Unidad 3 y cierre</h2>
+    <div class="unit-block">
+      <div class="unit-title"><div class="id">U3</div><h3>Aire</h3><div class="hours">45 pp</div></div>
+      <p class="case"><strong>Caso:</strong> el aire del comedor sobre la cisterna: &iquest;lluvia &aacute;cida sobre el agua?</p>
+      <ul>
+        <li>Composici&oacute;n porcentual del aire.</li>
+        <li>Reacciones del ox&iacute;geno, combusti&oacute;n y &oacute;xidos.</li>
+        <li>REDOX y balanceo por tanteo, algebraico y redox.</li>
+        <li>Ciclos biogeoqu&iacute;micos de O<sub>2</sub>, N<sub>2</sub> y C.</li>
+        <li>Contaminantes del aire, smog, inversi&oacute;n t&eacute;rmica, lluvia &aacute;cida y efecto invernadero.</li>
+      </ul>
+    </div>
+
+    <div class="unit-block">
+      <div class="unit-title"><div class="id">Cierre</div><h3>Cierre integrador</h3><div class="hours">18 pp</div></div>
+      <p class="case"><strong>Prop&oacute;sito:</strong> cerrar el semestre como entrega completa, integrando Lenguaje del Qu&iacute;mico, Materia, Agua y Aire.</p>
+      <ul>
+        <li>Examen integrador del caso Agua escolar saludable.</li>
+        <li>Banco final de reactivos y problemas aplicados.</li>
+        <li>Bibliograf&iacute;a y recursos recomendados para el semestre.</li>
+        <li>&Iacute;ndice anal&iacute;tico de conceptos, f&oacute;rmulas, pr&aacute;cticas e im&aacute;genes.</li>
+      </ul>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Temario / unidad 3 y cierre</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / Lenguaje del Qu&iacute;mico</p>
+    <h2>Del misterio a la medici&oacute;n</h2>
+    <div class="intro-layout">
+      <div>
+        <p>Antes de que existieran laboratorios escolares, muchas explicaciones sobre la materia nac&iacute;an de la intuici&oacute;n, la costumbre o la autoridad de quien hablaba. Algunas ideas eran brillantes; otras no pod&iacute;an comprobarse. La qu&iacute;mica avanz&oacute; cuando una pregunta dej&oacute; de responderse con suposiciones y comenz&oacute; a responderse con datos.</p>
+        <p>En el Colegio Nuevo Tecno, el caso inicia con algo cercano: el agua del bebedero. A simple vista puede parecer limpia, pero la qu&iacute;mica no se conforma con la apariencia. La Unidad 0 te prepara para mirar una muestra con criterio: observar, medir, registrar, comparar y explicar sin perder de vista el error posible.</p>
+        <div class="note">
+          <strong>Idea central:</strong> una conclusi&oacute;n qu&iacute;mica vale cuando puedes mostrar c&oacute;mo se obtuvo, con qu&eacute; instrumento, en qu&eacute; unidad y bajo qu&eacute; l&iacute;mite de confianza.
+        </div>
+        <h3>Elementos que necesitas para comprender el tema</h3>
+        <div class="concept-list">
+          <div class="concept"><strong>Observaci&oacute;n</strong>Distinguir lo que se ve, se mide y se infiere.</div>
+          <div class="concept"><strong>Pregunta investigable</strong>Convertir una duda en una prueba posible.</div>
+          <div class="concept"><strong>Variable</strong>Identificar qu&eacute; cambia, qu&eacute; se controla y qu&eacute; se compara.</div>
+          <div class="concept"><strong>Unidad</strong>Expresar cada dato con una referencia com&uacute;n.</div>
+          <div class="concept"><strong>Instrumento</strong>Reconocer alcance, precisi&oacute;n y l&iacute;mite de lectura.</div>
+          <div class="concept"><strong>Registro</strong>Dejar evidencia ordenada para revisar el procedimiento.</div>
+        </div>
+      </div>
+      <figure class="unit-hero" data-visual-id="M1-u00-01">
+        <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-01.jpg" alt="Inicio historico del lenguaje quimico y la medicion moderna">
+        <figcaption>La qu&iacute;mica empieza cuando la curiosidad aprende a usar instrumentos: del asombro nace la pregunta, y de la medici&oacute;n nace la evidencia.</figcaption>
+      </figure>
+    </div>
+
+    <div class="questions">
+      <h3>Preguntas introductorias</h3>
+      <div class="questions-grid">
+        <div class="question">
+          <p>1. &iquest;Qu&eacute; cambia entre decir "el agua se ve bien" y demostrarlo con una medici&oacute;n?</p>
+          <div class="answer-lines"><span></span><span></span><span></span></div>
+        </div>
+        <div class="question">
+          <p>2. Si dos equipos obtienen resultados distintos, &iquest;qu&eacute; revisar&iacute;as primero?</p>
+          <div class="answer-lines"><span></span><span></span><span></span></div>
+        </div>
+        <div class="question">
+          <p>3. &iquest;Por qu&eacute; una unidad mal escrita puede cambiar una conclusi&oacute;n qu&iacute;mica?</p>
+          <div class="answer-lines"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Introducci&oacute;n</span></div>
+  </section>
+
+  <section class="page infographic-page">
+    <div>
+      <p class="kicker">Unidad 0 / mapa de ruta</p>
+      <h2>El lenguaje que ordena la evidencia</h2>
+    </div>
+    <figure class="full-infographic" data-visual-id="M1-u00-02">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-02.jpg" alt="Mapa mental del lenguaje del quimico">
+      <figcaption>Para pensar como qu&iacute;mico no basta observar: hay que preguntar, medir, escribir con unidades y reconocer cu&aacute;nta confianza merece cada dato.</figcaption>
+    </figure>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Mapa de ruta</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / conceptos fundamentales</p>
+    <h2>Cuatro llaves para entrar a la qu&iacute;mica</h2>
+    <p class="subtitle">La infograf&iacute;a organiza la unidad como un sistema de trabajo. Cada rama responde una pregunta diferente: c&oacute;mo investigar, c&oacute;mo medir, c&oacute;mo escribir datos y c&oacute;mo reconocer el error.</p>
+    <div class="fundamental-grid">
+      <div class="fundamental-card">
+        <h3>1. M&eacute;todo cient&iacute;fico</h3>
+        <p>Es la ruta que convierte una observaci&oacute;n en evidencia: observar, formular un problema, proponer una hip&oacute;tesis, dise&ntilde;ar una prueba, analizar resultados y cerrar con una conclusi&oacute;n revisable.</p>
+        <p class="example"><strong>En el caso del bebedero:</strong> no se parte de "est&aacute; contaminado", sino de una pregunta medible.</p>
+      </div>
+      <div class="fundamental-card">
+        <h3>2. Sistema Internacional</h3>
+        <p>Permite que una medici&oacute;n sea entendida por cualquier equipo. Masa, longitud, tiempo, temperatura y cantidad de sustancia necesitan unidades correctas y conversiones claras.</p>
+        <p class="example"><strong>Clave:</strong> un n&uacute;mero sin unidad no funciona como dato qu&iacute;mico.</p>
+      </div>
+      <div class="fundamental-card">
+        <h3>3. Notaci&oacute;n y cifras</h3>
+        <p>La notaci&oacute;n cient&iacute;fica ayuda a escribir cantidades muy grandes o muy peque&ntilde;as. Las cifras significativas muestran cu&aacute;nta precisi&oacute;n permite realmente el instrumento usado.</p>
+        <p class="example"><strong>Ejemplo:</strong> una tira de pH y un potenciómetro digital no reportan el mismo nivel de detalle.</p>
+      </div>
+      <div class="fundamental-card">
+        <h3>4. Incertidumbre</h3>
+        <p>Toda medici&oacute;n tiene un margen de duda. Reconocer precisi&oacute;n, exactitud, error sistem&aacute;tico y error aleatorio evita conclusiones exageradas o falsas.</p>
+        <p class="example"><strong>Idea de cierre:</strong> medir no elimina el error; lo vuelve visible para poder controlarlo.</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>Conexi&oacute;n con la pr&aacute;ctica:</strong> en las siguientes p&aacute;ginas usar&aacute;s estas cuatro llaves para registrar una muestra de agua, convertir unidades, reportar cifras con criterio y explicar la confiabilidad del resultado.
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Conceptos fundamentales</span></div>
+  </section>
+
+  <section class="page case-image-page dense-visual-page landscape-visual-page">
+    <div>
+      <p class="kicker">Unidad 0 / m&eacute;todo cient&iacute;fico aplicado</p>
+      <h2>Del problema visible a una prueba ordenada</h2>
+    </div>
+    <p class="subtitle">El caso conductor no empieza con una respuesta, sino con una situaci&oacute;n que exige investigarse: algas visibles, reportes de malestar y una muestra de agua que necesita evidencia antes de cualquier decisi&oacute;n.</p>
+    <figure class="case-image" data-visual-id="M1-u00-03">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-03.jpg" alt="Diagrama de flujo del metodo cientifico aplicado al bebedero escolar">
+    </figure>
+    <p class="image-frase">Una buena investigaci&oacute;n no corre hacia la conclusi&oacute;n: avanza por pasos, regresa cuando hace falta y deja evidencia en cada decisi&oacute;n.</p>
+    <div class="mini-activity">
+      <h3>Mini actividad: construye un flujo similar</h3>
+      <p>Elige un punto del colegio relacionado con agua o higiene: bebedero, garraf&oacute;n, lavabo, botella reutilizable o charola del comedor. Escribe un flujo de cinco pasos como el del ejemplo.</p>
+      <ul>
+        <li><strong>Observaci&oacute;n:</strong> qu&eacute; ves, hueles, escuchas o registras.</li>
+        <li><strong>Problema:</strong> qu&eacute; pregunta se puede comprobar.</li>
+        <li><strong>Hip&oacute;tesis:</strong> qu&eacute; explicaci&oacute;n provisional propones.</li>
+        <li><strong>Experimento:</strong> qu&eacute; muestra, control o comparaci&oacute;n usar&iacute;as.</li>
+        <li><strong>An&aacute;lisis:</strong> qu&eacute; dato decidir&iacute;a si tu hip&oacute;tesis se sostiene.</li>
+      </ul>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Imagen aplicada</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / lectura de la imagen</p>
+    <h2>Qu&eacute; implica investigar con m&eacute;todo</h2>
+    <p class="subtitle">La imagen muestra una forma de pensar: pasar de una se&ntilde;al inicial a una prueba, y de una prueba a una conclusi&oacute;n que puede revisarse. No es un camino r&iacute;gido; es un ciclo que mejora cuando los datos obligan a volver a mirar.</p>
+    <div class="development-grid">
+      <div class="development-card">
+        <h3>Observaci&oacute;n y problema</h3>
+        <p>La observaci&oacute;n detecta una se&ntilde;al: algas, olor, color, sabor, reportes de malestar o suciedad. El problema convierte esa se&ntilde;al en una pregunta comprobable.</p>
+        <p><strong>Clave:</strong> una pregunta cient&iacute;fica debe poder responderse con datos, no solo con opini&oacute;n.</p>
+      </div>
+      <div class="development-card">
+        <h3>Hip&oacute;tesis y experimento</h3>
+        <p>La hip&oacute;tesis propone una explicaci&oacute;n provisional. El experimento organiza la prueba: muestra, control, variable, instrumento y forma de registro.</p>
+        <p><strong>Clave:</strong> si no hay control o comparaci&oacute;n, la conclusi&oacute;n pierde fuerza.</p>
+      </div>
+      <div class="development-card">
+        <h3>An&aacute;lisis y conclusi&oacute;n</h3>
+        <p>Analizar no es repetir datos: es compararlos con un criterio. La conclusi&oacute;n debe decir qu&eacute; se encontr&oacute;, qu&eacute; significa y qu&eacute; falta comprobar.</p>
+        <p><strong>Clave:</strong> una conclusi&oacute;n honesta reconoce l&iacute;mites.</p>
+      </div>
+      <div class="development-card">
+        <h3>El ciclo de regreso</h3>
+        <p>Cuando el resultado no coincide con la hip&oacute;tesis, no se fracasa: se aprende qu&eacute; debe observarse otra vez. Por eso el m&eacute;todo es c&iacute;clico.</p>
+        <p><strong>Clave:</strong> volver a observar es parte del rigor.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Lectura del m&eacute;todo</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / pr&aacute;ctica de m&eacute;todo</p>
+    <h2>Flujo de investigaci&oacute;n sin cortar pasos</h2>
+    <p class="subtitle">Desarrolla una investigaci&oacute;n breve para una botella reutilizable que varios estudiantes rellenan en el bebedero. Usa el caso conductor como referencia, pero construye tu propio flujo.</p>
+    <div class="exercise-development">
+      <h3>Pr&aacute;ctica guiada: de la observaci&oacute;n a la conclusi&oacute;n</h3>
+      <div class="exercise-steps">
+        <div class="step-box"><strong>1. Observaci&oacute;n:</strong> escribe una se&ntilde;al inicial verificable.</div>
+        <div class="step-box"><strong>2. Problema:</strong> redacta una pregunta que pueda medirse.</div>
+        <div class="step-box"><strong>3. Hip&oacute;tesis:</strong> propone una explicaci&oacute;n provisional.</div>
+        <div class="step-box"><strong>4. Experimento:</strong> indica muestra, control e instrumento.</div>
+        <div class="step-box"><strong>5. An&aacute;lisis:</strong> define qu&eacute; dato comparar&aacute;s.</div>
+        <div class="step-box"><strong>6. Conclusi&oacute;n:</strong> anticipa qu&eacute; tipo de decisi&oacute;n podr&iacute;as tomar.</div>
+      </div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Pr&aacute;ctica de m&eacute;todo</span></div>
+  </section>
+
+  <section class="page infographic-page">
+    <div>
+      <p class="kicker">Unidad 0 / unidades y herramientas</p>
+      <h2>La medici&oacute;n necesita un idioma com&uacute;n</h2>
+    </div>
+    <figure class="full-infographic" data-visual-id="M1-u00-04">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-04.jpg" alt="Tabla del Sistema Internacional de unidades y herramientas de medicion">
+      <figcaption>Medir sin unidades es hablar sin gram&aacute;tica: el dato existe, pero todav&iacute;a no puede comunicarse con rigor.</figcaption>
+    </figure>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Sistema Internacional</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / historia de la medici&oacute;n</p>
+    <h2>Herramientas que hicieron confiable a la qu&iacute;mica</h2>
+    <p class="subtitle">El bebedero no se resuelve con una impresi&oacute;n visual. Se resuelve cuando la observaci&oacute;n se convierte en datos comparables: masa, volumen, temperatura, tiempo, cantidad de sustancia y concentraci&oacute;n.</p>
+    <div class="story-columns">
+      <div>
+        <p>Durante siglos, cada regi&oacute;n med&iacute;a con patrones propios: una vara, una libra local, una jarra o una balanza artesanal. Eso funcionaba para comerciar en corto, pero no para construir ciencia. Cuando distintos laboratorios quer&iacute;an comparar resultados, necesitaban que un gramo, un litro o un metro significaran lo mismo para todos.</p>
+        <p>La qu&iacute;mica gan&oacute; precisi&oacute;n cuando sus herramientas dejaron de ser adornos y se volvieron reglas de trabajo. Una balanza no solo "pesa"; delimita cu&aacute;nto puedes afirmar. Una probeta no solo "contiene"; marca el volumen que usar&aacute;s para calcular concentraci&oacute;n o densidad.</p>
+      </div>
+      <div>
+        <div class="mini-activity">
+          <h3>Actividad con la imagen: traduce el caso al SI</h3>
+          <p>Imagina que el equipo tom&oacute; una muestra de 250 mL de agua, midi&oacute; 0.45 ppm de cloro residual y registr&oacute; 24 &deg;C. Convierte cada dato a una forma &uacute;til para comparar o calcular.</p>
+          <ul>
+            <li>250 mL a litros.</li>
+            <li>24 &deg;C a kelvin.</li>
+            <li>0.45 ppm como mg/L.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="formula-grid">
+      <div class="formula-card">
+        <h3>Instrucci&oacute;n de uso: conversi&oacute;n</h3>
+        <div class="formula">valor final = valor inicial &times; factor de conversi&oacute;n</div>
+        <p>El factor debe valer 1 porque compara dos unidades equivalentes. Ejemplo: 250 mL &times; (1 L / 1000 mL) = 0.250 L.</p>
+      </div>
+      <div class="formula-card">
+        <h3>Instrucci&oacute;n de uso: lectura</h3>
+        <p>Antes de calcular, identifica cuatro datos: magnitud, unidad, instrumento y precisi&oacute;n. Si falta uno, la operaci&oacute;n puede dar un n&uacute;mero correcto pero una conclusi&oacute;n d&eacute;bil.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Historia y uso de unidades</span></div>
+  </section>
+
+  <section class="page image-led-page landscape-visual-page">
+    <div>
+      <p class="kicker">Unidad 0 / instrumentos y cifras significativas</p>
+      <h2>Cada herramienta tiene una voz distinta</h2>
+    </div>
+    <p class="subtitle">Una tira de pH, una balanza de cocina y una balanza anal&iacute;tica no dicen lo mismo con el mismo nivel de detalle. El instrumento marca cu&aacute;ntas cifras puedes defender.</p>
+    <figure class="wide-image" data-visual-id="M1-u00-05">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-05.jpg" alt="Instrumentos de medicion y cifras significativas">
+    </figure>
+    <p class="calculation-phrase">La cifra final de una medici&oacute;n no depende de cu&aacute;nto quieras escribir, sino de cu&aacute;nto puede sostener el instrumento.</p>
+    <div class="mini-activity">
+      <h3>Actividad con la imagen: elige el instrumento correcto</h3>
+      <p>Para el caso del bebedero, decide qu&eacute; instrumento usar&iacute;as para cada dato: pH aproximado, masa de una muestra, volumen de agua, temperatura y concentraci&oacute;n baja. Justifica con una frase cu&aacute;ntas cifras significativas esperar&iacute;as reportar.</p>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Cifras significativas</span></div>
+  </section>
+
+  <section class="page image-led-page landscape-visual-page">
+    <div>
+      <p class="kicker">Unidad 0 / precisi&oacute;n, exactitud y error</p>
+      <h2>No basta repetir: hay que acertar</h2>
+    </div>
+    <p class="subtitle">En qu&iacute;mica escolar, repetir una medici&oacute;n puede dar seguridad, pero no garantiza verdad. Un equipo puede ser muy preciso y aun as&iacute; estar lejos del valor real si el instrumento est&aacute; mal calibrado.</p>
+    <figure class="wide-image" data-visual-id="M1-u00-06">
+      <img src="../../../../../05_assets_visuales_iconos/visuales/manual-1/u00/M1-u00-06.jpg" alt="Relacion entre precision y exactitud">
+    </figure>
+    <p class="calculation-phrase">La precisi&oacute;n habla de qu&eacute; tan juntos caen tus datos; la exactitud habla de qu&eacute; tan cerca est&aacute;n del valor aceptado.</p>
+    <div class="mini-activity">
+      <h3>Actividad con la imagen: diagnostica una medici&oacute;n</h3>
+      <p>Sup&oacute;n que tres equipos miden el pH de la misma muestra: Equipo A: 7.1, 7.1, 7.2; Equipo B: 6.4, 7.2, 7.9; Equipo C: 8.0, 8.0, 8.1. Si el valor aceptado es 7.0, clasifica cada equipo como preciso, exacto, ambos o ninguno.</p>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Precisi&oacute;n y exactitud</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / f&oacute;rmulas de c&aacute;lculo</p>
+    <h2>Herramientas de c&aacute;lculo para medir con criterio</h2>
+    <p class="subtitle">Estas f&oacute;rmulas ser&aacute;n el soporte del primer banco de ejercicios. Antes de sustituir datos, revisa unidades, instrumento y n&uacute;mero de cifras que puedes reportar.</p>
+    <div class="formula-grid">
+      <div class="formula-card">
+        <h3>1. Factor de conversi&oacute;n</h3>
+        <div class="formula">valor final = valor inicial &times; (unidad deseada / unidad inicial)</div>
+        <p>Se usa para cambiar de mL a L, g a mg, &deg;C a K o cualquier equivalencia. Las unidades que se repiten arriba y abajo se cancelan.</p>
+      </div>
+      <div class="formula-card">
+        <h3>2. Temperatura absoluta</h3>
+        <div class="formula">K = &deg;C + 273.15</div>
+        <p>En c&aacute;lculos qu&iacute;micos con gases o energ&iacute;a se usa kelvin. El agua a 24 &deg;C equivale a 297.15 K.</p>
+      </div>
+      <div class="formula-card">
+        <h3>3. Promedio</h3>
+        <div class="formula">promedio = (x1 + x2 + ... + xn) / n</div>
+        <p>Resume mediciones repetidas. No reemplaza al an&aacute;lisis del error, pero ayuda a estimar un valor central.</p>
+      </div>
+      <div class="formula-card">
+        <h3>4. Error absoluto</h3>
+        <div class="formula">Eabs = |valor medido - valor aceptado|</div>
+        <p>Indica la distancia directa entre tu resultado y un valor de referencia. Conserva la misma unidad de la magnitud medida.</p>
+      </div>
+      <div class="formula-card">
+        <h3>5. Error relativo y porcentual</h3>
+        <div class="formula">Erel = Eabs / valor aceptado</div>
+        <div class="formula">E% = Erel &times; 100</div>
+        <p>Sirve para comparar errores de diferentes magnitudes. El porcentaje permite comunicar qu&eacute; tan grande fue el error.</p>
+      </div>
+      <div class="formula-card">
+        <h3>6. Densidad</h3>
+        <div class="formula">&rho; = m / V</div>
+        <p>Relaciona masa y volumen. En agua escolar se puede usar para revisar si una muestra se comporta parecido al agua esperada o si hay solutos, sedimentos o error de medici&oacute;n.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / F&oacute;rmulas explicadas</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / banco de ejercicios</p>
+    <h2>Banco 1: conversiones y unidades</h2>
+    <div class="exercise-bank">
+      <div class="bank-item"><p><strong>1.</strong> Convierte 250 mL de agua a litros. Indica el factor de conversi&oacute;n y cancela unidades.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>2.</strong> Una muestra contiene 0.45 ppm de cloro residual. Interpreta el dato como mg/L y calcula cu&aacute;ntos mg hay en 2 L.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>3.</strong> Convierte 24 &deg;C a kelvin. Explica por qu&eacute; la escala kelvin evita valores negativos en c&aacute;lculos de gases.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>4.</strong> Una balanza reporta 12.50 g. Convierte a mg y conserva cifras significativas razonables.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Banco de ejercicios / 1 a 4</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / banco de ejercicios</p>
+    <h2>Banco 2: instrumentos y cifras</h2>
+    <div class="exercise-bank">
+      <div class="bank-item"><p><strong>5.</strong> Una tira de pH marca aproximadamente 7. El potenci&oacute;metro marca 7.18. &iquest;Cu&aacute;l dato tiene m&aacute;s cifras significativas defendibles y por qu&eacute;?</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>6.</strong> Una regla escolar mide 12.4 cm. Convierte a mm y explica si ganaste precisi&oacute;n real o solo cambiaste de unidad.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>7.</strong> Una probeta marca 48 mL y una pipeta marca 48.00 mL. &iquest;Cu&aacute;l usar&iacute;as para preparar una diluci&oacute;n y por qu&eacute;?</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>8.</strong> Redondea 0.004587 L a 2, 3 y 4 cifras significativas. Explica cu&aacute;l usar&iacute;as si el instrumento solo permite 3 cifras.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Banco de ejercicios / 5 a 8</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / banco de ejercicios</p>
+    <h2>Banco 3: promedio y error absoluto</h2>
+    <div class="exercise-bank">
+      <div class="bank-item"><p><strong>9.</strong> Tres mediciones de pH fueron 7.1, 7.2 y 7.1. Calcula el promedio y decide si reportar&iacute;as 7.13 o 7.1.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>10.</strong> El valor aceptado de pH es 7.0 y tu promedio fue 7.13. Calcula el error absoluto.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>11.</strong> Una masa aceptada es 15.00 g y tu balanza reporta 14.82 g. Calcula el error absoluto e interpreta el signo si no usaras valor absoluto.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>12.</strong> Un volumen esperado es 100.0 mL y se midieron 98.5 mL. Calcula el error absoluto y prop&oacute;n una causa instrumental.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Banco de ejercicios / 9 a 12</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / banco de ejercicios</p>
+    <h2>Banco 4: error relativo y porcentual</h2>
+    <div class="exercise-bank">
+      <div class="bank-item"><p><strong>13.</strong> Con el error absoluto de 0.13 pH y valor aceptado 7.0, calcula el error relativo y el error porcentual.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>14.</strong> Una concentraci&oacute;n aceptada es 0.50 mg/L y mediste 0.46 mg/L. Calcula Eabs, Erel y E%.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>15.</strong> Un term&oacute;metro de referencia marca 25.0 &deg;C y el de aula marca 26.2 &deg;C. Calcula el error porcentual.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>16.</strong> Dos equipos obtienen errores porcentuales de 1.8% y 6.5%. Redacta una decisi&oacute;n sobre cu&aacute;l resultado usar&iacute;as para el reporte del bebedero.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Banco de ejercicios / 13 a 16</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / banco de ejercicios</p>
+    <h2>Banco 5: precisi&oacute;n, exactitud y decisi&oacute;n</h2>
+    <div class="exercise-bank">
+      <div class="bank-item"><p><strong>17.</strong> Equipo A mide 7.1, 7.1, 7.2. Equipo B mide 6.4, 7.2, 7.9. Si el valor aceptado es 7.0, clasifica precisi&oacute;n y exactitud.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>18.</strong> Un instrumento siempre marca 0.3 unidades arriba del valor real. &iquest;Qu&eacute; tipo de error sugiere: sistem&aacute;tico o aleatorio?</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>19.</strong> Cinco mediciones cambian mucho entre s&iacute; aunque el promedio se acerca al valor aceptado. Explica la diferencia entre exactitud e imprecisi&oacute;n.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>20.</strong> Redacta una conclusi&oacute;n de 60 palabras para un reporte donde el pH promedio fue 7.13, con error porcentual menor a 2%.</p><div class="bank-lines"><span></span><span></span><span></span></div></div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Banco de ejercicios / 17 a 20</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / cierre de c&aacute;lculo</p>
+    <h2>Densidad: cuando masa y volumen cuentan la misma historia</h2>
+    <p class="subtitle">La densidad conecta varias habilidades de esta unidad: medir masa, medir volumen, convertir unidades, decidir cifras significativas y evaluar si el dato tiene sentido.</p>
+    <div class="density-summary">
+      <div class="formula-card">
+        <h3>Relaci&oacute;n fundamental</h3>
+        <div class="formula">&rho; = m / V</div>
+        <p><strong>&rho;</strong> es densidad. Puede expresarse en g/mL, g/cm<sup>3</sup> o kg/m<sup>3</sup>.</p>
+        <p><strong>m</strong> es masa. En laboratorio escolar suele medirse en gramos.</p>
+        <p><strong>V</strong> es volumen. Para agua puede medirse en mL o L.</p>
+      </div>
+      <div class="note">
+        <strong>Conexi&oacute;n con el caso conductor:</strong> si una muestra de agua contiene sedimentos, sales disueltas o burbujas, su masa por volumen puede cambiar ligeramente. La densidad no diagnostica todo, pero obliga a medir con cuidado y a preguntar si la muestra se comporta como se espera.
+      </div>
+    </div>
+    <div class="exercise-bank">
+      <div class="bank-item"><p><strong>D1.</strong> Una muestra tiene masa de 49.8 g y volumen de 50.0 mL. Calcula la densidad y reporta con unidades.</p><div class="bank-lines"><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>D2.</strong> Si una muestra tiene densidad de 0.996 g/mL y volumen de 250 mL, calcula su masa esperada.</p><div class="bank-lines"><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>D3.</strong> Una muestra de 100.0 mL pesa 103.2 g. Compara con agua cercana a 1.00 g/mL y redacta una posible explicaci&oacute;n.</p><div class="bank-lines"><span></span><span></span></div></div>
+      <div class="bank-item"><p><strong>D4.</strong> Convierte 0.998 g/mL a kg/m<sup>3</sup>. Usa equivalencias: 1 g = 0.001 kg y 1 mL = 1 &times; 10<sup>-6</sup> m<sup>3</sup>.</p><div class="bank-lines"><span></span><span></span></div></div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Densidad y cierre de c&aacute;lculo</span></div>
+  </section>
+
+  <section class="page">
+    <p class="kicker">Unidad 0 / densidad y verificaci&oacute;n</p>
+    <h2>Densidad: comprobaci&oacute;n con operaciones completas</h2>
+    <p class="subtitle">Este ejercicio se deja en p&aacute;gina propia para que puedas calcular densidades individuales, promedio y comentario de precisi&oacute;n sin que el cuadro se corte al imprimir.</p>
+    <div class="exercise-bank calc-bank">
+      <div class="bank-item"><p><strong>D5.</strong> Mides 25.0 mL tres veces y obtienes masas de 24.8 g, 24.9 g y 25.1 g. Calcula la densidad de cada medici&oacute;n, la densidad promedio y comenta si las mediciones fueron precisas.</p><div class="bank-lines"><span></span><span></span><span></span><span></span><span></span></div></div>
+    </div>
+    <div class="footer"><span>Colegio Nuevo Tecno</span><span>Unidad 0 / Densidad D5</span></div>
+  </section>
+</body>
+</html>

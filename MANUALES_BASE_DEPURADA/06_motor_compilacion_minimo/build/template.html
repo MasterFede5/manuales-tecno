@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>{{ titulo }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- KaTeX renders LaTeX math before printing to PDF. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false},{left: '\\\\(', right: '\\\\)', display: false},{left: '\\\\[', right: '\\\\]', display: true}], throwOnError: false });"></script>
+
+<style>
+{{ css }}
+
+.katex { font-size: 1.05em; }
+.katex-display { margin: 4mm 0; page-break-inside: avoid; }
+.katex-display > .katex { white-space: normal; }
+</style>
+</head>
+<body data-mode="{{ mode }}" data-layout="{{ layout }}">
+{% if layout != "editorial-40-60" %}
+  <div class="print-page-header">
+    <span>{{ titulo }}</span>
+    {% if subtitulo %}<span>{{ subtitulo }}</span>{% endif %}
+  </div>
+  <div class="print-page-footer">
+    <span>Grupo Cultural Albatros</span>
+    <span>Manual editable PDF/DOCX</span>
+  </div>
+  <header class="manual-header">
+    <h1 class="manual-titulo">{{ titulo }}</h1>
+    {% if subtitulo %}<p class="manual-subtitulo">{{ subtitulo }}</p>{% endif %}
+  </header>
+{% endif %}
+<main>
+{{ body|safe }}
+</main>
+{% if layout != "editorial-40-60" %}
+<footer class="manual-footer">
+  <p>#AlbatrosManual - Grupo Cultural Albatros</p>
+</footer>
+{% endif %}
+</body>
+</html>

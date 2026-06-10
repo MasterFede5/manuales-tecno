@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manual 5 - Semestre 1 completo</title>
+  <link rel="stylesheet" href="../../primer-manual.css">
+</head>
+<body>
+<section class="page cover">
+<div class="cover-text"><p class="kicker">Manual 5 / Semestre 1 completo</p><h1>Inteligencia Artificial con Programacion</h1><p class="subtitle">De Python al primer analisis de datos y modelo clasico</p></div><figure class="visual full" data-visual-id="M5-sem1-01"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-01.jpg" alt="Ilustracion hero de portada para el Semestre 1 del Manual 5: Inteligencia Artificial con Programacion. Composicion editorial vert..."><figcaption>M5-sem1-01. Ilustracion hero de portada para el Semestre 1 del Manual 5: Inteligencia Artificial con Programacion. Composicion editorial vertical con el logo Albatros en la esquina superior derecha, titulo grande del manu...</figcaption></figure><div class="meta-strip"><div class="meta"><strong>Historia conductora</strong>Predictor de rendimiento escolar</div><div class="meta"><strong>Publico</strong>Estudiantes sin experiencia previa de programacion</div><div class="meta"><strong>Formato</strong>Hoja carta HTML con imagenes inyectadas.</div></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Carta al estudiante</h2>
+<p>Este semestre se construye alrededor de una historia: Predictor de rendimiento escolar. Cada unidad inicia con una pregunta real, introduce teoria suficiente y pasa rapido a practica.</p><p>Tu trabajo no es copiar definiciones. Tu trabajo es producir evidencia: calculos, tablas, prototipos, prompts, visualizaciones o conclusiones defendibles.</p><div class="box practice-box"><h3>Metodo de estudio</h3><p>Lee la historia, subraya datos, revisa formulas con unidades, resuelve cuatro ejercicios por pagina y cierra cada bloque con una evidencia verificable.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 2</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Carta al docente</h2>
+<p>La estructura mantiene 40% teoria y 60% practica. La teoria aparece como modelo mental, formula o criterio de decision; la practica aparece como banco, taller, producto y defensa.</p><p>Las imagenes no se usan como decoracion. Cada visual se inserta en una pagina cuyo texto explica el concepto inmediato del prompt original.</p><div class="box question-box"><h3>Regla de aula</h3><p>Si una imagen no coincide con la actividad de la pagina, se mueve o se sustituye antes de imprimir.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 3</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Mapa de contenidos</h2>
+<div class="toc-list"><div class="toc-row"><strong>U01</strong><span>Tu Primer Python para IA</span><span>Script que carga CSV y reporta resumen basico</span></div><div class="toc-row"><strong>U02</strong><span>Datos con NumPy y Pandas</span><span>Dataset escolar limpio con bitacora de transformaciones</span></div><div class="toc-row"><strong>U03</strong><span>Visualizacion de Datos</span><span>Dashboard de graficas basicas del dataset</span></div><div class="toc-row"><strong>U04</strong><span>Estadistica para Entender Datos</span><span>Analisis estadistico de relacion entre estudio y calificacion</span></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 4</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Hilo conductor</h2>
+<p>La coordinacion entrega un dataset anonimizado. El semestre convierte datos escolares en codigo, limpieza, visualizaciones y estadistica para entender relaciones.</p><figure class="visual half" data-visual-id="M5-sem1-02"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-02.jpg" alt="Pieza de creditos editoriales: logo Albatros centrado en azul Albatros sobre fondo blanco, debajo el texto &#x27;Grupo Cultural Albatr..."><figcaption>M5-sem1-02. Pieza de creditos editoriales: logo Albatros centrado en azul Albatros sobre fondo blanco, debajo el texto &#x27;Grupo Cultural Albatros Edicion Tecno 2026&#x27;, y al pie tres lineas finas naranja como ornamento. Compo...</figcaption></figure><div class="box theory-box"><h3>Como leer el semestre</h3><p>La primera lectura da contexto; la segunda ubica formulas y conceptos; la tercera se hace con lapiz, datos y evidencia.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 5</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Competencias y productos</h2>
+<table><tr><th>Competencia</th><th>Producto verificable</th><th>Revision</th></tr><tr><td>Comprender modelos</td><td>Mapa o diagrama con variables.</td><td>Coherencia conceptual.</td></tr><tr><td>Aplicar procedimientos</td><td>Banco de ejercicios y practica.</td><td>Unidades, datos y pasos.</td></tr><tr><td>Comunicar evidencia</td><td>Reporte corto o presentacion.</td><td>Conclusion defendible.</td></tr><tr><td>Usar recursos digitales</td><td>Simulacion, prompt, tabla o codigo.</td><td>Uso pertinente y documentado.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 6</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Diagnostica 1</h2>
+<div class="exercise"><strong>1.</strong> Explica que dato necesitarias antes de afirmar que una solucion funciona.</div><div class="exercise"><strong>2.</strong> Convierte una observacion cotidiana en una pregunta medible.</div><div class="exercise"><strong>3.</strong> Identifica una unidad, una variable y un posible error de medicion.</div><div class="exercise"><strong>4.</strong> Describe una evidencia que no dependa de opinion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 7</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Diagnostica 2</h2>
+<div class="exercise"><strong>5.</strong> Lee una grafica o diagrama y escribe dos inferencias validas.</div><div class="exercise"><strong>6.</strong> Distingue hecho, supuesto y conclusion en un parrafo tecnico.</div><div class="exercise"><strong>7.</strong> Propone una mejora a un procedimiento incompleto.</div><div class="exercise"><strong>8.</strong> Escribe una pregunta para investigar durante el semestre.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 8</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Uso de imagenes y fuentes</h2>
+<figure class="visual half" data-visual-id="M5-sem1-03"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-03.jpg" alt="Ilustracion calida de un estudiante mexicano de bachillerato sentado en su escritorio con el manual abierto, lapiz en mano, un va..."><figcaption>M5-sem1-03. Ilustracion calida de un estudiante mexicano de bachillerato sentado en su escritorio con el manual abierto, lapiz en mano, un vaso de agua o una herramienta del case study a un lado y una luz suave entrando p...</figcaption></figure><p>Cada imagen conserva ID estable. El ID permite volver al prompt, revisar el rol de la imagen y corregirla si no representa el contenido.</p><div class="box practice-box"><h3>Evidencia visual</h3><p>Cuando uses una imagen en una respuesta, no la describas completa: selecciona el elemento que prueba tu argumento.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 9</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Semestre 1</p>
+<h2>Ruta de trabajo</h2>
+<ol><li>Entrar por historia y preguntas.</li><li>Identificar datos y unidades.</li><li>Usar formula, modelo o herramienta.</li><li>Resolver banco de ejercicios.</li><li>Construir producto de unidad.</li><li>Contrastar con referencias y anexos.</li></ol><div class="box theory-box"><h3>Cierre semanal</h3><p>Cada semana termina con una decision: que se sabe, que falta y que accion sigue.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 10</span></div>
+</section>
+
+<section class="page cover">
+<div class="cover-text"><p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p><h1>Tu Primer Python para IA</h1><p class="subtitle">Cargar la lista de calificaciones desde un CSV</p></div><figure class="visual full" data-visual-id="M5-u01-01"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-01.jpg" alt="Ilustracion hero de portadilla para la Unidad 1: a la izquierda, una hoja de cuaderno con anotaciones a mano de calificaciones. U..."><figcaption>M5-u01-01. Ilustracion hero de portadilla para la Unidad 1: a la izquierda, una hoja de cuaderno con anotaciones a mano de calificaciones. Una flecha hacia el centro: laptop con VS Code mostrando codigo Python que lee un...</figcaption></figure><div class="meta-strip"><div class="meta"><strong>Historia</strong>El predictor empieza leyendo datos sin romperlos.</div><div class="meta"><strong>Producto</strong>Script que carga CSV y reporta resumen basico</div><div class="meta"><strong>Distribucion</strong>40% teoria / 60% practica.</div></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Historia, analogia y preguntas</h2>
+<p>Programar para IA empieza con acciones simples: guardar valores, repetir pasos, leer archivos y detectar errores. Python permite convertir una tabla escolar en datos manipulables.</p><p><strong>Analogia:</strong> Python es como una libreta que tambien sabe hacer cuentas: si escribes instrucciones claras, repite el procedimiento sin cansarse.</p><div class="box question-box"><h3>Preguntas introductorias</h3><ul><li>Que es una variable?</li><li>Como se lee un CSV?</li><li>Que error aparece si falta un dato?</li><li>Por que conviene comentar poco y claro?</li></ul></div><div class="ratio"><div class="theory">40% comprender</div><div class="practice">60% medir, construir y defender evidencia</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 12</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Modelo mental antes de la herramienta</h2>
+<p>Python usa variables, tipos, condicionales, ciclos, funciones y archivos. Antes de IA, se necesita controlar datos basicos.</p><div class="box theory-box"><h3>Elementos clave</h3><ul><li>variable</li><li>tipo</li><li>if</li><li>for</li><li>funcion</li><li>CSV</li><li>error</li></ul></div><div class="box practice-box"><h3>Microactividad</h3><p>Antes de usar software, calculadora o IA, dibuja el sistema de Tu Primer Python para IA con entradas, proceso, salida esperada y riesgo de error.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 13</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Formulas, variables y unidades</h2>
+<p>Las formulas no se memorizan aisladas: cada simbolo debe tener significado, unidad y condicion de uso.</p><table><tr><th>Formula o modelo</th><th>Uso</th><th>Elementos y unidades</th></tr><tr><td><div class="formula">promedio = suma / n</div></td><td>calcular media simple</td><td>suma: puntos; n: numero de datos</td></tr><tr><td><div class="formula">if condicion: accion</div></td><td>tomar decision</td><td>condicion booleana; accion indentada</td></tr><tr><td><div class="formula">for item in lista</div></td><td>repetir sobre datos</td><td>item: elemento actual; lista: coleccion</td></tr></table><div class="box question-box"><h3>Chequeo rapido</h3><p>Si una operacion mezcla unidades incompatibles, el resultado no es evidencia; es ruido con apariencia numerica.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 14</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Caso resuelto guiado</h2>
+<p><strong>Situacion:</strong> Cargar la lista de calificaciones desde un CSV</p><p><strong>Datos de partida:</strong> archivo CSV, columnas, filas, valores faltantes y promedio inicial</p><ol><li>Se separan datos observados, supuestos y unidades.</li><li>Se elige el modelo mas simple que responde la pregunta.</li><li>Se calcula o se organiza la evidencia.</li><li>Se redacta una conclusion tecnica con limite y siguiente prueba.</li></ol><div class="box practice-box"><h3>Producto esperado</h3><p>Script que carga CSV y reporta resumen basico</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 15</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>M5-u01-02: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u01-02"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-02.jpg" alt="Mapa mental con nodo central &#x27;Tu Primer Python para IA&#x27; y 7 ramas: 1) Configuracion (Anaconda, VS Code, Colab - elige una). 2) Va..."><figcaption>M5-u01-02. Mapa mental con nodo central &#x27;Tu Primer Python para IA&#x27; y 7 ramas: 1) Configuracion (Anaconda, VS Code, Colab - elige una). 2) Variables y tipos (int, float, str, bool, operadores). 3) Control de flujo (if/eli...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Mapa mental con nodo central &#x27;Tu Primer Python para IA&#x27; y 7 ramas: 1) Configuracion (Anaconda, VS Code, Colab - elige una). 2) Variables y tipos (int, float, str, bool, operadores). 3) Control de flujo (if/elif/else, for, while). 4) Funciones (def, return, parametros). 5) Estructuras (lista, tupla, diccionario, set). 6) Archivo...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Tu Primer Python para IA: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 16</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>M5-u01-03: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u01-03"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-03.jpg" alt="Cuadro a tamano pagina comparando los 3 caminos en filas: Colab, Anaconda, VS Code. Columnas: tiempo de setup, internet requerido..."><figcaption>M5-u01-03. Cuadro a tamano pagina comparando los 3 caminos en filas: Colab, Anaconda, VS Code. Columnas: tiempo de setup, internet requerido, RAM, ventajas, desventajas, mejor caso. Bajo el cuadro, decision tree visual:...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Cuadro a tamano pagina comparando los 3 caminos en filas: Colab, Anaconda, VS Code. Columnas: tiempo de setup, internet requerido, RAM, ventajas, desventajas, mejor caso. Bajo el cuadro, decision tree visual: &#x27;laptop modesta? Colab / quieres independencia local? Anaconda / programador serio? VS Code&#x27;. Estilo Albatros.</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Tu Primer Python para IA: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 17</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>M5-u01-04: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u01-04"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-04.jpg" alt="Cuadro a tamano pagina con 4 tipos en filas (int, float, str, bool). Columnas: ejemplo del case escolar, operaciones permitidas,..."><figcaption>M5-u01-04. Cuadro a tamano pagina con 4 tipos en filas (int, float, str, bool). Columnas: ejemplo del case escolar, operaciones permitidas, conversion (casting), error tipico de principiante. Bajo el cuadro, recuadro con...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Cuadro a tamano pagina con 4 tipos en filas (int, float, str, bool). Columnas: ejemplo del case escolar, operaciones permitidas, conversion (casting), error tipico de principiante. Bajo el cuadro, recuadro con todos los operadores agrupados (aritmeticos, comparacion, logicos) con icono y ejemplo. Estilo blueprint educativo Alba...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Tu Primer Python para IA: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 18</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>M5-u01-05: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u01-05"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-05.jpg" alt="Diagrama de flujo a tamano pagina con 3 paneles: 1) if/elif/else como rombo de decision con 3 ramas y bloques. 2) for como caja c..."><figcaption>M5-u01-05. Diagrama de flujo a tamano pagina con 3 paneles: 1) if/elif/else como rombo de decision con 3 ramas y bloques. 2) for como caja con secuencia (lista) y flecha de iteracion por cada elemento. 3) while como romb...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Diagrama de flujo a tamano pagina con 3 paneles: 1) if/elif/else como rombo de decision con 3 ramas y bloques. 2) for como caja con secuencia (lista) y flecha de iteracion por cada elemento. 3) while como rombo de condicion con loop hasta False. Cada uno con codigo de ejemplo del case escolar al lado. Etiquetas claras de indent...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Tu Primer Python para IA: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 19</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>M5-u01-06: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u01-06"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-06.jpg" alt="Anatomia visual a tamano pagina de una funcion Python: caja grande con titulo &#x27;def clasificar_calificacion(cal):&#x27; arriba. Adentro..."><figcaption>M5-u01-06. Anatomia visual a tamano pagina de una funcion Python: caja grande con titulo &#x27;def clasificar_calificacion(cal):&#x27; arriba. Adentro, indentacion visible con lineas verticales. Bloque if/elif/else dentro de la ca...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Anatomia visual a tamano pagina de una funcion Python: caja grande con titulo &#x27;def clasificar_calificacion(cal):&#x27; arriba. Adentro, indentacion visible con lineas verticales. Bloque if/elif/else dentro de la caja. Cada `return` resaltado. A la derecha, ejemplo de llamada `clasificar_calificacion(7.5)` con flecha entrando, bloque...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Tu Primer Python para IA: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 20</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>M5-u01-07: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u01-07"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-07.jpg" alt="Cuadro a tamano pagina con 4 estructuras (lista, tupla, dict, set) en filas. Columnas: sintaxis de creacion, mutabilidad, ordenad..."><figcaption>M5-u01-07. Cuadro a tamano pagina con 4 estructuras (lista, tupla, dict, set) en filas. Columnas: sintaxis de creacion, mutabilidad, ordenado, acceso, caso ideal en el case escolar, contraindicacion. Cada celda con codig...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Cuadro a tamano pagina con 4 estructuras (lista, tupla, dict, set) en filas. Columnas: sintaxis de creacion, mutabilidad, ordenado, acceso, caso ideal en el case escolar, contraindicacion. Cada celda con codigo de ejemplo. Bajo el cuadro, decision tree: &#x27;muchos valores que cambian? lista / fijos? tupla / clave-valor? dict / sol...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Tu Primer Python para IA: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 21</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>M5-u01-08: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u01-08"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-08.jpg" alt="Diagrama de flujo a tamano pagina de E/S de archivos. Lado izquierdo lectura: CSV en disco open() DictReader loop lista de dicts..."><figcaption>M5-u01-08. Diagrama de flujo a tamano pagina de E/S de archivos. Lado izquierdo lectura: CSV en disco open() DictReader loop lista de dicts en memoria. Lado derecho escritura: lista de dicts DictWriter open(w) CSV en dis...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Diagrama de flujo a tamano pagina de E/S de archivos. Lado izquierdo lectura: CSV en disco open() DictReader loop lista de dicts en memoria. Lado derecho escritura: lista de dicts DictWriter open(w) CSV en disco. Version paralela para JSON con json.load/json.dump. Etiquetas de cada paso, tipos de datos en cada etapa. Estilo edu...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Tu Primer Python para IA: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 22</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>M5-u01-09: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u01-09"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u01/M5-u01-09.jpg" alt="Cuadro a tamano pagina de 6 excepciones mas comunes en Python aplicadas al case escolar. Filas: nombre cuando ocurre ejemplo de c..."><figcaption>M5-u01-09. Cuadro a tamano pagina de 6 excepciones mas comunes en Python aplicadas al case escolar. Filas: nombre cuando ocurre ejemplo de codigo que la genera ejemplo de manejo con try/except. Bajo el cuadro, esquema vi...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Cuadro a tamano pagina de 6 excepciones mas comunes en Python aplicadas al case escolar. Filas: nombre cuando ocurre ejemplo de codigo que la genera ejemplo de manejo con try/except. Bajo el cuadro, esquema visual de try/except/else/finally con flechas indicando el flujo. Estilo blueprint educativo Albatros.</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Tu Primer Python para IA: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 23</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Especificacion de actividad y practica</h2>
+<table><tr><th>Fase</th><th>Accion del estudiante</th><th>Evidencia</th></tr><tr><td>Explorar</td><td>Leer historia, imagenes y preguntas de Tu Primer Python para IA.</td><td>Mapa breve del problema.</td></tr><tr><td>Calcular</td><td>Usar formulas con unidades y datos del caso: archivo CSV, columnas, filas, valores faltantes y promedio inicial.</td><td>Procedimiento revisable.</td></tr><tr><td>Construir</td><td>Producir Script que carga CSV y reporta resumen basico.</td><td>Archivo, tabla, bitacora o prototipo.</td></tr><tr><td>Defender</td><td>Explicar limite, error posible y siguiente mejora.</td><td>Conclusion oral o escrita.</td></tr></table><div class="box practice-box"><h3>Proporcion</h3><p>La clase debe dedicar una introduccion corta a teoria y el bloque mayor a practica, revision y correccion.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 24</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise"><strong>1.</strong> Define el problema central de Tu Primer Python para IA usando solo datos observables del caso: archivo CSV, columnas, filas, valores faltantes y promedio inicial.</div><div class="exercise"><strong>2.</strong> Identifica tres variables medibles para producir Script que carga CSV y reporta resumen basico y escribe la unidad de cada una.</div><div class="exercise"><strong>3.</strong> Selecciona la formula principal de la unidad, sustituye datos razonables y conserva unidades.</div><div class="exercise"><strong>4.</strong> Construye una tabla de 4 filas con dato, simbolo, unidad y criterio de aceptacion.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 25</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise"><strong>5.</strong> Explica en 5 lineas la analogia de la unidad sin usar palabras tecnicas innecesarias.</div><div class="exercise"><strong>6.</strong> Resuelve un caso con un dato faltante: indica que falta, como se mide y por que importa.</div><div class="exercise"><strong>7.</strong> Compara dos escenarios del caso y decide cual requiere intervencion inmediata.</div><div class="exercise"><strong>8.</strong> Redacta una conclusion que no exceda 60 palabras y que cite al menos dos datos.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 26</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise"><strong>9.</strong> Propone un mini experimento de 15 minutos para verificar una afirmacion de la teoria.</div><div class="exercise"><strong>10.</strong> Detecta un error comun de unidades y corrige el procedimiento paso a paso.</div><div class="exercise"><strong>11.</strong> Convierte los datos del caso en una grafica, diagrama, tabla o prompt verificable.</div><div class="exercise"><strong>12.</strong> Escribe una pregunta de investigacion que pueda responderse con evidencia de aula.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 27</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise"><strong>13.</strong> Calcula o estima el resultado esperado antes de ejecutar la practica.</div><div class="exercise"><strong>14.</strong> Disena una rubrica de 4 criterios para evaluar Script que carga CSV y reporta resumen basico.</div><div class="exercise"><strong>15.</strong> Explica que dato cambiaria si el contexto escolar fuera diferente y justifica la decision.</div><div class="exercise"><strong>16.</strong> Cierra con una recomendacion tecnica para el equipo, separando hecho, inferencia y accion.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 28</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Practica integradora</h2>
+<p>La practica integra historia, teoria, imagenes y calculo para entregar Script que carga CSV y reporta resumen basico.</p><ol><li>Define una pregunta verificable.</li><li>Recolecta o simula datos minimos.</li><li>Aplica el modelo de la unidad.</li><li>Presenta evidencia en formato limpio.</li><li>Escribe una mejora para la siguiente iteracion.</li></ol><table class="rubric"><tr><th>Criterio</th><th>Logrado</th><th>En mejora</th></tr><tr><td>Unidades</td><td>Consistentes en todo el proceso.</td><td>Hay mezcla o faltan simbolos.</td></tr><tr><td>Argumento</td><td>Conclusion sale de datos.</td><td>Conclusion depende de opinion.</td></tr><tr><td>Producto</td><td>Se puede revisar o replicar.</td><td>No queda evidencia suficiente.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 29</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Tu Primer Python para IA, el estudiante debe explicar la historia con lenguaje tecnico sin perder el hilo practico.</p><div class="grid-2"><div class="box theory-box"><h3>Teoria minima</h3><ul><li>variable</li><li>tipo</li><li>if</li><li>for</li></ul></div><div class="box practice-box"><h3>Evidencias</h3><ul><li>Banco de ejercicios corregido.</li><li>Producto integrador.</li><li>Bitacora de errores.</li><li>Referencia consultada.</li></ul></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 30</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 1</h2>
+<p>Este taller extiende la practica de Tu Primer Python para IA con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 31</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 2</h2>
+<p>Este taller extiende la practica de Tu Primer Python para IA con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 32</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 3</h2>
+<p>Este taller extiende la practica de Tu Primer Python para IA con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 33</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 4</h2>
+<p>Este taller extiende la practica de Tu Primer Python para IA con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 34</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U01 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 5</h2>
+<p>Este taller extiende la practica de Tu Primer Python para IA con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 35</span></div>
+</section>
+
+<section class="page cover">
+<div class="cover-text"><p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p><h1>Datos con NumPy y Pandas</h1><p class="subtitle">Limpiar el dataset escolar</p></div><figure class="visual full" data-visual-id="M5-u02-01"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-01.jpg" alt="Ilustracion hero de portadilla para la Unidad 2: a la izquierda codigo Python con loop manual procesando lista (gris, lento). A l..."><figcaption>M5-u02-01. Ilustracion hero de portadilla para la Unidad 2: a la izquierda codigo Python con loop manual procesando lista (gris, lento). A la derecha, una sola linea `df.groupby(&#x27;materia&#x27;)[&#x27;cal&#x27;].mean()` con flecha hacia...</figcaption></figure><div class="meta-strip"><div class="meta"><strong>Historia</strong>Los datos sucios producen conclusiones sucias.</div><div class="meta"><strong>Producto</strong>Dataset escolar limpio con bitacora de transformaciones</div><div class="meta"><strong>Distribucion</strong>40% teoria / 60% practica.</div></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Historia, analogia y preguntas</h2>
+<p>La ciencia de datos vive en tablas. NumPy trabaja con arreglos; Pandas organiza columnas, filtros y limpieza. El predictor solo aprende bien si los datos tienen forma confiable.</p><p><strong>Analogia:</strong> Limpiar datos es como preparar ingredientes: antes de cocinar, separas, lavas y revisas que no falte lo esencial.</p><div class="box question-box"><h3>Preguntas introductorias</h3><ul><li>Que columna tiene nulos?</li><li>Que tipo de dato espera cada campo?</li><li>Cuando se elimina un duplicado?</li><li>Como documentas una limpieza?</li></ul></div><div class="ratio"><div class="theory">40% comprender</div><div class="practice">60% medir, construir y defender evidencia</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 37</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Modelo mental antes de la herramienta</h2>
+<p>NumPy y Pandas permiten leer, filtrar, agrupar y limpiar datos. Cada transformacion debe poder explicarse.</p><div class="box theory-box"><h3>Elementos clave</h3><ul><li>array</li><li>Series</li><li>DataFrame</li><li>nulo</li><li>duplicado</li><li>groupby</li><li>filtro</li></ul></div><div class="box practice-box"><h3>Microactividad</h3><p>Antes de usar software, calculadora o IA, dibuja el sistema de Datos con NumPy y Pandas con entradas, proceso, salida esperada y riesgo de error.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 38</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Formulas, variables y unidades</h2>
+<p>Las formulas no se memorizan aisladas: cada simbolo debe tener significado, unidad y condicion de uso.</p><table><tr><th>Formula o modelo</th><th>Uso</th><th>Elementos y unidades</th></tr><tr><td><div class="formula">missing rate = nulos / total</div></td><td>medir faltantes</td><td>nulos y total son conteos</td></tr><tr><td><div class="formula">media = sum(x) / n</div></td><td>resumir columna numerica</td><td>x: valores; n: conteo</td></tr><tr><td><div class="formula">df[columna]</div></td><td>seleccionar columna</td><td>df: DataFrame; columna: nombre</td></tr></table><div class="box question-box"><h3>Chequeo rapido</h3><p>Si una operacion mezcla unidades incompatibles, el resultado no es evidencia; es ruido con apariencia numerica.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 39</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Caso resuelto guiado</h2>
+<p><strong>Situacion:</strong> Limpiar el dataset escolar</p><p><strong>Datos de partida:</strong> filas, columnas, nulos, duplicados, tipos y reglas de limpieza</p><ol><li>Se separan datos observados, supuestos y unidades.</li><li>Se elige el modelo mas simple que responde la pregunta.</li><li>Se calcula o se organiza la evidencia.</li><li>Se redacta una conclusion tecnica con limite y siguiente prueba.</li></ol><div class="box practice-box"><h3>Producto esperado</h3><p>Dataset escolar limpio con bitacora de transformaciones</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 40</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>M5-u02-02: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u02-02"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-02.jpg" alt="Mapa mental con nodo central &#x27;Datos con NumPy y Pandas&#x27; y 6 ramas: 1) NumPy (np.array, vectorizacion, operaciones). 2) Pandas (Se..."><figcaption>M5-u02-02. Mapa mental con nodo central &#x27;Datos con NumPy y Pandas&#x27; y 6 ramas: 1) NumPy (np.array, vectorizacion, operaciones). 2) Pandas (Series, DataFrame, index). 3) Lectura (read_csv, read_excel, read_json). 4) Limpie...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Mapa mental con nodo central &#x27;Datos con NumPy y Pandas&#x27; y 6 ramas: 1) NumPy (np.array, vectorizacion, operaciones). 2) Pandas (Series, DataFrame, index). 3) Lectura (read_csv, read_excel, read_json). 4) Limpieza (isna, fillna, drop_duplicates, astype). 5) Filtrado (boolean indexing, loc, iloc, query). 6) Agrupacion (groupby, ag...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Datos con NumPy y Pandas: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 41</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>M5-u02-03: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u02-03"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-03.jpg" alt="Ilustracion a tamano pagina comparando lista Python vs np.array. Lado izquierdo: &#x27;multiplicar todo por 2&#x27; con lista - bloque de c..."><figcaption>M5-u02-03. Ilustracion a tamano pagina comparando lista Python vs np.array. Lado izquierdo: &#x27;multiplicar todo por 2&#x27; con lista - bloque de codigo de 8 lineas con loop, anotacion &#x27;lento, manual&#x27;. Lado derecho: lo mismo co...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Ilustracion a tamano pagina comparando lista Python vs np.array. Lado izquierdo: &#x27;multiplicar todo por 2&#x27; con lista - bloque de codigo de 8 lineas con loop, anotacion &#x27;lento, manual&#x27;. Lado derecho: lo mismo con np.array - una sola linea `arr * 2` con anotacion &#x27;vectorizado, 100 mas rapido&#x27;. Bajo cada uno, mini-benchmark visual:...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Datos con NumPy y Pandas: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 42</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>M5-u02-04: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u02-04"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-04.jpg" alt="Ilustracion a tamano pagina comparando Series y DataFrame. Lado izquierdo: Series como columna vertical con indice (Andrea, Carlo..."><figcaption>M5-u02-04. Ilustracion a tamano pagina comparando Series y DataFrame. Lado izquierdo: Series como columna vertical con indice (Andrea, Carlos, Maria) y valores (8.5, 6.0, 9.5). Lado derecho: DataFrame como tabla rectangu...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Ilustracion a tamano pagina comparando Series y DataFrame. Lado izquierdo: Series como columna vertical con indice (Andrea, Carlos, Maria) y valores (8.5, 6.0, 9.5). Lado derecho: DataFrame como tabla rectangular con header (id, nombre, calificacion, horas) y 3 filas. Etiquetas indicando: indice, columnas, celda, fila. Bajo tod...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Datos con NumPy y Pandas: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 43</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>M5-u02-05: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u02-05"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-05.jpg" alt="Cuadro a tamano pagina con los 3 formatos en filas (CSV, Excel, JSON). Columnas: funcion pandas ejemplo parametros clave (encodin..."><figcaption>M5-u02-05. Cuadro a tamano pagina con los 3 formatos en filas (CSV, Excel, JSON). Columnas: funcion pandas ejemplo parametros clave (encoding, sep, sheet, orient) libreria extra requerida cuando usar cuando NO. Bajo el c...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Cuadro a tamano pagina con los 3 formatos en filas (CSV, Excel, JSON). Columnas: funcion pandas ejemplo parametros clave (encoding, sep, sheet, orient) libreria extra requerida cuando usar cuando NO. Bajo el cuadro, snippet visual de los 3 formatos con sus &#x27;caras&#x27; tipicas (CSV: texto con comas, Excel: tabla con celdas, JSON: es...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Datos con NumPy y Pandas: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 44</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>M5-u02-06: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u02-06"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-06.jpg" alt="Ilustracion antes/despues de limpieza a tamano pagina. Lado izquierdo: DataFrame con problemas visibles (NaN en celdas en rojo, d..."><figcaption>M5-u02-06. Ilustracion antes/despues de limpieza a tamano pagina. Lado izquierdo: DataFrame con problemas visibles (NaN en celdas en rojo, duplicados en amarillo, columna mal tipada en gris, valor 100 cuando deberia ser...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Ilustracion antes/despues de limpieza a tamano pagina. Lado izquierdo: DataFrame con problemas visibles (NaN en celdas en rojo, duplicados en amarillo, columna mal tipada en gris, valor 100 cuando deberia ser &lt;10 con asterisco). Pipeline central con flecha y 4 cajas etiquetadas: dropna(), drop_duplicates(), astype(), clip(). La...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Datos con NumPy y Pandas: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 45</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>M5-u02-07: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u02-07"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-07.jpg" alt="Cuadro a tamano pagina con 4 tecnicas (boolean indexing, .loc/.iloc, .query, .isin) en filas. Columnas: sintaxis ejemplo, ventaja..."><figcaption>M5-u02-07. Cuadro a tamano pagina con 4 tecnicas (boolean indexing, .loc/.iloc, .query, .isin) en filas. Columnas: sintaxis ejemplo, ventaja principal, mejor caso, contraindicacion. Bajo el cuadro, ejemplo encadenado com...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Cuadro a tamano pagina con 4 tecnicas (boolean indexing, .loc/.iloc, .query, .isin) en filas. Columnas: sintaxis ejemplo, ventaja principal, mejor caso, contraindicacion. Bajo el cuadro, ejemplo encadenado completo: filtro orden seleccion resultado, con flechas. Bajo todo, recordatorio: &#x27;usa &amp; | ~ no and or not&#x27;. Estilo bluepri...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Datos con NumPy y Pandas: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 46</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>M5-u02-08: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u02-08"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u02/M5-u02-08.jpg" alt="Diagrama &#x27;split-apply-combine&#x27; a tamano pagina. Lado izquierdo: tabla original de 12 filas con columna &#x27;materia&#x27; (Mate, Fis, Qui..."><figcaption>M5-u02-08. Diagrama &#x27;split-apply-combine&#x27; a tamano pagina. Lado izquierdo: tabla original de 12 filas con columna &#x27;materia&#x27; (Mate, Fis, Qui repetidas) y &#x27;calificacion&#x27;. Centro: 3 grupos separados (split) por materia, cad...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Diagrama &#x27;split-apply-combine&#x27; a tamano pagina. Lado izquierdo: tabla original de 12 filas con columna &#x27;materia&#x27; (Mate, Fis, Qui repetidas) y &#x27;calificacion&#x27;. Centro: 3 grupos separados (split) por materia, cada uno con sus filas. Cada grupo con flecha hacia funcion mean (apply). Lado derecho: tabla resultado de 3 filas (combine...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Datos con NumPy y Pandas: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 47</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Especificacion de actividad y practica</h2>
+<table><tr><th>Fase</th><th>Accion del estudiante</th><th>Evidencia</th></tr><tr><td>Explorar</td><td>Leer historia, imagenes y preguntas de Datos con NumPy y Pandas.</td><td>Mapa breve del problema.</td></tr><tr><td>Calcular</td><td>Usar formulas con unidades y datos del caso: filas, columnas, nulos, duplicados, tipos y reglas de limpieza.</td><td>Procedimiento revisable.</td></tr><tr><td>Construir</td><td>Producir Dataset escolar limpio con bitacora de transformaciones.</td><td>Archivo, tabla, bitacora o prototipo.</td></tr><tr><td>Defender</td><td>Explicar limite, error posible y siguiente mejora.</td><td>Conclusion oral o escrita.</td></tr></table><div class="box practice-box"><h3>Proporcion</h3><p>La clase debe dedicar una introduccion corta a teoria y el bloque mayor a practica, revision y correccion.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 48</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise"><strong>1.</strong> Define el problema central de Datos con NumPy y Pandas usando solo datos observables del caso: filas, columnas, nulos, duplicados, tipos y reglas de limpieza.</div><div class="exercise"><strong>2.</strong> Identifica tres variables medibles para producir Dataset escolar limpio con bitacora de transformaciones y escribe la unidad de cada una.</div><div class="exercise"><strong>3.</strong> Selecciona la formula principal de la unidad, sustituye datos razonables y conserva unidades.</div><div class="exercise"><strong>4.</strong> Construye una tabla de 4 filas con dato, simbolo, unidad y criterio de aceptacion.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 49</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise"><strong>5.</strong> Explica en 5 lineas la analogia de la unidad sin usar palabras tecnicas innecesarias.</div><div class="exercise"><strong>6.</strong> Resuelve un caso con un dato faltante: indica que falta, como se mide y por que importa.</div><div class="exercise"><strong>7.</strong> Compara dos escenarios del caso y decide cual requiere intervencion inmediata.</div><div class="exercise"><strong>8.</strong> Redacta una conclusion que no exceda 60 palabras y que cite al menos dos datos.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 50</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise"><strong>9.</strong> Propone un mini experimento de 15 minutos para verificar una afirmacion de la teoria.</div><div class="exercise"><strong>10.</strong> Detecta un error comun de unidades y corrige el procedimiento paso a paso.</div><div class="exercise"><strong>11.</strong> Convierte los datos del caso en una grafica, diagrama, tabla o prompt verificable.</div><div class="exercise"><strong>12.</strong> Escribe una pregunta de investigacion que pueda responderse con evidencia de aula.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 51</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise"><strong>13.</strong> Calcula o estima el resultado esperado antes de ejecutar la practica.</div><div class="exercise"><strong>14.</strong> Disena una rubrica de 4 criterios para evaluar Dataset escolar limpio con bitacora de transformaciones.</div><div class="exercise"><strong>15.</strong> Explica que dato cambiaria si el contexto escolar fuera diferente y justifica la decision.</div><div class="exercise"><strong>16.</strong> Cierra con una recomendacion tecnica para el equipo, separando hecho, inferencia y accion.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 52</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Practica integradora</h2>
+<p>La practica integra historia, teoria, imagenes y calculo para entregar Dataset escolar limpio con bitacora de transformaciones.</p><ol><li>Define una pregunta verificable.</li><li>Recolecta o simula datos minimos.</li><li>Aplica el modelo de la unidad.</li><li>Presenta evidencia en formato limpio.</li><li>Escribe una mejora para la siguiente iteracion.</li></ol><table class="rubric"><tr><th>Criterio</th><th>Logrado</th><th>En mejora</th></tr><tr><td>Unidades</td><td>Consistentes en todo el proceso.</td><td>Hay mezcla o faltan simbolos.</td></tr><tr><td>Argumento</td><td>Conclusion sale de datos.</td><td>Conclusion depende de opinion.</td></tr><tr><td>Producto</td><td>Se puede revisar o replicar.</td><td>No queda evidencia suficiente.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 53</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Datos con NumPy y Pandas, el estudiante debe explicar la historia con lenguaje tecnico sin perder el hilo practico.</p><div class="grid-2"><div class="box theory-box"><h3>Teoria minima</h3><ul><li>array</li><li>Series</li><li>DataFrame</li><li>nulo</li></ul></div><div class="box practice-box"><h3>Evidencias</h3><ul><li>Banco de ejercicios corregido.</li><li>Producto integrador.</li><li>Bitacora de errores.</li><li>Referencia consultada.</li></ul></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 54</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 1</h2>
+<p>Este taller extiende la practica de Datos con NumPy y Pandas con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 55</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 2</h2>
+<p>Este taller extiende la practica de Datos con NumPy y Pandas con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 56</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 3</h2>
+<p>Este taller extiende la practica de Datos con NumPy y Pandas con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 57</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 4</h2>
+<p>Este taller extiende la practica de Datos con NumPy y Pandas con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 58</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 5</h2>
+<p>Este taller extiende la practica de Datos con NumPy y Pandas con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 59</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U02 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 6</h2>
+<p>Este taller extiende la practica de Datos con NumPy y Pandas con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 60</span></div>
+</section>
+
+<section class="page cover">
+<div class="cover-text"><p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p><h1>Visualizacion de Datos</h1><p class="subtitle">Visualizar distribucion de calificaciones por materia</p></div><figure class="visual full" data-visual-id="M5-u03-01"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-01.jpg" alt="Ilustracion hero portadilla U3: a la izquierda una tabla larga con 50 filas de numeros aburridos (gris). Una flecha hacia el cent..."><figcaption>M5-u03-01. Ilustracion hero portadilla U3: a la izquierda una tabla larga con 50 filas de numeros aburridos (gris). Una flecha hacia el centro: dos graficos vibrantes, un histograma colorido de calificaciones y un scatte...</figcaption></figure><div class="meta-strip"><div class="meta"><strong>Historia</strong>Antes de modelar hay que mirar.</div><div class="meta"><strong>Producto</strong>Dashboard de graficas basicas del dataset</div><div class="meta"><strong>Distribucion</strong>40% teoria / 60% practica.</div></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Historia, analogia y preguntas</h2>
+<p>Las graficas permiten detectar patrones, outliers y errores que una tabla oculta. Visualizar no es decorar: es elegir una forma que responda la pregunta.</p><p><strong>Analogia:</strong> Una grafica es como una ventana: muestra algo, pero tambien decide que queda fuera.</p><div class="box question-box"><h3>Preguntas introductorias</h3><ul><li>Que grafica conviene para comparar materias?</li><li>Que muestra un histograma?</li><li>Que oculta un promedio?</li><li>Como evitas una grafica enganosa?</li></ul></div><div class="ratio"><div class="theory">40% comprender</div><div class="practice">60% medir, construir y defender evidencia</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 62</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Modelo mental antes de la herramienta</h2>
+<p>Matplotlib y Seaborn permiten crear lineas, barras, dispersion, histogramas y boxplots. La interpretacion debe decir que muestra y que no muestra.</p><div class="box theory-box"><h3>Elementos clave</h3><ul><li>eje</li><li>histograma</li><li>boxplot</li><li>scatter</li><li>outlier</li><li>paleta</li></ul></div><div class="box practice-box"><h3>Microactividad</h3><p>Antes de usar software, calculadora o IA, dibuja el sistema de Visualizacion de Datos con entradas, proceso, salida esperada y riesgo de error.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 63</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Formulas, variables y unidades</h2>
+<p>Las formulas no se memorizan aisladas: cada simbolo debe tener significado, unidad y condicion de uso.</p><table><tr><th>Formula o modelo</th><th>Uso</th><th>Elementos y unidades</th></tr><tr><td><div class="formula">x = variable independiente</div></td><td>definir eje horizontal</td><td>x en la unidad del dato</td></tr><tr><td><div class="formula">y = variable dependiente</div></td><td>definir eje vertical</td><td>y en la unidad del dato</td></tr><tr><td><div class="formula">bins = grupos de valores</div></td><td>configurar histograma</td><td>bins: conteo de intervalos</td></tr></table><div class="box question-box"><h3>Chequeo rapido</h3><p>Si una operacion mezcla unidades incompatibles, el resultado no es evidencia; es ruido con apariencia numerica.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 64</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Caso resuelto guiado</h2>
+<p><strong>Situacion:</strong> Visualizar distribucion de calificaciones por materia</p><p><strong>Datos de partida:</strong> materia, calificacion, asistencia, horas de estudio y grafica seleccionada</p><ol><li>Se separan datos observados, supuestos y unidades.</li><li>Se elige el modelo mas simple que responde la pregunta.</li><li>Se calcula o se organiza la evidencia.</li><li>Se redacta una conclusion tecnica con limite y siguiente prueba.</li></ol><div class="box practice-box"><h3>Producto esperado</h3><p>Dashboard de graficas basicas del dataset</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 65</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>M5-u03-02: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u03-02"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-02.jpg" alt="Mapa mental con nodo central &#x27;Visualizacion de Datos&#x27; y 6 ramas: 1) Matplotlib esencial (plt.plot, bar, scatter, fig/ax). 2) Hist..."><figcaption>M5-u03-02. Mapa mental con nodo central &#x27;Visualizacion de Datos&#x27; y 6 ramas: 1) Matplotlib esencial (plt.plot, bar, scatter, fig/ax). 2) Histogramas y boxplots (distribucion y dispersion). 3) Seaborn (sns.histplot, scatte...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Mapa mental con nodo central &#x27;Visualizacion de Datos&#x27; y 6 ramas: 1) Matplotlib esencial (plt.plot, bar, scatter, fig/ax). 2) Histogramas y boxplots (distribucion y dispersion). 3) Seaborn (sns.histplot, scatterplot, boxplot, heatmap). 4) Personalizacion (titulos, ejes, leyenda, paleta). 5) Interpretacion (que dice cada grafico)...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Visualizacion de Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 66</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>M5-u03-03: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u03-03"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-03.jpg" alt="Galeria visual a tamano pagina con los 3 graficos basicos. Lado izquierdo: grafico de linea con eje x (semanas) y eje y (promedio..."><figcaption>M5-u03-03. Galeria visual a tamano pagina con los 3 graficos basicos. Lado izquierdo: grafico de linea con eje x (semanas) y eje y (promedio), 6 puntos conectados con tendencia ascendente. Centro: grafico de barras de 3...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Galeria visual a tamano pagina con los 3 graficos basicos. Lado izquierdo: grafico de linea con eje x (semanas) y eje y (promedio), 6 puntos conectados con tendencia ascendente. Centro: grafico de barras de 3 materias con colores distintos. Lado derecho: scatter plot con ~50 puntos mostrando correlacion positiva entre horas y c...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Visualizacion de Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 67</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>M5-u03-04: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u03-04"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-04.jpg" alt="Ilustracion a tamano pagina comparativa. Lado izquierdo: histograma con campana clara, anotaciones de bins, frecuencia, media (li..."><figcaption>M5-u03-04. Ilustracion a tamano pagina comparativa. Lado izquierdo: histograma con campana clara, anotaciones de bins, frecuencia, media (linea roja punteada), forma de distribucion. Lado derecho: boxplot vertical con et...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Ilustracion a tamano pagina comparativa. Lado izquierdo: histograma con campana clara, anotaciones de bins, frecuencia, media (linea roja punteada), forma de distribucion. Lado derecho: boxplot vertical con etiquetas: minimo, Q1, mediana, Q3, maximo, outliers. Bajo ambos, los mismos datos representados en una tablita y un texto...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Visualizacion de Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 68</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>M5-u03-05: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u03-05"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-05.jpg" alt="Galeria visual a tamano pagina con 6 graficos seaborn. 2 filas x 3 columnas. Cada uno con su nombre arriba (histplot, scatterplot..."><figcaption>M5-u03-05. Galeria visual a tamano pagina con 6 graficos seaborn. 2 filas x 3 columnas. Cada uno con su nombre arriba (histplot, scatterplot, boxplot, violinplot, heatmap, pairplot) y el codigo de 1 linea abajo. Todos us...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Galeria visual a tamano pagina con 6 graficos seaborn. 2 filas x 3 columnas. Cada uno con su nombre arriba (histplot, scatterplot, boxplot, violinplot, heatmap, pairplot) y el codigo de 1 linea abajo. Todos usando el mismo dataset escolar. Visual profesional como salida real de seaborn. Estilo blueprint Albatros.</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Visualizacion de Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 69</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>M5-u03-06: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u03-06"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-06.jpg" alt="Ilustracion antes/despues a tamano pagina. Lado izquierdo: bar chart por defecto sin titulo, eje x sin etiqueta, sin paleta, sin..."><figcaption>M5-u03-06. Ilustracion antes/despues a tamano pagina. Lado izquierdo: bar chart por defecto sin titulo, eje x sin etiqueta, sin paleta, sin valores en barras (gris). Lado derecho: mismo data pero con titulo &#x27;Promedio por...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Ilustracion antes/despues a tamano pagina. Lado izquierdo: bar chart por defecto sin titulo, eje x sin etiqueta, sin paleta, sin valores en barras (gris). Lado derecho: mismo data pero con titulo &#x27;Promedio por materia 2026&#x27;, eje y &#x27;Calificacion (0-10)&#x27;, valores anotados sobre cada barra, paleta Albatros, linea de aprobacion roj...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Visualizacion de Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 70</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>M5-u03-07: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u03-07"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-07.jpg" alt="Cuadro a tamano pagina de patrones visuales canonicos. Filas: tendencia ascendente, descendente, plana, ciclo, outliers, bimodal,..."><figcaption>M5-u03-07. Cuadro a tamano pagina de patrones visuales canonicos. Filas: tendencia ascendente, descendente, plana, ciclo, outliers, bimodal, cluster, correlacion. Columnas: dibujo mini del patron, que sugiere, ejemplo ca...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Cuadro a tamano pagina de patrones visuales canonicos. Filas: tendencia ascendente, descendente, plana, ciclo, outliers, bimodal, cluster, correlacion. Columnas: dibujo mini del patron, que sugiere, ejemplo case escolar, pregunta que abre. Bajo el cuadro, las 4 preguntas siempre-hazlo enmarcadas como checklist. Estilo blueprint...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Visualizacion de Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 71</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>M5-u03-08: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u03-08"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u03/M5-u03-08.jpg" alt="Estructura narrativa a tamano pagina: 3 actos como bloques apilados (Contexto, Conflicto, Resolucion) con graficos asociados a ca..."><figcaption>M5-u03-08. Estructura narrativa a tamano pagina: 3 actos como bloques apilados (Contexto, Conflicto, Resolucion) con graficos asociados a cada uno. Acto 1 con stats generales. Acto 2 con grafico que muestra el problema (...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Estructura narrativa a tamano pagina: 3 actos como bloques apilados (Contexto, Conflicto, Resolucion) con graficos asociados a cada uno. Acto 1 con stats generales. Acto 2 con grafico que muestra el problema (cola larga). Acto 3 con scatter prediciendo + recomendacion en caja destacada. Mensaje: &#x27;el orden cuenta tanto como el c...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Visualizacion de Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 72</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Especificacion de actividad y practica</h2>
+<table><tr><th>Fase</th><th>Accion del estudiante</th><th>Evidencia</th></tr><tr><td>Explorar</td><td>Leer historia, imagenes y preguntas de Visualizacion de Datos.</td><td>Mapa breve del problema.</td></tr><tr><td>Calcular</td><td>Usar formulas con unidades y datos del caso: materia, calificacion, asistencia, horas de estudio y grafica seleccionada.</td><td>Procedimiento revisable.</td></tr><tr><td>Construir</td><td>Producir Dashboard de graficas basicas del dataset.</td><td>Archivo, tabla, bitacora o prototipo.</td></tr><tr><td>Defender</td><td>Explicar limite, error posible y siguiente mejora.</td><td>Conclusion oral o escrita.</td></tr></table><div class="box practice-box"><h3>Proporcion</h3><p>La clase debe dedicar una introduccion corta a teoria y el bloque mayor a practica, revision y correccion.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 73</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise"><strong>1.</strong> Define el problema central de Visualizacion de Datos usando solo datos observables del caso: materia, calificacion, asistencia, horas de estudio y grafica seleccionada.</div><div class="exercise"><strong>2.</strong> Identifica tres variables medibles para producir Dashboard de graficas basicas del dataset y escribe la unidad de cada una.</div><div class="exercise"><strong>3.</strong> Selecciona la formula principal de la unidad, sustituye datos razonables y conserva unidades.</div><div class="exercise"><strong>4.</strong> Construye una tabla de 4 filas con dato, simbolo, unidad y criterio de aceptacion.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 74</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise"><strong>5.</strong> Explica en 5 lineas la analogia de la unidad sin usar palabras tecnicas innecesarias.</div><div class="exercise"><strong>6.</strong> Resuelve un caso con un dato faltante: indica que falta, como se mide y por que importa.</div><div class="exercise"><strong>7.</strong> Compara dos escenarios del caso y decide cual requiere intervencion inmediata.</div><div class="exercise"><strong>8.</strong> Redacta una conclusion que no exceda 60 palabras y que cite al menos dos datos.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 75</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise"><strong>9.</strong> Propone un mini experimento de 15 minutos para verificar una afirmacion de la teoria.</div><div class="exercise"><strong>10.</strong> Detecta un error comun de unidades y corrige el procedimiento paso a paso.</div><div class="exercise"><strong>11.</strong> Convierte los datos del caso en una grafica, diagrama, tabla o prompt verificable.</div><div class="exercise"><strong>12.</strong> Escribe una pregunta de investigacion que pueda responderse con evidencia de aula.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 76</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise"><strong>13.</strong> Calcula o estima el resultado esperado antes de ejecutar la practica.</div><div class="exercise"><strong>14.</strong> Disena una rubrica de 4 criterios para evaluar Dashboard de graficas basicas del dataset.</div><div class="exercise"><strong>15.</strong> Explica que dato cambiaria si el contexto escolar fuera diferente y justifica la decision.</div><div class="exercise"><strong>16.</strong> Cierra con una recomendacion tecnica para el equipo, separando hecho, inferencia y accion.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 77</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Practica integradora</h2>
+<p>La practica integra historia, teoria, imagenes y calculo para entregar Dashboard de graficas basicas del dataset.</p><ol><li>Define una pregunta verificable.</li><li>Recolecta o simula datos minimos.</li><li>Aplica el modelo de la unidad.</li><li>Presenta evidencia en formato limpio.</li><li>Escribe una mejora para la siguiente iteracion.</li></ol><table class="rubric"><tr><th>Criterio</th><th>Logrado</th><th>En mejora</th></tr><tr><td>Unidades</td><td>Consistentes en todo el proceso.</td><td>Hay mezcla o faltan simbolos.</td></tr><tr><td>Argumento</td><td>Conclusion sale de datos.</td><td>Conclusion depende de opinion.</td></tr><tr><td>Producto</td><td>Se puede revisar o replicar.</td><td>No queda evidencia suficiente.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 78</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Visualizacion de Datos, el estudiante debe explicar la historia con lenguaje tecnico sin perder el hilo practico.</p><div class="grid-2"><div class="box theory-box"><h3>Teoria minima</h3><ul><li>eje</li><li>histograma</li><li>boxplot</li><li>scatter</li></ul></div><div class="box practice-box"><h3>Evidencias</h3><ul><li>Banco de ejercicios corregido.</li><li>Producto integrador.</li><li>Bitacora de errores.</li><li>Referencia consultada.</li></ul></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 79</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 1</h2>
+<p>Este taller extiende la practica de Visualizacion de Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 80</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 2</h2>
+<p>Este taller extiende la practica de Visualizacion de Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 81</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 3</h2>
+<p>Este taller extiende la practica de Visualizacion de Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 82</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 4</h2>
+<p>Este taller extiende la practica de Visualizacion de Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 83</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 5</h2>
+<p>Este taller extiende la practica de Visualizacion de Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 84</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U03 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 6</h2>
+<p>Este taller extiende la practica de Visualizacion de Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 85</span></div>
+</section>
+
+<section class="page cover">
+<div class="cover-text"><p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p><h1>Estadistica para Entender Datos</h1><p class="subtitle">Correlacionan horas de estudio y calificacion final?</p></div><figure class="visual full" data-visual-id="M5-u04-01"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-01.jpg" alt="Ilustracion hero U4: a la izquierda una mente con signo de interrogacion. Al centro, graficas que la mente esta procesando: distr..."><figcaption>M5-u04-01. Ilustracion hero U4: a la izquierda una mente con signo de interrogacion. Al centro, graficas que la mente esta procesando: distribucion normal, scatter con tendencia, percentiles marcados. A la derecha, la mi...</figcaption></figure><div class="meta-strip"><div class="meta"><strong>Historia</strong>El modelo necesita criterio estadistico.</div><div class="meta"><strong>Producto</strong>Analisis estadistico de relacion entre estudio y calificacion</div><div class="meta"><strong>Distribucion</strong>40% teoria / 60% practica.</div></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Historia, analogia y preguntas</h2>
+<p>La estadistica descriptiva ayuda a distinguir patron, variacion y casualidad. Antes de entrenar modelos, el equipo debe entender distribucion, dispersion y correlacion.</p><p><strong>Analogia:</strong> La estadistica es como una lupa con escala: acerca los datos, pero tambien muestra cuanto varian.</p><div class="box question-box"><h3>Preguntas introductorias</h3><ul><li>Que diferencia hay entre media y mediana?</li><li>Que mide la desviacion estandar?</li><li>Cuando correlacion no implica causalidad?</li><li>Como detectas outliers?</li></ul></div><div class="ratio"><div class="theory">40% comprender</div><div class="practice">60% medir, construir y defender evidencia</div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 87</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Modelo mental antes de la herramienta</h2>
+<p>Media, mediana, varianza, desviacion estandar, percentiles y correlacion permiten resumir datos sin perder cautela.</p><div class="box theory-box"><h3>Elementos clave</h3><ul><li>media</li><li>mediana</li><li>varianza</li><li>desviacion</li><li>percentil</li><li>correlacion</li><li>outlier</li></ul></div><div class="box practice-box"><h3>Microactividad</h3><p>Antes de usar software, calculadora o IA, dibuja el sistema de Estadistica para Entender Datos con entradas, proceso, salida esperada y riesgo de error.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 88</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Formulas, variables y unidades</h2>
+<p>Las formulas no se memorizan aisladas: cada simbolo debe tener significado, unidad y condicion de uso.</p><table><tr><th>Formula o modelo</th><th>Uso</th><th>Elementos y unidades</th></tr><tr><td><div class="formula">media = sum(x) / n</div></td><td>promedio</td><td>x: valores; n: conteo</td></tr><tr><td><div class="formula">varianza = sum((x - media)^2) / n</div></td><td>dispersion</td><td>misma unidad al cuadrado</td></tr><tr><td><div class="formula">r = cov(x,y) / (sigma_x sigma_y)</div></td><td>correlacion de Pearson</td><td>r sin unidad, entre -1 y 1</td></tr></table><div class="box question-box"><h3>Chequeo rapido</h3><p>Si una operacion mezcla unidades incompatibles, el resultado no es evidencia; es ruido con apariencia numerica.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 89</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Caso resuelto guiado</h2>
+<p><strong>Situacion:</strong> Correlacionan horas de estudio y calificacion final?</p><p><strong>Datos de partida:</strong> horas de estudio, calificacion, percentiles, outliers y r de Pearson</p><ol><li>Se separan datos observados, supuestos y unidades.</li><li>Se elige el modelo mas simple que responde la pregunta.</li><li>Se calcula o se organiza la evidencia.</li><li>Se redacta una conclusion tecnica con limite y siguiente prueba.</li></ol><div class="box practice-box"><h3>Producto esperado</h3><p>Analisis estadistico de relacion entre estudio y calificacion</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 90</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>M5-u04-02: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u04-02"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-02.jpg" alt="Mapa mental con nodo central &#x27;Estadistica para entender datos&#x27; y 6 ramas: 1) Tendencia central (media, mediana) y dispersion (var..."><figcaption>M5-u04-02. Mapa mental con nodo central &#x27;Estadistica para entender datos&#x27; y 6 ramas: 1) Tendencia central (media, mediana) y dispersion (varianza, std). 2) Distribucion normal y campana. 3) Percentiles y cuartiles. 4) Co...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Mapa mental con nodo central &#x27;Estadistica para entender datos&#x27; y 6 ramas: 1) Tendencia central (media, mediana) y dispersion (varianza, std). 2) Distribucion normal y campana. 3) Percentiles y cuartiles. 4) Correlacion Pearson. 5) Correlacion vs causalidad. 6) Outliers (IQR, z-score). Estilo blueprint.</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Estadistica para Entender Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 91</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>M5-u04-03: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u04-03"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-03.jpg" alt="Ilustracion a tamano pagina con 4 histogramas pequenos, todos con media = 7. Histograma 1: todos cerca de 7 (std=0.3, campana ang..."><figcaption>M5-u04-03. Ilustracion a tamano pagina con 4 histogramas pequenos, todos con media = 7. Histograma 1: todos cerca de 7 (std=0.3, campana angosta). Histograma 2: entre 5 y 9 (std=1.5, campana amplia). Histograma 3: bimoda...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Ilustracion a tamano pagina con 4 histogramas pequenos, todos con media = 7. Histograma 1: todos cerca de 7 (std=0.3, campana angosta). Histograma 2: entre 5 y 9 (std=1.5, campana amplia). Histograma 3: bimodal 4 y 10 (std=3, dos picos). Histograma 4: con outlier extremo (std=15). Bajo cada uno, etiqueta con la &#x27;historia&#x27; que c...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Estadistica para Entender Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 92</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>M5-u04-04: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u04-04"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-04.jpg" alt="Ilustracion a tamano pagina de la curva de campana clasica con etiquetas: media centro, 1 con 68% sombreado, 2 con 95%, 3 con 99...."><figcaption>M5-u04-04. Ilustracion a tamano pagina de la curva de campana clasica con etiquetas: media centro, 1 con 68% sombreado, 2 con 95%, 3 con 99.7%. A la derecha, calificaciones de muestra superpuestas con histograma. Bajo to...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Ilustracion a tamano pagina de la curva de campana clasica con etiquetas: media centro, 1 con 68% sombreado, 2 con 95%, 3 con 99.7%. A la derecha, calificaciones de muestra superpuestas con histograma. Bajo todo, ejemplos practicos: &#x27;cal&gt;9 (&gt;1) son top 16%&#x27;, &#x27;cal&lt;5 (&lt;-1) son bottom 16%&#x27;. Estilo blueprint educativo Albatros.</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Estadistica para Entender Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 93</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>M5-u04-05: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u04-05"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-05.jpg" alt="Ilustracion a tamano pagina: linea horizontal con 100 puntos representando alumnos ordenados por calificacion. Lineas verticales..."><figcaption>M5-u04-05. Ilustracion a tamano pagina: linea horizontal con 100 puntos representando alumnos ordenados por calificacion. Lineas verticales marcando Q1 (cal=6), Q2 (7.5), Q3 (8.5), P90 (9.2), P99 (9.9). A la derecha, box...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Ilustracion a tamano pagina: linea horizontal con 100 puntos representando alumnos ordenados por calificacion. Lineas verticales marcando Q1 (cal=6), Q2 (7.5), Q3 (8.5), P90 (9.2), P99 (9.9). A la derecha, boxplot vertical mostrando los mismos cuartiles. Bajo todo, ejemplo practico: &#x27;tu hijo saco 8.5 = esta en P75 = top 25%&#x27;. E...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Estadistica para Entender Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 94</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>M5-u04-06: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u04-06"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-06.jpg" alt="Galeria visual a tamano pagina de 6 scatter plots: 1) r=+1 puntos en diagonal perfecta. 2) r=+0.7 nube clara ascendente. 3) r=+0...."><figcaption>M5-u04-06. Galeria visual a tamano pagina de 6 scatter plots: 1) r=+1 puntos en diagonal perfecta. 2) r=+0.7 nube clara ascendente. 3) r=+0.3 nube ligeramente ascendente. 4) r=0 nube circular. 5) r=-0.3 nube ligeramente...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Galeria visual a tamano pagina de 6 scatter plots: 1) r=+1 puntos en diagonal perfecta. 2) r=+0.7 nube clara ascendente. 3) r=+0.3 nube ligeramente ascendente. 4) r=0 nube circular. 5) r=-0.3 nube ligeramente descendente. 6) r=-1 perfecto descendente. Cada uno etiquetado con fortaleza. Bajo todo, regla de interpretacion 0-1. Es...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Estadistica para Entender Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 95</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>M5-u04-07: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u04-07"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-07.jpg" alt="Diagrama a tamano pagina con 4 paneles. Panel 1: A B (causal directa, flecha simple). Panel 2: B A (causal inversa, flecha invert..."><figcaption>M5-u04-07. Diagrama a tamano pagina con 4 paneles. Panel 1: A B (causal directa, flecha simple). Panel 2: B A (causal inversa, flecha invertida). Panel 3: C A y C B (confounder en cima con dos flechas hacia A y B). Panel...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Diagrama a tamano pagina con 4 paneles. Panel 1: A B (causal directa, flecha simple). Panel 2: B A (causal inversa, flecha invertida). Panel 3: C A y C B (confounder en cima con dos flechas hacia A y B). Panel 4: A y B sin conexion, etiquetado &#x27;coincidencia&#x27;. Cada panel con ejemplo del case escolar (horas-cal con sus 4 explicac...</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Estadistica para Entender Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 96</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>M5-u04-08: lectura guiada</h2>
+<figure class="visual half" data-visual-id="M5-u04-08"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/u04/M5-u04-08.jpg" alt="Cuadro a tamano pagina con 3 metodos (IQR, Z-score, Percentil) en filas. Columnas: formula intuitiva, codigo pandas, cuando usar,..."><figcaption>M5-u04-08. Cuadro a tamano pagina con 3 metodos (IQR, Z-score, Percentil) en filas. Columnas: formula intuitiva, codigo pandas, cuando usar, asuncion, ejemplo en case escolar. Bajo el cuadro, decision tree: &#x27;error obvio?...</figcaption></figure><div class="grid-2"><div class="box theory-box"><h3>Lectura del concepto</h3><p>Cuadro a tamano pagina con 3 metodos (IQR, Z-score, Percentil) en filas. Columnas: formula intuitiva, codigo pandas, cuando usar, asuncion, ejemplo en case escolar. Bajo el cuadro, decision tree: &#x27;error obvio? corregir / plausible raro? mantener y documentar / interes especial? analizar separado&#x27;. Estilo blueprint Albatros.</p></div><div class="box practice-box"><h3>Uso en actividad</h3><p>El estudiante debe conectar esta imagen con Estadistica para Entender Datos: nombrar los elementos visibles, justificar la relacion con el caso y registrar una evidencia.</p></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 97</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Especificacion de actividad y practica</h2>
+<table><tr><th>Fase</th><th>Accion del estudiante</th><th>Evidencia</th></tr><tr><td>Explorar</td><td>Leer historia, imagenes y preguntas de Estadistica para Entender Datos.</td><td>Mapa breve del problema.</td></tr><tr><td>Calcular</td><td>Usar formulas con unidades y datos del caso: horas de estudio, calificacion, percentiles, outliers y r de Pearson.</td><td>Procedimiento revisable.</td></tr><tr><td>Construir</td><td>Producir Analisis estadistico de relacion entre estudio y calificacion.</td><td>Archivo, tabla, bitacora o prototipo.</td></tr><tr><td>Defender</td><td>Explicar limite, error posible y siguiente mejora.</td><td>Conclusion oral o escrita.</td></tr></table><div class="box practice-box"><h3>Proporcion</h3><p>La clase debe dedicar una introduccion corta a teoria y el bloque mayor a practica, revision y correccion.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 98</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 1</h2>
+<div class="exercise"><strong>1.</strong> Define el problema central de Estadistica para Entender Datos usando solo datos observables del caso: horas de estudio, calificacion, percentiles, outliers y r de Pearson.</div><div class="exercise"><strong>2.</strong> Identifica tres variables medibles para producir Analisis estadistico de relacion entre estudio y calificacion y escribe la unidad de cada una.</div><div class="exercise"><strong>3.</strong> Selecciona la formula principal de la unidad, sustituye datos razonables y conserva unidades.</div><div class="exercise"><strong>4.</strong> Construye una tabla de 4 filas con dato, simbolo, unidad y criterio de aceptacion.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 99</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 2</h2>
+<div class="exercise"><strong>5.</strong> Explica en 5 lineas la analogia de la unidad sin usar palabras tecnicas innecesarias.</div><div class="exercise"><strong>6.</strong> Resuelve un caso con un dato faltante: indica que falta, como se mide y por que importa.</div><div class="exercise"><strong>7.</strong> Compara dos escenarios del caso y decide cual requiere intervencion inmediata.</div><div class="exercise"><strong>8.</strong> Redacta una conclusion que no exceda 60 palabras y que cite al menos dos datos.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 100</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 3</h2>
+<div class="exercise"><strong>9.</strong> Propone un mini experimento de 15 minutos para verificar una afirmacion de la teoria.</div><div class="exercise"><strong>10.</strong> Detecta un error comun de unidades y corrige el procedimiento paso a paso.</div><div class="exercise"><strong>11.</strong> Convierte los datos del caso en una grafica, diagrama, tabla o prompt verificable.</div><div class="exercise"><strong>12.</strong> Escribe una pregunta de investigacion que pueda responderse con evidencia de aula.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 101</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Banco de ejercicios 4</h2>
+<div class="exercise"><strong>13.</strong> Calcula o estima el resultado esperado antes de ejecutar la practica.</div><div class="exercise"><strong>14.</strong> Disena una rubrica de 4 criterios para evaluar Analisis estadistico de relacion entre estudio y calificacion.</div><div class="exercise"><strong>15.</strong> Explica que dato cambiaria si el contexto escolar fuera diferente y justifica la decision.</div><div class="exercise"><strong>16.</strong> Cierra con una recomendacion tecnica para el equipo, separando hecho, inferencia y accion.</div><div class="box practice-box"><h3>Regla de banco</h3><p>Trabaja en parejas, deja procedimiento visible y no entregues solo el resultado. Cada pagina concentra cuatro ejercicios para hoja carta.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 102</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Practica integradora</h2>
+<p>La practica integra historia, teoria, imagenes y calculo para entregar Analisis estadistico de relacion entre estudio y calificacion.</p><ol><li>Define una pregunta verificable.</li><li>Recolecta o simula datos minimos.</li><li>Aplica el modelo de la unidad.</li><li>Presenta evidencia en formato limpio.</li><li>Escribe una mejora para la siguiente iteracion.</li></ol><table class="rubric"><tr><th>Criterio</th><th>Logrado</th><th>En mejora</th></tr><tr><td>Unidades</td><td>Consistentes en todo el proceso.</td><td>Hay mezcla o faltan simbolos.</td></tr><tr><td>Argumento</td><td>Conclusion sale de datos.</td><td>Conclusion depende de opinion.</td></tr><tr><td>Producto</td><td>Se puede revisar o replicar.</td><td>No queda evidencia suficiente.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 103</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Estadistica para Entender Datos, el estudiante debe explicar la historia con lenguaje tecnico sin perder el hilo practico.</p><div class="grid-2"><div class="box theory-box"><h3>Teoria minima</h3><ul><li>media</li><li>mediana</li><li>varianza</li><li>desviacion</li></ul></div><div class="box practice-box"><h3>Evidencias</h3><ul><li>Banco de ejercicios corregido.</li><li>Producto integrador.</li><li>Bitacora de errores.</li><li>Referencia consultada.</li></ul></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 104</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 1</h2>
+<p>Este taller extiende la practica de Estadistica para Entender Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 105</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 2</h2>
+<p>Este taller extiende la practica de Estadistica para Entender Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 106</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 3</h2>
+<p>Este taller extiende la practica de Estadistica para Entender Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 107</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 4</h2>
+<p>Este taller extiende la practica de Estadistica para Entender Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 108</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 5</h2>
+<p>Este taller extiende la practica de Estadistica para Entender Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 109</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / U04 / 40% teoria - 60% practica</p>
+<h2>Taller adicional 6</h2>
+<p>Este taller extiende la practica de Estadistica para Entender Datos con una variacion del caso.</p><div class="exercise"><strong>A.</strong> Cambia un dato del escenario y predice el efecto antes de calcular.</div><div class="exercise"><strong>B.</strong> Repite el procedimiento con el nuevo dato y conserva unidades.</div><div class="exercise"><strong>C.</strong> Compara ambos resultados en una tabla de dos columnas.</div><div class="exercise"><strong>D.</strong> Redacta una decision tecnica basada en la comparacion.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 110</span></div>
+</section>
+
+<section class="page cover trimester">
+<div class="cover-text"><p class="kicker">Manual 5 / Anexos semestre 1</p><h1>Trimestre 1</h1><p class="subtitle">Portada interna para separar avance, evaluacion y material complementario.</p></div><figure class="visual full" data-visual-id="M5-sem1-01"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-01.jpg" alt="Ilustracion hero de portada para el Semestre 1 del Manual 5: Inteligencia Artificial con Programacion. Composicion editorial vert..."><figcaption>M5-sem1-01. Ilustracion hero de portada para el Semestre 1 del Manual 5: Inteligencia Artificial con Programacion. Composicion editorial vertical con el logo Albatros en la esquina superior derecha, titulo grande del manu...</figcaption></figure><div class="meta-strip"><div class="meta"><strong>Manual</strong>Inteligencia Artificial con Programacion</div><div class="meta"><strong>Uso</strong>Separador imprimible.</div><div class="meta"><strong>Revision</strong>Integrar evidencias del trimestre.</div></div>
+</section>
+
+<section class="page cover trimester">
+<div class="cover-text"><p class="kicker">Manual 5 / Anexos semestre 1</p><h1>Trimestre 2</h1><p class="subtitle">Portada interna para separar avance, evaluacion y material complementario.</p></div><figure class="visual full" data-visual-id="M5-sem1-04"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-04.jpg" alt="Cuadro comparativo de 3 columnas: &#x27;Enfoque tradicional&#x27; vs &#x27;Enfoque Albatros&#x27; vs &#x27;Beneficio esperado&#x27;. Filas: rol del docente, pa..."><figcaption>M5-sem1-04. Cuadro comparativo de 3 columnas: &#x27;Enfoque tradicional&#x27; vs &#x27;Enfoque Albatros&#x27; vs &#x27;Beneficio esperado&#x27;. Filas: rol del docente, papel del estudiante, fuente de evidencia, evaluacion, ritmo de avance, integracio...</figcaption></figure><div class="meta-strip"><div class="meta"><strong>Manual</strong>Inteligencia Artificial con Programacion</div><div class="meta"><strong>Uso</strong>Separador imprimible.</div><div class="meta"><strong>Revision</strong>Integrar evidencias del trimestre.</div></div>
+</section>
+
+<section class="page cover trimester">
+<div class="cover-text"><p class="kicker">Manual 5 / Anexos semestre 1</p><h1>Trimestre 3</h1><p class="subtitle">Portada interna para separar avance, evaluacion y material complementario.</p></div><figure class="visual full" data-visual-id="M5-sem1-07"><img src="../../../../05_assets_visuales_iconos/visuales/manual-5/sem1/M5-sem1-07.jpg" alt="Tabla extendida del indice de competencias del semestre con columnas: ID, descripcion corta, verbo Bloom, % del manual dedicado,..."><figcaption>M5-sem1-07. Tabla extendida del indice de competencias del semestre con columnas: ID, descripcion corta, verbo Bloom, % del manual dedicado, pagina del primer reactivo, pagina de la evidencia integradora. Encabezado azul...</figcaption></figure><div class="meta-strip"><div class="meta"><strong>Manual</strong>Inteligencia Artificial con Programacion</div><div class="meta"><strong>Uso</strong>Separador imprimible.</div><div class="meta"><strong>Revision</strong>Integrar evidencias del trimestre.</div></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Material extra de trabajo</h2>
+<table><tr><th>Material</th><th>Uso</th><th>Evidencia</th></tr><tr><td>Bitacora</td><td>Registrar datos, errores y correcciones.</td><td>Una entrada por practica.</td></tr><tr><td>Calculadora o hoja de calculo</td><td>Verificar operaciones y tablas.</td><td>Archivo con formulas visibles.</td></tr><tr><td>Simulador o herramienta digital</td><td>Explorar escenarios antes de laboratorio.</td><td>Captura o reporte breve.</td></tr><tr><td>Referencias</td><td>Contrastar definiciones y procedimientos.</td><td>URL o cita corta.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 114</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lecturas complementarias</h2>
+<p>Las lecturas se usan para ampliar Predictor de rendimiento escolar, no para reemplazar la practica.</p><ul><li>Python como lenguaje de automatizacion y datos.</li><li>Estructura de tablas y datos limpios.</li><li>Graficas para leer patrones antes de modelar.</li><li>Estadistica descriptiva para decidir con cautela.</li></ul><div class="box question-box"><h3>Regla de lectura</h3><p>Despues de leer, el estudiante escribe una idea util, una duda y una accion aplicable.</p></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 115</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Links y referencias</h2>
+<div class="link-grid"><div class="link-card"><strong>Python Docs</strong><br><a href="https://docs.python.org/3/">https://docs.python.org/3/</a></div><div class="link-card"><strong>NumPy Docs</strong><br><a href="https://numpy.org/doc/">https://numpy.org/doc/</a></div><div class="link-card"><strong>Pandas Docs</strong><br><a href="https://pandas.pydata.org/docs/">https://pandas.pydata.org/docs/</a></div><div class="link-card"><strong>Matplotlib Docs</strong><br><a href="https://matplotlib.org/stable/contents.html">https://matplotlib.org/stable/contents.html</a></div><div class="link-card"><strong>scikit-learn User Guide</strong><br><a href="https://scikit-learn.org/stable/user_guide.html">https://scikit-learn.org/stable/user_guide.html</a></div></div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 116</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Formato de reporte</h2>
+<table><tr><th>Seccion</th><th>Contenido</th><th>Extension</th></tr><tr><td>Pregunta</td><td>Problema verificable.</td><td>2 lineas</td></tr><tr><td>Datos</td><td>Tabla con unidades.</td><td>1 tabla</td></tr><tr><td>Procedimiento</td><td>Pasos numerados.</td><td>6 a 10 pasos</td></tr><tr><td>Resultado</td><td>Calculo, grafica, prompt, codigo o producto.</td><td>1 evidencia</td></tr><tr><td>Conclusion</td><td>Hecho, inferencia y accion.</td><td>80 palabras</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 117</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Rubrica general</h2>
+<table class="rubric"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Por corregir</th></tr><tr><td>Datos</td><td>Completos y con unidades.</td><td>Falta un detalle menor.</td><td>No son verificables.</td></tr><tr><td>Procedimiento</td><td>Replicable.</td><td>Entendible pero incompleto.</td><td>No permite revisar.</td></tr><tr><td>Producto</td><td>Resuelve el caso.</td><td>Responde parcialmente.</td><td>No responde la pregunta.</td></tr><tr><td>Comunicacion</td><td>Clara y tecnica.</td><td>Clara con imprecisiones.</td><td>Confusa o sin evidencia.</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 118</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Glosario del semestre</h2>
+<table><tr><th>Termino</th><th>Uso en el manual</th></tr><tr><td>variable</td><td>nombre que guarda un valor</td></tr><tr><td>DataFrame</td><td>tabla de datos con filas y columnas</td></tr><tr><td>grafica</td><td>representacion visual de datos</td></tr><tr><td>media</td><td>promedio aritmetico</td></tr><tr><td>correlacion</td><td>medida de relacion entre variables</td></tr></table>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 119</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Evaluacion integradora</h2>
+<p>La evaluacion final retoma la historia: Predictor de rendimiento escolar.</p><div class="exercise"><strong>1.</strong> Selecciona una unidad y resume el problema en datos.</div><div class="exercise"><strong>2.</strong> Usa una formula, modelo o herramienta con unidades o criterios claros.</div><div class="exercise"><strong>3.</strong> Propone una mejora basada en evidencia.</div><div class="exercise"><strong>4.</strong> Presenta el resultado en 3 minutos con una imagen del manual.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 120</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Indice analitico basico</h2>
+<p>Usa este indice para localizar evidencias, formulas y productos antes de imprimir o convertir a PDF.</p><ul><li>U01 - Tu Primer Python para IA - Script que carga CSV y reporta resumen basico</li><li>U02 - Datos con NumPy y Pandas - Dataset escolar limpio con bitacora de transformaciones</li><li>U03 - Visualizacion de Datos - Dashboard de graficas basicas del dataset</li><li>U04 - Estadistica para Entender Datos - Analisis estadistico de relacion entre estudio y calificacion</li></ul>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 121</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 3</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 122</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 4</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 123</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 5</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 124</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 6</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 125</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 7</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 126</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 8</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 127</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 9</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 128</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 10</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 129</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 11</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 130</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 12</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 131</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 13</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 132</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 5 / Anexos semestre 1</p>
+<h2>Lectura complementaria 14</h2>
+<p>Selecciona una fuente del listado, resume su idea central y conectala con una practica del semestre.</p><div class="exercise"><strong>A.</strong> Escribe una cita o liga.</div><div class="exercise"><strong>B.</strong> Resume en 5 lineas.</div><div class="exercise"><strong>C.</strong> Explica que cambia en tu procedimiento.</div><div class="exercise"><strong>D.</strong> Formula una nueva pregunta verificable.</div>
+<div class="footer"><span>Manual 5</span><span>Semestre 1 / p. 133</span></div>
+</section>
+</body>
+</html>

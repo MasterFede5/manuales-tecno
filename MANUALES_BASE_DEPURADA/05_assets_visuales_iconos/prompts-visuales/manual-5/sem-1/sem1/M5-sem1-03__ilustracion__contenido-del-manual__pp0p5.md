@@ -1,0 +1,90 @@
+---
+id: M5-sem1-03
+manual: 5
+unidad: sem1
+semestre: 1
+tipo: ilustracion
+paginas_ocupa: 0.5
+fuente_md: manuales/manual-5/semestre-1/01-carta-estudiante.md
+fuente_md_linea: 39
+imagen_destino: assets/visuales/manual-5/sem1/M5-sem1-03.jpg
+pagina_pdf_estimada: 6
+pdf_destino: dist/manual-5-sem-1.pdf
+rol_archivo: contenido del manual
+status: pendiente
+---
+
+# `M5-sem1-03`
+
+**Tipo visual:** `ilustracion` · **Ocupa:** 0.5 pp · **Página PDF estimada:** 6
+
+**Manual 5 · SEM1 — Front/Back matter — Semestre 1 · Semestre 1**
+
+> Rol del archivo: _contenido del manual_
+
+## Trazabilidad
+
+| Campo | Valor |
+|---|---|
+| ID estable | `M5-sem1-03` |
+| Archivo destino imagen | `assets/visuales/manual-5/sem1/M5-sem1-03.jpg` |
+| PDF en el que aparece | `dist/manual-5-sem-1.pdf` |
+| Página PDF estimada | **p. 6** |
+| Archivo Markdown fuente | `manuales/manual-5/semestre-1/01-carta-estudiante.md:39` |
+| Tipo de placeholder | `ilustracion` |
+| Espacio reservado | 0.5 página(s) |
+
+## Descripción original del manual
+
+> Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escritorio con el manual abierto, lápiz en mano, un vaso de agua o una herramienta del case study a un lado y una luz suave entrando por la ventana. Expresión concentrada y motivada. Estilo editorial outline + duotone, paleta azul Albatros y naranja, sin photoreal.  
+> _Nota:_ ilustración de apoyo a la carta al estudiante
+
+## Prompt visual super-específico
+
+```text
+**ESTILO Y MARCA (obligatorio):**
+Ilustración editorial educativa estilo Albatros. Paleta dual estricta: azul profundo `#0E3A8A` como primario y naranja vibrante `#F39C12` como acento (verde `#1E8449` solo si es rama Tecno; gris `#4A4A4A` y blanco puro para texto y fondo). Trazos limpios outline + duotone, sin photoreal, sin estilo cartoon infantil. Tipografía sans-serif moderna legible. Fondo blanco con generoso whitespace. Impresión carta a 300 dpi, reproducible en B/N.
+
+**CONTEXTO DE USO:**
+- Manual: **Inteligencia Artificial con Programación** — De Python al primer modelo de Machine Learning y APIs de IA
+- Unidad: **SEM1 — Front/Back matter — Semestre 1**
+- Case study: *Predictor de rendimiento escolar — pipeline ML completo*
+- Rol del archivo: **contenido del manual**
+- Tipo de visual: **ilustracion**
+- Ocupación: **0.5** página(s) → media página · 8.5x5.5 in · landscape · `--ar 3:2`
+
+**COMPOSICIÓN REQUERIDA (ilustracion):**
+ESCENA LIBRE editorial; composición balanceada; foco narrativo claro; un solo punto focal con elementos secundarios apoyando.
+
+**CONTENIDO ESPECÍFICO (respeta literalmente, no inventes):**
+Ilustración cálida de un estudiante mexicano de bachillerato sentado en su escritorio con el manual abierto, lápiz en mano, un vaso de agua o una herramienta del case study a un lado y una luz suave entrando por la ventana. Expresión concentrada y motivada. Estilo editorial outline + duotone, paleta azul Albatros y naranja, sin photoreal.  
+- **Nota editorial:** ilustración de apoyo a la carta al estudiante
+
+**REGLAS DE CALIDAD:**
+- Texto en español de México, ortográfica y científicamente correcto (sin texto deformado IA).
+- Fórmulas químicas/físicas/matemáticas con subíndices/superíndices correctos (H₂O, CO₂, E=mc², etc.).
+- Sin marcas de agua, sin firmas, sin elementos decorativos no pedidos.
+- Espacio para que el maquetador añada leyendas posteriores.
+- Si es infografía/mapa-mental/tabla: zonas de texto editables (placeholders rectangulares claros).
+- Resultado vector-friendly aunque se entregue como PNG @300 dpi.
+
+**NEGATIVOS:**
+sin photoreal, sin estilo Pixar, sin anime, sin elementos cursis, sin firma de artista, sin watermark, sin texto basura, sin manos deformes, sin números inventados, sin alfabetos no latinos.
+```
+
+## Cómo inyectar la imagen final
+
+1. Genera la imagen con el prompt de arriba (Midjourney, DALL·E, SD, Flux — manualmente, sin API).
+2. Guárdala como `assets/visuales/manual-5/sem1/M5-sem1-03.jpg` (JPG @300 dpi, calidad alta).
+3. Re-build del manual:
+
+   ```bash
+   python build_semestres.py 5
+   python print_to_pdf.py --manual 5 --all-semesters
+   ```
+
+4. Verifica que `M5-sem1-03` ya no esté en estado `pendiente` corriendo:
+
+   ```bash
+   python organize_prompts.py
+   ```

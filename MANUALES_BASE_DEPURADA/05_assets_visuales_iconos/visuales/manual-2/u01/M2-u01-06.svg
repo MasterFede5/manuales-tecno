@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 56px; font-weight: 800; fill: #0E3A8A; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 30px; font-weight: 600; fill: #5B6472; }
+      .h { font-family: Arial, sans-serif; font-size: 34px; font-weight: 800; fill: #0E3A8A; }
+      .body { font-family: Arial, sans-serif; font-size: 27px; font-weight: 600; fill: #172033; }
+      .small { font-family: Arial, sans-serif; font-size: 23px; font-weight: 600; fill: #5B6472; }
+      .formula { font-family: Arial, sans-serif; font-size: 35px; font-weight: 800; fill: #F39C12; }
+      .label { font-family: Arial, sans-serif; font-size: 25px; font-weight: 800; fill: white; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="white"/>
+  <rect x="0" y="0" width="1536" height="18" fill="#F39C12"/>
+  <text x="54" y="76" class="title">MRUA: velocidad que cambia</text>
+  <text x="56" y="120" class="subtitle">La aceleración es constante y modifica la velocidad cada segundo</text>
+
+  <rect x="80" y="175" width="430" height="330" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="80" y="175" width="430" height="58" rx="18" fill="#0E3A8A"/>
+  <text x="108" y="215" class="label">Posición x-t</text>
+  <text x="108" y="267" class="body">Curva parabólica</text><text x="108" y="303" class="body">El avance por segundo crece</text><text x="108" y="339" class="body">Si frena, la curva cambia</text>
+  <text x="108" y="471" class="formula">x = x0 + v0t + 1/2at²</text>
+
+  <rect x="548" y="175" width="430" height="330" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="548" y="175" width="430" height="58" rx="18" fill="#0E7490"/>
+  <text x="576" y="215" class="label">Velocidad v-t</text>
+  <text x="576" y="267" class="body">Recta inclinada</text><text x="576" y="303" class="body">La pendiente es a</text><text x="576" y="339" class="body">Área = desplazamiento</text>
+  <text x="576" y="471" class="formula">v = v0 + at</text>
+
+  <rect x="1016" y="175" width="430" height="330" rx="18" fill="#F7FAFC" stroke="#D8DEE9" stroke-width="3"/>
+  <rect x="1016" y="175" width="430" height="58" rx="18" fill="#15803D"/>
+  <text x="1044" y="215" class="label">Aceleración a-t</text>
+  <text x="1044" y="267" class="body">Línea horizontal</text><text x="1044" y="303" class="body">Valor constante</text><text x="1044" y="339" class="body">Puede ser positiva o negativa</text>
+  <text x="1044" y="471" class="formula">a = Δv / Δt</text>
+
+  <rect x="160" y="615" width="1216" height="180" rx="24" fill="#FFF8E8" stroke="#F39C12" stroke-width="4"/>
+  <text x="768" y="675" text-anchor="middle" class="h">Lectura para el prototipo F1</text>
+  <text x="768" y="724" text-anchor="middle" class="body">Si cada marca de pista queda más separada, el coche acelera.</text>
+  <text x="768" y="768" text-anchor="middle" class="body">Si cada marca queda menos separada, el coche frena.</text>
+
+  <text x="1480" y="989" text-anchor="end" class="small">Colegio Nuevo Tecno · Física · Unidad 1</text>
+</svg>

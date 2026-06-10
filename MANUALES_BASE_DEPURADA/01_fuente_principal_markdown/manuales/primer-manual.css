@@ -1,0 +1,377 @@
+@page {
+  size: letter;
+  margin: 16mm;
+}
+
+:root {
+  --blue: #0E3A8A;
+  --cyan: #0E7490;
+  --orange: #F39C12;
+  --green: #15803D;
+  --ink: #172033;
+  --muted: #5B6472;
+  --line: #D8DEE9;
+  --soft: #F7FAFC;
+  --theory: #EFF6FF;
+  --practice: #ECFDF5;
+  --alert: #FFF7ED;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #E5E7EB;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.42;
+}
+
+.page {
+  width: 216mm;
+  min-height: 279mm;
+  margin: 14px auto;
+  padding: 16mm;
+  background: white;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.14);
+  position: relative;
+  overflow: hidden;
+}
+
+.cover {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 6mm;
+  padding: 0;
+}
+
+.cover-text {
+  padding: 15mm 16mm 0;
+}
+
+.kicker {
+  color: var(--orange);
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 3mm;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--blue);
+  margin: 0;
+  line-height: 1.12;
+}
+
+h1 {
+  font-size: 28pt;
+}
+
+h2 {
+  font-size: 18pt;
+  margin-bottom: 4mm;
+  padding-bottom: 2mm;
+  border-bottom: 2px solid var(--line);
+}
+
+h3 {
+  font-size: 12.5pt;
+  margin: 4mm 0 2mm;
+}
+
+p {
+  margin: 0 0 3mm;
+}
+
+ul,
+ol {
+  margin: 2mm 0 4mm 6mm;
+  padding-left: 5mm;
+}
+
+li {
+  margin: 1.2mm 0;
+}
+
+.subtitle {
+  max-width: 135mm;
+  color: var(--muted);
+  font-size: 13pt;
+  margin-top: 4mm;
+}
+
+.meta-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  padding: 0 16mm 14mm;
+}
+
+.meta,
+.box {
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--blue);
+  background: var(--soft);
+  padding: 4mm;
+  margin: 4mm 0;
+  break-inside: avoid;
+}
+
+.meta {
+  margin: 0;
+  border-left-color: var(--orange);
+}
+
+.meta strong {
+  display: block;
+  color: var(--blue);
+  font-size: 8.6pt;
+  text-transform: uppercase;
+  margin-bottom: 1mm;
+}
+
+.theory-box {
+  background: var(--theory);
+}
+
+.practice-box {
+  background: var(--practice);
+  border-left-color: var(--green);
+}
+
+.question-box {
+  background: var(--alert);
+  border-left-color: var(--orange);
+}
+
+.ratio {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  border: 1px solid var(--line);
+  margin: 4mm 0;
+}
+
+.ratio div {
+  padding: 3mm;
+  color: white;
+  font-weight: 700;
+}
+
+.ratio .theory {
+  background: var(--blue);
+}
+
+.ratio .practice {
+  background: var(--orange);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  align-items: start;
+}
+
+/* Las imagenes pedagogicas no deben ir encerradas en tarjetas: pierden escala y legibilidad. */
+.visual {
+  margin: 4mm 0 5mm;
+  border: 0;
+  background: transparent;
+  break-inside: avoid;
+}
+
+.visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.visual.full img {
+  max-height: 200mm;
+}
+
+.visual.half img {
+  max-height: 125mm;
+}
+
+.visual.compact img {
+  max-height: 92mm;
+}
+
+.grid-2 > .visual {
+  grid-column: 1 / -1;
+}
+
+figcaption {
+  padding: 1.8mm 0 0;
+  color: var(--muted);
+  font-size: 8.8pt;
+  border-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 3mm 0 5mm;
+  font-size: 9.2pt;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 2.2mm;
+  vertical-align: top;
+}
+
+th {
+  color: white;
+  background: var(--blue);
+  text-align: left;
+}
+
+.formula {
+  font-family: Consolas, "Courier New", monospace;
+  background: white;
+  border: 1px solid var(--line);
+  padding: 2.4mm;
+  margin: 2.5mm 0;
+  font-size: 10.5pt;
+}
+
+.exercise {
+  border: 1px solid var(--line);
+  padding: 2.1mm 2.4mm;
+  margin: 2mm 0;
+  background: white;
+  font-size: 9.4pt;
+  line-height: 1.28;
+  break-inside: avoid;
+}
+
+.exercise strong {
+  color: var(--blue);
+}
+
+.toc-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2mm;
+  margin-top: 4mm;
+}
+
+.toc-row,
+.link-row {
+  display: grid;
+  grid-template-columns: 26mm 1fr 28mm;
+  gap: 3mm;
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+  padding: 2mm 0;
+}
+
+.toc-row strong,
+.link-row strong {
+  color: var(--blue);
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+  margin: 4mm 0;
+}
+
+.link-card {
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--cyan);
+  padding: 3mm;
+  break-inside: avoid;
+}
+
+.link-card a {
+  color: var(--blue);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.trimester {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: #F8FAFC;
+}
+
+.trimester .cover-text {
+  padding: 0;
+}
+
+.rubric td:first-child,
+.rubric th:first-child {
+  width: 38mm;
+}
+
+.mini-periodic {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 1mm;
+  margin-top: 4mm;
+}
+
+.element {
+  min-height: 10mm;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7.2pt;
+  font-weight: 700;
+  color: var(--blue);
+  background: #FFFFFF;
+}
+
+.element.empty {
+  border-color: transparent;
+  background: transparent;
+}
+
+.work-lines {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1mm 3mm;
+  margin-top: 1.3mm;
+}
+
+.line {
+  border-bottom: 1px solid #AAB4C3;
+  height: 3.8mm;
+}
+
+.footer {
+  position: absolute;
+  left: 16mm;
+  right: 16mm;
+  bottom: 7mm;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 8.2pt;
+  border-top: 1px solid var(--line);
+  padding-top: 2mm;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+}
