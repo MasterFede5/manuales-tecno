@@ -217,6 +217,7 @@ th {
 .visual.full img { max-height: 205mm; }
 .visual.page-fit img { max-height: 178mm; }
 .landscape .visual.full img { max-height: 176mm; }
+.landscape .visual.fit-tight img { max-height: 168mm; }
 figcaption {
   color: var(--muted);
   font-size: 9.8pt;
@@ -380,146 +381,265 @@ figcaption {
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 7</span></div>
 </section>
 
-<section class="page cover"><figure class="visual full" data-visual-id="M3-u01-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U01</div><div><h1>Fundamentos e Historia de la IA</h1><p class="lead">Antes de construir el tutor, el equipo entiende qué hace posible a la IA y qué límites conserva.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
+<section class="page cover"><figure class="visual full" data-visual-id="M3-u01-01"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-01.jpg" alt="De la pregunta de Turing a la IA generativa: setenta años de ideas que hoy caben en un chat."><figcaption>De la pregunta de Turing a la IA generativa.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U01</div><div><h1>Fundamentos e Historia de la IA</h1><p class="lead">De la pregunta de Turing al tutor que vas a construir: qué hace posible a la IA y qué límites conserva.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>De Turing a los LLM</div><div><strong>Salida</strong><br>Línea de tiempo y definición operativa</div></div></div></section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
 <h2>Historia, analogía y preguntas introductorias</h2>
-<p>La historia de la inteligencia artificial no avanza como una línea recta. Pasa por preguntas filosóficas, laboratorios universitarios, inviernos de baja inversión, redes neuronales que resurgen con datos masivos y modelos generativos capaces de producir lenguaje. Esta historia ayuda a no tratar la IA como magia ni como amenaza inevitable.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>La IA se parece a un estudiante entrenado con muchos ejemplos: puede reconocer patrones, pero necesita una consigna clara y una revisión externa.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué significa que una máquina aprenda?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Por qué un modelo no entiende como una persona?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué cambió cuando aparecieron datos masivos?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Qué evidencia necesitas antes de confiar en una respuesta?<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<p>En la sala de cómputo del colegio, alguien escribe en un chatbot: "explícame qué es la inteligencia artificial". La respuesta mezcla robots de película, términos técnicos y promesas enormes. El grupo se ríe primero y duda después: ¿qué parte de eso es cierta? Nadie puede construir un tutor IA confiable sobre ideas confusas. Esta unidad ordena esa confusión: separa lo que la IA es, lo que no es y lo que todavía no existe.</p><p>La historia de la IA no avanza en línea recta. Pasa por preguntas filosóficas, laboratorios universitarios, inviernos de baja inversión, redes neuronales que resurgen con datos masivos y modelos generativos capaces de producir lenguaje. Conocer ese recorrido evita tratar a la IA como magia o como amenaza inevitable.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Un modelo de IA se parece a un estudiante entrenado con muchísimos ejemplos: reconoce patrones con rapidez, pero necesita una consigna clara y una revisión externa para no equivocarse con confianza.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué significa, en tus palabras, que una máquina "aprenda"?<div class="answer-lines"><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Por qué un modelo puede responder bien sin entender como una persona?<div class="answer-lines"><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué evidencia pedirías antes de confiar en una respuesta generada?<div class="answer-lines"><span></span><span></span></div></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 9</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
 <h2>Ruta interna de la unidad</h2>
-<p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Definiciones operativas de IA</td></tr><tr><td>2</td><td>Turing, Dartmouth e inviernos de IA</td></tr><tr><td>3</td><td>Machine learning, deep learning y modelos fundacionales</td></tr><tr><td>4</td><td>Cómo aprende un modelo sin entrar en matemáticas pesadas</td></tr><tr><td>5</td><td>Limitaciones: error, sesgo y alucinación</td></tr><tr><td>6</td><td>Primera evaluación de una respuesta generada</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Línea de tiempo comentada y definición operativa del tutor IA.</p></div>
+<p>La unidad va del relato al procedimiento. Cada subtema abre con teoría breve, presenta un visual de trabajo y cierra con una actividad conectada al caso conductor: tu tutor IA personal. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th><th>Visual de apoyo</th></tr><tr><td>1</td><td>¿Qué es la IA? Tres definiciones operativas</td><td>Cuadro comparativo de definiciones</td></tr><tr><td>2</td><td>Turing, Dartmouth, inviernos y renacimientos</td><td>Gráfica de ciclos de interés 1956-2025</td></tr><tr><td>3</td><td>Niveles de IA: estrecha, general y súper-IA</td><td>Infografía ANI · AGI · ASI</td></tr><tr><td>4</td><td>Jerarquía: IA, machine learning, deep learning y LLM</td><td>Diagrama de capas anidadas</td></tr><tr><td>5</td><td>Cómo aprende un modelo de lenguaje</td><td>Infografía del aprendiz cocinero</td></tr><tr><td>6</td><td>Familias de modelos y primera evaluación</td><td>Tabla de familias LLM 2025</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Línea de tiempo comentada de la IA y definición operativa de tu tutor: qué hará, con qué modelo base y qué no debe prometer.</p></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 10</span></div>
 </section>
 
-<section class="page landscape">
+<section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Infografía principal de la unidad</h2>
-<figure class="visual full" data-visual-id="M3-u01-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
+<h2>Mapa de la unidad: seis puertas a la IA</h2>
+<figure class="visual page-fit" data-visual-id="M3-u01-02"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-02.jpg" alt="Mapa mental de los fundamentos de la IA: definición, IA simbólica, IA estadística, IA generativa, datos y modelos, ética y límites."><figcaption>Seis entradas al mismo territorio: definición, reglas, datos, generación, modelos y ética.</figcaption></figure>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 11</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Explicación de la infografía</h2>
-<p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: definir qué hará el tutor y qué no debe prometer.</div><div class="concept"><strong>Historia</strong><br>Historia: ubicar hitos para evitar ideas mágicas o exageradas.</div><div class="concept"><strong>Modelo</strong><br>Modelo: separar IA, ML, DL y LLM.</div><div class="concept"><strong>Criterio</strong><br>Criterio: evaluar una salida con precisión y evidencia.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>Antes de construir el tutor, el equipo entiende qué hace posible a la IA y qué límites conserva. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
+<h2>Qué implica el mapa de fundamentos</h2>
+<p>Piensa en el mapa como el plano de un edificio que vas a recorrer completo durante la unidad. Entras por la pregunta de Turing —¿pueden pensar las máquinas?—, subes por la escalera de las reglas (la IA simbólica que decide con "si pasa esto, entonces haz aquello"), cruzas al ala de los datos (la IA estadística que aprende patrones de miles de ejemplos) y llegas al taller generativo, donde el modelo ya no solo clasifica: produce texto, imágenes y audio nuevos.</p><p>Las dos salas finales sostienen todo el edificio: sin datos de calidad no hay modelo útil, y sin ética no hay sistema confiable. Tu tutor IA vivirá en el taller generativo, pero heredará los problemas de las otras salas: reglas rígidas, datos sesgados o promesas exageradas.</p><div class="box question-box"><h3>Conexión con el caso</h3><p>Cada decisión sobre tu tutor —qué modelo usar, qué datos darle, qué prometer— corresponde a una zona del mapa. Cuando algo falle, este plano te dice en qué sala buscar la causa.</p></div><div class="exercise"><strong>Mini actividad de arranque.</strong> Elige la zona del mapa que más dudas te genera y escribe tres preguntas concretas que esperas responder al terminar la unidad.<div class="answer-lines"><span></span><span></span><span></span></div></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 12</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Conceptos fundamentales</h2>
-<p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>IA</strong></td><td>Sistema que usa datos y reglas aprendidas para producir salidas útiles en una tarea.</td></tr><tr><td><strong>Machine learning</strong></td><td>Forma de IA que aprende patrones a partir de ejemplos.</td></tr><tr><td><strong>Deep learning</strong></td><td>Aprendizaje con redes de muchas capas que detectan representaciones complejas.</td></tr><tr><td><strong>LLM</strong></td><td>Modelo de lenguaje grande entrenado para trabajar con texto y contexto.</td></tr><tr><td><strong>Evaluación</strong></td><td>Comparación entre salida, criterio y evidencia verificable.</td></tr></table>
+<h2>1.1 ¿Qué es la IA? Tres definiciones operativas</h2>
+<p>"Inteligencia artificial" se usa para vender celulares, asustar en noticieros y nombrar investigaciones serias. Para trabajar necesitas definiciones operativas: definiciones que te dejan decidir, frente a un sistema concreto, si lo analizas como IA y con qué criterio.</p><div class="box theory-box"><h3>Definición clásica (Turing, 1950)</h3><p>Una máquina muestra inteligencia si su conversación es indistinguible de la de una persona. Es la vara del comportamiento: no pregunta cómo funciona por dentro, sino si imita bien.</p></div><div class="box theory-box"><h3>Definición operativa (agente)</h3><p>Un sistema es un agente inteligente si percibe su entorno, decide y actúa para alcanzar un objetivo. Es la vara de la acción: sirve para analizar desde un termostato hasta un auto autónomo.</p></div><div class="box theory-box"><h3>Definición generativa (actual)</h3><p>Un modelo entrenado con grandes datos aprende patrones y produce contenido nuevo: texto, imagen, audio o código. Es la vara de la producción: describe a ChatGPT, Claude o Gemini.</p></div><div class="box question-box"><h3>Clave</h3><p>Las tres miradas no compiten: son lentes distintos. Tu tutor IA se construye con la tercera, se evalúa con la primera y se diseña con la segunda.</p></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 13</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Modelos visuales de trabajo</h2>
-<figure class="visual full" data-visual-id="M3-u01-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
+<h2>Tres miradas al mismo fenómeno</h2>
+<figure class="visual full fit-tight" data-visual-id="M3-u01-03"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-03.jpg" alt="Cuadro comparativo de las definiciones de IA: clásica de Turing, operativa de agente y generativa de modelos."><figcaption>Imitar, actuar y generar: tres definiciones que conviven en cada sistema de IA que usas.</figcaption></figure>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 14</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Mini actividad conectada con la imagen</h2>
-<p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Línea de tiempo comentada y definición operativa del tutor IA..</p></div>
+<h2>Qué implica: elegir la definición correcta</h2>
+<p>Frente a un sistema real, la pregunta no es "¿esto es IA?", sino "¿con qué definición lo analizo mejor?". Un corrector ortográfico no conversa como persona, pero percibe texto, decide y actúa: se analiza mejor como agente. Un generador de imágenes no persigue objetivos en un entorno, pero produce contenido nuevo desde patrones: se analiza con la mirada generativa. Esa elección no es teórica: determina qué le puedes exigir al sistema y qué evidencia usar para evaluarlo.</p><div class="exercise"><strong>Tabla de clasificación.</strong> Clasifica cada sistema según la definición que mejor lo describe (clásica, operativa o generativa) y justifica en una línea.<table class="mini-table"><tr><th>Sistema</th><th>Definición que mejor aplica</th><th>Justificación breve</th></tr><tr><td>Corrector ortográfico del celular</td><td></td><td></td></tr><tr><td>Chatbot que responde dudas escolares</td><td></td><td></td></tr><tr><td>Cámara que detecta rostros</td><td></td><td></td></tr><tr><td>Recomendador de videos</td><td></td><td></td></tr><tr><td>Generador de imágenes</td><td></td><td></td></tr><tr><td>Navegador GPS que recalcula ruta</td><td></td><td></td></tr></table></div><div class="box practice-box"><h3>Decisión del caso</h3><p>Escribe con cuál de las tres definiciones evaluarás a tu tutor IA y qué evidencia concreta exigirás (respuestas correctas, acciones útiles o contenido bien generado).</p><div class="answer-lines"><span></span><span></span></div></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 15</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Fórmulas, criterios y unidades</h2>
-<p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">precisión = aciertos / total</div></td><td>Evaluar respuestas simples del tutor.</td><td>Aciertos y total son conteos; el resultado va de 0 a 1 o 0% a 100%.</td></tr><tr><td><div class="formula">riesgo = probabilidad x impacto</div></td><td>Priorizar fallas posibles de una respuesta.</td><td>Probabilidad e impacto se califican de 1 a 5.</td></tr><tr><td><div class="formula">salida = modelo(entrada + contexto)</div></td><td>Entender el funcionamiento conceptual de un LLM.</td><td>Entrada: instrucción; contexto: datos disponibles; salida: respuesta.</td></tr><tr><td><div class="formula">confianza = evidencia + coherencia + límite</div></td><td>Decidir si una respuesta se puede usar.</td><td>Cada componente se puntúa de 1 a 4.</td></tr><tr><td><div class="formula">mejora = puntaje final - puntaje inicial</div></td><td>Medir si una segunda versión fue mejor.</td><td>Puntajes en la misma escala.</td></tr></table>
+<h2>1.2 Turing, Dartmouth, inviernos y renacimientos</h2>
+<p>En 1950, Alan Turing publicó la pregunta que abrió el campo: ¿pueden pensar las máquinas? En 1956, en el congreso de Dartmouth, un grupo de investigadores bautizó la disciplina: "inteligencia artificial". El entusiasmo inicial fue enorme: se prometieron traductores perfectos y máquinas razonadoras en pocos años.</p><p>La realidad fue más lenta. La IA simbólica —sistemas de reglas "si... entonces..."— resolvió problemas acotados, pero no escaló al mundo real. Cuando las promesas no se cumplieron, llegaron los <strong>inviernos de la IA</strong>: recortes de inversión y pérdida de interés público en los años setenta y finales de los ochenta.</p><p>El campo renació por dos vías: datos masivos de internet y procesadores capaces de entrenar redes neuronales profundas. En 2012, AlexNet ganó el concurso de reconocimiento de imágenes y reabrió la era del deep learning. En 2017, la arquitectura Transformer permitió modelos de lenguaje gigantes, y desde 2020 la IA generativa —GPT, Claude, Gemini— llevó esa tecnología a cualquier persona con un navegador.</p><div class="box question-box"><h3>Clave</h3><p>La historia de la IA avanza por ciclos: promesa alta, límite técnico, invierno y renacimiento con mejores herramientas. Cada invierno dejó lecciones; cada renacimiento construyó sobre lo aprendido.</p></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 16</span></div>
 </section>
 
-<section class="page">
+<section class="page landscape">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Cómo usar los modelos sin perder precisión</h2>
-<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
+<h2>Setenta años de olas: interés e inversión en IA</h2>
+<figure class="visual full fit-tight" data-visual-id="M3-u01-04"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-04.jpg" alt="Gráfica de los ciclos de financiamiento y expectativas de la IA entre 1956 y 2025, con picos, inviernos y renacimientos."><figcaption>El interés en la IA sube y baja en olas; cada invierno dejó lecciones y cada renacimiento construyó sobre lo anterior.</figcaption></figure>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 17</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Ejemplo resuelto de principio a fin 1</h2>
-<div class="worked-example"><h3>Problema</h3><p>El tutor responde una explicación sobre qué es IA, pero mezcla machine learning con ciencia ficción. Evalúa la respuesta y decide si puede usarse en clase.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>La respuesta tiene 8 afirmaciones revisables.</li><li>5 afirmaciones son correctas, 2 son ambiguas y 1 no tiene evidencia.</li><li>La coherencia se califica con 3 de 4.</li><li>El límite declarado recibe 2 de 4.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Se calcula precisión = 5 / 8 = 0.625, equivalente a 62.5%.</div><div class="worked-step"><strong>Paso 2.</strong> Se identifica riesgo: probabilidad 3 e impacto 4, por lo tanto riesgo = 12.</div><div class="worked-step"><strong>Paso 3.</strong> Se calcula confianza: evidencia 2 + coherencia 3 + límite 2 = 7 de 12.</div>
+<h2>Qué implica: leer los ciclos de la IA</h2>
+<p>Una gráfica de ciclos no se memoriza: se interroga. Cada subida responde a un avance técnico real más una ola de expectativas; cada bajada, a un límite que el hardware o los datos de la época no podían superar. Saber leer esa curva te protege de los dos errores típicos: creer que la IA actual lo puede todo, o despreciarla como moda pasajera.</p><div class="exercise"><strong>Lectura de gráfica.</strong> Ubica en la curva tres momentos: un pico de expectativas, un invierno y el presente. Para cada uno escribe qué lo causó, usando la teoría de la página anterior.<table class="mini-table"><tr><th>Momento</th><th>Década aproximada</th><th>¿Qué lo causó?</th></tr><tr><td>Pico de expectativas</td><td></td><td></td></tr><tr><td>Invierno</td><td></td><td></td></tr><tr><td>Presente</td><td></td><td></td></tr></table></div><div class="exercise"><strong>Decisión del caso.</strong> Escribe una expectativa sobre tu tutor IA que hoy sería "hype" (promesa inflada) y reescríbela como una promesa que sí puedes cumplir y demostrar.<div class="answer-lines"><span></span><span></span><span></span></div></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 18</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Ejemplo resuelto de principio a fin 2</h2>
-<div class="worked-step"><strong>Paso 4.</strong> Se redacta una decisión: la respuesta sirve como borrador, pero no como explicación final.</div><div class="worked-step"><strong>Paso 5.</strong> Se corrige pidiendo fuentes, ejemplos y separación entre IA, ML y DL.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La respuesta no se descarta por completo, pero exige corrección. El producto final debe incluir línea de tiempo y definición operativa con límites explícitos.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<h2>1.3 Niveles de IA: estrecha, general y súper-IA</h2>
+<p>No toda la IA es igual de capaz, y confundir niveles produce miedos y promesas falsas. La clasificación estándar distingue tres alcances:</p><div class="box theory-box"><h3>ANI — IA estrecha (la actual)</h3><p>Diseñada para tareas específicas: traducir, recomendar, conversar, detectar spam. Puede superar a las personas en su tarea, pero no transfiere su habilidad a otros dominios. Todo lo que usas hoy —incluido tu futuro tutor— es ANI.</p></div><div class="box theory-box"><h3>AGI — IA general (hipotética)</h3><p>Tendría flexibilidad humana: aprender cualquier dominio, transferir conocimiento y razonar en contextos nuevos. Es objetivo de investigación; no existe todavía.</p></div><div class="box theory-box"><h3>ASI — Súper-IA (especulativa)</h3><p>Superaría ampliamente a la inteligencia humana en todas las áreas. Pertenece al terreno de la hipótesis y el debate ético, no al de los productos.</p></div><div class="box question-box"><h3>Analogía</h3><p>La ANI es una caja de herramientas especialistas: el desarmador es excelente con tornillos e inútil con clavos. La AGI sería un aprendiz universal que domina cualquier oficio. Hoy solo existen las herramientas.</p></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 19</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Banco de ejercicios 1</h2>
-<div class="exercise bank-item"><strong>1.</strong> Define Fundamentos e Historia de la IA en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo precisión = aciertos / total con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo riesgo = probabilidad x impacto para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<h2>Los tres alcances de la IA</h2>
+<figure class="visual page-fit" data-visual-id="M3-u01-05"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-05.jpg" alt="Infografía de niveles de inteligencia artificial: ANI estrecha actual, AGI general hipotética y ASI superinteligencia especulativa."><figcaption>Hoy usamos principalmente ANI; AGI y ASI son investigación y especulación, no productos.</figcaption></figure>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 20</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Banco de ejercicios 2</h2>
-<div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar salida = modelo(entrada + contexto). Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: Antes de construir el tutor, el equipo entiende qué hace posible a la IA y qué límites conserva..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando confianza = evidencia + coherencia + límite. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<h2>Qué implica: ubicar cada sistema en su nivel</h2>
+<p>Ubicar el nivel correcto cambia lo que puedes exigir. A una ANI le exiges precisión en su tarea, no sentido común universal. Si tu tutor falla explicando un tema que no conoce, no está "fallando como persona": está operando fuera de su tarea estrecha. Esa distinción será parte de tu definición operativa.</p><div class="exercise"><strong>Relación de columnas.</strong> Relaciona cada concepto con su descripción. Escribe las parejas en el espacio de respuesta (por ejemplo: A-3).<div class="match-grid"><div><strong>Columna A</strong><br>A. ANI<br>B. AGI<br>C. ASI<br>D. Prueba de Turing</div><div><strong>Columna B</strong><br>1. Inteligencia hipotética con flexibilidad humana en cualquier dominio<br>2. Evaluación por conversación indistinguible de la humana<br>3. Sistema diseñado para una tarea específica, como recomendar videos<br>4. Inteligencia especulativa que superaría a la humana en todo</div></div><div class="answer-lines"><span></span><span></span></div></div><div class="box practice-box"><h3>Decisión del caso</h3><p>Tu tutor será una ANI conversacional. Escribe dos cosas que NO debe prometer (por ejemplo: "saberlo todo") y cómo lo declararás en su presentación.</p><div class="answer-lines"><span></span><span></span></div></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 21</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Banco de ejercicios 3</h2>
-<div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa mejora = puntaje final - puntaje inicial para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<h2>1.4 Jerarquía: IA, machine learning, deep learning y LLM</h2>
+<p>Los términos IA, machine learning, deep learning y LLM se usan como sinónimos en redes sociales, pero son capas anidadas: cada una es parte de la anterior y agrega especialización.</p><table class="large-table"><tr><th>Capa</th><th>Qué es</th><th>Ejemplos</th></tr><tr><td><strong>IA</strong></td><td>Campo general: sistemas que perciben, razonan o actúan para alcanzar objetivos.</td><td>Sistemas expertos, planificadores, asistentes</td></tr><tr><td><strong>Machine learning</strong></td><td>Subcampo que aprende patrones a partir de datos, sin reglas escritas a mano.</td><td>Detección de spam, recomendaciones</td></tr><tr><td><strong>Deep learning</strong></td><td>Machine learning con redes neuronales profundas de muchas capas.</td><td>Reconocimiento de voz e imágenes</td></tr><tr><td><strong>LLM / generativos</strong></td><td>Deep learning aplicado a generar contenido nuevo: texto, código, imágenes, audio.</td><td>GPT, Claude, Gemini</td></tr></table><div class="box question-box"><h3>Clave</h3><p>No todo lo que es IA es un LLM. Cuando alguien diga "la IA hizo tal cosa", pregunta: ¿qué capa de la jerarquía actuó? La respuesta cambia qué límites aplican y qué evidencia pedir.</p></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 22</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Banco de ejercicios 4</h2>
-<div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<h2>Capas anidadas de la inteligencia artificial</h2>
+<figure class="visual page-fit" data-visual-id="M3-u01-06"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-06.jpg" alt="Diagrama de círculos anidados: la IA contiene al machine learning, este al deep learning y este a los modelos generativos y LLM."><figcaption>Cada capa hereda las capacidades de la anterior y agrega especialización.</figcaption></figure>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 23</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Banco de ejercicios 5</h2>
-<div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
+<h2>Qué implica: distinguir las capas en la práctica</h2>
+<p>La jerarquía no es un dibujo decorativo: es una herramienta de diagnóstico. Si un sistema falla, la capa te dice dónde buscar. ¿Reglas rígidas que no cubren un caso? Problema de IA simbólica. ¿Patrones aprendidos de datos sesgados? Problema de machine learning. ¿Texto fluido pero inventado? Problema típico de LLM.</p><div class="exercise"><strong>Cuadro comparativo.</strong> Compara <strong>machine learning clásico</strong> contra <strong>modelo generativo (LLM)</strong> bajo los tres criterios indicados. Entrega la tabla completa y una conclusión de dos líneas.<table class="mini-table"><tr><th>Criterio</th><th>Machine learning clásico</th><th>Modelo generativo (LLM)</th></tr><tr><td>Datos que necesita para funcionar</td><td></td><td></td></tr><tr><td>Tipo de salida que produce</td><td></td><td></td></tr><tr><td>Ejemplo escolar concreto</td><td></td><td></td></tr></table><div class="answer-lines"><span></span><span></span></div></div><div class="box practice-box"><h3>Conexión con el caso</h3><p>Tu tutor vive en la capa más interna (LLM), así que hereda los riesgos de todas las capas: datos sesgados, patrones mal aprendidos y generación convincente pero falsa. Tenlo presente al redactar sus límites.</p></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 24</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Especificación de actividad y práctica</h2>
-<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Fundamentos e Historia de la IA.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Evaluar una respuesta generada, corregirla y convertirla en una explicación verificable.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Línea de tiempo comentada y definición operativa del tutor IA.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
+<h2>1.5 Cómo aprende un modelo de lenguaje</h2>
+<p>Un LLM no nace sabiendo: pasa por fases de formación, igual que un aprendiz de oficio. Entenderlas —sin matemáticas pesadas— te permite saber en qué fase puedes influir tú como usuario.</p><div class="box theory-box"><h3>Fase 1 — Preentrenamiento</h3><p>El modelo "lee" cantidades enormes de texto y aprende a predecir la palabra siguiente. De esa práctica masiva emergen patrones de gramática, hechos y estilos. Aún no obedece instrucciones: solo construyó conocimiento.</p></div><div class="box theory-box"><h3>Fase 2 — Ajuste con retroalimentación</h3><p>Personas y sistemas califican respuestas del modelo: cuáles son útiles, seguras y honestas. El modelo se ajusta para preferir ese tipo de respuesta. Aquí aprende a comportarse como asistente.</p></div><div class="box theory-box"><h3>Fase 3 — Uso con instrucciones (prompt)</h3><p>Ya entrenado, el modelo recibe tu instrucción más el contexto que le des, y genera una respuesta combinando lo aprendido. Esta es la única fase donde tú decides: la calidad de tu prompt cambia la calidad de la salida.</p></div><div class="box warning-box"><h3>Clave</h3><p>El modelo no consulta "la verdad": produce lo más probable según sus patrones. Por eso puede alucinar —afirmar con seguridad algo falso— y por eso toda respuesta importante se verifica.</p></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 25</span></div>
 </section>
 
-<section class="page">
+<section class="page landscape">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Rúbrica del producto</h2>
-<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
+<h2>El aprendiz cocinero: así se entrena un LLM</h2>
+<figure class="visual full fit-tight" data-visual-id="M3-u01-07"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-07.jpg" alt="Analogía del aprendiz cocinero: preentrenamiento leyendo recetarios, ajuste con correcciones del mentor y uso respondiendo pedidos."><figcaption>Estudiar muchos libros, recibir correcciones y cocinar por encargo: las tres fases de formación de un modelo.</figcaption></figure>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 26</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Lectura complementaria breve</h2>
-<p>Lee una nota histórica sobre Turing o Dartmouth y escribe qué pregunta sigue vigente al usar asistentes actuales.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<h2>Qué implica: del cocinero al modelo real</h2>
+<p>Una analogía sirve cuando puedes mapearla pieza por pieza al fenómeno real y, sobre todo, cuando sabes dónde se rompe. El aprendiz cocinero estudia recetarios (preentrenamiento), recibe correcciones del mentor (ajuste) y cocina por encargo (prompt). Pero el cocinero entiende lo que hace; el modelo solo reproduce patrones. Detectar dónde se rompe la analogía es la mejor prueba de que entendiste el concepto.</p><div class="exercise"><strong>Explicación con evidencia.</strong> Completa la tabla mapeando cada fase del cocinero a la fase real del modelo, e indica qué puede salir mal en cada una.<table class="mini-table"><tr><th>Fase del aprendiz</th><th>Fase real del modelo</th><th>¿Qué puede salir mal aquí?</th></tr><tr><td>Estudiar recetarios</td><td></td><td></td></tr><tr><td>Recibir correcciones del mentor</td><td></td><td></td></tr><tr><td>Cocinar por encargo</td><td></td><td></td></tr></table></div><div class="exercise"><strong>Pregunta del caso.</strong> ¿En cuál de las tres fases puedes influir tú como usuario de tu tutor? Explica cómo aprovecharás esa fase para obtener mejores respuestas.<div class="answer-lines"><span></span><span></span></div></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 27</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
-<h2>Cierre de unidad</h2>
-<p>Al cerrar Fundamentos e Historia de la IA, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>IA</li><li>Machine learning</li><li>Deep learning</li><li>LLM</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Línea de tiempo comentada y definición operativa del tutor IA.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
+<h2>1.6 Modelos fundacionales y familias de LLM</h2>
+<p>Un <strong>modelo fundacional</strong> es un modelo grande entrenado con datos generales que sirve de base para muchas tareas distintas: conversar, resumir, programar, traducir. Sobre los modelos fundacionales se construyen los productos que conoces: ChatGPT usa modelos GPT, Claude usa modelos de Anthropic, Gemini usa modelos de Google.</p><p>Elegir el modelo base de tu tutor es una decisión técnica, y las decisiones técnicas usan criterios, no preferencias de moda:</p><ul><li><strong>Modalidad:</strong> ¿necesitas solo texto, o también imágenes, audio y documentos?</li><li><strong>Fortaleza típica:</strong> ¿razonamiento, búsqueda integrada, código, apertura para personalizar?</li><li><strong>Acceso:</strong> ¿hay versión gratuita suficiente para tu uso escolar?</li><li><strong>Calidad en español:</strong> ¿responde con naturalidad y precisión en tu idioma?</li></ul><div class="box warning-box"><h3>Advertencia de vigencia</h3><p>El panorama de modelos cambia cada pocos meses. La tabla de la siguiente página es una fotografía de 2025: aprende a leer sus criterios, no a memorizar sus filas. Los criterios sobreviven; los nombres cambian.</p></div>
 <div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 28</span></div>
+</section>
+
+<section class="page landscape">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Familias de modelos: la fotografía de 2025</h2>
+<figure class="visual full fit-tight" data-visual-id="M3-u01-08"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u01/M3-u01-08.jpg" alt="Tabla de familias de LLM representativas en 2025: GPT, Claude, Gemini, Llama, Mistral, DeepSeek, Qwen y Grok, con fortalezas y criterios de elección."><figcaption>Cada familia tiene fortalezas distintas; el criterio de elección depende de tu tarea, no de la moda.</figcaption></figure>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 29</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Qué implica: elegir el modelo base del tutor</h2>
+<p>Una tabla de familias se usa como catálogo de decisión: defines tu tarea, eliges criterios, puntúas opciones y concluyes. Ese procedimiento —matriz de decisión— te servirá toda la vida, con modelos de IA o con cualquier compra técnica.</p><div class="exercise"><strong>Matriz de decisión del caso.</strong> Elige dos modelos a los que tengas acceso real (por ejemplo, los disponibles gratis en tu navegador). Puntúa cada criterio de 1 (débil) a 3 (fuerte) y suma. La opción ganadora será el modelo base de tu tutor IA.<table class="mini-table"><tr><th>Criterio</th><th>Opción A: __________</th><th>Opción B: __________</th></tr><tr><td>Acceso gratuito suficiente para uso escolar</td><td></td><td></td></tr><tr><td>Modalidad que tu tutor necesita (texto, imagen, voz)</td><td></td><td></td></tr><tr><td>Calidad de respuesta en español (pruébala con la misma pregunta)</td><td></td><td></td></tr><tr><td><strong>Total</strong></td><td></td><td></td></tr></table></div><div class="exercise"><strong>Conclusión técnica.</strong> Escribe tu decisión en tres partes: hecho (puntajes), interpretación (por qué gana) y límite (qué le faltará a la opción ganadora).<div class="answer-lines"><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 30</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Fórmulas y criterios antes de practicar</h2>
+<p>En IA, algunas herramientas de evaluación son fórmulas numéricas y otras son criterios puntuables. Todas se usan igual: nombra los datos, revisa la escala, sustituye, interpreta y verifica. Estas cinco se usan en los ejemplos resueltos y en los bancos.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos y escala</th></tr><tr><td><div class="formula">precisión = aciertos / total</div></td><td>Evaluar respuestas verificables del tutor.</td><td>Conteos; resultado entre 0 y 1, o 0% y 100%.</td></tr><tr><td><div class="formula">riesgo = probabilidad × impacto</div></td><td>Priorizar qué falla atender primero.</td><td>Cada factor se califica de 1 a 5; riesgo máximo 25.</td></tr><tr><td><div class="formula">confianza = evidencia + coherencia + límite</div></td><td>Decidir si una respuesta se puede usar.</td><td>Cada componente de 1 a 4; total de 3 a 12.</td></tr><tr><td><div class="formula">mejora = puntaje final − puntaje inicial</div></td><td>Medir si una segunda versión fue mejor.</td><td>Ambos puntajes en la misma escala.</td></tr><tr><td><div class="formula">tokens ≈ palabras × 1.3</div></td><td>Estimar el tamaño de un texto para un LLM.</td><td>Aproximación para español; un token es un fragmento de palabra.</td></tr></table><div class="box question-box"><h3>Antes del banco</h3><p>Verifica que puedes explicar cada elemento de cada fórmula sin releer. Si alguno no queda claro, márcalo: el banco de cálculo lo va a necesitar.</p></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 31</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Cómo usar los modelos sin perder precisión</h2>
+<div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o tokens, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div><div class="box theory-box"><h3>Por qué importa medir</h3><p>Las herramientas de medición hicieron confiables a la química y a la ingeniería; con la IA pasa igual. La diferencia entre "me parece que responde bien" y "tiene precisión de 75% en veinte preguntas verificadas" es la diferencia entre opinión y evidencia. Tu tutor se evaluará con números y criterios, no con impresiones.</p></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 32</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 1</h2>
+<div class="worked-example"><h3>Problema</h3><p>El tutor responde una explicación sobre qué es la IA, pero mezcla machine learning con ciencia ficción. Evalúa la respuesta y decide si puede usarse en clase.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>La respuesta tiene 8 afirmaciones revisables.</li><li>5 afirmaciones son correctas, 2 son ambiguas y 1 no tiene evidencia.</li><li>La coherencia se califica con 3 de 4.</li><li>El límite declarado recibe 2 de 4.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Precisión = 5 / 8 = 0.625, equivalente a 62.5%. Interpretación: poco más de la mitad del contenido es directamente confiable.</div><div class="worked-step"><strong>Paso 2.</strong> Riesgo de usarla sin corregir: probabilidad 3 × impacto 4 = 12 de 25. Es un riesgo medio-alto: la confusión con ciencia ficción podría fijarse en la clase.</div><div class="worked-step"><strong>Paso 3.</strong> Confianza = evidencia 2 + coherencia 3 + límite 2 = 7 de 12. La respuesta suena bien (coherencia), pero sostiene poco (evidencia) y no declara lo que no sabe (límite).</div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 33</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Ejemplo resuelto de principio a fin 2</h2>
+<div class="worked-step"><strong>Paso 4.</strong> Decisión: la respuesta sirve como borrador, no como explicación final. Con precisión de 62.5% y confianza de 7/12, ningún criterio alcanza el umbral de uso directo (80% y 9/12).</div><div class="worked-step"><strong>Paso 5.</strong> Corrección: se pide al modelo separar IA, ML y DL con la jerarquía de capas, citar un ejemplo real por capa y declarar explícitamente qué no sabe. La nueva versión obtiene precisión 7/8 = 87.5% y confianza 10/12.</div><div class="worked-step"><strong>Paso 6.</strong> Mejora = 10 − 7 = 3 puntos de confianza. La segunda versión cruza ambos umbrales y puede usarse en clase con supervisión.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La respuesta inicial no se descarta: se mide, se corrige y se vuelve a medir. Ese ciclo —medir, corregir, verificar— es exactamente lo que harás con cada salida de tu tutor.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya en los seis pasos: qué fórmula se usó en cada uno, qué dato fue el más importante y qué límite debe mencionarse en la conclusión.</p></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 34</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de cálculo 1</h2>
+<div class="exercise bank-item"><strong>1.</strong> Tu tutor respondió 12 afirmaciones verificables y 9 resultaron correctas. Calcula la precisión con fórmula, sustitución, resultado y porcentaje. ¿Cruza el umbral de 80%?<div class="operation-lines"><em>Fórmula, sustitución, resultado y unidades.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Dos fallas posibles del tutor: (a) inventa una fecha histórica, probabilidad 4, impacto 3; (b) se niega a responder un tema del temario, probabilidad 2, impacto 2. Calcula ambos riesgos y decide cuál atender primero.<div class="operation-lines"><em>Fórmula, sustitución, resultado y decisión.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Una respuesta recibe: evidencia 3, coherencia 4, límite 1. Calcula la confianza total, indica la escala y escribe qué componente corregirías primero y por qué.<div class="operation-lines"><em>Fórmula, sustitución, resultado y escala.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Tu definición operativa del tutor tiene 250 palabras. Estima cuántos tokens ocupa usando la aproximación de la unidad. Muestra la operación completa.<div class="operation-lines"><em>Fórmula, sustitución, resultado y unidades.</em><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 35</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de cálculo 2</h2>
+<div class="exercise bank-item"><strong>5.</strong> La versión 1 de una explicación obtuvo confianza 6/12; la versión 2, confianza 10/12. Calcula la mejora y exprésala también como porcentaje del máximo posible.<div class="operation-lines"><em>Fórmula, sustitución, resultado y porcentaje.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Comparas dos modelos con la misma lista de 20 preguntas: el modelo A acierta 15 y el modelo B acierta 17. Calcula ambas precisiones, la diferencia en puntos porcentuales y escribe cuál elegirías si el B no tiene versión gratuita.<div class="operation-lines"><em>Operaciones y decisión justificada.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Construye tu propia matriz de riesgo: define dos fallas reales de tu tutor, asigna probabilidad e impacto (1 a 5) con justificación, calcula ambos riesgos y ordénalos.<div class="operation-lines"><em>Datos, fórmula, resultados y orden.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Escribiste un prompt de 80 palabras y el tutor respondió con 400 palabras. Estima los tokens totales del intercambio y explica por qué el tamaño del contexto importa.<div class="operation-lines"><em>Operaciones completas y explicación.</em><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 36</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 1: definiciones e historia</h2>
+<div class="exercise bank-item"><strong>9.</strong> Define la IA con las tres miradas de la unidad (clásica, operativa, generativa) en una línea cada una, y señala cuál usarás para evaluar a tu tutor.<div class="operation-lines"><em>Tres definiciones y una elección justificada.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Explica en cinco líneas por qué hubo inviernos de la IA y qué dos factores produjeron el renacimiento actual.<div class="operation-lines"><em>Explicación con causas concretas.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> <strong>Relación de columnas.</strong> Relaciona cada hito con su significado. Escribe las parejas (por ejemplo: A-2).<div class="match-grid"><div><strong>Columna A</strong><br>A. Turing, 1950<br>B. Dartmouth, 1956<br>C. AlexNet, 2012<br>D. Transformer, 2017</div><div><strong>Columna B</strong><br>1. Arquitectura que hizo posibles los LLM actuales<br>2. La pregunta fundadora: ¿pueden pensar las máquinas?<br>3. Nace el nombre "inteligencia artificial"<br>4. El deep learning gana el concurso de imágenes</div></div><div class="answer-lines"><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Un compañero afirma: "la IA es nueva, apareció con ChatGPT". Corrígelo con tres datos históricos de la unidad, en tono respetuoso.<div class="operation-lines"><em>Corrección con evidencia histórica.</em><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 37</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 2: niveles y jerarquía</h2>
+<div class="exercise bank-item"><strong>13.</strong> Clasifica estos sistemas como ANI, AGI o ASI y justifica: un traductor automático, un asistente de voz, una IA de película que domina el mundo, un detector de fraudes.<div class="operation-lines"><em>Clasificación con justificación por sistema.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Dibuja de memoria el diagrama de capas anidadas (IA, ML, DL, LLM) y coloca un ejemplo real en cada capa. Después compara con el visual de la unidad y corrige.<div class="operation-lines"><em>Diagrama, ejemplos y autocorrección.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye un cuadro comparativo entre ANI y AGI bajo tres criterios: existencia actual, flexibilidad entre dominios y qué evidencia tenemos de cada una.<div class="operation-lines"><em>Cuadro de 2 columnas × 3 criterios y conclusión.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Una noticia dice: "la IA superó a los humanos". Escribe tres preguntas que harías para ubicar la afirmación en su nivel y capa correctos antes de creerla.<div class="operation-lines"><em>Tres preguntas críticas con propósito.</em><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 38</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 3: entrenamiento y límites</h2>
+<div class="exercise bank-item"><strong>17.</strong> Explica las tres fases de formación de un LLM usando una analogía propia, distinta del cocinero. Indica dónde se rompe tu analogía.<div class="operation-lines"><em>Analogía completa y su límite.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Define "alucinación" de un modelo y describe un caso escolar concreto donde sería grave no detectarla. Propón la verificación que la atraparía.<div class="operation-lines"><em>Definición, caso y verificación.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> ¿Por qué el modelo "no consulta la verdad"? Explica con la idea de predicción de la palabra siguiente y da un ejemplo donde lo más probable no sea lo correcto.<div class="operation-lines"><em>Explicación y contraejemplo.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> <strong>Investiga por tu cuenta.</strong> Busca qué significa "fecha de corte de conocimiento" de un modelo. Anota la definición, por qué importa para tu tutor y la fuente que consultaste.<div class="operation-lines"><em>Definición, implicación y fuente.</em><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 39</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 4: decisión y caso conductor</h2>
+<div class="exercise bank-item"><strong>21.</strong> Amplía tu matriz de decisión del modelo base agregando un cuarto criterio que te importe (privacidad, velocidad, disponibilidad sin internet). Repuntúa y verifica si cambia el ganador.<div class="operation-lines"><em>Matriz ampliada y nueva conclusión.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>22.</strong> Redacta la primera versión de la definición operativa de tu tutor en cuatro partes: qué hará, para quién, con qué modelo base y qué no debe prometer.<div class="operation-lines"><em>Definición en cuatro partes.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>23.</strong> Identifica una instrucción ambigua que podrías darle a tu tutor y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Versión ambigua, versión precisa y diferencia.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>24.</strong> Diseña una mini prueba de 15 minutos para comparar dos modelos con la misma pregunta. Incluye material, pasos, evidencia a registrar y criterio de éxito.<div class="operation-lines"><em>Diseño completo de la prueba.</em><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 40</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Banco de ejercicios 5: integración y producto</h2>
+<div class="exercise bank-item"><strong>25.</strong> Construye tu línea de tiempo comentada: seis hitos de la historia de la IA, cada uno con año aproximado, qué cambió y por qué importa para tu tutor.<div class="operation-lines"><em>Seis hitos comentados.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>26.</strong> Evalúa una respuesta real: haz a un modelo una pregunta de esta unidad, cuenta sus afirmaciones verificables y calcula su precisión. Anexa la respuesta como evidencia.<div class="operation-lines"><em>Pregunta, conteo, cálculo y evidencia.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>27.</strong> Escribe una conclusión técnica de la unidad separando hecho, inferencia y acción siguiente para el caso conductor.<div class="operation-lines"><em>Hecho, inferencia y acción.</em><span></span><span></span><span></span></div></div><div class="exercise bank-item"><strong>28.</strong> Cambia un dato de tu matriz de decisión (por ejemplo, la opción B se vuelve de pago), predice el efecto y repuntúa. ¿Se sostiene tu elección de modelo base?<div class="operation-lines"><em>Cambio, predicción y repuntuación.</em><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 41</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Especificación de actividad y práctica</h2>
+<table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, definiciones, niveles y jerarquía de la unidad.</td><td>Preguntas introductorias contestadas y mapa anotado.</td></tr><tr><td>Aplicar</td><td>Evaluar una respuesta generada con precisión, riesgo y confianza; corregirla y volver a medir.</td><td>Cálculos visibles con fórmula, sustitución y resultado.</td></tr><tr><td>Decidir</td><td>Completar la matriz de decisión del modelo base con puntajes justificados.</td><td>Matriz con totales y conclusión técnica.</td></tr><tr><td>Entregar</td><td>Línea de tiempo comentada y definición operativa del tutor.</td><td>Producto final con límites declarados.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada con un modelo real, 30 minutos para bancos de cálculo y ejercicios, y 20 minutos para defensa o corrección.</p></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 42</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Rúbrica del producto</h2>
+<table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Distingue IA, ML, DL y LLM, y los niveles ANI/AGI/ASI sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla capas o niveles, o no los explica.</td></tr><tr><td>Evidencia</td><td>Los cálculos y la matriz pueden revisarse y replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Línea de tiempo y definición operativa responden directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa hecho, interpretación y límite en cada conclusión.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table><div class="box question-box"><h3>Autoevaluación previa</h3><p>Antes de entregar, califícate tú mismo con esta rúbrica y anota qué criterio quedó más débil. La autoevaluación honesta es parte del producto.</p></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 43</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Lectura complementaria breve</h2>
+<p>En 1950, Alan Turing publicó el artículo "Computing Machinery and Intelligence", donde propuso reemplazar la pregunta "¿pueden pensar las máquinas?" por un juego de imitación medible. Setenta y cinco años después, millones de personas conversan a diario con máquinas que habrían pasado su prueba con facilidad. Sin embargo, la pregunta de fondo sigue abierta: ¿imitar la conversación es lo mismo que entender?</p><p>Busca una nota o video breve sobre Turing o sobre el congreso de Dartmouth y léelo con esta pregunta en mente: ¿qué pregunta de aquella época sigue vigente cuando usas un asistente actual?</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda que te quedó y una acción que aplicarás en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 44</span></div>
+</section>
+
+<section class="page">
+<p class="kicker">Manual 3 / U01 / 40% teoría - 60% práctica</p>
+<h2>Cierre de unidad</h2>
+<p>Al cerrar Fundamentos e Historia de la IA, el estudiante puede explicar qué hace posible a la IA actual, ubicar cualquier sistema en su nivel y su capa, y sostener con números si una respuesta generada merece confianza. La confusión inicial de la sala de cómputo se transformó en un procedimiento revisable y en las dos primeras piezas del tutor: su modelo base elegido con matriz y su definición operativa con límites.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Las tres definiciones operativas de IA</li><li>Los ciclos históricos: promesa, invierno, renacimiento</li><li>Niveles ANI, AGI y ASI</li><li>La jerarquía IA → ML → DL → LLM</li><li>Las tres fases de entrenamiento de un LLM</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Bancos de cálculo y ejercicios corregidos</li><li>Línea de tiempo comentada de la IA</li><li>Definición operativa del tutor con límites</li><li>Matriz de decisión del modelo base</li></ul></div></div><div class="box question-box"><h3>Siguiente unidad</h3><p>Ya sabes qué es un LLM y elegiste tu modelo base. En la U02 entrarás a las plataformas reales —ChatGPT, Claude, Gemini, Copilot— para tener tu primer chat útil y conocer la anatomía de una conversación: tokens, contexto y memoria.</p></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 45</span></div>
 </section>
 
 <section class="page cover"><figure class="visual full" data-visual-id="M3-u02-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u02/M3-u02-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U02</div><div><h1>Tu Primer Asistente Conversacional</h1><p class="lead">El equipo compara asistentes para elegir la base del tutor IA personal.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
@@ -528,140 +648,140 @@ figcaption {
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Historia, analogía y preguntas introductorias</h2>
 <p>Los asistentes conversacionales hicieron que la IA dejara de sentirse reservada para laboratorios. Sin embargo, una conversación útil no depende solo del modelo: también depende del contexto, de la memoria disponible, de la forma de preguntar y de la verificación posterior.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Un asistente conversacional es como entrevistar a una persona muy rápida: puede responder mucho, pero la calidad de la entrevista depende de tus preguntas.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué información mínima necesita el asistente?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Qué datos personales no deben compartirse?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Cómo detectas una respuesta débil?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cómo comparas dos herramientas sin dejarte llevar por apariencia?<div class="answer-lines"><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 30</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 47</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Ruta interna de la unidad</h2>
 <p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Anatomía de un chat</td></tr><tr><td>2</td><td>Tokens, contexto y memoria</td></tr><tr><td>3</td><td>Comparación entre asistentes</td></tr><tr><td>4</td><td>Limitaciones y fecha de corte</td></tr><tr><td>5</td><td>Verificación con fuentes</td></tr><tr><td>6</td><td>Primera conversación útil del tutor</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Tabla comparativa de asistentes y conversación inicial corregida.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 31</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 48</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Infografía principal de la unidad</h2>
 <figure class="visual full" data-visual-id="M3-u02-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u02/M3-u02-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 32</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 49</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Explicación de la infografía</h2>
 <p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: elegir un asistente para estudiar una materia.</div><div class="concept"><strong>Entrada</strong><br>Entrada: escribir tarea, contexto, formato y límites.</div><div class="concept"><strong>Comparación</strong><br>Comparación: probar la misma instrucción en dos asistentes.</div><div class="concept"><strong>Verificación</strong><br>Verificación: revisar afirmaciones con fuente o criterio.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El equipo compara asistentes para elegir la base del tutor IA personal. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 33</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 50</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Conceptos fundamentales</h2>
 <p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Token</strong></td><td>Unidad de texto que el sistema procesa para leer o generar respuestas.</td></tr><tr><td><strong>Contexto</strong></td><td>Información que el asistente puede usar durante la conversación.</td></tr><tr><td><strong>Memoria</strong></td><td>Persistencia de datos entre interacciones, cuando la herramienta lo permite.</td></tr><tr><td><strong>Verificación</strong></td><td>Proceso de contrastar afirmaciones con evidencia externa.</td></tr><tr><td><strong>Privacidad</strong></td><td>Criterio para decidir qué información no debe enviarse a una herramienta.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 34</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 51</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Modelos visuales de trabajo</h2>
 <figure class="visual full" data-visual-id="M3-u02-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u02/M3-u02-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 35</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 52</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Mini actividad conectada con la imagen</h2>
 <p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Tabla comparativa de asistentes y conversación inicial corregida..</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 36</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 53</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Fórmulas, criterios y unidades</h2>
 <p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">costo estimado = tokens x tarifa</div></td><td>Comprender consumo cuando una herramienta cobra por uso.</td><td>Tokens como conteo; tarifa en costo por token o por millón de tokens.</td></tr><tr><td><div class="formula">tasa de verificación = afirmaciones comprobadas / afirmaciones totales</div></td><td>Medir qué tanto se pudo verificar una respuesta.</td><td>Conteos; resultado de 0 a 1 o porcentaje.</td></tr><tr><td><div class="formula">utilidad = claridad + contexto + verificabilidad</div></td><td>Comparar dos respuestas con rúbrica.</td><td>Cada criterio se califica de 1 a 4.</td></tr><tr><td><div class="formula">privacidad = sensibilidad x exposición</div></td><td>Valorar riesgo de compartir datos.</td><td>Sensibilidad y exposición se puntúan de 1 a 5.</td></tr><tr><td><div class="formula">mejora = respuesta revisada - respuesta inicial</div></td><td>Medir iteración de conversación.</td><td>Puntajes en escala común.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 37</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 54</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Cómo usar los modelos sin perder precisión</h2>
 <div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 38</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 55</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Ejemplo resuelto de principio a fin 1</h2>
 <div class="worked-example"><h3>Problema</h3><p>Dos asistentes responden a la misma pregunta de biología. El primero es claro pero no cita fuentes; el segundo es más largo y verificable. Decide cuál usar para el tutor.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Respuesta A: claridad 4, contexto 2, verificabilidad 1.</li><li>Respuesta B: claridad 3, contexto 3, verificabilidad 4.</li><li>Respuesta A tiene 6 afirmaciones y se comprueban 2.</li><li>Respuesta B tiene 7 afirmaciones y se comprueban 5.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Utilidad A = 4 + 2 + 1 = 7.</div><div class="worked-step"><strong>Paso 2.</strong> Utilidad B = 3 + 3 + 4 = 10.</div><div class="worked-step"><strong>Paso 3.</strong> Tasa A = 2 / 6 = 0.333.</div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 39</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 56</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Ejemplo resuelto de principio a fin 2</h2>
 <div class="worked-step"><strong>Paso 4.</strong> Tasa B = 5 / 7 = 0.714.</div><div class="worked-step"><strong>Paso 5.</strong> Se elige B para estudiar, aunque se resume para hacerlo más claro.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La mejor respuesta no siempre es la más breve. Para el tutor se elige la que permita verificar más afirmaciones y luego se mejora su claridad.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 40</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 57</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 1</h2>
 <div class="exercise bank-item"><strong>1.</strong> Define Tu Primer Asistente Conversacional en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo costo estimado = tokens x tarifa con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo tasa de verificación = afirmaciones comprobadas / afirmaciones totales para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 41</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 58</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 2</h2>
 <div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar utilidad = claridad + contexto + verificabilidad. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El equipo compara asistentes para elegir la base del tutor IA personal..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando privacidad = sensibilidad x exposición. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 42</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 59</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 3</h2>
 <div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa mejora = respuesta revisada - respuesta inicial para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 43</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 60</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 4</h2>
 <div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 44</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 61</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 5</h2>
 <div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 45</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 62</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Especificación de actividad y práctica</h2>
 <table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Tu Primer Asistente Conversacional.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Ejecutar la misma tarea en dos asistentes, puntuar respuestas y justificar la elección.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Tabla comparativa de asistentes y conversación inicial corregida.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 46</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 63</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Rúbrica del producto</h2>
 <table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 47</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 64</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Lectura complementaria breve</h2>
 <p>Lee una guía de uso de un asistente conversacional y localiza qué dice sobre privacidad, memoria o datos sensibles.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 48</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 65</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U02 / 40% teoría - 60% práctica</p>
 <h2>Cierre de unidad</h2>
 <p>Al cerrar Tu Primer Asistente Conversacional, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Token</li><li>Contexto</li><li>Memoria</li><li>Verificación</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Tabla comparativa de asistentes y conversación inicial corregida.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 49</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 66</span></div>
 </section>
 
 <section class="page cover"><figure class="visual full" data-visual-id="M3-u03-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u03/M3-u03-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U03</div><div><h1>Prompt Engineering Fundamental</h1><p class="lead">El tutor mejora cuando las instrucciones dejan de ser vagas.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
@@ -670,140 +790,140 @@ figcaption {
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Historia, analogía y preguntas introductorias</h2>
 <p>Diseñar instrucciones efectivas no es escribir frases largas. Es definir rol, tarea, contexto, formato, criterio de calidad y restricciones. La historia de esta unidad muestra cómo una petición confusa produce respuestas genéricas y cómo la iteración convierte una idea en una salida revisable.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>Un prompt es como una orden de trabajo: si no dice producto, alcance y criterio, cada persona imagina algo distinto.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué debe incluir una instrucción clara?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Cuándo conviene dar ejemplos?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué diferencia hay entre mejorar y repetir?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Qué antipatrones hacen fallar una respuesta?<div class="answer-lines"><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 51</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 68</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Ruta interna de la unidad</h2>
 <p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Rol, tarea, contexto y formato</td></tr><tr><td>2</td><td>Zero-shot y few-shot</td></tr><tr><td>3</td><td>Estructura de salida</td></tr><tr><td>4</td><td>Iteración y comparación</td></tr><tr><td>5</td><td>Antipatrones frecuentes</td></tr><tr><td>6</td><td>Banco de instrucciones personales</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Banco de 20 instrucciones personales para estudiar.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 52</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 69</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Infografía principal de la unidad</h2>
 <figure class="visual full" data-visual-id="M3-u03-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u03/M3-u03-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 53</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 70</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Explicación de la infografía</h2>
 <p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: una instrucción vaga genera una respuesta genérica.</div><div class="concept"><strong>Despiece</strong><br>Despiece: identificar rol, tarea, contexto, formato y criterio.</div><div class="concept"><strong>Primera versión</strong><br>Primera versión: pedir una salida simple.</div><div class="concept"><strong>Evaluación</strong><br>Evaluación: usar rúbrica para detectar fallas.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El tutor mejora cuando las instrucciones dejan de ser vagas. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 54</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 71</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Conceptos fundamentales</h2>
 <p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Rol</strong></td><td>Papel que se asigna al modelo para orientar tono, nivel y perspectiva.</td></tr><tr><td><strong>Tarea</strong></td><td>Acción concreta que debe realizarse.</td></tr><tr><td><strong>Contexto</strong></td><td>Información que reduce ambigüedad.</td></tr><tr><td><strong>Formato</strong></td><td>Estructura visible de la salida esperada.</td></tr><tr><td><strong>Criterio</strong></td><td>Regla para decidir si la salida funciona.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 55</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 72</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Modelos visuales de trabajo</h2>
 <figure class="visual full" data-visual-id="M3-u03-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u03/M3-u03-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 56</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 73</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Mini actividad conectada con la imagen</h2>
 <p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Banco de 20 instrucciones personales para estudiar..</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 57</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 74</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Fórmulas, criterios y unidades</h2>
 <p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">prompt = rol + tarea + contexto + formato + criterio</div></td><td>Construir una instrucción completa.</td><td>Cada componente se redacta en lenguaje claro.</td></tr><tr><td><div class="formula">puntaje = contenido + formato + evidencia + seguridad</div></td><td>Evaluar una salida generada.</td><td>Cada criterio se califica de 1 a 4.</td></tr><tr><td><div class="formula">delta = puntaje v2 - puntaje v1</div></td><td>Medir mejora entre iteraciones.</td><td>Puntajes en la misma escala.</td></tr><tr><td><div class="formula">ambigüedad = partes faltantes / partes requeridas</div></td><td>Diagnosticar una instrucción incompleta.</td><td>Partes requeridas: rol, tarea, contexto, formato, criterio.</td></tr><tr><td><div class="formula">calidad final = utilidad x verificabilidad</div></td><td>Evitar respuestas bonitas pero no comprobables.</td><td>Utilidad y verificabilidad en escala 1 a 4.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 58</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 75</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Cómo usar los modelos sin perder precisión</h2>
 <div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 59</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 76</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Ejemplo resuelto de principio a fin 1</h2>
 <div class="worked-example"><h3>Problema</h3><p>Una instrucción inicial dice: &#x27;Explícame fotosíntesis&#x27;. Debes convertirla en una instrucción completa para el tutor y evaluar la mejora.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>Versión 1 obtiene contenido 2, formato 1, evidencia 1, seguridad 3.</li><li>Versión 2 incluye rol docente, público bachillerato, tabla, ejemplo y criterio.</li><li>Versión 2 obtiene contenido 4, formato 4, evidencia 3, seguridad 4.</li><li>Se requieren 5 partes en el prompt completo.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Puntaje v1 = 2 + 1 + 1 + 3 = 6.</div><div class="worked-step"><strong>Paso 2.</strong> Puntaje v2 = 4 + 4 + 3 + 4 = 15.</div><div class="worked-step"><strong>Paso 3.</strong> Delta = 15 - 6 = 9.</div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 60</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 77</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Ejemplo resuelto de principio a fin 2</h2>
 <div class="worked-step"><strong>Paso 4.</strong> Ambigüedad v1 = 4 / 5 = 0.8 porque solo tenía tarea.</div><div class="worked-step"><strong>Paso 5.</strong> Se redacta conclusión: la mejora vino de contexto, formato y criterio.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La versión corregida no es más útil por ser más larga, sino porque define salida, audiencia y criterio de revisión.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 61</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 78</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 1</h2>
 <div class="exercise bank-item"><strong>1.</strong> Define Prompt Engineering Fundamental en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo prompt = rol + tarea + contexto + formato + criterio con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo puntaje = contenido + formato + evidencia + seguridad para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 62</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 79</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 2</h2>
 <div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar delta = puntaje v2 - puntaje v1. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El tutor mejora cuando las instrucciones dejan de ser vagas..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando ambigüedad = partes faltantes / partes requeridas. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 63</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 80</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 3</h2>
 <div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa calidad final = utilidad x verificabilidad para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 64</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 81</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 4</h2>
 <div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 65</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 82</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 5</h2>
 <div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 66</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 83</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Especificación de actividad y práctica</h2>
 <table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de Prompt Engineering Fundamental.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Diseñar, probar, puntuar e iterar instrucciones con una rúbrica visible.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Banco de 20 instrucciones personales para estudiar.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 67</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 84</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Rúbrica del producto</h2>
 <table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 68</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 85</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Lectura complementaria breve</h2>
 <p>Lee una recomendación oficial de documentación de IA sobre instrucciones o estructura de salida y tradúcela a una regla para clase.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 69</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 86</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U03 / 40% teoría - 60% práctica</p>
 <h2>Cierre de unidad</h2>
 <p>Al cerrar Prompt Engineering Fundamental, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Rol</li><li>Tarea</li><li>Contexto</li><li>Formato</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Banco de 20 instrucciones personales para estudiar.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 70</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 87</span></div>
 </section>
 
 <section class="page cover"><figure class="visual full" data-visual-id="M3-u04-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u04/M3-u04-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U04</div><div><h1>IA Generativa Multimodal</h1><p class="lead">El tutor cobra voz, imagen, video y lectura de documentos.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
@@ -812,140 +932,140 @@ figcaption {
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Historia, analogía y preguntas introductorias</h2>
 <p>La IA generativa dejó de operar solo con texto. Ahora puede analizar imágenes, producir audio, transformar documentos y apoyar videos educativos. La precisión consiste en elegir el medio correcto y verificar que la salida no invente información ni oculte fuentes.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>La multimodalidad es como cambiar de pizarrón: a veces texto alcanza, a veces una imagen o una voz reduce diez párrafos.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Cuándo conviene una imagen en vez de texto?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Qué debe verificarse en un audio o video?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué riesgo tiene una imagen falsa?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cómo decides el medio adecuado para enseñar?<div class="answer-lines"><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 72</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 89</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Ruta interna de la unidad</h2>
 <p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Texto, imagen, audio y video</td></tr><tr><td>2</td><td>Instrucciones visuales</td></tr><tr><td>3</td><td>Guion breve</td></tr><tr><td>4</td><td>Verificación multimodal</td></tr><tr><td>5</td><td>Riesgos de deepfake</td></tr><tr><td>6</td><td>Cápsula educativa del tutor</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Cápsula educativa multimedia de 60 segundos.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 73</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 90</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Infografía principal de la unidad</h2>
 <figure class="visual full" data-visual-id="M3-u04-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u04/M3-u04-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 74</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 91</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Explicación de la infografía</h2>
 <p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: explicar un tema con un solo medio no siempre funciona.</div><div class="concept"><strong>Selección</strong><br>Selección: elegir texto, imagen, audio o video según objetivo.</div><div class="concept"><strong>Diseño</strong><br>Diseño: escribir guion o instrucción visual.</div><div class="concept"><strong>Producción</strong><br>Producción: generar o editar una salida.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El tutor cobra voz, imagen, video y lectura de documentos. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 75</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 92</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Conceptos fundamentales</h2>
 <p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Modalidad</strong></td><td>Tipo de entrada o salida: texto, imagen, audio, video o documento.</td></tr><tr><td><strong>Guion</strong></td><td>Secuencia de ideas para producir audio o video.</td></tr><tr><td><strong>Restricción</strong></td><td>Límite que evita resultados imprecisos o inseguros.</td></tr><tr><td><strong>Verificación visual</strong></td><td>Revisión de coherencia, legibilidad y correspondencia con el tema.</td></tr><tr><td><strong>Consentimiento</strong></td><td>Condición ética para usar voz, rostro o datos personales.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 76</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 93</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Modelos visuales de trabajo</h2>
 <figure class="visual full" data-visual-id="M3-u04-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u04/M3-u04-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 77</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 94</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Mini actividad conectada con la imagen</h2>
 <p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Cápsula educativa multimedia de 60 segundos..</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 78</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 95</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Fórmulas, criterios y unidades</h2>
 <p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">duración = escenas x segundos</div></td><td>Planear un video breve.</td><td>Escenas como conteo; segundos en s.</td></tr><tr><td><div class="formula">calidad visual = legibilidad + coherencia + pertinencia</div></td><td>Evaluar una imagen educativa.</td><td>Cada criterio se califica de 1 a 4.</td></tr><tr><td><div class="formula">riesgo = impacto x probabilidad</div></td><td>Valorar un uso de voz, rostro o video.</td><td>Escala 1 a 5 para cada componente.</td></tr><tr><td><div class="formula">cobertura = conceptos incluidos / conceptos requeridos</div></td><td>Revisar si la cápsula cubre el tema.</td><td>Conteos; resultado en porcentaje.</td></tr><tr><td><div class="formula">tiempo total = guion + producción + revisión</div></td><td>Planear una práctica realista.</td><td>Tiempo en minutos.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 79</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 96</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Cómo usar los modelos sin perder precisión</h2>
 <div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 80</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 97</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Ejemplo resuelto de principio a fin 1</h2>
 <div class="worked-example"><h3>Problema</h3><p>El tutor debe producir una cápsula de 60 segundos sobre caída libre. Diseña 4 escenas y evalúa si la imagen principal es legible.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>4 escenas de 15 segundos.</li><li>La imagen obtiene legibilidad 3, coherencia 4 y pertinencia 4.</li><li>Se requieren 5 conceptos y aparecen 4.</li><li>Riesgo ético: impacto 2, probabilidad 2.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Duración = 4 x 15 = 60 s.</div><div class="worked-step"><strong>Paso 2.</strong> Calidad visual = 3 + 4 + 4 = 11 de 12.</div><div class="worked-step"><strong>Paso 3.</strong> Cobertura = 4 / 5 = 80%.</div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 81</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 98</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Ejemplo resuelto de principio a fin 2</h2>
 <div class="worked-step"><strong>Paso 4.</strong> Riesgo = 2 x 2 = 4, bajo pero debe revisarse.</div><div class="worked-step"><strong>Paso 5.</strong> Se decide agregar el concepto faltante antes de entregar.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>La cápsula puede usarse si se agrega el concepto faltante y se conserva la revisión de legibilidad.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 82</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 99</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 1</h2>
 <div class="exercise bank-item"><strong>1.</strong> Define IA Generativa Multimodal en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo duración = escenas x segundos con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo calidad visual = legibilidad + coherencia + pertinencia para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 83</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 100</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 2</h2>
 <div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar riesgo = impacto x probabilidad. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El tutor cobra voz, imagen, video y lectura de documentos..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando cobertura = conceptos incluidos / conceptos requeridos. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 84</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 101</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 3</h2>
 <div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa tiempo total = guion + producción + revisión para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 85</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 102</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 4</h2>
 <div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 86</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 103</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 5</h2>
 <div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 87</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 104</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Especificación de actividad y práctica</h2>
 <table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de IA Generativa Multimodal.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Diseñar guion, imagen, audio o video y revisar cobertura, legibilidad y riesgo.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Cápsula educativa multimedia de 60 segundos.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 88</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 105</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Rúbrica del producto</h2>
 <table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 89</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 106</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Lectura complementaria breve</h2>
 <p>Lee una política de uso responsable de imágenes o voz sintética y resume dos condiciones éticas aplicables al aula.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 90</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 107</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U04 / 40% teoría - 60% práctica</p>
 <h2>Cierre de unidad</h2>
 <p>Al cerrar IA Generativa Multimodal, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Modalidad</li><li>Guion</li><li>Restricción</li><li>Verificación visual</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Cápsula educativa multimedia de 60 segundos.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 91</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 108</span></div>
 </section>
 
 <section class="page cover"><figure class="visual full" data-visual-id="M3-u05-30"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u05/M3-u05-30.svg" alt="Antes de operar una herramienta, hay que entender qué evidencia se espera."><figcaption>Antes de operar una herramienta, hay que entender qué evidencia se espera.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno · U05</div><div><h1>IA para Estudio e Investigación</h1><p class="lead">El tutor estudia un PDF contigo sin inventar citas.</p></div><div class="cover-meta"><div><strong>Entrada</strong><br>Historia y preguntas</div><div><strong>Modelo</strong><br>Conceptos, fórmulas o criterios</div><div><strong>Salida</strong><br>Práctica y producto</div></div></div></section>
@@ -954,140 +1074,140 @@ figcaption {
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Historia, analogía y preguntas introductorias</h2>
 <p>Investigar con IA no significa aceptar resúmenes automáticos. Significa preguntar mejor, comparar fuentes, verificar citas y distinguir idea central, evidencia y opinión. El tutor se vuelve útil cuando trabaja con documentos revisables.</p><div class="box theory-box"><h3>Analogía de entrada</h3><p>La IA para investigar es como un asistente de biblioteca: encuentra rutas, pero no reemplaza leer la fuente crítica.</p></div><div class="exercise"><strong>Pregunta 1.</strong> ¿Qué hace confiable una fuente?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 2.</strong> ¿Cómo detectas una cita inventada?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 3.</strong> ¿Qué diferencia hay entre resumen y evidencia?<div class="answer-lines"><span></span><span></span><span></span></div></div><div class="exercise"><strong>Pregunta 4.</strong> ¿Cómo usas IA sin copiar sin entender?<div class="answer-lines"><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 93</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 110</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Ruta interna de la unidad</h2>
 <p>La unidad se organiza para que el estudiante pase de relato a procedimiento. No se pide resolver nada que no haya sido explicado o marcado como investigación propia.</p><table><tr><th>#</th><th>Subtema operativo</th></tr><tr><td>1</td><td>Fuentes y documentos</td></tr><tr><td>2</td><td>Resumen con evidencia</td></tr><tr><td>3</td><td>Mapas de lectura</td></tr><tr><td>4</td><td>Búsqueda con citas</td></tr><tr><td>5</td><td>Citación y uso responsable</td></tr><tr><td>6</td><td>Notebook de estudio</td></tr></table><div class="box practice-box"><h3>Producto de unidad</h3><p>Notebook de estudio con fuentes, resumen, mapa y verificación.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 94</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 111</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Infografía principal de la unidad</h2>
 <figure class="visual full" data-visual-id="M3-u05-31"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u05/M3-u05-31.svg" alt="Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta."><figcaption>Cuando el proceso se ve completo, la práctica deja de sentirse como una lista suelta.</figcaption></figure>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 95</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 112</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Explicación de la infografía</h2>
 <p>La infografía anterior no es decorativa: ordena el camino del caso conductor. Primero ubica el problema, después selecciona el modelo, luego ejecuta una práctica y finalmente exige una evidencia que pueda revisarse.</p><div class="grid-2"><div class="concept"><strong>Problema</strong><br>Problema: estudiar rápido puede producir comprensión superficial.</div><div class="concept"><strong>Selección</strong><br>Selección: elegir fuente confiable.</div><div class="concept"><strong>Lectura</strong><br>Lectura: separar idea, dato y límite.</div><div class="concept"><strong>Síntesis</strong><br>Síntesis: construir resumen o mapa.</div></div><div class="box question-box"><h3>Conexión con el caso</h3><p>El tutor estudia un PDF contigo sin inventar citas. La imagen sirve para decidir qué dato, criterio o paso falta antes de entregar el producto.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 96</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 113</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Conceptos fundamentales</h2>
 <p>Estos conceptos se presentan antes de cualquier actividad para que el estudiante tenga herramientas de resolución. Cuando una actividad requiera investigar, se indicará explícitamente.</p><table class="large-table"><tr><th>Concepto</th><th>Explicación útil para resolver la unidad</th></tr><tr><td><strong>Fuente</strong></td><td>Documento o sitio que permite verificar una afirmación.</td></tr><tr><td><strong>Cita</strong></td><td>Referencia a una parte concreta de una fuente.</td></tr><tr><td><strong>Resumen</strong></td><td>Reducción de ideas sin cambiar el sentido.</td></tr><tr><td><strong>Evidencia</strong></td><td>Dato o fragmento que sostiene una afirmación.</td></tr><tr><td><strong>Paráfrasis</strong></td><td>Explicación propia de una idea consultada.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 97</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 114</span></div>
 </section>
 
 <section class="page landscape">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Modelos visuales de trabajo</h2>
 <figure class="visual full" data-visual-id="M3-u05-32"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/u05/M3-u05-32.svg" alt="Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse."><figcaption>Una fórmula, criterio o esquema solo ayuda si cada elemento se entiende y puede revisarse.</figcaption></figure>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 98</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 115</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Mini actividad conectada con la imagen</h2>
 <p>Usa la imagen como ejemplo de organización. Tu tarea es construir una versión equivalente para una situación propia, no copiar los textos de la infografía.</p><div class="exercise"><strong>Actividad.</strong> Elige un subtema de la unidad y diseña una mini infografía con cuatro partes: problema, datos o criterios, procedimiento y evidencia final.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="box practice-box"><h3>Entrega mínima</h3><p>Una hoja con título, cuatro bloques, una conclusión de tres líneas y una relación explícita con: Notebook de estudio con fuentes, resumen, mapa y verificación..</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 99</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 116</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Fórmulas, criterios y unidades</h2>
 <p>Los modelos de esta unidad se usan en el ejemplo resuelto y en el banco de ejercicios. En IA algunos modelos son criterios de evaluación; en programación y estadística son fórmulas numéricas.</p><table class="large-table"><tr><th>Modelo, fórmula o criterio</th><th>Cuándo se usa</th><th>Elementos, unidades o escala</th></tr><tr><td><div class="formula">confiabilidad = autoridad + actualidad + evidencia</div></td><td>Evaluar una fuente.</td><td>Cada criterio se puntúa de 1 a 4.</td></tr><tr><td><div class="formula">cobertura = fuentes usadas / fuentes requeridas</div></td><td>Revisar si una investigación es suficiente.</td><td>Conteos; resultado como porcentaje.</td></tr><tr><td><div class="formula">densidad = ideas clave / páginas</div></td><td>Medir concentración de ideas en una lectura.</td><td>Ideas como conteo; páginas como conteo.</td></tr><tr><td><div class="formula">verificación = citas correctas / citas totales</div></td><td>Detectar citas dudosas.</td><td>Conteos; resultado de 0 a 1.</td></tr><tr><td><div class="formula">síntesis = idea central + datos + límite</div></td><td>Construir resumen útil.</td><td>Estructura textual obligatoria.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 100</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 117</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Cómo usar los modelos sin perder precisión</h2>
 <div class="grid-2"><div class="formula-card"><strong>1. Nombrar datos</strong><br>Antes de sustituir, escribe qué representa cada dato y en qué escala se mide.</div><div class="formula-card"><strong>2. Revisar unidad o escala</strong><br>Si el modelo usa conteos, porcentaje, puntos o segundos, no mezcles magnitudes.</div><div class="formula-card"><strong>3. Interpretar</strong><br>El resultado necesita una frase: qué significa, qué permite decidir y qué no demuestra.</div><div class="formula-card"><strong>4. Verificar</strong><br>Compara contra una fuente, una rúbrica, un segundo cálculo o una salida observable.</div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 101</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 118</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Ejemplo resuelto de principio a fin 1</h2>
 <div class="worked-example"><h3>Problema</h3><p>El tutor resume un PDF de 10 páginas con 6 citas. Debes evaluar si el resumen puede usarse para estudiar.</p></div><div class="worked-example"><h3>Datos dados</h3><ul><li>La fuente tiene autoridad 4, actualidad 3 y evidencia 4.</li><li>Se requerían 3 fuentes y se usaron 2.</li><li>De 6 citas, 5 son correctas.</li><li>El resumen contiene 8 ideas clave en 10 páginas.</li></ul></div><div class="worked-step"><strong>Paso 1.</strong> Confiabilidad = 4 + 3 + 4 = 11 de 12.</div><div class="worked-step"><strong>Paso 2.</strong> Cobertura = 2 / 3 = 66.7%.</div><div class="worked-step"><strong>Paso 3.</strong> Verificación = 5 / 6 = 83.3%.</div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 102</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 119</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Ejemplo resuelto de principio a fin 2</h2>
 <div class="worked-step"><strong>Paso 4.</strong> Densidad = 8 / 10 = 0.8 ideas por página.</div><div class="worked-step"><strong>Paso 5.</strong> Se decide usar el resumen como apoyo, pero buscar una tercera fuente.</div><div class="box practice-box"><h3>Resultado interpretado</h3><p>El resumen es útil, aunque incompleto. La decisión correcta es conservarlo como apoyo y completar cobertura con otra fuente.</p></div><div class="box question-box"><h3>Antes de pasar al banco</h3><p>Subraya qué modelo usaste, qué dato fue más importante y qué límite debe mencionarse en la conclusión.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 103</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 120</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 1</h2>
 <div class="exercise bank-item"><strong>1.</strong> Define IA para Estudio e Investigación en cinco líneas y señala cuál concepto de la tabla anterior es indispensable para resolver el caso.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>2.</strong> Construye una tabla con tres filas: dato o criterio, modelo que lo usa y evidencia que se debe entregar.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>3.</strong> Usa el modelo confiabilidad = autoridad + actualidad + evidencia con valores o puntajes propuestos por ti. Indica la escala y justifica el resultado.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>4.</strong> Usa el modelo cobertura = fuentes usadas / fuentes requeridas para comparar dos alternativas del caso. Explica cuál conviene y por qué.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 104</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 121</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 2</h2>
 <div class="exercise bank-item"><strong>5.</strong> <strong>Relación de columnas.</strong><div class="match-grid"><div>A. Criterio de calidad<br>B. Evidencia<br>C. Límite del modelo<br>D. Producto final</div><div>1. Lo que se entrega para revisión<br>2. Condición que impide exagerar la conclusión<br>3. Prueba visible de que la tarea se hizo<br>4. Regla para decidir si funciona</div></div>Escribe las parejas correctas.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>6.</strong> Detecta un error posible al aplicar densidad = ideas clave / páginas. Escribe el error, su consecuencia y la corrección.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>7.</strong> Completa un cuadro comparativo entre una respuesta débil y una respuesta confiable para: El tutor estudia un PDF contigo sin inventar citas..<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>8.</strong> Calcula o puntúa un segundo escenario usando verificación = citas correctas / citas totales. Después compara el resultado con el ejercicio 3.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 105</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 122</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 3</h2>
 <div class="exercise bank-item"><strong>9.</strong> Escribe una pregunta abierta que obligue a verificar una fuente, un dato, una salida o un procedimiento.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>10.</strong> Usa síntesis = idea central + datos + límite para cerrar una decisión. Debes mostrar datos, sustitución o criterio y conclusión.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>11.</strong> Diseña una rúbrica de cuatro criterios con escala 1 a 4 para evaluar el producto de la unidad.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>12.</strong> Redacta una explicación de seis líneas para un compañero que faltó a clase. No uses solo definiciones.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 106</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 123</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 4</h2>
 <div class="exercise bank-item"><strong>13.</strong> Propón una mini práctica de 15 minutos. Debe incluir material, pasos, evidencia y criterio de éxito.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>14.</strong> Identifica una instrucción ambigua en el caso y reescríbela de forma precisa, medible y revisable.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>15.</strong> Construye una matriz de decisión con dos opciones, tres criterios y una conclusión final.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>16.</strong> Explica qué parte de la infografía usarías para defender tu procedimiento ante el docente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 107</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 124</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Banco de ejercicios 5</h2>
 <div class="exercise bank-item"><strong>17.</strong> Señala una fuente externa que consultarías. Indica qué buscarías y cómo evitarías copiar sin entender.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>18.</strong> Escribe una conclusión técnica separando hecho, inferencia y acción siguiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>19.</strong> Cambia un dato del caso, predice el efecto y luego recalcula o repuntúa con el modelo correspondiente.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div><div class="exercise bank-item"><strong>20.</strong> Entrega una versión final de tu procedimiento con título, datos, modelo, evidencia y límite.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 108</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 125</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Especificación de actividad y práctica</h2>
 <table><tr><th>Fase</th><th>Acción precisa</th><th>Evidencia</th></tr><tr><td>Preparar</td><td>Leer historia, conceptos y modelos de IA para Estudio e Investigación.</td><td>Preguntas contestadas con tres líneas cada una.</td></tr><tr><td>Aplicar</td><td>Analizar un documento, crear resumen verificable y construir mapa de estudio.</td><td>Procedimiento visible con datos, criterio o código.</td></tr><tr><td>Verificar</td><td>Comparar resultado con rúbrica, fuente o cálculo alterno.</td><td>Corrección o confirmación escrita.</td></tr><tr><td>Entregar</td><td>Notebook de estudio con fuentes, resumen, mapa y verificación.</td><td>Producto final y conclusión técnica.</td></tr></table><div class="box practice-box"><h3>Distribución sugerida</h3><p>20 minutos para recuperar conceptos, 50 minutos para práctica guiada, 30 minutos para banco y 20 minutos para defensa o corrección.</p></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 109</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 126</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Rúbrica del producto</h2>
 <table class="large-table"><tr><th>Criterio</th><th>Excelente</th><th>Suficiente</th><th>Debe corregirse</th></tr><tr><td>Precisión conceptual</td><td>Usa términos y modelos sin confundirlos.</td><td>Hay una imprecisión menor.</td><td>Mezcla conceptos o no los explica.</td></tr><tr><td>Evidencia</td><td>El resultado puede revisarse o replicarse.</td><td>La evidencia existe pero falta detalle.</td><td>No se puede comprobar el proceso.</td></tr><tr><td>Producto</td><td>Responde directamente al caso.</td><td>Responde parcialmente.</td><td>No resuelve la tarea.</td></tr><tr><td>Comunicación</td><td>Separa dato, interpretación y límite.</td><td>Comunica con algunas ambigüedades.</td><td>Presenta conclusión sin soporte.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 110</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 127</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Lectura complementaria breve</h2>
 <p>Lee una guía de citación académica y escribe cómo mencionarías apoyo de IA sin sustituir la fuente original.</p><div class="exercise"><strong>Después de leer.</strong> Escribe una idea útil, una duda y una acción que aplicarías en el producto de la unidad.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 111</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 128</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / U05 / 40% teoría - 60% práctica</p>
 <h2>Cierre de unidad</h2>
 <p>Al cerrar IA para Estudio e Investigación, el estudiante debe explicar cómo la historia inicial se transformó en un procedimiento revisable y en un producto concreto.</p><div class="grid-2"><div class="box theory-box"><h3>Debe poder explicar</h3><ul><li>Fuente</li><li>Cita</li><li>Resumen</li><li>Evidencia</li></ul></div><div class="box practice-box"><h3>Debe entregar</h3><ul><li>Banco de ejercicios corregido</li><li>Notebook de estudio con fuentes, resumen, mapa y verificación.</li><li>Conclusión con límite</li><li>Evidencia visual o técnica</li></ul></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 112</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 129</span></div>
 </section>
 
 <section class="page cover"><figure class="visual full" data-visual-id="M3-tri-1"><img src="../../../../05_assets_visuales_iconos/visuales/manual-3/sem1/M3-sem1-30.svg" alt="Cada trimestre separa avances, evidencias y correcciones."><figcaption>Cada trimestre separa avances, evidencias y correcciones.</figcaption></figure><div class="cover-content"><div class="school">Colegio Nuevo Tecno</div><div><h1>Trimestre 1</h1><p class="lead">Inteligencia Artificial Básica · separador imprimible para seguimiento de evidencias.</p></div><div class="cover-meta"><div><strong>Uso</strong><br>Separar avance</div><div><strong>Entrega</strong><br>Producto y banco</div><div><strong>Revisión</strong><br>Corrección docente</div></div></div></section>
@@ -1100,77 +1220,77 @@ figcaption {
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Material extra de trabajo</h2>
 <table><tr><th>Material</th><th>Uso</th><th>Evidencia esperada</th></tr><tr><td>Bitácora</td><td>Registrar decisiones, cambios y errores.</td><td>Una entrada por práctica.</td></tr><tr><td>Hoja de cálculo</td><td>Verificar puntajes, métricas o datos.</td><td>Tabla con fórmulas visibles.</td></tr><tr><td>Capturas o salidas</td><td>Documentar herramienta, código o resultado.</td><td>Imagen con fecha o explicación.</td></tr><tr><td>Fuentes oficiales</td><td>Contrastar instrucciones y conceptos.</td><td>URL y nota de uso.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 116</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 133</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Lecturas complementarias</h2>
 <ul><li>Turing, Dartmouth y el origen de la pregunta por máquinas inteligentes.</li><li>Modelos fundacionales, lenguaje natural y límites de los asistentes conversacionales.</li><li>Evaluación de respuestas generadas con evidencia y rúbricas.</li><li>Uso responsable de IA para estudiar sin sustituir el criterio propio.</li></ul>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 117</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 134</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Bibliografía y recursos oficiales</h2>
 <table class="large-table"><tr><th>Recurso</th><th>Uso sugerido</th><th>Enlace</th></tr><tr><td>NIST AI Risk Management Framework</td><td>Gestión de riesgo y uso responsable de IA.</td><td><a href="https://www.nist.gov/itl/ai-risk-management-framework">https://www.nist.gov/itl/ai-risk-management-framework</a></td></tr><tr><td>OpenAI API Reference</td><td>Referencia oficial para APIs, streaming y uso de modelos.</td><td><a href="https://platform.openai.com/docs/api-reference">https://platform.openai.com/docs/api-reference</a></td></tr><tr><td>Anthropic Docs</td><td>Documentación oficial de Claude y herramientas asociadas.</td><td><a href="https://docs.anthropic.com/">https://docs.anthropic.com/</a></td></tr><tr><td>Google AI</td><td>Panorama oficial de herramientas e investigación de IA de Google.</td><td><a href="https://ai.google/">https://ai.google/</a></td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 118</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 135</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Glosario esencial 1</h2>
 <table><tr><th>Término</th><th>Uso dentro del manual</th></tr><tr><td>IA</td><td>Sistema que realiza tareas asociadas con percepción, lenguaje, decisión o generación.</td></tr><tr><td>Modelo</td><td>Sistema entrenado para producir predicciones, clasificaciones o respuestas.</td></tr><tr><td>Entrenamiento</td><td>Proceso de ajuste a partir de datos y objetivos.</td></tr><tr><td>Contexto</td><td>Información disponible para guiar una respuesta.</td></tr><tr><td>Token</td><td>Unidad de texto procesada por un modelo de lenguaje.</td></tr><tr><td>Prompt</td><td>Instrucción que guía la salida de un modelo.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 119</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 136</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Glosario esencial 2</h2>
 <table><tr><th>Término</th><th>Uso dentro del manual</th></tr><tr><td>Alucinación</td><td>Respuesta plausible que no está verificada por evidencia.</td></tr><tr><td>Sesgo</td><td>Patrón de error o preferencia causado por datos, diseño o uso.</td></tr><tr><td>Multimodal</td><td>Capacidad de trabajar con texto, imagen, audio, video o documentos.</td></tr><tr><td>Fuente</td><td>Documento, enlace o evidencia consultable para verificar una afirmación.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 120</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 137</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Evaluación integradora 1</h2>
 <p>La evaluación retoma el caso conductor: Mi tutor IA personal. El estudiante debe demostrar que comprende modelos y que puede producir evidencia.</p><div class="exercise"><strong>1.</strong> Selecciona una unidad y escribe el problema en formato dato, criterio, procedimiento y evidencia.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>2.</strong> Usa un modelo de esa unidad y muestra sustitución, escala o criterios de evaluación.<div class="operation-lines"><em>Aquí deja tus operaciones, verificación o evidencia.</em><span></span><span></span><span></span></div></div><div class="exercise"><strong>3.</strong> Explica qué parte del resultado requiere verificación externa.<div class="answer-lines"><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 121</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 138</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Evaluación integradora 2</h2>
 <div class="exercise"><strong>4.</strong> Compara dos productos de unidades distintas y decide cuál tiene evidencia más fuerte.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>5.</strong> Diseña una mejora para el producto final del semestre sin introducir una herramienta nueva.<div class="answer-lines"><span></span><span></span><span></span><span></span></div></div><div class="exercise"><strong>6.</strong> Presenta una conclusión técnica en 90 palabras: hecho, inferencia, límite y siguiente acción.<div class="answer-lines"><span></span><span></span><span></span><span></span><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 122</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 139</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Índice analítico 1</h2>
 <table><tr><th>Entrada</th><th>Unidad</th><th>Uso</th></tr><tr><td>IA</td><td>U01</td><td>Fundamentos e Historia de la IA</td></tr><tr><td>Machine learning</td><td>U01</td><td>Fundamentos e Historia de la IA</td></tr><tr><td>Token</td><td>U02</td><td>Tu Primer Asistente Conversacional</td></tr><tr><td>Contexto</td><td>U02</td><td>Tu Primer Asistente Conversacional</td></tr><tr><td>Rol</td><td>U03</td><td>Prompt Engineering Fundamental</td></tr><tr><td>Tarea</td><td>U03</td><td>Prompt Engineering Fundamental</td></tr><tr><td>Modalidad</td><td>U04</td><td>IA Generativa Multimodal</td></tr><tr><td>Guion</td><td>U04</td><td>IA Generativa Multimodal</td></tr><tr><td>Fuente</td><td>U05</td><td>IA para Estudio e Investigación</td></tr><tr><td>Cita</td><td>U05</td><td>IA para Estudio e Investigación</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 123</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 140</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Índice analítico 2</h2>
 <table><tr><th>Modelo o criterio</th><th>Unidad</th><th>Dónde se aplica</th></tr><tr><td>precisión = aciertos / total</td><td>U01</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>costo estimado = tokens x tarifa</td><td>U02</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>prompt = rol + tarea + contexto + formato + criterio</td><td>U03</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>duración = escenas x segundos</td><td>U04</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr><tr><td>confiabilidad = autoridad + actualidad + evidencia</td><td>U05</td><td>Ejemplo resuelto y banco de ejercicios.</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 124</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 141</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Plantilla de reporte final</h2>
 <table><tr><th>Sección</th><th>Contenido obligatorio</th><th>Extensión</th></tr><tr><td>Problema</td><td>Pregunta verificable del caso.</td><td>3 a 5 líneas</td></tr><tr><td>Datos o criterios</td><td>Tabla con unidades, escala o fuente.</td><td>1 tabla</td></tr><tr><td>Procedimiento</td><td>Pasos numerados y modelo usado.</td><td>6 a 10 pasos</td></tr><tr><td>Evidencia</td><td>Cálculo, salida, tabla, imagen, código o rúbrica.</td><td>1 evidencia principal</td></tr><tr><td>Conclusión</td><td>Hecho, inferencia, límite y acción.</td><td>80 a 100 palabras</td></tr></table>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 125</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 142</span></div>
 </section>
 
 <section class="page">
 <p class="kicker">Manual 3 / Cierre semestre 1</p>
 <h2>Lista de verificación antes de imprimir</h2>
 <div class="exercise"><strong>1.</strong> Revisa que cada imagen tenga texto legible en hoja carta.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>2.</strong> Confirma que cada banco use los modelos explicados antes.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>3.</strong> Verifica que las instrucciones digan qué entregar.<div class="answer-lines"><span></span></div></div><div class="exercise"><strong>4.</strong> Marca fuentes, enlaces y recursos que se usarán en clase.<div class="answer-lines"><span></span></div></div>
-<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 126</span></div>
+<div class="footer"><span>Manual 3</span><span>Semestre 1 / p. 143</span></div>
 </section>
 </body>
 </html>
